@@ -1,0 +1,35 @@
+.favouriteListItem{
+    align-content: center;
+    min-height: 0px;
+    display: flex;
+    padding: 20px;
+    font-family: Arial;
+}
+
+.favouriteListItem__title{
+    font-size: 26px;
+}
+
+.favouriteListItem__tagline{
+    color: gray;
+    font-size: 12px;
+}
+
+.favouriteListItem__description{
+    font-size: 12px;
+    padding: 20px 0px 20px 0px;
+}
+
+.favouriteListItem__button{
+    background-color: transparent;
+    border: none;
+    padding: 0px 10px 0px 0px;
+    text-transform: uppercase;
+
+}
+
+.favouriteListItem__image{
+
+    width: 130px;
+    height: 130px;
+}

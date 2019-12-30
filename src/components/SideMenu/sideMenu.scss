@@ -1,8 +1,11 @@
 .sideMenu{
-    width: 0px;
+    position: absolute;
+    //width: 0px;
 }
 
 .sideMenu__header{
+    font-family: 'Lucida Sans';
+    color: white;
     background-color: #106cc8;
     padding: 20px 0px 0px 10px;
     height: 100px;

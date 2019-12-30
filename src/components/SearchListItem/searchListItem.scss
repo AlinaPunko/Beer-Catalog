@@ -1,0 +1,37 @@
+.searchListItem{
+    margin: 5px;
+    color: white;
+    min-height: 0px;
+    display: flex;
+    padding: 5px;
+    font-family: Arial;
+    flex-direction: column;
+    width: 30%;
+}
+
+.searchListItem__image{
+    margin: 0px auto 0px auto;
+}
+
+.searchListItem__title{
+    font-size: 26px;
+    padding: 10px 0px 10px 0px;
+}
+
+.searchListItem__tagline{
+    display: block;
+    font-size: 16px;
+}
+
+.searchListItem__information{
+    background-color: gray;
+    padding: 10px;
+}
+
+.searchListItem__button{
+    background-color: transparent;
+    border: none;
+    padding: 20px 10px 10px 0px;
+    text-transform: uppercase;
+    color: white;
+}

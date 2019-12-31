@@ -1,11 +1,9 @@
 @use 'styles/common.scss';
 
 .SideMenu__item{
-    color: gray;
     font-family: 'Lucida Sans';
-    padding: 10px 0px 10px 10px;
+    padding : 10px 0px 10px 10px;
     display: flex;
-
     :hover{
         color: #106cc8;
         fill: #106cc8;

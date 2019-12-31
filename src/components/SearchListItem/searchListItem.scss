@@ -11,6 +11,8 @@
 
 .searchListItem__image{
     margin: 0px auto 0px auto;
+    width: auto;
+    height: 120px;
 }
 
 .searchListItem__title{
@@ -24,8 +26,10 @@
 }
 
 .searchListItem__information{
+    height: 50%;
     background-color: gray;
     padding: 10px;
+    position: relative;
 }
 
 .searchListItem__button{

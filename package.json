@@ -2,6 +2,9 @@
   "name": "beer-catalog",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "8"
+  },
   "main": "index.js",
   "scripts": {
     "watch": "webpack --watch",
@@ -21,6 +24,7 @@
     "svg-sprite-loader": "^4.1.6"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^7.1.5",

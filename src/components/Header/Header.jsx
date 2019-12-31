@@ -11,7 +11,7 @@ export default class Header extends React.PureComponent {
   render() {
     return (
         <header className="header">
-            <button type="button" className="header__button" onClick={this.props.toggleMenu}>
+            <button type="button" className="header__button" onClick={this.props.toggleFunction}>
                 <Icon id={menu.id} viewBox={menu.viewBox} className="header__button-icon" />
             </button>
             <span className="header__title">Beer catalog</span>

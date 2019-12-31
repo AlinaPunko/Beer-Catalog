@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime';
 import React from 'react';
 import Reactdom from 'react-dom';
 
@@ -11,11 +12,12 @@ import 'styles/reset.scss';
 import 'styles/common.scss';
 
 import services from 'services/services.js';
+import localStorageHelper from 'helpers/localStorageHelper'
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {showMenu: true};
+        this.state = {showMenu: false};
         this.toggleMenu = this.toggleMenu.bind(this);
     }
 
@@ -26,7 +28,12 @@ class App extends React.Component {
     async componentDidMount() {
         const result = await services.getAllBeers();
         this.setState({
-            Beers: result.map((beer) => (<SearchListItem item={beer}></SearchListItem>))
+            FavouriteBeers: localStorageHelper.getItemsFromLocalStorage(),
+            Beers: result.map((beer) =>(
+            <SearchListItem
+             item={beer}
+             isFavourite={localStorageHelper.isFavourite(beer, localStorageHelper.getItemsFromLocalStorage())}/>
+             ))
         });
     }
 
@@ -35,8 +42,8 @@ class App extends React.Component {
           <div className="App">
             <Header toggleFunction={this.toggleMenu}/>
             <SideMenu showMenu={this.state.showMenu}/>
-            <SearchList Beers={this.state.Beers}>                
-            </SearchList>
+            <SearchSection></SearchSection>
+            <SearchList Beers={this.state.Beers}/>                
           </div>
         );
     }

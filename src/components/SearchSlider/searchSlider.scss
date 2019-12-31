@@ -1,8 +1,13 @@
 .searchSection__searchSlider{
+    justify-content:center;
     display: flex;
+    width: 100%;
+}
+.searchSection__rangeSlider{
+    width: 40%;
 }
 
-.searchSection__searchSlider-title{
+.searchSection__searchSlider_title{
     font-family: 'Lucida Sans';
     font-size: 16px;
     width: 50%;

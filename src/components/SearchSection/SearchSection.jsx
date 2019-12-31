@@ -2,14 +2,19 @@ import React from 'React';
 
 import './searchSection.scss';
 
-import SearchSlider from '../SearchSlider/SearchSlider';
-import SearchBox from '../SearchBox/SearchBox';
+import SearchSlider from 'components/SearchSlider/SearchSlider';
+import SearchBox from 'components/SearchBox/SearchBox';
+
+import search_icon from 'styles/icons/more.svg';
 
 export default class SearchSection extends React.Component {
   render() {
     return (
         <div className="SearchSection">
-            <SearchSlider minValue="10" maxValue="40" title="Hello" />
+            <SearchBox />
+            <SearchSlider minValue="2" maxValue="14" title="Alcohol by volume" />
+            <SearchSlider minValue="0" maxValue="120" title="Internationsl bitterness units" />
+            <SearchSlider minValue="4" maxValue="80" title="Color by EBC" />
         </div>
     );
   }

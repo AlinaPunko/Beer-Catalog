@@ -2,17 +2,21 @@
 
 .SideMenu__item{
     font-family: 'Lucida Sans';
-    padding : 10px 0px 10px 10px;
-    display: flex;
     :hover{
         color: #106cc8;
         fill: #106cc8;
     }
 }
 
+.SideMenu__item_link{
+    display: flex;
+    align-content: center;
+    padding: 10px;
+}
+
 .SideMenu__item-text{
-    height: 2em;
-    line-height: 2em;
+    text-align: center;
+    margin: auto 0 auto 10px;
 }
 
 .SideMenu__item-icon{

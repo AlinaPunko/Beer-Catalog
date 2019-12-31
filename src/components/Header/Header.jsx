@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './header.scss';
 
@@ -7,7 +8,10 @@ import more from 'styles/icons/more.svg';
 
 import Icon from 'components/Icon/Icon';
 
-export default class Header extends React.PureComponent {
+export default class Header extends React.Component {
+  // Component.propTypes = {
+  //   toggleFunction: PropTypes.func
+  // }
   render() {
     return (
         <header className="header">

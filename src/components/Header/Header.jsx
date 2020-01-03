@@ -9,20 +9,21 @@ import more from 'styles/icons/more.svg';
 import Icon from 'components/Icon/Icon';
 
 export default class Header extends React.Component {
-  // Component.propTypes = {
-  //   toggleFunction: PropTypes.func
-  // }
-  render() {
-    return (
-        <header className="header">
-            <button type="button" className="header__button" onClick={this.props.toggleFunction}>
-                <Icon id={menu.id} viewBox={menu.viewBox} className="header__button-icon" />
-            </button>
-            <span className="header__title">Beer catalog</span>
-            <button type="button" className="header__button">
-                <Icon id={more.id} viewBox={more.viewBox} className="header__button-icon" />
-            </button>
-        </header>
-    );
-  }
+    render() {
+        return (
+            <header className="header">
+                <button type="button" className="header__button" onClick={this.props.toggleFunction}>
+                    <Icon id={menu.id} viewBox={menu.viewBox} className="header__button--icon" />
+                </button>
+                <span className="header__title">Beer catalog</span>
+                <button type="button" className="header__button">
+                    <Icon id={more.id} viewBox={more.viewBox} className="header__button--icon" />
+                </button>
+            </header>
+        );
+    }
 }
+
+Header.propTypes = {
+    toggleFunction: PropTypes.func.isRequired,
+};

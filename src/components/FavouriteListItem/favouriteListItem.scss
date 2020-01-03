@@ -1,4 +1,4 @@
-.favouriteListItem{
+.favourite-list-item{
     align-content: center;
     min-height: 0px;
     display: flex;
@@ -6,21 +6,21 @@
     font-family: Arial;
 }
 
-.favouriteListItem__title{
+.favourite-list-item__title{
     font-size: 26px;
 }
 
-.favouriteListItem__tagline{
+.favourite-list-item__tagline{
     color: gray;
     font-size: 12px;
 }
 
-.favouriteListItem__description{
+.favourite-list-item__description{
     font-size: 12px;
     padding: 20px 0px 20px 0px;
 }
 
-.favouriteListItem__button{
+.favourite-list-item__button{
     background-color: transparent;
     border: none;
     padding: 0px 10px 0px 0px;
@@ -28,7 +28,7 @@
 
 }
 
-.favouriteListItem__image{
+.favourite-list-item__image{
 
     width: 130px;
     height: 130px;

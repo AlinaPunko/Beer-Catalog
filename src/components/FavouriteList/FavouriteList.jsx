@@ -1,28 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import localStorageHelper from 'helpers/localStorageHelper';
 
-import SearchListItem from 'components/SearchListItem/SearchListItem';
+import FavouriteListItem from 'components/FavouriteListItem/FavouriteListItem';
 
-import './searchList.scss';
+import './favouriteList.scss';
 
 export default class SearchList extends React.Component {
-    isFavourite(beer) {
-        if (localStorageHelper.getItemsFromLocalStorage().find(
-            (element) => element.id === beer.id,
-        )
-        ) return true;
-        return false;
-    }
-
     render() {
         return (
-            <div className="search-list">
+            <div className="favourite-list">
                 {
                     this.props.Beers.map(
                         (beer) => (
-                            <SearchListItem
+                            <FavouriteListItem
                                 item={beer}
                                 isFavourite={this.isFavourite(beer)}
                             />

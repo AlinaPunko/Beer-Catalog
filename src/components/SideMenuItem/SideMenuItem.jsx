@@ -1,18 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Icon from 'components/Icon/Icon';
 
 import './sideMenuItem.scss';
 
 export default class SideMenuItem extends React.Component {
-  render() {
-    return (
-        <li className="SideMenu__item">
-            <a href="#" className="SideMenu__item_link">
-                <Icon id={this.props.image.id} viewBox={this.props.image.viewBox} className="SideMenu__item-icon" />
-                <div className="SideMenu__item-text">{this.props.content}</div>
-            </a>
-        </li>
-    );
-  }
+    render() {
+        return (
+            <li className="side-menu-item">
+                <a href="#" className="side-menu-item__link">
+                    <Icon id={this.props.image.id} viewBox={this.props.image.viewBox} className="side-menu-item__icon" />
+                    <div className="side-menu-item__text">{this.props.content}</div>
+                </a>
+            </li>
+        );
+    }
 }
+
+SideMenuItem.propTypes = {
+    image: PropTypes.object.isRequired,
+    content: PropTypes.string.isRequired,
+};

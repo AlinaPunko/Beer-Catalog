@@ -1,7 +1,7 @@
 {
     "extends": "airbnb",
     "parserOptions": {
-      "ecmaVersion": 6,
+      "ecmaVersion": 8,
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true
@@ -9,12 +9,21 @@
     },
     "rules": {
       "func-names": ["error", "never"],
+      "no-undef":"off",
+      "no-unused-expressions": 0,
+      "react/no-access-state-in-setstate": 0,
+      "no-plusplus": 0,
       "linebreak-style": 0,
+      "react/forbid-prop-types": 0,
       "react/destructuring-assignment": 0,
+      "indent":["error",4],
       "react/jsx-indent": ["error", 4],
       "react/jsx-indent-props": ["error", 4],
       "jsx-a11y/anchor-is-valid": 0,
-      "react/prefer-stateless-function" :0,
+      "jsx-a11y/no-static-element-interactions": 0,
+      "jsx-a11y/click-events-have-key-events": 0,
+      "class-methods-use-this" : 0,
+      "react/prefer-stateless-function" :0
     },
     "settings": {
       "import/resolver": {

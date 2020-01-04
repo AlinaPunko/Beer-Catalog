@@ -1,6 +1,7 @@
 import 'regenerator-runtime/runtime';
 import React from 'react';
 import Reactdom from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import { Provider } from 'react-redux';
 // import { createStore } from 'redux';
 
@@ -9,7 +10,8 @@ import Header from 'components/Header/Header';
 import SideMenu from 'components/SideMenu/SideMenu';
 import SearchSection from 'components/SearchSection/SearchSection';
 import SearchList from 'components/SearchList/SearchList';
-// import SearchListItem from 'components/SearchListItem/SearchListItem';
+import FavouriteList from 'components/FavouriteList/FavouriteList';
+import InfiniteScroll from 'components/InfiniteScroll/InfiniteScroll';
 
 
 import 'styles/reset.scss';
@@ -22,15 +24,17 @@ import localStorageHelper from 'helpers/localStorageHelper';
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { showMenu: false };
-    }
-
-    async componentDidMount() {
-        const result = await services.getBeersByPage(1);
-        this.setState({
+        this.state = { showMenu: false,
             FavouriteBeers: localStorageHelper.getItemsFromLocalStorage(),
-            Beers: result,
-        });
+            Beers: [],
+            page: 1,
+            total_pages: null}
+    }
+    componentWillMount(){
+        this.loadUser();
+        this.scrollListener = window.addEventListener("scroll", e => {
+            this.handleScroll(e);
+          });
     }
 
     toggleMenu() {
@@ -45,15 +49,69 @@ class App extends React.Component {
         };
     }
 
+    async loadUser(){
+        const {page, Beers} = this.state;
+        const result =await services.getBeersByPage(page);
+        this.setState({
+           Beers:[...Beers, ...result ],
+           scrolling:false,
+       })
+    }
+
+    handleScroll(){ 
+        const lastBeer = document.querySelector('.search-list > div:last-child');
+        const lastBeerOffset = lastBeer.offsetTop + lastBeer.clientHeight;
+        var pageOffset = window.pageYOffset + window.innerHeight;
+      if (pageOffset > lastBeerOffset) {
+             this.loadMore();
+        }
+      };
+
+    loadMore(){
+        this.setState(
+          prevState => ({
+            page: prevState.page + 1,
+            scrolling: true
+          }),
+          this.loadUser
+        );
+      };
+
+
+loadUsers() {
+    this.setState({Beers: [...this.state.Beers,...services.getBeersByPage(++this.state.currentPage) ],
+    currentPage: ++this.state.currentPage
+    }
+    );
+}
+
     render() {
         return (
-            <div className="App" onClick={this.closeMenu()}>
-                <Header toggleFunction={this.toggleMenu()} />
-                <SideMenu showMenu={this.state.showMenu} />
-                <SearchSection />
-                {this.state.Beers
-                && <SearchList Beers={this.state.Beers} />}
-            </div>
+            <Router>
+                <div className="App" ref="root" onClick={this.closeMenu()}>
+                    <Header toggleFunction={this.toggleMenu()} />
+                    <SideMenu Beers={this.state.FavouriteBeers} showMenu={this.state.showMenu} />
+                    <SearchSection />
+                    {this.state.Beers
+                && (
+                    <>
+                        <Route
+                            exact
+                            path="/"
+                            component={() => (
+                                <SearchList Beers={this.state.Beers} />)}
+                        />
+                        <Route
+                            exact
+                            path="/favourites"
+                            component={() => (
+                                <FavouriteList/>)}
+                        />
+                    </>
+                )}
+                </div>
+
+            </Router>
         );
     }
 }

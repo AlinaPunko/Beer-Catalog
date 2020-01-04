@@ -8,12 +8,10 @@ import './sideMenuItem.scss';
 export default class SideMenuItem extends React.Component {
     render() {
         return (
-            <li className="side-menu-item">
-                <a href="#" className="side-menu-item__link">
-                    <Icon id={this.props.image.id} viewBox={this.props.image.viewBox} className="side-menu-item__icon" />
-                    <div className="side-menu-item__text">{this.props.content}</div>
-                </a>
-            </li>
+            <div className="side-menu-item__link">
+                <Icon id={this.props.image.id} viewBox={this.props.image.viewBox} className="side-menu-item__icon" />
+                <div className="side-menu-item__text">{this.props.content}</div>
+            </div>
         );
     }
 }

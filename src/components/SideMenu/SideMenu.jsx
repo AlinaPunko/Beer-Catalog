@@ -14,35 +14,43 @@ import home from 'styles/icons/home.svg';
 
 import './sideMenu.scss';
 
-// import SearchList from 'components/SearchList/SearchList';
+import SearchList from 'components/SearchList/SearchList';
 import FavouriteList from 'components/FavouriteList/FavouriteList';
+
+const routes = [
+    {
+        path: '/',
+        exact: true,
+        main: () => <SearchList Beers={this.props.Beers} />,
+    },
+    {
+        path: '/favourite',
+        main: () => <FavouriteList Beers={this.props.Beers} />,
+    },
+];
 
 export default class SideMenu extends React.Component {
     render() {
         return (
-            <Router>
-                <div className={this.props.showMenu ? 'side-menu--opened' : 'side-menu--closed'}>
-                    <div className="side-menu__header">
-                        <div className="side-menu__text">
+            <div className={this.props.showMenu ? 'side-menu--opened' : 'side-menu--closed'}>
+                <div className="side-menu__header">
+                    <div className="side-menu__text">
                       Beer Catalog
-                        </div>
                     </div>
-                    <ul className="side-menu__items">
+                </div>
+                <ul className="side-menu__items">
+                    <li>
                         <Link to="/">
                             <SideMenuItem className="side-menu-item" content="Home" image={home} />
                         </Link>
+                    </li>
+                    <li>
                         <Link to="/favourites">
                             <SideMenuItem className="side-menu-item" content="Favourite" image={favourite} />
                         </Link>
-                    </ul>
-                    <Switch>
-                        <Route path="/" />
-                        <Route path="/favourites">
-                            <FavouriteList />
-                        </Route>
-                    </Switch>
-                </div>
-            </Router>
+                    </li>
+                </ul>
+            </div>
         );
     }
 }

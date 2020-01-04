@@ -1,7 +1,7 @@
 function addItemToLocalStorage(item) {
     let existingEntries = JSON.parse(localStorage.getItem('favouriteBeers'));
     if (existingEntries == null) { existingEntries = []; }
-    existingEntries.push(item);
+    existingEntries.unshift(item);
     localStorage.setItem('favouriteBeers', JSON.stringify(existingEntries));
 }
 
@@ -14,7 +14,10 @@ function getItemsFromLocalStorage() {
 function deleteItemFromLocalStorage(item) {
     let existingEntries = JSON.parse(localStorage.getItem('favouriteBeers'));
     if (existingEntries == null) { existingEntries = []; }
-    existingEntries.pop(item);
+    const theelem = existingEntries.find(
+            (element) => element.id === item.id,
+        )
+    existingEntries.splice(existingEntries.indexOf(theelem),1);
     localStorage.setItem('favouriteBeers', JSON.stringify(existingEntries));
 }
 

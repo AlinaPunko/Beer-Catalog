@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link,
 } from 'react-router-dom';
 
@@ -13,21 +10,6 @@ import favourite from 'styles/icons/favourite.svg';
 import home from 'styles/icons/home.svg';
 
 import './sideMenu.scss';
-
-import SearchList from 'components/SearchList/SearchList';
-import FavouriteList from 'components/FavouriteList/FavouriteList';
-
-const routes = [
-    {
-        path: '/',
-        exact: true,
-        main: () => <SearchList Beers={this.props.Beers} />,
-    },
-    {
-        path: '/favourite',
-        main: () => <FavouriteList Beers={this.props.Beers} />,
-    },
-];
 
 export default class SideMenu extends React.Component {
     render() {
@@ -42,6 +24,7 @@ export default class SideMenu extends React.Component {
                     <li>
                         <Link to="/">
                             <SideMenuItem className="side-menu-item" content="Home" image={home} />
+
                         </Link>
                     </li>
                     <li>

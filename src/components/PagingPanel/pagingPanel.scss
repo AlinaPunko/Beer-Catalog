@@ -1,0 +1,13 @@
+.paging-panel{
+    display: flex;
+    border: 1px grey solid;
+    border-radius: 5px;
+    width: auto;
+    color:#106cc8;
+    margin: 10px auto 20px 20px;
+}
+
+.paging-panel__item{
+    padding: 10px;
+    border: 1px grey solid;
+}

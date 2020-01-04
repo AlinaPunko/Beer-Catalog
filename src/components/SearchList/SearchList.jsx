@@ -10,7 +10,7 @@ import './searchList.scss';
 export default class SearchList extends React.Component {
     isFavourite(beer) {
         if (localStorageHelper.getItemsFromLocalStorage().find(
-            (element) => element.id === beer.id,
+            (element) => { return element.id === beer.id; },
         )
         ) return true;
         return false;
@@ -21,12 +21,15 @@ export default class SearchList extends React.Component {
             <div className="search-list">
                 {
                     this.props.Beers.map(
-                        (beer) => (
-                            <SearchListItem
-                                item={beer}
-                                isFavourite={this.isFavourite(beer)}
-                            />
-                        ),
+                        (beer) => {
+                            const isFavourite = this.isFavourite(beer);
+                            return (
+                                <SearchListItem
+                                    item={beer}
+                                    isFavourite={isFavourite}
+                                />
+                            );
+                        },
                     )
                 }
             </div>

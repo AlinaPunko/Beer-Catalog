@@ -15,9 +15,9 @@ function deleteItemFromLocalStorage(item) {
     let existingEntries = JSON.parse(localStorage.getItem('favouriteBeers'));
     if (existingEntries == null) { existingEntries = []; }
     const theelem = existingEntries.find(
-            (element) => element.id === item.id,
-        )
-    existingEntries.splice(existingEntries.indexOf(theelem),1);
+        (element) => element.id === item.id,
+    );
+    existingEntries.splice(existingEntries.indexOf(theelem), 1);
     localStorage.setItem('favouriteBeers', JSON.stringify(existingEntries));
 }
 

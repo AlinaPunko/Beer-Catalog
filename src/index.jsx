@@ -1,7 +1,7 @@
 import 'regenerator-runtime/runtime';
 import React from 'react';
 import Reactdom from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import { Provider } from 'react-redux';
 // import { createStore } from 'redux';
 
@@ -11,7 +11,6 @@ import SideMenu from 'components/SideMenu/SideMenu';
 import SearchSection from 'components/SearchSection/SearchSection';
 import SearchList from 'components/SearchList/SearchList';
 import FavouriteList from 'components/FavouriteList/FavouriteList';
-import InfiniteScroll from 'components/InfiniteScroll/InfiniteScroll';
 
 
 import 'styles/reset.scss';
@@ -24,17 +23,23 @@ import localStorageHelper from 'helpers/localStorageHelper';
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { showMenu: false,
+        this.state = {
+            showMenu: false,
             FavouriteBeers: localStorageHelper.getItemsFromLocalStorage(),
             Beers: [],
-            page: 1,
-            total_pages: null}
+            page: 1
+        };
     }
-    componentWillMount(){
-        this.loadUser();
-        this.scrollListener = window.addEventListener("scroll", e => {
+
+    componentWillMount() {
+        this.loadBeers();
+        this.scrollListener = window.addEventListener('scroll', (e) => {
             this.handleScroll(e);
-          });
+        });
+    }
+
+    getSearchList = () => {
+        return <SearchList Beers={this.state.Beers} />;
     }
 
     toggleMenu() {
@@ -49,66 +54,62 @@ class App extends React.Component {
         };
     }
 
-    async loadUser(){
-        const {page, Beers} = this.state;
-        const result =await services.getBeersByPage(page);
+    async loadBeers() {
+        const { page, Beers } = this.state;
+        const result = await services.getBeersByPage(page);
         this.setState({
-           Beers:[...Beers, ...result ],
-           scrolling:false,
-       })
+            Beers: [...Beers, ...result],
+        });
     }
 
-    handleScroll(){ 
+    handleScroll() {
         const lastBeer = document.querySelector('.search-list > div:last-child');
         const lastBeerOffset = lastBeer.offsetTop + lastBeer.clientHeight;
-        var pageOffset = window.pageYOffset + window.innerHeight;
-      if (pageOffset > lastBeerOffset) {
-             this.loadMore();
+        const pageOffset = window.pageYOffset + window.innerHeight;
+        if (pageOffset > lastBeerOffset) {
+            this.loadMore();
         }
-      };
-
-    loadMore(){
-        this.setState(
-          prevState => ({
-            page: prevState.page + 1,
-            scrolling: true
-          }),
-          this.loadUser
-        );
-      };
-
-
-loadUsers() {
-    this.setState({Beers: [...this.state.Beers,...services.getBeersByPage(++this.state.currentPage) ],
-    currentPage: ++this.state.currentPage
     }
-    );
-}
+
+    loadMore() {
+        this.setState(
+            (prevState) => ({
+                page: prevState.page + 1,
+            }),
+            this.loadBeers,
+        );
+    }
+
+
+    loadUsers() {
+        this.setState({
+            Beers: [...this.state.Beers, ...services.getBeersByPage(++this.state.currentPage)],
+            currentPage: ++this.state.currentPage
+        });
+    }
 
     render() {
         return (
             <Router>
-                <div className="App" ref="root" onClick={this.closeMenu()}>
+                <div className="App" onClick={this.closeMenu()}>
                     <Header toggleFunction={this.toggleMenu()} />
                     <SideMenu Beers={this.state.FavouriteBeers} showMenu={this.state.showMenu} />
                     <SearchSection />
                     {this.state.Beers
-                && (
-                    <>
-                        <Route
-                            exact
-                            path="/"
-                            component={() => (
-                                <SearchList Beers={this.state.Beers} />)}
-                        />
-                        <Route
-                            exact
-                            path="/favourites"
-                            component={() => (
-                                <FavouriteList/>)}
-                        />
-                    </>
-                )}
+                    && (
+                        <>
+                            <Route
+                                exact
+                                path="/"
+                                component={this.getSearchList}
+                            />
+                            <Route
+                                exact
+                                path="/favourites"
+                                component={FavouriteList}
+                            />
+                        </>
+                    )}
                 </div>
 
             </Router>

@@ -18,6 +18,7 @@ export default class BeersList extends React.Component {
         this.setState({ Beers: result });
     }
 
+
     render() {
         return (
             <div>

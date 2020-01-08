@@ -2,10 +2,7 @@ const beers = (state = [], action) => {
     switch (action.type) {
     case 'ADD_BEERS':
         return [
-            ...state,
-            {
-                beers: action.beers,
-            },
+            ...state, ...action.beers
         ];
     default:
         return state;

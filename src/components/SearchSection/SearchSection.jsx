@@ -2,8 +2,10 @@ import React from 'react';
 
 import './searchSection.scss';
 
-import SearchFilter from 'components/SearchFilter/SearchFilter';
+import SearchFilterContainer from 'components/SearchFilterContainer/SearchFilterContainer';
 import Icon from 'components/Icon/Icon';
+
+import FilterType from 'constants/filterType';
 
 import searchIcon from 'styles/icons/search.svg';
 
@@ -39,11 +41,11 @@ export default class SearchSection extends React.Component {
                 </div>
                 { this.state.areSlidersShown
             && (
-            <>
-                <SearchFilter id={0} minValue={2} maxValue={14} title="Alcohol by volume" />
-                <SearchFilter id={1} minValue={0} maxValue={120} title="International bitterness units" />
-                <SearchFilter id={2} minValue={4} maxValue={80} title="Color by EBC" />
-            </>
+                <>
+                    <SearchFilterContainer type={FilterType.Alcohol} minValue={2} maxValue={14} title="Alcohol by volume" />
+                    <SearchFilterContainer type={FilterType.InternationalBitternessUnits} minValue={0} maxValue={120} title="International bitterness units" />
+                    <SearchFilterContainer type={FilterType.Color} minValue={4} maxValue={80} title="Color by EBC" />
+                </>
             )}
             </div>
         );

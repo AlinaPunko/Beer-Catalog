@@ -6,25 +6,33 @@ import './searchFilter.scss';
 export default class SearchFilter extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { currentValue: ' ' };
+        this.state = { currentValue: this.props.maxValue };
     }
 
-    componentDidMount() {
-        this.setState({ currentValue: document.getElementsByClassName('search-filter__range-slider')[this.props.id].value });
+    onInputHandler = (e) => {
+        this.setState({ currentValue: e.currentTarget.value });
+        const filter = {
+            type: this.props.type,
+            value: this.state.currentValue
+        };
+        this.props.onInput(filter);
     }
 
     render() {
         const {
-            id, title, minValue, maxValue,
+            title, minValue, maxValue,
         } = this.props;
+        const { currentValue } = this.state;
+
         return (
             <div className="search-filter">
                 <div className="search-filter__title">{title}</div>
                 <div className="search-filter__value">{this.state.currentValue}</div>
                 <input
                     className="search-filter__range-slider"
-                    onInput={() => { this.setState({ currentValue: document.getElementsByClassName('search-filter__range-slider')[id].value }); }}
+                    onInput={this.onInputHandler}
                     type="range"
+                    value={currentValue}
                     min={minValue}
                     max={maxValue}
                 />
@@ -34,7 +42,7 @@ export default class SearchFilter extends React.Component {
 }
 
 SearchFilter.propTypes = {
-    id: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     minValue: PropTypes.number.isRequired,
     maxValue: PropTypes.number.isRequired,

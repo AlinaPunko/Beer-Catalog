@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import localStorageHelper from 'helpers/localStorageHelper';
 
@@ -7,7 +7,54 @@ import BeersListItem from 'components/BeersListItem/BeersListItem';
 
 import './beersList.scss';
 
-export default class BeersList extends React.Component {
+import services from 'services/services';
+
+class BeersList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            page: 1
+        };
+    }
+
+    componentWillMount() {
+        this.loadBeers();
+
+        this.scrollListener = window.addEventListener('scroll', (e) => {
+            this.handleScroll(e);
+        });
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', (e) => {
+            this.handleScroll(e);
+        });
+    }
+
+    async loadBeers() {
+        const { page } = this.state;
+        const result = await services.getBeersByPage(page);
+        this.props.addBeers(result);
+    }
+
+    handleScroll() {
+        const lastBeer = document.querySelector('.beers-list > div:last-child');
+        const lastBeerOffset = lastBeer.offsetTop + lastBeer.clientHeight;
+        const pageOffset = window.pageYOffset + window.innerHeight;
+        if (pageOffset > lastBeerOffset) {
+            this.loadMore();
+        }
+    }
+
+    loadMore() {
+        this.setState(
+            (prevState) => ({
+                page: prevState.page + 1,
+            }),
+            this.loadBeers,
+        );
+    }
+
     isFavourite(beer) {
         if (localStorageHelper.getItemsFromLocalStorage().find(
             (element) => { return element.id === beer.id; },
@@ -20,7 +67,7 @@ export default class BeersList extends React.Component {
         return (
             <div className="beers-list">
                 {
-                    this.props.Beers.map(
+                    this.props.beers.map(
                         (beer) => {
                             const isFavourite = this.isFavourite(beer);
                             return (
@@ -37,6 +84,4 @@ export default class BeersList extends React.Component {
     }
 }
 
-BeersList.propTypes = {
-    Beers: PropTypes.array.isRequired,
-};
+export default connect()(BeersList);

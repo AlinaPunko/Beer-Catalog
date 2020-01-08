@@ -5,12 +5,11 @@ export const addBeers = (beers) => ({
     beers,
 });
 
-export const setVisibilityFilter = (filter) => ({
-    type: actionTypes.SET_VISIBILITY_FILTER,
+export const setFilter = (filter) => ({
+    type: actionTypes.SET_FILTER,
     filter,
 });
 
 export const Filters = {
-    SHOW_ALL: 'SHOW_ALL',
     SHOW_FILTERED: 'SHOW_FILTERED'
 };

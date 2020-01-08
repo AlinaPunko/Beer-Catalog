@@ -11,9 +11,9 @@ export default class PagingPanel extends React.Component {
     render() {
         return (
             <ul className="paging-panel">
-                <li className="paging-panel__item">&#171</li>
+                <li className="paging-panel__item">&laquo;</li>
                 {this.state.pages.map((pageNumber) => (<li className="paging-panel__item">{pageNumber}</li>))}
-                <li className="paging-panel__item">&#187</li>
+                <li className="paging-panel__item">&raquo;</li>
             </ul>
         );
     }

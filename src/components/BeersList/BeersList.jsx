@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import localStorageHelper from 'helpers/localStorageHelper';
 
-import SearchListItem from 'components/SearchListItem/SearchListItem';
+import BeersListItem from 'components/BeersListItem/BeersListItem';
 
-import './searchList.scss';
+import './beersList.scss';
 
-export default class SearchList extends React.Component {
+export default class BeersList extends React.Component {
     isFavourite(beer) {
         if (localStorageHelper.getItemsFromLocalStorage().find(
             (element) => { return element.id === beer.id; },
@@ -18,13 +18,13 @@ export default class SearchList extends React.Component {
 
     render() {
         return (
-            <div className="search-list">
+            <div className="beers-list">
                 {
                     this.props.Beers.map(
                         (beer) => {
                             const isFavourite = this.isFavourite(beer);
                             return (
-                                <SearchListItem
+                                <BeersListItem
                                     item={beer}
                                     isFavourite={isFavourite}
                                 />
@@ -37,6 +37,6 @@ export default class SearchList extends React.Component {
     }
 }
 
-SearchList.propTypes = {
+BeersList.propTypes = {
     Beers: PropTypes.array.isRequired,
 };

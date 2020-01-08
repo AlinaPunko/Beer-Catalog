@@ -4,9 +4,9 @@
     width: 100%;
     display: flex;
     margin: 20px;
-    font-family: Arial;
-    box-shadow:inset 5px 5px 5px 0 rgba(0,0,0,.5), 
-    inset -5px -5px -5px 0 rgba(255,255,255,0.5);
+    font-family: 'Arial';
+    padding: 10px;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
 }
 
 .favourite-list-item__title{

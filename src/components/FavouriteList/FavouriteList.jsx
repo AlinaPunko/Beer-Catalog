@@ -7,7 +7,7 @@ import PagingPanel from 'components/PagingPanel/PagingPanel';
 
 import './favouriteList.scss';
 
-export default class SearchList extends React.Component {
+export default class BeersList extends React.Component {
     constructor(props) {
         super(props);
         this.state = { Beers: [] };
@@ -21,6 +21,7 @@ export default class SearchList extends React.Component {
     render() {
         return (
             <div>
+                <div className="favourite-list__title">Your favourite beers</div>
                 { this.state.Beers
             && (
                 <div className="favourite-list">

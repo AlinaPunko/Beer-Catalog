@@ -4,8 +4,7 @@ const beers = (state = [], action) => {
         return [
             ...state,
             {
-                id: action.id,
-                beer: action.beer,
+                beers: action.beers,
             },
         ];
     default:

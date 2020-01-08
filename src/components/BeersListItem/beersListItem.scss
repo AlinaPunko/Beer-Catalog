@@ -1,38 +1,38 @@
-.searchListItem{
+.beers-list-item{
     margin: 5px;
     color: white;
     min-height: 0px;
     display: flex;
     padding: 5px;
-    font-family: Arial;
+    font-family: 'Lucida Sans';
     flex-direction: column;
     width: 30%;
 }
 
-.searchListItem__image{
+.beers-list-item__image{
     margin: 0px auto 0px auto;
     width: auto;
     height: 120px;
 }
 
-.searchListItem__title{
+.beers-list-item__title{
     font-size: 26px;
     padding: 10px 0px 10px 0px;
 }
 
-.searchListItem__tagline{
+.beers-list-item__tagline{
     display: block;
     font-size: 16px;
 }
 
-.searchListItem__information{
+.beers-list-item__information{
     height: 50%;
     background-color: gray;
     padding: 10px;
     position: relative;
 }
 
-.searchListItem__button{
+.beers-list-item__button{
     background-color: transparent;
     border: none;
     padding: 20px 10px 10px 0px;

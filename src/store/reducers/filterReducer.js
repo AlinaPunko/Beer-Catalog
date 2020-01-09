@@ -1,9 +1,13 @@
-import { Filters } from 'store/actions';
 
-const filter = (state = Filters.SHOW_FILTERED, action) => {
+const filter = (state = { Alcohol: 14, InternationalBitternessUnits: 120, Color: 80 }, action) => {
     switch (action.type) {
     case 'SET_FILTER':
-        return action.filter;
+    {
+        return {
+            ...state,
+            [action.filter.type]: Number.parseInt(action.filter.value, 10),
+        };
+    }
     default:
         return state;
     }

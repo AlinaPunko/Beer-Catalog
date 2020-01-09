@@ -1,25 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import localStorageHelper from 'helpers/localStorageHelper';
+import services from 'services/services';
 
 import BeersListItem from 'components/BeersListItem/BeersListItem';
 
-import './beersList.scss';
+import preloader from 'styles/icons/preloader.svg';
 
-import services from 'services/services';
+import Icon from 'components/Icon/Icon';
+
+import './beersList.scss';
 
 class BeersList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            page: 1
+            page: 1,
+            isLoading: true
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.loadBeers();
-
         this.scrollListener = window.addEventListener('scroll', (e) => {
             this.handleScroll(e);
         });
@@ -35,6 +39,7 @@ class BeersList extends React.Component {
         const { page } = this.state;
         const result = await services.getBeersByPage(page);
         this.props.addBeers(result);
+        this.setState({ isLoading: false });
     }
 
     handleScroll() {
@@ -47,6 +52,7 @@ class BeersList extends React.Component {
     }
 
     loadMore() {
+        this.setState({ isLoading: true });
         this.setState(
             (prevState) => ({
                 page: prevState.page + 1,
@@ -65,23 +71,36 @@ class BeersList extends React.Component {
 
     render() {
         return (
-            <div className="beers-list">
-                {
-                    this.props.beers.map(
-                        (beer) => {
-                            const isFavourite = this.isFavourite(beer);
-                            return (
-                                <BeersListItem
-                                    item={beer}
-                                    isFavourite={isFavourite}
-                                />
-                            );
-                        },
-                    )
-                }
-            </div>
+            <>
+                <div className="beers-list">
+                    {
+                        this.props.beers.map(
+                            (beer) => {
+                                const isFavourite = this.isFavourite(beer);
+                                return (
+                                    <BeersListItem
+                                        item={beer}
+                                        key={beer.id}
+                                        isFavourite={isFavourite}
+                                    />
+                                );
+                            },
+                        )
+                    }
+                </div>
+                {this.state.isLoading && (
+                    <div className="beers-list__preloader">
+                        <Icon className="beers-list__preloader-icon" id={preloader.id} viewBox={preloader.viewBox} />
+                    </div>
+                )}
+            </>
         );
     }
 }
 
 export default connect()(BeersList);
+
+BeersList.propTypes = {
+    beers: PropTypes.array.isRequired,
+    addBeers: PropTypes.func.isRequired
+};

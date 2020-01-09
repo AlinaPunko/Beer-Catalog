@@ -1,16 +1,14 @@
 .side-menu-item{
     font-family: 'Lucida Sans';
+    display: flex;
+    align-content: center;
+    padding: 10px;
     :hover{
         color: #106cc8;
         fill: #106cc8;
     }
 }
 
-.side-menu-item__link{
-    display: flex;
-    align-content: center;
-    padding: 10px;
-}
 
 .side-menu-item__text{
    overflow: hidden;

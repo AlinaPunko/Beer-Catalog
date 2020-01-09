@@ -13,12 +13,11 @@ import 'styles/common.scss';
 
 export default class SearchPage extends React.Component {
     render() {
-        const store = createStore(rootReducer);
         return (
-            <Provider store={store}>
+            <>
                 <SearchSectionContainer />
                 <BeersListContainer />
-            </Provider>
+            </>
         );
     }
 }

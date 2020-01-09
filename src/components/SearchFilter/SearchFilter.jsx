@@ -13,7 +13,7 @@ export default class SearchFilter extends React.Component {
         this.setState({ currentValue: e.currentTarget.value });
         const filter = {
             type: this.props.type,
-            value: this.state.currentValue
+            value: e.currentTarget.value
         };
         this.props.onInput(filter);
     }
@@ -30,9 +30,9 @@ export default class SearchFilter extends React.Component {
                 <div className="search-filter__value">{this.state.currentValue}</div>
                 <input
                     className="search-filter__range-slider"
-                    onInput={this.onInputHandler}
+                    onChange={this.onInputHandler}
                     type="range"
-                    value={currentValue}
+                    defaultValue={currentValue}
                     min={minValue}
                     max={maxValue}
                 />
@@ -46,4 +46,5 @@ SearchFilter.propTypes = {
     title: PropTypes.string.isRequired,
     minValue: PropTypes.number.isRequired,
     maxValue: PropTypes.number.isRequired,
+    onInput: PropTypes.func.isRequired,
 };

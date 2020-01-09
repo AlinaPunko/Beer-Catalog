@@ -9,7 +9,3 @@ export const setFilter = (filter) => ({
     type: actionTypes.SET_FILTER,
     filter,
 });
-
-export const Filters = {
-    SHOW_FILTERED: 'SHOW_FILTERED'
-};

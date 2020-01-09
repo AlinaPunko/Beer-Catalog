@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { setFilter } from 'store/actions';
 import SearchSection from 'components/SearchSection/SearchSection';
 
-const mapStateToProps = (state, ownProps) => ({
-    active: ownProps.filter === state.Filter
+const mapStateToProps = (state) => ({
+    filter: state.filter
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -11,4 +11,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 
-export default connect(mapDispatchToProps, mapStateToProps)(SearchSection);
+export default connect(
+    mapDispatchToProps,
+    mapStateToProps
+)(SearchSection);

@@ -1,6 +1,15 @@
 .beers-list{
-    margin: 0 auto 0 auto;
+    margin: 20px auto 0px auto;
     display: flex;
     flex-wrap: wrap;
     width: 75%;
+}
+
+.beers-list__preloader-icon{
+    height: 100%;
+    width: 100%;
+}
+
+.beers-list__preloader{
+    height: 50px;
 }

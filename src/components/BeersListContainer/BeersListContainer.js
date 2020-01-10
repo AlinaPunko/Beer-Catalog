@@ -5,7 +5,8 @@ import BeersList from 'components/BeersList/BeersList';
 const getFilteredBeers = (beers, filter) => {
     return beers.filter((t) => t.abv <= filter.Alcohol
       && t.ebc <= filter.InternationalBitternessUnits
-      && t.ibu <= filter.Color);
+      && t.ibu <= filter.Color
+      && t.name.toLowerCase().includes(filter.Name.toLowerCase()));
 };
 
 const mapStateToProps = (state) => ({

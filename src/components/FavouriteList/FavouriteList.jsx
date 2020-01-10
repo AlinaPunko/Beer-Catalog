@@ -6,7 +6,7 @@ import FavouriteListItem from 'components/FavouriteListItem/FavouriteListItem';
 
 import './favouriteList.scss';
 
-export default class BeersList extends React.Component {
+export default class BeersList extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,17 +44,20 @@ export default class BeersList extends React.Component {
 
         const renderPageNumbers = pageNumbers.map((number) => {
             return (
-                <li
-                    key={number}
-                    id={number}
+                <button
+                    type="button"
                     onClick={this.handleClick}
                     className="paging-panel__item"
                 >
-                    {number}
-                </li>
+                    <li
+                        key={number}
+                        id={number}
+                    >
+                        {number}
+                    </li>
+                </button>
             );
         });
-        debugger;
         return (
             <>
                 <div className="favourite-list__title">Your favourite beers</div>

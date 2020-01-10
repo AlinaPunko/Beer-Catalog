@@ -1,29 +1,29 @@
-.SearchSection{
+.search-section{
     display:flex;
     flex-direction: column;
     margin: 10px auto 10px auto;
     width: 30%;
 }
 
-.SearchBox{
+.search-box{
     display: flex;
     width: 70%;
     margin: 10px auto 10px auto;
 }
 
-.SearchBox__field{
+.search-box__field{
     width: 100%;
     border-top: none;
     border-left: none;
     border-right: none;
 }
 
-.SearchBox__button{
+.search-box__button{
     background-color: transparent;
     border: none;
 }
 
-.SearchBox__icon{
+.search-box__icon{
     width: 20px;
     height: 20px;
 }

@@ -5,7 +5,7 @@ import './beersListItem.scss';
 
 import localStorageHelper from 'helpers/localStorageHelper';
 
-export default class BeersListItem extends React.Component {
+export default class BeersListItem extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = { isFavourite: props.isFavourite };

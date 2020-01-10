@@ -1,4 +1,5 @@
 const ADD_BEERS = 'ADD_BEERS';
 const SET_FILTER = 'SET_FILTER';
+const SET_FILTER_BY_NAME = 'SET_FILTER_BY_NAME';
 
-export default { ADD_BEERS, SET_FILTER };
+export default { ADD_BEERS, SET_FILTER, SET_FILTER_BY_NAME };

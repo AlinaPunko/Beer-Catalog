@@ -8,7 +8,7 @@ import more from 'styles/icons/more.svg';
 
 import Icon from 'components/Icon/Icon';
 
-export default class Header extends React.Component {
+export default class Header extends React.PureComponent {
     render() {
         return (
             <header className="header">

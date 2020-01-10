@@ -11,7 +11,7 @@ import home from 'styles/icons/home.svg';
 
 import './sideMenu.scss';
 
-export default class SideMenu extends React.Component {
+export default class SideMenu extends React.PureComponent {
     render() {
         return (
             <div className={this.props.showMenu ? 'side-menu--opened' : 'side-menu--closed'}>

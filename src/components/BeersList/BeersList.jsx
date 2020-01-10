@@ -13,7 +13,7 @@ import Icon from 'components/Icon/Icon';
 
 import './beersList.scss';
 
-class BeersList extends React.Component {
+class BeersList extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {

@@ -5,7 +5,7 @@ import Icon from 'components/Icon/Icon';
 
 import './sideMenuItem.scss';
 
-export default class SideMenuItem extends React.Component {
+export default class SideMenuItem extends React.PureComponent {
     render() {
         return (
             <div className="side-menu-item">

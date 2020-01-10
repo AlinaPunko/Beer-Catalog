@@ -2,7 +2,7 @@ import React from 'react';
 
 import './pagingPanel.scss';
 
-export default class PagingPanel extends React.Component {
+export default class PagingPanel extends React.PureComponent {
     constructor() {
         super();
         this.state = { pages: [1, 2, 3, 4, 5] };

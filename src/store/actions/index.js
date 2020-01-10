@@ -2,10 +2,15 @@ import actionTypes from 'store/actions/actionTypes';
 
 export const addBeers = (beers) => ({
     type: actionTypes.ADD_BEERS,
-    beers,
+    beers
 });
 
 export const setFilter = (filter) => ({
     type: actionTypes.SET_FILTER,
-    filter,
+    filter
+});
+
+export const setFilterByName = (name) => ({
+    type: actionTypes.SET_FILTER_BY_NAME,
+    name
 });

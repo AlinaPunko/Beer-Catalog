@@ -11,13 +11,18 @@ import 'styles/reset.scss';
 import 'styles/common.scss';
 
 
-export default class SearchPage extends React.Component {
+export default class SearchPage extends React.PureComponent {
+    constructor() {
+        super();
+        this.store = createStore(rootReducer);
+    }
+
     render() {
         return (
-            <>
+            <Provider store={this.store}>
                 <SearchSectionContainer />
                 <BeersListContainer />
-            </>
+            </Provider>
         );
     }
 }

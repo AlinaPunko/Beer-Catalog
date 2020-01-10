@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './searchSection.scss';
 
@@ -20,23 +21,25 @@ export default class SearchSection extends React.Component {
         });
     }
 
-    onClickHandler() {
-        return () => {
-            this.setState({ areSlidersShown: !this.state.areSlidersShown });
-        };
+    onClickHandler = () => {
+        this.setState({ areSlidersShown: !this.state.areSlidersShown });
+    }
+
+    onChangeHandler = (e) => {
+        this.props.onChange(e.currentTarget.value);
     }
 
     render() {
         return (
-            <div className="SearchSection">
-                <div className="SearchBox">
-                    <input type="text" placeholder={this.state.areSlidersShown ? 'Punk IPA' : 'Search beers...'} className="SearchBox__field" />
+            <div className="search-section">
+                <div className="search-box">
+                    <input type="text" onChange={this.onChangeHandler} placeholder={this.state.areSlidersShown ? 'Punk IPA' : 'Search beers...'} className="search-box__field" />
                     <button
                         type="button"
-                        className="SearchBox__button"
-                        onClick={this.onClickHandler()}
+                        className="search-box__button"
+                        onClick={this.onClickHandler}
                     >
-                        <Icon id={searchIcon.id} viewBox={searchIcon.viewBox} className="SearchBox__icon" />
+                        <Icon id={searchIcon.id} viewBox={searchIcon.viewBox} className="search-box__icon" />
                     </button>
                 </div>
                 { this.state.areSlidersShown
@@ -51,3 +54,8 @@ export default class SearchSection extends React.Component {
         );
     }
 }
+
+
+SearchSection.propTypes = {
+    onChange: PropTypes.func.isRequired,
+};

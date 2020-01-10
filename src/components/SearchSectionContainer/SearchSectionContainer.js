@@ -1,17 +1,16 @@
 import { connect } from 'react-redux';
-import { setFilter } from 'store/actions';
+import { setFilterByName } from 'store/actions';
 import SearchSection from 'components/SearchSection/SearchSection';
 
 const mapStateToProps = (state) => ({
-    filter: state.filter
+    name: state.name
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    onInput: (filter) => dispatch(setFilter(filter))
+    onChange: (name) => dispatch(setFilterByName(name))
 });
 
 
 export default connect(
-    mapDispatchToProps,
-    mapStateToProps
+    mapStateToProps, mapDispatchToProps
 )(SearchSection);

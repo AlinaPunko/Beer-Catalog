@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './searchFilter.scss';
 
-export default class SearchFilter extends React.Component {
+export default class SearchFilter extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = { currentValue: this.props.maxValue };

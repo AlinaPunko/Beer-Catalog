@@ -24,7 +24,6 @@ export default class SideMenu extends React.PureComponent {
                     <li>
                         <Link to="/">
                             <SideMenuItem className="side-menu-item" content="Home" image={home} />
-
                         </Link>
                     </li>
                     <li>

@@ -18,15 +18,15 @@ export default class SearchSection extends React.PureComponent {
         document.addEventListener('keydown', (e) => {
             if (e.code === 'Enter' && document.activeElement === this.fieldRef.current) {
                 e.preventDefault();
+                this.setState({ areSlidersShown: true });
                 this.onChangeHandler();
-                this.setState({ areSlidersShown: !this.state.areSlidersShown });
             }
         });
     }
 
 
     onClickHandler = () => {
-        this.setState({ areSlidersShown: !this.state.areSlidersShown });
+        this.setState({ areSlidersShown: true });
         this.onChangeHandler();
     }
 

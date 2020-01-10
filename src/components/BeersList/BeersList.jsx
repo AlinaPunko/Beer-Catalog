@@ -20,17 +20,16 @@ class BeersList extends React.PureComponent {
             page: 1,
             isLoading: true
         };
+        this.handleScroll = this.handleScroll.bind(this);
     }
 
     componentDidMount() {
         this.loadBeers();
-        window.addEventListener('scroll', () => {
-            this.handleScroll();
-        });
+        window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.scrollListener);
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
     async loadBeers() {

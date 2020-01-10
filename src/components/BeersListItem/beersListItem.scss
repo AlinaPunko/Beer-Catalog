@@ -1,12 +1,12 @@
 .beers-list-item{
-    margin: 5px;
+    margin: 5px auto;
     color: white;
     min-height: 0px;
     display: flex;
     padding: 5px;
     font-family: 'Lucida Sans';
     flex-direction: column;
-    width: 30%;
+    width: 32%;
 }
 
 .beers-list-item__image{
@@ -38,4 +38,7 @@
     padding: 20px 10px 10px 0px;
     text-transform: uppercase;
     color: white;
+    :focus{
+        border: none;
+    }
 }

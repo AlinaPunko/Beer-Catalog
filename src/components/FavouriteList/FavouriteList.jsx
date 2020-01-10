@@ -48,8 +48,12 @@ export default class BeersList extends React.Component {
         const currentBeers = Beers.slice(indexOfFirstBeer, indexOfLastBeer);
         const pageNumbers = [];
 
-        for (let i = 1; i <= Math.ceil(Beers.length / 5); i++) {
-            pageNumbers.push(i);
+        if (this.state.currentPage > 1) {
+            pageNumbers.push(this.state.currentPage - 1);
+        }
+        pageNumbers.push(this.state.currentPage);
+        if (this.state.currentPage < Math.ceil(Beers.length / 5)) {
+            pageNumbers.push(this.state.currentPage + 1);
         }
 
         return (
@@ -59,7 +63,7 @@ export default class BeersList extends React.Component {
                     {currentBeers.map((beer) => (
                         <FavouriteListItem
                             item={beer}
-                            id={beer.id}
+                            key={beer.id}
                             onDelete={this.onDelete}
                         />
                     ))}
@@ -70,6 +74,7 @@ export default class BeersList extends React.Component {
                                 onClick={this.handleClick}
                                 className="paging-panel__item"
                                 id={1}
+                                key={1}
                             >
                                 <li
                                     id={1}
@@ -84,6 +89,7 @@ export default class BeersList extends React.Component {
                                     onClick={this.handleClick}
                                     className="paging-panel__item"
                                     id={number}
+                                    key={number}
                                 >
                                     <li
                                         key={number}
@@ -97,11 +103,12 @@ export default class BeersList extends React.Component {
                                 type="button"
                                 onClick={this.handleClick}
                                 className="paging-panel__item"
-                                id={pageNumbers[pageNumbers.length - 1]}
+                                key={Math.ceil(Beers.length / 5)}
+                                id={Math.ceil(Beers.length / 5)}
                             >
                                 <li
-                                    id={pageNumbers[pageNumbers.length - 1]}
-                                    key={pageNumbers[pageNumbers.length - 1]}
+                                    id={Math.ceil(Beers.length / 5)}
+                                    key={Math.ceil(Beers.length / 5)}
                                 >
                                 &raquo;
                                 </li>

@@ -10,12 +10,13 @@ import FilterType from 'constants/filterType';
 
 import searchIcon from 'styles/icons/search.svg';
 
-export default class SearchSection extends React.Component {
+export default class SearchSection extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = { areSlidersShown: false };
-        document.addEventListener('keydown', (event) => {
-            if (event.code === 'KeyZ' && (event.ctrlKey || event.metaKey)) {
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Enter') {
+                e.preventDefault();
                 this.setState({ areSlidersShown: !this.state.areSlidersShown });
             }
         });

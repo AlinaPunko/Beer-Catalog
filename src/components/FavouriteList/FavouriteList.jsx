@@ -113,26 +113,4 @@ export default class BeersList extends React.Component {
             </div>
         );
     }
-    // return (
-    //     <div>
-    //         <div className="favourite-list__title">Your favourite beers</div>
-    //         { this.state.Beers
-    //         && (
-    //             <div className="favourite-list">
-    //                 {
-    //                     this.state.Beers.map(
-    //                         (beer) => (
-    //                             <FavouriteListItem
-    //                                 item={beer}
-    //                             />
-    //                         ),
-    //                     )
-    //                 }
-    //                 {
-    //                     this.state.Beers.length > 4 && <PagingPanel />
-    //                 }
-    //             </div>
-    //         )}
-    //     </div>
-    // );
 }

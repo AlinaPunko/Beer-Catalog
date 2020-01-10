@@ -13,28 +13,32 @@ import searchIcon from 'styles/icons/search.svg';
 export default class SearchSection extends React.PureComponent {
     constructor(props) {
         super(props);
+        this.fieldRef = React.createRef();
         this.state = { areSlidersShown: false };
         document.addEventListener('keydown', (e) => {
-            if (e.code === 'Enter') {
+            if (e.code === 'Enter' && document.activeElement === this.fieldRef.current) {
                 e.preventDefault();
+                this.onChangeHandler();
                 this.setState({ areSlidersShown: !this.state.areSlidersShown });
             }
         });
     }
 
+
     onClickHandler = () => {
         this.setState({ areSlidersShown: !this.state.areSlidersShown });
+        this.onChangeHandler();
     }
 
-    onChangeHandler = (e) => {
-        this.props.onChange(e.currentTarget.value);
+    onChangeHandler = () => {
+        this.props.onChange(this.fieldRef.current.value);
     }
 
     render() {
         return (
             <div className="search-section">
                 <div className="search-box">
-                    <input type="text" onChange={this.onChangeHandler} placeholder={this.state.areSlidersShown ? 'Punk IPA' : 'Search beers...'} className="search-box__field" />
+                    <input type="text" ref={this.fieldRef} placeholder={this.state.areSlidersShown ? 'Punk IPA' : 'Search beers...'} className="search-box__field" />
                     <button
                         type="button"
                         className="search-box__button"

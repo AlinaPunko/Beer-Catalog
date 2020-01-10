@@ -6,7 +6,7 @@ import FavouriteListItem from 'components/FavouriteListItem/FavouriteListItem';
 
 import './favouriteList.scss';
 
-export default class BeersList extends React.PureComponent {
+export default class BeersList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -21,8 +21,22 @@ export default class BeersList extends React.PureComponent {
     }
 
     handleClick = (event) => {
+        if (this.state.currentPage !== Number(event.target.id)) {
+            this.setState({
+                currentPage: Number(event.target.id)
+            });
+        }
+    }
+
+    onDelete = (item) => {
+        localStorageHelper.deleteItemFromLocalStorage(item);
+        const newBeers = this.state.Beers;
+        const deletedBeer = newBeers.find(
+            (beer) => beer.id === item.id
+        );
+        newBeers.splice(newBeers.indexOf(deletedBeer), 1);
         this.setState({
-            currentPage: Number(event.target.id)
+            Beers: newBeers
         });
     }
 
@@ -32,42 +46,71 @@ export default class BeersList extends React.PureComponent {
         const indexOfLastBeer = currentPage * 5;
         const indexOfFirstBeer = indexOfLastBeer - 5;
         const currentBeers = Beers.slice(indexOfFirstBeer, indexOfLastBeer);
-
-        const renderBeers = currentBeers.map((beer) => {
-            return <FavouriteListItem item={beer} id={beer.id} />;
-        });
-
         const pageNumbers = [];
+
         for (let i = 1; i <= Math.ceil(Beers.length / 5); i++) {
             pageNumbers.push(i);
         }
 
-        const renderPageNumbers = pageNumbers.map((number) => {
-            return (
-                <button
-                    type="button"
-                    onClick={this.handleClick}
-                    className="paging-panel__item"
-                >
-                    <li
-                        key={number}
-                        id={number}
-                    >
-                        {number}
-                    </li>
-                </button>
-            );
-        });
         return (
-            <>
+            <div className="favourite-list">
                 <div className="favourite-list__title">Your favourite beers</div>
-                <div className="favourite-list">
-                    {renderBeers}
-                    <ul className="paging-panel">
-                        {renderPageNumbers}
-                    </ul>
+                <div className="favourite-list__beers">
+                    {currentBeers.map((beer) => (
+                        <FavouriteListItem
+                            item={beer}
+                            id={beer.id}
+                            onDelete={this.onDelete}
+                        />
+                    ))}
+                    {this.state.Beers.length > 5 && (
+                        <ul className="paging-panel">
+                            <button
+                                type="button"
+                                onClick={this.handleClick}
+                                className="paging-panel__item"
+                                id={1}
+                            >
+                                <li
+                                    id={1}
+                                    key={1}
+                                >
+                                &laquo;
+                                </li>
+                            </button>
+                            {pageNumbers.map((number) => (
+                                <button
+                                    type="button"
+                                    onClick={this.handleClick}
+                                    className="paging-panel__item"
+                                    id={number}
+                                >
+                                    <li
+                                        key={number}
+                                        id={number}
+                                    >
+                                        {number}
+                                    </li>
+                                </button>
+                            ))}
+                            <button
+                                type="button"
+                                onClick={this.handleClick}
+                                className="paging-panel__item"
+                                id={pageNumbers[pageNumbers.length - 1]}
+                            >
+                                <li
+                                    id={pageNumbers[pageNumbers.length - 1]}
+                                    key={pageNumbers[pageNumbers.length - 1]}
+                                >
+                                &raquo;
+                                </li>
+                            </button>
+                        </ul>
+                    ) }
+
                 </div>
-            </>
+            </div>
         );
     }
     // return (

@@ -1,6 +1,5 @@
 .favourite-list{
     margin: 0 auto 0 auto;
-    display: flex;
     flex-wrap: wrap;
     width: 50%;
 }
@@ -16,12 +15,13 @@
     display: flex;
     border: 1px grey solid;
     border-radius: 5px;
-    width: auto;
+    width: fit-content;
     color:#106cc8;
     margin: 10px auto 20px 20px;
 }
 
 .paging-panel__item{
+    background-color: transparent;
     padding: 10px;
     border: 1px grey solid;
 }

@@ -1,12 +1,11 @@
 import React from 'react';
 
+import FavouriteListItem from 'components/FavouriteListItem/FavouriteListItem';
 import localStorageHelper from 'helpers/localStorageHelper';
 
-import FavouriteListItem from 'components/FavouriteListItem/FavouriteListItem';
+import './favouritesList.scss';
 
-import './favouriteList.scss';
-
-export default class BeersList extends React.Component {
+export default class FavouritesList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,11 +15,11 @@ export default class BeersList extends React.Component {
     }
 
     async componentDidMount() {
-        const result = await localStorageHelper.getItemsFromLocalStorage();
+        const result = await localStorageHelper.getItems();
         this.setState({ Beers: result });
     }
 
-    handleClick = (event) => {
+    onPageNumberClick = (event) => {
         if (this.state.currentPage !== Number(event.target.id)) {
             this.setState({
                 currentPage: Number(event.target.id)
@@ -29,7 +28,7 @@ export default class BeersList extends React.Component {
     }
 
     onDelete = (item) => {
-        localStorageHelper.deleteItemFromLocalStorage(item);
+        localStorageHelper.deleteItem(item);
         const newBeers = this.state.Beers;
         const deletedBeer = newBeers.find(
             (beer) => beer.id === item.id
@@ -40,6 +39,10 @@ export default class BeersList extends React.Component {
         });
     }
 
+    renderBeers(currentBeers) {
+        return currentBeers.map((beer) => (<FavouriteListItem item={beer} key={beer.id} onDelete={this.onDelete} />));
+    }
+
     render() {
         const { Beers, currentPage } = this.state;
 
@@ -48,71 +51,66 @@ export default class BeersList extends React.Component {
         const currentBeers = Beers.slice(indexOfFirstBeer, indexOfLastBeer);
         const pageNumbers = [];
 
-        if (this.state.currentPage > 1) {
-            pageNumbers.push(this.state.currentPage - 1);
+        if (currentPage > 1) {
+            pageNumbers.push(currentPage - 1);
         }
-        pageNumbers.push(this.state.currentPage);
-        if (this.state.currentPage < Math.ceil(Beers.length / 5)) {
-            pageNumbers.push(this.state.currentPage + 1);
+        pageNumbers.push(currentPage);
+        if (currentPage < Math.ceil(Beers.length / 5)) {
+            pageNumbers.push(currentPage + 1);
         }
 
         return (
             <div className="favourite-list">
                 <div className="favourite-list__title">Your favourite beers</div>
                 <div className="favourite-list__beers">
-                    {currentBeers.map((beer) => (
-                        <FavouriteListItem
-                            item={beer}
-                            key={beer.id}
-                            onDelete={this.onDelete}
-                        />
-                    ))}
+                    {this.renderBeers(currentBeers)}
                     {this.state.Beers.length > 5 && (
                         <ul className="paging-panel">
-                            <button
-                                type="button"
-                                onClick={this.handleClick}
-                                className="paging-panel__item"
+                            <li
                                 id={1}
                                 key={1}
                             >
-                                <li
+                                <button
+                                    type="button"
+                                    onClick={this.onPageNumberClick}
+                                    className="paging-panel__item"
                                     id={1}
                                     key={1}
                                 >
                                 &laquo;
-                                </li>
-                            </button>
+                                </button>
+                            </li>
                             {pageNumbers.map((number) => (
-                                <button
-                                    type="button"
-                                    onClick={this.handleClick}
-                                    className="paging-panel__item"
-                                    id={number}
+
+                                <li
                                     key={number}
+                                    id={number}
                                 >
-                                    <li
-                                        key={number}
+                                    <button
+                                        type="button"
+                                        onClick={this.onPageNumberClick}
+                                        className="paging-panel__item"
                                         id={number}
+                                        key={number}
                                     >
                                         {number}
-                                    </li>
-                                </button>
+                                    </button>
+                                </li>
                             ))}
-                            <button
-                                type="button"
-                                onClick={this.handleClick}
-                                className="paging-panel__item"
-                                key={Math.ceil(Beers.length / 5)}
+                            <li
                                 id={Math.ceil(Beers.length / 5)}
+                                key={Math.ceil(Beers.length / 5)}
                             >
-                                <li
-                                    id={Math.ceil(Beers.length / 5)}
+                                <button
+                                    type="button"
+                                    onClick={this.onPageNumberClick}
+                                    className="paging-panel__item"
                                     key={Math.ceil(Beers.length / 5)}
+                                    id={Math.ceil(Beers.length / 5)}
                                 >
                                 &raquo;
-                                </li>
-                            </button>
+                                </button>
+                            </li>
                         </ul>
                     ) }
 

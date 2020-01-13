@@ -6,11 +6,6 @@ import { createStore } from 'redux';
 import SearchSectionContainer from 'components/SearchSectionContainer/SearchSectionContainer';
 import BeersListContainer from 'components/BeersListContainer/BeersListContainer';
 
-
-import 'styles/reset.scss';
-import 'styles/common.scss';
-
-
 export default class SearchPage extends React.PureComponent {
     constructor() {
         super();

@@ -1,32 +1,34 @@
-function addItemToLocalStorage(item) {
-    let existingEntries = JSON.parse(localStorage.getItem('favouriteBeers'));
+const FAVOURITE_BEERS = 'favouriteBeers';
+
+function add(item) {
+    let existingEntries = JSON.parse(localStorage.getItem(FAVOURITE_BEERS));
     if (existingEntries == null) {
         existingEntries = [];
     }
     existingEntries.unshift(item);
-    localStorage.setItem('favouriteBeers', JSON.stringify(existingEntries));
+    localStorage.setItem(FAVOURITE_BEERS, JSON.stringify(existingEntries));
 }
 
-function getItemsFromLocalStorage() {
-    let existingEntries = JSON.parse(localStorage.getItem('favouriteBeers'));
+function getItems() {
+    const existingEntries = JSON.parse(localStorage.getItem(FAVOURITE_BEERS));
     if (existingEntries == null) {
-        existingEntries = [];
+        return [];
     }
     return existingEntries;
 }
 
-function deleteItemFromLocalStorage(item) {
-    let existingEntries = JSON.parse(localStorage.getItem('favouriteBeers'));
+function deleteItem(item) {
+    const existingEntries = JSON.parse(localStorage.getItem(FAVOURITE_BEERS));
     if (existingEntries == null) {
-        existingEntries = [];
+        return;
     }
-    const theelem = existingEntries.find(
+    const beerToDelete = existingEntries.find(
         (element) => element.id === item.id,
     );
-    existingEntries.splice(existingEntries.indexOf(theelem), 1);
-    localStorage.setItem('favouriteBeers', JSON.stringify(existingEntries));
+    existingEntries.splice(existingEntries.indexOf(beerToDelete), 1);
+    localStorage.setItem(FAVOURITE_BEERS, JSON.stringify(existingEntries));
 }
 
 export default {
-    addItemToLocalStorage, deleteItemFromLocalStorage, getItemsFromLocalStorage,
+    add, deleteItem, getItems
 };

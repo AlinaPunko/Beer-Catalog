@@ -27,13 +27,15 @@
       "arrow-body-style":"off",
       "react/prefer-stateless-function" : 0,
       "comma-dangle":0,
+      "max-len": ["error", {"code": 150}],
       "react/jsx-no-bind": [2, {
         "ignoreDOMComponents": false,
         "ignoreRefs": false,
         "allowArrowFunctions": false,
         "allowFunctions": false,
         "allowBind": false
-      }]
+      }],
+      "react/static-property-placement":0
     },
     "settings": {
       "import/resolver": {

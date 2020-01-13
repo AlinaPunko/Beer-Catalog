@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
+
 import { setFilter } from 'store/actions';
+
 import SearchFilter from 'components/SearchFilter/SearchFilter';
 
 const mapStateToProps = (state) => ({

@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
+
 import { setFilterByName } from 'store/actions';
 import SearchSection from 'components/SearchSection/SearchSection';
 
 const mapStateToProps = (state) => ({
-    name: state.name
+    searchQuery: state.searchQuery
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    onChange: (name) => dispatch(setFilterByName(name))
+    onChange: (searchQuery) => dispatch(setFilterByName(searchQuery))
 });
 
 

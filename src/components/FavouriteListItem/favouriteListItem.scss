@@ -1,6 +1,6 @@
 .favourite-list-item{
     justify-content: space-between;
-    min-height: 0px;
+    min-height: 0;
     width: 100%;
     display: flex;
     margin: 20px;
@@ -27,7 +27,7 @@
 .favourite-list-item__button{
     background-color: transparent;
     border: none;
-    padding: 0px 10px 0px 0px;
+    padding: 0 10px 0 0;
     text-transform: uppercase;
 
 }

@@ -1,36 +1,36 @@
 .side-menu--opened{
-    top: 0;
-    left: 0;
-    position: absolute;
     visibility: visible;
     width: 200px;
     height: 100%;
     transition-property: width, visibility;
     transition-duration: 1s;
     border-right: 1px gray solid;
-    background-color: white;
+    background-color: #ffffff;
 }
 
 .side-menu--closed{
-    top: 0;
-    left: 0;
-    width: 0px;
-    position: absolute;
+    width: 0;
     visibility: hidden;
     transition-property: width, visibility;
     transition-duration: 1s;
+}
+
+.side-menu{
+    top: 0;
+    left: 0;
+    position: absolute;
 }
 
 .side-menu__header{
     font-family: 'Lucida Sans';
     overflow: hidden;
     white-space: nowrap;
-    color: white;
+    color: #ffffff;
     background-color: #106cc8;
     margin-left: 0;
     height: 100px;
 }
 
 .side-menu__text{
-    padding: 20px 0px 0px 10px;
+    padding: 20px 0 0 10px;
 }

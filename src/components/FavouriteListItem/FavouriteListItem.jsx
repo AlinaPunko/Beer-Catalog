@@ -4,6 +4,16 @@ import PropTypes from 'prop-types';
 import './favouriteListItem.scss';
 
 export default class FavouriteListItem extends React.PureComponent {
+static propTypes = {
+    item: PropTypes.shape({
+        image_url: PropTypes.string.isRequired,
+        tagline: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired
+    }).isRequired,
+    onDelete: PropTypes.func.isRequired
+};
+
     onDelete =() => {
         const { onDelete, item } = this.props;
         onDelete(item);
@@ -26,8 +36,3 @@ export default class FavouriteListItem extends React.PureComponent {
         );
     }
 }
-
-FavouriteListItem.propTypes = {
-    item: PropTypes.object.isRequired,
-    onDelete: PropTypes.func.isRequired
-};

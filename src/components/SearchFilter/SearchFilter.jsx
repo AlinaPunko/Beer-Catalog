@@ -4,6 +4,14 @@ import PropTypes from 'prop-types';
 import './searchFilter.scss';
 
 export default class SearchFilter extends React.PureComponent {
+    static propTypes = {
+        type: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        minValue: PropTypes.number.isRequired,
+        maxValue: PropTypes.number.isRequired,
+        onInput: PropTypes.func.isRequired,
+    };
+
     constructor(props) {
         super(props);
         this.state = { currentValue: this.props.maxValue };
@@ -27,12 +35,12 @@ export default class SearchFilter extends React.PureComponent {
         return (
             <div className="search-filter">
                 <div className="search-filter__title">{title}</div>
-                <div className="search-filter__value">{this.state.currentValue}</div>
+                <div className="search-filter__value">{currentValue}</div>
                 <input
                     className="search-filter__range-slider"
                     onChange={this.onInputHandler}
                     type="range"
-                    defaultValue={currentValue}
+                    defaultValue={maxValue}
                     min={minValue}
                     max={maxValue}
                 />
@@ -40,11 +48,3 @@ export default class SearchFilter extends React.PureComponent {
         );
     }
 }
-
-SearchFilter.propTypes = {
-    type: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    minValue: PropTypes.number.isRequired,
-    maxValue: PropTypes.number.isRequired,
-    onInput: PropTypes.func.isRequired,
-};

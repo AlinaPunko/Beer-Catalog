@@ -1,66 +1,64 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './searchSection.scss';
-
-import SearchFilterContainer from 'components/SearchFilterContainer/SearchFilterContainer';
+import FiltersPanel from 'components/FiltersPanel/FiltersPanel';
 import Icon from 'components/Icon/Icon';
-
-import FilterType from 'constants/filterType';
+import keyboardKeyCode from 'constants/keyboardKeyCode';
 
 import searchIcon from 'styles/icons/search.svg';
+import './searchSection.scss';
 
 export default class SearchSection extends React.PureComponent {
+    static propTypes = {
+        onChange: PropTypes.func.isRequired,
+    };
+
     constructor(props) {
         super(props);
-        this.fieldRef = React.createRef();
-        this.state = { areSlidersShown: false };
-        document.addEventListener('keydown', (e) => {
-            if (e.code === 'Enter' && document.activeElement === this.fieldRef.current) {
-                e.preventDefault();
-                this.setState({ areSlidersShown: true });
-                this.onChangeHandler();
-            }
-        });
+        this.inputRef = React.createRef();
+        this.state = { isFiltersPanelShown: false };
+    }
+
+    onInputKeyDown = (e) => {
+        if (e.keyCode === keyboardKeyCode.enter) {
+            e.preventDefault();
+            this.onSearchButtonClick();
+        }
     }
 
 
-    onClickHandler = () => {
-        this.setState({ areSlidersShown: true });
-        this.onChangeHandler();
-    }
-
-    onChangeHandler = () => {
-        this.props.onChange(this.fieldRef.current.value);
+    onSearchButtonClick = () => {
+        this.setState({ isFiltersPanelShown: true });
+        this.props.onChange(this.inputRef.current.value);
     }
 
     render() {
         return (
             <div className="search-section">
                 <div className="search-box">
-                    <input type="text" ref={this.fieldRef} placeholder={this.state.areSlidersShown ? 'Punk IPA' : 'Search beers...'} className="search-box__field" />
+                    <input
+                        type="text"
+                        ref={this.inputRef}
+                        placeholder="Search beers..."
+                        className="search-box__field"
+                        onKeyDown={this.onInputKeyDown}
+                    />
                     <button
                         type="button"
                         className="search-box__button"
-                        onClick={this.onClickHandler}
+                        onClick={this.onSearchButtonClick}
+
                     >
-                        <Icon id={searchIcon.id} viewBox={searchIcon.viewBox} className="search-box__icon" />
+                        <Icon icon={searchIcon} iconClassName="search-box__icon" />
                     </button>
                 </div>
-                { this.state.areSlidersShown
-            && (
-                <>
-                    <SearchFilterContainer type={FilterType.Alcohol} minValue={2} maxValue={14} title="Alcohol by volume" />
-                    <SearchFilterContainer type={FilterType.InternationalBitternessUnits} minValue={0} maxValue={120} title="International bitterness units" />
-                    <SearchFilterContainer type={FilterType.Color} minValue={4} maxValue={80} title="Color by EBC" />
-                </>
-            )}
+                { this.state.isFiltersPanelShown
+                && (
+                    <>
+                        <FiltersPanel />
+                    </>
+                )}
             </div>
         );
     }
 }
-
-
-SearchSection.propTypes = {
-    onChange: PropTypes.func.isRequired,
-};

@@ -3,10 +3,10 @@ import { addBeers } from 'store/actions';
 import BeersList from 'components/BeersList/BeersList';
 
 const getFilteredBeers = (beers, filter) => {
-    return beers.filter((t) => t.abv <= filter.Alcohol
-      && t.ebc <= filter.InternationalBitternessUnits
-      && t.ibu <= filter.Color
-      && t.name.toLowerCase().includes(filter.Name.toLowerCase()));
+    return beers.filter((t) => t.abv <= filter.alcohol
+      && t.ibu <= filter.internationalBitternessUnits
+      && t.ebc <= filter.color
+      && t.name.toLowerCase().includes(filter.searchQuery.toLowerCase()));
 };
 
 const mapStateToProps = (state) => ({

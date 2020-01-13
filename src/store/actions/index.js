@@ -10,7 +10,7 @@ export const setFilter = (filter) => ({
     filter
 });
 
-export const setFilterByName = (name) => ({
+export const setFilterByName = (searchQuery) => ({
     type: actionTypes.SET_FILTER_BY_NAME,
-    name
+    searchQuery
 });

@@ -1,21 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './beersListItem.scss';
-
 import localStorageHelper from 'helpers/localStorageHelper';
 
+import './beersListItem.scss';
+
+
 export default class BeersListItem extends React.PureComponent {
+    static propTypes = {
+        item: PropTypes.object.isRequired,
+    };
+
     constructor(props) {
         super(props);
-        this.state = { isFavourite: props.isFavourite };
+        this.state = { isFavourite: this.isFavourite(this.props.item) };
     }
 
     onClickHandler = () => {
         this.state.isFavourite
-            ? localStorageHelper.deleteItemFromLocalStorage(this.props.item)
-            : localStorageHelper.addItemToLocalStorage(this.props.item);
+            ? localStorageHelper.deleteItem(this.props.item)
+            : localStorageHelper.add(this.props.item);
         this.setState({ isFavourite: !this.state.isFavourite });
+    }
+
+    isFavourite(beer) {
+        if (localStorageHelper.getItems().find(
+            (element) => { return element.id === beer.id; },
+        )
+        ) return true;
+        return false;
     }
 
     render() {
@@ -39,8 +52,3 @@ export default class BeersListItem extends React.PureComponent {
         );
     }
 }
-
-BeersListItem.propTypes = {
-    item: PropTypes.object.isRequired,
-    isFavourite: PropTypes.bool.isRequired,
-};

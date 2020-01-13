@@ -1,8 +1,10 @@
 import actionTypes from 'store/actions/actionTypes';
 
-const filter = (state = {
-    Alcohol: 14, InternationalBitternessUnits: 120, Color: 80, Name: ''
-}, action) => {
+const defaultState = {
+    alcohol: 14, internationalBitternessUnits: 120, color: 80, searchQuery: ''
+};
+
+const filter = (state = defaultState, action) => {
     switch (action.type) {
     case actionTypes.SET_FILTER:
     {
@@ -15,7 +17,7 @@ const filter = (state = {
     {
         return {
             ...state,
-            Name: action.name
+            searchQuery: action.searchQuery
         };
     }
     default:

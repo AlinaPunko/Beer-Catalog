@@ -1,5 +1,7 @@
-const Alcohol = 'Alcohol';
-const InternationalBitternessUnits = 'InternationalBitternessUnits';
-const Color = 'Color';
+const filterType = {
+    alcohol: 'alcohol',
+    internationalBitternessUnits: 'internationalBitternessUnits',
+    color: 'color'
+};
 
-export default { Alcohol, InternationalBitternessUnits, Color };
+export default filterType;

@@ -1,7 +1,7 @@
 .beers-list-item{
     margin: 5px auto;
     color: white;
-    min-height: 0px;
+    min-height:0;
     display: flex;
     padding: 5px;
     font-family: 'Lucida Sans';
@@ -10,14 +10,14 @@
 }
 
 .beers-list-item__image{
-    margin: 0px auto 0px auto;
+    margin: 0 auto;
     width: auto;
     height: 140px;
 }
 
 .beers-list-item__title{
     font-size: 26px;
-    padding: 10px 0px 10px 0px;
+    padding: 10px 0;
 }
 
 .beers-list-item__tagline{

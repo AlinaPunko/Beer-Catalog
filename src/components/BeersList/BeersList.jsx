@@ -2,18 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import localStorageHelper from 'helpers/localStorageHelper';
 import services from 'services/services';
-
 import BeersListItem from 'components/BeersListItem/BeersListItem';
+import Icon from 'components/Icon/Icon';
 
 import preloader from 'styles/icons/preloader.svg';
-
-import Icon from 'components/Icon/Icon';
 
 import './beersList.scss';
 
 class BeersList extends React.PureComponent {
+    static propTypes = {
+        beers: PropTypes.array.isRequired,
+        addBeers: PropTypes.func.isRequired
+    };
+
     constructor(props) {
         super(props);
         this.state = {
@@ -24,7 +26,7 @@ class BeersList extends React.PureComponent {
     }
 
     componentDidMount() {
-        this.loadBeers();
+        this.loadBeers(1);
         window.addEventListener('scroll', this.handleScroll);
     }
 
@@ -32,9 +34,8 @@ class BeersList extends React.PureComponent {
         window.removeEventListener('scroll', this.handleScroll);
     }
 
-    async loadBeers() {
-        const { page } = this.state;
-        const result = await services.getBeersByPage(page);
+    async loadBeers(page) {
+        const result = await services.getPage(page);
         this.props.addBeers(result);
         this.setState({ isLoading: false });
     }
@@ -49,21 +50,14 @@ class BeersList extends React.PureComponent {
     }
 
     loadMore() {
-        this.setState({ isLoading: true });
-        this.setState(
-            (prevState) => ({
-                page: prevState.page + 1,
-            }),
-            this.loadBeers,
-        );
+        this.setState({ isLoading: true, page: this.state.page + 1 });
+        this.loadBeers(this.state.page);
     }
 
-    isFavourite(beer) {
-        if (localStorageHelper.getItemsFromLocalStorage().find(
-            (element) => { return element.id === beer.id; },
-        )
-        ) return true;
-        return false;
+    renderBeers() {
+        return this.props.beers.map((beer) => {
+            return (<BeersListItem item={beer} key={beer.id} />);
+        });
     }
 
     render() {
@@ -71,23 +65,12 @@ class BeersList extends React.PureComponent {
             <>
                 <div className="beers-list">
                     {
-                        this.props.beers.map(
-                            (beer) => {
-                                const isFavourite = this.isFavourite(beer);
-                                return (
-                                    <BeersListItem
-                                        item={beer}
-                                        key={beer.id}
-                                        isFavourite={isFavourite}
-                                    />
-                                );
-                            },
-                        )
+                        this.renderBeers()
                     }
                 </div>
                 {this.state.isLoading && (
                     <div className="beers-list__preloader">
-                        <Icon className="beers-list__preloader-icon" id={preloader.id} viewBox={preloader.viewBox} />
+                        <Icon iconClassName="beers-list__preloader-icon" icon={preloader} />
                     </div>
                 )}
             </>
@@ -96,8 +79,3 @@ class BeersList extends React.PureComponent {
 }
 
 export default connect()(BeersList);
-
-BeersList.propTypes = {
-    beers: PropTypes.array.isRequired,
-    addBeers: PropTypes.func.isRequired
-};

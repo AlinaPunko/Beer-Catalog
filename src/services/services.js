@@ -1,5 +1,6 @@
 import api from 'helpers/requestHelper';
 import BeerShortInfo from 'models/beerShortInfoModel';
+import BeerInfo from 'models/beerInfoModel';
 
 async function getAll() {
     const beers = await api.get('https:api.punkapi.com/v2/beers?per_page=80');
@@ -9,7 +10,7 @@ async function getAll() {
 
 async function getByID(id) {
     const beers = await api.get(`https://api.punkapi.com/v2/beers${id}`);
-    return JSON.parse(beers);
+    return new BeerInfo(JSON.parse(beers));
 }
 
 export default {

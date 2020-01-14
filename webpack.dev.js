@@ -31,8 +31,5 @@ module.exports = merge(common, {
             template: require('html-webpack-template'),
             bodyHtmlSnippet: '<main class="main" id="app"></main>',
         }),
-        // new StylelintPlugin({
-        //     configFile: './.stylelintrc'
-        // })
     ],
 });

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import rootReducer from 'store/reducers/rootReducer';
 import { createStore } from 'redux';
 
-import SearchSectionContainer from 'components/SearchSectionContainer/SearchSectionContainer';
+import SearchSection from 'components/SearchSection/SearchSection';
 import BeersListContainer from 'components/BeersListContainer/BeersListContainer';
+import rootReducer from 'store/reducers/rootReducer';
 
 export default class SearchPage extends React.PureComponent {
     constructor() {
@@ -15,7 +15,7 @@ export default class SearchPage extends React.PureComponent {
     render() {
         return (
             <Provider store={this.store}>
-                <SearchSectionContainer />
+                <SearchSection />
                 <BeersListContainer />
             </Provider>
         );

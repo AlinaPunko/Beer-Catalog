@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import Icon from 'components/Icon/Icon';
 
-import './sideMenuItem.scss';
+import './sideMenuLink.scss';
 
-export default class SideMenuItem extends React.PureComponent {
+export default class SideMenuLink extends React.PureComponent {
     static propTypes = {
         icon: PropTypes.object.isRequired,
         text: PropTypes.string.isRequired,
@@ -14,9 +14,9 @@ export default class SideMenuItem extends React.PureComponent {
     render() {
         const { icon, text } = this.props;
         return (
-            <div className="side-menu-item">
-                <Icon icon={icon} iconClassName="side-menu-item__icon" />
-                <div className="side-menu-item__text">{text}</div>
+            <div className="side-menu-link">
+                <Icon icon={icon} iconClassName="side-menu-link__icon" />
+                <div className="side-menu-link__text">{text}</div>
             </div>
         );
     }

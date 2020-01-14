@@ -18,10 +18,11 @@ export default class SearchFilter extends React.PureComponent {
     }
 
     onInputHandler = (e) => {
-        this.setState({ currentValue: e.currentTarget.value });
+        const currentValue = e.currentTarget.value;
+        this.setState({ currentValue });
         const filter = {
             type: this.props.type,
-            value: e.currentTarget.value
+            value: currentValue
         };
         this.props.onInput(filter);
     }

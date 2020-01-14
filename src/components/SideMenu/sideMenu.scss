@@ -1,36 +1,34 @@
-.side-menu--opened{
-    visibility: visible;
+.side-menu--opened {
     width: 200px;
     height: 100%;
-    transition-property: width, visibility;
-    transition-duration: 1s;
-    border-right: 1px gray solid;
     background-color: #ffffff;
+    border-right: 1px #808080 solid;
+    visibility: visible;
+    transition-duration: 1s;
+    transition-property: width, visibility;
 }
 
-.side-menu--closed{
+.side-menu--closed {
     width: 0;
     visibility: hidden;
-    transition-property: width, visibility;
     transition-duration: 1s;
+    transition-property: width, visibility;
 }
 
-.side-menu{
+.side-menu {
+    position: absolute;
     top: 0;
     left: 0;
-    position: absolute;
 }
 
-.side-menu__header{
-    font-family: 'Lucida Sans';
-    overflow: hidden;
-    white-space: nowrap;
-    color: #ffffff;
-    background-color: #106cc8;
-    margin-left: 0;
+.side-menu__header {
     height: 100px;
+    margin-left: 0;
+    padding: 20px 0 0 10px;
+    overflow: hidden;
+    color: #ffffff;
+    font-family: 'Lucida Sans', sans-serif;
+    white-space: nowrap;
+    background-color: #106cc8;
 }
 
-.side-menu__text{
-    padding: 20px 0 0 10px;
-}

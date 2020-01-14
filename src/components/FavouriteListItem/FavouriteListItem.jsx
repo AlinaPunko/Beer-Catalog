@@ -25,7 +25,7 @@ static propTypes = {
             <div className="favourite-list-item">
                 <div>
                     <div className="favourite-list-item__title">{item.name}</div>
-                    <a href="#" className="favourite-list-item__tagline">{item.tagline}</a>
+                    <div className="favourite-list-item__tagline">{item.tagline}</div>
                     <div className="favourite-list-item__description">{item.description}</div>
                     <button type="button" className="favourite-list-item__button">Open</button>
                     <button type="button" className="favourite-list-item__button" onClick={this.onDelete}>Remove favourite</button>

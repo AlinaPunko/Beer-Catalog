@@ -1,29 +1,6 @@
-.search-section{
-    display:flex;
-    flex-direction: column;
-    margin: 10px auto 10px auto;
-    width: 30%;
-}
-
-.search-box{
+.search-section {
     display: flex;
-    width: 70%;
-    margin: 10px auto ;
-}
-
-.search-box__field{
-    width: 100%;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-}
-
-.search-box__button{
-    background-color: transparent;
-    border: none;
-}
-
-.search-box__icon{
-    width: 20px;
-    height: 20px;
+    flex-direction: column;
+    width: 30%;
+    margin: 10px auto 10px auto;
 }

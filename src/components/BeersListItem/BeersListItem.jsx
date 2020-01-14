@@ -8,7 +8,12 @@ import './beersListItem.scss';
 
 export default class BeersListItem extends React.PureComponent {
     static propTypes = {
-        item: PropTypes.object.isRequired,
+        item: PropTypes.shape({
+            image_url: PropTypes.string.isRequired,
+            tagline: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired
+        }).isRequired
     };
 
     constructor(props) {
@@ -16,7 +21,7 @@ export default class BeersListItem extends React.PureComponent {
         this.state = { isFavourite: this.isFavourite(this.props.item) };
     }
 
-    onClickHandler = () => {
+    toggleFavouriteState = () => {
         this.state.isFavourite
             ? localStorageHelper.deleteItem(this.props.item)
             : localStorageHelper.add(this.props.item);
@@ -38,12 +43,12 @@ export default class BeersListItem extends React.PureComponent {
                 <img alt="Beer" src={item.image_url} className="beers-list-item__image" />
                 <div className="beers-list-item__information">
                     <div className="beers-list-item__title">{item.name}</div>
-                    <a className="beers-list-item__tagline">{item.tagline}</a>
+                    <div className="beers-list-item__tagline">{item.tagline}</div>
                     <button type="button" className="beers-list-item__button">Open</button>
                     <button
                         type="button"
                         className="beers-list-item__button"
-                        onClick={this.onClickHandler}
+                        onClick={this.toggleFavouriteState}
                     >
                         {this.state.isFavourite ? 'Remove favourite' : 'Favourite'}
                     </button>

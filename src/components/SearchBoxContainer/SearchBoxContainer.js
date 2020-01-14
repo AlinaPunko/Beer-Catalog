@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { setFilterByName } from 'store/actions';
-import SearchSection from 'components/SearchSection/SearchSection';
+import SearchBox from 'components/SearchBox/SearchBox';
 
 const mapStateToProps = (state) => ({
     searchQuery: state.searchQuery
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(
     mapStateToProps, mapDispatchToProps
-)(SearchSection);
+)(SearchBox);

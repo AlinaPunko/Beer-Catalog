@@ -5,7 +5,7 @@ import localStorageHelper from 'helpers/localStorageHelper';
 
 import './favouritesList.scss';
 
-export default class FavouritesList extends React.Component {
+export default class FavouritesList extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {

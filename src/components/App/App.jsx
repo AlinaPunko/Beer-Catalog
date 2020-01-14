@@ -27,7 +27,7 @@ export default class App extends React.PureComponent {
             <Router>
                 <div className="App">
                     <Header openFunction={this.openMenu} />
-                    <SideMenu showMenu={this.state.showMenu} />
+                    <SideMenu showMenu={this.state.showMenu} closeFunction={this.closeMenu} />
                     <Route
                         exact
                         path="/"

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './favouriteListItem.scss';
 
-export default class FavouriteListItem extends React.PureComponent {
+export default class FavouriteListItem extends React.Component {
 static propTypes = {
     item: PropTypes.shape({
         image_url: PropTypes.string.isRequired,

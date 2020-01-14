@@ -9,7 +9,7 @@ import './beersListItem.scss';
 export default class BeersListItem extends React.PureComponent {
     static propTypes = {
         item: PropTypes.shape({
-            image_url: PropTypes.string.isRequired,
+            imageUrl: PropTypes.string.isRequired,
             tagline: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired,
             description: PropTypes.string.isRequired
@@ -40,7 +40,7 @@ export default class BeersListItem extends React.PureComponent {
         const { item } = this.props;
         return (
             <div className="beers-list-item">
-                <img alt="Beer" src={item.image_url} className="beers-list-item__image" />
+                <img alt="Beer" src={item.imageUrl} className="beers-list-item__image" />
                 <div className="beers-list-item__information">
                     <div className="beers-list-item__title">{item.name}</div>
                     <div className="beers-list-item__tagline">{item.tagline}</div>

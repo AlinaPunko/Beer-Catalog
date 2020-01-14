@@ -72,7 +72,7 @@ export default class FavouritesList extends React.Component {
                                 <PagingPanel
                                     pageNumbers={pageNumbers}
                                     onPageNumberClick={this.onPageNumberClick}
-                                    contentArrayLength={this.state.Beers.length}
+                                    collectionLength={this.state.Beers.length}
                                 />
                             )
                     }

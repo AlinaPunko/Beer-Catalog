@@ -6,7 +6,7 @@ import './favouriteListItem.scss';
 export default class FavouriteListItem extends React.Component {
 static propTypes = {
     item: PropTypes.shape({
-        image_url: PropTypes.string.isRequired,
+        imageUrl: PropTypes.string.isRequired,
         tagline: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired
@@ -30,7 +30,7 @@ static propTypes = {
                     <button type="button" className="favourite-list-item__button">Open</button>
                     <button type="button" className="favourite-list-item__button" onClick={this.onDelete}>Remove favourite</button>
                 </div>
-                <img alt="Item_image" className="favourite-list-item__image" src={item.image_url} />
+                <img alt="Item_image" className="favourite-list-item__image" src={item.imageUrl} />
 
             </div>
         );

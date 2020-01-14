@@ -20,12 +20,9 @@ export default class SearchSection extends React.PureComponent {
         return (
             <div className="search-section">
                 <SearchBoxContainer openFiltersPanel={this.openFiltersPanel} />
-
                 { this.state.isFiltersPanelShown
                 && (
-                    <>
-                        <FiltersPanel />
-                    </>
+                    <FiltersPanel />
                 )}
             </div>
         );

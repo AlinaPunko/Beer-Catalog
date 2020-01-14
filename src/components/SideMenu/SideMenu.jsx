@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+
 import SideMenuLink from 'components/SideMenuLink/SideMenuLink';
 
 import favourite from 'styles/icons/favourite.svg';
@@ -15,10 +16,15 @@ export default class SideMenu extends React.PureComponent {
     };
 
     render() {
+        let menuClass = 'side-menu';
+        if (this.props.showMenu) {
+            menuClass += ' side-menu--opened';
+        } else menuClass += ' side-menu--closed';
+
         return (
-            <div className={this.props.showMenu ? 'side-menu side-menu--opened' : 'side-menu side-menu--closed'} onClick={this.props.closeFunction}>
+            <div className={menuClass} onClick={this.props.closeFunction}>
                 <div className="side-menu__header">
-                      Beer Catalog
+                        Beer Catalog
                 </div>
                 <ul className="side-menu__links">
                     <li>

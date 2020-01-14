@@ -1,18 +1,28 @@
+$trasitionDuration: 1s;
+
 .side-menu--opened {
     width: 200px;
     height: 100%;
     background-color: #ffffff;
     border-right: 1px #808080 solid;
     visibility: visible;
-    transition-duration: 1s;
+    transition-duration: $trasitionDuration;
     transition-property: width, visibility;
 }
 
 .side-menu--closed {
     width: 0;
     visibility: hidden;
-    transition-duration: 1s;
+    transition-duration: $trasitionDuration;
     transition-property: width, visibility;
+
+    .side-menu__header {
+        padding-left: 0;
+    }
+
+    .side-menu__links {
+        padding-left: 0;
+    }
 }
 
 .side-menu {
@@ -23,12 +33,18 @@
 
 .side-menu__header {
     height: 100px;
-    margin-left: 0;
     padding: 20px 0 0 10px;
     overflow: hidden;
     color: #ffffff;
     font-family: 'Lucida Sans', sans-serif;
     white-space: nowrap;
     background-color: #106cc8;
+    transition-duration: $trasitionDuration;
+    transition-property: padding;
 }
 
+.side-menu__links {
+    padding-left: 10px;
+    transition-duration: $trasitionDuration;
+    transition-property: padding;
+}

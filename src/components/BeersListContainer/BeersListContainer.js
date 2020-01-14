@@ -3,9 +3,9 @@ import { addBeers } from 'store/actions';
 import BeersList from 'components/BeersList/BeersList';
 
 const getFilteredBeers = (beers, filter) => {
-    return beers.filter((beer) => beer.abv <= filter.alcohol
-      && beer.ibu <= filter.internationalBitternessUnits
-      && beer.ebc <= filter.color
+    return beers.filter((beer) => beer.alcohol <= filter.alcohol
+      && beer.internationalBitternessUnits <= filter.internationalBitternessUnits
+      && beer.color <= filter.color
       && beer.name.toLowerCase().includes(filter.searchQuery.toLowerCase()));
 };
 

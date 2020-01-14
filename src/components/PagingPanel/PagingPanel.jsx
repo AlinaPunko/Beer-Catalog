@@ -7,7 +7,7 @@ export default class PagingPanel extends React.Component {
     static propTypes = {
         onPageNumberClick: PropTypes.func.isRequired,
         pageNumbers: PropTypes.array.isRequired,
-        contentArrayLength: PropTypes.number.isRequired
+        collectionLength: PropTypes.number.isRequired
     };
 
     renderPagingPanel(pageNumbers) {
@@ -31,7 +31,7 @@ export default class PagingPanel extends React.Component {
     }
 
     render() {
-        const { pageNumbers, onPageNumberClick, contentArrayLength } = this.props;
+        const { pageNumbers, onPageNumberClick, collectionLength } = this.props;
         return (
             <ul className="paging-panel">
                 <li
@@ -50,15 +50,15 @@ export default class PagingPanel extends React.Component {
                 </li>
                 {this.renderPagingPanel(pageNumbers)}
                 <li
-                    id={Math.ceil(contentArrayLength / 5)}
-                    key={Math.ceil(contentArrayLength / 5)}
+                    id={Math.ceil(collectionLength / 5)}
+                    key={Math.ceil(collectionLength / 5)}
                 >
                     <button
                         type="button"
                         onClick={onPageNumberClick}
                         className="paging-panel__item"
-                        key={Math.ceil(contentArrayLength / 5)}
-                        id={Math.ceil(contentArrayLength / 5)}
+                        key={Math.ceil(collectionLength / 5)}
+                        id={Math.ceil(collectionLength / 5)}
                     >
                                 &raquo;
                     </button>

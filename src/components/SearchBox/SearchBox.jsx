@@ -22,8 +22,8 @@ export default class SearchBox extends React.Component {
         if (e.keyCode === keyboardKeyCode.enter) {
             e.preventDefault();
             this.props.openFiltersPanel();
+            this.props.onChange(this.inputRef.current.value);
         }
-        this.props.onChange(this.inputRef.current.value);
     }
 
     onSearchButtonClick = () => {

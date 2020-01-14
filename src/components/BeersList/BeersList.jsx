@@ -18,15 +18,17 @@ class BeersList extends React.PureComponent {
 
     constructor(props) {
         super(props);
+        this.beerPerPage = 12;
         this.state = {
             page: 1,
-            isLoading: true
+            isLoading: true,
+            renderedBeers: this.beerPerPage
         };
         this.handleScroll = this.handleScroll.bind(this);
     }
 
     componentDidMount() {
-        this.loadBeers(1);
+        this.loadBeers();
         window.addEventListener('scroll', this.handleScroll);
     }
 
@@ -34,8 +36,8 @@ class BeersList extends React.PureComponent {
         window.removeEventListener('scroll', this.handleScroll);
     }
 
-    async loadBeers(page) {
-        const result = await services.getPage(page);
+    async loadBeers() {
+        const result = await services.getAll();
         this.props.addBeers(result);
         this.setState({ isLoading: false });
     }
@@ -47,15 +49,16 @@ class BeersList extends React.PureComponent {
         if (pageOffset > lastBeerOffset) {
             this.loadMore();
         }
+        this.setState({ isLoading: false });
     }
 
     loadMore() {
-        this.setState({ isLoading: true, page: this.state.page + 1 });
-        this.loadBeers(this.state.page);
+        this.setState({ isLoading: true, page: this.state.page + 1, renderedBeers: this.state.renderedBeers + this.beerPerPage });
     }
 
     renderBeers() {
-        return this.props.beers.map((beer) => {
+        const displayedBeers = this.props.beers.slice(0, this.state.renderedBeers);
+        return displayedBeers.map((beer) => {
             return (<BeersListItem item={beer} key={beer.id} />);
         });
     }

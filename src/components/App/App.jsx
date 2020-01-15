@@ -5,6 +5,9 @@ import Header from 'components/Header/Header';
 import SideMenu from 'components/SideMenu/SideMenu';
 import SearchPage from 'components/SearchPage/SearchPage';
 import FavouritesList from 'components/FavouritesList/FavouritesList';
+import BeerDetailsPage from 'components/BeerDetailsPage/BeerDetailsPage';
+
+import services from 'services/services';
 
 export default class App extends React.PureComponent {
     constructor(props) {
@@ -12,6 +15,10 @@ export default class App extends React.PureComponent {
         this.state = {
             showMenu: false
         };
+    }
+
+    async componentDidMount() {
+        this.setState({ beer: await services.getByID(1) });
     }
 
     openMenu = () => {
@@ -37,6 +44,11 @@ export default class App extends React.PureComponent {
                         exact
                         path="/favourites"
                         component={FavouritesList}
+                    />
+                    <Route
+                        exact
+                        path="/details"
+                        component={() => { return <BeerDetailsPage beer={this.state.beer} />; }}
                     />
                 </div>
             </Router>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import localStorageHelper from 'helpers/localStorageHelper';
 
@@ -44,7 +45,9 @@ export default class BeersListItem extends React.PureComponent {
                 <div className="beers-list-item__information">
                     <div className="beers-list-item__title">{item.name}</div>
                     <div className="beers-list-item__tagline">{item.tagline}</div>
-                    <button type="button" className="beers-list-item__button">Open</button>
+                    <Link to="/details">
+                        <button type="button" className="beers-list-item__button">Open</button>
+                    </Link>
                     <button
                         type="button"
                         className="beers-list-item__button"

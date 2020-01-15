@@ -1,0 +1,36 @@
+.beer-details-header {
+    display: flex;
+    justify-content: space-between;
+    min-height: 0;
+    margin: 0 auto 0 auto;
+    padding: 10px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.beer-details-header__title {
+    font-size: 26px;
+}
+
+.beer-details-header__tagline {
+    padding: 10px 0;
+    color: #808080;
+    font-size: 12px;
+}
+
+.beer-details-header__description {
+    width: 90%;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.beer-details-header__button {
+    padding: 10px;
+    text-transform: uppercase;
+    background-color: #106cc8;
+    border: none;
+}
+
+.beer-details-header__image {
+    width: auto;
+    height: 250px;
+}

@@ -1,0 +1,23 @@
+.brewing-ingredients-block {
+    width: 50%;
+}
+
+.brewing-ingredients-block__title {
+    margin: 10px 0;
+    font-size: 25px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.brewing-ingredients-block__subtitle {
+    margin: 5px 0;
+    font-size: 20px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.brewing-ingredients-block__water,
+.brewing-ingredients-block__malt,
+.brewing-ingredients-block__hops,
+.brewing-ingredients-block__yeast {
+    font-size: 16px;
+    font-family: 'Lucida Sans', sans-serif;
+}

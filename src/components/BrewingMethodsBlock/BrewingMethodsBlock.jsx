@@ -18,8 +18,9 @@ export default class BrewingMethodsBlock extends React.Component {
     }
 
     getFermentationValue = (fermentationInfo) => {
+        let i = 0;
         return (
-            <p>
+            <p key={i++}>
                 Perform at
                 {' '}
                 {fermentationInfo.temp.value}
@@ -30,9 +31,10 @@ export default class BrewingMethodsBlock extends React.Component {
     }
 
     getMashValue = (mashInfo) => {
+        let i = 0;
         return mashInfo.map((item) => {
             return (
-                <p>
+                <p key={i++}>
                     {item.duration}
                     {' '}
                     minutes at

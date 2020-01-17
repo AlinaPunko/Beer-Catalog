@@ -14,10 +14,19 @@
     font-family: 'Lucida Sans', sans-serif;
 }
 
-.brewing-ingredients-block__water,
-.brewing-ingredients-block__malt,
-.brewing-ingredients-block__hops,
-.brewing-ingredients-block__yeast {
+.brewing-ingredients-block__water-value,
+.brewing-ingredients-block__malt-list,
+.brewing-ingredients-block__hops-list,
+.brewing-ingredients-block__yeast-value {
     font-size: 16px;
     font-family: 'Lucida Sans', sans-serif;
+}
+
+.brewing-ingredients-block__ingredient {
+    padding: 10px;
+    border: 1px #a0a0a0 solid;
+}
+
+.brewing-ingredients-block__ingredient:not(:first-child) {
+    border-top: none;
 }

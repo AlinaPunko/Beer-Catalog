@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const StylelintPlugin = require('stylelint-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
@@ -29,7 +28,7 @@ module.exports = merge(common, {
             title: 'Beer Catalog',
             inject: false,
             template: require('html-webpack-template'),
-            bodyHtmlSnippet: '<main class="main" id="app"></main>',
+            bodyHtmlSnippet: '<main class="main" id="app"></main><script src="./js/main.js"></script>',
         }),
     ],
 });

@@ -9,9 +9,10 @@ module.exports = {
     output: {
         filename: 'js/main.js',
         path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
     },
     devServer: {
-        historyApiFallback: true
+        historyApiFallback: true,
     },
     module: {
         rules: [{

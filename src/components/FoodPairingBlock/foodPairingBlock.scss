@@ -1,0 +1,26 @@
+.food-pairing-block__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.food-pairing-block__list-item {
+    padding: 20px;
+    font-size: 14px;
+    font-family: 'Lucida Sans', sans-serif;
+    border: 1px #8a8a8a solid;
+}
+
+.food-pairing-block__list-item:not(:first-child) {
+    border-top: none;
+}
+
+.food-pairing-block__title {
+    margin: 10px auto;
+    font-size: 30px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.food-pairing-block {
+    width: 45%;
+    margin: 0 auto 0 40px;
+}

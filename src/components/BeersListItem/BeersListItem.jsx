@@ -10,6 +10,7 @@ import './beersListItem.scss';
 export default class BeersListItem extends React.PureComponent {
     static propTypes = {
         item: PropTypes.shape({
+            id: PropTypes.number.isRequired,
             imageUrl: PropTypes.string.isRequired,
             tagline: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired,
@@ -45,7 +46,7 @@ export default class BeersListItem extends React.PureComponent {
                 <div className="beers-list-item__information">
                     <div className="beers-list-item__title">{item.name}</div>
                     <div className="beers-list-item__tagline">{item.tagline}</div>
-                    <Link to="/details">
+                    <Link to={`/details/${item.id}`}>
                         <button type="button" className="beers-list-item__button">Open</button>
                     </Link>
                     <button

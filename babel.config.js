@@ -4,13 +4,13 @@ const presets = [
         {
             targets: 'defaults',
             useBuiltIns: 'entry',
-            corejs: 3,
-        },
+            corejs: 3
+        }
     ],
-    '@babel/preset-react',
+    '@babel/preset-react'
 ];
 
 const plugins = [
-    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-proposal-class-properties'
 ];
 module.exports = { presets, plugins };

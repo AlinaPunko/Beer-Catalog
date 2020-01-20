@@ -1,7 +1,6 @@
 .favourite-list-item {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     min-height: 0;
     margin: 20px;
     padding: 10px;
@@ -35,4 +34,5 @@
 .favourite-list-item__image {
     width: auto;
     height: 150px;
+    margin: auto;
 }

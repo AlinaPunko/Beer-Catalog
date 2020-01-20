@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+
+import OpenDetailsPageButton from 'components/OpenDetailsPageButton/OpenDetailsPageButton';
 
 import './favouriteListItem.scss';
 
 export default class FavouriteListItem extends React.Component {
 static propTypes = {
-    item: PropTypes.shape({
+    beer: PropTypes.shape({
         id: PropTypes.number.isRequired,
         imageUrl: PropTypes.string.isRequired,
         tagline: PropTypes.string.isRequired,
@@ -17,24 +18,23 @@ static propTypes = {
 };
 
     onDelete =() => {
-        const { onDelete, item } = this.props;
-        onDelete(item);
+        const { onDelete } = this.props;
+        onDelete(this.props.beer);
     }
 
     render() {
-        const { item } = this.props;
+        const { beer } = this.props;
+
         return (
             <div className="favourite-list-item">
                 <div>
-                    <div className="favourite-list-item__title">{item.name}</div>
-                    <div className="favourite-list-item__tagline">{item.tagline}</div>
-                    <div className="favourite-list-item__description">{item.description}</div>
-                    <Link to={`/details/${item.id}`}>
-                        <button type="button" className="favourite-list-item__button">Open</button>
-                    </Link>
+                    <div className="favourite-list-item__title">{beer.name}</div>
+                    <div className="favourite-list-item__tagline">{beer.tagline}</div>
+                    <div className="favourite-list-item__description">{beer.description}</div>
+                    <OpenDetailsPageButton beerID={beer.id} parentElement="FavouriteListItem" />
                     <button type="button" className="favourite-list-item__button" onClick={this.onDelete}>Remove favourite</button>
                 </div>
-                <img alt="Item_image" className="favourite-list-item__image" src={item.imageUrl} />
+                <img alt="Item_image" className="favourite-list-item__image" src={beer.imageUrl} />
 
             </div>
         );

@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import FavouriteButton from 'components/FavouriteButton/FavouriteButton';
 import localStorageHelper from 'helpers/localStorageHelper';
+import favouriteItemHelper from 'helpers/favouriteItemHelper';
 
 import './beerDetailsHeader.scss';
 
 export default class BeerDetailsHeader extends React.Component {
     static propTypes = {
-        item: PropTypes.shape({
+        beer: PropTypes.shape({
             id: PropTypes.number.isRequired,
             imageUrl: PropTypes.string.isRequired,
             tagline: PropTypes.string.isRequired,
@@ -18,42 +20,30 @@ export default class BeerDetailsHeader extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { isFavourite: this.isFavourite(this.props.item) };
+        this.state = { isFavourite: favouriteItemHelper.isFavourite(this.props.beer) };
     }
 
     onFavouriteButtonClick = () => {
-        const { item } = this.props;
+        const { beer } = this.props;
+
         this.state.isFavourite
-            ? localStorageHelper.deleteItem(item)
-            : localStorageHelper.add(item);
+            ? localStorageHelper.deleteItem(beer)
+            : localStorageHelper.add(beer);
         this.setState({ isFavourite: !this.state.isFavourite });
     }
 
-    isFavourite(beer) {
-        if (localStorageHelper.getItems().find(
-            (element) => { return element.id === beer.id; },
-        )
-        ) return true;
-        return false;
-    }
-
     render() {
-        const { item } = this.props;
+        const { beer } = this.props;
+
         return (
             <section className="beer-details-header">
                 <div className="beer-details-header__content">
-                    <h1 className="beer-details-header__title">{item.name}</h1>
-                    <div className="beer-details-header__tagline">{item.tagline}</div>
-                    <button
-                        type="button"
-                        className="beer-details-header__button"
-                        onClick={this.onFavouriteButtonClick}
-                    >
-                        {this.state.isFavourite ? 'Remove favourite' : 'Add to favourites'}
-                    </button>
-                    <p className="beer-details-header__description">{item.description}</p>
+                    <h1 className="beer-details-header__title">{beer.name}</h1>
+                    <div className="beer-details-header__tagline">{beer.tagline}</div>
+                    <FavouriteButton beer={beer} parentElement="BeerDetailsHeader" />
+                    <p className="beer-details-header__description">{beer.description}</p>
                 </div>
-                <img alt="Item_image" className="beer-details-header__image" src={item.imageUrl} />
+                <img alt="Item_image" className="beer-details-header__image" src={beer.imageUrl} />
             </section>
         );
     }

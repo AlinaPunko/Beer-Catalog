@@ -1,17 +1,17 @@
+@import 'styles/mixins.scss';
+
 .beer-property-item {
-    border: 1px #8a8a8a solid;
-}
+    @include list-item-border;
 
-.beer-property-item:not(:first-child) {
-    border-top: none;
-}
-
-.beer-property-item__property {
     position: relative;
     display: flex;
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
+}
+
+.beer-property-item:not(:first-child) {
+    @include no-top-border;
 }
 
 .beer-property-item__acronym {
@@ -31,7 +31,6 @@
     font-family: 'Lucida Sans', sans-serif;
     text-align: center;
     background-color: #8a8a8a;
-    border: 1px #8a8a8a solid;
     border-radius: 20px;
 }
 

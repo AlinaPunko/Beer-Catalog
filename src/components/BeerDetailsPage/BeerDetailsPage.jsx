@@ -1,17 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import BeerPropertiesBlock from 'components/BeerPropertiesBlock/BeerPropertiesBlock';
-import FoodPairingBlock from 'components/FoodPairingBlock/FoodPairingBlock';
+import BeerProperties from 'components/BeerProperties/BeerProperties';
+import FoodPairing from 'components/FoodPairing/FoodPairing';
 import BeerDetailsHeader from 'components/BeerDetailsHeader/BeerDetailsHeader';
 import BrewingSection from 'components/BrewingSection/BrewingSection';
-import services from 'services/services';
+import beerService from 'services/beerService';
 
 import './beerDetailsPage.scss';
 
 export default class BeerDetailsPage extends React.Component {
     static propTypes={
-        match: PropTypes.object.isRequired
+        match: PropTypes.shape({
+            path: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
+            isExact: PropTypes.bool.isRequired,
+            params: PropTypes.shape({
+                id: PropTypes.string.isRequired
+            }).isRequired
+        }).isRequired
     }
 
     constructor(props) {
@@ -21,25 +28,27 @@ export default class BeerDetailsPage extends React.Component {
     }
 
     async getBeer(id) {
-        const result = await services.getByID(id);
+        const result = await beerService.getByID(id);
         await this.setState({ beer: result });
     }
 
     render() {
         const { beer } = this.state;
+
         if (!beer) {
             return null;
         }
+
         return (
             <div className="beer-details-page">
-                <BeerDetailsHeader item={beer} />
+                <BeerDetailsHeader beer={beer} />
                 <section className="beer-details-page__properties-food-pairing">
-                    <BeerPropertiesBlock
+                    <BeerProperties
                         beerColor={beer.color}
                         beerAlcohol={beer.alcohol}
                         beerBitterness={beer.internationalBitternessUnits}
                     />
-                    <FoodPairingBlock foodPairingList={beer.foodPairing} />
+                    <FoodPairing foodPairingList={beer.foodPairing} />
                 </section>
                 <BrewingSection brewerTips={beer.brewerTips} ingredients={beer.ingredients} method={beer.method} />
             </div>

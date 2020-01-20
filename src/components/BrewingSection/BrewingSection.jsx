@@ -22,6 +22,7 @@ export default class BrewingSection extends React.PureComponent {
 
     render() {
         const { brewerTips, ingredients, method } = this.props;
+
         return (
             <section className="brewing-section">
                 <h1 className="brewing-section__title">Brewing</h1>

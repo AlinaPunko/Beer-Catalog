@@ -4,7 +4,7 @@ const sliderValue = {
     minInternationalBitternessUnitsValue: 0,
     maxInternationalBitternessUnitsValue: 120,
     minColorValue: 4,
-    maxColorValue: 80,
+    maxColorValue: 80
 };
 
 export default sliderValue;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './brewingMethodsBlock.scss';
 
-export default class BrewingMethodsBlock extends React.Component {
+export default class BrewingMethodsBlock extends React.PureComponent {
     static propTypes={
         method: PropTypes.shape({
             mash_temp: PropTypes.array.isRequired,
@@ -17,58 +17,38 @@ export default class BrewingMethodsBlock extends React.Component {
         }).isRequired
     }
 
-    getFermentationValue = (fermentationInfo) => {
-        let i = 0;
-        return (
-            <p key={i++}>
-                Perform at
-                {' '}
-                {fermentationInfo.temp.value}
-                °
-                {fermentationInfo.temp.unit === 'celsius' ? 'C' : 'F'}
-            </p>
-        );
-    }
+    render() {
+        const { method } = this.props;
 
-    getMashValue = (mashInfo) => {
-        let i = 0;
-        return mashInfo.map((item) => {
+        const mashValues = method.mash_temp.map((item, index) => {
             return (
-                <p key={i++}>
-                    {item.duration}
-                    {' '}
-                    minutes at
-                    {' '}
-                    {item.temp.value}
-                    °
-                    {item.temp.unit === 'celsius' ? 'C' : 'F'}
+                <p key={index}>
+                    {item.duration} minutes at {item.temp.value}° {item.temp.unit === 'celsius' ? 'C' : 'F'}
                 </p>
             );
         });
-    }
 
-
-    render() {
-        const { method } = this.props;
         return (
             <div className="brewing-method-block">
-                <h1 className="brewing-method-block__title">Method</h1>
+                <h2 className="brewing-method-block__title">Method</h2>
                 <div>
                     <h3 className="brewing-method-block__subtitle">Mash</h3>
-                    <div className="brewing-method-block__mash">
-                        {this.getMashValue(method.mash_temp)}
+                    <div className="brewing-method-block__values">
+                        { mashValues}
                     </div>
                     <h3 className="brewing-method-block__subtitle">Fermentation</h3>
-                    <div className="brewing-method-block__fermentation">
-                        {this.getFermentationValue(method.fermentation)}
+                    <div className="brewing-method-block__values">
+                        <p>
+                             Perform at {method.fermentation.temp.value}° {method.fermentation.temp.unit === 'celsius' ? 'C' : 'F'}
+                        </p>
                     </div>
                     {method.twist && (
-                        <>
+                        <div>
                             <h3 className="brewing-method-block__subtitle">Twist</h3>
-                            <p className="brewing-method-block__twist">
+                            <p className="brewing-method-block__values">
                                 {method.twist}
                             </p>
-                        </>
+                        </div>
                     )}
                 </div>
             </div>

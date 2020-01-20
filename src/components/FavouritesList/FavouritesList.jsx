@@ -41,7 +41,7 @@ export default class FavouritesList extends React.Component {
     }
 
     renderBeers(currentBeers) {
-        return currentBeers.map((beer) => (<FavouriteListItem item={beer} key={beer.id} onDelete={this.onDelete} />));
+        return currentBeers.map((beer) => (<FavouriteListItem beer={beer} key={beer.id} onDelete={this.onDelete} />));
     }
 
 

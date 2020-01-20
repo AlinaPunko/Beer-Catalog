@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import services from 'services/services';
+import beerService from 'services/beerService';
 import BeersListItem from 'components/BeersListItem/BeersListItem';
 import Icon from 'components/Icon/Icon';
 
@@ -37,7 +37,7 @@ class BeersList extends React.PureComponent {
     }
 
     async loadBeers() {
-        const result = await services.getAll();
+        const result = await beerService.getAll();
         this.props.addBeers(result);
         this.setState({ isLoading: false });
     }
@@ -59,7 +59,7 @@ class BeersList extends React.PureComponent {
     renderBeers() {
         const displayedBeers = this.props.beers.slice(0, this.state.renderedBeers);
         return displayedBeers.map((beer) => {
-            return (<BeersListItem item={beer} key={beer.id} />);
+            return (<BeersListItem beer={beer} key={beer.id} />);
         });
     }
 

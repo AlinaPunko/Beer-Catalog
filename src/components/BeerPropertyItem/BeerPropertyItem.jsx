@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 import Icon from 'components/Icon/Icon';
+import Tooltip from 'components/Tooltip/Tooltip';
 
 import './beerPropertyItem.scss';
 import infoIcon from 'styles/icons/info.svg';
@@ -10,9 +10,9 @@ import infoIcon from 'styles/icons/info.svg';
 
 export default class BeerPropertyItem extends React.PureComponent {
     static propTypes={
-        propertyAcronym: PropTypes.string.isRequired,
-        propertyName: PropTypes.string.isRequired,
-        propertyValue: PropTypes.number.isRequired
+        acronym: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        value: PropTypes.number.isRequired
     }
 
     constructor(props) {
@@ -25,25 +25,17 @@ export default class BeerPropertyItem extends React.PureComponent {
     }
 
     render() {
-        const { propertyAcronym, propertyName, propertyValue } = this.props;
-        const tooltipClass = classNames({
-            'beer-property_item__name--visible': this.state.isTooltipVisible,
-            'beer-property_item__name--hidden': !this.state.isTooltipVisible
-        });
+        const { acronym, name, value } = this.props;
         return (
-            <li className="beer-property-item">
-                <div className="beer-property-item__property">
-                    <span className="beer-property-item__acronym">
-                        {propertyAcronym}
-                    </span>
-                    <div onMouseOver={this.toggleTooltipVisibility} onMouseOut={this.toggleTooltipVisibility}>
-                        <Icon icon={infoIcon} iconClassName="beer-property-item__info-icon" />
-                    </div>
-                    <span className={tooltipClass}>
-                        {propertyName}
-                    </span>
-                    <span className="beer-property-item__property-value">{propertyValue}</span>
+            <li className="beer-property-item beer-property-item__property">
+                <span className="beer-property-item__acronym">
+                    {acronym}
+                </span>
+                <div onMouseOver={this.toggleTooltipVisibility} onMouseOut={this.toggleTooltipVisibility}>
+                    <Icon icon={infoIcon} iconClassName="beer-property-item__info-icon" />
                 </div>
+                <Tooltip text={name} isShown={this.state.isTooltipVisible} />
+                <span className="beer-property-item__property-value">{value}</span>
             </li>
 
         );

@@ -1,3 +1,5 @@
+@import 'styles/mixins.scss';
+
 .brewing-ingredients-block {
     width: 50%;
 }
@@ -11,22 +13,16 @@
 .brewing-ingredients-block__subtitle {
     margin: 5px 0;
     font-size: 20px;
-    font-family: 'Lucida Sans', sans-serif;
 }
 
-.brewing-ingredients-block__water-value,
-.brewing-ingredients-block__malt-list,
-.brewing-ingredients-block__hops-list,
-.brewing-ingredients-block__yeast-value {
+.brewing-ingredients-block__ingredient {
+    @include list-item-border;
+
+    padding: 10px;
     font-size: 16px;
     font-family: 'Lucida Sans', sans-serif;
 }
 
-.brewing-ingredients-block__ingredient {
-    padding: 10px;
-    border: 1px #a0a0a0 solid;
-}
-
 .brewing-ingredients-block__ingredient:not(:first-child) {
-    border-top: none;
+    @include no-top-border;
 }

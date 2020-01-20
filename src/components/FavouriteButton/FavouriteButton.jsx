@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
-import OpenDetailsPageButton from 'components/OpenDetailsPageButton/OpenDetailsPageButton';
-import FavouriteButton from 'components/FavouriteButton/FavouriteButton';
 import localStorageHelper from 'helpers/localStorageHelper';
 import favouriteItemHelper from 'helpers/favouriteItemHelper';
 
-import './beersListItem.scss';
+import './favouriteButton.scss';
 
-
-export default class BeersListItem extends React.PureComponent {
+export default class FavouriteButton extends React.PureComponent {
     static propTypes = {
         beer: PropTypes.shape({
             id: PropTypes.number.isRequired,
@@ -17,8 +15,9 @@ export default class BeersListItem extends React.PureComponent {
             tagline: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired,
             description: PropTypes.string.isRequired
-        }).isRequired
-    };
+        }).isRequired,
+        parentElement: PropTypes.string.isRequired
+    }
 
     constructor(props) {
         super(props);
@@ -33,17 +32,19 @@ export default class BeersListItem extends React.PureComponent {
     }
 
     render() {
-        const { beer } = this.props;
+        const { parentElement } = this.props;
+        const buttonClass = classnames('favourite-button', {
+            'favourite-button--on-beers-list': parentElement === 'BeersListItem',
+            'favourite-button--on-beer-details-header': parentElement === 'BeerDetailsHeader'
+        });
         return (
-            <div className="beers-list-item">
-                <img alt="Beer" src={beer.imageUrl} className="beers-list-item__image" />
-                <div className="beers-list-item__information">
-                    <div className="beers-list-item__title">{beer.name}</div>
-                    <div className="beers-list-item__tagline">{beer.tagline}</div>
-                    <OpenDetailsPageButton beerID={beer.id} parentElement="BeersListItem" />
-                    <FavouriteButton beer={beer} parentElement="BeersListItem" />
-                </div>
-            </div>
+            <button
+                type="button"
+                className={buttonClass}
+                onClick={this.toggleFavouriteState}
+            >
+                {this.state.isFavourite ? 'Remove favourite' : 'Favourite'}
+            </button>
         );
     }
 }

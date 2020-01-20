@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from 'components/Icon/Icon';
+import Icon from 'components/common/Icon/Icon';
 
 import './sideMenuLink.scss';
 
 export default class SideMenuLink extends React.PureComponent {
     static propTypes = {
         icon: PropTypes.object.isRequired,
-        text: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired
     };
 
     render() {

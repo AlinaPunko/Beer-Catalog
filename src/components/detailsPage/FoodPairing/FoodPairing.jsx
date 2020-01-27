@@ -22,7 +22,7 @@ export default class FoodPairing extends React.PureComponent {
 
         return (
             <div className="food-pairing-block">
-                <h1 className="food-pairing-block__title">Food Pairing</h1>
+                <h2 className="food-pairing-block__title">Food Pairing</h2>
                 <ul className="food-pairing-block__list">
                     {renderedFoodPairings}
                 </ul>

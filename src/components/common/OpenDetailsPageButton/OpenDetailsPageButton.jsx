@@ -3,21 +3,18 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import getParametrisedURL from 'helpers/routeURLHelper';
+import getParametrisedURL from 'helpers/urlHelper';
 import './openDetailsPageButton.scss';
 
 export default class OpenDetailsPageButton extends React.PureComponent {
     static propTypes = {
         beerID: PropTypes.number.isRequired,
-        parentElement: PropTypes.string.isRequired
+        className: PropTypes.string.isRequired
     }
 
     render() {
-        const { beerID, parentElement } = this.props;
-        const buttonClass = classnames('open-details-page-button', {
-            'open-details-page-button--on-beers-list': parentElement === 'BeersListItem',
-            'open-details-page-button--on-favourites-list': parentElement === 'FavouriteListItems'
-        });
+        const { beerID, className } = this.props;
+        const buttonClass = classnames('open-details-page-button', className);
         return (
             <Link to={getParametrisedURL('/details', beerID)}>
                 <button type="button" className={buttonClass}>Open</button>

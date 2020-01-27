@@ -16,7 +16,7 @@ export default class FavouriteButton extends React.PureComponent {
             name: PropTypes.string.isRequired,
             description: PropTypes.string.isRequired
         }).isRequired,
-        parentElement: PropTypes.string.isRequired
+        className: PropTypes.string.isRequired
     }
 
     constructor(props) {
@@ -32,11 +32,7 @@ export default class FavouriteButton extends React.PureComponent {
     }
 
     render() {
-        const { parentElement } = this.props;
-        const buttonClass = classnames('favourite-button', {
-            'favourite-button--on-beers-list': parentElement === 'BeersListItem',
-            'favourite-button--on-beer-details-header': parentElement === 'BeerDetailsHeader'
-        });
+        const buttonClass = classnames('favourite-button', this.props.className);
         return (
             <button
                 type="button"

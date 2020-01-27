@@ -1,14 +1,14 @@
-.beer-properties-block__list {
+.beer-properties__list {
     display: flex;
     flex-direction: column;
 }
 
-.beer-properties-block__title {
+.beer-properties__title {
     margin: 10px auto;
     font-size: 30px;
     font-family: 'Lucida Sans', sans-serif;
 }
 
-.beer-properties-block {
+.beer-properties {
     width: 40%;
 }

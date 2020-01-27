@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './brewingMethodsBlock.scss';
+import './brewingMethods.scss';
 
-export default class BrewingMethodsBlock extends React.PureComponent {
+export default class BrewingMethods extends React.PureComponent {
     static propTypes={
         method: PropTypes.shape({
             mash_temp: PropTypes.array.isRequired,
@@ -29,26 +29,22 @@ export default class BrewingMethodsBlock extends React.PureComponent {
         });
 
         return (
-            <div className="brewing-method-block">
-                <h2 className="brewing-method-block__title">Method</h2>
+            <div className="brewing-method">
+                <h2 className="brewing-method__title">Method</h2>
                 <div>
-                    <h3 className="brewing-method-block__subtitle">Mash</h3>
-                    <div className="brewing-method-block__values">
-                        { mashValues}
-                    </div>
-                    <h3 className="brewing-method-block__subtitle">Fermentation</h3>
-                    <div className="brewing-method-block__values">
-                        <p>
+                    <h3 className="brewing-method__subtitle">Mash</h3>
+                    {mashValues}
+                    <h3 className="brewing-method__subtitle">Fermentation</h3>
+                    <p>
                              Perform at {method.fermentation.temp.value}° {method.fermentation.temp.unit === 'celsius' ? 'C' : 'F'}
-                        </p>
-                    </div>
+                    </p>
                     {method.twist && (
-                        <div>
-                            <h3 className="brewing-method-block__subtitle">Twist</h3>
-                            <p className="brewing-method-block__values">
+                        <>
+                            <h3 className="brewing-method__subtitle">Twist</h3>
+                            <p className="brewing-method__values">
                                 {method.twist}
                             </p>
-                        </div>
+                        </>
                     )}
                 </div>
             </div>

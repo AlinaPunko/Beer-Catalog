@@ -13,10 +13,6 @@
     font-family: 'Lucida Sans', sans-serif;
 }
 
-.food-pairing-block__list-item:not(:first-child) {
-    @include no-top-border;
-}
-
 .food-pairing-block__title {
     margin: 10px auto;
     font-size: 30px;

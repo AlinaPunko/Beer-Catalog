@@ -4,10 +4,7 @@ function isFavourite(beer) {
     const favouriteBeer = localStorageHelper.getItems().find(
         (element) => element.id === beer.id
     );
-    if (favouriteBeer) {
-        return true;
-    }
-    return false;
+    return !!(favouriteBeer);
 }
 
 export default { isFavourite };

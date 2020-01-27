@@ -40,7 +40,7 @@ export default class BeerDetailsHeader extends React.Component {
                 <div className="beer-details-header__content">
                     <h1 className="beer-details-header__title">{beer.name}</h1>
                     <div className="beer-details-header__tagline">{beer.tagline}</div>
-                    <FavouriteButton beer={beer} parentElement="BeerDetailsHeader" />
+                    <FavouriteButton beer={beer} className="favourite-button--on-beer-details-header" />
                     <p className="beer-details-header__description">{beer.description}</p>
                 </div>
                 <img alt="Item_image" className="beer-details-header__image" src={beer.imageUrl} />

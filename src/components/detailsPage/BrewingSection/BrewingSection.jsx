@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import BrewingIngredientsBlock from 'components/detailsPage/BrewingIngredientsBlock/BrewingIngredientsBlock';
-import BrewingMethodsBlock from 'components/detailsPage/BrewingMethodsBlock/BrewingMethodsBlock';
+import BrewingIngredients from 'components/detailsPage/BrewingIngredients/BrewingIngredients';
+import BrewingMethods from 'components/detailsPage/BrewingMethods/BrewingMethods';
 
 import './brewingSection.scss';
 
@@ -25,11 +25,11 @@ export default class BrewingSection extends React.PureComponent {
 
         return (
             <section className="brewing-section">
-                <h1 className="brewing-section__title">Brewing</h1>
+                <h2 className="brewing-section__title">Brewing</h2>
                 <p className="brewing-section__brewing-tips">{brewerTips}</p>
                 <div className="brewing-section__ingredients-method">
-                    <BrewingIngredientsBlock ingredients={ingredients} />
-                    <BrewingMethodsBlock method={method} />
+                    <BrewingIngredients ingredients={ingredients} />
+                    <BrewingMethods method={method} />
                 </div>
             </section>
         );

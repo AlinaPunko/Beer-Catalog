@@ -1,28 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+
+import Icon from 'components/common/Icon/Icon';
 
 import './tooltip.scss';
+import infoIcon from 'styles/icons/info.svg';
 
 export default class Tooptip extends React.PureComponent {
     static propTypes = {
-        text: PropTypes.string.isRequired,
-        isShown: PropTypes.bool.isRequired
+        text: PropTypes.string.isRequired
+    }
+
+    constructor(props) {
+        super(props);
+        this.state = { isTooltipVisible: false };
+    }
+
+    toggleTooltipVisibility = () => {
+        this.setState({ isTooltipVisible: !this.state.isTooltipVisible });
     }
 
     render() {
-        const { text, isShown } = this.props;
-
-        const tooltipClass = classnames('tooltip',
-            {
-                'tooltip--visible': isShown,
-                'tooltip--hidden': !isShown
-            });
+        const { text } = this.props;
 
         return (
-            <span className={tooltipClass}>
-                {text}
-            </span>
+            <div onMouseOver={this.toggleTooltipVisibility} onMouseOut={this.toggleTooltipVisibility} className="tooltip">
+                <Icon icon={infoIcon} iconClassName="tooltip__icon" />
+                {this.state.isTooltipVisible
+                && (
+                    <span className="tooltip__text">
+                        {text}
+                    </span>
+                )}
+            </div>
+
         );
     }
 }

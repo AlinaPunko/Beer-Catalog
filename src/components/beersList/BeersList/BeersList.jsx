@@ -53,14 +53,17 @@ class BeersList extends React.PureComponent {
     }
 
     loadMore() {
-        this.setState({ isLoading: true, page: this.state.page + 1, renderedBeers: this.state.renderedBeers + this.beerPerPage });
+        const { page, renderedBeers } = this.state;
+        this.setState({
+            isLoading: true,
+            page: page + 1,
+            renderedBeers: renderedBeers + this.beerPerPage
+        });
     }
 
     renderBeers() {
         const displayedBeers = this.props.beers.slice(0, this.state.renderedBeers);
-        return displayedBeers.map((beer) => {
-            return (<BeersListItem beer={beer} key={beer.id} />);
-        });
+        return displayedBeers.map((beer) => (<BeersListItem beer={beer} key={beer.id} />));
     }
 
     render() {

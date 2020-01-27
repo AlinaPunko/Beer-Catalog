@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './brewingIngredientsBlock.scss';
+import './brewingIngredients.scss';
 
-export default class BrewingIngredientsBlock extends React.PureComponent {
+export default class BrewingIngredients extends React.PureComponent {
     static propTypes = {
         ingredients: PropTypes.shape({
             malt: PropTypes.array.isRequired,
@@ -33,33 +33,32 @@ export default class BrewingIngredientsBlock extends React.PureComponent {
         });
 
         return (
-            <div className="brewing-ingredients-block">
-                <h2 className="brewing-ingredients-block__title">Ingredients</h2>
-                <div className="brewing-ingredients-block__characteristics">
+            <div className="brewing-ingredients">
+                <h2 className="brewing-ingredients__title">Ingredients</h2>
+                <div className="brewing-ingredients__characteristics">
                     {ingredients.water
                     && (
-                        <div className="brewing-ingredients-block__ingredient">
-                            <h3 className="brewing-ingredients-block__subtitle">Water</h3>
+                        <div className="brewing-ingredients__ingredient">
+                            <h3 className="brewing-ingredients__subtitle">Water</h3>
                             <p>
-                                {ingredients.water}
-                                liters
+                                {ingredients.water} liters
                             </p>
                         </div>
                     )}
-                    <div className="brewing-ingredients-block__ingredient brewing-ingredients-block__value">
-                        <h3 className="brewing-ingredients-block__subtitle">Malt</h3>
+                    <div className="brewing-ingredients__ingredient brewing-ingredients__value">
+                        <h3 className="brewing-ingredients__subtitle">Malt</h3>
                         <ul>
                             {maltValues}
                         </ul>
                     </div>
-                    <div className="brewing-ingredients-block__ingredient">
-                        <h3 className="brewing-ingredients-block__subtitle">Hops</h3>
+                    <div className="brewing-ingredients__ingredient">
+                        <h3 className="brewing-ingredients__subtitle">Hops</h3>
                         <ul>
                             {hopsValues}
                         </ul>
                     </div>
-                    <div className="brewing-ingredients-block__ingredient">
-                        <h3 className="brewing-ingredients-block__subtitle">Yeast</h3>
+                    <div className="brewing-ingredients__ingredient">
+                        <h3 className="brewing-ingredients__subtitle">Yeast</h3>
                         <p>
                             {ingredients.yeast}
                         </p>

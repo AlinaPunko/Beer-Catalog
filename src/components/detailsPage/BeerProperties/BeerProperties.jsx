@@ -16,9 +16,9 @@ export default class BeerProperties extends React.PureComponent {
         const { beerColor, beerBitterness, beerAlcohol } = this.props;
 
         return (
-            <div className="beer-properties-block">
-                <h1 className="beer-properties-block__title">Properties</h1>
-                <ul className="beer-properties-block__list">
+            <div className="beer-properties">
+                <h2 className="beer-properties__title">Properties</h2>
+                <ul className="beer-properties__list">
                     <BeerPropertyItem acronym="ABV" name="Alcohol by volume" value={beerColor} />
                     <BeerPropertyItem acronym="IBU" name="International bitterness units" value={beerBitterness} />
                     <BeerPropertyItem acronym="EBC" name="Color by EBC" value={beerAlcohol} />

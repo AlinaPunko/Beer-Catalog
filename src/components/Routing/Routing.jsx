@@ -1,10 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import SearchPage from 'components/search/SearchPage/SearchPage';
-import FavouritesList from 'components/favouritesPage/FavouritesList/FavouritesList';
-import BeerDetailsPage from 'components/detailsPage/BeerDetailsPage/BeerDetailsPage';
-import routeURL from 'constants/routeURL';
+import routeURL from 'constants/routing';
 
 export default class Routing extends React.Component {
     render() {
@@ -12,18 +9,18 @@ export default class Routing extends React.Component {
             <>
                 <Route
                     exact
-                    path={routeURL.routeURL.searchPageURL}
-                    component={SearchPage}
+                    path={routeURL.searchPage.url}
+                    component={routeURL.searchPage.component}
                 />
                 <Route
                     exact
-                    path={routeURL.routeURL.favouritePageURL}
-                    component={FavouritesList}
+                    path={routeURL.favouritesList.url}
+                    component={routeURL.favouritesList.component}
                 />
                 <Route
                     exact
-                    path={routeURL.routeURL.beerDetailsPageURL}
-                    component={BeerDetailsPage}
+                    path={routeURL.beerDetailsPage.url}
+                    component={routeURL.beerDetailsPage.component}
                 />
             </>
         );

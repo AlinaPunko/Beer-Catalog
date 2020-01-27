@@ -31,7 +31,7 @@ static propTypes = {
                     <div className="favourite-list-item__title">{beer.name}</div>
                     <div className="favourite-list-item__tagline">{beer.tagline}</div>
                     <div className="favourite-list-item__description">{beer.description}</div>
-                    <OpenDetailsPageButton beerID={beer.id} parentElement="FavouriteListItem" />
+                    <OpenDetailsPageButton beerID={beer.id} className="open-details-page-button--on-favourite-list" />
                     <button type="button" className="favourite-list-item__button" onClick={this.onDelete}>Remove favourite</button>
                 </div>
                 <img alt="Item_image" className="favourite-list-item__image" src={beer.imageUrl} />

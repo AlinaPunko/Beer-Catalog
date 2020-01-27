@@ -10,10 +10,6 @@
     padding: 10px;
 }
 
-.beer-property-item:not(:first-child) {
-    @include no-top-border;
-}
-
 .beer-property-item__acronym {
     width: 10%;
     margin: auto 0;
@@ -32,21 +28,4 @@
     text-align: center;
     background-color: #8a8a8a;
     border-radius: 20px;
-}
-
-.beer-property-item__info-icon {
-    width: 20px;
-    height: 20px;
-    margin: auto 10px;
-}
-
-.beer-property_item__name--visible {
-    display: inline;
-    margin: auto 0;
-    font-family: 'Lucida Sans', sans-serif;
-    border-bottom: 1px #8a8a8a solid;
-}
-
-.beer-property_item__name--hidden {
-    display: none;
 }

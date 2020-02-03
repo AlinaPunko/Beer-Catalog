@@ -24,7 +24,8 @@
     font-size: 14px;
 }
 
-.favourite-list-item__button {
+.favourite-list-item__remove-favourite-button,
+.favourite-list-item__open-details-page-button {
     padding: 0 10px 0 0;
     text-transform: uppercase;
     background-color: transparent;

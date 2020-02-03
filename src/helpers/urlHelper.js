@@ -1,3 +1,5 @@
-export default function getParametrisedURL(url, parameter) {
-    return `${url}/${parameter}`;
+function getUrlWithParameter(url, pattern, parameter) {
+    return url.replace(pattern, parameter);
 }
+
+export default { getUrlWithParameter };

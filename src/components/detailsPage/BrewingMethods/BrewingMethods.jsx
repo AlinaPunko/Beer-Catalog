@@ -29,19 +29,19 @@ export default class BrewingMethods extends React.PureComponent {
         });
 
         return (
-            <div className="brewing-method">
-                <h2 className="brewing-method__title">Method</h2>
+            <div className="brewing-methods">
+                <h2 className="brewing-methods__title">Method</h2>
                 <div>
-                    <h3 className="brewing-method__subtitle">Mash</h3>
+                    <h3 className="brewing-methods__subtitle">Mash</h3>
                     {mashValues}
-                    <h3 className="brewing-method__subtitle">Fermentation</h3>
+                    <h3 className="brewing-methods__subtitle">Fermentation</h3>
                     <p>
                              Perform at {method.fermentation.temp.value}° {method.fermentation.temp.unit === 'celsius' ? 'C' : 'F'}
                     </p>
                     {method.twist && (
                         <>
-                            <h3 className="brewing-method__subtitle">Twist</h3>
-                            <p className="brewing-method__values">
+                            <h3 className="brewing-methods__method-subtitle">Twist</h3>
+                            <p className="brewing-methods__method-values">
                                 {method.twist}
                             </p>
                         </>

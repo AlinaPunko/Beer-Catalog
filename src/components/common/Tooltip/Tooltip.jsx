@@ -6,7 +6,7 @@ import Icon from 'components/common/Icon/Icon';
 import './tooltip.scss';
 import infoIcon from 'styles/icons/info.svg';
 
-export default class Tooptip extends React.PureComponent {
+export default class Tooltip extends React.PureComponent {
     static propTypes = {
         text: PropTypes.string.isRequired
     }

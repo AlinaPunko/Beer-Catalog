@@ -1,14 +1,10 @@
 .favourite-button {
-    padding: 10px;
-    color: #ffffff;
+    padding: 20px 10px 10px 0;
     text-transform: uppercase;
-    border: none;
-}
-
-.favourite-button--on-beers-list {
     background-color: transparent;
-}
+    border: none;
 
-.favourite-button--on-beer-details-header {
-    background-color: #106cc8;
+    :focus {
+        border: none;
+    }
 }

@@ -1,15 +1,17 @@
-.brewing-method {
+.brewing-methods {
     width: 40%;
     font-size: 16px;
     font-family: 'Lucida Sans', sans-serif;
 }
 
-.brewing-method__title {
+.brewing-methods__title,
+.brewing-methods__method-title {
     margin: 10px 0;
     font-size: 25px;
 }
 
-.brewing-method__subtitle {
+.brewing-methods__subtitle,
+.brewing-methods__method-subtitle {
     margin: 5px 0;
     font-size: 20px;
 }

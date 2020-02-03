@@ -32,14 +32,7 @@
     background-color: #808080;
 }
 
-.beers-list-item__button {
-    padding: 20px 10px 10px 0;
+.beers-list-item__open-details-page-button,
+.beers-list-item__favourite-button {
     color: #ffffff;
-    text-transform: uppercase;
-    background-color: transparent;
-    border: none;
-
-    :focus {
-        border: none;
-    }
 }

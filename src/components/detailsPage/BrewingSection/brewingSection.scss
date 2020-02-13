@@ -1,0 +1,19 @@
+.brewing-section {
+    width: 80%;
+}
+
+.brewing-section__title {
+    margin: 10px auto;
+    font-size: 30px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.brewing-section__brewing-tips {
+    font-size: 16px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.brewing-section__ingredients-method {
+    display: flex;
+    justify-content: space-between;
+}

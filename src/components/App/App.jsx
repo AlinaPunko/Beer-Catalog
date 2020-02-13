@@ -1,10 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import Header from 'components/Header/Header';
 import SideMenu from 'components/SideMenu/SideMenu';
-import SearchPage from 'components/SearchPage/SearchPage';
-import FavouritesList from 'components/FavouritesList/FavouritesList';
+import Routing from 'components/Routing/Routing';
 
 export default class App extends React.PureComponent {
     constructor(props) {
@@ -28,16 +27,7 @@ export default class App extends React.PureComponent {
                 <div className="App">
                     <Header openFunction={this.openMenu} />
                     <SideMenu showMenu={this.state.showMenu} closeFunction={this.closeMenu} />
-                    <Route
-                        exact
-                        path="/"
-                        component={SearchPage}
-                    />
-                    <Route
-                        exact
-                        path="/favourites"
-                        component={FavouritesList}
-                    />
+                    <Routing />
                 </div>
             </Router>
         );

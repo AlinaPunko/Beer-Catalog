@@ -1,0 +1,31 @@
+@import 'styles/mixins.scss';
+
+.beer-property-item {
+    @include list-item-border;
+
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+}
+
+.beer-property-item__acronym {
+    width: 10%;
+    margin: auto 0;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.beer-property-item__property-value {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 7%;
+    padding: 7px;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Lucida Sans', sans-serif;
+    text-align: center;
+    background-color: #8a8a8a;
+    border-radius: 20px;
+}

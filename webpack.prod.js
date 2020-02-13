@@ -11,14 +11,14 @@ module.exports = merge(common, {
             use: [
                 MiniCssExtractPlugin.loader,
                 'css-loader',
-                'sass-loader',
-            ],
-        }],
+                'sass-loader'
+            ]
+        }]
     },
     plugins: [
         new CleanWebpackPlugin(['dist/css', 'dist/js']),
         new MiniCssExtractPlugin({
-            filename: 'css/[name].css',
-        }),
-    ],
+            filename: 'css/[name].css'
+        })
+    ]
 });

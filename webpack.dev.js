@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const StylelintPlugin = require('stylelint-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
@@ -9,19 +8,19 @@ module.exports = merge(common, {
     devtool: 'source-map',
     devServer: {
         contentBase: './dist',
-        hot: true,
+        hot: true
     },
     module: {
         rules: [{
             test: /\.scss$/,
             use: [{
-                loader: 'style-loader',
+                loader: 'style-loader'
             }, {
-                loader: 'css-loader',
+                loader: 'css-loader'
             }, {
-                loader: 'sass-loader',
-            }],
-        }],
+                loader: 'sass-loader'
+            }]
+        }]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
@@ -29,7 +28,7 @@ module.exports = merge(common, {
             title: 'Beer Catalog',
             inject: false,
             template: require('html-webpack-template'),
-            bodyHtmlSnippet: '<main class="main" id="app"></main>',
-        }),
-    ],
+            bodyHtmlSnippet: '<main class="main" id="app"></main>'
+        })
+    ]
 });

@@ -8,5 +8,5 @@ import 'styles/index.scss';
 
 Reactdom.render(
     <App />,
-    document.getElementById('app'),
+    document.getElementById('app')
 );

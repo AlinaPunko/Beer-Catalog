@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from 'components/Icon/Icon';
+import Icon from 'components/common/Icon/Icon';
 
 import './header.scss';
 import menu from 'styles/icons/menu.svg';
@@ -10,7 +10,7 @@ import more from 'styles/icons/more.svg';
 
 export default class Header extends React.PureComponent {
     static propTypes = {
-        openFunction: PropTypes.func.isRequired,
+        openFunction: PropTypes.func.isRequired
     };
 
     render() {

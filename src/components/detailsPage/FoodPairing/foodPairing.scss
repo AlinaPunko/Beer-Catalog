@@ -1,0 +1,25 @@
+@import 'styles/mixins.scss';
+
+.food-pairing-block__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.food-pairing-block__list-item {
+    @include list-item-border;
+
+    padding: 20px;
+    font-size: 14px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.food-pairing-block__title {
+    margin: 10px auto;
+    font-size: 30px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.food-pairing-block {
+    width: 45%;
+    margin: 0 auto 0 40px;
+}

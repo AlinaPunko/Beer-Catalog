@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "b163685d698408b312ef";
+/******/ 	var hotCurrentHash = "9353fbb96f8c2cb516ce";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -45114,12 +45114,15 @@ function (_React$PureComponent) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "login-page__title"
       }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "login-page__form"
+        className: "login-page__form",
+        action: "/account/login",
+        method: "post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-page__field"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "login-page__field-title"
       }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "email",
         type: "email",
         className: "login-page__field-input"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -45127,6 +45130,7 @@ function (_React$PureComponent) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "login-page__field-title"
       }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "password",
         type: "password",
         className: "login-page__field-input"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -45251,12 +45255,15 @@ function (_React$PureComponent) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "register-page__title"
       }, "Register"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "register-page__form"
+        className: "register-page__form",
+        action: "/account/register",
+        method: "post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "register-page__field"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "register-page__field-title"
       }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "email",
         type: "email",
         className: "register-page__field-input"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -45264,6 +45271,7 @@ function (_React$PureComponent) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "register-page__field-title"
       }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "password",
         type: "password",
         className: "register-page__field-input"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -45271,9 +45279,11 @@ function (_React$PureComponent) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "register-page__field-title"
       }, "Repeat password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "passwordConfirm",
         type: "password",
         className: "register-page__field-input"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit",
         className: "register-page__form-button"
       }, "Register")));
     }

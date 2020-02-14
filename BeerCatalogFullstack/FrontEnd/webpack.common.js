@@ -11,11 +11,7 @@ module.exports = {
         path: path.resolve('../', 'BeerCatalogFullstack/wwwroot'),
         publicPath: '/'
     },
-    devServer: {
-        historyApiFallback: true,
-        contentBase: './',
-        hot: true
-     },
+
     module: {
         rules: [{
             test: /\.jsx?$/,

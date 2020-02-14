@@ -9,6 +9,16 @@ export default class Routing extends React.Component {
             <>
                 <Route
                     exact
+                    path={routeURL.registerPage.url}
+                    component={routeURL.registerPage.component}
+                />
+                <Route
+                    exact
+                    path={routeURL.loginPage.url}
+                    component={routeURL.loginPage.component}
+                />
+                <Route
+                    exact
                     path={routeURL.searchPage.url}
                     component={routeURL.searchPage.component}
                 />

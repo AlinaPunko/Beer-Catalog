@@ -1,0 +1,17 @@
+{
+  "name": "beercatalogfullstack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "aspnet-webpack": "^3.0.0",
+    "webpack": "^4.41.6",
+    "webpack-dev-middleware": "^3.7.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alina Punko",
+  "license": "ISC"
+}

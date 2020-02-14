@@ -1,0 +1,43 @@
+.login-page {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px #8a8a8a solid;
+    border-radius: 10px;
+}
+
+.login-page__title {
+    padding: 10px 0;
+    font-size: 30px;
+    font-family: "Lucida Sans", sans-serif;
+    text-align: center;
+}
+
+.login-page__field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.login-page__field-title {
+    padding: 0 5px;
+    font-family: "Lucida Sans", sans-serif;
+}
+
+.login-page__field-input {
+    padding: 5px;
+    border: 1px #106cc8 solid;
+    border-radius: 5px;
+}
+
+.login-page__form-button {
+    width: 100%;
+    margin: 10px auto;
+    padding: 5px 0;
+    color: #ffffff;
+    font-family: "Lucida Sans", sans-serif;
+    background-color: #106cc8;
+    border-color: #106cc8;
+    border-radius: 5px;
+}

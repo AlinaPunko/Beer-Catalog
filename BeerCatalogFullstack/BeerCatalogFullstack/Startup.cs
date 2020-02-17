@@ -29,13 +29,11 @@ namespace BeerCatalogFullstack
             services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         { 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseWebpackDevMiddleware();
             }
 
             app.UseHttpsRedirection();
@@ -48,9 +46,7 @@ namespace BeerCatalogFullstack
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "api/{controller}/{action}");
+                routes.MapRoute("default", "{controller=Home}/{action=Index}");
                 routes.MapSpaFallbackRoute("spa-fallback", new { controller = "Home", action = "Index" });
             });
         }

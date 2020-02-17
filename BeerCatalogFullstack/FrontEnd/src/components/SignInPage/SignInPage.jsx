@@ -8,7 +8,7 @@ export default class SignInPage extends React.PureComponent {
         return (
             <div className="sign-in-page">
                 <h1 className="sign-in-page__title">Log In</h1>
-                <form className="sign-in-page__form" action="/account/sign-in" method="post">
+                <form className="sign-in-page__form" action="/account/login" method="post" enctype="multipart/form-data">
                     <div className="sign-in-page__field">
                         <label className="sign-in-page__field-title">E-mail</label>
                         <input name="email" type="email" className="sign-in-page__field-input"></input>

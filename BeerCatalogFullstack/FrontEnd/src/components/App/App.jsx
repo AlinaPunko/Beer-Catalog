@@ -3,30 +3,37 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import Header from 'components/Header/Header';
 import SideMenu from 'components/SideMenu/SideMenu';
+import AccountMenu from 'components/AccountMenu/AccountMenu';
 import Routing from 'components/Routing/Routing';
 
 export default class App extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            showMenu: false
+            showSideMenu: false,
+            showAccountMenu: false,
         };
     }
 
-    openMenu = () => {
-        this.setState({ showMenu: true });
+    openSideMenu = () => {
+        this.setState({ showSideMenu: true });
     }
 
-    closeMenu = () => {
-        this.setState({ showMenu: false });
+    closeSideMenu = () => {
+        this.setState({ showSideMenu: false });
+    }
+
+    toggleAccountMenu = () => {
+        this.setState({ showAccountMenu: !this.state.showAccountMenu });
     }
 
     render() {
         return (
             <Router>
                 <div className="App">
-                    <Header openFunction={this.openMenu} />
-                    <SideMenu showMenu={this.state.showMenu} closeFunction={this.closeMenu} />
+                    <Header openSideMenuFunction={this.openSideMenu} toggleAccountMenuFunction={this.toggleAccountMenu} />
+                    <SideMenu showMenu={this.state.showSideMenu} closeFunction={this.closeSideMenu} />
+                    <AccountMenu showMenu={this.state.showAccountMenu}/>
                     <Routing />
                 </div>
             </Router>

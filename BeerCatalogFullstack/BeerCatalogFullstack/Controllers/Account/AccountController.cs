@@ -1,9 +1,14 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace BeerCatalogFullstack.Controllers.Account
@@ -57,27 +62,26 @@ namespace BeerCatalogFullstack.Controllers.Account
 
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Route("account/sign-in")]
+        [Route("account/login")]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
+
             SignInResult result = await signInManager.PasswordSignInAsync(model.Email, model.Password, true, false);
+
             if (result.Succeeded)
             {
                 return RedirectToAction("Index", "Home");
             }
 
             ModelState.AddModelError("", "Неправильный логин и (или) пароль");
-
             return BadRequest();
         }
-
+        
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();

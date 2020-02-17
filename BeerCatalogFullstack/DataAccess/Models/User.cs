@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
@@ -10,5 +11,7 @@ namespace DataAccess.Models
         public string Name { get; set; }
         public DateTime? Birthdate { get; set; }
         public byte[] Photo { get; set; }
+
+        public List<FavouriteBeer> FavouriteBeers { get; set; }
     }
 }

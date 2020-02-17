@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "7872805283df2e993a68";
+/******/ 	var hotCurrentHash = "91c82dfc4408b7d15e73";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -46571,7 +46571,6 @@ var BeerShortInfo = function BeerShortInfo(dataModel) {
   this.id = dataModel.id;
   this.name = dataModel.name;
   this.tagline = dataModel.tagline;
-  this.description = dataModel.description;
   this.imageUrl = dataModel.image_url;
   this.alcohol = dataModel.abv;
   this.color = dataModel.ebc;

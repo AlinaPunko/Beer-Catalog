@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Security.Policy;
+﻿using System.IO;
 using System.Threading.Tasks;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
@@ -24,7 +20,7 @@ namespace BeerCatalogFullstack.Controllers.Account
         }
 
         [HttpPost]
-        [Route("account/register")]
+        [Route("account/join")]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (!ModelState.IsValid)
@@ -32,7 +28,17 @@ namespace BeerCatalogFullstack.Controllers.Account
                 return BadRequest();
             }
 
-            User user = new User {Email = model.Email, UserName = model.Email};
+            User user = new User {UserName =model.Email, Email = model.Email, Name = model.Name, Birthdate = model.Birthdate};
+
+            if (model.Photo != null)
+            {
+                byte[] imageData;
+                using (BinaryReader binaryReader = new BinaryReader(model.Photo.OpenReadStream()))
+                {
+                    imageData = binaryReader.ReadBytes((int) model.Photo.Length);
+                }
+                user.Photo = imageData;
+            }
 
             IdentityResult result = await userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
@@ -52,7 +58,7 @@ namespace BeerCatalogFullstack.Controllers.Account
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("account/register")]
+        [Route("account/sign-in")]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)

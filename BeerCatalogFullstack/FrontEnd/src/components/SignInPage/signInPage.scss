@@ -1,4 +1,4 @@
-.register-page {
+.sign-in-page {
     width: fit-content;
     margin: 0 auto;
     padding: 20px;
@@ -6,32 +6,32 @@
     border-radius: 10px;
 }
 
-.register-page__title {
+.sign-in-page__title {
     padding: 10px 0;
     font-size: 30px;
     font-family: "Lucida Sans", sans-serif;
     text-align: center;
 }
 
-.register-page__field {
+.sign-in-page__field {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 5px 0;
 }
 
-.register-page__field-title {
+.sign-in-page__field-title {
     padding: 0 5px;
     font-family: "Lucida Sans", sans-serif;
 }
 
-.register-page__field-input {
+.sign-in-page__field-input {
     padding: 5px;
     border: 1px #106cc8 solid;
     border-radius: 5px;
 }
 
-.register-page__form-button {
+.sign-in-page__form-button {
     width: 100%;
     margin: 10px auto;
     padding: 5px 0;

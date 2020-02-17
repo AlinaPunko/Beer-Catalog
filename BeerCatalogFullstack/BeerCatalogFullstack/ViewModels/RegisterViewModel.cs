@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace BeerCatalogFullstack.ViewModels
 {
@@ -12,19 +10,25 @@ namespace BeerCatalogFullstack.ViewModels
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        //[Required]
-        //[Display(Name = "Имя")]
-        //public string Name { get; set; }
+        [Required]
+        [Display(Name = "Name")]
+        public string Name { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-
+        [Display(Name = "Password")]
         public string Password { get; set; }
 
         [Required]
         [Compare("Password", ErrorMessage = "Пароли не совпадают")]
         [DataType(DataType.Password)]
-        [Display(Name = "Подтвердить пароль")]
+        [Display(Name = "Repeat password")]
         public string PasswordConfirm { get; set; }
+
+        [Display(Name = "Photo")]
+        public IFormFile Photo { get; set; }
+
+        [Display(Name = "Birthdate")]
+        public DateTime? Birthdate { get; set; }
     }
 }

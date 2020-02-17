@@ -22,8 +22,10 @@ namespace BeerCatalogFullstack
         {
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationContext>();
+
             services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
@@ -43,6 +45,7 @@ namespace BeerCatalogFullstack
 
             app.UseAuthorization();
             app.UseAuthentication();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

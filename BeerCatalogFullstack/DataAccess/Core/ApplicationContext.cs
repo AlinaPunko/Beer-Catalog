@@ -8,10 +8,10 @@ namespace DataAccess.Core
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
-            if (!Database.CanConnect())
-            {
-               Database.Migrate();
-            }
+            //if (!Database.CanConnect())
+            //{
+            //    Database.Migrate();
+            //}
         }
     }
 }

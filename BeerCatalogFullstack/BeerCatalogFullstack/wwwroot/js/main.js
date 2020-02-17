@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "9353fbb96f8c2cb516ce";
+/******/ 	var hotCurrentHash = "483a2ed2ba9e69663a66";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1015,6 +1015,36 @@ exports.push([module.i, ".side-menu-link {\n  display: flex;\n  align-content: c
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SignInPage/signInPage.scss":
+/*!********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SignInPage/signInPage.scss ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".sign-in-page {\n  width: fit-content;\n  margin: 0 auto;\n  padding: 20px;\n  border: 1px #8a8a8a solid;\n  border-radius: 10px; }\n\n.sign-in-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.sign-in-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.sign-in-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.sign-in-page__field-input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.sign-in-page__form-button {\n  width: 100%;\n  margin: 10px auto;\n  padding: 5px 0;\n  color: #ffffff;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #106cc8;\n  border-color: #106cc8;\n  border-radius: 5px; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SignUpPage/signUpPage.scss":
+/*!********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SignUpPage/signUpPage.scss ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".sign-up-page {\n  width: fit-content;\n  margin: 0 auto;\n  padding: 20px;\n  border: 1px #8a8a8a solid;\n  border-radius: 10px; }\n\n.sign-up-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.sign-up-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.sign-up-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.sign-up-page__field-input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.sign-up-page__form-button {\n  width: 100%;\n  margin: 10px auto;\n  padding: 5px 0;\n  color: #ffffff;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #106cc8;\n  border-color: #106cc8;\n  border-radius: 5px; }\n", ""]);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/beersList/BeersList/beersList.scss":
 /*!****************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/beersList/BeersList/beersList.scss ***!
@@ -1250,36 +1280,6 @@ exports.push([module.i, ".favourite-list-item {\n  display: flex;\n  justify-con
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
 exports.push([module.i, ".favourite-list {\n  flex-wrap: wrap;\n  width: 50%;\n  margin: 0 auto; }\n\n.favourite-list__title {\n  margin: 20px auto;\n  font-size: 30px;\n  font-family: 'Lucida Sans', sans-serif;\n  text-align: center; }\n\n.paging-panel {\n  display: flex;\n  width: fit-content;\n  margin: 10px auto 20px 20px;\n  color: #106cc8;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.paging-panel__item {\n  padding: 10px;\n  background-color: transparent;\n  border: 1px #106cc8 solid; }\n", ""]);
-
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/loginPage/loginPage.scss":
-/*!******************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/loginPage/loginPage.scss ***!
-  \******************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".login-page {\n  width: fit-content;\n  margin: 0 auto;\n  padding: 20px;\n  border: 1px #8a8a8a solid;\n  border-radius: 10px; }\n\n.login-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.login-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.login-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.login-page__field-input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.login-page__form-button {\n  width: 100%;\n  margin: 10px auto;\n  padding: 5px 0;\n  color: #ffffff;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #106cc8;\n  border-color: #106cc8;\n  border-radius: 5px; }\n", ""]);
-
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/registerPage/registerPage.scss":
-/*!************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/registerPage/registerPage.scss ***!
-  \************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".register-page {\n  width: fit-content;\n  margin: 0 auto;\n  padding: 20px;\n  border: 1px #8a8a8a solid;\n  border-radius: 10px; }\n\n.register-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.register-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.register-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.register-page__field-input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.register-page__form-button {\n  width: 100%;\n  margin: 10px auto;\n  padding: 5px 0;\n  color: #ffffff;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #106cc8;\n  border-color: #106cc8;\n  border-radius: 5px; }\n", ""]);
 
 
 
@@ -41916,12 +41916,12 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         exact: true,
-        path: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].registerPage.url,
-        component: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].registerPage.component
+        path: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].signUpPage.url,
+        component: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].signUpPage.component
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         exact: true,
-        path: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].loginPage.url,
-        component: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].loginPage.component
+        path: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].signInPage.url,
+        component: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].signInPage.component
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         exact: true,
         path: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].searchPage.url,
@@ -42212,6 +42212,323 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./sideMenuLink.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SideMenuLink/sideMenuLink.scss", function() {
 		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./sideMenuLink.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SideMenuLink/sideMenuLink.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/SignInPage/SignInPage.jsx":
+/*!**************************************************!*\
+  !*** ./src/components/SignInPage/SignInPage.jsx ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SignInPage; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./signInPage.scss */ "./src/components/SignInPage/signInPage.scss");
+/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_signInPage_scss__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var SignInPage =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(SignInPage, _React$PureComponent);
+
+  function SignInPage() {
+    _classCallCheck(this, SignInPage);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SignInPage).apply(this, arguments));
+  }
+
+  _createClass(SignInPage, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sign-in-page"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "sign-in-page__title"
+      }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "sign-in-page__form",
+        action: "/account/sign-in",
+        method: "post"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sign-in-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "sign-in-page__field-title"
+      }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "email",
+        type: "email",
+        className: "sign-in-page__field-input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sign-in-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "sign-in-page__field-title"
+      }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "password",
+        type: "password",
+        className: "sign-in-page__field-input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "sign-in-page__form-button"
+      }, "Log in")));
+    }
+  }]);
+
+  return SignInPage;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/components/SignInPage/signInPage.scss":
+/*!***************************************************!*\
+  !*** ./src/components/SignInPage/signInPage.scss ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./signInPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SignInPage/signInPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./signInPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SignInPage/signInPage.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./signInPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SignInPage/signInPage.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/SignUpPage/SignUpPage.jsx":
+/*!**************************************************!*\
+  !*** ./src/components/SignUpPage/SignUpPage.jsx ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SignUpPage; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./signUpPage.scss */ "./src/components/SignUpPage/signUpPage.scss");
+/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_signUpPage_scss__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var SignUpPage =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(SignUpPage, _React$PureComponent);
+
+  function SignUpPage() {
+    _classCallCheck(this, SignUpPage);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SignUpPage).apply(this, arguments));
+  }
+
+  _createClass(SignUpPage, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sign-up-page"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "sign-up-page__title"
+      }, "Sign up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "sign-up-page__form",
+        action: "/account/join",
+        method: "post",
+        enctype: "multipart/form-data"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sign-up-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "sign-up-page__field-title"
+      }, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "name",
+        type: "text",
+        className: "sign-up-page__field-input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sign-up-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "sign-up-page__field-title"
+      }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "email",
+        type: "email",
+        className: "sign-up-page__field-input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sign-up-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "sign-up-page__field-title"
+      }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "password",
+        type: "password",
+        className: "sign-up-page__field-input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sign-up-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "sign-up-page__field-title"
+      }, "Repeat password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "passwordConfirm",
+        type: "password",
+        className: "sign-up-page__field-input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sign-up-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "sign-up-page__field-title"
+      }, "Select birthdate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "birthdate",
+        type: "date",
+        className: "sign-up-page__field-input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sign-up-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "sign-up-page__field-title"
+      }, "Select photo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "photo",
+        type: "file",
+        className: "sign-up-page__field-input",
+        accept: "image/x-png,image/gif,image/jpeg"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit",
+        className: "signin-page__form-button"
+      }, "Sign up")));
+    }
+  }]);
+
+  return SignUpPage;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/components/SignUpPage/signUpPage.scss":
+/*!***************************************************!*\
+  !*** ./src/components/SignUpPage/signUpPage.scss ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./signUpPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SignUpPage/signUpPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./signUpPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SignUpPage/signUpPage.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./signUpPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SignUpPage/signUpPage.scss");
 
 		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 
@@ -43474,7 +43791,7 @@ function (_React$Component) {
         className: "beer-details-header__tagline"
       }, beer.tagline), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_FavouriteButton_FavouriteButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
         beer: beer,
-        className: "favourite-button--on-beer-details-header"
+        className: "beer-details-header__button"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "beer-details-header__description"
       }, beer.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -45060,297 +45377,6 @@ if(true) {
 
 /***/ }),
 
-/***/ "./src/components/loginPage/LoginPage.jsx":
-/*!************************************************!*\
-  !*** ./src/components/loginPage/LoginPage.jsx ***!
-  \************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LoginPage; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _loginPage_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loginPage.scss */ "./src/components/loginPage/loginPage.scss");
-/* harmony import */ var _loginPage_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_loginPage_scss__WEBPACK_IMPORTED_MODULE_1__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var LoginPage =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inherits(LoginPage, _React$PureComponent);
-
-  function LoginPage() {
-    _classCallCheck(this, LoginPage);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(LoginPage).apply(this, arguments));
-  }
-
-  _createClass(LoginPage, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-page"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "login-page__title"
-      }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "login-page__form",
-        action: "/account/login",
-        method: "post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "login-page__field-title"
-      }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "email",
-        type: "email",
-        className: "login-page__field-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "login-page__field-title"
-      }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "password",
-        type: "password",
-        className: "login-page__field-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "login-page__form-button"
-      }, "Log in")));
-    }
-  }]);
-
-  return LoginPage;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/components/loginPage/loginPage.scss":
-/*!*************************************************!*\
-  !*** ./src/components/loginPage/loginPage.scss ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./loginPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/loginPage/loginPage.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(true) {
-	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./loginPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/loginPage/loginPage.scss", function() {
-		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./loginPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/loginPage/loginPage.scss");
-
-		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ "./src/components/registerPage/RegisterPage.jsx":
-/*!******************************************************!*\
-  !*** ./src/components/registerPage/RegisterPage.jsx ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return RegisterPage; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _registerPage_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./registerPage.scss */ "./src/components/registerPage/registerPage.scss");
-/* harmony import */ var _registerPage_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_registerPage_scss__WEBPACK_IMPORTED_MODULE_1__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var RegisterPage =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inherits(RegisterPage, _React$PureComponent);
-
-  function RegisterPage() {
-    _classCallCheck(this, RegisterPage);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(RegisterPage).apply(this, arguments));
-  }
-
-  _createClass(RegisterPage, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "register-page"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "register-page__title"
-      }, "Register"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "register-page__form",
-        action: "/account/register",
-        method: "post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "register-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "register-page__field-title"
-      }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "email",
-        type: "email",
-        className: "register-page__field-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "register-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "register-page__field-title"
-      }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "password",
-        type: "password",
-        className: "register-page__field-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "register-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "register-page__field-title"
-      }, "Repeat password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "passwordConfirm",
-        type: "password",
-        className: "register-page__field-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "submit",
-        className: "register-page__form-button"
-      }, "Register")));
-    }
-  }]);
-
-  return RegisterPage;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/components/registerPage/registerPage.scss":
-/*!*******************************************************!*\
-  !*** ./src/components/registerPage/registerPage.scss ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./registerPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/registerPage/registerPage.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(true) {
-	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./registerPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/registerPage/registerPage.scss", function() {
-		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./registerPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/registerPage/registerPage.scss");
-
-		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
 /***/ "./src/components/search/FiltersPanel/FiltersPanel.jsx":
 /*!*************************************************************!*\
   !*** ./src/components/search/FiltersPanel/FiltersPanel.jsx ***!
@@ -46089,21 +46115,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var components_search_SearchPage_SearchPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! components/search/SearchPage/SearchPage */ "./src/components/search/SearchPage/SearchPage.jsx");
 /* harmony import */ var components_favouritesPage_FavouritesList_FavouritesList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/favouritesPage/FavouritesList/FavouritesList */ "./src/components/favouritesPage/FavouritesList/FavouritesList.jsx");
 /* harmony import */ var components_detailsPage_BeerDetailsPage_BeerDetailsPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/detailsPage/BeerDetailsPage/BeerDetailsPage */ "./src/components/detailsPage/BeerDetailsPage/BeerDetailsPage.jsx");
-/* harmony import */ var _components_loginPage_LoginPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/loginPage/LoginPage */ "./src/components/loginPage/LoginPage.jsx");
-/* harmony import */ var _components_registerPage_RegisterPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/registerPage/RegisterPage */ "./src/components/registerPage/RegisterPage.jsx");
+/* harmony import */ var components_SignInPage_SignInPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/SignInPage/SignInPage */ "./src/components/SignInPage/SignInPage.jsx");
+/* harmony import */ var components_SignUpPage_SignUpPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/SignUpPage/SignUpPage */ "./src/components/SignUpPage/SignUpPage.jsx");
 
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  loginPage: {
+  signInPage: {
     url: '/login',
-    component: _components_loginPage_LoginPage__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: components_SignInPage_SignInPage__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
-  registerPage: {
-    url: '/register',
-    component: _components_registerPage_RegisterPage__WEBPACK_IMPORTED_MODULE_4__["default"]
+  signUpPage: {
+    url: '/join',
+    component: components_SignUpPage_SignUpPage__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   favouritesList: {
     url: '/favourites',

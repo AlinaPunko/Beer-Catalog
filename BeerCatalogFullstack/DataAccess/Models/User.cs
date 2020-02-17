@@ -1,12 +1,14 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
 namespace DataAccess.Models
 {
     public class User : IdentityUser
     {
-        private string Name { get; set; }
-        private DateTime Birthdate { get; set; }
-        private byte[] Photo { get; set; }
+        [Required]
+        public string Name { get; set; }
+        public DateTime? Birthdate { get; set; }
+        public byte[] Photo { get; set; }
     }
 }

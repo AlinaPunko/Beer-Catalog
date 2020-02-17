@@ -39,7 +39,10 @@ namespace DataAccess.Migrations
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false)
+                    AccessFailedCount = table.Column<int>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    Birthdate = table.Column<DateTime>(nullable: true),
+                    Photo = table.Column<byte[]>(nullable: true)
                 },
                 constraints: table =>
                 {

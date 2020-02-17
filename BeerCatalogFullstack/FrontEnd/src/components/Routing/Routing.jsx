@@ -9,13 +9,13 @@ export default class Routing extends React.Component {
             <>
                 <Route
                     exact
-                    path={routeURL.registerPage.url}
-                    component={routeURL.registerPage.component}
+                    path={routeURL.signUpPage.url}
+                    component={routeURL.signUpPage.component}
                 />
                 <Route
                     exact
-                    path={routeURL.loginPage.url}
-                    component={routeURL.loginPage.component}
+                    path={routeURL.signInPage.url}
+                    component={routeURL.signInPage.component}
                 />
                 <Route
                     exact

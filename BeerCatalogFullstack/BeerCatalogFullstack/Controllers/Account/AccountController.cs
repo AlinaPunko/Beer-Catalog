@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -26,13 +27,8 @@ namespace BeerCatalogFullstack.Controllers.Account
 
         [HttpPost]
         [Route("account/join")]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register([FromBody]RegisterViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
-
             User user = new User {UserName =model.Email, Email = model.Email, Name = model.Name, Birthdate = model.Birthdate};
 
             if (model.Photo != null)
@@ -49,7 +45,8 @@ namespace BeerCatalogFullstack.Controllers.Account
             if (result.Succeeded)
             {
                 await signInManager.SignInAsync(user, false);
-                return RedirectToAction("Index", "Home");
+                string userId = userManager.Users.FirstOrDefault(u => u.Email == model.Email)?.Id;
+                return Json(userId);
             }
 
             foreach (IdentityError error in result.Errors)
@@ -63,18 +60,14 @@ namespace BeerCatalogFullstack.Controllers.Account
 
         [HttpPost]
         [Route("account/login")]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public async Task<IActionResult> Login([FromBody]LoginViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
-
             SignInResult result = await signInManager.PasswordSignInAsync(model.Email, model.Password, true, false);
 
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Home");
+                string userId = userManager.Users.FirstOrDefault(u => u.Email == model.Email)?.Id;
+                return Json(userId);
             }
 
             ModelState.AddModelError("", "Неправильный логин и (или) пароль");

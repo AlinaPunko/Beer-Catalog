@@ -1,25 +1,61 @@
 import React from 'react';
+import {withRouter } from 'react-router-dom';
 
+import {UserContext} from 'store/context/UserContext';
+import loginService from 'services/loginService';
 import './signInPage.scss';
 
+class SignInPage extends React.PureComponent {
+    static contextType = UserContext;
+    constructor(props) {
+        super(props);
+        this.beerPerPage = 12;
+        this.state = {
+            page: 1,
+            isLoading: true,
+            renderedBeers: this.beerPerPage
+        };
+        console.log(UserContext);
+    }
 
-export default class SignInPage extends React.PureComponent {
+    async loginButtonClick(setUserId) {
+        let userData = {};
+        const email = document.getElementsByName("email")[0].value;
+        const password = document.getElementsByName("password")[0].value;
+        if(typeof email == 'undefined' || typeof password == 'undefined')
+        {
+            return;
+        }
+
+        userData.email = email;
+        userData.password = password;
+        const userId = await loginService.login(userData);
+        setUserId(userId);
+        this.props.history.push('/')
+    }
+
     render() {
         return (
-            <div className="sign-in-page">
-                <h1 className="sign-in-page__title">Log In</h1>
-                <form className="sign-in-page__form" action="/account/login" method="post" enctype="multipart/form-data">
-                    <div className="sign-in-page__field">
-                        <label className="sign-in-page__field-title">E-mail</label>
-                        <input name="email" type="email" className="sign-in-page__field-input"></input>
+            <UserContext.Consumer>
+            {({setUserId}) => (
+                <div className="sign-in-page">
+                    <h1 className="sign-in-page__title">Log In</h1>
+                    <div className="sign-in-page__form">
+                        <div className="sign-in-page__field">
+                            <label className="sign-in-page__field-title">E-mail</label>
+                            <input name="email" type="email" className="sign-in-page__field-input"></input>
+                        </div>
+                        <div className="sign-in-page__field">
+                            <label className="sign-in-page__field-title">Password</label>
+                            <input name="password" type="password" className="sign-in-page__field-input"></input>
+                        </div>
+                            <button className="sign-in-page__form-button" onClick={this.loginButtonClick.bind(this,setUserId)}>Log in</button>
                     </div>
-                    <div className="sign-in-page__field">
-                        <label className="sign-in-page__field-title">Password</label>
-                        <input name="password" type="password" className="sign-in-page__field-input"></input>
-                    </div>
-                    <button className="sign-in-page__form-button">Log in</button>
-                </form>
-            </div>
+                </div>
+            )}
+            </UserContext.Consumer>
         )     
     }
 }
+
+export default withRouter(SignInPage)

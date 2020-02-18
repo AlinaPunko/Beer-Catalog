@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "91c82dfc4408b7d15e73";
+/******/ 	var hotCurrentHash = "8d53299231ee91e3ad70";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -41811,10 +41811,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var components_Header_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/Header/Header */ "./src/components/Header/Header.jsx");
-/* harmony import */ var components_SideMenu_SideMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/SideMenu/SideMenu */ "./src/components/SideMenu/SideMenu.jsx");
-/* harmony import */ var components_AccountMenu_AccountMenu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/AccountMenu/AccountMenu */ "./src/components/AccountMenu/AccountMenu.jsx");
-/* harmony import */ var components_Routing_Routing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/Routing/Routing */ "./src/components/Routing/Routing.jsx");
+/* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
+/* harmony import */ var components_Header_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/Header/Header */ "./src/components/Header/Header.jsx");
+/* harmony import */ var components_SideMenu_SideMenu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/SideMenu/SideMenu */ "./src/components/SideMenu/SideMenu.jsx");
+/* harmony import */ var components_AccountMenu_AccountMenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/AccountMenu/AccountMenu */ "./src/components/AccountMenu/AccountMenu.jsx");
+/* harmony import */ var components_Routing_Routing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! components/Routing/Routing */ "./src/components/Routing/Routing.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41834,6 +41835,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -41872,9 +41874,19 @@ function (_React$PureComponent) {
       });
     });
 
+    _this.setUserId = function (userId) {
+      _this.setState(function () {
+        return {
+          userID: userId
+        };
+      });
+    };
+
     _this.state = {
       showSideMenu: false,
-      showAccountMenu: false
+      showAccountMenu: false,
+      userId: "",
+      setUserId: _this.setUserId
     };
     return _this;
   }
@@ -41882,17 +41894,19 @@ function (_React$PureComponent) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_UserContext__WEBPACK_IMPORTED_MODULE_2__["UserContext"].Provider, {
+        value: this.state
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "App"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Header_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Header_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
         openSideMenuFunction: this.openSideMenu,
         toggleAccountMenuFunction: this.toggleAccountMenu
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenu_SideMenu__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenu_SideMenu__WEBPACK_IMPORTED_MODULE_4__["default"], {
         showMenu: this.state.showSideMenu,
         closeFunction: this.closeSideMenu
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_AccountMenu_AccountMenu__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_AccountMenu_AccountMenu__WEBPACK_IMPORTED_MODULE_5__["default"], {
         showMenu: this.state.showAccountMenu
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Routing_Routing__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Routing_Routing__WEBPACK_IMPORTED_MODULE_6__["default"], null))));
     }
   }]);
 
@@ -42438,12 +42452,18 @@ if(true) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SignInPage; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./signInPage.scss */ "./src/components/SignInPage/signInPage.scss");
-/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_signInPage_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
+/* harmony import */ var services_loginService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! services/loginService */ "./src/services/loginService.js");
+/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./signInPage.scss */ "./src/components/SignInPage/signInPage.scss");
+/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_signInPage_scss__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -42461,6 +42481,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
 
 
 
@@ -42469,50 +42494,112 @@ var SignInPage =
 function (_React$PureComponent) {
   _inherits(SignInPage, _React$PureComponent);
 
-  function SignInPage() {
+  function SignInPage(props) {
+    var _this;
+
     _classCallCheck(this, SignInPage);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(SignInPage).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SignInPage).call(this, props));
+    _this.beerPerPage = 12;
+    _this.state = {
+      page: 1,
+      isLoading: true,
+      renderedBeers: _this.beerPerPage
+    };
+    console.log(store_context_UserContext__WEBPACK_IMPORTED_MODULE_2__["UserContext"]);
+    return _this;
   }
 
   _createClass(SignInPage, [{
+    key: "loginButtonClick",
+    value: function () {
+      var _loginButtonClick = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee(setUserId) {
+        var userData, email, password, userId;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                userData = {};
+                email = document.getElementsByName("email")[0].value;
+                password = document.getElementsByName("password")[0].value;
+
+                if (!(typeof email == 'undefined' || typeof password == 'undefined')) {
+                  _context.next = 5;
+                  break;
+                }
+
+                return _context.abrupt("return");
+
+              case 5:
+                userData.email = email;
+                userData.password = password;
+                _context.next = 9;
+                return services_loginService__WEBPACK_IMPORTED_MODULE_3__["default"].login(userData);
+
+              case 9:
+                userId = _context.sent;
+                setUserId(userId);
+                this.props.history.push('/');
+
+              case 12:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function loginButtonClick(_x) {
+        return _loginButtonClick.apply(this, arguments);
+      }
+
+      return loginButtonClick;
+    }()
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sign-in-page"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "sign-in-page__title"
-      }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "sign-in-page__form",
-        action: "/account/login",
-        method: "post",
-        enctype: "multipart/form-data"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sign-in-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "sign-in-page__field-title"
-      }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "email",
-        type: "email",
-        className: "sign-in-page__field-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sign-in-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "sign-in-page__field-title"
-      }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "password",
-        type: "password",
-        className: "sign-in-page__field-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "sign-in-page__form-button"
-      }, "Log in")));
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_UserContext__WEBPACK_IMPORTED_MODULE_2__["UserContext"].Consumer, null, function (_ref) {
+        var setUserId = _ref.setUserId;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-in-page"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          className: "sign-in-page__title"
+        }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-in-page__form"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-in-page__field"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "sign-in-page__field-title"
+        }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: "email",
+          type: "email",
+          className: "sign-in-page__field-input"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-in-page__field"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "sign-in-page__field-title"
+        }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: "password",
+          type: "password",
+          className: "sign-in-page__field-input"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "sign-in-page__form-button",
+          onClick: _this2.loginButtonClick.bind(_this2, setUserId)
+        }, "Log in")));
+      });
     }
   }]);
 
   return SignInPage;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
+_defineProperty(SignInPage, "contextType", store_context_UserContext__WEBPACK_IMPORTED_MODULE_2__["UserContext"]);
 
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(SignInPage));
 
 /***/ }),
 
@@ -42583,9 +42670,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SignUpPage; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./signUpPage.scss */ "./src/components/SignUpPage/signUpPage.scss");
-/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_signUpPage_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
+/* harmony import */ var services_signUpService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! services/signUpService */ "./src/services/signUpService.js");
+/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./signUpPage.scss */ "./src/components/SignUpPage/signUpPage.scss");
+/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signUpPage_scss__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -42606,6 +42699,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var SignUpPage =
 /*#__PURE__*/
 function (_React$PureComponent) {
@@ -42618,70 +42713,112 @@ function (_React$PureComponent) {
   }
 
   _createClass(SignUpPage, [{
+    key: "signInButtonClick",
+    value: function () {
+      var _signInButtonClick = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee() {
+        var userData, userId;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                userData = {};
+                userData.name = document.getElementsByName("name")[0].value;
+                userData.email = document.getElementsByName("email")[0].value;
+                userData.password = document.getElementsByName("password")[0].value;
+                userData.passwordConfirm = document.getElementsByName("passwordConfirm")[0].value;
+                userData.birthdate = document.getElementsByName("birthdate")[0].value ? document.getElementsByName("birthdate")[0].value : null;
+                userData.photo = document.getElementsByName("photo")[0].value ? document.getElementsByName("photo")[0].value : null;
+                _context.next = 9;
+                return services_signUpService__WEBPACK_IMPORTED_MODULE_2__["default"].signUp(userData);
+
+              case 9:
+                userId = _context.sent;
+                setId(userId);
+
+              case 11:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      function signInButtonClick() {
+        return _signInButtonClick.apply(this, arguments);
+      }
+
+      return signInButtonClick;
+    }()
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sign-up-page"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "sign-up-page__title"
-      }, "Sign up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "sign-up-page__form",
-        action: "/account/join",
-        method: "post",
-        enctype: "multipart/form-data"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sign-up-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "sign-up-page__field-title"
-      }, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "name",
-        type: "text",
-        className: "sign-up-page__field-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sign-up-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "sign-up-page__field-title"
-      }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "email",
-        type: "email",
-        className: "sign-up-page__field-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sign-up-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "sign-up-page__field-title"
-      }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "password",
-        type: "password",
-        className: "sign-up-page__field-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sign-up-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "sign-up-page__field-title"
-      }, "Repeat password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "passwordConfirm",
-        type: "password",
-        className: "sign-up-page__field-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sign-up-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "sign-up-page__field-title"
-      }, "Select birthdate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "birthdate",
-        type: "date",
-        className: "sign-up-page__field-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sign-up-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "sign-up-page__field-title"
-      }, "Select photo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "photo",
-        type: "file",
-        className: "sign-up-page__field-input",
-        accept: "image/x-png,image/gif,image/jpeg"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "submit",
-        className: "signin-page__form-button"
-      }, "Sign up")));
+      var _this = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_UserContext__WEBPACK_IMPORTED_MODULE_1__["UserContext"].Consumer, null, function (_ref) {
+        var setUserId = _ref.setUserId;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-up-page"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          className: "sign-up-page__title"
+        }, "Sign up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-up-page__form"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-up-page__field"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "sign-up-page__field-title"
+        }, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: "name",
+          type: "text",
+          className: "sign-up-page__field-input"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-up-page__field"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "sign-up-page__field-title"
+        }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: "email",
+          type: "email",
+          className: "sign-up-page__field-input"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-up-page__field"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "sign-up-page__field-title"
+        }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: "password",
+          type: "password",
+          className: "sign-up-page__field-input"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-up-page__field"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "sign-up-page__field-title"
+        }, "Repeat password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: "passwordConfirm",
+          type: "password",
+          className: "sign-up-page__field-input"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-up-page__field"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "sign-up-page__field-title"
+        }, "Select birthdate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: "birthdate",
+          type: "date",
+          className: "sign-up-page__field-input"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-up-page__field"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "sign-up-page__field-title"
+        }, "Select photo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: "photo",
+          type: "file",
+          className: "sign-up-page__field-input",
+          accept: "image/x-png,image/gif,image/jpeg"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          type: "submit",
+          className: "signin-page__form-button",
+          onClick: _this.signInButtonClick.bind(_this, setUserId)
+        }, "Sign up")));
+      });
     }
   }]);
 
@@ -46461,8 +46598,35 @@ function get(url) {
   });
 }
 
+function post(url, data) {
+  return fetch(url, {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    redirect: 'follow',
+    accept: 'application/json',
+    referrer: 'no-referrer',
+    body: JSON.stringify(data)
+  }).then(function (response) {
+    if (response.status !== 200) {
+      var error = new Error(response.statusText);
+      error.code = response.status;
+      return error;
+    }
+
+    return response.json();
+  }).catch(function (error) {
+    return new Error("Network Error!".concat(error));
+  });
+}
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  get: get
+  get: get,
+  post: post
 });
 
 /***/ }),
@@ -46571,6 +46735,7 @@ var BeerShortInfo = function BeerShortInfo(dataModel) {
   this.id = dataModel.id;
   this.name = dataModel.name;
   this.tagline = dataModel.tagline;
+  this.description = dataModel.description;
   this.imageUrl = dataModel.image_url;
   this.alcohol = dataModel.abv;
   this.color = dataModel.ebc;
@@ -46670,6 +46835,113 @@ function _getByID() {
 
 /***/ }),
 
+/***/ "./src/services/loginService.js":
+/*!**************************************!*\
+  !*** ./src/services/loginService.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+function login(_x) {
+  return _login.apply(this, arguments);
+}
+
+function _login() {
+  _login = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee(data) {
+    var userId;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            debugger;
+            _context.next = 3;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post('https://localhost:44340/account/login', data);
+
+          case 3:
+            userId = _context.sent;
+            return _context.abrupt("return", userId);
+
+          case 5:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _login.apply(this, arguments);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  login: login
+});
+
+/***/ }),
+
+/***/ "./src/services/signUpService.js":
+/*!***************************************!*\
+  !*** ./src/services/signUpService.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+function signUp(_x) {
+  return _signUp.apply(this, arguments);
+}
+
+function _signUp() {
+  _signUp = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee(data) {
+    var userId;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            debugger;
+            _context.next = 3;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post('https://localhost:44340/account/join', data);
+
+          case 3:
+            userId = _context.sent;
+            debugger;
+            return _context.abrupt("return", userId);
+
+          case 6:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _signUp.apply(this, arguments);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  signUp: signUp
+});
+
+/***/ }),
+
 /***/ "./src/store/actions/actionTypes.js":
 /*!******************************************!*\
   !*** ./src/store/actions/actionTypes.js ***!
@@ -46722,6 +46994,26 @@ var setFilterByName = function setFilterByName(searchQuery) {
     searchQuery: searchQuery
   };
 };
+
+/***/ }),
+
+/***/ "./src/store/context/UserContext.js":
+/*!******************************************!*\
+  !*** ./src/store/context/UserContext.js ***!
+  \******************************************/
+/*! exports provided: UserContext */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserContext", function() { return UserContext; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var UserContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({
+  userId: '',
+  setUserId: function setUserId() {}
+});
 
 /***/ }),
 

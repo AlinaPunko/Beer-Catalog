@@ -11,4 +11,29 @@ function get(url) {
         .catch((error) => new Error(`Network Error!${error}`));
 }
 
-export default { get };
+function post(url, data) {
+    return fetch(url,{
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        redirect: 'follow',
+        accept: 'application/json',
+        referrer: 'no-referrer',
+        body: JSON.stringify(data)
+    })
+        .then((response) => {
+            if (response.status !== 200) {
+                const error = new Error(response.statusText);
+                error.code = response.status;
+                return error;
+            }
+            return response.json();
+        })
+        .catch((error) => new Error(`Network Error!${error}`));
+}
+
+export default { get, post };

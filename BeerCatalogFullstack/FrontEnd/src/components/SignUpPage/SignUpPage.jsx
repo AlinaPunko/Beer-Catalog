@@ -26,7 +26,7 @@ class SignUpPage extends React.PureComponent {
                 <div className="sign-up-page">
                     <h1 className="sign-up-page__title">Sign up</h1>
                     <div className="sign-up-page__form" >
-                    <div className="sign-up-page__field">
+                        <div className="sign-up-page__field">
                             <label className="sign-up-page__field-title">Name</label>
                             <input name="name" type="text" className="sign-up-page__field-input"></input>
                         </div>

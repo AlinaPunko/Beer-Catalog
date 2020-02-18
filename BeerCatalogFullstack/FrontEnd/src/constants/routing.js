@@ -3,6 +3,7 @@ import FavouritesList from 'components/favouritesPage/FavouritesList/FavouritesL
 import BeerDetailsPage from 'components/detailsPage/BeerDetailsPage/BeerDetailsPage';
 import SignInPage from 'components/SignInPage/SignInPage';
 import SignUpPage from 'components/SignUpPage/SignUpPage';
+import ProfilePage from 'components/ProfilePage/ProfilePage';
 
 export default {
     signInPage: {
@@ -24,5 +25,9 @@ export default {
     beerDetailsPage: {
         url: '/details/:id',
         component: BeerDetailsPage
+    },
+    profilePage: {
+        url: '/profile',
+        component: ProfilePage
     }
 };

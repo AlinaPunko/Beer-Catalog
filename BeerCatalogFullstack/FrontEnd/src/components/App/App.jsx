@@ -39,6 +39,14 @@ export default class App extends React.PureComponent {
         this.setState({ showAccountMenu: !this.state.showAccountMenu });
     }
 
+    openAccountMenu = () => {
+        this.setState({ showAccountMenu: true });
+    }
+
+    closeAccountMenu = () => {
+        this.setState({ showAccountMenu: false });
+    }
+
     render() {
         return (
             <UserContext.Provider value={this.state}>
@@ -46,7 +54,7 @@ export default class App extends React.PureComponent {
                     <div className="App">
                         <Header openSideMenuFunction={this.openSideMenu} toggleAccountMenuFunction={this.toggleAccountMenu} />
                         <SideMenu showMenu={this.state.showSideMenu} closeFunction={this.closeSideMenu} />
-                        <AccountMenu showMenu={this.state.showAccountMenu}/>
+                        <AccountMenu showMenu={this.state.showAccountMenu} closeFunction={this.closeAccountMenu}/>
                         <Routing />
                     </div>
                 </Router>

@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "4f6502fb1e93da046fa5";
+/******/ 	var hotCurrentHash = "eeea51862d4b5461fc96";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -995,6 +995,21 @@ exports.push([module.i, ".account-menu--opened {\n  width: 200px;\n  height: fit
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
 exports.push([module.i, ".header {\n  display: flex;\n  background-color: #106cc8; }\n\n.header__title {\n  width: 100%;\n  margin: auto 0 auto 10px;\n  color: #ffffff;\n  font-size: 20px;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.header__button {\n  margin: auto 0;\n  padding: 10px;\n  background-color: transparent;\n  border: none; }\n\n.header__button-icon {\n  width: 25px;\n  height: 25px;\n  fill: white; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/ProfilePage/profilePage.scss":
+/*!**********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/ProfilePage/profilePage.scss ***!
+  \**********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".profile-page {\n  width: 50%;\n  margin: 10px auto; }\n\n.profile-page__content {\n  display: flex;\n  align-content: center;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n\n.profile-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.profile-page__image-block {\n  width: 50%;\n  padding: 10px; }\n\n.profile-page__user-image {\n  width: 70%;\n  margin: 0 auto; }\n\n.profile-page__add-image-button,\n.profile-page__delete-image-button {\n  width: 30%;\n  margin: 0 10px;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-page__user-info {\n  width: 50%; }\n\n.profile-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.profile-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.profile-page__field-input {\n  width: 50%;\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-page__save-button,\n.profile-page__close-button {\n  width: 40%;\n  margin: 20px;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n", ""]);
 
 
 
@@ -41707,6 +41722,8 @@ function (_React$PureComponent) {
   _createClass(AccountMenu, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       var menuClass = 'account-menu';
 
       if (this.props.showMenu) {
@@ -41716,7 +41733,8 @@ function (_React$PureComponent) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_UserContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"].Consumer, null, function (_ref) {
         var userId = _ref.userId;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: menuClass
+          className: menuClass,
+          onClick: _this.props.closeFunction
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "account-menu__links"
         }, userId == '' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -41730,7 +41748,7 @@ function (_React$PureComponent) {
           text: "Sign Up",
           icon: styles_icons_signUp_svg__WEBPACK_IMPORTED_MODULE_6__["default"]
         })))), userId != '' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-          to: "/"
+          to: "/profile"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_SideMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
           text: "My Profile",
           icon: styles_icons_account_svg__WEBPACK_IMPORTED_MODULE_8__["default"]
@@ -41748,7 +41766,8 @@ function (_React$PureComponent) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
 _defineProperty(AccountMenu, "propTypes", {
-  showMenu: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired
+  showMenu: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+  closeFunction: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
 });
 
 
@@ -41886,6 +41905,18 @@ function (_React$PureComponent) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "openAccountMenu", function () {
+      _this.setState({
+        showAccountMenu: true
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "closeAccountMenu", function () {
+      _this.setState({
+        showAccountMenu: false
+      });
+    });
+
     _this.setUserId = function (userId) {
       debugger;
 
@@ -41919,7 +41950,8 @@ function (_React$PureComponent) {
         showMenu: this.state.showSideMenu,
         closeFunction: this.closeSideMenu
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_AccountMenu_AccountMenu__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        showMenu: this.state.showAccountMenu
+        showMenu: this.state.showAccountMenu,
+        closeFunction: this.closeAccountMenu
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Routing_Routing__WEBPACK_IMPORTED_MODULE_6__["default"], null))));
     }
   }]);
@@ -42083,6 +42115,171 @@ if(true) {
 
 /***/ }),
 
+/***/ "./src/components/ProfilePage/ProfilePage.jsx":
+/*!****************************************************!*\
+  !*** ./src/components/ProfilePage/ProfilePage.jsx ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProfilePage; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
+/* harmony import */ var _profilePage_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./profilePage.scss */ "./src/components/ProfilePage/profilePage.scss");
+/* harmony import */ var _profilePage_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_profilePage_scss__WEBPACK_IMPORTED_MODULE_3__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var ProfilePage =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(ProfilePage, _React$PureComponent);
+
+  function ProfilePage() {
+    _classCallCheck(this, ProfilePage);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(ProfilePage).apply(this, arguments));
+  }
+
+  _createClass(ProfilePage, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "profile-page"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "profile-page__title"
+      }, "Your profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "profile-page__content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-page__image-block"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "profile-page__user-image",
+        alt: "",
+        src: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "profile-page__add-image-button"
+      }, "Add image"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "profile-page__delete-image-button"
+      }, "Delete image"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-page__user-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "profile-page__field-title"
+      }, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "name",
+        type: "text",
+        className: "profile-page__field-input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "profile-page__field-title"
+      }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "email",
+        type: "email",
+        className: "profile-page__field-input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "profile-page__field-title"
+      }, "Birthdate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "birhdate",
+        type: "date",
+        className: "profile-page__field-input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "profile-page__save-button"
+      }, "Save"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "profile-page__close-button"
+      }, "Close"))));
+    }
+  }]);
+
+  return ProfilePage;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/components/ProfilePage/profilePage.scss":
+/*!*****************************************************!*\
+  !*** ./src/components/ProfilePage/profilePage.scss ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./profilePage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/ProfilePage/profilePage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./profilePage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/ProfilePage/profilePage.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./profilePage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/ProfilePage/profilePage.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
 /***/ "./src/components/Routing/Routing.jsx":
 /*!********************************************!*\
   !*** ./src/components/Routing/Routing.jsx ***!
@@ -42153,6 +42350,10 @@ function (_React$Component) {
         exact: true,
         path: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].beerDetailsPage.url,
         component: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].beerDetailsPage.component
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        exact: true,
+        path: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].profilePage.url,
+        component: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].profilePage.component
       }));
     }
   }]);
@@ -42502,8 +42703,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -42515,20 +42714,10 @@ var SignInPage =
 function (_React$PureComponent) {
   _inherits(SignInPage, _React$PureComponent);
 
-  function SignInPage(props) {
-    var _this;
-
+  function SignInPage() {
     _classCallCheck(this, SignInPage);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SignInPage).call(this, props));
-    _this.beerPerPage = 12;
-    _this.state = {
-      page: 1,
-      isLoading: true,
-      renderedBeers: _this.beerPerPage
-    };
-    console.log(store_context_UserContext__WEBPACK_IMPORTED_MODULE_2__["UserContext"]);
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(SignInPage).apply(this, arguments));
   }
 
   _createClass(SignInPage, [{
@@ -42537,7 +42726,7 @@ function (_React$PureComponent) {
       var _loginButtonClick = _asyncToGenerator(
       /*#__PURE__*/
       regeneratorRuntime.mark(function _callee(setUserId, Id) {
-        var userData, email, password, userId;
+        var userData, email, password, result;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -42561,12 +42750,11 @@ function (_React$PureComponent) {
                 return services_loginService__WEBPACK_IMPORTED_MODULE_3__["default"].login(userData);
 
               case 10:
-                userId = _context.sent;
-                setUserId(userId);
-                debugger;
+                result = _context.sent;
+                setUserId(result);
                 this.props.history.push('/');
 
-              case 14:
+              case 13:
               case "end":
                 return _context.stop();
             }
@@ -42583,7 +42771,7 @@ function (_React$PureComponent) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_UserContext__WEBPACK_IMPORTED_MODULE_2__["UserContext"].Consumer, null, function (_ref) {
         var setUserId = _ref.setUserId,
@@ -42612,16 +42800,16 @@ function (_React$PureComponent) {
           className: "sign-in-page__field-input"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "sign-in-page__form-button",
-          onClick: _this2.loginButtonClick.bind(_this2, setUserId, userId)
-        }, "Log in")));
+          onClick: _this.loginButtonClick.bind(_this, setUserId, userId)
+        }, "Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "sign-in-page__result"
+        })));
       });
     }
   }]);
 
   return SignInPage;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
-
-_defineProperty(SignInPage, "contextType", store_context_UserContext__WEBPACK_IMPORTED_MODULE_2__["UserContext"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(SignInPage));
 
@@ -46479,6 +46667,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var components_detailsPage_BeerDetailsPage_BeerDetailsPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/detailsPage/BeerDetailsPage/BeerDetailsPage */ "./src/components/detailsPage/BeerDetailsPage/BeerDetailsPage.jsx");
 /* harmony import */ var components_SignInPage_SignInPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/SignInPage/SignInPage */ "./src/components/SignInPage/SignInPage.jsx");
 /* harmony import */ var components_SignUpPage_SignUpPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/SignUpPage/SignUpPage */ "./src/components/SignUpPage/SignUpPage.jsx");
+/* harmony import */ var components_ProfilePage_ProfilePage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/ProfilePage/ProfilePage */ "./src/components/ProfilePage/ProfilePage.jsx");
+
 
 
 
@@ -46504,6 +46694,10 @@ __webpack_require__.r(__webpack_exports__);
   beerDetailsPage: {
     url: '/details/:id',
     component: components_detailsPage_BeerDetailsPage_BeerDetailsPage__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  profilePage: {
+    url: '/profile',
+    component: components_ProfilePage_ProfilePage__WEBPACK_IMPORTED_MODULE_5__["default"]
   }
 });
 

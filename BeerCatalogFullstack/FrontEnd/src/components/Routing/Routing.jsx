@@ -32,6 +32,11 @@ export default class Routing extends React.Component {
                     path={routeURL.beerDetailsPage.url}
                     component={routeURL.beerDetailsPage.component}
                 />
+                <Route
+                    exact
+                    path={routeURL.profilePage.url}
+                    component={routeURL.profilePage.component}
+                />
             </>
         );
     }

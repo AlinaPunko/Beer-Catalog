@@ -13,7 +13,8 @@ import './accountMenu.scss';
 
 export default class AccountMenu extends React.PureComponent {
     static propTypes = {
-        showMenu: PropTypes.bool.isRequired
+        showMenu: PropTypes.bool.isRequired,
+        closeFunction: PropTypes.func.isRequired
     };
 
     render() {
@@ -27,7 +28,7 @@ export default class AccountMenu extends React.PureComponent {
         return (
              <UserContext.Consumer>
                 {({userId}) => (                   
-                    <div className={menuClass}>
+                    <div className={menuClass} onClick={this.props.closeFunction}>
                         <ul className="account-menu__links">
                             {userId =='' &&
                                 <>
@@ -46,7 +47,7 @@ export default class AccountMenu extends React.PureComponent {
                             {userId != '' &&
                                 <>
                                     <li>
-                                        <Link to="/">
+                                        <Link to="/profile">
                                             <SideMenuLink text="My Profile" icon={account} />
                                         </Link>
                                     </li>

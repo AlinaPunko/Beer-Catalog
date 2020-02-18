@@ -1,23 +1,11 @@
 import React from 'react';
-import {withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-import {UserContext} from 'store/context/UserContext';
+import { UserContext } from 'store/context/UserContext';
 import loginService from 'services/loginService';
 import './signInPage.scss';
 
 class SignInPage extends React.PureComponent {
-    static contextType = UserContext;
-    constructor(props) {
-        super(props);
-        this.beerPerPage = 12;
-        this.state = {
-            page: 1,
-            isLoading: true,
-            renderedBeers: this.beerPerPage
-        };
-        console.log(UserContext);
-    }
-
     async loginButtonClick(setUserId, Id) {
         let userData = {};
         const email = document.getElementsByName("email")[0].value;
@@ -30,9 +18,8 @@ class SignInPage extends React.PureComponent {
 
         userData.email = email;
         userData.password = password;
-        const userId = await loginService.login(userData);
-        setUserId(userId);
-        debugger;
+        const result = await loginService.login(userData);
+        setUserId(result);
         this.props.history.push('/')
     }
 
@@ -51,7 +38,8 @@ class SignInPage extends React.PureComponent {
                                 <label className="sign-in-page__field-title">Password</label>
                                 <input name="password" type="password" className="sign-in-page__field-input"></input>
                             </div>
-                                <button className="sign-in-page__form-button" onClick={this.loginButtonClick.bind(this,setUserId, userId)}>Log in</button>
+                            <button className="sign-in-page__form-button" onClick={this.loginButtonClick.bind(this,setUserId, userId)}>Log in</button>
+                            <span className="sign-in-page__result"></span>
                         </div>
                     </div>
                 )}

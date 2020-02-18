@@ -12,8 +12,9 @@ export default class App extends React.PureComponent {
         super(props);
 
         this.setUserId = (userId) => {
+            debugger;
             this.setState(() => ({
-              userID:userId
+              userId: userId
             }));
         };
 

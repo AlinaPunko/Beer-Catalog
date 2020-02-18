@@ -18,11 +18,12 @@ class SignInPage extends React.PureComponent {
         console.log(UserContext);
     }
 
-    async loginButtonClick(setUserId) {
+    async loginButtonClick(setUserId, Id) {
         let userData = {};
         const email = document.getElementsByName("email")[0].value;
         const password = document.getElementsByName("password")[0].value;
-        if(typeof email == 'undefined' || typeof password == 'undefined')
+        debugger;
+        if(email == '' || password == '')
         {
             return;
         }
@@ -31,28 +32,29 @@ class SignInPage extends React.PureComponent {
         userData.password = password;
         const userId = await loginService.login(userData);
         setUserId(userId);
+        debugger;
         this.props.history.push('/')
     }
 
     render() {
         return (
             <UserContext.Consumer>
-            {({setUserId}) => (
-                <div className="sign-in-page">
-                    <h1 className="sign-in-page__title">Log In</h1>
-                    <div className="sign-in-page__form">
-                        <div className="sign-in-page__field">
-                            <label className="sign-in-page__field-title">E-mail</label>
-                            <input name="email" type="email" className="sign-in-page__field-input"></input>
+                {({setUserId, userId}) => (
+                    <div className="sign-in-page">
+                        <h1 className="sign-in-page__title">Log In</h1>
+                        <div className="sign-in-page__form">
+                            <div className="sign-in-page__field">
+                                <label className="sign-in-page__field-title">E-mail</label>
+                                <input name="email" type="email" className="sign-in-page__field-input"></input>
+                            </div>
+                            <div className="sign-in-page__field">
+                                <label className="sign-in-page__field-title">Password</label>
+                                <input name="password" type="password" className="sign-in-page__field-input"></input>
+                            </div>
+                                <button className="sign-in-page__form-button" onClick={this.loginButtonClick.bind(this,setUserId, userId)}>Log in</button>
                         </div>
-                        <div className="sign-in-page__field">
-                            <label className="sign-in-page__field-title">Password</label>
-                            <input name="password" type="password" className="sign-in-page__field-input"></input>
-                        </div>
-                            <button className="sign-in-page__form-button" onClick={this.loginButtonClick.bind(this,setUserId)}>Log in</button>
                     </div>
-                </div>
-            )}
+                )}
             </UserContext.Consumer>
         )     
     }

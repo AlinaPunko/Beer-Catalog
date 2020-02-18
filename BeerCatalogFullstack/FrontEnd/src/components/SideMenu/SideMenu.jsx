@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-
+import { UserContext } from 'store/context/UserContext';
 import SideMenuLink from 'components/SideMenuLink/SideMenuLink';
 
 import favourite from 'styles/icons/favourite.svg';
@@ -21,24 +21,30 @@ export default class SideMenu extends React.PureComponent {
             menuClass += ' side-menu--opened';
         } else menuClass += ' side-menu--closed';
 
-        return (
-            <div className={menuClass} onClick={this.props.closeFunction}>
-                <div className="side-menu__header">
-                        Beer Catalog
-                </div>
-                <ul className="side-menu__links">
-                    <li>
-                        <Link to="/">
-                            <SideMenuLink text="Home" icon={home} />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/favourites">
-                            <SideMenuLink text="Favourite" icon={favourite} />
-                        </Link>
-                    </li>
-                </ul>
-            </div>
+        return (          
+                <UserContext.Consumer>
+                    {({userId})=>(
+                        <div className={menuClass} onClick={this.props.closeFunction}>
+                            <div className="side-menu__header">
+                                    Beer Catalog
+                            </div>
+                            <ul className="side-menu__links">
+                                <li>
+                                    <Link to="/">
+                                        <SideMenuLink text="Home" icon={home} />
+                                    </Link>
+                                </li>
+                                {userId!="" &&
+                                    <li>
+                                        <Link to="/favourites">
+                                            <SideMenuLink text="Favourite" icon={favourite} />
+                                        </Link>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    )}                  
+            </UserContext.Consumer>
         );
     }
 }

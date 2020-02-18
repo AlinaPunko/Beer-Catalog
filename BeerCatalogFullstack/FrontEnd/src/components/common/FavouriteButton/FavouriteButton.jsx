@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import { UserContext } from 'store/context/UserContext';
 import localStorageHelper from 'helpers/localStorageHelper';
 import favouriteItemHelper from 'helpers/favouriteItemHelper';
 
@@ -34,13 +35,18 @@ export default class FavouriteButton extends React.PureComponent {
     render() {
         const buttonClass = classnames('favourite-button', this.props.className);
         return (
-            <button
-                type="button"
-                className={buttonClass}
-                onClick={this.toggleFavouriteState}
-            >
-                {this.state.isFavourite ? 'Remove favourite' : 'Favourite'}
-            </button>
+            <UserContext.Consumer>
+                {({userId}) => ( 
+                    userId!="" &&
+                        <button
+                            type="button"
+                            className={buttonClass}
+                            onClick={this.toggleFavouriteState}
+                        >
+                            {this.state.isFavourite ? 'Remove favourite' : 'Favourite'}
+                        </button>
+                )}
+            </UserContext.Consumer>
         );
     }
 }

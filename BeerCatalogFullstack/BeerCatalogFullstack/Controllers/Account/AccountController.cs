@@ -8,6 +8,7 @@ using System.Web;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
@@ -29,24 +30,14 @@ namespace BeerCatalogFullstack.Controllers.Account
         [Route("account/join")]
         public async Task<IActionResult> Register([FromBody]RegisterViewModel model)
         {
-            User user = new User {UserName =model.Email, Email = model.Email, Name = model.Name, Birthdate = model.Birthdate};
-
-            if (model.Photo != null)
-            {
-                byte[] imageData;
-                using (BinaryReader binaryReader = new BinaryReader(model.Photo.OpenReadStream()))
-                {
-                    imageData = binaryReader.ReadBytes((int) model.Photo.Length);
-                }
-                user.Photo = imageData;
-            }
+            User user = new User {UserName = model.Email, Email = model.Email, Name = model.Name, Birthdate = model.Birthdate, Photo = model.Photo };
 
             IdentityResult result = await userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
                 await signInManager.SignInAsync(user, false);
                 string userId = userManager.Users.FirstOrDefault(u => u.Email == model.Email)?.Id;
-                return Json(userId);
+                return Json(new { UserID = userId } );
             }
 
             foreach (IdentityError error in result.Errors)
@@ -54,7 +45,7 @@ namespace BeerCatalogFullstack.Controllers.Account
                 ModelState.AddModelError(string.Empty, error.Description);
             }
 
-            return Ok();
+            return Json(new { error = result.Errors });
         }
 
 
@@ -64,16 +55,63 @@ namespace BeerCatalogFullstack.Controllers.Account
         {
             SignInResult result = await signInManager.PasswordSignInAsync(model.Email, model.Password, true, false);
 
-            if (result.Succeeded)
+            if (!result.Succeeded)
             {
-                string userId = userManager.Users.FirstOrDefault(u => u.Email == model.Email)?.Id;
-                return Json(userId);
+                return Json(new {error = "Incorrect data"});
             }
 
-            ModelState.AddModelError("", "Неправильный логин и (или) пароль");
-            return BadRequest();
+            string userId = userManager.Users.FirstOrDefault(u => u.Email == model.Email)?.Id;
+            return Json(new { UserID = userId });
         }
-        
+
+        [HttpPost]
+        [Route("account/profile")]
+        public IActionResult GetUser([FromBody]string id)
+        {
+            User user = userManager.Users.FirstOrDefault(u => u.Id == id);
+
+            if (user == null)
+            {
+                return Json(new { error = "Incorrect id" });
+            }
+
+            return Json(new
+            {
+                user.Name,
+                user.Birthdate,
+                user.Photo,
+                user.Email
+            });
+        }
+
+        [HttpPut]
+        [Route("account/profile")]
+        public IActionResult UpdateUser([FromBody]UpdateUserViewModel model)
+        {
+            try
+            {
+                User user = userManager.Users.FirstOrDefault(u => u.Id == model.Id);
+
+                if (user == null)
+                {
+                    return Json("Incorrect data");
+                }
+                user.Birthdate = model.Birthdate;
+                user.Name = model.Name;
+                user.Photo = model.Photo;
+                user.Email = user.UserName = model.Email;
+
+                IdentityResult result = userManager.UpdateAsync(user).Result;
+
+                return Json("Success");
+
+            }
+            catch (Exception e)
+            {
+                return Json(e);
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> Logout()
         {

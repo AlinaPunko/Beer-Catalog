@@ -1,11 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Http;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace BeerCatalogFullstack.ViewModels
 {
-    public class RegisterViewModel
+    public class UpdateUserViewModel
     {
+        [Required]
+        [Display(Name = "Id")]
+        public string Id { get; set; }
+
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -14,15 +20,6 @@ namespace BeerCatalogFullstack.ViewModels
         [Display(Name = "Name")]
         public string Name { get; set; }
 
-        [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
-
-        [Required]
-        [Compare("Password", ErrorMessage = "Пароли не совпадают")]
-        [DataType(DataType.Password)]
-        [Display(Name = "Repeat password")]
         public string PasswordConfirm { get; set; }
 
         [Display(Name = "Photo")]

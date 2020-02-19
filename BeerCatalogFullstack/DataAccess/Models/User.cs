@@ -10,7 +10,7 @@ namespace DataAccess.Models
         [Required]
         public string Name { get; set; }
         public DateTime? Birthdate { get; set; }
-        public byte[] Photo { get; set; }
+        public string Photo { get; set; }
 
         public List<FavouriteBeer> FavouriteBeers { get; set; }
     }

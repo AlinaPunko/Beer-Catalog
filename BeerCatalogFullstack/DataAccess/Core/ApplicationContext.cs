@@ -9,10 +9,10 @@ namespace DataAccess.Core
         public DbSet<Beer> Beers { get; set; }
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
-            //if (!Database.CanConnect())
-            //{
-            //    Database.Migrate();
-            //}
+            if (!Database.CanConnect())
+            {
+                Database.Migrate();
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

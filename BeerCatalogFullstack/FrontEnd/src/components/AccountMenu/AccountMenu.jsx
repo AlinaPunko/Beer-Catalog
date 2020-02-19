@@ -17,6 +17,11 @@ export default class AccountMenu extends React.PureComponent {
         closeFunction: PropTypes.func.isRequired
     };
 
+    signOutClick(setUserId){
+        debugger;
+        setUserId('');
+    }
+
     render() {
         let menuClass = 'account-menu';
         if (this.props.showMenu) {
@@ -27,7 +32,7 @@ export default class AccountMenu extends React.PureComponent {
 
         return (
              <UserContext.Consumer>
-                {({userId}) => (                   
+                {({userId, setUserId}) => (                   
                     <div className={menuClass} onClick={this.props.closeFunction}>
                         <ul className="account-menu__links">
                             {userId =='' &&
@@ -51,9 +56,9 @@ export default class AccountMenu extends React.PureComponent {
                                             <SideMenuLink text="My Profile" icon={account} />
                                         </Link>
                                     </li>
-                                    <li>
+                                    <li onClick={this.signOutClick.bind(this, setUserId)} >
                                         <Link to="/">
-                                            <SideMenuLink text="Sign Out" icon={signOut} />
+                                            <SideMenuLink text="Sign Out" icon={signOut}/>
                                         </Link>
                                     </li>
                                 </>

@@ -1,8 +1,11 @@
-import localStorageHelper from 'helpers/localStorageHelper';
-
-function isFavourite(beer) {
-    return !!localStorageHelper.getItems().find(
-        (element) => element.id === beer.id
+function isFavourite(beer, favouriteBeers) {
+    if (favouriteBeers.length == 0)
+    {
+        return false;
+    }
+    debugger;
+    return !! favouriteBeers.find(
+        (element) => element === beer.id
     );
 }
 

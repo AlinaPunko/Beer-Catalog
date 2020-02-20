@@ -22,9 +22,7 @@ namespace DataAccess.Migrations
             modelBuilder.Entity("DataAccess.Models.Beer", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
@@ -40,7 +38,7 @@ namespace DataAccess.Migrations
                     b.ToTable("Beers");
                 });
 
-            modelBuilder.Entity("DataAccess.Models.FavouriteBeer", b =>
+            modelBuilder.Entity("DataAccess.Models.FavoriteBeer", b =>
                 {
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
@@ -52,7 +50,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("BeerId");
 
-                    b.ToTable("FavouriteBeer");
+                    b.ToTable("FavoriteBeer");
                 });
 
             modelBuilder.Entity("DataAccess.Models.User", b =>
@@ -261,16 +259,16 @@ namespace DataAccess.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("DataAccess.Models.FavouriteBeer", b =>
+            modelBuilder.Entity("DataAccess.Models.FavoriteBeer", b =>
                 {
                     b.HasOne("DataAccess.Models.Beer", "Beer")
-                        .WithMany("FavouriteBeers")
+                        .WithMany("FavoriteBeers")
                         .HasForeignKey("BeerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DataAccess.Models.User", "User")
-                        .WithMany("FavouriteBeers")
+                        .WithMany("FavoriteBeers")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { UserContext } from 'store/context/UserContext';
+import favouritesService from 'services/favouritesService';
 import beerService from 'services/beerService';
 import BeersListItem from 'components/beersList/BeersListItem/BeersListItem';
 import Icon from 'components/common/Icon/Icon';
@@ -16,8 +18,8 @@ class BeersList extends React.PureComponent {
         addBeers: PropTypes.func.isRequired
     };
 
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
         this.beerPerPage = 12;
         this.state = {
             page: 1,
@@ -25,15 +27,28 @@ class BeersList extends React.PureComponent {
             renderedBeers: this.beerPerPage
         };
         this.handleScroll = this.handleScroll.bind(this);
+        this.loadFavoriteBeers = this.loadFavoriteBeers.bind(this);
     }
 
-    componentDidMount() {
+    async componentWillMount() {
+        await this.loadFavoriteBeers();
         this.loadBeers();
         window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    async loadFavoriteBeers() {
+        if(this.context.userId == '')
+        {
+            return;
+        }
+
+        const favoriteBeers = await favouritesService.getItems(this.context.userId);
+        this.context.setFavouriteBeers(favoriteBeers);
+        debugger;
     }
 
     async loadBeers() {
@@ -84,4 +99,5 @@ class BeersList extends React.PureComponent {
     }
 }
 
+BeersList.contextType = UserContext;
 export default connect()(BeersList);

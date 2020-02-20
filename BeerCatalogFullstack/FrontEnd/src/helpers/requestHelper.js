@@ -12,7 +12,6 @@ function get(url) {
 }
 
 function post(url, data) {
-    debugger;
     return fetch(url,{
         method: 'POST',
         mode: 'cors',

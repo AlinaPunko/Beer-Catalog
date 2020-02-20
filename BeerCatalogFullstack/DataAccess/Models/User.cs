@@ -12,6 +12,6 @@ namespace DataAccess.Models
         public DateTime? Birthdate { get; set; }
         public string Photo { get; set; }
 
-        public List<FavouriteBeer> FavouriteBeers { get; set; }
+        public virtual List<FavoriteBeer> FavoriteBeers { get; set; }
     }
 }

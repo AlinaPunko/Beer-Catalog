@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { UserContext } from 'store/context/UserContext';
 import FavouriteButton from 'components/common/FavouriteButton/FavouriteButton';
-import localStorageHelper from 'helpers/localStorageHelper';
+import favouritesService from 'services/favouritesService';
 import favouriteItemHelper from 'helpers/favouriteItemHelper';
 
 import './beerDetailsHeader.scss';
@@ -18,17 +19,17 @@ export default class BeerDetailsHeader extends React.Component {
         }).isRequired
     };
 
-    constructor(props) {
-        super(props);
-        this.state = { isFavourite: favouriteItemHelper.isFavourite(this.props.beer) };
+    constructor(props, context) {
+        super(props, context);
+        this.state = { isFavourite: favouriteItemHelper.isFavourite(this.props.beer, this.context.favouriteBeers) };
     }
 
     onFavouriteButtonClick = () => {
         const { beer } = this.props;
 
         this.state.isFavourite
-            ? localStorageHelper.deleteItem(beer)
-            : localStorageHelper.add(beer);
+            ? favouritesService.deleteItem(beer)
+            : favouritesService.add(beer);
         this.setState({ isFavourite: !this.state.isFavourite });
     }
 
@@ -48,3 +49,5 @@ export default class BeerDetailsHeader extends React.Component {
         );
     }
 }
+
+BeerDetailsHeader.contextType = UserContext;

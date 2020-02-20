@@ -17,9 +17,8 @@ export default class AccountMenu extends React.PureComponent {
         closeFunction: PropTypes.func.isRequired
     };
 
-    signOutClick(setUserId){
-        debugger;
-        setUserId('');
+    signOutClick(setUserId) {
+        setUserId('0');
     }
 
     render() {

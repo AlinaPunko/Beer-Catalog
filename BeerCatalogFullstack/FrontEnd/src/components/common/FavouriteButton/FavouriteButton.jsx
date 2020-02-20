@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { UserContext } from 'store/context/UserContext';
-import localStorageHelper from 'helpers/localStorageHelper';
+import favouritesServices from 'services/favouritesService';
 import favouriteItemHelper from 'helpers/favouriteItemHelper';
 
 import './favouriteButton.scss';
@@ -20,19 +20,21 @@ export default class FavouriteButton extends React.PureComponent {
         className: PropTypes.string.isRequired
     }
 
-    constructor(props) {
-        super(props);
-        this.state = { isFavourite: favouriteItemHelper.isFavourite(this.props.beer) };
+    constructor(props, context) {
+        super(props, context);
+        debugger;
+        this.state = { isFavourite: favouriteItemHelper.isFavourite(this.props.beer, this.context.favouriteBeers) };
     }
 
     toggleFavouriteState = () => {
         this.state.isFavourite
-            ? localStorageHelper.deleteItem(this.props.beer)
-            : localStorageHelper.add(this.props.beer);
+            ? favouritesServices.deleteItem(this.context.userId, this.props.beer)
+            : favouritesServices.add(this.context.userId, this.props.beer);
         this.setState({ isFavourite: !this.state.isFavourite });
     }
 
     render() {
+        debugger;
         const buttonClass = classnames('favourite-button', this.props.className);
         return (
             <UserContext.Consumer>
@@ -50,3 +52,5 @@ export default class FavouriteButton extends React.PureComponent {
         );
     }
 }
+
+FavouriteButton.contextType = UserContext;

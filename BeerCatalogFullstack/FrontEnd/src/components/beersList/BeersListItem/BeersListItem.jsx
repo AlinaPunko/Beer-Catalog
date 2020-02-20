@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { UserContext } from 'store/context/UserContext';
 import OpenDetailsPageButton from 'components/common/OpenDetailsPageButton/OpenDetailsPageButton';
 import FavouriteButton from 'components/common/FavouriteButton/FavouriteButton';
-import localStorageHelper from 'helpers/localStorageHelper';
+import favouritesServices from 'services/favouritesService';
 import favouriteItemHelper from 'helpers/favouriteItemHelper';
 
 import './beersListItem.scss';
@@ -20,15 +21,16 @@ export default class BeersListItem extends React.PureComponent {
         }).isRequired
     };
 
-    constructor(props) {
-        super(props);
-        this.state = { isFavourite: favouriteItemHelper.isFavourite(this.props.beer) };
+    constructor(props, context) {
+        super(props, context);
+        debugger;
+        this.state = { isFavourite: favouriteItemHelper.isFavourite(this.props.beer, this.context.favouriteBeers) };
     }
 
     toggleFavouriteState = () => {
         this.state.isFavourite
-            ? localStorageHelper.deleteItem(this.props.beer)
-            : localStorageHelper.add(this.props.beer);
+            ? favouritesServices.deleteItem(this.props.beer, this.context.userId)
+            : favouritesServices.add(this.props.beer, this.context.userId);
         this.setState({ isFavourite: !this.state.isFavourite });
     }
 
@@ -47,3 +49,4 @@ export default class BeersListItem extends React.PureComponent {
         );
     }
 }
+BeersListItem.contextType = UserContext;

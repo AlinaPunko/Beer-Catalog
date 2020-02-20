@@ -1,16 +1,13 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Nancy.Json;
+using Newtonsoft.Json;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace BeerCatalogFullstack.Controllers.Account
@@ -36,7 +33,9 @@ namespace BeerCatalogFullstack.Controllers.Account
             if (result.Succeeded)
             {
                 await signInManager.SignInAsync(user, false);
-                string userId = userManager.Users.FirstOrDefault(u => u.Email == model.Email)?.Id;
+                string userId = userManager.Users.
+                                FirstOrDefault(u => u.Email == model.Email)?
+                                .Id;
                 return Json(new { UserID = userId } );
             }
 
@@ -60,15 +59,17 @@ namespace BeerCatalogFullstack.Controllers.Account
                 return Json(new {error = "Incorrect data"});
             }
 
-            string userId = userManager.Users.FirstOrDefault(u => u.Email == model.Email)?.Id;
-            return Json(new { UserID = userId });
+            var user = userManager.Users.FirstOrDefault(u => u.Email == model.Email);
+
+            return Json(new {userId = user.Id});
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("account/profile")]
-        public IActionResult GetUser([FromBody]string id)
+        public IActionResult GetUser(string id)
         {
-            User user = userManager.Users.FirstOrDefault(u => u.Id == id);
+            User user = userManager.Users
+                .FirstOrDefault(u => u.Id == id);
 
             if (user == null)
             {
@@ -80,7 +81,7 @@ namespace BeerCatalogFullstack.Controllers.Account
                 user.Name,
                 user.Birthdate,
                 user.Photo,
-                user.Email
+                user.Email,
             });
         }
 
@@ -90,7 +91,8 @@ namespace BeerCatalogFullstack.Controllers.Account
         {
             try
             {
-                User user = userManager.Users.FirstOrDefault(u => u.Id == model.Id);
+                User user = userManager.Users
+                    .FirstOrDefault(u => u.Id == model.Id);
 
                 if (user == null)
                 {
@@ -112,7 +114,7 @@ namespace BeerCatalogFullstack.Controllers.Account
             }
         }
 
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();

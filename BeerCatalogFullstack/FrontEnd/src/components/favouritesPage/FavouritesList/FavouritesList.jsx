@@ -1,8 +1,9 @@
 import React from 'react';
 
+import { UserContext } from 'store/context/UserContext';
+import favouritesServices from 'services/favouritesService';
 import FavouriteListItem from 'components/favouritesPage/FavouriteListItem/FavouriteListItem';
 import PagingPanel from 'components/common/PagingPanel/PagingPanel';
-import localStorageHelper from 'helpers/localStorageHelper';
 
 import './favouritesList.scss';
 
@@ -16,7 +17,7 @@ export default class FavouritesList extends React.Component {
     }
 
     async componentDidMount() {
-        const result = await localStorageHelper.getItems();
+        const result = await favouritesServices.getItems(this.context.userId);
         this.setState({ Beers: result });
     }
 
@@ -29,7 +30,7 @@ export default class FavouritesList extends React.Component {
     }
 
     onDelete = (item) => {
-        localStorageHelper.deleteItem(item);
+        favouritesServices.deleteItem(item);
         const { Beers } = this.state;
         const deletedBeer = Beers.find(
             (beer) => beer.id === item.id
@@ -81,3 +82,5 @@ export default class FavouritesList extends React.Component {
         );
     }
 }
+
+FavouritesList.contextType = UserContext;

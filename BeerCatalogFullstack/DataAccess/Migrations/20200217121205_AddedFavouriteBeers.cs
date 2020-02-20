@@ -10,8 +10,7 @@ namespace DataAccess.Migrations
                 name: "Beers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Tagline = table.Column<string>(nullable: true),
                     ImageUrl = table.Column<string>(nullable: true)
@@ -22,7 +21,7 @@ namespace DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FavouriteBeer",
+                name: "FavoriteBeer",
                 columns: table => new
                 {
                     BeerId = table.Column<int>(nullable: false),
@@ -47,14 +46,14 @@ namespace DataAccess.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_FavouriteBeer_BeerId",
-                table: "FavouriteBeer",
+                table: "FavoriteBeer",
                 column: "BeerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "FavouriteBeer");
+                name: "FavoriteBeer");
 
             migrationBuilder.DropTable(
                 name: "Beers");

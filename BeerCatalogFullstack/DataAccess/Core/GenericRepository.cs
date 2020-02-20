@@ -28,16 +28,19 @@ namespace DataAccess.Core
         public void Add(TEntity item)
         {
             DbSet.Add(item);
+            Context.SaveChanges();
         }
 
         public void Update(TEntity item)
         {
             Context.Entry(item).State = EntityState.Modified;
+            Context.SaveChanges();
         }
 
         public void Remove(TEntity item)
         {
             DbSet.Remove(item);
+            Context.SaveChanges();
         }
     }
 }

@@ -16,7 +16,8 @@ class ProfilePage extends React.PureComponent {
     }
 
     async componentDidMount() {
-        const user = await userService.getUser(this.context.userId.userID);
+        debugger;
+        const user = await userService.getUser(this.context.userId);
         this.setState({user: user});
         document.getElementsByName("name")[0].value=user.name;
         document.getElementsByName("email")[0].value=user.email;
@@ -32,7 +33,7 @@ class ProfilePage extends React.PureComponent {
           });
     }
 
-    onNameFieldChange(e) {
+    onNameFieldChange = (e) => {
         e.persist();
         this.setState((prevState) => {
             let user = Object.assign({}, prevState.user);  
@@ -41,7 +42,7 @@ class ProfilePage extends React.PureComponent {
         });
     }
 
-    onBirthdateFieldChange(e) {
+    onBirthdateFieldChange = (e) => {
         e.persist();
         this.setState(prevState => {
             let user = Object.assign({}, prevState.user);  
@@ -50,11 +51,11 @@ class ProfilePage extends React.PureComponent {
         });
     }
 
-    onAddPhotoClick(){ 
+    onAddPhotoClick = () => { 
         const input = document.createElement('input');
         input.type = 'file';
         input.accept = "image/x-png,image/gif,image/jpeg";
-        input.onchange = (e) =>{
+        input.onchange = (e) => {
             const filesSelected = input.files;
             if (filesSelected.length > 0) {
                 const fileToLoad = filesSelected[0]; 
@@ -73,7 +74,7 @@ class ProfilePage extends React.PureComponent {
         input.click();
     }
 
-    async onSaveButtonClick() {
+    onSaveButtonClick = async () => {
         if(validationHelper.isEmailValid(this.state.user.email) && this.state.user.name != ""){
             const result = await userService.updateUser(this.state.user);
             if(result=="Success"){
@@ -89,65 +90,67 @@ class ProfilePage extends React.PureComponent {
         }
     }
 
-    onCloseButtonClick(){
-        debugger;
+    onCloseButtonClick = () => {
         this.props.history.push('/');
     }
 
     render() {
+        if(!this.state.user)
+        {
+            return null;
+        }
+
         return (
-            (this.state.user &&
-                <section className="profile-page">
-                    <h1 className="profile-page__title">Your profile</h1>
-                    <div className="profile-page__content">
-                        <div className="profile-page__image-block">
-                            <img
-                                className="profile-page__user-image"
-                                alt=""
-                                src={this.state.user.photo}
-                            />
-                        <div>
-                            <button className="profile-page__add-image-button" type="button" onClick={this.onAddPhotoClick.bind(this)}>
-                                Add image
-                            </button>
-                            <button className="profile-page__delete-image-button" type="button" onClick={this.deletePhotoClick}>
-                                Delete image
-                            </button>
-                        </div>
-                        </div>
-                        <div className="profile-page__user-info">
-                            <div className="profile-page__field">
-                                <label className="profile-page__field-title">Name</label>
-                                <input
+            <section className="profile-page">
+                <h1 className="profile-page__title">Your profile</h1>
+                <div className="profile-page__content">
+                    <div className="profile-page__image-block">
+                        <img
+                            className="profile-page__user-image"
+                            alt=""
+                            src={this.state.user.photo}
+                        />
+                    <div>
+                        <button className="profile-page__add-image-button" type="button" onClick={this.onAddPhotoClick}>
+                            Add image
+                        </button>
+                        <button className="profile-page__delete-image-button" type="button" onClick={this.deletePhotoClick}>
+                            Delete image
+                        </button>
+                    </div>  
+                </div>
+                    <div className="profile-page__user-info">
+                        <div className="profile-page__field">
+                            <label className="profile-page__field-title">Name</label>
+                            <input
                                 name="name"
                                 type="text"
                                 className="profile-page__field-input"
-                                onChange={this.onNameFieldChange.bind(this)}
-                                />
-                            </div>
-                            <div className="profile-page__field">
-                                <label className="profile-page__field-title">E-mail</label>
-                                <input
+                                onChange={this.onNameFieldChange}
+                            />
+                        </div>
+                        <div className="profile-page__field">
+                            <label className="profile-page__field-title">E-mail</label>
+                            <input
                                 name="email"
                                 type="email"
                                 className="profile-page__field-input"
                                 />
                             </div>
-                            <div className="profile-page__field">
-                                <label className="profile-page__field-title">Birthdate</label>
-                                <input
+                        <div className="profile-page__field">
+                            <label className="profile-page__field-title">Birthdate</label>
+                            <input
                                 name="birthdate"
                                 type="date"
                                 className="profile-page__field-input"
-                                onChange={this.onBirthdateFieldChange.bind(this)}
-                                />
-                            </div>
-                            <button type="button" className="profile-page__save-button" onClick={this.onSaveButtonClick.bind(this)}>Save</button>
-                            <button type="button" className="profile-page__close-button" onClick={this.onCloseButtonClick.bind(this)}>Close</button>
+                                onChange={this.onBirthdateFieldChange}
+                            />
                         </div>
+                        <button type="button" className="profile-page__save-button" onClick={this.onSaveButtonClick}>Save</button>
+                        <button type="button" className="profile-page__close-button" onClick={this.onCloseButtonClick}>Close</button>
                     </div>
-                </section>
-            ) 
+                </div>
+            </section>
         )
     }
 }

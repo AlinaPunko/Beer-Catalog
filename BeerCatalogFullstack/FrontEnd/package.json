@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "webpack --watch",
-    "start": "webpack --open --config webpack.dev.js"
+    "start": "webpack --watch --open --config webpack.dev.js"
   },
   "author": "Alina Punko",
   "license": "ISC",

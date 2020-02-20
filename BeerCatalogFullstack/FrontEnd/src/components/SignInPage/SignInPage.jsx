@@ -6,11 +6,10 @@ import loginService from 'services/loginService';
 import './signInPage.scss';
 
 class SignInPage extends React.PureComponent {
-    async loginButtonClick(setUserId) {
+    async loginButtonClick(setUserId, setFavouriteBeers) {
         let userData = {};
         const email = document.getElementsByName("email")[0].value;
         const password = document.getElementsByName("password")[0].value;
-        debugger;
         if(email == '' || password == '')
         {
             return;
@@ -18,15 +17,15 @@ class SignInPage extends React.PureComponent {
 
         userData.email = email;
         userData.password = password;
-        const result = await loginService.login(userData);
-        const {userID} = result;
-        debugger;
-        if(userID){
-            setUserId(result);
+        const loginResult = await loginService.login(userData);
+        const { userId } = loginResult;
+        
+        if(userId) {
+            setUserId(userId);
             this.props.history.push('/')
             return;
         }
-        
+
         const {error} = result;
         document.getElementsByClassName("sign-in-page__result")[0].innerHTML = error;
     }

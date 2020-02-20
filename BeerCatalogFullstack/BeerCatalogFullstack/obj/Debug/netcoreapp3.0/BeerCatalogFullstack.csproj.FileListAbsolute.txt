@@ -157,5 +157,11 @@ D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.
 D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\DataAccess.dll
 D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\DataAccess.pdb
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\Microsoft.Extensions.DependencyModel.dll
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\Microsoft.Extensions.PlatformAbstractions.dll
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\Nancy.dll
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\Castle.Core.dll
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Proxies.dll
 D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\obj\Debug\netcoreapp3.0\BeerCatalogFullstack.MvcApplicationPartsAssemblyInfo.cs
 D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\obj\Debug\netcoreapp3.0\BeerCatalogFullstack.MvcApplicationPartsAssemblyInfo.cache

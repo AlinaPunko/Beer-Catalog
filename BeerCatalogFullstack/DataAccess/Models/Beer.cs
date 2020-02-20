@@ -1,16 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccess.Models
 {
     public class Beer
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Required]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Tagline { get; set; }
         public string ImageUrl { get; set; }
 
-        public List<FavouriteBeer> FavouriteBeers { get; set; }
+        public virtual List<FavoriteBeer> FavoriteBeers { get; set; }
     }
 }

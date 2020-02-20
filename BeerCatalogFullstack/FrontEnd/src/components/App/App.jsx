@@ -12,9 +12,14 @@ export default class App extends React.PureComponent {
         super(props);
 
         this.setUserId = (userId) => {
-            debugger;
             this.setState(() => ({
               userId: userId
+            }));
+        };
+
+        this.setFavouriteBeers = (favouriteBeers) => {
+            this.setState(() => ({
+                favouriteBeers: favouriteBeers
             }));
         };
 
@@ -22,6 +27,8 @@ export default class App extends React.PureComponent {
             showSideMenu: false,
             showAccountMenu: false,
             userId: "",
+            favouriteBeers: [], 
+            setFavouriteBeers: this.setFavouriteBeers,
             setUserId: this.setUserId
         };
     }

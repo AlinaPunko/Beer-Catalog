@@ -36,13 +36,14 @@ export default class BeersListItem extends React.PureComponent {
 
     render() {
         const { beer } = this.props;
+        debugger;
         return (
             <div className="beers-list-item">
                 <img alt="Beer" src={beer.imageUrl} className="beers-list-item__image" />
                 <div className="beers-list-item__information">
                     <div className="beers-list-item__title">{beer.name}</div>
                     <div className="beers-list-item__tagline">{beer.tagline}</div>
-                    <OpenDetailsPageButton beerID={beer.id} className="beers-list-item__open-details-page-button" />
+                    <OpenDetailsPageButton beerId={beer.id} className="beers-list-item__open-details-page-button" />
                     <FavouriteButton beer={beer} className="beers-list-item__favourite-button" />
                 </div>
             </div>

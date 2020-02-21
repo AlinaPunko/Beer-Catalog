@@ -21,7 +21,8 @@ namespace BeerCatalogFullstack
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationContext>(options =>
-                options.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseLazyLoadingProxies()
+                    .UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationContext>();

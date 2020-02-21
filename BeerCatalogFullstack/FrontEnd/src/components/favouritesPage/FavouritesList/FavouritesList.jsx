@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { UserContext } from 'store/context/UserContext';
+import beerServices from 'services/beerService';
 import favouritesServices from 'services/favouritesService';
 import FavouriteListItem from 'components/favouritesPage/FavouriteListItem/FavouriteListItem';
 import PagingPanel from 'components/common/PagingPanel/PagingPanel';
 
 import './favouritesList.scss';
 
-export default class FavouritesList extends React.Component {
+export default class FavouritesList extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,7 +19,11 @@ export default class FavouritesList extends React.Component {
 
     async componentDidMount() {
         const result = await favouritesServices.getItems(this.context.userId);
-        this.setState({ Beers: result });
+        const beers = result.map(async beerId => {
+            return await beerServices.getByID(beerId);
+        });
+        Promise.all(beers).then(beers => this.setState({ Beers: beers }));
+        debugger;
     }
 
     onPageNumberClick = (event) => {
@@ -29,12 +34,20 @@ export default class FavouritesList extends React.Component {
         }
     }
 
-    onDelete = (item) => {
-        favouritesServices.deleteItem(item);
+    onDelete = async (item) => {
         const { Beers } = this.state;
+
+        await favouritesServices.deleteItem(this.context.userId, item);
+        const result = await favouritesServices.getItems(this.context.userId);
+        const beers = result.map(async beerId => {
+            return await beerServices.getByID(beerId);
+        });
+        Promise.all(beers).then(beers => this.setState({ Beers: beers }));
+
         const deletedBeer = Beers.find(
             (beer) => beer.id === item.id
         );
+
         Beers.splice(Beers.indexOf(deletedBeer), 1);
         this.setState({
             Beers
@@ -42,6 +55,7 @@ export default class FavouritesList extends React.Component {
     }
 
     renderBeers(currentBeers) {
+        debugger;
         return currentBeers.map((beer) => (<FavouriteListItem beer={beer} key={beer.id} onDelete={this.onDelete} />));
     }
 
@@ -61,7 +75,6 @@ export default class FavouritesList extends React.Component {
         if (currentPage < Math.ceil(Beers.length / 5)) {
             pageNumbers.push(currentPage + 1);
         }
-
         return (
             <div className="favourite-list">
                 <div className="favourite-list__title">Your favourite beers</div>

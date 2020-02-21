@@ -59,7 +59,7 @@ namespace BeerCatalogFullstack.Controllers.Account
                 return Json(new {error = "Incorrect data"});
             }
 
-            var user = userManager.Users.FirstOrDefault(u => u.Email == model.Email);
+            User user = userManager.Users.FirstOrDefault(u => u.Email == model.Email);
 
             return Json(new {userId = user.Id});
         }

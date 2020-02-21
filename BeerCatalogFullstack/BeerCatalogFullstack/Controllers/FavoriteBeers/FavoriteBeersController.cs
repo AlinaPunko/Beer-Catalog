@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
+using DataAccess.Core;
 using DataAccess.Models;
 using DataAccess.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -9,10 +11,9 @@ namespace BeerCatalogFullstack.Controllers.FavoriteBeers
 {
     public class FavoriteBeersController : Controller
     {
-
         private readonly FavoriteBeersRepository repository;
 
-        public FavoriteBeersController(DbContext context)
+        public FavoriteBeersController(ApplicationContext context)
         {
             repository = new FavoriteBeersRepository(context);
         }
@@ -21,13 +22,9 @@ namespace BeerCatalogFullstack.Controllers.FavoriteBeers
         [Route("favorites/add")]
         public IActionResult AddFavoriteBeer([FromBody]FavoriteBeerViewModel model)
         {
-            FavoriteBeer favoriteBeer = new FavoriteBeer
-            {
-                BeerId = model.Id,
-                UserId = model.UserId
-            };
-
-            repository.Add(favoriteBeer);
+            FavoriteBeer favoriteBeer = FavoriteBeerManager.GetFavoriteBeerModel(model);
+            Beer beer = FavoriteBeerManager.GetBeerModel(model);
+            repository.Add(favoriteBeer, beer);
             return Ok();
         }
 
@@ -35,12 +32,7 @@ namespace BeerCatalogFullstack.Controllers.FavoriteBeers
         [Route("favorites/delete")]
         public IActionResult DeleteFavoriteBeer([FromBody]FavoriteBeerViewModel model)
         {
-            FavoriteBeer favoriteBeer = new FavoriteBeer
-            {
-                BeerId = model.Id,
-                UserId = model.UserId
-            };
-
+            FavoriteBeer favoriteBeer = FavoriteBeerManager.GetFavoriteBeerModel(model);
             repository.Remove(favoriteBeer);
             return Ok();
         }

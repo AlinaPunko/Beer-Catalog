@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "4a986133dca8f28d7797";
+/******/ 	var hotCurrentHash = "e4dd11b0d2bd17a6464f";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -43811,6 +43811,7 @@ function (_React$PureComponent) {
     key: "render",
     value: function render() {
       var beer = this.props.beer;
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "beers-list-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -43824,7 +43825,7 @@ function (_React$PureComponent) {
       }, beer.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "beers-list-item__tagline"
       }, beer.tagline), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_OpenDetailsPageButton_OpenDetailsPageButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        beerID: beer.id,
+        beerId: beer.id,
         className: "beers-list-item__open-details-page-button"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_FavouriteButton_FavouriteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
         beer: beer,
@@ -44216,11 +44217,11 @@ function (_React$PureComponent) {
     key: "render",
     value: function render() {
       var _this$props = this.props,
-          beerID = _this$props.beerID,
+          beerId = _this$props.beerId,
           className = _this$props.className;
       var buttonClass = classnames__WEBPACK_IMPORTED_MODULE_3___default()('open-details-page-button', className);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: helpers_urlHelper__WEBPACK_IMPORTED_MODULE_4__["default"].getUrlWithParameter(constants_routing__WEBPACK_IMPORTED_MODULE_5__["default"].beerDetailsPage.url, /:id/, beerID)
+        to: helpers_urlHelper__WEBPACK_IMPORTED_MODULE_4__["default"].getUrlWithParameter(constants_routing__WEBPACK_IMPORTED_MODULE_5__["default"].beerDetailsPage.url, /:id/, beerId)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
         className: buttonClass
@@ -44232,7 +44233,7 @@ function (_React$PureComponent) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
 _defineProperty(OpenDetailsPageButton, "propTypes", {
-  beerID: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
+  beerId: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
   className: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired
 });
 
@@ -45935,8 +45936,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var FavouriteListItem =
 /*#__PURE__*/
-function (_React$Component) {
-  _inherits(FavouriteListItem, _React$Component);
+function (_React$PureComponent) {
+  _inherits(FavouriteListItem, _React$PureComponent);
 
   function FavouriteListItem() {
     var _getPrototypeOf2;
@@ -45963,6 +45964,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var beer = this.props.beer;
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "favourite-list-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -45972,7 +45974,7 @@ function (_React$Component) {
       }, beer.tagline), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "favourite-list-item__description"
       }, beer.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_OpenDetailsPageButton_OpenDetailsPageButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        beerID: beer.id,
+        beerId: beer.id,
         className: "favourite-list-item__open-details-page-button"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
@@ -45987,7 +45989,7 @@ function (_React$Component) {
   }]);
 
   return FavouriteListItem;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
 _defineProperty(FavouriteListItem, "propTypes", {
   beer: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
@@ -46072,11 +46074,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
-/* harmony import */ var services_favouritesService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! services/favouritesService */ "./src/services/favouritesService.js");
-/* harmony import */ var components_favouritesPage_FavouriteListItem_FavouriteListItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/favouritesPage/FavouriteListItem/FavouriteListItem */ "./src/components/favouritesPage/FavouriteListItem/FavouriteListItem.jsx");
-/* harmony import */ var components_common_PagingPanel_PagingPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/common/PagingPanel/PagingPanel */ "./src/components/common/PagingPanel/PagingPanel.jsx");
-/* harmony import */ var _favouritesList_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./favouritesList.scss */ "./src/components/favouritesPage/FavouritesList/favouritesList.scss");
-/* harmony import */ var _favouritesList_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_favouritesList_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var services_beerService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! services/beerService */ "./src/services/beerService.js");
+/* harmony import */ var services_favouritesService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! services/favouritesService */ "./src/services/favouritesService.js");
+/* harmony import */ var components_favouritesPage_FavouriteListItem_FavouriteListItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/favouritesPage/FavouriteListItem/FavouriteListItem */ "./src/components/favouritesPage/FavouriteListItem/FavouriteListItem.jsx");
+/* harmony import */ var components_common_PagingPanel_PagingPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/common/PagingPanel/PagingPanel */ "./src/components/common/PagingPanel/PagingPanel.jsx");
+/* harmony import */ var _favouritesList_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./favouritesList.scss */ "./src/components/favouritesPage/FavouritesList/favouritesList.scss");
+/* harmony import */ var _favouritesList_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_favouritesList_scss__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -46108,10 +46111,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var FavouritesList =
 /*#__PURE__*/
-function (_React$Component) {
-  _inherits(FavouritesList, _React$Component);
+function (_React$PureComponent) {
+  _inherits(FavouritesList, _React$PureComponent);
 
   function FavouritesList(props) {
     var _this;
@@ -46128,18 +46132,81 @@ function (_React$Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onDelete", function (item) {
-      services_favouritesService__WEBPACK_IMPORTED_MODULE_2__["default"].deleteItem(item);
-      var Beers = _this.state.Beers;
-      var deletedBeer = Beers.find(function (beer) {
-        return beer.id === item.id;
-      });
-      Beers.splice(Beers.indexOf(deletedBeer), 1);
+    _defineProperty(_assertThisInitialized(_this), "onDelete",
+    /*#__PURE__*/
+    function () {
+      var _ref = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee2(item) {
+        var Beers, result, beers, deletedBeer;
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                Beers = _this.state.Beers;
+                _context2.next = 3;
+                return services_favouritesService__WEBPACK_IMPORTED_MODULE_3__["default"].deleteItem(_this.context.userId, item);
 
-      _this.setState({
-        Beers: Beers
-      });
-    });
+              case 3:
+                _context2.next = 5;
+                return services_favouritesService__WEBPACK_IMPORTED_MODULE_3__["default"].getItems(_this.context.userId);
+
+              case 5:
+                result = _context2.sent;
+                beers = result.map(
+                /*#__PURE__*/
+                function () {
+                  var _ref2 = _asyncToGenerator(
+                  /*#__PURE__*/
+                  regeneratorRuntime.mark(function _callee(beerId) {
+                    return regeneratorRuntime.wrap(function _callee$(_context) {
+                      while (1) {
+                        switch (_context.prev = _context.next) {
+                          case 0:
+                            _context.next = 2;
+                            return services_beerService__WEBPACK_IMPORTED_MODULE_2__["default"].getByID(beerId);
+
+                          case 2:
+                            return _context.abrupt("return", _context.sent);
+
+                          case 3:
+                          case "end":
+                            return _context.stop();
+                        }
+                      }
+                    }, _callee);
+                  }));
+
+                  return function (_x2) {
+                    return _ref2.apply(this, arguments);
+                  };
+                }());
+                Promise.all(beers).then(function (beers) {
+                  return _this.setState({
+                    Beers: beers
+                  });
+                });
+                deletedBeer = Beers.find(function (beer) {
+                  return beer.id === item.id;
+                });
+                Beers.splice(Beers.indexOf(deletedBeer), 1);
+
+                _this.setState({
+                  Beers: Beers
+                });
+
+              case 11:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
 
     _this.state = {
       Beers: [],
@@ -46153,27 +46220,60 @@ function (_React$Component) {
     value: function () {
       var _componentDidMount = _asyncToGenerator(
       /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee() {
-        var result;
-        return regeneratorRuntime.wrap(function _callee$(_context) {
+      regeneratorRuntime.mark(function _callee4() {
+        var _this2 = this;
+
+        var result, beers;
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
           while (1) {
-            switch (_context.prev = _context.next) {
+            switch (_context4.prev = _context4.next) {
               case 0:
-                _context.next = 2;
-                return services_favouritesService__WEBPACK_IMPORTED_MODULE_2__["default"].getItems(this.context.userId);
+                _context4.next = 2;
+                return services_favouritesService__WEBPACK_IMPORTED_MODULE_3__["default"].getItems(this.context.userId);
 
               case 2:
-                result = _context.sent;
-                this.setState({
-                  Beers: result
-                });
+                result = _context4.sent;
+                beers = result.map(
+                /*#__PURE__*/
+                function () {
+                  var _ref3 = _asyncToGenerator(
+                  /*#__PURE__*/
+                  regeneratorRuntime.mark(function _callee3(beerId) {
+                    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                      while (1) {
+                        switch (_context3.prev = _context3.next) {
+                          case 0:
+                            _context3.next = 2;
+                            return services_beerService__WEBPACK_IMPORTED_MODULE_2__["default"].getByID(beerId);
 
-              case 4:
+                          case 2:
+                            return _context3.abrupt("return", _context3.sent);
+
+                          case 3:
+                          case "end":
+                            return _context3.stop();
+                        }
+                      }
+                    }, _callee3);
+                  }));
+
+                  return function (_x3) {
+                    return _ref3.apply(this, arguments);
+                  };
+                }());
+                Promise.all(beers).then(function (beers) {
+                  return _this2.setState({
+                    Beers: beers
+                  });
+                });
+                debugger;
+
+              case 6:
               case "end":
-                return _context.stop();
+                return _context4.stop();
             }
           }
-        }, _callee, this);
+        }, _callee4, this);
       }));
 
       function componentDidMount() {
@@ -46185,13 +46285,14 @@ function (_React$Component) {
   }, {
     key: "renderBeers",
     value: function renderBeers(currentBeers) {
-      var _this2 = this;
+      var _this3 = this;
 
+      debugger;
       return currentBeers.map(function (beer) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_favouritesPage_FavouriteListItem_FavouriteListItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_favouritesPage_FavouriteListItem_FavouriteListItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
           beer: beer,
           key: beer.id,
-          onDelete: _this2.onDelete
+          onDelete: _this3.onDelete
         });
       });
     }
@@ -46222,7 +46323,7 @@ function (_React$Component) {
         className: "favourite-list__title"
       }, "Your favourite beers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "favourite-list__beers"
-      }, this.renderBeers(currentBeers), this.state.Beers.length > 5 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_PagingPanel_PagingPanel__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, this.renderBeers(currentBeers), this.state.Beers.length > 5 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_PagingPanel_PagingPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
         pageNumbers: pageNumbers,
         onPageNumberClick: this.onPageNumberClick,
         collectionLength: this.state.Beers.length
@@ -46231,7 +46332,7 @@ function (_React$Component) {
   }]);
 
   return FavouritesList;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
 
 FavouritesList.contextType = store_context_UserContext__WEBPACK_IMPORTED_MODULE_1__["UserContext"];

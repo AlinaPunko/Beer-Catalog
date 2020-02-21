@@ -9,15 +9,15 @@ import './openDetailsPageButton.scss';
 
 export default class OpenDetailsPageButton extends React.PureComponent {
     static propTypes = {
-        beerID: PropTypes.number.isRequired,
+        beerId: PropTypes.number.isRequired,
         className: PropTypes.string.isRequired
     }
 
     render() {
-        const { beerID, className } = this.props;
+        const { beerId, className } = this.props;
         const buttonClass = classnames('open-details-page-button', className);
         return (
-            <Link to={urlHelper.getUrlWithParameter(routing.beerDetailsPage.url, /:id/, beerID)}>
+            <Link to={urlHelper.getUrlWithParameter(routing.beerDetailsPage.url, /:id/, beerId)}>
                 <button type="button" className={buttonClass}>Open</button>
             </Link>
         );

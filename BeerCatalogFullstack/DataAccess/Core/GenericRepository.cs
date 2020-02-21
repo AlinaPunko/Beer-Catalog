@@ -6,10 +6,10 @@ namespace DataAccess.Core
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        protected DbContext Context;
+        protected ApplicationContext Context;
         protected DbSet<TEntity> DbSet;
 
-        public GenericRepository(DbContext context)
+        public GenericRepository(ApplicationContext context)
         {
             Context = context;
             DbSet = context.Set<TEntity>();
@@ -27,20 +27,44 @@ namespace DataAccess.Core
 
         public void Add(TEntity item)
         {
-            DbSet.Add(item);
-            Context.SaveChanges();
+            try
+            {
+                Context.BeginTransaction();
+                DbSet.Add(item);
+                Context.Commit();
+            }
+            catch (Exception)
+            {
+                Context.Rollback();
+            }
         }
 
         public void Update(TEntity item)
         {
-            Context.Entry(item).State = EntityState.Modified;
-            Context.SaveChanges();
+            try
+            {
+                Context.BeginTransaction();
+                Context.Entry(item).State = EntityState.Modified;
+                Context.Commit();
+            }
+            catch (Exception)
+            {
+                Context.Rollback();
+            }
         }
 
         public void Remove(TEntity item)
         {
-            DbSet.Remove(item);
-            Context.SaveChanges();
+            try
+            {
+                Context.BeginTransaction();
+                DbSet.Remove(item);
+                Context.Commit();
+            }
+            catch (Exception)
+            {
+                Context.Rollback();
+            }
         }
     }
 }

@@ -5,17 +5,17 @@ import OpenDetailsPageButton from 'components/common/OpenDetailsPageButton/OpenD
 
 import './favouriteListItem.scss';
 
-export default class FavouriteListItem extends React.Component {
-static propTypes = {
-    beer: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        imageUrl: PropTypes.string.isRequired,
-        tagline: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired
-    }).isRequired,
-    onDelete: PropTypes.func.isRequired
-};
+export default class FavouriteListItem extends React.PureComponent {
+    static propTypes = {
+        beer: PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            imageUrl: PropTypes.string.isRequired,
+            tagline: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired
+        }).isRequired,
+        onDelete: PropTypes.func.isRequired
+    };
 
     onDelete =() => {
         const { onDelete } = this.props;
@@ -24,14 +24,14 @@ static propTypes = {
 
     render() {
         const { beer } = this.props;
-
+        debugger;
         return (
             <div className="favourite-list-item">
                 <div>
                     <div className="favourite-list-item__title">{beer.name}</div>
                     <div className="favourite-list-item__tagline">{beer.tagline}</div>
                     <div className="favourite-list-item__description">{beer.description}</div>
-                    <OpenDetailsPageButton beerID={beer.id} className="favourite-list-item__open-details-page-button" />
+                    <OpenDetailsPageButton beerId={beer.id} className="favourite-list-item__open-details-page-button" />
                     <button type="button" className="favourite-list-item__remove-favourite-button" onClick={this.onDelete}>Remove favourite</button>
                 </div>
                 <img alt="Item_image" className="favourite-list-item__image" src={beer.imageUrl} />

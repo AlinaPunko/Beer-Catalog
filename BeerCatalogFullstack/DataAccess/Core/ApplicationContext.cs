@@ -1,12 +1,18 @@
 ﻿using DataAccess.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+using System.Linq;
+using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace DataAccess.Core
 {
-    public sealed class ApplicationContext : IdentityDbContext<User>
+    public sealed class ApplicationContext : IdentityDbContext<User>, IDataContext
     {
         public DbSet<Beer> Beers { get; set; }
+        public DbSet<Beer> FavoriteBeers { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
@@ -14,6 +20,32 @@ namespace DataAccess.Core
             {
                 Database.Migrate();
             }
+        }
+
+        private IDbContextTransaction transaction;
+
+        public void BeginTransaction()
+        {
+            transaction = Database.BeginTransaction();
+        }
+
+        public void Commit()
+        {
+            try
+            {
+                SaveChanges();
+                transaction.Commit();
+            }
+            finally
+            {
+                transaction.Dispose();
+            }
+        }
+
+        public void Rollback()
+        {
+            transaction.Rollback();
+            transaction.Dispose();
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

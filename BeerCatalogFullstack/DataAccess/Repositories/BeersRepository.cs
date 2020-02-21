@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using DataAccess.Core;
 using DataAccess.Models;
@@ -8,12 +9,11 @@ namespace DataAccess.Repositories
 {
     public class BeersRepository : GenericRepository<Beer>
     {
-        public BeersRepository(DbContext context) : base(context) { }
+        public BeersRepository(ApplicationContext context) : base(context) { }
 
         public IReadOnlyList<Beer> GetAll()
         {
-            return Get()
-                .ToList();
+            return Get().Count() != 0 ? Get().ToList() : null;
         }
     }
 }

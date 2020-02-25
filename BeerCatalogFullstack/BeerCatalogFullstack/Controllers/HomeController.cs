@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace BeerCatalogFullstack.Controllers.Home
+namespace BeerCatalogFullstack.Controllers
 {
     public class HomeController : Controller
     {

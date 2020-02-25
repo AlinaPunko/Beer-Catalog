@@ -27,44 +27,20 @@ namespace DataAccess.Core
 
         public void Add(TEntity item)
         {
-            try
-            {
-                Context.BeginTransaction();
-                DbSet.Add(item);
-                Context.Commit();
-            }
-            catch (Exception)
-            {
-                Context.Rollback();
-            }
+            DbSet.Add(item);
+            Context.SaveChanges();
         }
 
         public void Update(TEntity item)
         {
-            try
-            {
-                Context.BeginTransaction();
-                Context.Entry(item).State = EntityState.Modified;
-                Context.Commit();
-            }
-            catch (Exception)
-            {
-                Context.Rollback();
-            }
+            Context.Entry(item).State = EntityState.Modified;
+            Context.SaveChanges();
         }
 
         public void Remove(TEntity item)
         {
-            try
-            {
-                Context.BeginTransaction();
-                DbSet.Remove(item);
-                Context.Commit();
-            }
-            catch (Exception)
-            {
-                Context.Rollback();
-            }
+            DbSet.Remove(item);
+            Context.SaveChanges();
         }
     }
 }

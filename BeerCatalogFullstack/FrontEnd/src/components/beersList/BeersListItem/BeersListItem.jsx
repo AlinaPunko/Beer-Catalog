@@ -23,7 +23,6 @@ export default class BeersListItem extends React.PureComponent {
 
     constructor(props, context) {
         super(props, context);
-        debugger;
         this.state = { isFavourite: favouriteItemHelper.isFavourite(this.props.beer, this.context.favouriteBeers) };
     }
 

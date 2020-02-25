@@ -14,15 +14,10 @@ function get(url) {
 function post(url, data) {
     return fetch(url,{
         method: 'POST',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
-        redirect: 'follow',
         accept: 'application/json',
-        referrer: 'no-referrer',
         body: JSON.stringify(data)
     })
         .then((response) => {
@@ -39,15 +34,10 @@ function post(url, data) {
 function put(url, data) {
     return fetch(url,{
         method: 'PUT',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',
         },
-        redirect: 'follow',
         accept: 'application/json',
-        referrer: 'no-referrer',
         body: JSON.stringify(data)
     })
         .then((response) => {

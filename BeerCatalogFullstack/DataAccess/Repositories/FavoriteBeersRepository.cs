@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using DataAccess.Core;
 using DataAccess.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations.Operations;
 
 namespace DataAccess.Repositories
 {
@@ -23,7 +21,7 @@ namespace DataAccess.Repositories
 
                 IReadOnlyList<Beer> existingBeers = beersRepository.GetAll();
 
-                if (existingBeers == null || !existingBeers.Contains(beer))
+                if (existingBeers == null || existingBeers.Count(b => b.Id == beer.Id) == 0)
                 {
                     beersRepository.Add(beer);
                 }

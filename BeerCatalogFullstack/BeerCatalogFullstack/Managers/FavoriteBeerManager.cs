@@ -1,15 +1,41 @@
-﻿using DataAccess.Models;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using DataAccess.Models;
 using BeerCatalogFullstack.ViewModels;
+using DataAccess.Core;
+using DataAccess.Repositories;
 
 namespace BeerCatalogFullstack.Managers
 {
-    public static class FavoriteBeerManager
+    public class FavoriteBeerManager
     {
-        public static FavoriteBeer GetFavoriteBeerModel(FavoriteBeerViewModel model)
+        private readonly FavoriteBeersRepository favoriteBeersRepository;
+
+        public FavoriteBeerManager(ApplicationContext context)
+        {
+            favoriteBeersRepository = new FavoriteBeersRepository(context);
+        }
+
+        public IReadOnlyList<int> GetUsersFavoriteBeers(string userId)
+        {
+            return favoriteBeersRepository.GetAll()
+                .Where(b => b.UserId == userId)
+                .Select(b => b.BeerId).ToList();
+        }
+
+        public void AddFavoriteBeer(FavoriteBeerViewModel model)
+        {
+            FavoriteBeer favoriteBeer = GetFavoriteBeerModel(model);
+            Beer beer = GetBeerModel(model);
+            favoriteBeersRepository.Add(favoriteBeer, beer);
+        }
+
+        public void RemoveFavoriteBeer(FavoriteBeerViewModel model)
+        {
+            favoriteBeersRepository.Remove(GetFavoriteBeerModel(model));
+        }
+
+        private static FavoriteBeer GetFavoriteBeerModel(FavoriteBeerViewModel model)
         {
             return new FavoriteBeer
             {
@@ -18,7 +44,7 @@ namespace BeerCatalogFullstack.Managers
             };
         }
 
-        public static Beer GetBeerModel(FavoriteBeerViewModel model)
+        private static Beer GetBeerModel(FavoriteBeerViewModel model)
         {
             return new Beer
             {

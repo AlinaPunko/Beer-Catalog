@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "e4dd11b0d2bd17a6464f";
+/******/ 	var hotCurrentHash = "3cd555ff8a5e7e1fb88f";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1054,7 +1054,7 @@ exports.push([module.i, ".side-menu-link {\n  display: flex;\n  align-content: c
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".sign-in-page {\n  width: fit-content;\n  margin: 0 auto;\n  padding: 20px;\n  border: 1px #8a8a8a solid;\n  border-radius: 10px; }\n\n.sign-in-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.sign-in-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.sign-in-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.sign-in-page__field-input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.sign-in-page__result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.sign-in-page__form-button {\n  width: 100%;\n  margin: 10px auto;\n  padding: 5px 0;\n  color: #ffffff;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #106cc8;\n  border-color: #106cc8;\n  border-radius: 5px; }\n", ""]);
+exports.push([module.i, ".sign-in-page {\n  width: fit-content;\n  margin: 0 auto;\n  padding: 20px;\n  border: 1px #8a8a8a solid;\n  border-radius: 10px; }\n\n.sign-in-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.sign-in-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.sign-in-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.sign-in-page__field-input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.sign-in-page__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.sign-in-page__form-button {\n  width: 100%;\n  margin: 10px auto;\n  padding: 5px 0;\n  color: #ffffff;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #106cc8;\n  border-color: #106cc8;\n  border-radius: 5px; }\n", ""]);
 
 
 
@@ -39614,6 +39614,21 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/simple-react-validator/dist/simple-react-validator.min.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/simple-react-validator/dist/simple-react-validator.min.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Simple React Validator v1.4.5 | Created By Dockwa | MIT License | 2017 - Present
+!function(e,t){ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! react */ "./node_modules/react/index.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):undefined}(this,function(n){"use strict";function g(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){if(!(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e)))return;var r=[],s=!0,n=!1,a=void 0;try{for(var i,u=e[Symbol.iterator]();!(s=(i=u.next()).done)&&(r.push(i.value),!t||r.length!==t);s=!0);}catch(e){n=!0,a=e}finally{try{s||null==u.return||u.return()}finally{if(n)throw a}}return r}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}function a(e){return(a="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function s(t,e){var r=Object.keys(t);if(Object.getOwnPropertySymbols){var s=Object.getOwnPropertySymbols(t);e&&(s=s.filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable})),r.push.apply(r,s)}return r}function b(t){for(var e=1;e<arguments.length;e++){var r=null!=arguments[e]?arguments[e]:{};e%2?s(Object(r),!0).forEach(function(e){u(t,e,r[e])}):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(r)):s(Object(r)).forEach(function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(r,e))})}return t}function i(e,t){for(var r=0;r<t.length;r++){var s=t[r];s.enumerable=s.enumerable||!1,s.configurable=!0,"value"in s&&(s.writable=!0),Object.defineProperty(e,s.key,s)}}function e(e,t,r){return t&&i(e.prototype,t),r&&i(e,r),e}function u(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}var t=function(){function s(){var r=this,e=0<arguments.length&&void 0!==arguments[0]?arguments[0]:{};!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,s),u(this,"showMessageFor",function(e){r.visibleFields.includes(e)||r.visibleFields.push(e),r.helpers.forceUpdateIfNeeded()}),u(this,"hideMessageFor",function(e){var t=r.visibleFields.indexOf(e);-1<t&&r.visibleFields.splice(t,1),r.helpers.forceUpdateIfNeeded()}),u(this,"helpers",{parent:this,passes:function(e,t,r,s){return s.hasOwnProperty(e)?!(this.isRequired(e,s)||!this.isBlank(t))||!1!==s[e].rule(t,r,this.parent):(console.error("Rule Not Found: There is no rule with the name ".concat(e,".")),!0)},isRequired:function(e,t){return t[e].hasOwnProperty("required")&&t[e].required},isBlank:function(e){return null==e||this.testRegex(e,/^[\s]*$/)},normalizeValues:function(e,t){return[this.valueOrEmptyString(e),this.getValidation(t),this.getOptions(t)]},getValidation:function(e){return e===Object(e)&&Object.keys(e).length?Object.keys(e)[0]:e.split(":")[0]},getOptions:function(e){if(e===Object(e)&&Object.values(e).length){var t=Object.values(e)[0];return Array.isArray(t)?t:[t]}return 1<(t=e.split(":")).length?t[1].split(","):[]},valueOrEmptyString:function(e){return null==e?"":e},toSentence:function(e){return e.slice(0,-2).join(", ")+(e.slice(0,-2).length?", ":"")+e.slice(-2).join(2<e.length?", or ":" or ")},testRegex:function(e,t){return null!==e.toString().match(t)},forceUpdateIfNeeded:function(){this.parent.autoForceUpdate&&this.parent.autoForceUpdate.forceUpdate()},message:function(e,t,r,s){r.messages=r.messages||{};var n=r.messages[e]||r.messages.default||this.parent.messages[e]||this.parent.messages.default||s[e].message;return n.replace(":attribute",this.humanizeFieldName(t))},humanizeFieldName:function(e){return e.replace(/([A-Z])/g," $1").replace(/_/g," ").toLowerCase()},element:function(e,t){var r=t.element||this.parent.element;return r(e,t.className)},momentInstalled:function(){return!(!window||!window.moment)||(console.warn("Date validators require using momentjs https://momentjs.com and moment objects."),!1)},size:function(e,t){return"string"===t||void 0===t||"array"===t?e.length:"num"===t?parseFloat(e):void 0},sizeText:function(e){return"string"===e||void 0===e?" characters":"array"===e?" elements":""}}),this.fields={},this.visibleFields=[],this.errorMessages={},this.messagesShown=!1,this.rules=b({accepted:{message:"The :attribute must be accepted.",rule:function(e){return!0===e},required:!0},after:{message:"The :attribute must be after :date.",rule:function(e,t){return r.helpers.momentInstalled()&&moment.isMoment(e)&&e.isAfter(t[0],"day")},messageReplace:function(e,t){return e.replace(":date",t[0].format("MM/DD/YYYY"))}},after_or_equal:{message:"The :attribute must be after or on :date.",rule:function(e,t){return r.helpers.momentInstalled()&&moment.isMoment(e)&&e.isSameOrAfter(t[0],"day")},messageReplace:function(e,t){return e.replace(":date",t[0].format("MM/DD/YYYY"))}},alpha:{message:"The :attribute may only contain letters.",rule:function(e){return r.helpers.testRegex(e,/^[A-Z]*$/i)}},alpha_space:{message:"The :attribute may only contain letters and spaces.",rule:function(e){return r.helpers.testRegex(e,/^[A-Z\s]*$/i)}},alpha_num:{message:"The :attribute may only contain letters and numbers.",rule:function(e){return r.helpers.testRegex(e,/^[A-Z0-9]*$/i)}},alpha_num_space:{message:"The :attribute may only contain letters, numbers, and spaces.",rule:function(e){return r.helpers.testRegex(e,/^[A-Z0-9\s]*$/i)}},alpha_num_dash:{message:"The :attribute may only contain letters, numbers, and dashes.",rule:function(e){return r.helpers.testRegex(e,/^[A-Z0-9_-]*$/i)}},alpha_num_dash_space:{message:"The :attribute may only contain letters, numbers, dashes, and spaces.",rule:function(e){return r.helpers.testRegex(e,/^[A-Z0-9_-\s]*$/i)}},array:{message:"The :attribute must be an array.",rule:function(e){return Array.isArray(e)}},before:{message:"The :attribute must be before :date.",rule:function(e,t){return r.helpers.momentInstalled()&&moment.isMoment(e)&&e.isBefore(t[0],"day")},messageReplace:function(e,t){return e.replace(":date",t[0].format("MM/DD/YYYY"))}},before_or_equal:{message:"The :attribute must be before or on :date.",rule:function(e,t){return r.helpers.momentInstalled()&&moment.isMoment(e)&&e.isSameOrBefore(t[0],"day")},messageReplace:function(e,t){return e.replace(":date",t[0].format("MM/DD/YYYY"))}},between:{message:"The :attribute must be between :min and :max:type.",rule:function(e,t){return r.helpers.size(e,t[2])>=parseFloat(t[0])&&r.helpers.size(e,t[2])<=parseFloat(t[1])},messageReplace:function(e,t){return e.replace(":min",t[0]).replace(":max",t[1]).replace(":type",r.helpers.sizeText(t[2]))}},boolean:{message:"The :attribute must be a boolean.",rule:function(e){return!1===e||!0===e}},card_exp:{message:"The :attribute must be a valid expiration date.",rule:function(e){return r.helpers.testRegex(e,/^(([0]?[1-9]{1})|([1]{1}[0-2]{1}))\s?\/\s?(\d{2}|\d{4})$/)}},card_num:{message:"The :attribute must be a valid credit card number.",rule:function(e){return r.helpers.testRegex(e,/^\d{4}\s?\d{4,6}\s?\d{4,5}\s?\d{0,8}$/)}},currency:{message:"The :attribute must be a valid currency.",rule:function(e){return r.helpers.testRegex(e,/^\$?(\d{1,3})(\,?\d{3})*\.?\d{0,2}$/)}},date:{message:"The :attribute must be a date.",rule:function(e){return r.helpers.momentInstalled()&&moment.isMoment(e)}},date_equals:{message:"The :attribute must be on :date.",rule:function(e,t){return r.helpers.momentInstalled()&&moment.isMoment(e)&&e.isSame(t[0],"day")},messageReplace:function(e,t){return e.replace(":date",t[0].format("MM/DD/YYYY"))}},email:{message:"The :attribute must be a valid email address.",rule:function(e){return r.helpers.testRegex(e,/^[A-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i)}},in:{message:"The selected :attribute must be :values.",rule:function(e,t){return t.includes(e)},messageReplace:function(e,t){return e.replace(":values",r.helpers.toSentence(t))}},integer:{message:"The :attribute must be an integer.",rule:function(e){return r.helpers.testRegex(e,/^\d*$/)}},max:{message:"The :attribute may not be greater than :max:type.",rule:function(e,t){return r.helpers.size(e,t[1])<=parseFloat(t[0])},messageReplace:function(e,t){return e.replace(":max",t[0]).replace(":type",r.helpers.sizeText(t[1]))}},min:{message:"The :attribute must be at least :min:type.",rule:function(e,t){return r.helpers.size(e,t[1])>=parseFloat(t[0])},messageReplace:function(e,t){return e.replace(":min",t[0]).replace(":type",r.helpers.sizeText(t[1]))}},not_in:{message:"The selected :attribute must not be :values.",rule:function(e,t){return!t.includes(e)},messageReplace:function(e,t){return e.replace(":values",r.helpers.toSentence(t))}},not_regex:{message:"The :attribute must not match the required pattern.",rule:function(e,t){return!r.helpers.testRegex(e,"string"==typeof t[0]||t[0]instanceof String?new RegExp(t[0]):t[0])}},numeric:{message:"The :attribute must be a number.",rule:function(e){return r.helpers.testRegex(e,/^\-?\d*\.?\d+$/)}},phone:{message:"The :attribute must be a valid phone number.",rule:function(e){return r.helpers.testRegex(e,/^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)$/)&&!r.helpers.testRegex(e,/^\b(\d)\1{8,}\b$/)}},regex:{message:"The :attribute must match the required pattern.",rule:function(e,t){return r.helpers.testRegex(e,"string"==typeof t[0]||t[0]instanceof String?new RegExp(t[0]):t[0])}},required:{message:"The :attribute field is required.",rule:function(e){return!r.helpers.isBlank(e)},required:!0},size:{message:"The :attribute must be :size:type.",rule:function(e,t){return r.helpers.size(e,t[1])==parseFloat(t[0])},messageReplace:function(e,t){return e.replace(":size",t[0]).replace(":type",r.helpers.sizeText(t[1]))}},string:{message:"The :attribute must be a string.",rule:function(e){return a(e)===a("string")}},typeof:{message:"The :attribute is not the correct type of :type.",rule:function(e,t){return a(e)===a(t[0])},messageReplace:function(e,t){return e.replace(":type",a(t[0]))}},url:{message:"The :attribute must be a url.",rule:function(e){return r.helpers.testRegex(e,/^https?:\/\/[-a-z0-9@:%._\+~#=]{1,256}\.[a-z0-9()]{2,6}\b([-a-z0-9()@:%_\+.~#?&//=]*)$/i)}}},e.validators||{}),e.locale&&!s.locales.hasOwnProperty(e.locale)&&console.warn("Locale not found! Make sure it is spelled correctly and the locale file is loaded.");var t=s.locales[e.locale]||{};Object.keys(this.rules).forEach(function(e){r.rules[e].message=t[e]||r.rules[e].message}),this.messages=e.messages||{},this.className=e.className,this.autoForceUpdate=e.autoForceUpdate||!1,!1===e.element?this.element=function(e){return e}:e.hasOwnProperty("element")?this.element=e.element:"object"===("undefined"==typeof navigator?"undefined":a(navigator))&&"ReactNative"===navigator.product?this.element=function(e){return e}:this.element=function(e,t){return n.createElement("div",{className:t||r.className||"srv-validation-message"},e)}}return e(s,null,[{key:"addLocale",value:function(e,t){this.locales[e]=t}}]),e(s,[{key:"getErrorMessages",value:function(){return this.errorMessages}},{key:"showMessages",value:function(){this.messagesShown=!0,this.helpers.forceUpdateIfNeeded()}},{key:"hideMessages",value:function(){this.messagesShown=!1,this.helpers.forceUpdateIfNeeded()}},{key:"allValid",value:function(){for(var e in this.fields)if(!1===this.fieldValid(e))return!1;return!0}},{key:"fieldValid",value:function(e){return this.fields.hasOwnProperty(e)&&!0===this.fields[e]}},{key:"purgeFields",value:function(){this.fields={},this.errorMessages={}}},{key:"messageWhenPresent",value:function(e){var t=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{};if(!this.helpers.isBlank(e)&&this.messagesShown)return this.helpers.element(e,t)}},{key:"messageAlways",value:function(e,t){var r=2<arguments.length&&void 0!==arguments[2]?arguments[2]:{};if(console.warn("The messageAlways() method is deprecated in SimpleReactValidator. Please see the documentation and switch to the messageWhenPresent() method."),t&&this.messagesShown)return this.helpers.element(t,r)}},{key:"check",value:function(e,t){var r=2<arguments.length&&void 0!==arguments[2]?arguments[2]:{};Array.isArray(t)||(t=t.split("|"));var s=r.validators?b({},this.rules,{},r.validators):this.rules,n=!0,a=!1,i=void 0;try{for(var u,l=t[Symbol.iterator]();!(n=(u=l.next()).done);n=!0){var o=u.value,c=g(this.helpers.normalizeValues(e,o),3),m=c[0],h=c[1],p=c[2];if(!this.helpers.passes(h,m,p,s))return!1}}catch(e){a=!0,i=e}finally{try{n||null==l.return||l.return()}finally{if(a)throw i}}return!0}},{key:"message",value:function(e,t,r){var s=3<arguments.length&&void 0!==arguments[3]?arguments[3]:{};this.errorMessages[e]=null,this.fields[e]=!0,Array.isArray(r)||(r=r.split("|"));var n=s.validators?b({},this.rules,{},s.validators):this.rules,a=!0,i=!1,u=void 0;try{for(var l,o=r[Symbol.iterator]();!(a=(l=o.next()).done);a=!0){var c=l.value,m=g(this.helpers.normalizeValues(t,c),3),h=m[0],p=m[1],f=m[2];if(!this.helpers.passes(p,h,f,n)){this.fields[e]=!1;var d=this.helpers.message(p,e,s,n);if(0<f.length&&n[p].hasOwnProperty("messageReplace")&&(d=n[p].messageReplace(d,f)),this.errorMessages[e]=d,this.messagesShown||this.visibleFields.includes(e))return this.helpers.element(d,s)}}}catch(e){i=!0,u=e}finally{try{a||null==o.return||o.return()}finally{if(i)throw u}}}}]),s}();return u(t,"version","1.4.5"),u(t,"locales",{en:{}}),t});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -42875,10 +42890,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
-/* harmony import */ var services_loginService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! services/loginService */ "./src/services/loginService.js");
-/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./signInPage.scss */ "./src/components/SignInPage/signInPage.scss");
-/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_signInPage_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-react-validator */ "./node_modules/simple-react-validator/dist/simple-react-validator.min.js");
+/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_react_validator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
+/* harmony import */ var services_loginService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! services/loginService */ "./src/services/loginService.js");
+/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./signInPage.scss */ "./src/components/SignInPage/signInPage.scss");
+/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_signInPage_scss__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -42893,13 +42910,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -42912,47 +42932,65 @@ var SignInPage =
 function (_React$PureComponent) {
   _inherits(SignInPage, _React$PureComponent);
 
-  function SignInPage() {
+  function SignInPage(props) {
+    var _this;
+
     _classCallCheck(this, SignInPage);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(SignInPage).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SignInPage).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "passwordChange", function (event) {
+      _this.setState({
+        password: event.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "emailChange", function (event) {
+      _this.setState({
+        email: event.target.value
+      });
+    });
+
+    _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a();
+    _this.formRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    _this.state = {
+      email: "",
+      password: ""
+    };
+    return _this;
   }
 
   _createClass(SignInPage, [{
-    key: "loginButtonClick",
+    key: "signInFormSubmit",
     value: function () {
-      var _loginButtonClick = _asyncToGenerator(
+      var _signInFormSubmit = _asyncToGenerator(
       /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee(setUserId, setFavouriteBeers) {
-        var userData, email, password, loginResult, userId, _result, error;
+      regeneratorRuntime.mark(function _callee(setUserId, e) {
+        var userData, loginResult, userId, _result, error;
 
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                userData = {};
-                email = document.getElementsByName("email")[0].value;
-                password = document.getElementsByName("password")[0].value;
+                e.preventDefault();
 
-                if (!(email == '' || password == '')) {
-                  _context.next = 5;
+                if (!this.validator.allValid()) {
+                  _context.next = 17;
                   break;
                 }
 
-                return _context.abrupt("return");
+                userData = {};
+                userData.email = this.state.email;
+                userData.password = this.state.password;
+                _context.next = 7;
+                return services_loginService__WEBPACK_IMPORTED_MODULE_4__["default"].login(userData);
 
-              case 5:
-                userData.email = email;
-                userData.password = password;
-                _context.next = 9;
-                return services_loginService__WEBPACK_IMPORTED_MODULE_3__["default"].login(userData);
-
-              case 9:
+              case 7:
                 loginResult = _context.sent;
                 userId = loginResult.userId;
 
                 if (!userId) {
-                  _context.next = 15;
+                  _context.next = 13;
                   break;
                 }
 
@@ -42960,11 +42998,17 @@ function (_React$PureComponent) {
                 this.props.history.push('/');
                 return _context.abrupt("return");
 
-              case 15:
+              case 13:
                 _result = result, error = _result.error;
                 document.getElementsByClassName("sign-in-page__result")[0].innerHTML = error;
+                _context.next = 19;
+                break;
 
               case 17:
+                this.validator.showMessages();
+                this.forceUpdate();
+
+              case 19:
               case "end":
                 return _context.stop();
             }
@@ -42972,25 +43016,27 @@ function (_React$PureComponent) {
         }, _callee, this);
       }));
 
-      function loginButtonClick(_x, _x2) {
-        return _loginButtonClick.apply(this, arguments);
+      function signInFormSubmit(_x, _x2) {
+        return _signInFormSubmit.apply(this, arguments);
       }
 
-      return loginButtonClick;
+      return signInFormSubmit;
     }()
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_UserContext__WEBPACK_IMPORTED_MODULE_2__["UserContext"].Consumer, null, function (_ref) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_UserContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"].Consumer, null, function (_ref) {
         var setUserId = _ref.setUserId;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
           className: "sign-in-page"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           className: "sign-in-page__title"
-        }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "sign-in-page__form"
+        }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          className: "sign-in-page__form",
+          ref: _this2.formRef,
+          onSubmit: _this2.signInFormSubmit.bind(_this2, setUserId)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "sign-in-page__field"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -42998,6 +43044,8 @@ function (_React$PureComponent) {
         }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           name: "email",
           type: "email",
+          value: _this2.state.email,
+          onChange: _this2.emailChange,
           className: "sign-in-page__field-input"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "sign-in-page__field"
@@ -43005,14 +43053,17 @@ function (_React$PureComponent) {
           className: "sign-in-page__field-title"
         }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           name: "password",
+          value: _this2.state.password,
+          onChange: _this2.passwordChange,
           type: "password",
           className: "sign-in-page__field-input"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "sign-in-page__form-button",
-          onClick: _this.loginButtonClick.bind(_this, setUserId)
-        }, "Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "sign-in-page__result"
-        })));
+          type: "submit",
+          value: "Log in"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-in-page__validation-result"
+        }, _this2.validator.message('Email', _this2.state.email, 'required|email'), _this2.validator.message('Password', _this2.state.password, 'required|min:6'))));
       });
     }
   }]);
@@ -43091,11 +43142,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var helpers_validationHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! helpers/validationHelper.js */ "./src/helpers/validationHelper.js");
-/* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
-/* harmony import */ var services_signUpService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! services/signUpService */ "./src/services/signUpService.js");
-/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./signUpPage.scss */ "./src/components/SignUpPage/signUpPage.scss");
-/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_signUpPage_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-react-validator */ "./node_modules/simple-react-validator/dist/simple-react-validator.min.js");
+/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_react_validator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var helpers_validationHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! helpers/validationHelper.js */ "./src/helpers/validationHelper.js");
+/* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
+/* harmony import */ var services_signUpService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! services/signUpService */ "./src/services/signUpService.js");
+/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./signUpPage.scss */ "./src/components/SignUpPage/signUpPage.scss");
+/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_signUpPage_scss__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
@@ -43135,6 +43188,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var SignUpPage =
 /*#__PURE__*/
 function (_React$PureComponent) {
@@ -43147,8 +43201,38 @@ function (_React$PureComponent) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SignUpPage).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_this), "encodeImageFileAsURL", function () {
-      var filesSelected = document.getElementsByName("photo")[0].files;
+    _defineProperty(_assertThisInitialized(_this), "nameChange", function (event) {
+      _this.setState({
+        name: event.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "birthdateChange", function (event) {
+      _this.setState({
+        birthdate: event.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "passwordChange", function (event) {
+      _this.setState({
+        password: event.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "confirmPasswordChange", function (event) {
+      _this.setState({
+        confirmPassword: event.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "emailChange", function (event) {
+      _this.setState({
+        email: event.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "photoChange", function (event) {
+      var filesSelected = event.target.files;
 
       if (filesSelected.length > 0) {
         var fileToLoad = filesSelected[0];
@@ -43166,54 +43250,56 @@ function (_React$PureComponent) {
       }
     });
 
+    _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a({
+      messages: {
+        in: 'Passwords need to match!'
+      }
+    });
     _this.state = {
-      photo: " "
+      photo: "",
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      birthdate: ""
     };
     return _this;
   }
 
   _createClass(SignUpPage, [{
-    key: "signUpButtonClick",
+    key: "signUpFormSubmit",
     value: function () {
-      var _signUpButtonClick = _asyncToGenerator(
+      var _signUpFormSubmit = _asyncToGenerator(
       /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee(setUserId) {
-        var userData, name, email, password, passwordConfirm, birthdate, result, userID, errors;
+      regeneratorRuntime.mark(function _callee(setUserId, e) {
+        var userData, result, userID, errors;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                userData = {};
-                name = document.getElementsByName("name")[0].value;
-                email = document.getElementsByName("email")[0].value;
-                password = document.getElementsByName("password")[0].value;
-                passwordConfirm = document.getElementsByName("passwordConfirm")[0].value;
-                birthdate = document.getElementsByName("birthdate")[0].value;
+                e.preventDefault();
 
-                if (!(name == "" || password == "" || passwordConfirm == "" || password !== passwordConfirm || !helpers_validationHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"].isEmailValid(email))) {
-                  _context.next = 9;
+                if (!this.validator.allValid()) {
+                  _context.next = 21;
                   break;
                 }
 
-                alert("Incorrect data");
-                return _context.abrupt("return");
-
-              case 9:
-                userData.name = name;
-                userData.email = email;
-                userData.password = password;
-                userData.passwordConfirm = passwordConfirm;
-                userData.birthdate = birthdate;
+                userData = {};
+                userData.name = this.state.name;
+                userData.email = this.state.email;
+                userData.password = this.state.password;
+                userData.passwordConfirm = this.state.passwordConfirm;
+                userData.birthdate = this.state.birthdate;
                 userData.photo = this.state.photo;
-                _context.next = 17;
-                return services_signUpService__WEBPACK_IMPORTED_MODULE_4__["default"].signUp(userData);
+                _context.next = 11;
+                return services_signUpService__WEBPACK_IMPORTED_MODULE_5__["default"].signUp(userData);
 
-              case 17:
+              case 11:
                 result = _context.sent;
                 userID = result.userID;
 
                 if (!userID) {
-                  _context.next = 23;
+                  _context.next = 17;
                   break;
                 }
 
@@ -43221,15 +43307,21 @@ function (_React$PureComponent) {
                 this.props.history.push('/');
                 return _context.abrupt("return");
 
-              case 23:
+              case 17:
                 errors = _toConsumableArray(result.error).map(function (e) {
                   return e.description;
                 });
                 errors.forEach(function (error) {
                   document.getElementsByClassName("sign-up-page__result")[0].innerHTML += error + '</br>';
                 });
+                _context.next = 23;
+                break;
 
-              case 25:
+              case 21:
+                this.validator.showMessages();
+                this.forceUpdate();
+
+              case 23:
               case "end":
                 return _context.stop();
             }
@@ -43237,25 +43329,26 @@ function (_React$PureComponent) {
         }, _callee, this);
       }));
 
-      function signUpButtonClick(_x) {
-        return _signUpButtonClick.apply(this, arguments);
+      function signUpFormSubmit(_x, _x2) {
+        return _signUpFormSubmit.apply(this, arguments);
       }
 
-      return signUpButtonClick;
+      return signUpFormSubmit;
     }()
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_UserContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"].Consumer, null, function (_ref) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_UserContext__WEBPACK_IMPORTED_MODULE_4__["UserContext"].Consumer, null, function (_ref) {
         var setUserId = _ref.setUserId;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
           className: "sign-up-page"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           className: "sign-up-page__title"
-        }, "Sign up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "sign-up-page__form"
+        }, "Sign up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          className: "sign-up-page__form",
+          onSubmit: _this2.signUpFormSubmit.bind(_this2, setUserId)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "sign-up-page__field"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -43263,6 +43356,8 @@ function (_React$PureComponent) {
         }, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           name: "name",
           type: "text",
+          value: _this2.state.name,
+          onChange: _this2.nameChange,
           className: "sign-up-page__field-input"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "sign-up-page__field"
@@ -43271,6 +43366,8 @@ function (_React$PureComponent) {
         }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           name: "email",
           type: "email",
+          value: _this2.state.email,
+          onChange: _this2.emailChange,
           className: "sign-up-page__field-input"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "sign-up-page__field"
@@ -43279,6 +43376,8 @@ function (_React$PureComponent) {
         }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           name: "password",
           type: "password",
+          value: _this2.state.password,
+          onChange: _this2.passwordChange,
           className: "sign-up-page__field-input"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "sign-up-page__field"
@@ -43287,6 +43386,8 @@ function (_React$PureComponent) {
         }, "Repeat password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           name: "passwordConfirm",
           type: "password",
+          value: _this2.state.confirmPassword,
+          onChange: _this2.confirmPasswordChange,
           className: "sign-up-page__field-input"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "sign-up-page__field"
@@ -43295,6 +43396,8 @@ function (_React$PureComponent) {
         }, "Select birthdate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           name: "birthdate",
           type: "date",
+          value: _this2.state.birthdate,
+          onChange: _this2.birthdateChange,
           className: "sign-up-page__field-input"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "sign-up-page__field"
@@ -43304,15 +43407,16 @@ function (_React$PureComponent) {
           name: "photo",
           type: "file",
           className: "sign-up-page__field-input",
-          onChange: _this2.encodeImageFileAsURL,
+          value: _this2.state.photo,
+          onChange: _this2.photoChange,
           accept: "image/x-png,image/gif,image/jpeg"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "sign-up-page__result"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, _this2.validator.message('Email', _this2.state.email, 'required|email'), _this2.validator.message('Password', _this2.state.password, 'required|min:6'), _this2.validator.message('Name', _this2.state.name, 'required'), _this2.validator.message('Confirm password', _this2.state.confirmPassword, "required|in:".concat(_this2.state.password))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "submit",
           className: "sign-up-page__form-button",
-          onClick: _this2.signUpButtonClick.bind(_this2, setUserId)
-        }, "Sign up")));
+          value: "Sign up"
+        })));
       });
     }
   }]);
@@ -43800,7 +43904,6 @@ function (_React$PureComponent) {
       });
     });
 
-    debugger;
     _this.state = {
       isFavourite: helpers_favouriteItemHelper__WEBPACK_IMPORTED_MODULE_6__["default"].isFavourite(_this.props.beer, _this.context.favouriteBeers)
     };
@@ -47243,15 +47346,10 @@ function get(url) {
 function post(url, data) {
   return fetch(url, {
     method: 'POST',
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin',
     headers: {
       'Content-Type': 'application/json'
     },
-    redirect: 'follow',
     accept: 'application/json',
-    referrer: 'no-referrer',
     body: JSON.stringify(data)
   }).then(function (response) {
     if (response.status !== 200) {
@@ -47269,15 +47367,10 @@ function post(url, data) {
 function put(url, data) {
   return fetch(url, {
     method: 'PUT',
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin',
     headers: {
       'Content-Type': 'application/json'
     },
-    redirect: 'follow',
     accept: 'application/json',
-    referrer: 'no-referrer',
     body: JSON.stringify(data)
   }).then(function (response) {
     if (response.status !== 200) {

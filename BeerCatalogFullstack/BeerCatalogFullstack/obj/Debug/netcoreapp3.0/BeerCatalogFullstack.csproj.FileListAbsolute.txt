@@ -165,3 +165,11 @@ D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.
 D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Proxies.dll
 D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\obj\Debug\netcoreapp3.0\BeerCatalogFullstack.MvcApplicationPartsAssemblyInfo.cs
 D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\obj\Debug\netcoreapp3.0\BeerCatalogFullstack.MvcApplicationPartsAssemblyInfo.cache
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\System.Web.Mvc.dll
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\System.Web.Razor.dll
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\System.Web.Helpers.dll
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\System.Web.WebPages.Deployment.dll
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\System.Web.WebPages.Razor.dll
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\System.Web.WebPages.dll
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\Microsoft.Web.Infrastructure.dll
+D:\Beer Catalog\BeerCatalogFullstack\BeerCatalogFullstack\bin\Debug\netcoreapp3.0\System.Drawing.Common.dll

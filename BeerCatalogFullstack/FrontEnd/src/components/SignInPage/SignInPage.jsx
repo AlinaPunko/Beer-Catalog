@@ -1,33 +1,56 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import SimpleReactValidator from 'simple-react-validator';
 
 import { UserContext } from 'store/context/UserContext';
 import loginService from 'services/loginService';
 import './signInPage.scss';
 
 class SignInPage extends React.PureComponent {
-    async loginButtonClick(setUserId, setFavouriteBeers) {
-        let userData = {};
-        const email = document.getElementsByName("email")[0].value;
-        const password = document.getElementsByName("password")[0].value;
-        if(email == '' || password == '')
-        {
-            return;
+    constructor(props){
+        super(props);
+        this.validator = new SimpleReactValidator();
+        this.formRef = React.createRef();
+        this.state={
+            email: "",
+            password: ""
         }
+    }
 
-        userData.email = email;
-        userData.password = password;
-        const loginResult = await loginService.login(userData);
-        const { userId } = loginResult;
-        
-        if(userId) {
-            setUserId(userId);
-            this.props.history.push('/')
-            return;
+    passwordChange = (event) => {
+        this.setState({
+            password: event.target.value
+        });
+    }
+
+    emailChange = (event) => {
+        this.setState({
+            email: event.target.value
+        });
+    }
+
+    async signInFormSubmit(setUserId, e) {
+        e.preventDefault();
+        if (this.validator.allValid()) {
+            let userData = {};
+            userData.email = this.state.email;
+            userData.password = this.state.password;
+            const loginResult = await loginService.login(userData);
+            const { userId } = loginResult;
+            
+            if(userId) {
+                setUserId(userId);
+                this.props.history.push('/');
+                return;
+            }
+
+            const {error} = result;
+            document.getElementsByClassName("sign-in-page__result")[0].innerHTML = error;
+        } 
+        else {
+            this.validator.showMessages();
+            this.forceUpdate();
         }
-
-        const {error} = result;
-        document.getElementsByClassName("sign-in-page__result")[0].innerHTML = error;
     }
 
     render() {
@@ -36,18 +59,38 @@ class SignInPage extends React.PureComponent {
                 {({setUserId}) => (
                     <section className="sign-in-page">
                         <h1 className="sign-in-page__title">Log In</h1>
-                        <div className="sign-in-page__form">
+                        <form className="sign-in-page__form" ref={this.formRef} onSubmit={this.signInFormSubmit.bind(this, setUserId)}>
                             <div className="sign-in-page__field">
                                 <label className="sign-in-page__field-title">E-mail</label>
-                                <input name="email" type="email" className="sign-in-page__field-input"></input>
+                                <input
+                                    name="email"
+                                    type="email"
+                                    value={this.state.email}
+                                    onChange={this.emailChange}
+                                    className="sign-in-page__field-input">
+                                </input>
                             </div>
                             <div className="sign-in-page__field">
                                 <label className="sign-in-page__field-title">Password</label>
-                                <input name="password" type="password" className="sign-in-page__field-input"></input>
+                                <input
+                                    name="password"
+                                    value={this.state.password}
+                                    onChange={this.passwordChange}
+                                    type="password"
+                                    className="sign-in-page__field-input">
+                                </input>
                             </div>
-                            <button className="sign-in-page__form-button" onClick={this.loginButtonClick.bind(this, setUserId)}>Log in</button>
-                            <span className="sign-in-page__result"></span>
-                        </div>
+                            <input className="sign-in-page__form-button" type="submit" value="Log in"></input>
+                            <div className="sign-in-page__validation-result">
+                                {
+                                    this.validator.message('Email', this.state.email, 'required|email')
+                                }
+                                {
+                                    this.validator.message('Password', this.state.password, 'required|min:6')
+                                }
+                            </div>
+                            {/* <span className="sign-in-page__result"></span> */}
+                        </form>
                     </section>
                 )}
             </UserContext.Consumer>

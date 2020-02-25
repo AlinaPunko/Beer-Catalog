@@ -1,18 +1,13 @@
 ﻿using DataAccess.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Configuration;
-using System.Linq;
 using Microsoft.EntityFrameworkCore.Storage;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 
 namespace DataAccess.Core
 {
     public sealed class ApplicationContext : IdentityDbContext<User>, IDataContext
     {
         public DbSet<Beer> Beers { get; set; }
-        public DbSet<Beer> FavoriteBeers { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {

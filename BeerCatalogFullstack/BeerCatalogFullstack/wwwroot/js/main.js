@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "3cd555ff8a5e7e1fb88f";
+/******/ 	var hotCurrentHash = "1b159b07defdf611e305";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1069,7 +1069,7 @@ exports.push([module.i, ".sign-in-page {\n  width: fit-content;\n  margin: 0 aut
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".sign-up-page {\n  width: fit-content;\n  margin: 0 auto;\n  padding: 20px;\n  border: 1px #8a8a8a solid;\n  border-radius: 10px; }\n\n.sign-up-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.sign-up-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.sign-up-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.sign-up-page__field-input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.sign-up-page__form-button {\n  width: 100%;\n  margin: 10px auto;\n  padding: 5px 0;\n  color: #ffffff;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #106cc8;\n  border-color: #106cc8;\n  border-radius: 5px; }\n\n.sign-up-page__result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
+exports.push([module.i, ".sign-up-page {\n  width: fit-content;\n  margin: 0 auto;\n  padding: 20px;\n  border: 1px #8a8a8a solid;\n  border-radius: 10px; }\n\n.sign-up-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.sign-up-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.sign-up-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.sign-up-page__field-input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.sign-up-page__form-button {\n  width: 100%;\n  margin: 10px auto;\n  padding: 5px 0;\n  color: #ffffff;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #106cc8;\n  border-color: #106cc8;\n  border-radius: 5px; }\n\n.sign-up-page__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
 
 
 
@@ -42966,8 +42966,7 @@ function (_React$PureComponent) {
       var _signInFormSubmit = _asyncToGenerator(
       /*#__PURE__*/
       regeneratorRuntime.mark(function _callee(setUserId, e) {
-        var userData, loginResult, userId, _result, error;
-
+        var userData, result;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -42975,45 +42974,52 @@ function (_React$PureComponent) {
                 e.preventDefault();
 
                 if (!this.validator.allValid()) {
-                  _context.next = 17;
+                  _context.next = 20;
                   break;
                 }
 
+                _context.prev = 2;
                 userData = {};
                 userData.email = this.state.email;
                 userData.password = this.state.password;
-                _context.next = 7;
-                return services_loginService__WEBPACK_IMPORTED_MODULE_4__["default"].login(userData);
+                _context.next = 8;
+                return signInService.signIn(userData);
 
-              case 7:
-                loginResult = _context.sent;
-                userId = loginResult.userId;
+              case 8:
+                result = _context.sent;
 
-                if (!userId) {
-                  _context.next = 13;
+                if (!(_typeof(result) === 'object')) {
+                  _context.next = 11;
                   break;
                 }
 
-                setUserId(userId);
-                this.props.history.push('/');
-                return _context.abrupt("return");
+                throw result;
 
-              case 13:
-                _result = result, error = _result.error;
-                document.getElementsByClassName("sign-in-page__result")[0].innerHTML = error;
-                _context.next = 19;
+              case 11:
+                setUserId(result);
+                this.props.history.push('/');
+                _context.next = 18;
                 break;
 
-              case 17:
+              case 15:
+                _context.prev = 15;
+                _context.t0 = _context["catch"](2);
+                document.getElementsByClassName("sign-in-page__validation-result")[0].innerHTML = _context.t0.message;
+
+              case 18:
+                _context.next = 22;
+                break;
+
+              case 20:
                 this.validator.showMessages();
                 this.forceUpdate();
 
-              case 19:
+              case 22:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this);
+        }, _callee, this, [[2, 15]]);
       }));
 
       function signInFormSubmit(_x, _x2) {
@@ -43151,14 +43157,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_signUpPage_scss__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -43232,6 +43230,7 @@ function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "photoChange", function (event) {
+      debugger;
       var filesSelected = event.target.files;
 
       if (filesSelected.length > 0) {
@@ -43272,7 +43271,7 @@ function (_React$PureComponent) {
       var _signUpFormSubmit = _asyncToGenerator(
       /*#__PURE__*/
       regeneratorRuntime.mark(function _callee(setUserId, e) {
-        var userData, result, userID, errors;
+        var userData, result;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -43280,10 +43279,11 @@ function (_React$PureComponent) {
                 e.preventDefault();
 
                 if (!this.validator.allValid()) {
-                  _context.next = 21;
+                  _context.next = 26;
                   break;
                 }
 
+                _context.prev = 2;
                 userData = {};
                 userData.name = this.state.name;
                 userData.email = this.state.email;
@@ -43291,42 +43291,49 @@ function (_React$PureComponent) {
                 userData.passwordConfirm = this.state.passwordConfirm;
                 userData.birthdate = this.state.birthdate;
                 userData.photo = this.state.photo;
-                _context.next = 11;
+                _context.next = 12;
                 return services_signUpService__WEBPACK_IMPORTED_MODULE_5__["default"].signUp(userData);
 
-              case 11:
+              case 12:
                 result = _context.sent;
-                userID = result.userID;
+                debugger;
 
-                if (!userID) {
-                  _context.next = 17;
+                if (!(_typeof(result) === 'object')) {
+                  _context.next = 16;
                   break;
                 }
 
+                throw result;
+
+              case 16:
                 setUserId(result);
                 this.props.history.push('/');
-                return _context.abrupt("return");
-
-              case 17:
-                errors = _toConsumableArray(result.error).map(function (e) {
-                  return e.description;
-                });
-                errors.forEach(function (error) {
-                  document.getElementsByClassName("sign-up-page__result")[0].innerHTML += error + '</br>';
-                });
-                _context.next = 23;
+                _context.next = 24;
                 break;
 
-              case 21:
+              case 20:
+                _context.prev = 20;
+                _context.t0 = _context["catch"](2);
+                document.getElementsByClassName("sign-up-page__validation-result")[0].innerHTML = "";
+
+                _context.t0.message.forEach(function (error) {
+                  document.getElementsByClassName("sign-up-page__validation-result")[0].innerHTML += error + '</br>';
+                });
+
+              case 24:
+                _context.next = 28;
+                break;
+
+              case 26:
                 this.validator.showMessages();
                 this.forceUpdate();
 
-              case 23:
+              case 28:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this);
+        }, _callee, this, [[2, 20]]);
       }));
 
       function signUpFormSubmit(_x, _x2) {
@@ -43407,11 +43414,10 @@ function (_React$PureComponent) {
           name: "photo",
           type: "file",
           className: "sign-up-page__field-input",
-          value: _this2.state.photo,
           onChange: _this2.photoChange,
           accept: "image/x-png,image/gif,image/jpeg"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "sign-up-page__result"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-up-page__validation-result"
         }, _this2.validator.message('Email', _this2.state.email, 'required|email'), _this2.validator.message('Password', _this2.state.password, 'required|min:6'), _this2.validator.message('Name', _this2.state.name, 'required'), _this2.validator.message('Confirm password', _this2.state.confirmPassword, "required|in:".concat(_this2.state.password))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "submit",
           className: "sign-up-page__form-button",
@@ -47329,6 +47335,10 @@ function isFavourite(beer, favouriteBeers) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function get(url) {
   return fetch(url).then(function (response) {
     if (response.status !== 200) {
@@ -47351,15 +47361,46 @@ function post(url, data) {
     },
     accept: 'application/json',
     body: JSON.stringify(data)
-  }).then(function (response) {
-    if (response.status !== 200) {
-      var error = new Error(response.statusText);
-      error.code = response.status;
-      return error;
-    }
+  }).then(
+  /*#__PURE__*/
+  function () {
+    var _ref = _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee(response) {
+      var error;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              if (!(response.status !== 200)) {
+                _context.next = 7;
+                break;
+              }
 
-    return response.json();
-  }).catch(function (error) {
+              error = new Error(response.statusText);
+              error.code = response.status;
+              _context.next = 5;
+              return response.json();
+
+            case 5:
+              error.message = _context.sent;
+              return _context.abrupt("return", error);
+
+            case 7:
+              return _context.abrupt("return", response.json());
+
+            case 8:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function (_x) {
+      return _ref.apply(this, arguments);
+    };
+  }()).catch(function (error) {
     return new Error("Network Error!".concat(error));
   });
 }
@@ -47805,38 +47846,10 @@ function _login() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
-
-function signUp(_x) {
-  return _signUp.apply(this, arguments);
-}
-
-function _signUp() {
-  _signUp = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee(data) {
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post('https://localhost:44340/account/join', data);
-
-          case 2:
-            return _context.abrupt("return", _context.sent);
-
-          case 3:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _signUp.apply(this, arguments);
+function signUp(data) {
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post('https://localhost:44340/account/join', data);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({

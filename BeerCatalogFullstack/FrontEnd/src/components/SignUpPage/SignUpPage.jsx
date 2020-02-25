@@ -31,25 +31,30 @@ class SignUpPage extends React.PureComponent {
     async signUpFormSubmit(setUserId, e) {
         e.preventDefault();
         if (this.validator.allValid()) {
-            const userData = {};
-            userData.name = this.state.name;
-            userData.email = this.state.email;
-            userData.password = this.state.password;
-            userData.passwordConfirm = this.state.passwordConfirm;
-            userData.birthdate = this.state.birthdate;
-            userData.photo = this.state.photo;
-            const result = await signUpService.signUp(userData);
-            const { userID } = result;
-            if(userID) {
+            try{
+                const userData = {};
+                userData.name = this.state.name;
+                userData.email = this.state.email;
+                userData.password = this.state.password;
+                userData.passwordConfirm = this.state.passwordConfirm;
+                userData.birthdate = this.state.birthdate;
+                userData.photo = this.state.photo;
+                const result = await signUpService.signUp(userData);
+                debugger;
+                if(typeof result === 'object')
+                {
+                    throw result
+                }
+
                 setUserId(result);
                 this.props.history.push('/');
-                return;
             }
-            
-            const errors = [...result.error].map((e) => e.description);
-            errors.forEach(error => {
-                document.getElementsByClassName("sign-up-page__result")[0].innerHTML += error + '</br>';
-            });
+            catch (e) {
+                document.getElementsByClassName("sign-up-page__validation-result")[0].innerHTML = "";
+                e.message.forEach(error => {
+                    document.getElementsByClassName("sign-up-page__validation-result")[0].innerHTML += error + '</br>';
+                });
+            }
         } 
         else {
             this.validator.showMessages();
@@ -87,6 +92,7 @@ class SignUpPage extends React.PureComponent {
     }
 
     photoChange = (event) => {
+        debugger;
         const filesSelected = event.target.files;
         if (filesSelected.length > 0) {
             const fileToLoad = filesSelected[0]; 
@@ -162,12 +168,11 @@ class SignUpPage extends React.PureComponent {
                                 name="photo"
                                 type="file"
                                 className="sign-up-page__field-input"
-                                value = {this.state.photo}
                                 onChange={this.photoChange}
                                 accept="image/x-png,image/gif,image/jpeg">
                             </input>
                         </div>
-                        <span className="sign-up-page__result">
+                        <div className="sign-up-page__validation-result">
                             {
                                 this.validator.message('Email', this.state.email, 'required|email')
                             }
@@ -180,7 +185,7 @@ class SignUpPage extends React.PureComponent {
                             {
                                 this.validator.message('Confirm password', this.state.confirmPassword, `required|in:${this.state.password}`)
                             }
-                        </span>
+                        </div>
                         <input type="submit" className="sign-up-page__form-button" value="Sign up"></input>
                     </form>
                 </section>

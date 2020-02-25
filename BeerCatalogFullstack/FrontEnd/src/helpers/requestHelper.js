@@ -20,10 +20,11 @@ function post(url, data) {
         accept: 'application/json',
         body: JSON.stringify(data)
     })
-        .then((response) => {
+        .then(async (response) => {
             if (response.status !== 200) {
                 const error = new Error(response.statusText);
                 error.code = response.status;
+                error.message = await response.json();
                 return error;
             }
             return response.json();

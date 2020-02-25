@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using BeerCatalogFullstack.Exceptions;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Identity;
@@ -23,8 +24,6 @@ namespace BeerCatalogFullstack.Controllers
         [Route("account/join")]
         public async Task<IActionResult> Register([FromBody]RegisterViewModel model)
         {
-
-            //TODO extract all
             User user = new User
             {
                 UserName = model.Email,
@@ -37,7 +36,7 @@ namespace BeerCatalogFullstack.Controllers
             IdentityResult result = await userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
             {
-                return Json(new {error = result.Errors});
+                throw new SignUpException(result.Errors.ToList());
             }
 
             await signInManager.SignInAsync(user, false);
@@ -45,7 +44,7 @@ namespace BeerCatalogFullstack.Controllers
                 .FirstOrDefault(u => u.Email == model.Email)?
                 .Id;
 
-            return Json(new { UserID = userId } );
+            return Json(userId);
         }
 
 
@@ -57,12 +56,12 @@ namespace BeerCatalogFullstack.Controllers
 
             if (!result.Succeeded)
             {
-                return Json(new {error = "Incorrect data"});
+                throw  new SignInException("Incorrect email or password");
             }
 
             User user = userManager.Users.FirstOrDefault(u => u.Email == model.Email);
 
-            return Json(new {userId = user.Id});
+            return Json(user.Id);
         }
 
         [HttpGet]

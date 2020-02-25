@@ -32,20 +32,22 @@ class SignInPage extends React.PureComponent {
     async signInFormSubmit(setUserId, e) {
         e.preventDefault();
         if (this.validator.allValid()) {
-            let userData = {};
-            userData.email = this.state.email;
-            userData.password = this.state.password;
-            const loginResult = await loginService.login(userData);
-            const { userId } = loginResult;
-            
-            if(userId) {
-                setUserId(userId);
-                this.props.history.push('/');
-                return;
-            }
+            try{
+                let userData = {};
+                userData.email = this.state.email;
+                userData.password = this.state.password;
+                const result = await signInService.signIn(userData);
+                if(typeof result === 'object')
+                {
+                    throw result
+                }
 
-            const {error} = result;
-            document.getElementsByClassName("sign-in-page__result")[0].innerHTML = error;
+                setUserId(result);
+                this.props.history.push('/');
+            }
+            catch (e) {
+                document.getElementsByClassName("sign-in-page__validation-result")[0].innerHTML = e.message;
+            }            
         } 
         else {
             this.validator.showMessages();
@@ -89,7 +91,6 @@ class SignInPage extends React.PureComponent {
                                     this.validator.message('Password', this.state.password, 'required|min:6')
                                 }
                             </div>
-                            {/* <span className="sign-in-page__result"></span> */}
                         </form>
                     </section>
                 )}

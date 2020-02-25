@@ -38,8 +38,10 @@ namespace BeerCatalogFullstack
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseCustomExceptionMiddleware();
             }
 
+            app.UseCustomExceptionMiddleware();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

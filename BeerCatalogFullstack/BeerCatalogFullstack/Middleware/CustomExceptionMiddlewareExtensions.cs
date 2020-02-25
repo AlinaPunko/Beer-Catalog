@@ -8,7 +8,7 @@ namespace BeerCatalogFullstack.Middleware
 {
     public static class CustomExceptionMiddlewareExtensions
     {
-        public static IApplicationBuilder UseCustomExceptiontusMiddleware(this IApplicationBuilder builder)
+        public static IApplicationBuilder UseCustomExceptionMiddleware(this IApplicationBuilder builder)
         {
             return builder.UseMiddleware<CustomExceptionMiddleware>();
         }

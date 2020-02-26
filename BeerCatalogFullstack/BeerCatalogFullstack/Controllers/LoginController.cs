@@ -36,7 +36,7 @@ namespace BeerCatalogFullstack.Controllers
         public IActionResult Logout()
         {
             manager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return Ok();
         }
     }
 }

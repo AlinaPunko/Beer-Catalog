@@ -93,7 +93,7 @@ class ProfilePage extends React.PureComponent {
                 document.getElementsByClassName('profile-page__validation-result')[0].innerHTML = result.message;
                 return;
             }
-            alert('The user has been updated');
+            alert('The user was updated');
             this.props.history.push('/');
         } else {
             this.validator.showMessages();

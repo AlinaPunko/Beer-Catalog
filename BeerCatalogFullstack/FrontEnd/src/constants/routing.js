@@ -1,9 +1,9 @@
-import SearchPage from 'components/search/SearchPage/SearchPage';
-import FavouritesList from 'components/favouritesPage/FavouritesList/FavouritesList';
-import BeerDetailsPage from 'components/detailsPage/BeerDetailsPage/BeerDetailsPage';
-import SignInPage from 'components/SignInPage/SignInPage';
-import SignUpPage from 'components/SignUpPage/SignUpPage';
-import ProfilePage from 'components/ProfilePage/ProfilePage';
+import SearchPage from 'components/search/SearchPage/searchPage';
+import FavouritesList from 'components/favouritesPage/FavouritesList/favouritesList';
+import BeerDetailsPage from 'components/detailsPage/BeerDetailsPage/beerDetailsPage';
+import SignInPage from 'components/SignInPage/signInPage';
+import SignUpPage from 'components/SignUpPage/signUpPage';
+import ProfilePage from 'components/ProfilePage/profilePage';
 
 export default {
     signInPage: {

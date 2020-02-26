@@ -1,11 +1,17 @@
 import api from 'helpers/requestHelper';
+import requestUrl from 'constants/requestUrl';
+
 
 function getUser(id) {
-    return api.get(`https://localhost:44340/account/profile?id=${id}`);
+    return api.get(requestUrl.getUser(id));
 }
 
 function updateUser(user) {
-    return api.put('https://localhost:44340/account/profile', user);
+    return api.put(requestUrl.updateUser, user);
 }
 
-export default { getUser, updateUser };
+function signOut() {
+    return api.get(requestUrl.signOut);
+}
+
+export default { getUser, updateUser, signOut };

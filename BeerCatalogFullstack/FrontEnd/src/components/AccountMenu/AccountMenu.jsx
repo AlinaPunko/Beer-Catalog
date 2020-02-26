@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import { UserContext } from 'store/context/userContext';
 import SideMenuLink from 'components/SideMenuLink/sideMenuLink';
+import serviceWrapper from 'wrappers/serviceWrapper';
+import userService from 'services/userService';
 
 import signIn from 'styles/icons/signin.svg';
 import signUp from 'styles/icons/signup.svg';
@@ -19,6 +21,7 @@ export default class AccountMenu extends React.PureComponent {
 
     signOutClick = () => {
         this.context.setUserId('');
+        serviceWrapper.callService(userService.signOut, null, null);
     }
 
     render() {

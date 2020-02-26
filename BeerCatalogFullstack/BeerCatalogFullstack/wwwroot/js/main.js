@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "729b7b1859365a4f2879";
+/******/ 	var hotCurrentHash = "16d344fe0fe2b64c8600";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -41686,12 +41686,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
 /* harmony import */ var components_SideMenuLink_sideMenuLink__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/SideMenuLink/sideMenuLink */ "./src/components/SideMenuLink/sideMenuLink.jsx");
-/* harmony import */ var styles_icons_signin_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styles/icons/signin.svg */ "./src/styles/icons/signin.svg");
-/* harmony import */ var styles_icons_signup_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styles/icons/signup.svg */ "./src/styles/icons/signup.svg");
-/* harmony import */ var styles_icons_signout_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styles/icons/signout.svg */ "./src/styles/icons/signout.svg");
-/* harmony import */ var styles_icons_account_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! styles/icons/account.svg */ "./src/styles/icons/account.svg");
-/* harmony import */ var _accountMenu_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./accountMenu.scss */ "./src/components/AccountMenu/accountMenu.scss");
-/* harmony import */ var _accountMenu_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_accountMenu_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! wrappers/serviceWrapper */ "./src/wrappers/serviceWrapper.js");
+/* harmony import */ var services_userService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! services/userService */ "./src/services/userService.js");
+/* harmony import */ var styles_icons_signin_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styles/icons/signin.svg */ "./src/styles/icons/signin.svg");
+/* harmony import */ var styles_icons_signup_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! styles/icons/signup.svg */ "./src/styles/icons/signup.svg");
+/* harmony import */ var styles_icons_signout_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! styles/icons/signout.svg */ "./src/styles/icons/signout.svg");
+/* harmony import */ var styles_icons_account_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! styles/icons/account.svg */ "./src/styles/icons/account.svg");
+/* harmony import */ var _accountMenu_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./accountMenu.scss */ "./src/components/AccountMenu/accountMenu.scss");
+/* harmony import */ var _accountMenu_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_accountMenu_scss__WEBPACK_IMPORTED_MODULE_11__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41711,6 +41713,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -41743,6 +41747,8 @@ function (_React$PureComponent) {
 
     _defineProperty(_assertThisInitialized(_this), "signOutClick", function () {
       _this.context.setUserId('');
+
+      wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_5__["default"].callService(services_userService__WEBPACK_IMPORTED_MODULE_6__["default"].signOut, null, null);
     });
 
     return _this;
@@ -41772,24 +41778,24 @@ function (_React$PureComponent) {
           to: "/login"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_sideMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
           text: "Sign In",
-          icon: styles_icons_signin_svg__WEBPACK_IMPORTED_MODULE_5__["default"]
+          icon: styles_icons_signin_svg__WEBPACK_IMPORTED_MODULE_7__["default"]
         }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/join"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_sideMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
           text: "Sign Up",
-          icon: styles_icons_signup_svg__WEBPACK_IMPORTED_MODULE_6__["default"]
+          icon: styles_icons_signup_svg__WEBPACK_IMPORTED_MODULE_8__["default"]
         })))), userId !== '' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/profile"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_sideMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
           text: "My Profile",
-          icon: styles_icons_account_svg__WEBPACK_IMPORTED_MODULE_8__["default"]
+          icon: styles_icons_account_svg__WEBPACK_IMPORTED_MODULE_10__["default"]
         }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           onClick: _this2.signOutClick
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_sideMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
           text: "Sign Out",
-          icon: styles_icons_signout_svg__WEBPACK_IMPORTED_MODULE_7__["default"]
+          icon: styles_icons_signout_svg__WEBPACK_IMPORTED_MODULE_9__["default"]
         }))))));
       });
     }
@@ -42157,9 +42163,9 @@ if(true) {
 
 /***/ }),
 
-/***/ "./src/components/ProfilePage/ProfilePage.jsx":
+/***/ "./src/components/ProfilePage/profilePage.jsx":
 /*!****************************************************!*\
-  !*** ./src/components/ProfilePage/ProfilePage.jsx ***!
+  !*** ./src/components/ProfilePage/profilePage.jsx ***!
   \****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -42309,7 +42315,7 @@ function (_React$PureComponent) {
                 return _context.abrupt("return");
 
               case 14:
-                alert('The user has been updated');
+                alert('The user was updated');
 
                 _this.props.history.push('/');
 
@@ -42921,9 +42927,9 @@ if(true) {
 
 /***/ }),
 
-/***/ "./src/components/SignInPage/SignInPage.jsx":
+/***/ "./src/components/SignInPage/signInPage.jsx":
 /*!**************************************************!*\
-  !*** ./src/components/SignInPage/SignInPage.jsx ***!
+  !*** ./src/components/SignInPage/signInPage.jsx ***!
   \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -43180,9 +43186,9 @@ if(true) {
 
 /***/ }),
 
-/***/ "./src/components/SignUpPage/SignUpPage.jsx":
+/***/ "./src/components/SignUpPage/signUpPage.jsx":
 /*!**************************************************!*\
-  !*** ./src/components/SignUpPage/SignUpPage.jsx ***!
+  !*** ./src/components/SignUpPage/signUpPage.jsx ***!
   \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -44932,9 +44938,9 @@ if(true) {
 
 /***/ }),
 
-/***/ "./src/components/detailsPage/BeerDetailsPage/BeerDetailsPage.jsx":
+/***/ "./src/components/detailsPage/BeerDetailsPage/beerDetailsPage.jsx":
 /*!************************************************************************!*\
-  !*** ./src/components/detailsPage/BeerDetailsPage/BeerDetailsPage.jsx ***!
+  !*** ./src/components/detailsPage/BeerDetailsPage/beerDetailsPage.jsx ***!
   \************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -46204,9 +46210,9 @@ if(true) {
 
 /***/ }),
 
-/***/ "./src/components/favouritesPage/FavouritesList/FavouritesList.jsx":
+/***/ "./src/components/favouritesPage/FavouritesList/favouritesList.jsx":
 /*!*************************************************************************!*\
-  !*** ./src/components/favouritesPage/FavouritesList/FavouritesList.jsx ***!
+  !*** ./src/components/favouritesPage/FavouritesList/favouritesList.jsx ***!
   \*************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -47008,9 +47014,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./src/components/search/SearchPage/SearchPage.jsx":
+/***/ "./src/components/search/SearchPage/searchPage.jsx":
 /*!*********************************************************!*\
-  !*** ./src/components/search/SearchPage/SearchPage.jsx ***!
+  !*** ./src/components/search/SearchPage/searchPage.jsx ***!
   \*********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -47253,6 +47259,37 @@ var keyboardKeyCode = {
 
 /***/ }),
 
+/***/ "./src/constants/requestUrl.js":
+/*!*************************************!*\
+  !*** ./src/constants/requestUrl.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var requestUrl = {
+  getAllBeers: 'https://api.punkapi.com/v2/beers?per_page=80',
+  getBeerById: function getBeerById(id) {
+    return "https://api.punkapi.com/v2/beers/".concat(id);
+  },
+  addFavorite: 'https://localhost:44340/favorites/add',
+  getFavoritesByUserId: function getFavoritesByUserId(userId) {
+    return "https://localhost:44340/favorites/get?userId=".concat(userId);
+  },
+  deleteFavorite: 'https://localhost:44340/favorites/delete',
+  signIn: 'https://localhost:44340/account/login',
+  signUp: 'https://localhost:44340/account/join',
+  signOut: 'https://localhost:44340/account/logout',
+  getUser: function getUser(id) {
+    return "https://localhost:44340/account/profile?id=".concat(id);
+  },
+  updateUser: 'https://localhost:44340/account/profile'
+};
+/* harmony default export */ __webpack_exports__["default"] = (requestUrl);
+
+/***/ }),
+
 /***/ "./src/constants/routing.js":
 /*!**********************************!*\
   !*** ./src/constants/routing.js ***!
@@ -47262,12 +47299,12 @@ var keyboardKeyCode = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var components_search_SearchPage_SearchPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! components/search/SearchPage/SearchPage */ "./src/components/search/SearchPage/SearchPage.jsx");
-/* harmony import */ var components_favouritesPage_FavouritesList_FavouritesList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/favouritesPage/FavouritesList/FavouritesList */ "./src/components/favouritesPage/FavouritesList/FavouritesList.jsx");
-/* harmony import */ var components_detailsPage_BeerDetailsPage_BeerDetailsPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/detailsPage/BeerDetailsPage/BeerDetailsPage */ "./src/components/detailsPage/BeerDetailsPage/BeerDetailsPage.jsx");
-/* harmony import */ var components_SignInPage_SignInPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/SignInPage/SignInPage */ "./src/components/SignInPage/SignInPage.jsx");
-/* harmony import */ var components_SignUpPage_SignUpPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/SignUpPage/SignUpPage */ "./src/components/SignUpPage/SignUpPage.jsx");
-/* harmony import */ var components_ProfilePage_ProfilePage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/ProfilePage/ProfilePage */ "./src/components/ProfilePage/ProfilePage.jsx");
+/* harmony import */ var components_search_SearchPage_searchPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! components/search/SearchPage/searchPage */ "./src/components/search/SearchPage/searchPage.jsx");
+/* harmony import */ var components_favouritesPage_FavouritesList_favouritesList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/favouritesPage/FavouritesList/favouritesList */ "./src/components/favouritesPage/FavouritesList/favouritesList.jsx");
+/* harmony import */ var components_detailsPage_BeerDetailsPage_beerDetailsPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/detailsPage/BeerDetailsPage/beerDetailsPage */ "./src/components/detailsPage/BeerDetailsPage/beerDetailsPage.jsx");
+/* harmony import */ var components_SignInPage_signInPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/SignInPage/signInPage */ "./src/components/SignInPage/signInPage.jsx");
+/* harmony import */ var components_SignUpPage_signUpPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/SignUpPage/signUpPage */ "./src/components/SignUpPage/signUpPage.jsx");
+/* harmony import */ var components_ProfilePage_profilePage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/ProfilePage/profilePage */ "./src/components/ProfilePage/profilePage.jsx");
 
 
 
@@ -47277,27 +47314,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   signInPage: {
     url: '/login',
-    component: components_SignInPage_SignInPage__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: components_SignInPage_signInPage__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   signUpPage: {
     url: '/join',
-    component: components_SignUpPage_SignUpPage__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: components_SignUpPage_signUpPage__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   favouritesList: {
     url: '/favourites',
-    component: components_favouritesPage_FavouritesList_FavouritesList__WEBPACK_IMPORTED_MODULE_1__["default"]
+    component: components_favouritesPage_FavouritesList_favouritesList__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   searchPage: {
     url: '/',
-    component: components_search_SearchPage_SearchPage__WEBPACK_IMPORTED_MODULE_0__["default"]
+    component: components_search_SearchPage_searchPage__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   beerDetailsPage: {
     url: '/details/:id',
-    component: components_detailsPage_BeerDetailsPage_BeerDetailsPage__WEBPACK_IMPORTED_MODULE_2__["default"]
+    component: components_detailsPage_BeerDetailsPage_beerDetailsPage__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   profilePage: {
     url: '/profile',
-    component: components_ProfilePage_ProfilePage__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: components_ProfilePage_profilePage__WEBPACK_IMPORTED_MODULE_5__["default"]
   }
 });
 
@@ -47676,9 +47713,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
 /* harmony import */ var models_beerShortInfoModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! models/beerShortInfoModel */ "./src/models/beerShortInfoModel.js");
 /* harmony import */ var models_beerInfoModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! models/beerInfoModel */ "./src/models/beerInfoModel.js");
+/* harmony import */ var constants_requestUrl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! constants/requestUrl */ "./src/constants/requestUrl.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -47698,7 +47737,7 @@ function _getAll() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get('https://api.punkapi.com/v2/beers?per_page=80');
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_requestUrl__WEBPACK_IMPORTED_MODULE_3__["default"].getAllBeers);
 
           case 2:
             beers = _context.sent;
@@ -47730,7 +47769,7 @@ function _getByID() {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get("https://api.punkapi.com/v2/beers/".concat(id));
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_requestUrl__WEBPACK_IMPORTED_MODULE_3__["default"].getBeerById(id));
 
           case 2:
             beer = _context2.sent;
@@ -47763,9 +47802,11 @@ function _getByID() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
+/* harmony import */ var constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/requestUrl */ "./src/constants/requestUrl.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -47784,7 +47825,7 @@ function _add() {
           case 0:
             id = item.id, name = item.name, tagline = item.tagline, imageUrl = item.imageUrl;
             _context.next = 3;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post('https://localhost:44340/favorites/add', {
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].addFavorite, {
               userId: userId,
               id: id,
               name: name,
@@ -47820,7 +47861,7 @@ function _getItems() {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get("https://localhost:44340/favorites/get?userId=".concat(userId));
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].getFavoritesByUserId(userId));
 
           case 2:
             result = _context2.sent;
@@ -47851,7 +47892,7 @@ function _deleteItem() {
           case 0:
             id = item.id, name = item.name, tagline = item.tagline, imageUrl = item.imageUrl;
             _context3.next = 3;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post('https://localhost:44340/favorites/delete', {
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].deleteFavorite, {
               userId: userId,
               id: id,
               name: name,
@@ -47891,10 +47932,12 @@ function _deleteItem() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
+/* harmony import */ var constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/requestUrl */ "./src/constants/requestUrl.js");
+
 
 
 function signIn(data) {
-  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post('https://localhost:44340/account/login', data);
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].signIn, data);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -47913,10 +47956,12 @@ function signIn(data) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
+/* harmony import */ var constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/requestUrl */ "./src/constants/requestUrl.js");
+
 
 
 function signUp(data) {
-  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post('https://localhost:44340/account/join', data);
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].signUp, data);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -47935,19 +47980,26 @@ function signUp(data) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
+/* harmony import */ var constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/requestUrl */ "./src/constants/requestUrl.js");
+
 
 
 function getUser(id) {
-  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get("https://localhost:44340/account/profile?id=".concat(id));
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].getUser(id));
 }
 
 function updateUser(user) {
-  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].put('https://localhost:44340/account/profile', user);
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].put(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].updateUser, user);
+}
+
+function signOut() {
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].signOut);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   getUser: getUser,
-  updateUser: updateUser
+  updateUser: updateUser,
+  signOut: signOut
 });
 
 /***/ }),
@@ -48515,7 +48567,7 @@ function _callService() {
           case 2:
             result = _context.sent;
 
-            if (!(result instanceof Error)) {
+            if (!(result instanceof Error && errorRef)) {
               _context.next = 6;
               break;
             }

@@ -1,7 +1,9 @@
 import api from 'helpers/requestHelper';
+import requestUrl from 'constants/requestUrl';
+
 
 function signUp(data) {
-    return api.post('https://localhost:44340/account/join', data);
+    return api.post(requestUrl.signUp, data);
 }
 
 export default { signUp };

@@ -1,7 +1,9 @@
 import api from 'helpers/requestHelper';
+import requestUrl from 'constants/requestUrl';
+
 
 function signIn(data) {
-    return api.post('https://localhost:44340/account/login', data);
+    return api.post(requestUrl.signIn, data);
 }
 
 export default { signIn };

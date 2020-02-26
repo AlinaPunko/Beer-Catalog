@@ -54,7 +54,7 @@ namespace BeerCatalogFullstack.Middleware
                 context.Response.StatusCode = 500;
                 context.Response.ContentType = "application/json";
                 context.Response.Headers.Add("exception", "signInException");
-                string json = JsonConvert.SerializeObject(new {e.Message }, jsonSettings);
+                string json = JsonConvert.SerializeObject(new { e.Message }, jsonSettings);
                 await context.Response.WriteAsync(json);
             }
         }

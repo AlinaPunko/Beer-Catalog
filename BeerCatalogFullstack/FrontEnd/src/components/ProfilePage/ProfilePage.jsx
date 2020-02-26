@@ -1,13 +1,28 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
+import PropTypes from 'prop-types';
 
 import userService from 'services/userService';
-import { UserContext } from 'store/context/UserContext';
+import { UserContext } from 'store/context/userContext';
 
 import './profilePage.scss';
 
 class ProfilePage extends React.PureComponent {
+    static propTypes = {
+        history: PropTypes.shape({
+            length: PropTypes.number.isRequired,
+            action: PropTypes.string.isRequired,
+            location: PropTypes.shape({
+                pathname: PropTypes.string.isRequired,
+                search: PropTypes.string.isRequired,
+                hash: PropTypes.string.isRequired,
+                key: PropTypes.string.isRequired
+            }),
+            push: PropTypes.func.isRequired
+        }).isRequired
+    }
+
     constructor(props) {
         super(props);
         this.validator = new SimpleReactValidator();
@@ -74,13 +89,10 @@ class ProfilePage extends React.PureComponent {
             userData.birthdate = this.state.birthdate;
             userData.photo = this.state.photo;
             const result = await userService.updateUser(userData);
-            debugger;
             if (result instanceof Error) {
-                debugger;
                 document.getElementsByClassName('profile-page__validation-result')[0].innerHTML = result.message;
                 return;
             }
-            debugger;
             alert('The user has been updated');
             this.props.history.push('/');
         } else {

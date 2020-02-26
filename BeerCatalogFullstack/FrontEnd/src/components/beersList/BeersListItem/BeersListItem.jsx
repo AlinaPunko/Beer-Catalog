@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { UserContext } from 'store/context/UserContext';
+import { UserContext } from 'store/context/userContext';
 import OpenDetailsPageButton from 'components/common/OpenDetailsPageButton/openDetailsPageButton';
 import FavouriteButton from 'components/common/FavouriteButton/favouriteButton';
 import favouritesServices from 'services/favouritesService';

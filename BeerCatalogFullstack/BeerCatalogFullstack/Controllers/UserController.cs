@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
@@ -27,10 +28,10 @@ namespace BeerCatalogFullstack.Controllers
 
         [HttpPut]
         [Route("account/profile")]
-        public IActionResult UpdateUser([FromBody]UpdateUserViewModel model)
+        public async Task<IActionResult> UpdateUserAsync([FromBody]UpdateUserViewModel model)
         {
-           manager.UpdateUserAsync(model);
-           return Ok();
+            await manager.UpdateUserAsync(model);
+            return Ok();
         }
     }
 }

@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { UserContext } from 'store/context/UserContext';
+import { UserContext } from 'store/context/userContext';
 import favouritesService from 'services/favouritesService';
 import beerService from 'services/beerService';
-import BeersListItem from 'components/beersList/BeersListItem/BeersListItem';
-import Icon from 'components/common/Icon/Icon';
+import BeersListItem from 'components/beersList/BeersListItem/beersListItem';
+import Icon from 'components/common/Icon/icon';
 
 import preloader from 'styles/icons/preloader.svg';
 

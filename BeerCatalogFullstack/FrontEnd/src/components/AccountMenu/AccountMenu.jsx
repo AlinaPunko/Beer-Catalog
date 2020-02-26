@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { UserContext } from 'store/context/UserContext';
-import SideMenuLink from 'components/SideMenuLink/SideMenuLink';
+import { UserContext } from 'store/context/userContext';
+import SideMenuLink from 'components/SideMenuLink/sideMenuLink';
 
 import signIn from 'styles/icons/signin.svg';
 import signUp from 'styles/icons/signup.svg';
@@ -17,8 +17,8 @@ export default class AccountMenu extends React.PureComponent {
         closeFunction: PropTypes.func.isRequired
     };
 
-    signOutClick(setUserId) {
-        setUserId('0');
+    signOutClick = () => {
+        this.context.setUserId('');
     }
 
     render() {
@@ -29,7 +29,7 @@ export default class AccountMenu extends React.PureComponent {
 
         return (
             <UserContext.Consumer>
-                {({ userId, setUserId }) => (
+                {({ userId }) => (
                     <div className={menuClass} onClick={this.props.closeFunction}>
                         <ul className="account-menu__links">
                             {userId === ''
@@ -55,7 +55,7 @@ export default class AccountMenu extends React.PureComponent {
                                                 <SideMenuLink text="My Profile" icon={account} />
                                             </Link>
                                         </li>
-                                        <li onClick={this.signOutClick.bind(this, setUserId)}>
+                                        <li onClick={this.signOutClick}>
                                             <Link to="/">
                                                 <SideMenuLink text="Sign Out" icon={signOut} />
                                             </Link>
@@ -69,3 +69,5 @@ export default class AccountMenu extends React.PureComponent {
         );
     }
 }
+
+AccountMenu.contextType = UserContext;

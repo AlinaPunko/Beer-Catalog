@@ -57,9 +57,9 @@ namespace BeerCatalogFullstack.Managers
                 .Id;
         }
 
-        public async void SignOut()
+        public void SignOut()
         {
-            await signInManager.SignOutAsync();
+            signInManager.SignOutAsync();
         }
     }
 }

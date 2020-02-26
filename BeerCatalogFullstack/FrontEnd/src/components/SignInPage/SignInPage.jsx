@@ -1,19 +1,36 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
+import PropTypes from 'prop-types';
 
-import { UserContext } from 'store/context/UserContext';
+import serviceWrapper from 'wrappers/serviceWrapper';
+import { UserContext } from 'store/context/userContext';
 import signInService from 'services/signInService';
 import './signInPage.scss';
 
 class SignInPage extends React.PureComponent {
-    constructor(props) {
-        super(props);
+    static propTypes = {
+        history: PropTypes.shape({
+            length: PropTypes.number.isRequired,
+            action: PropTypes.string.isRequired,
+            location: PropTypes.shape({
+                pathname: PropTypes.string.isRequired,
+                search: PropTypes.string.isRequired,
+                hash: PropTypes.string.isRequired
+            }),
+            push: PropTypes.func.isRequired
+        }).isRequired
+    }
+
+    constructor(props, context) {
+        super(props, context);
         this.validator = new SimpleReactValidator();
+        this.errorFieldRef = React.createRef();
         this.state = {
             email: '',
             password: ''
         };
+        this.signInFormSubmit = this.signInFormSubmit.bind(this);
     }
 
     passwordChange = (event) => {
@@ -28,19 +45,17 @@ class SignInPage extends React.PureComponent {
         });
     }
 
-    async signInFormSubmit(setUserId, e) {
+    signInFormSubmit = async (e) => {
         e.preventDefault();
         if (this.validator.allValid()) {
             const userData = {};
             userData.email = this.state.email;
             userData.password = this.state.password;
-            const result = await signInService.signIn(userData);
-            if (result instanceof Error) {
-                document.getElementsByClassName('sign-in-page__validation-result')[0].innerHTML = e.message;
+            const result = await serviceWrapper.callService(signInService.signIn, userData, this.errorFieldRef);
+            if (result) {
+                this.context.setUserId(result);
+                this.props.history.push('/');
             }
-
-            setUserId(result);
-            this.props.history.push('/');
         } else {
             this.validator.showMessages();
             this.forceUpdate();
@@ -49,46 +64,43 @@ class SignInPage extends React.PureComponent {
 
     render() {
         return (
-            <UserContext.Consumer>
-                {({ setUserId }) => (
-                    <section className="sign-in-page">
-                        <h1 className="sign-in-page__title">Log In</h1>
-                        <form className="sign-in-page__form" onSubmit={this.signInFormSubmit.bind(this, setUserId)}>
-                            <div className="sign-in-page__field">
-                                <label className="sign-in-page__field-title">E-mail</label>
-                                <input
-                                    name="email"
-                                    type="email"
-                                    value={this.state.email}
-                                    onChange={this.emailChange}
-                                    className="sign-in-page__field-input"
-                                />
-                            </div>
-                            <div className="sign-in-page__field">
-                                <label className="sign-in-page__field-title">Password</label>
-                                <input
-                                    name="password"
-                                    value={this.state.password}
-                                    onChange={this.passwordChange}
-                                    type="password"
-                                    className="sign-in-page__field-input"
-                                />
-                            </div>
-                            <input className="sign-in-page__form-button" type="submit" value="Log in" />
-                            <div className="sign-in-page__validation-result">
-                                {
-                                    this.validator.message('Email', this.state.email, 'required|email')
-                                }
-                                {
-                                    this.validator.message('Password', this.state.password, 'required|min:6')
-                                }
-                            </div>
-                        </form>
-                    </section>
-                )}
-            </UserContext.Consumer>
+            <section className="sign-in-page">
+                <h1 className="sign-in-page__title">Log In</h1>
+                <form className="sign-in-page__form" onSubmit={this.signInFormSubmit}>
+                    <div className="sign-in-page__field">
+                        <label className="sign-in-page__field-title">E-mail</label>
+                        <input
+                            name="email"
+                            type="email"
+                            value={this.state.email}
+                            onChange={this.emailChange}
+                            className="sign-in-page__field-input"
+                        />
+                    </div>
+                    <div className="sign-in-page__field">
+                        <label className="sign-in-page__field-title">Password</label>
+                        <input
+                            name="password"
+                            value={this.state.password}
+                            onChange={this.passwordChange}
+                            type="password"
+                            className="sign-in-page__field-input"
+                        />
+                    </div>
+                    <input className="sign-in-page__form-button" type="submit" value="Log in" />
+                    <div className="sign-in-page__validation-result" ref={this.errorFieldRef}>
+                        {
+                            this.validator.message('Email', this.state.email, 'required|email')
+                        }
+                        {
+                            this.validator.message('Password', this.state.password, 'required|min:6')
+                        }
+                    </div>
+                </form>
+            </section>
         );
     }
 }
 
+SignInPage.contextType = UserContext;
 export default withRouter(SignInPage);

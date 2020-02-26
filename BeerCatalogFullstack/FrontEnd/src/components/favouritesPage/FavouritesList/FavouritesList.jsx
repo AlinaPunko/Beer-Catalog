@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { UserContext } from 'store/context/UserContext';
+import { UserContext } from 'store/context/userContext';
 import beerServices from 'services/beerService';
 import favouritesServices from 'services/favouritesService';
 import FavouriteListItem from 'components/favouritesPage/FavouriteListItem/favouriteListItem';

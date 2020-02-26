@@ -32,7 +32,8 @@ namespace BeerCatalogFullstack.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Logout()
+        [Route("account/logout")]
+        public IActionResult Logout()
         {
             manager.SignOut();
             return RedirectToAction("Index", "Home");

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { UserContext } from 'store/context/UserContext';
+import { UserContext } from 'store/context/userContext';
 import SideMenuLink from 'components/SideMenuLink/sideMenuLink';
 
 import favourite from 'styles/icons/favourite.svg';

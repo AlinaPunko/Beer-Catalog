@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "16d344fe0fe2b64c8600";
+/******/ 	var hotCurrentHash = "063f87d1bd312de8c3f1";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1009,7 +1009,7 @@ exports.push([module.i, ".header {\n  display: flex;\n  background-color: #106cc
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".profile-page {\n  width: 50%;\n  margin: 10px auto; }\n\n.profile-page__content {\n  display: flex;\n  align-content: center;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n\n.profile-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.profile-page__image-block {\n  width: 50%;\n  padding: 10px; }\n\n.profile-page__user-image {\n  width: 70%;\n  margin: 0 auto; }\n\n.profile-page__add-image-button,\n.profile-page__delete-image-button {\n  width: 30%;\n  margin: 0 10px;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-page__user-info {\n  width: 50%; }\n\n.profile-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.profile-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.profile-page__field-input {\n  width: 50%;\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-page__save-button,\n.profile-page__close-button {\n  width: 40%;\n  margin: 20px;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-page__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
+exports.push([module.i, ".profile-page {\n  width: 50%;\n  margin: 10px auto; }\n\n.profile-page__form {\n  display: flex;\n  align-content: center;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n\n.profile-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.profile-page__image-block {\n  width: 50%;\n  padding: 10px; }\n\n.profile-page__user-image {\n  width: 70%;\n  margin: 0 auto; }\n\n.profile-page__add-image-button,\n.profile-page__delete-image-button {\n  width: 30%;\n  margin: 0 10px;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-page__user-info {\n  width: 50%; }\n\n.profile-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.profile-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.profile-page__field-input {\n  width: 50%;\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-page__save-button,\n.profile-page__close-button {\n  width: 40%;\n  margin: 20px;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-page__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
 
 
 
@@ -42179,10 +42179,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_react_validator__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var services_userService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! services/userService */ "./src/services/userService.js");
-/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
-/* harmony import */ var _profilePage_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./profilePage.scss */ "./src/components/ProfilePage/profilePage.scss");
-/* harmony import */ var _profilePage_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_profilePage_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! validationConfigs/profileValidationConfig */ "./src/validationConfigs/profileValidationConfig.js");
+/* harmony import */ var services_userService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! services/userService */ "./src/services/userService.js");
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var _profilePage_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./profilePage.scss */ "./src/components/ProfilePage/profilePage.scss");
+/* harmony import */ var _profilePage_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_profilePage_scss__WEBPACK_IMPORTED_MODULE_7__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -42206,6 +42207,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -42301,7 +42303,7 @@ function (_React$PureComponent) {
                 userData.birthdate = _this.state.birthdate;
                 userData.photo = _this.state.photo;
                 _context.next = 10;
-                return services_userService__WEBPACK_IMPORTED_MODULE_4__["default"].updateUser(userData);
+                return services_userService__WEBPACK_IMPORTED_MODULE_5__["default"].updateUser(userData);
 
               case 10:
                 result = _context.sent;
@@ -42368,7 +42370,7 @@ function (_React$PureComponent) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return services_userService__WEBPACK_IMPORTED_MODULE_4__["default"].getUser(this.context.userId);
+                return services_userService__WEBPACK_IMPORTED_MODULE_5__["default"].getUser(this.context.userId);
 
               case 2:
                 user = _context2.sent;
@@ -42402,7 +42404,7 @@ function (_React$PureComponent) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "profile-page__title"
       }, "Your profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "profile-page__content"
+        className: "profile-page__form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-page__image-block"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -42451,7 +42453,7 @@ function (_React$PureComponent) {
         onChange: this.onBirthdateFieldChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-page__validation-result"
-      }, this.validator.message('Email', this.state.email, 'required|email'), this.validator.message('Name', this.state.name, 'required')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.validator.message('Email', this.state.email, validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].email.rule), this.validator.message('Name', this.state.name, validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].name.rule)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         className: "profile-page__save-button",
         onClick: this.onSaveClick,
@@ -42482,7 +42484,7 @@ _defineProperty(ProfilePage, "propTypes", {
   }).isRequired
 });
 
-ProfilePage.contextType = store_context_userContext__WEBPACK_IMPORTED_MODULE_5__["UserContext"];
+ProfilePage.contextType = store_context_userContext__WEBPACK_IMPORTED_MODULE_6__["UserContext"];
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(ProfilePage));
 
 /***/ }),
@@ -42943,11 +42945,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_react_validator__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! wrappers/serviceWrapper */ "./src/wrappers/serviceWrapper.js");
-/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
-/* harmony import */ var services_signInService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! services/signInService */ "./src/services/signInService.js");
-/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./signInPage.scss */ "./src/components/SignInPage/signInPage.scss");
-/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_signInPage_scss__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var validationConfigs_signInValidationConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! validationConfigs/signInValidationConfig */ "./src/validationConfigs/signInValidationConfig.js");
+/* harmony import */ var wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! wrappers/serviceWrapper */ "./src/wrappers/serviceWrapper.js");
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var services_signInService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! services/signInService */ "./src/services/signInService.js");
+/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./signInPage.scss */ "./src/components/SignInPage/signInPage.scss");
+/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_signInPage_scss__WEBPACK_IMPORTED_MODULE_8__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -42971,6 +42974,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -43027,7 +43031,7 @@ function (_React$PureComponent) {
                 userData.email = _this.state.email;
                 userData.password = _this.state.password;
                 _context.next = 7;
-                return wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_4__["default"].callService(services_signInService__WEBPACK_IMPORTED_MODULE_6__["default"].signIn, userData, _this.errorFieldRef);
+                return wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_5__["default"].callService(services_signInService__WEBPACK_IMPORTED_MODULE_7__["default"].signIn, userData, _this.errorFieldRef);
 
               case 7:
                 result = _context.sent;
@@ -43106,7 +43110,7 @@ function (_React$PureComponent) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sign-in-page__validation-result",
         ref: this.errorFieldRef
-      }, this.validator.message('Email', this.state.email, 'required|email'), this.validator.message('Password', this.state.password, 'required|min:6'))));
+      }, this.validator.message('Email', this.state.email, validationConfigs_signInValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].email.rule), this.validator.message('Password', this.state.password, validationConfigs_signInValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].password.rule))));
     }
   }]);
 
@@ -43126,7 +43130,7 @@ _defineProperty(SignInPage, "propTypes", {
   }).isRequired
 });
 
-SignInPage.contextType = store_context_userContext__WEBPACK_IMPORTED_MODULE_5__["UserContext"];
+SignInPage.contextType = store_context_userContext__WEBPACK_IMPORTED_MODULE_6__["UserContext"];
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(SignInPage));
 
 /***/ }),
@@ -43202,11 +43206,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_react_validator__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! wrappers/serviceWrapper */ "./src/wrappers/serviceWrapper.js");
-/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
-/* harmony import */ var services_signUpService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! services/signUpService */ "./src/services/signUpService.js");
-/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./signUpPage.scss */ "./src/components/SignUpPage/signUpPage.scss");
-/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_signUpPage_scss__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! validationConfigs/signUpValidationConfig */ "./src/validationConfigs/signUpValidationConfig.js");
+/* harmony import */ var wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! wrappers/serviceWrapper */ "./src/wrappers/serviceWrapper.js");
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var services_signUpService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! services/signUpService */ "./src/services/signUpService.js");
+/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./signUpPage.scss */ "./src/components/SignUpPage/signUpPage.scss");
+/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_signUpPage_scss__WEBPACK_IMPORTED_MODULE_8__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -43230,6 +43235,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -43327,7 +43333,7 @@ function (_React$PureComponent) {
                 userData.birthdate = _this.state.birthdate;
                 userData.photo = _this.state.photo;
                 _context.next = 11;
-                return wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_4__["default"].callService(services_signUpService__WEBPACK_IMPORTED_MODULE_6__["default"].signUp, userData, _this.errorFieldRef);
+                return wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_5__["default"].callService(services_signUpService__WEBPACK_IMPORTED_MODULE_7__["default"].signUp, userData, _this.errorFieldRef);
 
               case 11:
                 result = _context.sent;
@@ -43359,11 +43365,7 @@ function (_React$PureComponent) {
       };
     }());
 
-    _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a({
-      messages: {
-        in: 'Passwords need to match!'
-      }
-    });
+    _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a();
     _this.errorFieldRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     _this.state = {
       photo: '',
@@ -43420,7 +43422,7 @@ function (_React$PureComponent) {
         className: "sign-up-page__field"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sign-up-page__field-title"
-      }, "Repeat password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Confirm password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         name: "passwordConfirm",
         type: "password",
         value: this.state.confirmPassword,
@@ -43449,7 +43451,7 @@ function (_React$PureComponent) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sign-up-page__validation-result",
         ref: this.errorFieldRef
-      }, this.validator.message('Email', this.state.email, 'required|email'), this.validator.message('Password', this.state.password, 'required|min:6'), this.validator.message('Name', this.state.name, 'required'), this.validator.message('Confirm password', this.state.confirmPassword, "required|in:".concat(this.state.password))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.validator.message('Email', this.state.email, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].email.rule), this.validator.message('Password', this.state.password, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].password.rule), this.validator.message('Name', this.state.name, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].name.rule), this.validator.message('Confirm password', this.state.confirmPassword, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].name.rule(this.state.password))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         className: "sign-up-page__form-button",
         value: "Sign up"
@@ -43474,7 +43476,7 @@ _defineProperty(SignUpPage, "propTypes", {
   }).isRequired
 });
 
-SignUpPage.contextType = store_context_userContext__WEBPACK_IMPORTED_MODULE_5__["UserContext"];
+SignUpPage.contextType = store_context_userContext__WEBPACK_IMPORTED_MODULE_6__["UserContext"];
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(SignUpPage));
 
 /***/ }),
@@ -48530,6 +48532,74 @@ if(true) {
 
 	module.hot.dispose(function() { update(); });
 }
+
+/***/ }),
+
+/***/ "./src/validationConfigs/profileValidationConfig.js":
+/*!**********************************************************!*\
+  !*** ./src/validationConfigs/profileValidationConfig.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  email: {
+    rule: 'required|email'
+  },
+  name: {
+    rule: 'required'
+  }
+});
+
+/***/ }),
+
+/***/ "./src/validationConfigs/signInValidationConfig.js":
+/*!*********************************************************!*\
+  !*** ./src/validationConfigs/signInValidationConfig.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  email: {
+    rule: 'required|email'
+  },
+  password: {
+    rule: 'required|min:6'
+  }
+});
+
+/***/ }),
+
+/***/ "./src/validationConfigs/signUpValidationConfig.js":
+/*!*********************************************************!*\
+  !*** ./src/validationConfigs/signUpValidationConfig.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  email: {
+    rule: 'required|email'
+  },
+  name: {
+    rule: 'required'
+  },
+  password: {
+    rule: 'required|min:6'
+  },
+  confirmPassword: {
+    rule: function rule(password) {
+      return "required|in:".concat(password);
+    }
+  }
+});
 
 /***/ }),
 

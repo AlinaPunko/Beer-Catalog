@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
 import PropTypes from 'prop-types';
 
+import profileValidationConfig from 'validationConfigs/profileValidationConfig';
 import userService from 'services/userService';
 import { UserContext } from 'store/context/userContext';
 
@@ -110,7 +111,7 @@ class ProfilePage extends React.PureComponent {
         return (
             <section className="profile-page">
                 <h1 className="profile-page__title">Your profile</h1>
-                <form className="profile-page__content">
+                <form className="profile-page__form">
                     <div className="profile-page__image-block">
                         <img
                             className="profile-page__user-image"
@@ -159,10 +160,10 @@ class ProfilePage extends React.PureComponent {
                         </div>
                         <div className="profile-page__validation-result">
                             {
-                                this.validator.message('Email', this.state.email, 'required|email')
+                                this.validator.message('Email', this.state.email, profileValidationConfig.email.rule)
                             }
                             {
-                                this.validator.message('Name', this.state.name, 'required')
+                                this.validator.message('Name', this.state.name, profileValidationConfig.name.rule)
                             }
                         </div>
                         <input type="submit" className="profile-page__save-button" onClick={this.onSaveClick} value="Save" />

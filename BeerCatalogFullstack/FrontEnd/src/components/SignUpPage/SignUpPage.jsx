@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
 import PropTypes from 'prop-types';
 
+import signUpValidationConfig from 'validationConfigs/signUpValidationConfig';
 import serviceWrapper from 'wrappers/serviceWrapper';
 import { UserContext } from 'store/context/userContext';
 import signUpService from 'services/signUpService';
@@ -26,13 +27,8 @@ class SignUpPage extends React.PureComponent {
 
     constructor(props, context) {
         super(props, context);
-        this.validator = new SimpleReactValidator(
-            {
-                messages: {
-                    in: 'Passwords need to match!'
-                }
-            }
-        );
+        this.validator = new SimpleReactValidator();
+
         this.errorFieldRef = React.createRef();
         this.state = {
             photo: '',
@@ -144,7 +140,7 @@ class SignUpPage extends React.PureComponent {
                         />
                     </div>
                     <div className="sign-up-page__field">
-                        <label className="sign-up-page__field-title">Repeat password</label>
+                        <label className="sign-up-page__field-title">Confirm password</label>
                         <input
                             name="passwordConfirm"
                             type="password"
@@ -175,16 +171,20 @@ class SignUpPage extends React.PureComponent {
                     </div>
                     <div className="sign-up-page__validation-result" ref={this.errorFieldRef}>
                         {
-                            this.validator.message('Email', this.state.email, 'required|email')
+                            this.validator.message('Email', this.state.email, signUpValidationConfig.email.rule)
                         }
                         {
-                            this.validator.message('Password', this.state.password, 'required|min:6')
+                            this.validator.message('Password', this.state.password, signUpValidationConfig.password.rule)
                         }
                         {
-                            this.validator.message('Name', this.state.name, 'required')
+                            this.validator.message('Name', this.state.name, signUpValidationConfig.name.rule)
                         }
                         {
-                            this.validator.message('Confirm password', this.state.confirmPassword, `required|in:${this.state.password}`)
+                            this.validator.message(
+                                'Confirm password',
+                                this.state.confirmPassword,
+                                signUpValidationConfig.name.rule(this.state.password)
+                            )
                         }
                     </div>
                     <input type="submit" className="sign-up-page__form-button" value="Sign up" />

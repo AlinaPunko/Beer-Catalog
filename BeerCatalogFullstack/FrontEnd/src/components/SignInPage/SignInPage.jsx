@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
 import PropTypes from 'prop-types';
 
+import signInValidationConfig from 'validationConfigs/signInValidationConfig';
 import serviceWrapper from 'wrappers/serviceWrapper';
 import { UserContext } from 'store/context/userContext';
 import signInService from 'services/signInService';
@@ -90,10 +91,10 @@ class SignInPage extends React.PureComponent {
                     <input className="sign-in-page__form-button" type="submit" value="Log in" />
                     <div className="sign-in-page__validation-result" ref={this.errorFieldRef}>
                         {
-                            this.validator.message('Email', this.state.email, 'required|email')
+                            this.validator.message('Email', this.state.email, signInValidationConfig.email.rule)
                         }
                         {
-                            this.validator.message('Password', this.state.password, 'required|min:6')
+                            this.validator.message('Password', this.state.password, signInValidationConfig.password.rule)
                         }
                     </div>
                 </form>

@@ -19,11 +19,10 @@ export default class FavouritesList extends React.PureComponent {
 
     async componentDidMount() {
         const result = await favouritesServices.getItems(this.context.userId);
-        const beers = result.map(async beerId => {
-            return await beerServices.getByID(beerId);
+        const beers = result.map(async (beerId) => {
+            return beerServices.getByID(beerId);
         });
-        Promise.all(beers).then(beers => this.setState({ Beers: beers }));
-        debugger;
+        Promise.all(beers).then((beersArray) => this.setState({ Beers: beersArray }));
     }
 
     onPageNumberClick = (event) => {
@@ -39,10 +38,10 @@ export default class FavouritesList extends React.PureComponent {
 
         await favouritesServices.deleteItem(this.context.userId, item);
         const result = await favouritesServices.getItems(this.context.userId);
-        const beers = result.map(async beerId => {
-            return await beerServices.getByID(beerId);
+        const beers = result.map(async (beerId) => {
+            return beerServices.getByID(beerId);
         });
-        Promise.all(beers).then(beers => this.setState({ Beers: beers }));
+        Promise.all(beers).then((beersArray) => this.setState({ Beers: beersArray }));
 
         const deletedBeer = Beers.find(
             (beer) => beer.id === item.id
@@ -55,7 +54,6 @@ export default class FavouritesList extends React.PureComponent {
     }
 
     renderBeers(currentBeers) {
-        debugger;
         return currentBeers.map((beer) => (<FavouriteListItem beer={beer} key={beer.id} onDelete={this.onDelete} />));
     }
 

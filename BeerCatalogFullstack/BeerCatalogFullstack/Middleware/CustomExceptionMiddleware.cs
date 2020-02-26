@@ -2,11 +2,8 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Mvc;
-using BeerCatalogFullstack.ExceptionExtensions;
 using BeerCatalogFullstack.Exceptions;
 
 namespace BeerCatalogFullstack.Middleware
@@ -43,11 +40,11 @@ namespace BeerCatalogFullstack.Middleware
                 }
 
                 context.Response.StatusCode = 400;
-                context.Response.Headers.Add("exception", "validationException");
+                context.Response.Headers.Add("exception", "signUpException");
                 string json = JsonConvert.SerializeObject(e.Errors.Select(error => error.Description), jsonSettings);
                 await context.Response.WriteAsync(json);
             }
-            catch (SignInException cm)
+            catch (Exception e)
             {
                 if (context.Response.HasStarted)
                 {
@@ -56,8 +53,8 @@ namespace BeerCatalogFullstack.Middleware
 
                 context.Response.StatusCode = 500;
                 context.Response.ContentType = "application/json";
-                context.Response.Headers.Add("exception", "messageException");
-                string json = JsonConvert.SerializeObject(new { Message = cm.ExceptionMessage }, jsonSettings);
+                context.Response.Headers.Add("exception", "signInException");
+                string json = JsonConvert.SerializeObject(new {e.Message }, jsonSettings);
                 await context.Response.WriteAsync(json);
             }
         }

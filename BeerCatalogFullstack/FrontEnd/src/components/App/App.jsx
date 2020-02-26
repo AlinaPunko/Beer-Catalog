@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import {UserContext} from 'store/context/UserContext';
+import { UserContext } from 'store/context/UserContext';
 import Header from 'components/Header/Header';
 import SideMenu from 'components/SideMenu/SideMenu';
 import AccountMenu from 'components/AccountMenu/AccountMenu';
@@ -13,21 +13,21 @@ export default class App extends React.PureComponent {
 
         this.setUserId = (userId) => {
             this.setState(() => ({
-              userId: userId
+                userId
             }));
         };
 
         this.setFavouriteBeers = (favouriteBeers) => {
             this.setState(() => ({
-                favouriteBeers: favouriteBeers
+                favouriteBeers
             }));
         };
 
         this.state = {
             showSideMenu: false,
             showAccountMenu: false,
-            userId: "",
-            favouriteBeers: [], 
+            userId: '',
+            favouriteBeers: [],
             setFavouriteBeers: this.setFavouriteBeers,
             setUserId: this.setUserId
         };
@@ -61,7 +61,7 @@ export default class App extends React.PureComponent {
                     <div className="App">
                         <Header openSideMenuFunction={this.openSideMenu} toggleAccountMenuFunction={this.toggleAccountMenu} />
                         <SideMenu showMenu={this.state.showSideMenu} closeFunction={this.closeSideMenu} />
-                        <AccountMenu showMenu={this.state.showAccountMenu} closeFunction={this.closeAccountMenu}/>
+                        <AccountMenu showMenu={this.state.showAccountMenu} closeFunction={this.closeAccountMenu} />
                         <Routing />
                     </div>
                 </Router>

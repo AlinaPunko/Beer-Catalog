@@ -3,18 +3,18 @@ import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
 
 import { UserContext } from 'store/context/UserContext';
-import loginService from 'services/loginService';
+import signInService from 'services/signInService';
 import './signInPage.scss';
+import { instanceOf } from 'prop-types';
 
 class SignInPage extends React.PureComponent {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.validator = new SimpleReactValidator();
-        this.formRef = React.createRef();
-        this.state={
-            email: "",
-            password: ""
-        }
+        this.state = {
+            email: '',
+            password: ''
+        };
     }
 
     passwordChange = (event) => {
@@ -32,24 +32,17 @@ class SignInPage extends React.PureComponent {
     async signInFormSubmit(setUserId, e) {
         e.preventDefault();
         if (this.validator.allValid()) {
-            try{
-                let userData = {};
-                userData.email = this.state.email;
-                userData.password = this.state.password;
-                const result = await signInService.signIn(userData);
-                if(typeof result === 'object')
-                {
-                    throw result
-                }
-
-                setUserId(result);
-                this.props.history.push('/');
+            const userData = {};
+            userData.email = this.state.email;
+            userData.password = this.state.password;
+            const result = await signInService.signIn(userData);
+            if (result instanceof Error) {
+                document.getElementsByClassName('sign-in-page__validation-result')[0].innerHTML = e.message;
             }
-            catch (e) {
-                document.getElementsByClassName("sign-in-page__validation-result")[0].innerHTML = e.message;
-            }            
-        } 
-        else {
+
+            setUserId(result);
+            this.props.history.push('/');
+        } else {
             this.validator.showMessages();
             this.forceUpdate();
         }
@@ -58,10 +51,10 @@ class SignInPage extends React.PureComponent {
     render() {
         return (
             <UserContext.Consumer>
-                {({setUserId}) => (
+                {({ setUserId }) => (
                     <section className="sign-in-page">
                         <h1 className="sign-in-page__title">Log In</h1>
-                        <form className="sign-in-page__form" ref={this.formRef} onSubmit={this.signInFormSubmit.bind(this, setUserId)}>
+                        <form className="sign-in-page__form" onSubmit={this.signInFormSubmit.bind(this, setUserId)}>
                             <div className="sign-in-page__field">
                                 <label className="sign-in-page__field-title">E-mail</label>
                                 <input
@@ -69,8 +62,8 @@ class SignInPage extends React.PureComponent {
                                     type="email"
                                     value={this.state.email}
                                     onChange={this.emailChange}
-                                    className="sign-in-page__field-input">
-                                </input>
+                                    className="sign-in-page__field-input"
+                                />
                             </div>
                             <div className="sign-in-page__field">
                                 <label className="sign-in-page__field-title">Password</label>
@@ -79,10 +72,10 @@ class SignInPage extends React.PureComponent {
                                     value={this.state.password}
                                     onChange={this.passwordChange}
                                     type="password"
-                                    className="sign-in-page__field-input">
-                                </input>
+                                    className="sign-in-page__field-input"
+                                />
                             </div>
-                            <input className="sign-in-page__form-button" type="submit" value="Log in"></input>
+                            <input className="sign-in-page__form-button" type="submit" value="Log in" />
                             <div className="sign-in-page__validation-result">
                                 {
                                     this.validator.message('Email', this.state.email, 'required|email')
@@ -95,8 +88,8 @@ class SignInPage extends React.PureComponent {
                     </section>
                 )}
             </UserContext.Consumer>
-        )     
+        );
     }
 }
 
-export default withRouter(SignInPage)
+export default withRouter(SignInPage);

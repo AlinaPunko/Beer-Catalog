@@ -1,13 +1,11 @@
 import api from 'helpers/requestHelper';
 
-async function getUser(id) {
-    const user = await api.get(`https://localhost:44340/account/profile?id=${id}`);
-    user.id = id;
-    return user;
+function getUser(id) {
+    return api.get(`https://localhost:44340/account/profile?id=${id}`);
 }
 
-async function updateUser(user) {
-    return await api.put('https://localhost:44340/account/profile', user);
+function updateUser(user) {
+    return api.put('https://localhost:44340/account/profile', user);
 }
 
-export default {getUser, updateUser}
+export default { getUser, updateUser };

@@ -30,7 +30,7 @@ class BeersList extends React.PureComponent {
         this.loadFavoriteBeers = this.loadFavoriteBeers.bind(this);
     }
 
-    async componentWillMount() {
+    async componentDidMount() {
         await this.loadFavoriteBeers();
         this.loadBeers();
         window.addEventListener('scroll', this.handleScroll);
@@ -41,14 +41,12 @@ class BeersList extends React.PureComponent {
     }
 
     async loadFavoriteBeers() {
-        if(this.context.userId == '')
-        {
+        if (this.context.userId === '') {
             return;
         }
 
         const favoriteBeers = await favouritesService.getItems(this.context.userId);
         this.context.setFavouriteBeers(favoriteBeers);
-        debugger;
     }
 
     async loadBeers() {

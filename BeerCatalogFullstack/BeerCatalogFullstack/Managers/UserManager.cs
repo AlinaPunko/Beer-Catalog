@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Identity;
@@ -20,22 +22,28 @@ namespace BeerCatalogFullstack.Managers
             return userManager.Users.FirstOrDefault(u => u.Id == userId);
         }
 
-        public string UpdateUser(UpdateUserViewModel model)
+        public async Task UpdateUserAsync(UpdateUserViewModel model)
         {
             User user = userManager.Users
                 .FirstOrDefault(u => u.Id == model.Id);
 
             if (user == null)
             {
-                return "Incorrect data";
+                throw new ArgumentException("Incorrect data");
             }
+
             user.Birthdate = model.Birthdate;
             user.Name = model.Name;
             user.Photo = model.Photo;
             user.Email = user.UserName = model.Email;
 
-            userManager.UpdateAsync(user);
-            return "Success";
+            IdentityResult result = await userManager.UpdateAsync(user);
+            if (result.Succeeded)
+            {
+                return;
+            }
+
+            throw new ArgumentException("Incorrect data");
         }
     }
 }

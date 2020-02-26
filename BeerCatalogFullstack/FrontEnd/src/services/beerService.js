@@ -4,6 +4,7 @@ import BeerInfo from 'models/beerInfoModel';
 
 async function getAll() {
     const beers = await api.get('https://api.punkapi.com/v2/beers?per_page=80');
+    debugger;
     return beers.map((beer) => new BeerShortInfo(beer));
 }
 

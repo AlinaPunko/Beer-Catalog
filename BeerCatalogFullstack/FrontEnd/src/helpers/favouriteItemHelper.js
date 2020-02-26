@@ -1,10 +1,8 @@
 function isFavourite(beer, favouriteBeers) {
-    if (favouriteBeers.length == 0)
-    {
+    if (favouriteBeers.length === 0) {
         return false;
     }
-    debugger;
-    return !! favouriteBeers.find(
+    return !!favouriteBeers.find(
         (element) => element === beer.id
     );
 }

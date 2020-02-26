@@ -1,8 +1,12 @@
 import api from 'helpers/requestHelper';
 
 async function add(userId, item) {
-    const {id, name, tagline, imageUrl} = item;
-    const result = await api.post('https://localhost:44340/favorites/add', {userId, id, name, tagline, imageUrl});
+    const {
+        id, name, tagline, imageUrl
+    } = item;
+    const result = await api.post('https://localhost:44340/favorites/add', {
+        userId, id, name, tagline, imageUrl
+    });
     return result;
 }
 
@@ -12,8 +16,12 @@ async function getItems(userId) {
 }
 
 async function deleteItem(userId, item) {
-    const {id, name, tagline, imageUrl} = item;
-    const result = await api.post('https://localhost:44340/favorites/delete', {userId, id, name, tagline, imageUrl});
+    const {
+        id, name, tagline, imageUrl
+    } = item;
+    const result = await api.post('https://localhost:44340/favorites/delete', {
+        userId, id, name, tagline, imageUrl
+    });
     return result;
 }
 

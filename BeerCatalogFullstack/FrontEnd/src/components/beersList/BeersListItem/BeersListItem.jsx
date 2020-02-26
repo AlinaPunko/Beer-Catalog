@@ -35,7 +35,7 @@ export default class BeersListItem extends React.PureComponent {
 
     render() {
         const { beer } = this.props;
-        debugger;
+
         return (
             <div className="beers-list-item">
                 <img alt="Beer" src={beer.imageUrl} className="beers-list-item__image" />

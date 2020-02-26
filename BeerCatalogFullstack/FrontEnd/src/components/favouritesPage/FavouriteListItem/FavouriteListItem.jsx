@@ -24,7 +24,6 @@ export default class FavouriteListItem extends React.PureComponent {
 
     render() {
         const { beer } = this.props;
-        debugger;
         return (
             <div className="favourite-list-item">
                 <div>

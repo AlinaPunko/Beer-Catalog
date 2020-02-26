@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "1b159b07defdf611e305";
+/******/ 	var hotCurrentHash = "351100bd2eee29951c6a";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -41604,9 +41604,9 @@ function valueEqual(a, b) {
 /***/ }),
 
 /***/ "./node_modules/webpack/buildin/global.js":
-/*!************************************************!*\
-  !*** ./node_modules/webpack/buildin/global.js ***!
-  \************************************************/
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -41635,9 +41635,9 @@ module.exports = g;
 /***/ }),
 
 /***/ "./node_modules/webpack/buildin/harmony-module.js":
-/*!********************************************************!*\
-  !*** ./node_modules/webpack/buildin/harmony-module.js ***!
-  \********************************************************/
+/*!*******************************************!*\
+  !*** (webpack)/buildin/harmony-module.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -41687,8 +41687,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
 /* harmony import */ var components_SideMenuLink_SideMenuLink__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/SideMenuLink/SideMenuLink */ "./src/components/SideMenuLink/SideMenuLink.jsx");
 /* harmony import */ var styles_icons_signin_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styles/icons/signin.svg */ "./src/styles/icons/signin.svg");
-/* harmony import */ var styles_icons_signUp_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styles/icons/signUp.svg */ "./src/styles/icons/signUp.svg");
-/* harmony import */ var styles_icons_signOut_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styles/icons/signOut.svg */ "./src/styles/icons/signOut.svg");
+/* harmony import */ var styles_icons_signup_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styles/icons/signup.svg */ "./src/styles/icons/signup.svg");
+/* harmony import */ var styles_icons_signout_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styles/icons/signout.svg */ "./src/styles/icons/signout.svg");
 /* harmony import */ var styles_icons_account_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! styles/icons/account.svg */ "./src/styles/icons/account.svg");
 /* harmony import */ var _accountMenu_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./accountMenu.scss */ "./src/components/AccountMenu/accountMenu.scss");
 /* harmony import */ var _accountMenu_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_accountMenu_scss__WEBPACK_IMPORTED_MODULE_9__);
@@ -41748,7 +41748,9 @@ function (_React$PureComponent) {
 
       if (this.props.showMenu) {
         menuClass += ' account-menu--opened';
-      } else menuClass += ' account-menu--closed';
+      } else {
+        menuClass += ' account-menu--closed';
+      }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_UserContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"].Consumer, null, function (_ref) {
         var userId = _ref.userId,
@@ -41758,7 +41760,7 @@ function (_React$PureComponent) {
           onClick: _this.props.closeFunction
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "account-menu__links"
-        }, userId == '' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        }, userId === '' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/login"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_SideMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
           text: "Sign In",
@@ -41767,8 +41769,8 @@ function (_React$PureComponent) {
           to: "/join"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_SideMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
           text: "Sign Up",
-          icon: styles_icons_signUp_svg__WEBPACK_IMPORTED_MODULE_6__["default"]
-        })))), userId != '' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          icon: styles_icons_signup_svg__WEBPACK_IMPORTED_MODULE_6__["default"]
+        })))), userId !== '' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/profile"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_SideMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
           text: "My Profile",
@@ -41779,7 +41781,7 @@ function (_React$PureComponent) {
           to: "/"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_SideMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
           text: "Sign Out",
-          icon: styles_icons_signOut_svg__WEBPACK_IMPORTED_MODULE_7__["default"]
+          icon: styles_icons_signout_svg__WEBPACK_IMPORTED_MODULE_7__["default"]
         }))))));
       });
     }
@@ -41959,7 +41961,7 @@ function (_React$PureComponent) {
     _this.state = {
       showSideMenu: false,
       showAccountMenu: false,
-      userId: "",
+      userId: '',
       favouriteBeers: [],
       setFavouriteBeers: _this.setFavouriteBeers,
       setUserId: _this.setUserId
@@ -42158,7 +42160,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var helpers_validationHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! helpers/validationHelper.js */ "./src/helpers/validationHelper.js");
+/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-react-validator */ "./node_modules/simple-react-validator/dist/simple-react-validator.min.js");
+/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_react_validator__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var services_userService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! services/userService */ "./src/services/userService.js");
 /* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
 /* harmony import */ var _profilePage_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./profilePage.scss */ "./src/components/ProfilePage/profilePage.scss");
@@ -42207,45 +42210,35 @@ function (_React$PureComponent) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ProfilePage).call(this, props));
 
     _defineProperty(_assertThisInitialized(_this), "deletePhotoClick", function () {
-      _this.setState(function (prevState) {
-        var user = Object.assign({}, prevState.user);
-        user.photo = '';
-        return {
-          user: user
-        };
+      _this.setState({
+        photo: ''
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "onNameFieldChange", function (e) {
-      e.persist();
+      _this.setState({
+        name: e.target.value
+      });
+    });
 
-      _this.setState(function (prevState) {
-        var user = Object.assign({}, prevState.user);
-        user.name = e.target.value;
-        return {
-          user: user
-        };
+    _defineProperty(_assertThisInitialized(_this), "onEmailFieldChange", function (e) {
+      _this.setState({
+        email: e.target.value
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "onBirthdateFieldChange", function (e) {
-      e.persist();
-
-      _this.setState(function (prevState) {
-        var user = Object.assign({}, prevState.user);
-        user.birthdate = e.target.value;
-        return {
-          user: user
-        };
+      _this.setState({
+        birthdate: e.target.value.slice(1, 10)
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "onAddPhotoClick", function () {
       var input = document.createElement('input');
       input.type = 'file';
-      input.accept = "image/x-png,image/gif,image/jpeg";
+      input.accept = 'image/x-png,image/gif,image/jpeg';
 
-      input.onchange = function (e) {
+      input.onchange = function () {
         var filesSelected = input.files;
 
         if (filesSelected.length > 0) {
@@ -42253,14 +42246,8 @@ function (_React$PureComponent) {
           var fileReader = new FileReader();
 
           fileReader.onload = function (fileLoadedEvent) {
-            var srcData = fileLoadedEvent.target.result;
-
-            _this.setState(function (prevState) {
-              var user = Object.assign({}, prevState.user);
-              user.photo = srcData;
-              return {
-                user: user
-              };
+            _this.setState({
+              photo: fileLoadedEvent.target.result
             });
           };
 
@@ -42271,55 +42258,85 @@ function (_React$PureComponent) {
       input.click();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onSaveButtonClick",
+    _defineProperty(_assertThisInitialized(_this), "onSaveClick",
     /*#__PURE__*/
-    _asyncToGenerator(
-    /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee() {
-      var result;
-      return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              if (!(helpers_validationHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"].isEmailValid(_this.state.user.email) && _this.state.user.name != "")) {
-                _context.next = 7;
-                break;
-              }
+    function () {
+      var _ref = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee(e) {
+        var userData, result;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                e.preventDefault();
 
-              _context.next = 3;
-              return services_userService__WEBPACK_IMPORTED_MODULE_3__["default"].updateUser(_this.state.user);
+                if (!_this.validator.allValid()) {
+                  _context.next = 21;
+                  break;
+                }
 
-            case 3:
-              result = _context.sent;
+                userData = {};
+                userData.id = _this.state.id;
+                userData.name = _this.state.name;
+                userData.email = _this.state.email;
+                userData.birthdate = _this.state.birthdate;
+                userData.photo = _this.state.photo;
+                _context.next = 10;
+                return services_userService__WEBPACK_IMPORTED_MODULE_3__["default"].updateUser(userData);
 
-              if (result == "Success") {
-                alert("The user has been updated");
+              case 10:
+                result = _context.sent;
+                debugger;
+
+                if (!(result instanceof Error)) {
+                  _context.next = 16;
+                  break;
+                }
+
+                debugger;
+                document.getElementsByClassName('profile-page__validation-result')[0].innerHTML = result.message;
+                return _context.abrupt("return");
+
+              case 16:
+                debugger;
+                alert('The user has been updated');
 
                 _this.props.history.push('/');
-              } else {
-                alert(result);
-              }
 
-              _context.next = 8;
-              break;
+                _context.next = 23;
+                break;
 
-            case 7:
-              alert("Fill all required fields");
+              case 21:
+                _this.validator.showMessages();
 
-            case 8:
-            case "end":
-              return _context.stop();
+                _this.forceUpdate();
+
+              case 23:
+              case "end":
+                return _context.stop();
+            }
           }
-        }
-      }, _callee);
-    })));
+        }, _callee);
+      }));
 
-    _defineProperty(_assertThisInitialized(_this), "onCloseButtonClick", function () {
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
+
+    _defineProperty(_assertThisInitialized(_this), "onCloseClick", function (e) {
+      e.preventDefault();
+
       _this.props.history.push('/');
     });
 
+    _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a();
     _this.state = {
-      user: null
+      photo: '',
+      name: '',
+      email: '',
+      birthdate: ''
     };
     return _this;
   }
@@ -42330,26 +42347,25 @@ function (_React$PureComponent) {
       var _componentDidMount = _asyncToGenerator(
       /*#__PURE__*/
       regeneratorRuntime.mark(function _callee2() {
-        var user, birthdate;
+        var user;
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                debugger;
-                _context2.next = 3;
+                _context2.next = 2;
                 return services_userService__WEBPACK_IMPORTED_MODULE_3__["default"].getUser(this.context.userId);
 
-              case 3:
+              case 2:
                 user = _context2.sent;
                 this.setState({
-                  user: user
+                  id: user.id,
+                  name: user.name,
+                  email: user.email,
+                  photo: user.photo,
+                  birthdate: user.birthdate ? user.birthdate.slice(0, 10) : ''
                 });
-                document.getElementsByName("name")[0].value = user.name;
-                document.getElementsByName("email")[0].value = user.email;
-                birthdate = user.birthdate;
-                document.getElementsByName("birthdate")[0].value = birthdate ? birthdate.slice(0, 10) : "";
 
-              case 9:
+              case 4:
               case "end":
                 return _context2.stop();
             }
@@ -42366,22 +42382,18 @@ function (_React$PureComponent) {
   }, {
     key: "render",
     value: function render() {
-      if (!this.state.user) {
-        return null;
-      }
-
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "profile-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "profile-page__title"
-      }, "Your profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Your profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "profile-page__content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-page__image-block"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "profile-page__user-image",
         alt: "",
-        src: this.state.user.photo
+        src: this.state.photo
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "profile-page__add-image-button",
         type: "button",
@@ -42399,6 +42411,7 @@ function (_React$PureComponent) {
       }, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         name: "name",
         type: "text",
+        value: this.state.name,
         className: "profile-page__field-input",
         onChange: this.onNameFieldChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -42408,7 +42421,9 @@ function (_React$PureComponent) {
       }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         name: "email",
         type: "email",
-        className: "profile-page__field-input"
+        value: this.state.email,
+        className: "profile-page__field-input",
+        onChange: this.onEmailFieldChange
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-page__field"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -42416,17 +42431,22 @@ function (_React$PureComponent) {
       }, "Birthdate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         name: "birthdate",
         type: "date",
+        value: this.state.birthdate,
         className: "profile-page__field-input",
         onChange: this.onBirthdateFieldChange
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "button",
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-page__validation-result"
+      }, this.validator.message('Email', this.state.email, 'required|email'), this.validator.message('Name', this.state.name, 'required')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
         className: "profile-page__save-button",
-        onClick: this.onSaveButtonClick
-      }, "Save"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "button",
+        onClick: this.onSaveClick,
+        value: "Save"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "reset",
         className: "profile-page__close-button",
-        onClick: this.onCloseButtonClick
-      }, "Close"))));
+        onClick: this.onCloseClick,
+        value: "Close"
+      }))));
     }
   }]);
 
@@ -42664,7 +42684,7 @@ function (_React$PureComponent) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_SideMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
           text: "Home",
           icon: styles_icons_home_svg__WEBPACK_IMPORTED_MODULE_6__["default"]
-        }))), userId != "" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        }))), userId !== '' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/favourites"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_SideMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
           text: "Favourite",
@@ -42893,9 +42913,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-react-validator */ "./node_modules/simple-react-validator/dist/simple-react-validator.min.js");
 /* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_react_validator__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
-/* harmony import */ var services_loginService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! services/loginService */ "./src/services/loginService.js");
+/* harmony import */ var services_signInService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! services/signInService */ "./src/services/signInService.js");
 /* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./signInPage.scss */ "./src/components/SignInPage/signInPage.scss");
 /* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_signInPage_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -42919,6 +42941,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -42952,10 +42975,9 @@ function (_React$PureComponent) {
     });
 
     _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a();
-    _this.formRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     _this.state = {
-      email: "",
-      password: ""
+      email: '',
+      password: ''
     };
     return _this;
   }
@@ -42974,52 +42996,38 @@ function (_React$PureComponent) {
                 e.preventDefault();
 
                 if (!this.validator.allValid()) {
-                  _context.next = 20;
+                  _context.next = 13;
                   break;
                 }
 
-                _context.prev = 2;
                 userData = {};
                 userData.email = this.state.email;
                 userData.password = this.state.password;
-                _context.next = 8;
-                return signInService.signIn(userData);
+                _context.next = 7;
+                return services_signInService__WEBPACK_IMPORTED_MODULE_4__["default"].signIn(userData);
 
-              case 8:
+              case 7:
                 result = _context.sent;
 
-                if (!(_typeof(result) === 'object')) {
-                  _context.next = 11;
-                  break;
+                if (result instanceof Error) {
+                  document.getElementsByClassName('sign-in-page__validation-result')[0].innerHTML = e.message;
                 }
 
-                throw result;
-
-              case 11:
                 setUserId(result);
                 this.props.history.push('/');
-                _context.next = 18;
+                _context.next = 15;
                 break;
 
-              case 15:
-                _context.prev = 15;
-                _context.t0 = _context["catch"](2);
-                document.getElementsByClassName("sign-in-page__validation-result")[0].innerHTML = _context.t0.message;
-
-              case 18:
-                _context.next = 22;
-                break;
-
-              case 20:
+              case 13:
                 this.validator.showMessages();
                 this.forceUpdate();
 
-              case 22:
+              case 15:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[2, 15]]);
+        }, _callee, this);
       }));
 
       function signInFormSubmit(_x, _x2) {
@@ -43041,7 +43049,6 @@ function (_React$PureComponent) {
           className: "sign-in-page__title"
         }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           className: "sign-in-page__form",
-          ref: _this2.formRef,
           onSubmit: _this2.signInFormSubmit.bind(_this2, setUserId)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "sign-in-page__field"
@@ -43150,11 +43157,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-react-validator */ "./node_modules/simple-react-validator/dist/simple-react-validator.min.js");
 /* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_react_validator__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var helpers_validationHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! helpers/validationHelper.js */ "./src/helpers/validationHelper.js");
-/* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
-/* harmony import */ var services_signUpService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! services/signUpService */ "./src/services/signUpService.js");
-/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./signUpPage.scss */ "./src/components/SignUpPage/signUpPage.scss");
-/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_signUpPage_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var store_context_UserContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! store/context/UserContext */ "./src/store/context/UserContext.js");
+/* harmony import */ var services_signUpService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! services/signUpService */ "./src/services/signUpService.js");
+/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./signUpPage.scss */ "./src/components/SignUpPage/signUpPage.scss");
+/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_signUpPage_scss__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -43178,7 +43184,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -43230,7 +43235,6 @@ function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "photoChange", function (event) {
-      debugger;
       var filesSelected = event.target.files;
 
       if (filesSelected.length > 0) {
@@ -43255,12 +43259,12 @@ function (_React$PureComponent) {
       }
     });
     _this.state = {
-      photo: "",
-      name: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-      birthdate: ""
+      photo: '',
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      birthdate: ''
     };
     return _this;
   }
@@ -43279,11 +43283,10 @@ function (_React$PureComponent) {
                 e.preventDefault();
 
                 if (!this.validator.allValid()) {
-                  _context.next = 26;
+                  _context.next = 17;
                   break;
                 }
 
-                _context.prev = 2;
                 userData = {};
                 userData.name = this.state.name;
                 userData.email = this.state.email;
@@ -43291,49 +43294,34 @@ function (_React$PureComponent) {
                 userData.passwordConfirm = this.state.passwordConfirm;
                 userData.birthdate = this.state.birthdate;
                 userData.photo = this.state.photo;
-                _context.next = 12;
-                return services_signUpService__WEBPACK_IMPORTED_MODULE_5__["default"].signUp(userData);
+                _context.next = 11;
+                return services_signUpService__WEBPACK_IMPORTED_MODULE_4__["default"].signUp(userData);
 
-              case 12:
+              case 11:
                 result = _context.sent;
-                debugger;
 
-                if (!(_typeof(result) === 'object')) {
-                  _context.next = 16;
-                  break;
+                if (result instanceof Error) {
+                  document.getElementsByClassName('sign-up-page__validation-result')[0].innerHTML = '';
+                  e.message.forEach(function (error) {
+                    document.getElementsByClassName('sign-up-page__validation-result')[0].innerHTML += "".concat(error, "</br>");
+                  });
                 }
 
-                throw result;
-
-              case 16:
                 setUserId(result);
                 this.props.history.push('/');
-                _context.next = 24;
+                _context.next = 19;
                 break;
 
-              case 20:
-                _context.prev = 20;
-                _context.t0 = _context["catch"](2);
-                document.getElementsByClassName("sign-up-page__validation-result")[0].innerHTML = "";
-
-                _context.t0.message.forEach(function (error) {
-                  document.getElementsByClassName("sign-up-page__validation-result")[0].innerHTML += error + '</br>';
-                });
-
-              case 24:
-                _context.next = 28;
-                break;
-
-              case 26:
+              case 17:
                 this.validator.showMessages();
                 this.forceUpdate();
 
-              case 28:
+              case 19:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[2, 20]]);
+        }, _callee, this);
       }));
 
       function signUpFormSubmit(_x, _x2) {
@@ -43347,7 +43335,7 @@ function (_React$PureComponent) {
     value: function render() {
       var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_UserContext__WEBPACK_IMPORTED_MODULE_4__["UserContext"].Consumer, null, function (_ref) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_UserContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"].Consumer, null, function (_ref) {
         var setUserId = _ref.setUserId;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
           className: "sign-up-page"
@@ -43569,9 +43557,9 @@ function (_React$PureComponent) {
   }
 
   _createClass(BeersList, [{
-    key: "componentWillMount",
+    key: "componentDidMount",
     value: function () {
-      var _componentWillMount = _asyncToGenerator(
+      var _componentDidMount = _asyncToGenerator(
       /*#__PURE__*/
       regeneratorRuntime.mark(function _callee() {
         return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -43593,11 +43581,11 @@ function (_React$PureComponent) {
         }, _callee, this);
       }));
 
-      function componentWillMount() {
-        return _componentWillMount.apply(this, arguments);
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
       }
 
-      return componentWillMount;
+      return componentDidMount;
     }()
   }, {
     key: "componentWillUnmount",
@@ -43615,7 +43603,7 @@ function (_React$PureComponent) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                if (!(this.context.userId == '')) {
+                if (!(this.context.userId === '')) {
                   _context2.next = 2;
                   break;
                 }
@@ -43629,9 +43617,8 @@ function (_React$PureComponent) {
               case 4:
                 favoriteBeers = _context2.sent;
                 this.context.setFavouriteBeers(favoriteBeers);
-                debugger;
 
-              case 7:
+              case 6:
               case "end":
                 return _context2.stop();
             }
@@ -43920,7 +43907,6 @@ function (_React$PureComponent) {
     key: "render",
     value: function render() {
       var beer = this.props.beer;
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "beers-list-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -44085,7 +44071,6 @@ function (_React$PureComponent) {
       });
     });
 
-    debugger;
     _this.state = {
       isFavourite: helpers_favouriteItemHelper__WEBPACK_IMPORTED_MODULE_5__["default"].isFavourite(_this.props.beer, _this.context.favouriteBeers)
     };
@@ -44097,11 +44082,10 @@ function (_React$PureComponent) {
     value: function render() {
       var _this2 = this;
 
-      debugger;
       var buttonClass = classnames__WEBPACK_IMPORTED_MODULE_2___default()('favourite-button', this.props.className);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_UserContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"].Consumer, null, function (_ref) {
         var userId = _ref.userId;
-        return userId != "" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        return userId !== '' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
           className: buttonClass,
           onClick: _this2.toggleFavouriteState
@@ -46073,7 +46057,6 @@ function (_React$PureComponent) {
     key: "render",
     value: function render() {
       var beer = this.props.beer;
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "favourite-list-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -46272,13 +46255,9 @@ function (_React$PureComponent) {
                       while (1) {
                         switch (_context.prev = _context.next) {
                           case 0:
-                            _context.next = 2;
-                            return services_beerService__WEBPACK_IMPORTED_MODULE_2__["default"].getByID(beerId);
+                            return _context.abrupt("return", services_beerService__WEBPACK_IMPORTED_MODULE_2__["default"].getByID(beerId));
 
-                          case 2:
-                            return _context.abrupt("return", _context.sent);
-
-                          case 3:
+                          case 1:
                           case "end":
                             return _context.stop();
                         }
@@ -46290,9 +46269,9 @@ function (_React$PureComponent) {
                     return _ref2.apply(this, arguments);
                   };
                 }());
-                Promise.all(beers).then(function (beers) {
+                Promise.all(beers).then(function (beersArray) {
                   return _this.setState({
-                    Beers: beers
+                    Beers: beersArray
                   });
                 });
                 deletedBeer = Beers.find(function (beer) {
@@ -46352,13 +46331,9 @@ function (_React$PureComponent) {
                       while (1) {
                         switch (_context3.prev = _context3.next) {
                           case 0:
-                            _context3.next = 2;
-                            return services_beerService__WEBPACK_IMPORTED_MODULE_2__["default"].getByID(beerId);
+                            return _context3.abrupt("return", services_beerService__WEBPACK_IMPORTED_MODULE_2__["default"].getByID(beerId));
 
-                          case 2:
-                            return _context3.abrupt("return", _context3.sent);
-
-                          case 3:
+                          case 1:
                           case "end":
                             return _context3.stop();
                         }
@@ -46370,14 +46345,13 @@ function (_React$PureComponent) {
                     return _ref3.apply(this, arguments);
                   };
                 }());
-                Promise.all(beers).then(function (beers) {
+                Promise.all(beers).then(function (beersArray) {
                   return _this2.setState({
-                    Beers: beers
+                    Beers: beersArray
                   });
                 });
-                debugger;
 
-              case 6:
+              case 5:
               case "end":
                 return _context4.stop();
             }
@@ -46396,7 +46370,6 @@ function (_React$PureComponent) {
     value: function renderBeers(currentBeers) {
       var _this3 = this;
 
-      debugger;
       return currentBeers.map(function (beer) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_favouritesPage_FavouriteListItem_FavouriteListItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
           beer: beer,
@@ -47310,11 +47283,10 @@ var sliderValue = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 function isFavourite(beer, favouriteBeers) {
-  if (favouriteBeers.length == 0) {
+  if (favouriteBeers.length === 0) {
     return false;
   }
 
-  debugger;
   return !!favouriteBeers.find(function (element) {
     return element === beer.id;
   });
@@ -47340,34 +47312,13 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function get(url) {
-  return fetch(url).then(function (response) {
-    if (response.status !== 200) {
-      var error = new Error(response.statusText);
-      error.code = response.status;
-      return error;
-    }
-
-    return response.json();
-  }).catch(function (error) {
-    return new Error("Network Error!".concat(error));
-  });
-}
-
-function post(url, data) {
-  return fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    accept: 'application/json',
-    body: JSON.stringify(data)
-  }).then(
+  return fetch(url).then(
   /*#__PURE__*/
   function () {
     var _ref = _asyncToGenerator(
     /*#__PURE__*/
     regeneratorRuntime.mark(function _callee(response) {
-      var error;
+      var error, contentType;
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -47387,9 +47338,19 @@ function post(url, data) {
               return _context.abrupt("return", error);
 
             case 7:
+              contentType = response.headers.get('content-type');
+
+              if (!(contentType && contentType.includes('application/json'))) {
+                _context.next = 10;
+                break;
+              }
+
               return _context.abrupt("return", response.json());
 
-            case 8:
+            case 10:
+              return _context.abrupt("return", response.text());
+
+            case 11:
             case "end":
               return _context.stop();
           }
@@ -47405,6 +47366,68 @@ function post(url, data) {
   });
 }
 
+function post(url, data) {
+  return fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    accept: 'application/json',
+    body: JSON.stringify(data)
+  }).then(
+  /*#__PURE__*/
+  function () {
+    var _ref2 = _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee2(response) {
+      var error, contentType;
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              if (!(response.status !== 200)) {
+                _context2.next = 7;
+                break;
+              }
+
+              error = new Error(response.statusText);
+              error.code = response.status;
+              _context2.next = 5;
+              return response.json();
+
+            case 5:
+              error.message = _context2.sent;
+              return _context2.abrupt("return", error);
+
+            case 7:
+              contentType = response.headers.get('content-type');
+
+              if (!(contentType && contentType.includes('application/json'))) {
+                _context2.next = 10;
+                break;
+              }
+
+              return _context2.abrupt("return", response.json());
+
+            case 10:
+              return _context2.abrupt("return", response.text());
+
+            case 11:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function (_x2) {
+      return _ref2.apply(this, arguments);
+    };
+  }()).catch(function (error) {
+    return new Error("Network Error!".concat(error));
+  });
+}
+
 function put(url, data) {
   return fetch(url, {
     method: 'PUT',
@@ -47413,15 +47436,56 @@ function put(url, data) {
     },
     accept: 'application/json',
     body: JSON.stringify(data)
-  }).then(function (response) {
-    if (response.status !== 200) {
-      var error = new Error(response.statusText);
-      error.code = response.status;
-      return error;
-    }
+  }).then(
+  /*#__PURE__*/
+  function () {
+    var _ref3 = _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee3(response) {
+      var error, contentType;
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              if (!(response.status !== 200)) {
+                _context3.next = 7;
+                break;
+              }
 
-    return response.json();
-  }).catch(function (error) {
+              error = new Error(response.statusText);
+              error.code = response.status;
+              _context3.next = 5;
+              return response.json();
+
+            case 5:
+              error.message = _context3.sent;
+              return _context3.abrupt("return", error);
+
+            case 7:
+              contentType = response.headers.get('content-type');
+
+              if (!(contentType && contentType.includes('application/json'))) {
+                _context3.next = 10;
+                break;
+              }
+
+              return _context3.abrupt("return", response.json());
+
+            case 10:
+              return _context3.abrupt("return", response.text());
+
+            case 11:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }));
+
+    return function (_x3) {
+      return _ref3.apply(this, arguments);
+    };
+  }()).catch(function (error) {
     return new Error("Network Error!".concat(error));
   });
 }
@@ -47449,26 +47513,6 @@ function getUrlWithParameter(url, pattern, parameter) {
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   getUrlWithParameter: getUrlWithParameter
-});
-
-/***/ }),
-
-/***/ "./src/helpers/validationHelper.js":
-/*!*****************************************!*\
-  !*** ./src/helpers/validationHelper.js ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-function isEmailValid(email) {
-  var pattern = /\S+@\S+\.\S+/;
-  return pattern.test(pattern);
-}
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  isEmailValid: isEmailValid
 });
 
 /***/ }),
@@ -47607,11 +47651,12 @@ function _getAll() {
 
           case 2:
             beers = _context.sent;
+            debugger;
             return _context.abrupt("return", beers.map(function (beer) {
               return new models_beerShortInfoModel__WEBPACK_IMPORTED_MODULE_1__["default"](beer);
             }));
 
-          case 4:
+          case 5:
           case "end":
             return _context.stop();
         }
@@ -47786,52 +47831,24 @@ function _deleteItem() {
 
 /***/ }),
 
-/***/ "./src/services/loginService.js":
-/*!**************************************!*\
-  !*** ./src/services/loginService.js ***!
-  \**************************************/
+/***/ "./src/services/signInService.js":
+/*!***************************************!*\
+  !*** ./src/services/signInService.js ***!
+  \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
-
-function login(_x) {
-  return _login.apply(this, arguments);
-}
-
-function _login() {
-  _login = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee(data) {
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post('https://localhost:44340/account/login', data);
-
-          case 2:
-            return _context.abrupt("return", _context.sent);
-
-          case 3:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _login.apply(this, arguments);
+function signIn(data) {
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post('https://localhost:44340/account/login', data);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  login: login
+  signIn: signIn
 });
 
 /***/ }),
@@ -47868,69 +47885,14 @@ function signUp(data) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
-
-function getUser(_x) {
-  return _getUser.apply(this, arguments);
+function getUser(id) {
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get("https://localhost:44340/account/profile?id=".concat(id));
 }
 
-function _getUser() {
-  _getUser = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee(id) {
-    var user;
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get("https://localhost:44340/account/profile?id=".concat(id));
-
-          case 2:
-            user = _context.sent;
-            user.id = id;
-            return _context.abrupt("return", user);
-
-          case 5:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _getUser.apply(this, arguments);
-}
-
-function updateUser(_x2) {
-  return _updateUser.apply(this, arguments);
-}
-
-function _updateUser() {
-  _updateUser = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee2(user) {
-    return regeneratorRuntime.wrap(function _callee2$(_context2) {
-      while (1) {
-        switch (_context2.prev = _context2.next) {
-          case 0:
-            _context2.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].put('https://localhost:44340/account/profile', user);
-
-          case 2:
-            return _context2.abrupt("return", _context2.sent);
-
-          case 3:
-          case "end":
-            return _context2.stop();
-        }
-      }
-    }, _callee2);
-  }));
-  return _updateUser.apply(this, arguments);
+function updateUser(user) {
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].put('https://localhost:44340/account/profile', user);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -48336,58 +48298,6 @@ var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WE
 
 /***/ }),
 
-/***/ "./src/styles/icons/signOut.svg":
-/*!**************************************!*\
-  !*** ./src/styles/icons/signOut.svg ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/svg-baker-runtime/browser-symbol.js */ "./node_modules/svg-baker-runtime/browser-symbol.js");
-/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/svg-sprite-loader/runtime/browser-sprite.build.js */ "./node_modules/svg-sprite-loader/runtime/browser-sprite.build.js");
-/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__);
-
-
-var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default.a({
-  "id": "icons-signOut",
-  "use": "icons-signOut-usage",
-  "viewBox": "0 0 32 32",
-  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-signOut\">\n<title>exit</title>\n<path d=\"M24 20v-4h-10v-4h10v-4l6 6zM22 18v8h-10v6l-12-6v-26h22v10h-2v-8h-16l8 4v18h8v-6z\" />\n</symbol>"
-});
-var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
-/* harmony default export */ __webpack_exports__["default"] = (symbol);
-
-/***/ }),
-
-/***/ "./src/styles/icons/signUp.svg":
-/*!*************************************!*\
-  !*** ./src/styles/icons/signUp.svg ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/svg-baker-runtime/browser-symbol.js */ "./node_modules/svg-baker-runtime/browser-symbol.js");
-/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/svg-sprite-loader/runtime/browser-sprite.build.js */ "./node_modules/svg-sprite-loader/runtime/browser-sprite.build.js");
-/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__);
-
-
-var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default.a({
-  "id": "icons-signUp",
-  "use": "icons-signUp-usage",
-  "viewBox": "0 0 32 32",
-  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-signUp\">\n<title>clipboard</title>\n<path d=\"M29 4h-9c0-2.209-1.791-4-4-4s-4 1.791-4 4h-9c-0.552 0-1 0.448-1 1v26c0 0.552 0.448 1 1 1h26c0.552 0 1-0.448 1-1v-26c0-0.552-0.448-1-1-1zM16 2c1.105 0 2 0.895 2 2s-0.895 2-2 2c-1.105 0-2-0.895-2-2s0.895-2 2-2zM28 30h-24v-24h4v3c0 0.552 0.448 1 1 1h14c0.552 0 1-0.448 1-1v-3h4v24z\" />\n<path d=\"M14 26.828l-6.414-7.414 1.828-1.828 4.586 3.586 8.586-7.586 1.829 1.828z\" />\n</symbol>"
-});
-var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
-/* harmony default export */ __webpack_exports__["default"] = (symbol);
-
-/***/ }),
-
 /***/ "./src/styles/icons/signin.svg":
 /*!*************************************!*\
   !*** ./src/styles/icons/signin.svg ***!
@@ -48408,6 +48318,58 @@ var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPO
   "use": "icons-signin-usage",
   "viewBox": "0 0 32 32",
   "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-signin\">\n<title>enter</title>\n<path d=\"M12 16h-10v-4h10v-4l6 6-6 6zM32 0v26l-12 6v-6h-12v-8h2v6h10v-18l8-4h-18v8h-2v-10z\" />\n</symbol>"
+});
+var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+
+/***/ "./src/styles/icons/signout.svg":
+/*!**************************************!*\
+  !*** ./src/styles/icons/signout.svg ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/svg-baker-runtime/browser-symbol.js */ "./node_modules/svg-baker-runtime/browser-symbol.js");
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/svg-sprite-loader/runtime/browser-sprite.build.js */ "./node_modules/svg-sprite-loader/runtime/browser-sprite.build.js");
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "icons-signout",
+  "use": "icons-signout-usage",
+  "viewBox": "0 0 32 32",
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-signout\">\n<title>exit</title>\n<path d=\"M24 20v-4h-10v-4h10v-4l6 6zM22 18v8h-10v6l-12-6v-26h22v10h-2v-8h-16l8 4v18h8v-6z\" />\n</symbol>"
+});
+var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+
+/***/ "./src/styles/icons/signup.svg":
+/*!*************************************!*\
+  !*** ./src/styles/icons/signup.svg ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/svg-baker-runtime/browser-symbol.js */ "./node_modules/svg-baker-runtime/browser-symbol.js");
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/svg-sprite-loader/runtime/browser-sprite.build.js */ "./node_modules/svg-sprite-loader/runtime/browser-sprite.build.js");
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "icons-signup",
+  "use": "icons-signup-usage",
+  "viewBox": "0 0 32 32",
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-signup\">\n<title>clipboard</title>\n<path d=\"M29 4h-9c0-2.209-1.791-4-4-4s-4 1.791-4 4h-9c-0.552 0-1 0.448-1 1v26c0 0.552 0.448 1 1 1h26c0.552 0 1-0.448 1-1v-26c0-0.552-0.448-1-1-1zM16 2c1.105 0 2 0.895 2 2s-0.895 2-2 2c-1.105 0-2-0.895-2-2s0.895-2 2-2zM28 30h-24v-24h4v3c0 0.552 0.448 1 1 1h14c0.552 0 1-0.448 1-1v-3h4v24z\" />\n<path d=\"M14 26.828l-6.414-7.414 1.828-1.828 4.586 3.586 8.586-7.586 1.829 1.828z\" />\n</symbol>"
 });
 var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
 /* harmony default export */ __webpack_exports__["default"] = (symbol);

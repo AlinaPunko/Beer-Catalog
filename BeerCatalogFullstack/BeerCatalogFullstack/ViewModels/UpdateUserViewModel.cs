@@ -17,8 +17,6 @@ namespace BeerCatalogFullstack.ViewModels
         [Display(Name = "Name")]
         public string Name { get; set; }
 
-        public string PasswordConfirm { get; set; }
-
         [Display(Name = "Photo")]
         public string Photo { get; set; }
 

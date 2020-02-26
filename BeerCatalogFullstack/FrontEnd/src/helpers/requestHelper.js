@@ -1,18 +1,23 @@
 function get(url) {
     return fetch(url)
-        .then((response) => {
+        .then(async (response) => {
             if (response.status !== 200) {
                 const error = new Error(response.statusText);
                 error.code = response.status;
+                error.message = await response.json();
                 return error;
             }
-            return response.json();
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+                return response.json();
+            }
+            return response.text();
         })
         .catch((error) => new Error(`Network Error!${error}`));
 }
 
 function post(url, data) {
-    return fetch(url,{
+    return fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -27,27 +32,36 @@ function post(url, data) {
                 error.message = await response.json();
                 return error;
             }
-            return response.json();
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+                return response.json();
+            }
+            return response.text();
         })
         .catch((error) => new Error(`Network Error!${error}`));
 }
 
 function put(url, data) {
-    return fetch(url,{
+    return fetch(url, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
         accept: 'application/json',
         body: JSON.stringify(data)
     })
-        .then((response) => {
+        .then(async (response) => {
             if (response.status !== 200) {
                 const error = new Error(response.statusText);
                 error.code = response.status;
+                error.message = await response.json();
                 return error;
             }
-            return response.json();
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+                return response.json();
+            }
+            return response.text();
         })
         .catch((error) => new Error(`Network Error!${error}`));
 }

@@ -1,130 +1,126 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import SimpleReactValidator from 'simple-react-validator';
 
-import validationHelper from 'helpers/validationHelper.js'
 import userService from 'services/userService';
 import { UserContext } from 'store/context/UserContext';
 
 import './profilePage.scss';
 
 class ProfilePage extends React.PureComponent {
-    constructor(props){
+    constructor(props) {
         super(props);
+        this.validator = new SimpleReactValidator();
         this.state = {
-            user: null
+            photo: '',
+            name: '',
+            email: '',
+            birthdate: ''
         };
     }
 
     async componentDidMount() {
-        debugger;
         const user = await userService.getUser(this.context.userId);
-        this.setState({user: user});
-        document.getElementsByName("name")[0].value=user.name;
-        document.getElementsByName("email")[0].value=user.email;
-        const birthdate = user.birthdate;
-        document.getElementsByName("birthdate")[0].value = birthdate ? birthdate.slice(0,10) : "";
-    } 
-    
+        this.setState({
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            photo: user.photo,
+            birthdate: user.birthdate ? user.birthdate.slice(0, 10) : ''
+        });
+    }
+
     deletePhotoClick = () => {
-        this.setState(prevState => {
-            let user = Object.assign({}, prevState.user);  
-            user.photo = '';                                     
-            return { user };                                 
-          });
+        this.setState({ photo: '' });
     }
 
     onNameFieldChange = (e) => {
-        e.persist();
-        this.setState((prevState) => {
-            let user = Object.assign({}, prevState.user);  
-            user.name = e.target.value;                                     
-            return { user };                                 
-        });
+        this.setState({ name: e.target.value });
+    }
+
+    onEmailFieldChange = (e) => {
+        this.setState({ email: e.target.value });
     }
 
     onBirthdateFieldChange = (e) => {
-        e.persist();
-        this.setState(prevState => {
-            let user = Object.assign({}, prevState.user);  
-            user.birthdate = e.target.value;                                     
-            return { user };                                 
-        });
+        this.setState({ birthdate: e.target.value.slice(1, 10) });
     }
 
-    onAddPhotoClick = () => { 
+    onAddPhotoClick = () => {
         const input = document.createElement('input');
         input.type = 'file';
-        input.accept = "image/x-png,image/gif,image/jpeg";
-        input.onchange = (e) => {
+        input.accept = 'image/x-png,image/gif,image/jpeg';
+        input.onchange = () => {
             const filesSelected = input.files;
             if (filesSelected.length > 0) {
-                const fileToLoad = filesSelected[0]; 
-                const fileReader = new FileReader();   
-                fileReader.onload = fileLoadedEvent => {
-                    const srcData = fileLoadedEvent.target.result;
-                    this.setState(prevState => {
-                        let user = Object.assign({}, prevState.user);  
-                        user.photo = srcData;                                     
-                        return { user };                                 
-                      });
-                }
+                const fileToLoad = filesSelected[0];
+                const fileReader = new FileReader();
+                fileReader.onload = (fileLoadedEvent) => {
+                    this.setState({ photo: fileLoadedEvent.target.result });
+                };
                 fileReader.readAsDataURL(fileToLoad);
             }
-        }
+        };
         input.click();
     }
 
-    onSaveButtonClick = async () => {
-        if(validationHelper.isEmailValid(this.state.user.email) && this.state.user.name != ""){
-            const result = await userService.updateUser(this.state.user);
-            if(result=="Success"){
-                alert("The user has been updated");
-                this.props.history.push('/');
+    onSaveClick = async (e) => {
+        e.preventDefault();
+        if (this.validator.allValid()) {
+            const userData = {};
+            userData.id = this.state.id;
+            userData.name = this.state.name;
+            userData.email = this.state.email;
+            userData.birthdate = this.state.birthdate;
+            userData.photo = this.state.photo;
+            const result = await userService.updateUser(userData);
+            debugger;
+            if (result instanceof Error) {
+                debugger;
+                document.getElementsByClassName('profile-page__validation-result')[0].innerHTML = result.message;
+                return;
             }
-            else{
-                alert(result);
-            }
-        }
-        else{
-            alert("Fill all required fields");
+            debugger;
+            alert('The user has been updated');
+            this.props.history.push('/');
+        } else {
+            this.validator.showMessages();
+            this.forceUpdate();
         }
     }
 
-    onCloseButtonClick = () => {
+    onCloseClick = (e) => {
+        e.preventDefault();
         this.props.history.push('/');
     }
 
     render() {
-        if(!this.state.user)
-        {
-            return null;
-        }
-
         return (
             <section className="profile-page">
                 <h1 className="profile-page__title">Your profile</h1>
-                <div className="profile-page__content">
+                <form className="profile-page__content">
                     <div className="profile-page__image-block">
                         <img
                             className="profile-page__user-image"
                             alt=""
-                            src={this.state.user.photo}
+                            src={this.state.photo}
                         />
-                    <div>
-                        <button className="profile-page__add-image-button" type="button" onClick={this.onAddPhotoClick}>
-                            Add image
-                        </button>
-                        <button className="profile-page__delete-image-button" type="button" onClick={this.deletePhotoClick}>
-                            Delete image
-                        </button>
-                    </div>  
-                </div>
+                        <div>
+                            <button className="profile-page__add-image-button" type="button" onClick={this.onAddPhotoClick}>
+                                Add image
+                            </button>
+                            <button className="profile-page__delete-image-button" type="button" onClick={this.deletePhotoClick}>
+                                Delete image
+                            </button>
+                        </div>
+                    </div>
                     <div className="profile-page__user-info">
                         <div className="profile-page__field">
                             <label className="profile-page__field-title">Name</label>
                             <input
                                 name="name"
                                 type="text"
+                                value={this.state.name}
                                 className="profile-page__field-input"
                                 onChange={this.onNameFieldChange}
                             />
@@ -134,24 +130,35 @@ class ProfilePage extends React.PureComponent {
                             <input
                                 name="email"
                                 type="email"
+                                value={this.state.email}
                                 className="profile-page__field-input"
-                                />
-                            </div>
+                                onChange={this.onEmailFieldChange}
+                            />
+                        </div>
                         <div className="profile-page__field">
                             <label className="profile-page__field-title">Birthdate</label>
                             <input
                                 name="birthdate"
                                 type="date"
+                                value={this.state.birthdate}
                                 className="profile-page__field-input"
                                 onChange={this.onBirthdateFieldChange}
                             />
                         </div>
-                        <button type="button" className="profile-page__save-button" onClick={this.onSaveButtonClick}>Save</button>
-                        <button type="button" className="profile-page__close-button" onClick={this.onCloseButtonClick}>Close</button>
+                        <div className="profile-page__validation-result">
+                            {
+                                this.validator.message('Email', this.state.email, 'required|email')
+                            }
+                            {
+                                this.validator.message('Name', this.state.name, 'required')
+                            }
+                        </div>
+                        <input type="submit" className="profile-page__save-button" onClick={this.onSaveClick} value="Save" />
+                        <input type="reset" className="profile-page__close-button" onClick={this.onCloseClick} value="Close" />
                     </div>
-                </div>
+                </form>
             </section>
-        )
+        );
     }
 }
 

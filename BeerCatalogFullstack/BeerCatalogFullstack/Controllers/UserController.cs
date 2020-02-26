@@ -1,4 +1,4 @@
-﻿using System;
+﻿using BeerCatalogFullstack.Exceptions;
 using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
@@ -18,18 +18,19 @@ namespace BeerCatalogFullstack.Controllers
 
         [HttpGet]
         [Route("account/profile")]
-        public IActionResult GetUser(string id)
+        public JsonResult GetUser(string id)
         {
             User user = manager.GetUserById(id);
 
-            return user == null ? Json(new { error = "Incorrect id" }) : Json(user);
+            return user == null ? Json(new SignInException("Incorrect user")) : Json(user);
         }
 
         [HttpPut]
         [Route("account/profile")]
         public IActionResult UpdateUser([FromBody]UpdateUserViewModel model)
         {
-            return Json(manager.UpdateUser(model));
+           manager.UpdateUserAsync(model);
+           return Ok();
         }
     }
 }

@@ -5,7 +5,7 @@ export default class Icon extends React.Component {
     static propTypes={
         icon: PropTypes.shape({
             id: PropTypes.string,
-            viewBox: PropTypes.string,
+            viewBox: PropTypes.string
         }).isRequired,
         iconClassName: PropTypes.string.isRequired
     }

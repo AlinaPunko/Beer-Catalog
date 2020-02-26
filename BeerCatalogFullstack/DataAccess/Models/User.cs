@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
+using Newtonsoft.Json;
 
 namespace DataAccess.Models
 {
@@ -12,6 +13,7 @@ namespace DataAccess.Models
         public DateTime? Birthdate { get; set; }
         public string Photo { get; set; }
 
+        [JsonIgnore]
         public virtual List<FavoriteBeer> FavoriteBeers { get; set; }
     }
 }

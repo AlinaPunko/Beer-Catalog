@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using BeerCatalogFullstack.Middleware;
+using Newtonsoft.Json;
 
 namespace BeerCatalogFullstack
 {
@@ -30,7 +31,11 @@ namespace BeerCatalogFullstack
 
             services.AddScoped<DbContext>(sp => sp.GetService<ApplicationContext>());
 
-            services.AddMvc(option => option.EnableEndpointRouting = false);
+            services.AddMvc(option => option.EnableEndpointRouting = false)
+                .AddNewtonsoftJson(options =>
+                {
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                }); 
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

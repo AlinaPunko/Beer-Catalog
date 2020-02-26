@@ -22,7 +22,6 @@ export default class FavouriteButton extends React.PureComponent {
 
     constructor(props, context) {
         super(props, context);
-        debugger;
         this.state = { isFavourite: favouriteItemHelper.isFavourite(this.props.beer, this.context.favouriteBeers) };
     }
 
@@ -34,19 +33,20 @@ export default class FavouriteButton extends React.PureComponent {
     }
 
     render() {
-        debugger;
         const buttonClass = classnames('favourite-button', this.props.className);
         return (
             <UserContext.Consumer>
-                {({userId}) => ( 
-                    userId!="" &&
-                        <button
-                            type="button"
-                            className={buttonClass}
-                            onClick={this.toggleFavouriteState}
-                        >
-                            {this.state.isFavourite ? 'Remove favourite' : 'Favourite'}
-                        </button>
+                {({ userId }) => (
+                    userId !== ''
+                        && (
+                            <button
+                                type="button"
+                                className={buttonClass}
+                                onClick={this.toggleFavouriteState}
+                            >
+                                {this.state.isFavourite ? 'Remove favourite' : 'Favourite'}
+                            </button>
+                        )
                 )}
             </UserContext.Consumer>
         );

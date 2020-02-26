@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Tooltip from 'components/common/Tooltip/Tooltip';
+import Tooltip from 'components/common/Tooltip/tooltip';
 
 import './beerPropertyItem.scss';
 

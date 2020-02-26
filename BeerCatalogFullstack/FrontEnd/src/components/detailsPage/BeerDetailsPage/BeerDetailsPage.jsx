@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import BeerProperties from 'components/detailsPage/BeerProperties/BeerProperties';
-import FoodPairing from 'components/detailsPage/FoodPairing/FoodPairing';
-import BeerDetailsHeader from 'components/detailsPage/BeerDetailsHeader/BeerDetailsHeader';
-import BrewingSection from 'components/detailsPage/BrewingSection/BrewingSection';
+import BeerProperties from 'components/detailsPage/BeerProperties/beerProperties';
+import FoodPairing from 'components/detailsPage/FoodPairing/foodPairing';
+import BeerDetailsHeader from 'components/detailsPage/BeerDetailsHeader/beerDetailsHeader';
+import BrewingSection from 'components/detailsPage/BrewingSection/brewingSection';
 import beerService from 'services/beerService';
 
 import './beerDetailsPage.scss';

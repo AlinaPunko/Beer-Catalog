@@ -2,7 +2,7 @@ import React from 'react';
 
 import filterType from 'constants/filterType';
 import sliderValue from 'constants/sliderValue';
-import SearchFilterContainer from 'components/search/SearchFilterContainer/SearchFilterContainer';
+import SearchFilterContainer from 'components/search/SearchFilterContainer/searchFilterContainer';
 
 
 export default class FiltersPanel extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import OpenDetailsPageButton from 'components/common/OpenDetailsPageButton/OpenDetailsPageButton';
+import OpenDetailsPageButton from 'components/common/OpenDetailsPageButton/openDetailsPageButton';
 
 import './favouriteListItem.scss';
 

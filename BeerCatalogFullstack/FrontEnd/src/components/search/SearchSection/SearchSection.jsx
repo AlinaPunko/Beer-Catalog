@@ -1,7 +1,7 @@
 import React from 'react';
 
-import FiltersPanel from 'components/search/FiltersPanel/FiltersPanel';
-import SearchBoxContainer from 'components/search/SearchBoxContainer/SearchBoxContainer';
+import FiltersPanel from 'components/search/FiltersPanel/filtersPanel';
+import SearchBoxContainer from 'components/search/SearchBoxContainer/searchBoxContainer';
 
 import './searchSection.scss';
 

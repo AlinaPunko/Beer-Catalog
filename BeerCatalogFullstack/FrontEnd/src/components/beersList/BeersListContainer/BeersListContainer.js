@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { addBeers } from 'store/actions';
-import BeersList from 'components/beersList/BeersList/BeersList';
+import BeersList from 'components/beersList/BeersList/beersList';
 
 const getFilteredBeers = (beers, filter) => {
     return beers.filter((beer) => beer.alcohol <= filter.alcohol

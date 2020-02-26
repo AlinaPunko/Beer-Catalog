@@ -2,8 +2,8 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import SearchSection from 'components/search/SearchSection/SearchSection';
-import BeersListContainer from 'components/beersList/BeersListContainer/BeersListContainer';
+import SearchSection from 'components/search/SearchSection/searchSection';
+import BeersListContainer from 'components/beersList/BeersListContainer/beersListContainer';
 import rootReducer from 'store/reducers/rootReducer';
 
 export default class SearchPage extends React.PureComponent {

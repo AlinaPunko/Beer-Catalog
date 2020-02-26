@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from 'components/common/Icon/Icon';
+import Icon from 'components/common/Icon/icon';
 
 import './sideMenuLink.scss';
 

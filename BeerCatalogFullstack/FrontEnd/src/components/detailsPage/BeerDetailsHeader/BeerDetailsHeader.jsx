@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { UserContext } from 'store/context/UserContext';
-import FavouriteButton from 'components/common/FavouriteButton/FavouriteButton';
+import FavouriteButton from 'components/common/FavouriteButton/favouriteButton';
 import favouritesService from 'services/favouritesService';
 import favouriteItemHelper from 'helpers/favouriteItemHelper';
 

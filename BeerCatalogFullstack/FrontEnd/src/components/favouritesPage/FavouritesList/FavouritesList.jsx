@@ -3,8 +3,8 @@ import React from 'react';
 import { UserContext } from 'store/context/UserContext';
 import beerServices from 'services/beerService';
 import favouritesServices from 'services/favouritesService';
-import FavouriteListItem from 'components/favouritesPage/FavouriteListItem/FavouriteListItem';
-import PagingPanel from 'components/common/PagingPanel/PagingPanel';
+import FavouriteListItem from 'components/favouritesPage/FavouriteListItem/favouriteListItem';
+import PagingPanel from 'components/common/PagingPanel/pagingPanel';
 
 import './favouritesList.scss';
 

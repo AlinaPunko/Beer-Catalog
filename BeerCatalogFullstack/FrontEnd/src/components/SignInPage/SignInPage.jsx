@@ -5,7 +5,6 @@ import SimpleReactValidator from 'simple-react-validator';
 import { UserContext } from 'store/context/UserContext';
 import signInService from 'services/signInService';
 import './signInPage.scss';
-import { instanceOf } from 'prop-types';
 
 class SignInPage extends React.PureComponent {
     constructor(props) {

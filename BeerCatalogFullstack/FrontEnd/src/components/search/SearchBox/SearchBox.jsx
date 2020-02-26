@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import keyboardKeyCode from 'constants/keyboardKeyCode';
-import Icon from 'components/common/Icon/Icon';
+import Icon from 'components/common/Icon/icon';
 
 import searchIcon from 'styles/icons/search.svg';
 import './searchBox.scss';

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import BrewingIngredients from 'components/detailsPage/BrewingIngredients/BrewingIngredients';
-import BrewingMethods from 'components/detailsPage/BrewingMethods/BrewingMethods';
+import BrewingIngredients from 'components/detailsPage/BrewingIngredients/brewingIngredients';
+import BrewingMethods from 'components/detailsPage/BrewingMethods/brewingMethods';
 
 import './brewingSection.scss';
 

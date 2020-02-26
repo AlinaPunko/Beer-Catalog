@@ -1,4 +1,4 @@
-﻿using BeerCatalogFullstack.Exceptions;
+﻿using System;
 using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
@@ -22,7 +22,7 @@ namespace BeerCatalogFullstack.Controllers
         {
             User user = manager.GetUserById(id);
 
-            return user == null ? Json(new SignInException("Incorrect user")) : Json(user);
+            return user == null ? Json(new ArgumentException("Incorrect user")) : Json(user);
         }
 
         [HttpPut]

@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { UserContext } from 'store/context/UserContext';
-import Header from 'components/Header/Header';
-import SideMenu from 'components/SideMenu/SideMenu';
-import AccountMenu from 'components/AccountMenu/AccountMenu';
-import Routing from 'components/Routing/Routing';
+import { UserContext } from 'store/context/userContext';
+import Header from 'components/Header/header';
+import SideMenu from 'components/SideMenu/sideMenu';
+import AccountMenu from 'components/AccountMenu/accountMenu';
+import Routing from 'components/Routing/routing';
 
 export default class App extends React.PureComponent {
     constructor(props) {

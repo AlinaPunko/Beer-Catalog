@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "063f87d1bd312de8c3f1";
+/******/ 	var hotCurrentHash = "5f7538e54516a423716e";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1054,7 +1054,7 @@ exports.push([module.i, ".side-menu-link {\n  display: flex;\n  align-content: c
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".sign-in-page {\n  width: fit-content;\n  margin: 0 auto;\n  padding: 20px;\n  border: 1px #8a8a8a solid;\n  border-radius: 10px; }\n\n.sign-in-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.sign-in-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.sign-in-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.sign-in-page__field-input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.sign-in-page__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.sign-in-page__form-button {\n  width: 100%;\n  margin: 10px auto;\n  padding: 5px 0;\n  color: #ffffff;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #106cc8;\n  border-color: #106cc8;\n  border-radius: 5px; }\n", ""]);
+exports.push([module.i, ".sign-in-page {\n  width: fit-content;\n  margin: 0 auto;\n  padding: 20px;\n  border: 1px #8a8a8a solid;\n  border-radius: 10px; }\n\n.sign-in-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.sign-in-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.sign-in-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.sign-in-page__field-input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.sign-in-page__form-button {\n  width: 100%;\n  margin: 10px auto;\n  padding: 5px 0;\n  color: #ffffff;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #106cc8;\n  border-color: #106cc8;\n  border-radius: 5px; }\n\n.sign-in-page__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
 
 
 
@@ -42181,10 +42181,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! validationConfigs/profileValidationConfig */ "./src/validationConfigs/profileValidationConfig.js");
 /* harmony import */ var services_userService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! services/userService */ "./src/services/userService.js");
-/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
-/* harmony import */ var _profilePage_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./profilePage.scss */ "./src/components/ProfilePage/profilePage.scss");
-/* harmony import */ var _profilePage_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_profilePage_scss__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! wrappers/serviceWrapper */ "./src/wrappers/serviceWrapper.js");
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var _profilePage_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./profilePage.scss */ "./src/components/ProfilePage/profilePage.scss");
+/* harmony import */ var _profilePage_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_profilePage_scss__WEBPACK_IMPORTED_MODULE_8__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -42207,6 +42212,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -42284,7 +42290,7 @@ function (_React$PureComponent) {
       var _ref = _asyncToGenerator(
       /*#__PURE__*/
       regeneratorRuntime.mark(function _callee(e) {
-        var userData, result;
+        var userData;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -42292,44 +42298,28 @@ function (_React$PureComponent) {
                 e.preventDefault();
 
                 if (!_this.validator.allValid()) {
-                  _context.next = 18;
+                  _context.next = 9;
                   break;
                 }
 
-                userData = {};
-                userData.id = _this.state.id;
-                userData.name = _this.state.name;
-                userData.email = _this.state.email;
-                userData.birthdate = _this.state.birthdate;
-                userData.photo = _this.state.photo;
-                _context.next = 10;
-                return services_userService__WEBPACK_IMPORTED_MODULE_5__["default"].updateUser(userData);
+                userData = _objectSpread({}, _this.state);
+                _context.next = 5;
+                return wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_6__["default"].callService(services_userService__WEBPACK_IMPORTED_MODULE_5__["default"].updateUser, userData, _this.errorFieldRef);
 
-              case 10:
-                result = _context.sent;
-
-                if (!(result instanceof Error)) {
-                  _context.next = 14;
-                  break;
-                }
-
-                document.getElementsByClassName('profile-page__validation-result')[0].innerHTML = result.message;
-                return _context.abrupt("return");
-
-              case 14:
+              case 5:
                 alert('The user was updated');
 
                 _this.props.history.push('/');
 
-                _context.next = 20;
+                _context.next = 11;
                 break;
 
-              case 18:
+              case 9:
                 _this.validator.showMessages();
 
                 _this.forceUpdate();
 
-              case 20:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -42348,7 +42338,15 @@ function (_React$PureComponent) {
       _this.props.history.push('/');
     });
 
+    _defineProperty(_assertThisInitialized(_this), "getValidationResultField", function () {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-page__validation-result",
+        ref: _this.errorFieldRef
+      }, _this.validator.message('Email', _this.state.email, validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].email.rule), _this.validator.message('Name', _this.state.name, validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].name.rule));
+    });
+
     _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a();
+    _this.errorFieldRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     _this.state = {
       photo: '',
       name: '',
@@ -42399,6 +42397,9 @@ function (_React$PureComponent) {
   }, {
     key: "render",
     value: function render() {
+      var fields = {};
+      fields.name = this.state.name;
+      fields.email = this.state.email;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "profile-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -42451,9 +42452,7 @@ function (_React$PureComponent) {
         value: this.state.birthdate,
         className: "profile-page__field-input",
         onChange: this.onBirthdateFieldChange
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-page__validation-result"
-      }, this.validator.message('Email', this.state.email, validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].email.rule), this.validator.message('Name', this.state.name, validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].name.rule)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), this.getValidationResultField(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         className: "profile-page__save-button",
         onClick: this.onSaveClick,
@@ -42484,7 +42483,7 @@ _defineProperty(ProfilePage, "propTypes", {
   }).isRequired
 });
 
-ProfilePage.contextType = store_context_userContext__WEBPACK_IMPORTED_MODULE_6__["UserContext"];
+ProfilePage.contextType = store_context_userContext__WEBPACK_IMPORTED_MODULE_7__["UserContext"];
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(ProfilePage));
 
 /***/ }),
@@ -42953,6 +42952,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_signInPage_scss__WEBPACK_IMPORTED_MODULE_8__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -43023,17 +43026,15 @@ function (_React$PureComponent) {
                 e.preventDefault();
 
                 if (!_this.validator.allValid()) {
-                  _context.next = 11;
+                  _context.next = 9;
                   break;
                 }
 
-                userData = {};
-                userData.email = _this.state.email;
-                userData.password = _this.state.password;
-                _context.next = 7;
+                userData = _objectSpread({}, _this.state);
+                _context.next = 5;
                 return wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_5__["default"].callService(services_signInService__WEBPACK_IMPORTED_MODULE_7__["default"].signIn, userData, _this.errorFieldRef);
 
-              case 7:
+              case 5:
                 result = _context.sent;
 
                 if (result) {
@@ -43042,15 +43043,15 @@ function (_React$PureComponent) {
                   _this.props.history.push('/');
                 }
 
-                _context.next = 13;
+                _context.next = 11;
                 break;
 
-              case 11:
+              case 9:
                 _this.validator.showMessages();
 
                 _this.forceUpdate();
 
-              case 13:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -43062,6 +43063,13 @@ function (_React$PureComponent) {
         return _ref.apply(this, arguments);
       };
     }());
+
+    _defineProperty(_assertThisInitialized(_this), "getValidationResultField", function () {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sign-in-page__validation-result",
+        ref: _this.errorFieldRef
+      }, _this.validator.message('Email', _this.state.email, validationConfigs_signInValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].email.rule), _this.validator.message('Password', _this.state.password, validationConfigs_signInValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].password.rule));
+    });
 
     _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a();
     _this.errorFieldRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
@@ -43076,6 +43084,9 @@ function (_React$PureComponent) {
   _createClass(SignInPage, [{
     key: "render",
     value: function render() {
+      var fields = {};
+      fields.email = this.state.email;
+      fields.password = this.state.password;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "sign-in-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -43107,10 +43118,7 @@ function (_React$PureComponent) {
         className: "sign-in-page__form-button",
         type: "submit",
         value: "Log in"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sign-in-page__validation-result",
-        ref: this.errorFieldRef
-      }, this.validator.message('Email', this.state.email, validationConfigs_signInValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].email.rule), this.validator.message('Password', this.state.password, validationConfigs_signInValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].password.rule))));
+      }), this.getValidationResultField()));
     }
   }]);
 
@@ -43213,6 +43221,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./signUpPage.scss */ "./src/components/SignUpPage/signUpPage.scss");
 /* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_signUpPage_scss__WEBPACK_IMPORTED_MODULE_8__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -43321,21 +43333,15 @@ function (_React$PureComponent) {
                 e.preventDefault();
 
                 if (!_this.validator.allValid()) {
-                  _context.next = 15;
+                  _context.next = 9;
                   break;
                 }
 
-                userData = {};
-                userData.name = _this.state.name;
-                userData.email = _this.state.email;
-                userData.password = _this.state.password;
-                userData.passwordConfirm = _this.state.passwordConfirm;
-                userData.birthdate = _this.state.birthdate;
-                userData.photo = _this.state.photo;
-                _context.next = 11;
+                userData = _objectSpread({}, _this.state);
+                _context.next = 5;
                 return wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_5__["default"].callService(services_signUpService__WEBPACK_IMPORTED_MODULE_7__["default"].signUp, userData, _this.errorFieldRef);
 
-              case 11:
+              case 5:
                 result = _context.sent;
 
                 if (result) {
@@ -43344,15 +43350,15 @@ function (_React$PureComponent) {
                   _this.props.history.push('/');
                 }
 
-                _context.next = 17;
+                _context.next = 11;
                 break;
 
-              case 15:
+              case 9:
                 _this.validator.showMessages();
 
                 _this.forceUpdate();
 
-              case 17:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -43364,6 +43370,13 @@ function (_React$PureComponent) {
         return _ref.apply(this, arguments);
       };
     }());
+
+    _defineProperty(_assertThisInitialized(_this), "getValidationResultFiels", function () {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sign-up-page__validation-result",
+        ref: _this.errorFieldRef
+      }, _this.validator.message('Email', _this.state.email, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].email.rule), _this.validator.message('Password', _this.state.password, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].password.rule), _this.validator.message('Name', _this.state.name, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].name.rule), _this.validator.message('Confirm password', _this.state.confirmPassword, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].name.rule(_this.state.password)));
+    });
 
     _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a();
     _this.errorFieldRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
@@ -43381,6 +43394,11 @@ function (_React$PureComponent) {
   _createClass(SignUpPage, [{
     key: "render",
     value: function render() {
+      var fields = {};
+      fields.email = this.state.email;
+      fields.password = this.state.password;
+      fields.name = this.state.name;
+      fields.confirmPassword = this.state.confirmPassword;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "sign-up-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -43448,10 +43466,7 @@ function (_React$PureComponent) {
         className: "sign-up-page__field-input",
         onChange: this.photoChange,
         accept: "image/x-png,image/gif,image/jpeg"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sign-up-page__validation-result",
-        ref: this.errorFieldRef
-      }, this.validator.message('Email', this.state.email, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].email.rule), this.validator.message('Password', this.state.password, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].password.rule), this.validator.message('Name', this.state.name, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].name.rule), this.validator.message('Confirm password', this.state.confirmPassword, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].name.rule(this.state.password))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), getValidationResultField(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         className: "sign-up-page__form-button",
         value: "Sign up"

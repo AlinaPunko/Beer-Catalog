@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import profileValidationConfig from 'validationConfigs/profileValidationConfig';
 import userService from 'services/userService';
+import serviceWrapper from 'wrappers/serviceWrapper';
 import { UserContext } from 'store/context/userContext';
 
 import './profilePage.scss';
@@ -27,6 +28,7 @@ class ProfilePage extends React.PureComponent {
     constructor(props) {
         super(props);
         this.validator = new SimpleReactValidator();
+        this.errorFieldRef = React.createRef();
         this.state = {
             photo: '',
             name: '',
@@ -68,6 +70,7 @@ class ProfilePage extends React.PureComponent {
         input.accept = 'image/x-png,image/gif,image/jpeg';
         input.onchange = () => {
             const filesSelected = input.files;
+
             if (filesSelected.length > 0) {
                 const fileToLoad = filesSelected[0];
                 const fileReader = new FileReader();
@@ -83,17 +86,8 @@ class ProfilePage extends React.PureComponent {
     onSaveClick = async (e) => {
         e.preventDefault();
         if (this.validator.allValid()) {
-            const userData = {};
-            userData.id = this.state.id;
-            userData.name = this.state.name;
-            userData.email = this.state.email;
-            userData.birthdate = this.state.birthdate;
-            userData.photo = this.state.photo;
-            const result = await userService.updateUser(userData);
-            if (result instanceof Error) {
-                document.getElementsByClassName('profile-page__validation-result')[0].innerHTML = result.message;
-                return;
-            }
+            const userData = { ...this.state };
+            await serviceWrapper.callService(userService.updateUser, userData, this.errorFieldRef);
             alert('The user was updated');
             this.props.history.push('/');
         } else {
@@ -107,7 +101,24 @@ class ProfilePage extends React.PureComponent {
         this.props.history.push('/');
     }
 
+    getValidationResultField = () => {
+        return (
+            <div className="profile-page__validation-result" ref={this.errorFieldRef}>
+                {
+                    this.validator.message('Email', this.state.email, profileValidationConfig.email.rule)
+                }
+                {
+                    this.validator.message('Name', this.state.name, profileValidationConfig.name.rule)
+                }
+            </div>
+        );
+    }
+
     render() {
+        const fields = {};
+        fields.name = this.state.name;
+        fields.email = this.state.email;
+
         return (
             <section className="profile-page">
                 <h1 className="profile-page__title">Your profile</h1>
@@ -158,14 +169,9 @@ class ProfilePage extends React.PureComponent {
                                 onChange={this.onBirthdateFieldChange}
                             />
                         </div>
-                        <div className="profile-page__validation-result">
-                            {
-                                this.validator.message('Email', this.state.email, profileValidationConfig.email.rule)
-                            }
-                            {
-                                this.validator.message('Name', this.state.name, profileValidationConfig.name.rule)
-                            }
-                        </div>
+                        {
+                            this.getValidationResultField()
+                        }
                         <input type="submit" className="profile-page__save-button" onClick={this.onSaveClick} value="Save" />
                         <input type="reset" className="profile-page__close-button" onClick={this.onCloseClick} value="Close" />
                     </div>

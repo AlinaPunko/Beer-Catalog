@@ -86,13 +86,7 @@ class SignUpPage extends React.PureComponent {
     signUpFormSubmit = async (e) => {
         e.preventDefault();
         if (this.validator.allValid()) {
-            const userData = {};
-            userData.name = this.state.name;
-            userData.email = this.state.email;
-            userData.password = this.state.password;
-            userData.passwordConfirm = this.state.passwordConfirm;
-            userData.birthdate = this.state.birthdate;
-            userData.photo = this.state.photo;
+            const userData = { ...this.state };
             const result = await serviceWrapper.callService(signUpService.signUp, userData, this.errorFieldRef);
             if (result) {
                 this.context.setUserId(result);
@@ -104,7 +98,36 @@ class SignUpPage extends React.PureComponent {
         }
     }
 
+    getValidationResultFiels =() => {
+        return (
+            <div className="sign-up-page__validation-result" ref={this.errorFieldRef}>
+                {
+                    this.validator.message('Email', this.state.email, signUpValidationConfig.email.rule)
+                }
+                {
+                    this.validator.message('Password', this.state.password, signUpValidationConfig.password.rule)
+                }
+                {
+                    this.validator.message('Name', this.state.name, signUpValidationConfig.name.rule)
+                }
+                {
+                    this.validator.message(
+                        'Confirm password',
+                        this.state.confirmPassword,
+                        signUpValidationConfig.name.rule(this.state.password)
+                    )
+                }
+            </div>
+        );
+    }
+
     render() {
+        const fields = {};
+        fields.email = this.state.email;
+        fields.password = this.state.password;
+        fields.name = this.state.name;
+        fields.confirmPassword = this.state.confirmPassword;
+
         return (
             <section className="sign-up-page">
                 <h1 className="sign-up-page__title">Sign up</h1>
@@ -169,24 +192,9 @@ class SignUpPage extends React.PureComponent {
                             accept="image/x-png,image/gif,image/jpeg"
                         />
                     </div>
-                    <div className="sign-up-page__validation-result" ref={this.errorFieldRef}>
-                        {
-                            this.validator.message('Email', this.state.email, signUpValidationConfig.email.rule)
-                        }
-                        {
-                            this.validator.message('Password', this.state.password, signUpValidationConfig.password.rule)
-                        }
-                        {
-                            this.validator.message('Name', this.state.name, signUpValidationConfig.name.rule)
-                        }
-                        {
-                            this.validator.message(
-                                'Confirm password',
-                                this.state.confirmPassword,
-                                signUpValidationConfig.name.rule(this.state.password)
-                            )
-                        }
-                    </div>
+                    {
+                        getValidationResultField()
+                    }
                     <input type="submit" className="sign-up-page__form-button" value="Sign up" />
                 </form>
             </section>

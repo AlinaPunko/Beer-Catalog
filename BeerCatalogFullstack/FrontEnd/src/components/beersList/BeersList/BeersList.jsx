@@ -62,6 +62,7 @@ class BeersList extends React.PureComponent {
         if (pageOffset > lastBeerOffset) {
             this.loadMore();
         }
+
         this.setState({ isLoading: false });
     }
 

@@ -12,6 +12,7 @@ async function callService(service, data, errorRef) {
 
         return;
     }
+
     return result;
 }
 

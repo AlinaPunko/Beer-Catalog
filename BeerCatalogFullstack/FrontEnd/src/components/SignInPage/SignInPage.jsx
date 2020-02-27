@@ -49,10 +49,9 @@ class SignInPage extends React.PureComponent {
     signInFormSubmit = async (e) => {
         e.preventDefault();
         if (this.validator.allValid()) {
-            const userData = {};
-            userData.email = this.state.email;
-            userData.password = this.state.password;
+            const userData = { ...this.state };
             const result = await serviceWrapper.callService(signInService.signIn, userData, this.errorFieldRef);
+
             if (result) {
                 this.context.setUserId(result);
                 this.props.history.push('/');
@@ -63,7 +62,24 @@ class SignInPage extends React.PureComponent {
         }
     }
 
+    getValidationResultField = () => {
+        return (
+            <div className="sign-in-page__validation-result" ref={this.errorFieldRef}>
+                {
+                    this.validator.message('Email', this.state.email, signInValidationConfig.email.rule)
+                }
+                {
+                    this.validator.message('Password', this.state.password, signInValidationConfig.password.rule)
+                }
+            </div>
+        );
+    }
+
     render() {
+        const fields = {};
+        fields.email = this.state.email;
+        fields.password = this.state.password;
+
         return (
             <section className="sign-in-page">
                 <h1 className="sign-in-page__title">Log In</h1>
@@ -89,14 +105,9 @@ class SignInPage extends React.PureComponent {
                         />
                     </div>
                     <input className="sign-in-page__form-button" type="submit" value="Log in" />
-                    <div className="sign-in-page__validation-result" ref={this.errorFieldRef}>
-                        {
-                            this.validator.message('Email', this.state.email, signInValidationConfig.email.rule)
-                        }
-                        {
-                            this.validator.message('Password', this.state.password, signInValidationConfig.password.rule)
-                        }
-                    </div>
+                    {
+                        this.getValidationResultField()
+                    }
                 </form>
             </section>
         );

@@ -31,11 +31,6 @@
     border-radius: 5px;
 }
 
-.sign-in-page__validation-result {
-    color: #ff0000;
-    font-family: "Lucida Sans", sans-serif;
-}
-
 .sign-in-page__form-button {
     width: 100%;
     margin: 10px auto;
@@ -45,4 +40,9 @@
     background-color: #106cc8;
     border-color: #106cc8;
     border-radius: 5px;
+}
+
+.sign-in-page__validation-result {
+    color: #ff0000;
+    font-family: "Lucida Sans", sans-serif;
 }

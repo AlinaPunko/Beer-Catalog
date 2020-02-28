@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "2684c30e003e7e216c15";
+/******/ 	var hotCurrentHash = "84ddc108d715cad5ddd6";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -47265,36 +47265,6 @@ var keyboardKeyCode = {
 
 /***/ }),
 
-/***/ "./src/constants/requestUrl.js":
-/*!*************************************!*\
-  !*** ./src/constants/requestUrl.js ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  getAllBeers: 'https://api.punkapi.com/v2/beers?per_page=80',
-  getBeerById: function getBeerById(id) {
-    return "https://api.punkapi.com/v2/beers/".concat(id);
-  },
-  addFavorite: '/FavoriteBeers/Add',
-  getFavoritesByUserId: function getFavoritesByUserId(userId) {
-    return "/FavoriteBeers/Get?userId=".concat(userId);
-  },
-  deleteFavorite: '/FavoriteBeers/Delete',
-  signIn: '/Login/Login',
-  signUp: '/Login/Register',
-  signOut: '/Login/Logout',
-  getUser: function getUser(id) {
-    return "/User/Get?id=".concat(id);
-  },
-  updateUser: '/User/Update'
-});
-
-/***/ }),
-
 /***/ "./src/constants/routing.js":
 /*!**********************************!*\
   !*** ./src/constants/routing.js ***!
@@ -47340,6 +47310,44 @@ __webpack_require__.r(__webpack_exports__);
   profilePage: {
     url: '/profile',
     component: components_ProfilePage_profilePage__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./src/constants/serviceUrls.js":
+/*!**************************************!*\
+  !*** ./src/constants/serviceUrls.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  beerUrls: {
+    getAllBeers: 'https://api.punkapi.com/v2/beers?per_page=80',
+    getBeerById: function getBeerById(id) {
+      return "https://api.punkapi.com/v2/beers/".concat(id);
+    }
+  },
+  favoriteBeersUrls: {
+    addFavorite: '/FavoriteBeers/Add',
+    getFavoritesByUserId: function getFavoritesByUserId(userId) {
+      return "/FavoriteBeers/Get?userId=".concat(userId);
+    },
+    deleteFavorite: '/FavoriteBeers/Delete'
+  },
+  loginUrls: {
+    signIn: '/Login/Login',
+    signUp: '/Login/Register',
+    signOut: '/Login/Logout'
+  },
+  userUrls: {
+    getUser: function getUser(id) {
+      return "/User/Get?id=".concat(id);
+    },
+    updateUser: '/User/Update'
   }
 });
 
@@ -47720,7 +47728,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
 /* harmony import */ var models_beerShortInfoModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! models/beerShortInfoModel */ "./src/models/beerShortInfoModel.js");
 /* harmony import */ var models_beerInfoModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! models/beerInfoModel */ "./src/models/beerInfoModel.js");
-/* harmony import */ var constants_requestUrl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! constants/requestUrl */ "./src/constants/requestUrl.js");
+/* harmony import */ var constants_serviceUrls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! constants/serviceUrls */ "./src/constants/serviceUrls.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -47744,7 +47752,7 @@ function _getAll() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_requestUrl__WEBPACK_IMPORTED_MODULE_3__["default"].getAllBeers);
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_3__["default"].beersUrls.getAllBeers);
 
           case 2:
             beers = _context.sent;
@@ -47776,7 +47784,7 @@ function _getByID() {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_requestUrl__WEBPACK_IMPORTED_MODULE_3__["default"].getBeerById(id));
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_3__["default"].beersUrls.getBeerById(id));
 
           case 2:
             beer = _context2.sent;
@@ -47809,7 +47817,7 @@ function _getByID() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
-/* harmony import */ var constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/requestUrl */ "./src/constants/requestUrl.js");
+/* harmony import */ var constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/serviceUrls */ "./src/constants/serviceUrls.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -47832,7 +47840,7 @@ function _add() {
           case 0:
             id = item.id, name = item.name, tagline = item.tagline, imageUrl = item.imageUrl;
             _context.next = 3;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].addFavorite, {
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].favoriteBeersUrls.addFavorite, {
               userId: userId,
               id: id,
               name: name,
@@ -47868,7 +47876,7 @@ function _getItems() {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].getFavoritesByUserId(userId));
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].favoriteBeersUrls.getFavoritesByUserId(userId));
 
           case 2:
             result = _context2.sent;
@@ -47899,7 +47907,7 @@ function _deleteItem() {
           case 0:
             id = item.id, name = item.name, tagline = item.tagline, imageUrl = item.imageUrl;
             _context3.next = 3;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].deleteFavorite, {
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].favoriteBeersUrls.deleteFavorite, {
               userId: userId,
               id: id,
               name: name,
@@ -47939,12 +47947,12 @@ function _deleteItem() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
-/* harmony import */ var constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/requestUrl */ "./src/constants/requestUrl.js");
+/* harmony import */ var constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/serviceUrls */ "./src/constants/serviceUrls.js");
 
 
 
 function signIn(data) {
-  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].signIn, data);
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].loginUrls.signIn, data);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -47963,12 +47971,12 @@ function signIn(data) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
-/* harmony import */ var constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/requestUrl */ "./src/constants/requestUrl.js");
+/* harmony import */ var constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/serviceUrls */ "./src/constants/serviceUrls.js");
 
 
 
 function signUp(data) {
-  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].signUp, data);
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].loginUrls.signUp, data);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -47987,20 +47995,20 @@ function signUp(data) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
-/* harmony import */ var constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/requestUrl */ "./src/constants/requestUrl.js");
+/* harmony import */ var constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/serviceUrls */ "./src/constants/serviceUrls.js");
 
 
 
 function getUser(id) {
-  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].getUser(id));
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].userUrls.getUser(id));
 }
 
 function updateUser(user) {
-  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].put(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].updateUser, user);
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].put(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].userUrls.updateUser, user);
 }
 
 function signOut() {
-  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_requestUrl__WEBPACK_IMPORTED_MODULE_1__["default"].signOut);
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].userUrls.signOut);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({

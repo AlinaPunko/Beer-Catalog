@@ -1,8 +1,8 @@
 import api from 'helpers/requestHelper';
-import requestUrl from 'constants/requestUrl';
+import serviceUrls from 'constants/serviceUrls';
 
 function signIn(data) {
-    return api.post(requestUrl.signIn, data);
+    return api.post(serviceUrls.loginUrls.signIn, data);
 }
 
 export default { signIn };

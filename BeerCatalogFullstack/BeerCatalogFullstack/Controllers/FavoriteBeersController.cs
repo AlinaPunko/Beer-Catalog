@@ -15,24 +15,21 @@ namespace BeerCatalogFullstack.Controllers
         }
 
         [HttpPost]
-        [Route("favorites/add")]
-        public IActionResult AddFavoriteBeer([FromBody]FavoriteBeerViewModel model)
+        public IActionResult Add([FromBody]FavoriteBeerViewModel model)
         {
             manager.AddFavoriteBeer(model);
             return Ok();
         }
 
         [HttpPost]
-        [Route("favorites/delete")]
-        public IActionResult DeleteFavoriteBeer([FromBody]FavoriteBeerViewModel model)
+        public IActionResult Delete([FromBody]FavoriteBeerViewModel model)
         {
             manager.RemoveFavoriteBeer(model);
             return Ok();
         }
 
         [HttpGet]
-        [Route("favorites/get")]
-        public IActionResult GetFavoriteBeers(string userId)
+        public IActionResult Get(string userId)
         {
             return Json(manager.GetUsersFavoriteBeers(userId));
         }

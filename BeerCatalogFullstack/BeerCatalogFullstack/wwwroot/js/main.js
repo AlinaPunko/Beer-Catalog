@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "5f7538e54516a423716e";
+/******/ 	var hotCurrentHash = "2684c30e003e7e216c15";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -42397,9 +42397,6 @@ function (_React$PureComponent) {
   }, {
     key: "render",
     value: function render() {
-      var fields = {};
-      fields.name = this.state.name;
-      fields.email = this.state.email;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "profile-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -43084,9 +43081,6 @@ function (_React$PureComponent) {
   _createClass(SignInPage, [{
     key: "render",
     value: function render() {
-      var fields = {};
-      fields.email = this.state.email;
-      fields.password = this.state.password;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "sign-in-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -43371,11 +43365,11 @@ function (_React$PureComponent) {
       };
     }());
 
-    _defineProperty(_assertThisInitialized(_this), "getValidationResultFiels", function () {
+    _defineProperty(_assertThisInitialized(_this), "getValidationResultField", function () {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sign-up-page__validation-result",
         ref: _this.errorFieldRef
-      }, _this.validator.message('Email', _this.state.email, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].email.rule), _this.validator.message('Password', _this.state.password, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].password.rule), _this.validator.message('Name', _this.state.name, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].name.rule), _this.validator.message('Confirm password', _this.state.confirmPassword, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].name.rule(_this.state.password)));
+      }, _this.validator.message('Email', _this.state.email, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].email.rule), _this.validator.message('Password', _this.state.password, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].password.rule), _this.validator.message('Name', _this.state.name, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].name.rule), _this.validator.message('Confirm password', _this.state.confirmPassword, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].confirmPassword.rule(_this.state.password)));
     });
 
     _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a();
@@ -43394,11 +43388,6 @@ function (_React$PureComponent) {
   _createClass(SignUpPage, [{
     key: "render",
     value: function render() {
-      var fields = {};
-      fields.email = this.state.email;
-      fields.password = this.state.password;
-      fields.name = this.state.name;
-      fields.confirmPassword = this.state.confirmPassword;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "sign-up-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -43466,7 +43455,7 @@ function (_React$PureComponent) {
         className: "sign-up-page__field-input",
         onChange: this.photoChange,
         accept: "image/x-png,image/gif,image/jpeg"
-      })), getValidationResultField(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), this.getValidationResultField(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         className: "sign-up-page__form-button",
         value: "Sign up"
@@ -47285,25 +47274,24 @@ var keyboardKeyCode = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var requestUrl = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   getAllBeers: 'https://api.punkapi.com/v2/beers?per_page=80',
   getBeerById: function getBeerById(id) {
     return "https://api.punkapi.com/v2/beers/".concat(id);
   },
-  addFavorite: 'https://localhost:44340/favorites/add',
+  addFavorite: '/FavoriteBeers/Add',
   getFavoritesByUserId: function getFavoritesByUserId(userId) {
-    return "https://localhost:44340/favorites/get?userId=".concat(userId);
+    return "/FavoriteBeers/Get?userId=".concat(userId);
   },
-  deleteFavorite: 'https://localhost:44340/favorites/delete',
-  signIn: 'https://localhost:44340/account/login',
-  signUp: 'https://localhost:44340/account/join',
-  signOut: 'https://localhost:44340/account/logout',
+  deleteFavorite: '/FavoriteBeers/Delete',
+  signIn: '/Login/Login',
+  signUp: '/Login/Register',
+  signOut: '/Login/Logout',
   getUser: function getUser(id) {
-    return "https://localhost:44340/account/profile?id=".concat(id);
+    return "/User/Get?id=".concat(id);
   },
-  updateUser: 'https://localhost:44340/account/profile'
-};
-/* harmony default export */ __webpack_exports__["default"] = (requestUrl);
+  updateUser: '/User/Update'
+});
 
 /***/ }),
 
@@ -47477,6 +47465,7 @@ function post(url, data) {
     headers: {
       'Content-Type': 'application/json'
     },
+    mode: 'cors',
     accept: 'application/json',
     body: JSON.stringify(data)
   }).then(
@@ -47539,6 +47528,7 @@ function put(url, data) {
     headers: {
       'Content-Type': 'application/json'
     },
+    mode: 'cors',
     accept: 'application/json',
     body: JSON.stringify(data)
   }).then(
@@ -48627,8 +48617,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -48652,26 +48640,31 @@ function _callService() {
           case 2:
             result = _context.sent;
 
-            if (!(result instanceof Error && errorRef)) {
-              _context.next = 6;
+            if (!(result instanceof Error)) {
+              _context.next = 10;
               break;
             }
 
-            if (_typeof(result.message) === 'object') {
-              errorRef.current.innerHTML = '';
-              result.message.array.forEach(function (element) {
-                errorRef.current.innerHTML += "".concat(element, "</br>");
-              });
-            } else {
-              errorRef.current.innerHTML = result.message.message;
+            errorRef.current.innerHTML = '';
+
+            if (!Array.isArray(result.message)) {
+              _context.next = 8;
+              break;
             }
 
+            result.message.forEach(function (element) {
+              errorRef.current.innerHTML += "".concat(element, "</br>");
+            });
             return _context.abrupt("return");
 
-          case 6:
+          case 8:
+            errorRef.current.innerHTML = result.message.message;
+            return _context.abrupt("return");
+
+          case 10:
             return _context.abrupt("return", result);
 
-          case 7:
+          case 11:
           case "end":
             return _context.stop();
         }

@@ -76,10 +76,6 @@ class SignInPage extends React.PureComponent {
     }
 
     render() {
-        const fields = {};
-        fields.email = this.state.email;
-        fields.password = this.state.password;
-
         return (
             <section className="sign-in-page">
                 <h1 className="sign-in-page__title">Log In</h1>

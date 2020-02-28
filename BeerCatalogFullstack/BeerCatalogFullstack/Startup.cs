@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using BeerCatalogFullstack.Middleware;
+using Microsoft.AspNetCore.Server.IIS;
 using Newtonsoft.Json;
 
 namespace BeerCatalogFullstack
@@ -30,7 +31,7 @@ namespace BeerCatalogFullstack
                 .AddEntityFrameworkStores<ApplicationContext>();
 
             services.AddScoped<DbContext>(sp => sp.GetService<ApplicationContext>());
-
+            services.AddAuthentication(IISServerDefaults.AuthenticationScheme);
             services.AddMvc(option => option.EnableEndpointRouting = false)
                 .AddNewtonsoftJson(options =>
                 {

@@ -98,7 +98,7 @@ class SignUpPage extends React.PureComponent {
         }
     }
 
-    getValidationResultFiels =() => {
+    getValidationResultField = () => {
         return (
             <div className="sign-up-page__validation-result" ref={this.errorFieldRef}>
                 {
@@ -114,7 +114,7 @@ class SignUpPage extends React.PureComponent {
                     this.validator.message(
                         'Confirm password',
                         this.state.confirmPassword,
-                        signUpValidationConfig.name.rule(this.state.password)
+                        signUpValidationConfig.confirmPassword.rule(this.state.password)
                     )
                 }
             </div>
@@ -122,12 +122,6 @@ class SignUpPage extends React.PureComponent {
     }
 
     render() {
-        const fields = {};
-        fields.email = this.state.email;
-        fields.password = this.state.password;
-        fields.name = this.state.name;
-        fields.confirmPassword = this.state.confirmPassword;
-
         return (
             <section className="sign-up-page">
                 <h1 className="sign-up-page__title">Sign up</h1>
@@ -193,7 +187,7 @@ class SignUpPage extends React.PureComponent {
                         />
                     </div>
                     {
-                        getValidationResultField()
+                        this.getValidationResultField()
                     }
                     <input type="submit" className="sign-up-page__form-button" value="Sign up" />
                 </form>

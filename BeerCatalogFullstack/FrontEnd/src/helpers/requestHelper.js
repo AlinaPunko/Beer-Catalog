@@ -22,6 +22,7 @@ function post(url, data) {
         headers: {
             'Content-Type': 'application/json'
         },
+        mode: 'cors',
         accept: 'application/json',
         body: JSON.stringify(data)
     })
@@ -47,6 +48,7 @@ function put(url, data) {
         headers: {
             'Content-Type': 'application/json'
         },
+        mode: 'cors',
         accept: 'application/json',
         body: JSON.stringify(data)
     })

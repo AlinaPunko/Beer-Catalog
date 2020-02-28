@@ -18,8 +18,7 @@ namespace BeerCatalogFullstack.Controllers
         }
 
         [HttpGet]
-        [Route("account/profile")]
-        public JsonResult GetUser(string id)
+        public JsonResult Get(string id)
         {
             User user = manager.GetUserById(id);
 
@@ -27,8 +26,7 @@ namespace BeerCatalogFullstack.Controllers
         }
 
         [HttpPut]
-        [Route("account/profile")]
-        public async Task<IActionResult> UpdateUserAsync([FromBody]UpdateUserViewModel model)
+        public async Task<IActionResult> Update([FromBody]UpdateUserViewModel model)
         {
             await manager.UpdateUserAsync(model);
             return Ok();

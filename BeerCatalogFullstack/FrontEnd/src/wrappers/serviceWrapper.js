@@ -1,15 +1,14 @@
 async function callService(service, data, errorRef) {
     const result = await service(data);
-    if (result instanceof Error && errorRef) {
-        if (typeof result.message === 'object') {
-            errorRef.current.innerHTML = '';
-            result.message.array.forEach((element) => {
+    if (result instanceof Error) {
+        errorRef.current.innerHTML = '';
+        if (Array.isArray(result.message)) {
+            result.message.forEach((element) => {
                 errorRef.current.innerHTML += `${element}</br>`;
             });
-        } else {
-            errorRef.current.innerHTML = result.message.message;
+            return;
         }
-
+        errorRef.current.innerHTML = result.message.message;
         return;
     }
 

@@ -115,10 +115,6 @@ class ProfilePage extends React.PureComponent {
     }
 
     render() {
-        const fields = {};
-        fields.name = this.state.name;
-        fields.email = this.state.email;
-
         return (
             <section className="profile-page">
                 <h1 className="profile-page__title">Your profile</h1>

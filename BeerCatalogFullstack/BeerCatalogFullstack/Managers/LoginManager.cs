@@ -45,16 +45,23 @@ namespace BeerCatalogFullstack.Managers
 
         public async Task<string> Login(LoginViewModel model)
         {
-            SignInResult result = await signInManager.PasswordSignInAsync(model.Email, model.Password, true, false);
+            try
+            {
+                SignInResult result = await signInManager.PasswordSignInAsync(model.Email, model.Password, true, false);
 
-            if (!result.Succeeded)
+                if (!result.Succeeded)
+                {
+                    throw new ArgumentException("Incorrect email or password");
+                }
+
+                return userManager.Users.
+                    FirstOrDefault(u => u.Email == model.Email)?
+                    .Id;
+            }
+            catch (Exception e)
             {
                 throw new ArgumentException("Incorrect email or password");
             }
-
-            return userManager.Users.
-                FirstOrDefault(u => u.Email == model.Email)?
-                .Id;
         }
 
         public void SignOut()

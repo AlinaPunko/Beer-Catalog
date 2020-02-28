@@ -1,4 +1,9 @@
 node_modules/
 .vs/
-wwwroot/*.json
-wwwroot/*.js
+BeerCatalogFullStack/BeerCatalogFullstack/wwwroot/*.json
+BeerCatalogFullStack/BeerCatalogFullstack/wwwroot/*.js
+BeerCatalogFullStack/BeerCatalogFullstack/wwwroot/*.js.map
+BeerCatalogFullstack/BeerCatalogFullstack/bin/Release
+BeerCatalogFullstack/BeerCatalogFullstack/obj/Release
+BeerCatalogFullstack/BeerCatalogFullstack/bin/Debug
+BeerCatalogFullstack/BeerCatalogFullstack/obj/Debug

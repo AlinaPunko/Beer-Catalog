@@ -9,6 +9,6 @@ export default {
         rule: 'required|min:6'
     },
     confirmPassword: {
-        rule: (password) => `required|in:${password}`
+        rule: (password) => { return `required|in:${password}`; }
     }
 };

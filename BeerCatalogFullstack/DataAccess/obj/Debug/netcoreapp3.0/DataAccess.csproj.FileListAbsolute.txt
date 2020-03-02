@@ -1,8 +1,0 @@
-D:\Beer Catalog\BeerCatalogFullstack\DataAccess\bin\Debug\netcoreapp3.0\DataAccess.deps.json
-D:\Beer Catalog\BeerCatalogFullstack\DataAccess\bin\Debug\netcoreapp3.0\DataAccess.dll
-D:\Beer Catalog\BeerCatalogFullstack\DataAccess\obj\Debug\netcoreapp3.0\DataAccess.AssemblyInfoInputs.cache
-D:\Beer Catalog\BeerCatalogFullstack\DataAccess\obj\Debug\netcoreapp3.0\DataAccess.AssemblyInfo.cs
-D:\Beer Catalog\BeerCatalogFullstack\DataAccess\bin\Debug\netcoreapp3.0\DataAccess.pdb
-D:\Beer Catalog\BeerCatalogFullstack\DataAccess\obj\Debug\netcoreapp3.0\DataAccess.dll
-D:\Beer Catalog\BeerCatalogFullstack\DataAccess\obj\Debug\netcoreapp3.0\DataAccess.pdb
-D:\Beer Catalog\BeerCatalogFullstack\DataAccess\obj\Debug\netcoreapp3.0\DataAccess.csprojAssemblyReference.cache

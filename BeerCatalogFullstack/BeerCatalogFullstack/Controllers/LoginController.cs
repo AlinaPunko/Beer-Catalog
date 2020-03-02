@@ -1,8 +1,6 @@
 ﻿using System.Threading.Tasks;
 using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
-using DataAccess.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BeerCatalogFullstack.Controllers
@@ -11,9 +9,9 @@ namespace BeerCatalogFullstack.Controllers
     {
         private readonly LoginManager manager;
 
-        public LoginController(UserManager<User> userManager, SignInManager<User> signInManager)
+        public LoginController(LoginManager loginManager)
         {
-            manager = new LoginManager(userManager, signInManager);
+            manager = loginManager;
         }
 
         [HttpPost]

@@ -44,7 +44,7 @@ class BeersList extends React.PureComponent {
         if (this.context.userId === '') {
             return;
         }
-
+        debugger;
         const favoriteBeers = await favouritesService.getItems(this.context.userId);
         this.context.setFavouriteBeers(favoriteBeers);
     }

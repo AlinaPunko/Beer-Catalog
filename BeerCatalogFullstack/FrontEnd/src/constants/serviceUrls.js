@@ -3,7 +3,7 @@ export default {
         getAllBeers: 'https://api.punkapi.com/v2/beers?per_page=80',
         getBeerById: (id) => `https://api.punkapi.com/v2/beers/${id}`
     },
-    favoriteBeersUrls: {
+    favoriteBeerUrls: {
         addFavorite: '/FavoriteBeers/Add',
         getFavoritesByUserId: (userId) => `/FavoriteBeers/Get?userId=${userId}`,
         deleteFavorite: '/FavoriteBeers/Delete'

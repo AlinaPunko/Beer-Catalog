@@ -9,7 +9,6 @@ namespace BeerCatalogFullstack.Managers
 {
     public class UserManager
     {
-
         private readonly UserManager<User> userManager;
 
         public UserManager(UserManager<User> userManager)

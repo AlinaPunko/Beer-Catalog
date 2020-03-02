@@ -1,3 +1,4 @@
+using BeerCatalogFullstack.Managers;
 using DataAccess.Core;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Builder;
@@ -8,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using BeerCatalogFullstack.Middleware;
-using Microsoft.AspNetCore.Server.IIS;
+using DataAccess.Repositories;
 using Newtonsoft.Json;
 
 namespace BeerCatalogFullstack
@@ -30,13 +31,25 @@ namespace BeerCatalogFullstack
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationContext>();
 
-            services.AddScoped<DbContext>(sp => sp.GetService<ApplicationContext>());
-            services.AddAuthentication(IISServerDefaults.AuthenticationScheme);
+            AddDependencies(services);
+
             services.AddMvc(option => option.EnableEndpointRouting = false)
                 .AddNewtonsoftJson(options =>
                 {
-                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                }); 
+                    options.SerializerSettings.ReferenceLoopHandling =
+                        ReferenceLoopHandling.Ignore;
+                });
+        }
+
+        private static void AddDependencies(IServiceCollection services)
+        {
+            services.AddTransient<LoginManager>();
+            services.AddTransient<FavoriteBeerManager>();
+            services.AddTransient<RegisterRepository>();
+            services.AddTransient<FavoriteBeerRepository>();
+            services.AddTransient<LoginRepository>();
+            services.AddScoped<UserManager<User>>();
+            services.AddScoped<SignInManager<User>>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

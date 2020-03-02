@@ -1,72 +1,48 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
-using Microsoft.AspNetCore.Identity;
-using BeerCatalogFullstack.Exceptions;
+using DataAccess.Repositories;
 
 namespace BeerCatalogFullstack.Managers
 {
     public class LoginManager
     {
-        private readonly UserManager<User> userManager;
-        private readonly SignInManager<User> signInManager;
+        private readonly LoginRepository loginRepository;
+        private readonly RegisterRepository registerRepository;
 
-        public LoginManager(UserManager<User> userManager, SignInManager<User> signInManager)
+        public LoginManager(RegisterRepository registerRepository, LoginRepository loginRepository)
         {
-            this.userManager = userManager;
-            this.signInManager = signInManager;
+            this.registerRepository = registerRepository;
+            this.loginRepository = loginRepository;
         }
 
         public async Task<string> Register(RegisterViewModel model)
         {
-            User user = new User
+            var user = new User()
             {
-                UserName = model.Email,
                 Email = model.Email,
                 Name = model.Name,
+                UserName = model.Email,
                 Birthdate = model.Birthdate,
                 Photo = model.Photo
             };
 
-            IdentityResult result = await userManager.CreateAsync(user, model.Password);
-            if (!result.Succeeded)
-            {
-                throw new SignUpException(result.Errors.ToList());
-            }
-
-            await signInManager.SignInAsync(user, false);
-
-            return userManager.Users
-                .FirstOrDefault(u => u.Email == model.Email)?
-                .Id;
+            return await registerRepository.Register(user, model.Password);
         }
 
         public async Task<string> Login(LoginViewModel model)
         {
-            try
+            var user = new User()
             {
-                SignInResult result = await signInManager.PasswordSignInAsync(model.Email, model.Password, true, false);
+                Email = model.Email
+            };
 
-                if (!result.Succeeded)
-                {
-                    throw new ArgumentException("Incorrect email or password");
-                }
-
-                return userManager.Users.
-                    FirstOrDefault(u => u.Email == model.Email)?
-                    .Id;
-            }
-            catch (Exception e)
-            {
-                throw new ArgumentException("Incorrect email or password");
-            }
+            return await loginRepository.Login(user, model.Password);
         }
 
         public void SignOut()
         {
-            signInManager.SignOutAsync();
+            loginRepository.SignOut();
         }
     }
 }

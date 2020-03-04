@@ -7,11 +7,11 @@ using DataAccess.Models;
 
 namespace DataAccess.Repositories
 {
-    class FermentationsRepository : GenericRepository<Fermentation>
+    class MashTemperatureRepository : GenericRepository<MashTemperature>
     {
-        public FermentationsRepository(ApplicationContext context) : base(context) { }
+        public MashTemperatureRepository(ApplicationContext context) : base(context) { }
 
-        public IReadOnlyList<Fermentation> GetAll()
+        public IReadOnlyList<MashTemperature> GetAll()
         {
             return Get()
                 .ToList();

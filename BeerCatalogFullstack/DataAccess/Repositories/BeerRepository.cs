@@ -5,11 +5,11 @@ using DataAccess.Models;
 
 namespace DataAccess.Repositories
 {
-    public class PhotosRepository : GenericRepository<Photo>
+    public class BeerRepository : GenericRepository<Beer>
     {
-        public PhotosRepository(ApplicationContext context) : base(context) { }
+        public BeerRepository(ApplicationContext context) : base(context) { }
 
-        public IReadOnlyList<Photo> GetAll()
+        public IReadOnlyList<Beer> GetAll()
         {
             return Get()
                 .ToList();

@@ -7,13 +7,13 @@ namespace DataAccess.Core
 {
     public sealed class ApplicationContext : IdentityDbContext<User>, IDataContext
     {
-        public DbSet<Beer> Beer { get; set; }
-        public DbSet<Brew> Brew { get; set; }
-        public DbSet<Fermentation> Fermentation { get; set; }
+        public DbSet<Beer> Beers { get; set; }
+        public DbSet<Brew> Brews { get; set; }
+        public DbSet<Fermentation> Fermentations { get; set; }
         public DbSet<Hops> Hops { get; set; }
-        public DbSet<Malt> Malt { get; set; }
-        public  DbSet<Comment> Comment { get; set; }
-        public DbSet<Photo> Photo { get; set; }
+        public DbSet<Malt> Malts { get; set; }
+        public  DbSet<Comment> Comments { get; set; }
+        public DbSet<Photo> Photos { get; set; }
 
         public ApplicationContext(DbContextOptions options) : base(options)
         {

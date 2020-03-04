@@ -16,5 +16,14 @@ export default {
     userUrls: {
         getUser: (id) => `/User/Get?id=${id}`,
         updateUser: '/User/Update'
+    },
+    brewUrls: {
+        addBrew: '/Brews/Add',
+        deleteBrew: (id) => `/Brews/Delete?id=${id}`,
+        updateBrew: '/Brews/Update',
+        getAllBrews: '/Brews/Get',
+        getUserBrews: (id) => `/Brews/Get?userId=${id}`,
+        addComment: '/Brews/Comments/Add',
+        rateBrew: '/Brews/Rate'
     }
 };

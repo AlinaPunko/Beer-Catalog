@@ -8,7 +8,7 @@ namespace DataAccess.Repositories
 {
     public class FavoriteBeerRepository : GenericRepository<FavoriteBeer>
     {
-        private BeersRepository beersRepository;
+        private BeerRepository beerRepository;
 
         public FavoriteBeerRepository(ApplicationContext context) : base(context) { }
 
@@ -17,13 +17,13 @@ namespace DataAccess.Repositories
             try
             {
                 Context.BeginTransaction();
-                beersRepository = new BeersRepository(Context);
+                beerRepository = new BeerRepository(Context);
 
-                IReadOnlyList<Beer> existingBeers = beersRepository.GetAll();
+                IReadOnlyList<Beer> existingBeers = beerRepository.GetAll();
 
                 if (existingBeers == null || existingBeers.Count(b => b.Id == beer.Id) == 0)
                 {
-                    beersRepository.Add(beer);
+                    beerRepository.Add(beer);
                 }
 
                 Add(favoriteBeer);

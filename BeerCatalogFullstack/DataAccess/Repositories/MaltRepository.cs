@@ -7,11 +7,11 @@ using DataAccess.Models;
 
 namespace DataAccess.Repositories
 {
-    class CommentsRepository : GenericRepository<Comment>
+    class MaltRepository : GenericRepository<Malt>
     {
-        public CommentsRepository(ApplicationContext context) : base(context) { }
+        public MaltRepository(ApplicationContext context) : base(context) { }
 
-        public IReadOnlyList<Comment> GetAll()
+        public IReadOnlyList<Malt> GetAll()
         {
             return Get()
                 .ToList();

@@ -7,11 +7,11 @@ using DataAccess.Models;
 
 namespace DataAccess.Repositories
 {
-    class BrewsRepository : GenericRepository<Brew>
+    class FermentationRepository : GenericRepository<Fermentation>
     {
-        public BrewsRepository(ApplicationContext context) : base(context) { }
+        public FermentationRepository(ApplicationContext context) : base(context) { }
 
-        public IReadOnlyList<Brew> GetAll()
+        public IReadOnlyList<Fermentation> GetAll()
         {
             return Get()
                 .ToList();

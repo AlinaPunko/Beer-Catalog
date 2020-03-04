@@ -29,5 +29,13 @@ export default {
     profilePage: {
         url: '/profile',
         component: ProfilePage
+    },
+    brewPage: {
+        url: '/brew',
+        component: BrewPage
+    },
+    brewsList: {
+        url: '/brews',
+        component: BrewsList
     }
 };

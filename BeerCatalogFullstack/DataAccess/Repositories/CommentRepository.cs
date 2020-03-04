@@ -7,11 +7,11 @@ using DataAccess.Models;
 
 namespace DataAccess.Repositories
 {
-    class MashTemperaturesRepository : GenericRepository<MashTemperature>
+    class CommentRepository : GenericRepository<Comment>
     {
-        public MashTemperaturesRepository(ApplicationContext context) : base(context) { }
+        public CommentRepository(ApplicationContext context) : base(context) { }
 
-        public IReadOnlyList<MashTemperature> GetAll()
+        public IReadOnlyList<Comment> GetAll()
         {
             return Get()
                 .ToList();

@@ -7,7 +7,13 @@ namespace DataAccess.Core
 {
     public sealed class ApplicationContext : IdentityDbContext<User>, IDataContext
     {
-        public DbSet<Beer> Beers { get; set; }
+        public DbSet<Beer> Beer { get; set; }
+        public DbSet<Brew> Brew { get; set; }
+        public DbSet<Fermentation> Fermentation { get; set; }
+        public DbSet<Hops> Hops { get; set; }
+        public DbSet<Malt> Malt { get; set; }
+        public  DbSet<Comment> Comment { get; set; }
+        public DbSet<Photo> Photo { get; set; }
 
         public ApplicationContext(DbContextOptions options) : base(options)
         {
@@ -58,6 +64,11 @@ namespace DataAccess.Core
                 .HasOne(u => u.User)
                 .WithMany(f => f.FavoriteBeers)
                 .HasForeignKey(u => u.UserId);
+
+            builder.Entity<Brew>()
+                .HasOne(a => a.Fermentation)
+                .WithOne(b => b.Brew)
+                .HasForeignKey<Brew>(b => b.FermentationId);
         }
     }
 }

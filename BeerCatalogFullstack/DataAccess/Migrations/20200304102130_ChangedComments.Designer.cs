@@ -4,14 +4,16 @@ using DataAccess.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20200304102130_ChangedComments")]
+    partial class ChangedComments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,7 +37,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Beer");
+                    b.ToTable("Beers");
                 });
 
             modelBuilder.Entity("DataAccess.Models.Brew", b =>
@@ -76,7 +78,7 @@ namespace DataAccess.Migrations
                     b.HasIndex("FermentationId")
                         .IsUnique();
 
-                    b.ToTable("Brew");
+                    b.ToTable("Brews");
                 });
 
             modelBuilder.Entity("DataAccess.Models.Comment", b =>
@@ -101,7 +103,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Comment");
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("DataAccess.Models.FavoriteBeer", b =>
@@ -137,7 +139,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Fermentation");
+                    b.ToTable("Fermentations");
                 });
 
             modelBuilder.Entity("DataAccess.Models.Hops", b =>
@@ -201,7 +203,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("BrewId");
 
-                    b.ToTable("Malt");
+                    b.ToTable("Malts");
                 });
 
             modelBuilder.Entity("DataAccess.Models.MashTemperature", b =>
@@ -250,7 +252,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("BrewId");
 
-                    b.ToTable("Photo");
+                    b.ToTable("Photos");
                 });
 
             modelBuilder.Entity("DataAccess.Models.User", b =>

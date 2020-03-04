@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "5408bdef411378e2d30e";
+/******/ 	var hotCurrentHash = "d545b736b01cf2aa50db";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -47663,6 +47663,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var BeerInfo = function BeerInfo(dataModel) {
   _classCallCheck(this, BeerInfo);
 
+  debugger;
   this.id = dataModel.id;
   this.name = dataModel.name;
   this.tagline = dataModel.tagline;

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using DataAccess.Repositories;
@@ -8,6 +10,19 @@ namespace BeerCatalogFullstack.Managers
     public class PreferenceManager
     {
         private readonly PreferenceRepository repository;
+
+        private string[] BeerTypes = new[]
+        {
+            "Ale",
+            "Lager",
+            "Stout",
+            "Porter",
+            "Lambic",
+            "Pilsner",
+            "Pale Ale",
+            "Weissber",
+            "Belgian Ale"
+        };
 
         public PreferenceManager(PreferenceRepository repository)
         {
@@ -43,7 +58,7 @@ namespace BeerCatalogFullstack.Managers
 
         public IReadOnlyList<string> GetSuitablePreferences(string input)
         {
-            return repository.GetPreferencesByInput(input);
+            return BeerTypes.Where(s => s.Contains(input, StringComparison.OrdinalIgnoreCase)).ToList();
         }
     }
 }

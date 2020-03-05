@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "b6530848cea0887f39ce";
+/******/ 	var hotCurrentHash = "14ae9c9180e6187effd6";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1039,7 +1039,7 @@ exports.push([module.i, ".user-preference-list-item__delete-button {\n  width: 1
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".user-preference-section__header {\n  padding: 10px 0;\n  font-size: 25px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.user-preference-section__field {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.user-preference-section__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.user-preference-section__field-input {\n  width: 40%;\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.user-preference-section__add-button {\n  width: 7%;\n  background-color: transparent;\n  border: none; }\n\n.user-preference-section__add-button-icon {\n  width: 15px;\n  height: 15px; }\n", ""]);
+exports.push([module.i, ".user-preference-section__header {\n  padding: 10px 0;\n  font-size: 25px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.user-preference-section__field {\n  position: relative;\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.user-preference-section__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.user-preference-section__field-input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.user-preference-section__add-button {\n  width: 7%;\n  background-color: transparent;\n  border: none; }\n\n.user-preference-section__add-button-icon {\n  width: 15px;\n  height: 15px; }\n\n.user-preference-section__autocompletion-results {\n  position: absolute;\n  width: 100%; }\n\n.user-preference-section__autocompletion-results-item {\n  padding: 5px;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #ffffff;\n  border: 1px #106cc8 solid; }\n", ""]);
 
 
 
@@ -42854,56 +42854,111 @@ function (_React$PureComponent) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(UserPreferenceSection).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_this), "onPreferenceFieldInput", function (e) {
-      _this.setState({
-        currentPreference: e.target.value
-      });
-    });
+    _defineProperty(_assertThisInitialized(_this), "onPreferenceFieldInput",
+    /*#__PURE__*/
+    function () {
+      var _ref = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee(e) {
+        var value, result;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                value = e.target.value;
+
+                _this.setState({
+                  currentPreference: e.target.value
+                });
+
+                if (!value) {
+                  _context.next = 9;
+                  break;
+                }
+
+                _context.next = 5;
+                return wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_4__["default"].callService(services_preferenceService__WEBPACK_IMPORTED_MODULE_2__["default"].getSuitablePreferences, e.target.value, null);
+
+              case 5:
+                result = _context.sent;
+
+                _this.setState({
+                  suitableBeerTypes: result
+                });
+
+                _context.next = 10;
+                break;
+
+              case 9:
+                _this.setState({
+                  suitableBeerTypes: []
+                });
+
+              case 10:
+                _this.renderSuggestedBeerTypes();
+
+              case 11:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
 
     _defineProperty(_assertThisInitialized(_this), "addPreference",
     /*#__PURE__*/
     _asyncToGenerator(
     /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee() {
+    regeneratorRuntime.mark(function _callee2() {
       var preference;
-      return regeneratorRuntime.wrap(function _callee$(_context) {
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
         while (1) {
-          switch (_context.prev = _context.next) {
+          switch (_context2.prev = _context2.next) {
             case 0:
               preference = {
                 UserId: _this.context.userId,
                 PreferencedBeerType: _this.state.currentPreference
               };
-              _context.next = 3;
+              _context2.next = 3;
               return wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_4__["default"].callService(services_preferenceService__WEBPACK_IMPORTED_MODULE_2__["default"].add, preference, null);
 
             case 3:
               _this.loadUserPreferences();
 
-            case 4:
+              _this.setState({
+                currentPreference: '',
+                suitableBeerTypes: []
+              });
+
+            case 5:
             case "end":
-              return _context.stop();
+              return _context2.stop();
           }
         }
-      }, _callee);
+      }, _callee2);
     })));
 
     _defineProperty(_assertThisInitialized(_this), "loadUserPreferences",
     /*#__PURE__*/
     _asyncToGenerator(
     /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee2() {
+    regeneratorRuntime.mark(function _callee3() {
       var userId, result;
-      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
               userId = _this.context.userId;
-              _context2.next = 3;
+              _context3.next = 3;
               return wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_4__["default"].callService(services_preferenceService__WEBPACK_IMPORTED_MODULE_2__["default"].getUserPreferences, userId, null);
 
             case 3:
-              result = _context2.sent;
+              result = _context3.sent;
 
               _this.setState({
                 userPreferences: result
@@ -42913,13 +42968,13 @@ function (_React$PureComponent) {
 
             case 6:
             case "end":
-              return _context2.stop();
+              return _context3.stop();
           }
         }
-      }, _callee2);
+      }, _callee3);
     })));
 
-    _defineProperty(_assertThisInitialized(_this), "renderPreferences", function (item) {
+    _defineProperty(_assertThisInitialized(_this), "renderPreferences", function () {
       var preferences = _this.state.userPreferences.map(function (item, index) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_ProfilePage_UserPreferenceListItem_userPreferenceListItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
           key: index,
@@ -42931,40 +42986,56 @@ function (_React$PureComponent) {
       return preferences;
     });
 
+    _defineProperty(_assertThisInitialized(_this), "onSuggestedItemClick", function (e) {
+      _this.setState({
+        currentPreference: e.target.innerHTML
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderSuggestedBeerTypes", function () {
+      return _this.state.suitableBeerTypes.map(function (item, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: index,
+          className: "user-preference-section__autocompletion-results-item",
+          onClick: _this.onSuggestedItemClick
+        }, " ", item, " ");
+      });
+    });
+
     _defineProperty(_assertThisInitialized(_this), "deletePreference",
     /*#__PURE__*/
     function () {
-      var _ref3 = _asyncToGenerator(
+      var _ref4 = _asyncToGenerator(
       /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee3(preference) {
-        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      regeneratorRuntime.mark(function _callee4(preference) {
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
           while (1) {
-            switch (_context3.prev = _context3.next) {
+            switch (_context4.prev = _context4.next) {
               case 0:
-                debugger;
-                _context3.next = 3;
+                _context4.next = 2;
                 return wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_4__["default"].callService(services_preferenceService__WEBPACK_IMPORTED_MODULE_2__["default"].deletePreference, preference, null);
 
-              case 3:
+              case 2:
                 _this.loadUserPreferences();
 
-              case 4:
+              case 3:
               case "end":
-                return _context3.stop();
+                return _context4.stop();
             }
           }
-        }, _callee3);
+        }, _callee4);
       }));
 
-      return function (_x) {
-        return _ref3.apply(this, arguments);
+      return function (_x2) {
+        return _ref4.apply(this, arguments);
       };
     }());
 
+    _this.AutocompletionResult = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     _this.state = {
       currentPreference: '',
       userPreferences: [],
-      suitablePreferences: []
+      suitableBeerTypes: []
     };
     return _this;
   }
@@ -42974,19 +43045,19 @@ function (_React$PureComponent) {
     value: function () {
       var _componentDidMount = _asyncToGenerator(
       /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee4() {
-        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      regeneratorRuntime.mark(function _callee5() {
+        return regeneratorRuntime.wrap(function _callee5$(_context5) {
           while (1) {
-            switch (_context4.prev = _context4.next) {
+            switch (_context5.prev = _context5.next) {
               case 0:
                 this.loadUserPreferences();
 
               case 1:
               case "end":
-                return _context4.stop();
+                return _context5.stop();
             }
           }
-        }, _callee4, this);
+        }, _callee5, this);
       }));
 
       function componentDidMount() {
@@ -43004,13 +43075,15 @@ function (_React$PureComponent) {
         className: "user-preference-section__field"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "user-preference-section__field-title"
-      }, "Input preference"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Input preference"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         name: "preference",
         value: this.state.currentPreference,
         onChange: this.onPreferenceFieldInput,
         className: "user-preference-section__field-input"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "user-preference-section__autocompletion-results"
+      }, this.renderSuggestedBeerTypes())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
         className: "user-preference-section__add-button",
         onClick: this.addPreference

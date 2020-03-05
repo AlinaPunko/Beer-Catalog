@@ -12,10 +12,11 @@ import UserPreferenceListItem from 'components/ProfilePage/UserPreferenceListIte
 export default class UserPreferenceSection extends React.PureComponent {
     constructor(props) {
         super(props);
+        this.AutocompletionResult = React.createRef();
         this.state = {
             currentPreference: '',
             userPreferences: [],
-            suitablePreferences: []
+            suitableBeerTypes: []
         };
     }
 
@@ -23,8 +24,18 @@ export default class UserPreferenceSection extends React.PureComponent {
         this.loadUserPreferences();
     }
 
-    onPreferenceFieldInput = (e) => {
+    onPreferenceFieldInput = async (e) => {
+        const { value } = e.target;
         this.setState({ currentPreference: e.target.value });
+
+        if (value) {
+            const result = await serviceWrapper.callService(preferenceService.getSuitablePreferences, e.target.value, null);
+            this.setState({ suitableBeerTypes: result });
+        } else {
+            this.setState({ suitableBeerTypes: [] });
+        }
+
+        this.renderSuggestedBeerTypes();
     }
 
     addPreference = async () => {
@@ -34,6 +45,10 @@ export default class UserPreferenceSection extends React.PureComponent {
         };
         await serviceWrapper.callService(preferenceService.add, preference, null);
         this.loadUserPreferences();
+        this.setState({
+            currentPreference: '',
+            suitableBeerTypes: []
+        });
     }
 
     loadUserPreferences = async () => {
@@ -45,7 +60,7 @@ export default class UserPreferenceSection extends React.PureComponent {
         this.renderPreferences();
     }
 
-    renderPreferences = (item) => {
+    renderPreferences = () => {
         const preferences = this.state.userPreferences.map((item, index) => {
             return (
                 <UserPreferenceListItem key={index} preferencedBeerType={item} deletePreference={this.deletePreference} />
@@ -54,8 +69,21 @@ export default class UserPreferenceSection extends React.PureComponent {
         return preferences;
     }
 
+    onSuggestedItemClick = (e) => {
+        this.setState({
+            currentPreference: e.target.innerHTML
+        });
+    }
+
+    renderSuggestedBeerTypes = () => {
+        return this.state.suitableBeerTypes.map((item, index) => {
+            return (
+                <li key={index} className="user-preference-section__autocompletion-results-item" onClick={this.onSuggestedItemClick}> {item} </li>
+            );
+        });
+    }
+
     deletePreference = async (preference) => {
-        debugger;
         await serviceWrapper.callService(preferenceService.deletePreference, preference, null);
         this.loadUserPreferences();
     }
@@ -66,13 +94,16 @@ export default class UserPreferenceSection extends React.PureComponent {
                 <h2 className="user-preference-section__header">Your preferences</h2>
                 <div className="user-preference-section__field">
                     <label className="user-preference-section__field-title">Input preference</label>
-                    <input
-                        type="text"
-                        name="preference"
-                        value={this.state.currentPreference}
-                        onChange={this.onPreferenceFieldInput}
-                        className="user-preference-section__field-input"
-                    />
+                    <div>
+                        <input
+                            type="text"
+                            name="preference"
+                            value={this.state.currentPreference}
+                            onChange={this.onPreferenceFieldInput}
+                            className="user-preference-section__field-input"
+                        />
+                        <ul className="user-preference-section__autocompletion-results">{this.renderSuggestedBeerTypes()}</ul>
+                    </div>
                     <button type="button" className="user-preference-section__add-button" onClick={this.addPreference}>
                         <Icon icon={plus} iconClassName="header__button-add-button-icon" />
                     </button>

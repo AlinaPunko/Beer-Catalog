@@ -6,6 +6,7 @@
 }
 
 .user-preference-section__field {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -19,7 +20,6 @@
 }
 
 .user-preference-section__field-input {
-    width: 40%;
     padding: 5px;
     border: 1px #106cc8 solid;
     border-radius: 5px;
@@ -34,4 +34,16 @@
 .user-preference-section__add-button-icon {
     width: 15px;
     height: 15px;
+}
+
+.user-preference-section__autocompletion-results {
+    position: absolute;
+    width: 100%;
+}
+
+.user-preference-section__autocompletion-results-item {
+    padding: 5px;
+    font-family: "Lucida Sans", sans-serif;
+    background-color: #ffffff;
+    border: 1px #106cc8 solid;
 }

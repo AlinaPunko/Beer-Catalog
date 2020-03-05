@@ -17,10 +17,10 @@ namespace DataAccess.Core
 
         public ApplicationContext(DbContextOptions options) : base(options)
         {
-            if (!Database.CanConnect())
-            {
-                Database.Migrate();
-            }
+            //if (!Database.CanConnect())
+            //{
+            //    Database.Migrate();
+            //}
         }
 
         private IDbContextTransaction transaction;
@@ -54,6 +54,9 @@ namespace DataAccess.Core
             base.OnModelCreating(builder);
             builder.Entity<FavoriteBeer>()
                 .HasKey(t => new {t.UserId, t.BeerId});
+
+            builder.Entity<UserPreference>()
+                .HasKey(p => new {p.UserId, p.PreferencedBeerType});
 
             builder.Entity<FavoriteBeer>()
                 .HasOne(b => b.Beer)

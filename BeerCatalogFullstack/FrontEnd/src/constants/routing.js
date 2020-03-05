@@ -3,7 +3,8 @@ import FavouritesList from 'components/favouritesPage/FavouritesList/favouritesL
 import BeerDetailsPage from 'components/detailsPage/BeerDetailsPage/beerDetailsPage';
 import SignInPage from 'components/SignInPage/signInPage';
 import SignUpPage from 'components/SignUpPage/signUpPage';
-import ProfilePage from 'components/ProfilePage/profilePage';
+import ProfileSection from 'components/ProfilePage/ProfileSection/profileSection';
+import BrewsList from 'components/BrewsPage/BrewsList/brewsList';
 
 export default {
     signInPage: {
@@ -28,11 +29,11 @@ export default {
     },
     profilePage: {
         url: '/profile',
-        component: ProfilePage
+        component: ProfileSection
     },
     brewPage: {
-        url: '/brew',
-        component: BrewPage
+        url: '/brews',
+        component: BrewsList
     },
     brewsList: {
         url: '/brews',

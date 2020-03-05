@@ -45,9 +45,11 @@ namespace BeerCatalogFullstack
         {
             services.AddTransient<LoginManager>();
             services.AddTransient<FavoriteBeerManager>();
+            services.AddTransient<PreferenceManager>();
             services.AddTransient<RegisterRepository>();
             services.AddTransient<FavoriteBeerRepository>();
             services.AddTransient<LoginRepository>();
+            services.AddTransient<PreferenceRepository>();
             services.AddScoped<UserManager<User>>();
             services.AddScoped<SignInManager<User>>();
         }

@@ -1,7 +1,4 @@
-﻿using DataAccess.Models;
-using Microsoft.EntityFrameworkCore;
-
-namespace DataAccess.Core
+﻿namespace DataAccess.Core
 {
     public interface IDataContext
     {

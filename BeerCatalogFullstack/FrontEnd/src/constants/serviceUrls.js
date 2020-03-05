@@ -17,13 +17,19 @@ export default {
         getUser: (id) => `/User/Get?id=${id}`,
         updateUser: '/User/Update'
     },
+    preferenceUrls: {
+        addPreference: 'Preference/Add',
+        deletePreference: 'Preference/Delete',
+        getUserPreferences: (id) => `Preference/Get?userId=${id}`,
+        getAutocompletionValues: (input) => `Preference/GetAutocompletionValues?input=${input}`
+    },
     brewUrls: {
-        addBrew: '/Brews/Add',
-        deleteBrew: (id) => `/Brews/Delete?id=${id}`,
-        updateBrew: '/Brews/Update',
-        getAllBrews: '/Brews/Get',
-        getUserBrews: (id) => `/Brews/Get?userId=${id}`,
-        addComment: '/Brews/Comments/Add',
-        rateBrew: '/Brews/Rate'
+        addBrew: '/Brew/Add',
+        deleteBrew: (id) => `/Brew/Delete?id=${id}`,
+        updateBrew: '/Brew/Update',
+        getAllBrews: '/Brew/Get',
+        getUserBrews: (id) => `/Brew/Get?userId=${id}`,
+        addComment: '/Brew/Comments/Add',
+        rateBrew: '/Brew/Rate'
     }
 };

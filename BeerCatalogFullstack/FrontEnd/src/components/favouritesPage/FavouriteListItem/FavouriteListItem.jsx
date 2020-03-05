@@ -17,7 +17,7 @@ export default class FavouriteListItem extends React.PureComponent {
         onDelete: PropTypes.func.isRequired
     };
 
-    onDelete =() => {
+    onDelete = () => {
         const { onDelete } = this.props;
         onDelete(this.props.beer);
     }

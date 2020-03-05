@@ -3,14 +3,15 @@ import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
 import PropTypes from 'prop-types';
 
+import UserPreferenceSection from 'components/ProfilePage/UserPreferenceSection/userPreferenceSection';
 import profileValidationConfig from 'validationConfigs/profileValidationConfig';
 import userService from 'services/userService';
 import serviceWrapper from 'wrappers/serviceWrapper';
 import { UserContext } from 'store/context/userContext';
 
-import './profilePage.scss';
+import './profileSection.scss';
 
-class ProfilePage extends React.PureComponent {
+class ProfileSection extends React.PureComponent {
     static propTypes = {
         history: PropTypes.shape({
             length: PropTypes.number.isRequired,
@@ -103,7 +104,7 @@ class ProfilePage extends React.PureComponent {
 
     getValidationResultField = () => {
         return (
-            <div className="profile-page__validation-result" ref={this.errorFieldRef}>
+            <div className="profile-section__validation-result" ref={this.errorFieldRef}>
                 {
                     this.validator.message('Email', this.state.email, profileValidationConfig.email.rule)
                 }
@@ -116,60 +117,61 @@ class ProfilePage extends React.PureComponent {
 
     render() {
         return (
-            <section className="profile-page">
-                <h1 className="profile-page__title">Your profile</h1>
-                <form className="profile-page__form">
-                    <div className="profile-page__image-block">
+            <section className="profile-section">
+                <h1 className="profile-section__title">Your profile</h1>
+                <form className="profile-section__form">
+                    <div className="profile-section__image-block">
                         <img
-                            className="profile-page__user-image"
+                            className="profile-section__user-image"
                             alt=""
                             src={this.state.photo}
                         />
                         <div>
-                            <button className="profile-page__add-image-button" type="button" onClick={this.onAddPhotoClick}>
+                            <button className="profile-section__add-image-button" type="button" onClick={this.onAddPhotoClick}>
                                 Add image
                             </button>
-                            <button className="profile-page__delete-image-button" type="button" onClick={this.deletePhotoClick}>
+                            <button className="profile-section__delete-image-button" type="button" onClick={this.deletePhotoClick}>
                                 Delete image
                             </button>
                         </div>
                     </div>
-                    <div className="profile-page__user-info">
-                        <div className="profile-page__field">
-                            <label className="profile-page__field-title">Name</label>
+                    <div className="profile-section__user-info">
+                        <div className="profile-section__field">
+                            <label className="profile-section__field-title">Name</label>
                             <input
                                 name="name"
                                 type="text"
                                 value={this.state.name}
-                                className="profile-page__field-input"
+                                className="profile-section__field-input"
                                 onChange={this.onNameFieldChange}
                             />
                         </div>
-                        <div className="profile-page__field">
-                            <label className="profile-page__field-title">E-mail</label>
+                        <div className="profile-section__field">
+                            <label className="profile-section__field-title">E-mail</label>
                             <input
                                 name="email"
                                 type="email"
                                 value={this.state.email}
-                                className="profile-page__field-input"
+                                className="profile-section__field-input"
                                 onChange={this.onEmailFieldChange}
                             />
                         </div>
-                        <div className="profile-page__field">
-                            <label className="profile-page__field-title">Birthdate</label>
+                        <div className="profile-section__field">
+                            <label className="profile-section__field-title">Birthdate</label>
                             <input
                                 name="birthdate"
                                 type="date"
                                 value={this.state.birthdate}
-                                className="profile-page__field-input"
+                                className="profile-section__field-input"
                                 onChange={this.onBirthdateFieldChange}
                             />
                         </div>
                         {
                             this.getValidationResultField()
                         }
-                        <input type="submit" className="profile-page__save-button" onClick={this.onSaveClick} value="Save" />
-                        <input type="reset" className="profile-page__close-button" onClick={this.onCloseClick} value="Close" />
+                        <input type="submit" className="profile-section__save-button" onClick={this.onSaveClick} value="Save" />
+                        <input type="reset" className="profile-section__close-button" onClick={this.onCloseClick} value="Close" />
+                        <UserPreferenceSection />
                     </div>
                 </form>
             </section>
@@ -177,6 +179,6 @@ class ProfilePage extends React.PureComponent {
     }
 }
 
-ProfilePage.contextType = UserContext;
+ProfileSection.contextType = UserContext;
 
-export default withRouter(ProfilePage);
+export default withRouter(ProfileSection);

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace DataAccess.Models
 {
@@ -10,6 +9,7 @@ namespace DataAccess.Models
     {
         public int Id { get; set; }
         public int BeerId { get; set; }
+        public string UserId { get; set; }
         public DateTime DateTime { get; set; }
         public string Location { get; set; }
         public string Name { get; set; }

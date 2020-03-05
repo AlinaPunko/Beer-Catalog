@@ -4,14 +4,16 @@ using DataAccess.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20200304132334_AddedBrewUserForeignKey")]
+    partial class AddedBrewUserForeignKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -332,19 +334,6 @@ namespace DataAccess.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("DataAccess.Models.UserPreference", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("PreferencedBeerType")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("UserId", "PreferencedBeerType");
-
-                    b.ToTable("UserPreference");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -549,15 +538,6 @@ namespace DataAccess.Migrations
                     b.HasOne("DataAccess.Models.Brew", "Brew")
                         .WithMany("Photos")
                         .HasForeignKey("BrewId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("DataAccess.Models.UserPreference", b =>
-                {
-                    b.HasOne("DataAccess.Models.User", "User")
-                        .WithMany("Preferences")
-                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

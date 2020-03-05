@@ -4,14 +4,15 @@ using DataAccess.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20200305092718_AddedPreferenceEntity")]
+    partial class AddedPreferenceEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -337,10 +338,10 @@ namespace DataAccess.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("PreferencedBeerType")
+                    b.Property<string>("Preference")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("UserId", "PreferencedBeerType");
+                    b.HasKey("UserId", "Preference");
 
                     b.ToTable("UserPreference");
                 });

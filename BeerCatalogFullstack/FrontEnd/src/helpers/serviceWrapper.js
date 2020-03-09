@@ -3,8 +3,8 @@ async function callService(service, data, errorRef) {
     if (result instanceof Error) {
         errorRef.current.innerHTML = '';
         if (Array.isArray(result.message)) {
-            result.message.forEach((element) => {
-                errorRef.current.innerHTML += `${element}</br>`;
+            result.message.forEach((message) => {
+                errorRef.current.innerHTML += `${message}</br>`;
             });
             return;
         }

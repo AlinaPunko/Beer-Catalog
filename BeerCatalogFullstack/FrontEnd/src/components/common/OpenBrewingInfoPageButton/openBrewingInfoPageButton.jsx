@@ -13,6 +13,8 @@ export default class OpenBrewingInfoPageButton extends React.PureComponent {
         brewId: PropTypes.number.isRequired
     }
 
+    static contextType = UserContext;
+
     render() {
         const { brewId } = this.props;
         return (
@@ -29,5 +31,3 @@ export default class OpenBrewingInfoPageButton extends React.PureComponent {
         );
     }
 }
-
-OpenBrewingInfoPageButton.contextType = UserContext;

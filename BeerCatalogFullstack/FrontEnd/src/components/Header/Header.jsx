@@ -10,19 +10,19 @@ import more from 'styles/icons/more.svg';
 
 export default class Header extends React.PureComponent {
     static propTypes = {
-        openSideMenuFunction: PropTypes.func.isRequired,
-        toggleAccountMenuFunction: PropTypes.func.isRequired
+        openSideMenu: PropTypes.func.isRequired,
+        toggleAccountMenu: PropTypes.func.isRequired
     };
 
     render() {
-        const { openSideMenuFunction, toggleAccountMenuFunction } = this.props;
+        const { openSideMenu, toggleAccountMenu } = this.props;
         return (
             <header className="header">
-                <button type="button" className="header__button" onClick={openSideMenuFunction}>
+                <button type="button" className="header__button" onClick={openSideMenu}>
                     <Icon icon={menu} iconClassName="header__button-icon" />
                 </button>
                 <span className="header__title">Beer catalog</span>
-                <button type="button" className="header__button" onClick={toggleAccountMenuFunction}>
+                <button type="button" className="header__button" onClick={toggleAccountMenu}>
                     <Icon icon={more} iconClassName="header__button-icon" />
                 </button>
             </header>

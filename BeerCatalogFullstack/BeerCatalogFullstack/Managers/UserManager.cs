@@ -1,11 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using DataAccess.Repositories;
-using DataAccess.ViewModels;
-using Microsoft.AspNetCore.Identity;
 
 namespace BeerCatalogFullstack.Managers
 {
@@ -20,21 +16,31 @@ namespace BeerCatalogFullstack.Managers
 
         public UserViewModel GetUserById(string userId)
         {
-            return repository.GetUserById(userId);
+            User user = repository.GetUserById(userId);
+            UserViewModel viewModel = new UserViewModel
+            {
+                Id = user.Id,
+                Email = user.Email,
+                Name = user.Name,
+                Birthdate = user.Birthdate,
+                Photo = user.Photo
+            };
+            return viewModel;
         }
 
         public async Task UpdateUserAsync(UpdateUserViewModel viewModel)
         {
-            var userViewModel = new UserViewModel
+            var user = new User
             {
                 Id = viewModel.Id,
                 Email = viewModel.Email,
+                UserName = viewModel.Email,
                 Name = viewModel.Name,
                 Birthdate = viewModel.Birthdate,
                 Photo = viewModel.Photo
             };
 
-            await repository.UpdateUserAsync(userViewModel);
+            await repository.UpdateUserAsync(user);
         }
     }
 }

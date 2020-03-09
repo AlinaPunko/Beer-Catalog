@@ -18,8 +18,11 @@ class BeersList extends React.PureComponent {
         addBeers: PropTypes.func.isRequired
     };
 
+    static contextType = UserContext;
+
     constructor(props, context) {
         super(props, context);
+
         this.beerPerPage = 12;
         this.state = {
             page: 1,
@@ -44,6 +47,7 @@ class BeersList extends React.PureComponent {
         if (this.context.userId === '') {
             return;
         }
+
         const favoriteBeers = await favoritesService.getItems(this.context.userId);
         this.context.setFavoriteBeers(favoriteBeers);
     }
@@ -97,5 +101,4 @@ class BeersList extends React.PureComponent {
     }
 }
 
-BeersList.contextType = UserContext;
 export default connect()(BeersList);

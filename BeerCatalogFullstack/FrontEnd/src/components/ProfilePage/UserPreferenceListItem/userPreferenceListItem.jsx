@@ -13,7 +13,9 @@ export default class UserPreferenceListItem extends React.PureComponent {
         deletePreference: PropTypes.func.isRequired
     }
 
-    onDelete = () => {
+    static contextType = UserContext;
+
+    deletePreference = () => {
         const item = {
             userId: this.context.userId,
             preferencedBeerType: this.props.preferencedBeerType
@@ -25,12 +27,10 @@ export default class UserPreferenceListItem extends React.PureComponent {
         return (
             <li className="user-preference-list-item">
                 {this.props.preferencedBeerType}
-                <button type="button" className="user-preference-list-item__delete-button" onClick={this.onDelete}>
+                <button type="button" className="user-preference-list-item__delete-button" onClick={this.deletePreference}>
                     <Icon icon={minus} iconClassName="user-preference-list-item__delete-button-icon" />
                 </button>
             </li>
         );
     }
 }
-
-UserPreferenceListItem.contextType = UserContext;

@@ -2,7 +2,6 @@
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using DataAccess.Repositories;
-using DataAccess.ViewModels;
 
 namespace BeerCatalogFullstack.Managers
 {
@@ -19,9 +18,10 @@ namespace BeerCatalogFullstack.Managers
 
         public async Task<string> Register(RegisterViewModel viewModel)
         {
-            UserViewModel model = new UserViewModel
+            User model = new User
             {
                 Email = viewModel.Email,
+                UserName = viewModel.Email,
                 Name = viewModel.Name,
                 Birthdate = viewModel.Birthdate,
                 Photo = viewModel.Photo

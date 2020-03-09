@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Threading.Tasks;
 using DataAccess.Models;
-using DataAccess.ViewModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace DataAccess.Repositories

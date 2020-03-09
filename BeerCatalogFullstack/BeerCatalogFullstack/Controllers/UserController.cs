@@ -2,9 +2,6 @@
 using System.Threading.Tasks;
 using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
-using DataAccess.Models;
-using DataAccess.ViewModels;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BeerCatalogFullstack.Controllers

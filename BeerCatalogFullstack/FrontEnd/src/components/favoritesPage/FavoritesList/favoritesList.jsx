@@ -9,6 +9,8 @@ import PagingPanel from 'components/common/PagingPanel/pagingPanel';
 import './favoritesList.scss';
 
 export default class FavoritesList extends React.PureComponent {
+    static contextType = UserContext;
+
     constructor(props) {
         super(props);
         this.state = {
@@ -25,7 +27,7 @@ export default class FavoritesList extends React.PureComponent {
         Promise.all(beers).then((beersArray) => this.setState({ Beers: beersArray }));
     }
 
-    onPageNumberClick = (event) => {
+    selectPage = (event) => {
         if (this.state.currentPage !== Number(event.target.id)) {
             this.setState({
                 currentPage: Number(event.target.id)
@@ -33,7 +35,7 @@ export default class FavoritesList extends React.PureComponent {
         }
     }
 
-    onDelete = async (item) => {
+    deleteItem = async (item) => {
         const { Beers } = this.state;
 
         await favoritesServices.deleteItem(this.context.userId, item);
@@ -48,9 +50,7 @@ export default class FavoritesList extends React.PureComponent {
         );
 
         Beers.splice(Beers.indexOf(deletedBeer), 1);
-        this.setState({
-            Beers
-        });
+        this.setState({ Beers });
     }
 
     renderBeers(currentBeers) {
@@ -69,10 +69,12 @@ export default class FavoritesList extends React.PureComponent {
         if (currentPage > 1) {
             pageNumbers.push(currentPage - 1);
         }
+
         pageNumbers.push(currentPage);
         if (currentPage < Math.ceil(Beers.length / 5)) {
             pageNumbers.push(currentPage + 1);
         }
+
         return (
             <div className="favorite-list">
                 <div className="favorite-list__title">Your favorite beers</div>
@@ -83,7 +85,7 @@ export default class FavoritesList extends React.PureComponent {
                             && (
                                 <PagingPanel
                                     pageNumbers={pageNumbers}
-                                    onPageNumberClick={this.onPageNumberClick}
+                                    selectPage={this.selectPage}
                                     collectionLength={this.state.Beers.length}
                                 />
                             )
@@ -93,5 +95,3 @@ export default class FavoritesList extends React.PureComponent {
         );
     }
 }
-
-FavoritesList.contextType = UserContext;

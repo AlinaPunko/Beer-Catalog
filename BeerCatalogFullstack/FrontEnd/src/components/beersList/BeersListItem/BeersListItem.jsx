@@ -21,6 +21,8 @@ export default class BeersListItem extends React.PureComponent {
         }).isRequired
     };
 
+    static contextType = UserContext;
+
     constructor(props, context) {
         super(props, context);
         this.state = { isFavorite: favoriteItemHelper.isFavorite(this.props.beer, this.context.favoriteBeers) };
@@ -50,4 +52,3 @@ export default class BeersListItem extends React.PureComponent {
         );
     }
 }
-BeersListItem.contextType = UserContext;

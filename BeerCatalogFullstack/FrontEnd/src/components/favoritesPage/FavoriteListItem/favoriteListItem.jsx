@@ -14,12 +14,12 @@ export default class FavoriteListItem extends React.PureComponent {
             name: PropTypes.string.isRequired,
             description: PropTypes.string.isRequired
         }).isRequired,
-        onDelete: PropTypes.func.isRequired
+        deleteItem: PropTypes.func.isRequired
     };
 
-    onDelete = () => {
-        const { onDelete } = this.props;
-        onDelete(this.props.beer);
+    deleteItem = () => {
+        const { deleteItem } = this.props;
+        deleteItem(this.props.beer);
     }
 
     render() {

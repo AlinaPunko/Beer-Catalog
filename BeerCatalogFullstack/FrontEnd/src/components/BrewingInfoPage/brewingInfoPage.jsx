@@ -6,7 +6,7 @@ import { UserContext } from 'store/context/userContext';
 import BrewingIngredients from 'components/common/BrewingIngredients/brewingIngredients';
 import BrewingMethods from 'components/common/BrewingMethods/brewingMethods';
 import beerService from 'services/beerService';
-import serviceWrapper from 'wrappers/serviceWrapper';
+import serviceWrapper from 'helpers/serviceWrapper';
 import brewingService from 'services/brewingService';
 import ImagesSlider from 'components/common/ImagesSlider/imagesSlider';
 
@@ -35,6 +35,8 @@ class BrewingInfoPage extends React.PureComponent {
         }).isRequired
     }
 
+    static contextType = UserContext;
+
     constructor(props) {
         super(props);
         const today = new Date();
@@ -57,25 +59,25 @@ class BrewingInfoPage extends React.PureComponent {
         this.setState({ beerInfo: result });
     }
 
-    onLocationChange = (e) => {
+    changeLocation = (e) => {
         this.setState({
             location: e.target.value
         });
     }
 
-    onImpressionChange = (e) => {
+    changeImpression = (e) => {
         this.setState({
             impression: e.target.value
         });
     }
 
-    onBrewTypeChange = (e) => {
+    changeBrewType = (e) => {
         this.setState({
             brewType: e.target.value
         });
     }
 
-    onSaveButtonClick = async (e) => {
+    save = async (e) => {
         e.preventDefault();
         const brew = {
             userId: this.context.userId,
@@ -91,12 +93,12 @@ class BrewingInfoPage extends React.PureComponent {
         await serviceWrapper.callService(brewingService.add, brew, null);
     }
 
-    onResetButtonClick = (e) => {
+    close = (e) => {
         e.preventDefault();
         this.props.history.push('/');
     }
 
-    onAddPhotoClick = () => {
+    addPhoto = () => {
         const input = document.createElement('input');
         input.type = 'file';
         input.accept = 'image/x-png,image/gif,image/jpeg';
@@ -143,7 +145,7 @@ class BrewingInfoPage extends React.PureComponent {
                             type="text"
                             value={location}
                             className="brewing-info-page__field-input"
-                            onChange={this.onLocationChange}
+                            onChange={this.changeLocation}
                         />
                     </div>
                     <div className="brewing-info-page__field">
@@ -171,7 +173,7 @@ class BrewingInfoPage extends React.PureComponent {
                         <input
                             name="brewType"
                             type="text"
-                            onChange={this.onBrewTypeChange}
+                            onChange={this.changeBrewType}
                             value={brewType}
                             className="brewing-info-page__field-input"
                         />
@@ -183,7 +185,7 @@ class BrewingInfoPage extends React.PureComponent {
                             type="text"
                             value={impression}
                             className="brewing-info-page__field-input"
-                            onChange={this.onImpressionChange}
+                            onChange={this.changeImpression}
                         />
                     </div>
                     <button className="brewing-info-page__add-image-button" type="button" onClick={this.onAddPhotoClick}>
@@ -195,8 +197,8 @@ class BrewingInfoPage extends React.PureComponent {
                         <BrewingMethods method={beerInfo.method} />
                     </div>
                     <div className="brewing-info-page__buttons">
-                        <input type="submit" onClick={this.onSaveButtonClick} value="Save" className="brewing-info-page__save-button" />
-                        <input type="reset" onClick={this.onResetButtonClick} value="Close" className="brewing-info-page__reset-button" />
+                        <input type="submit" onClick={this.save} value="Save" className="brewing-info-page__save-button" />
+                        <input type="reset" onClick={this.close} value="Close" className="brewing-info-page__reset-button" />
                     </div>
                 </form>
             </section>
@@ -204,5 +206,4 @@ class BrewingInfoPage extends React.PureComponent {
     }
 }
 
-BrewingInfoPage.contextType = UserContext;
 export default withRouter(BrewingInfoPage);

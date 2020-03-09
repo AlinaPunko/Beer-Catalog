@@ -1,5 +1,11 @@
 $trasitionDuration: 1s;
 
+.account-menu {
+    position: absolute;
+    top: 48px;
+    right: 0;
+}
+
 .account-menu--opened {
     width: 200px;
     height: fit-content;
@@ -7,25 +13,17 @@ $trasitionDuration: 1s;
     border-bottom: 1px #808080 solid;
     border-left: 1px #808080 solid;
     visibility: visible;
-    transition-duration: $trasitionDuration;
-    transition-property: width, visibility;
+    transition: width, visibility, $trasitionDuration;
 }
 
 .account-menu--closed {
     width: 0;
     visibility: hidden;
-    transition-duration: $trasitionDuration;
-    transition-property: width, visibility;
+    transition: width, visibility, $trasitionDuration;
 
     .account-menu__links {
         padding-left: 0;
     }
-}
-
-.account-menu {
-    position: absolute;
-    top: 48px;
-    right: 0;
 }
 
 .account-menu__links {

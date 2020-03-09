@@ -2,7 +2,6 @@
 using System.Linq;
 using DataAccess.Core;
 using DataAccess.Models;
-using Microsoft.EntityFrameworkCore.Migrations.Operations;
 
 namespace DataAccess.Repositories
 {

@@ -4,7 +4,7 @@ import Icon from 'components/common/Icon/icon';
 import preferenceService from 'services/preferenceService';
 import { UserContext } from 'store/context/userContext';
 import UserPreferenceListItem from 'components/profilePage/UserPreferenceListItem/userPreferenceListItem';
-import serviceWrapper from 'wrappers/serviceWrapper';
+import serviceWrapper from 'helpers/serviceWrapper';
 
 import plus from 'styles/icons/plus.svg';
 import './userPreferenceSection.scss';
@@ -20,11 +20,13 @@ export default class UserPreferenceSection extends React.PureComponent {
         };
     }
 
+    static contextType = UserContext;
+
     async componentDidMount() {
         this.loadUserPreferences();
     }
 
-    onPreferenceFieldInput = async (e) => {
+    changePreference = async (e) => {
         const { value } = e.target;
         this.setState({ currentPreference: e.target.value });
 
@@ -69,7 +71,7 @@ export default class UserPreferenceSection extends React.PureComponent {
         return preferences;
     }
 
-    onSuggestedItemClick = (e) => {
+    selectSuggectedPreference = (e) => {
         this.setState({
             currentPreference: e.target.innerHTML
         });
@@ -78,7 +80,7 @@ export default class UserPreferenceSection extends React.PureComponent {
     renderSuggestedBeerTypes = () => {
         return this.state.suitableBeerTypes.map((item, index) => {
             return (
-                <li key={index} className="user-preference-section__autocompletion-results-item" onClick={this.onSuggestedItemClick}> {item} </li>
+                <li key={index} className="user-preference-section__autocompletion-results-item" onClick={this.selectSuggectedPreference}> {item} </li>
             );
         });
     }
@@ -99,7 +101,7 @@ export default class UserPreferenceSection extends React.PureComponent {
                             type="text"
                             name="preference"
                             value={this.state.currentPreference}
-                            onChange={this.onPreferenceFieldInput}
+                            onChange={this.changePreference}
                             className="user-preference-section__field-input"
                         />
                         <ul className="user-preference-section__autocompletion-results">{this.renderSuggestedBeerTypes()}</ul>
@@ -115,5 +117,3 @@ export default class UserPreferenceSection extends React.PureComponent {
         );
     }
 }
-
-UserPreferenceSection.contextType = UserContext;

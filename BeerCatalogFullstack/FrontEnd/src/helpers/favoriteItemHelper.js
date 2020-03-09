@@ -1,10 +1,6 @@
 function isFavorite(beer, favoriteBeers) {
-    if (favoriteBeers.length === 0) {
-        return false;
-    }
-    return !!favoriteBeers.find(
-        (element) => element === beer.id
-    );
+    const isInFavoriteBeers = (element) => element === beer.id;
+    return favoriteBeers.some(isInFavoriteBeers);
 }
 
 export default { isFavorite };

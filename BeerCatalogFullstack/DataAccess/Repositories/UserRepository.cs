@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Models;
-using DataAccess.ViewModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace DataAccess.Repositories
@@ -18,7 +15,7 @@ namespace DataAccess.Repositories
             this.userManager = userManager;
         }
 
-        public UserViewModel GetUserById(string id)
+        public User GetUserById(string id)
         {
             User user = userManager.Users.FirstOrDefault(u => u.Id == id);
 
@@ -27,18 +24,10 @@ namespace DataAccess.Repositories
                 throw new ArgumentException("No such user");
             }
 
-            var userViewModel = new UserViewModel
-            {
-                Name = user.Name,
-                Email = user.Email,
-                Photo = user.Photo,
-                Birthdate = user.Birthdate
-            };
-
-            return userViewModel;
+            return user;
         }
 
-        public async Task UpdateUserAsync(UserViewModel model)
+        public async Task UpdateUserAsync(User model)
         {
             User user = userManager
                 .Users

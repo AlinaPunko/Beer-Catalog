@@ -3,10 +3,12 @@ import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
 import PropTypes from 'prop-types';
 
+import FormRow from 'components/common/FormRow/formRow';
+import SelectPhotoField from 'components/common/SelectPhotoField/selectPhotoField';
 import UserPreferenceSection from 'components/profilePage/UserPreferenceSection/userPreferenceSection';
 import profileValidationConfig from 'validationConfigs/profileValidationConfig';
 import userService from 'services/userService';
-import serviceWrapper from 'wrappers/serviceWrapper';
+import serviceWrapper from 'helpers/serviceWrapper';
 import { UserContext } from 'store/context/userContext';
 
 import './profileSection.scss';
@@ -25,6 +27,8 @@ class ProfileSection extends React.PureComponent {
             push: PropTypes.func.isRequired
         }).isRequired
     }
+
+    static contextType = UserContext;
 
     constructor(props) {
         super(props);
@@ -49,23 +53,23 @@ class ProfileSection extends React.PureComponent {
         });
     }
 
-    deletePhotoClick = () => {
+    deletePhoto = () => {
         this.setState({ photo: '' });
     }
 
-    onNameFieldChange = (e) => {
+    changeName = (e) => {
         this.setState({ name: e.target.value });
     }
 
-    onEmailFieldChange = (e) => {
+    changeEmail = (e) => {
         this.setState({ email: e.target.value });
     }
 
-    onBirthdateFieldChange = (e) => {
+    changeBirthdate = (e) => {
         this.setState({ birthdate: e.target.value.slice(1, 10) });
     }
 
-    onAddPhotoClick = () => {
+    changePhoto = () => {
         const input = document.createElement('input');
         input.type = 'file';
         input.accept = 'image/x-png,image/gif,image/jpeg';
@@ -84,32 +88,36 @@ class ProfileSection extends React.PureComponent {
         input.click();
     }
 
-    onSaveClick = async (e) => {
+    save = async (e) => {
         e.preventDefault();
         if (this.validator.allValid()) {
             const userData = { ...this.state };
             await serviceWrapper.callService(userService.updateUser, userData, this.errorFieldRef);
             alert('The user was updated');
-            this.props.history.push('/');
+            this.redirectToHomePage();
         } else {
             this.validator.showMessages();
             this.forceUpdate();
         }
     }
 
+    redirectToHomePage = () => {
+        this.props.history.push('/');
+    }
+
     onCloseClick = (e) => {
         e.preventDefault();
-        this.props.history.push('/');
+        this.redirectToHomePage();
     }
 
     getValidationResultField = () => {
         return (
             <div className="profile-section__validation-result" ref={this.errorFieldRef}>
                 {
-                    this.validator.message('Email', this.state.email, profileValidationConfig.email.rule)
+                    this.validator.message(profileValidationConfig.email.fieldName, this.state.email, profileValidationConfig.email.rule)
                 }
                 {
-                    this.validator.message('Name', this.state.name, profileValidationConfig.name.rule)
+                    this.validator.message(profileValidationConfig.name.fieldName, this.state.name, profileValidationConfig.name.rule)
                 }
             </div>
         );
@@ -123,54 +131,31 @@ class ProfileSection extends React.PureComponent {
                     <div className="profile-section__image-block">
                         <img
                             className="profile-section__user-image"
-                            alt=""
+                            alt="User"
                             src={this.state.photo}
                         />
                         <div>
-                            <button className="profile-section__add-image-button" type="button" onClick={this.onAddPhotoClick}>
-                                Add image
-                            </button>
-                            <button className="profile-section__delete-image-button" type="button" onClick={this.deletePhotoClick}>
+                            <SelectPhotoField onChange={this.changePhoto} />
+                            <button className="profile-section__button" type="button" onClick={this.deletePhoto}>
                                 Delete image
                             </button>
                         </div>
                     </div>
                     <div className="profile-section__user-info">
-                        <div className="profile-section__field">
-                            <label className="profile-section__field-title">Name</label>
-                            <input
-                                name="name"
-                                type="text"
-                                value={this.state.name}
-                                className="profile-section__field-input"
-                                onChange={this.onNameFieldChange}
-                            />
-                        </div>
-                        <div className="profile-section__field">
-                            <label className="profile-section__field-title">E-mail</label>
-                            <input
-                                name="email"
-                                type="email"
-                                value={this.state.email}
-                                className="profile-section__field-input"
-                                onChange={this.onEmailFieldChange}
-                            />
-                        </div>
-                        <div className="profile-section__field">
-                            <label className="profile-section__field-title">Birthdate</label>
-                            <input
-                                name="birthdate"
-                                type="date"
-                                value={this.state.birthdate}
-                                className="profile-section__field-input"
-                                onChange={this.onBirthdateFieldChange}
-                            />
-                        </div>
+                        <FormRow name="name" type="text" label="Name:" onChange={this.changeName} value={this.state.name} />
+                        <FormRow name="email" type="email" label="E-mail:" onChange={this.changeEmail} value={this.state.email} />
+                        <FormRow
+                            name="birthdate"
+                            type="date"
+                            label="Select birthdate:"
+                            onChange={this.changeBirthdate}
+                            value={this.state.birthdate}
+                        />
                         {
                             this.getValidationResultField()
                         }
-                        <input type="submit" className="profile-section__save-button" onClick={this.onSaveClick} value="Save" />
-                        <input type="reset" className="profile-section__close-button" onClick={this.onCloseClick} value="Close" />
+                        <input type="submit" className="profile-section__button" onClick={this.save} value="Save" />
+                        <input type="reset" className="profile-section__button" onClick={this.close} value="Close" />
                         <UserPreferenceSection />
                     </div>
                 </form>
@@ -178,7 +163,5 @@ class ProfileSection extends React.PureComponent {
         );
     }
 }
-
-ProfileSection.contextType = UserContext;
 
 export default withRouter(ProfileSection);

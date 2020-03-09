@@ -14,14 +14,13 @@ export default class ImagesSlider extends React.PureComponent {
 
     constructor(props) {
         super(props);
-        debugger;
         this.state = {
             currentImageIndex: 0,
             images: this.props.images
         };
     }
 
-    previousSlide = () => {
+    setPreviousSlide = () => {
         const lastIndex = this.state.images.length - 1;
         const { currentImageIndex } = this.state;
         const shouldResetIndex = currentImageIndex === 0;
@@ -32,7 +31,7 @@ export default class ImagesSlider extends React.PureComponent {
         });
     }
 
-    nextSlide = () => {
+    setNextSlide = () => {
         const lastIndex = this.state.images.length - 1;
         const { currentImageIndex } = this.state;
         const shouldResetIndex = currentImageIndex === lastIndex;
@@ -50,11 +49,11 @@ export default class ImagesSlider extends React.PureComponent {
         }
         return (
             <div className="images-slider">
-                <button type="button" className="images-slider__button" onClick={this.previousSlide}>
+                <button type="button" className="images-slider__button" onClick={this.setPreviousSlide}>
                     <Icon icon={left} iconClassName="images-slider__button-icon" />
                 </button>
-                <img src={images[currentImageIndex]} alt="" className="images-slider__image" />
-                <button type="button" className="images-slider__button" onClick={this.nextSlide}>
+                <img src={images[currentImageIndex]} alt="Image_item" className="images-slider__image" />
+                <button type="button" className="images-slider__button" onClick={this.setNextSlide}>
                     <Icon icon={right} iconClassName="images-slider__button-icon" />
                 </button>
             </div>

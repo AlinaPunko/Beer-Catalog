@@ -19,12 +19,14 @@ export default class BeerDetailsHeader extends React.Component {
         }).isRequired
     };
 
+    static contextType = UserContext;
+
     constructor(props, context) {
         super(props, context);
         this.state = { isFavorite: favoriteItemHelper.isFavorite(this.props.beer, this.context.favoriteBeers) };
     }
 
-    onFavoriteButtonClick = () => {
+    toggleFavoriteButton = () => {
         const { beer } = this.props;
 
         this.state.isFavorite
@@ -49,5 +51,3 @@ export default class BeerDetailsHeader extends React.Component {
         );
     }
 }
-
-BeerDetailsHeader.contextType = UserContext;

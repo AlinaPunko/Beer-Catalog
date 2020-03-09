@@ -35,6 +35,7 @@
       "comma-style":["error", "last"],
       "max-len": ["error", {"code": 150}],
       "react/no-array-index-key":0,
+      "react/sort-comp": 0,
       "react/jsx-one-expression-per-line": 0,
       "consistent-return": 0,
       "react/no-unescaped-entities": 0,

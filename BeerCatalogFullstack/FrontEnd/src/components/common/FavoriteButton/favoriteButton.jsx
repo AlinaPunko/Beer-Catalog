@@ -20,6 +20,8 @@ export default class FavoriteButton extends React.PureComponent {
         className: PropTypes.string.isRequired
     }
 
+    static contextType = UserContext;
+
     constructor(props, context) {
         super(props, context);
         this.state = { isFavorite: favoriteItemHelper.isFavorite(this.props.beer, this.context.favoriteBeers) };
@@ -52,5 +54,3 @@ export default class FavoriteButton extends React.PureComponent {
         );
     }
 }
-
-FavoriteButton.contextType = UserContext;

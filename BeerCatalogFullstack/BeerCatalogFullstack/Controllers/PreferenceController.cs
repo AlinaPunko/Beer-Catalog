@@ -1,4 +1,5 @@
-﻿using BeerCatalogFullstack.Managers;
+﻿using System.Collections.Generic;
+using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,7 +26,8 @@ namespace BeerCatalogFullstack.Controllers
         [HttpGet]
         public IActionResult Get(string userId)
         {
-            return Json(manager.GetUserPreferences(userId));
+            IReadOnlyList <string> userPreferences = manager.GetUserPreferences(userId);
+            return Json(userPreferences);
         }
 
         [HttpPost]
@@ -37,6 +39,7 @@ namespace BeerCatalogFullstack.Controllers
 
         public IActionResult GetAutocompletionValues(string input)
         {
+
             return Json(manager.GetSuitablePreferences(input));
         }
     }

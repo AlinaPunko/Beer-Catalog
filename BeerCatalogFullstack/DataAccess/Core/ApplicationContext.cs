@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 
 namespace DataAccess.Core
 {
-    public sealed class ApplicationContext : IdentityDbContext<User>, IDataContext
+    public sealed class ApplicationContext : IdentityDbContext<User>
     {
         public DbSet<Beer> Beers { get; set; }
         public DbSet<Brew> Brews { get; set; }
@@ -17,10 +17,10 @@ namespace DataAccess.Core
 
         public ApplicationContext(DbContextOptions options) : base(options)
         {
-            //if (!Database.CanConnect())
-            //{
-            //    Database.Migrate();
-            //}
+            if (!Database.CanConnect())
+            {
+                Database.Migrate();
+            }
         }
 
         private IDbContextTransaction transaction;

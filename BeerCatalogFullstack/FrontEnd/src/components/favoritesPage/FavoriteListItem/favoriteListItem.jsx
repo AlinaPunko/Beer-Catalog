@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import OpenDetailsPageButton from 'components/common/OpenDetailsPageButton/openDetailsPageButton';
 
-import './favouriteListItem.scss';
+import './favoriteListItem.scss';
 
-export default class FavouriteListItem extends React.PureComponent {
+export default class FavoriteListItem extends React.PureComponent {
     static propTypes = {
         beer: PropTypes.shape({
             id: PropTypes.number.isRequired,
@@ -25,15 +25,15 @@ export default class FavouriteListItem extends React.PureComponent {
     render() {
         const { beer } = this.props;
         return (
-            <div className="favourite-list-item">
+            <div className="favorite-list-item">
                 <div>
-                    <div className="favourite-list-item__title">{beer.name}</div>
-                    <div className="favourite-list-item__tagline">{beer.tagline}</div>
-                    <div className="favourite-list-item__description">{beer.description}</div>
-                    <OpenDetailsPageButton beerId={beer.id} className="favourite-list-item__open-details-page-button" />
-                    <button type="button" className="favourite-list-item__remove-favourite-button" onClick={this.onDelete}>Remove favourite</button>
+                    <div className="favorite-list-item__title">{beer.name}</div>
+                    <div className="favorite-list-item__tagline">{beer.tagline}</div>
+                    <div className="favorite-list-item__description">{beer.description}</div>
+                    <OpenDetailsPageButton beerId={beer.id} className="favorite-list-item__open-details-page-button" />
+                    <button type="button" className="favorite-list-item__remove-favorite-button" onClick={this.onDelete}>Remove favorite</button>
                 </div>
-                <img alt="Item_image" className="favourite-list-item__image" src={beer.imageUrl} />
+                <img alt="Item_image" className="favorite-list-item__image" src={beer.imageUrl} />
 
             </div>
         );

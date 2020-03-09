@@ -3,11 +3,11 @@ import React from 'react';
 import Icon from 'components/common/Icon/icon';
 import preferenceService from 'services/preferenceService';
 import { UserContext } from 'store/context/userContext';
+import UserPreferenceListItem from 'components/profilePage/UserPreferenceListItem/userPreferenceListItem';
 import serviceWrapper from 'wrappers/serviceWrapper';
 
 import plus from 'styles/icons/plus.svg';
 import './userPreferenceSection.scss';
-import UserPreferenceListItem from 'components/ProfilePage/UserPreferenceListItem/userPreferenceListItem';
 
 export default class UserPreferenceSection extends React.PureComponent {
     constructor(props) {

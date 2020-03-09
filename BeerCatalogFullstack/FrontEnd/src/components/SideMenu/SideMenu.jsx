@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from 'store/context/userContext';
 import SideMenuLink from 'components/SideMenuLink/sideMenuLink';
 
-import favourite from 'styles/icons/favourite.svg';
+import favorite from 'styles/icons/favorite.svg';
 import home from 'styles/icons/home.svg';
 import './sideMenu.scss';
 
@@ -37,8 +37,8 @@ export default class SideMenu extends React.PureComponent {
                             {userId !== ''
                                     && (
                                         <li>
-                                            <Link to="/favourites">
-                                                <SideMenuLink text="Favourite" icon={favourite} />
+                                            <Link to="/favorites">
+                                                <SideMenuLink text="Favorite" icon={favorite} />
                                             </Link>
                                         </li>
                                     )}

@@ -2,7 +2,7 @@ import React from 'react';
 
 export const UserContext = React.createContext({
     userId: '',
-    favouriteBeers: [],
+    favoriteBeers: [],
     setUserId: () => {},
-    setFavouriteBeers: () => []
+    setFavoriteBeers: () => []
 });

@@ -1,5 +1,7 @@
-﻿using BeerCatalogFullstack.Managers;
+﻿using System.Collections.Generic;
+using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
+using DataAccess.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BeerCatalogFullstack.Controllers
@@ -44,7 +46,8 @@ namespace BeerCatalogFullstack.Controllers
         [Route("Get")]
         public IActionResult GetByUserId(string userId)
         {
-            return Json(manager.GetUserBrews(userId));
+            IReadOnlyList<Brew> userBrews = manager.GetUserBrews(userId);
+            return Json(userBrews);
         }
     }
 }

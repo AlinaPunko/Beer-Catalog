@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
+using DataAccess.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,15 +13,15 @@ namespace BeerCatalogFullstack.Controllers
     {
         private readonly UserManager manager;
 
-        public UserController(UserManager<User> userManager)
+        public UserController(UserManager userManager)
         {
-            manager = new UserManager(userManager);
+            manager = userManager;
         }
 
         [HttpGet]
         public JsonResult Get(string id)
         {
-            User user = manager.GetUserById(id);
+            UserViewModel user = manager.GetUserById(id);
 
             return user == null ? Json(new ArgumentException("Incorrect user")) : Json(user);
         }

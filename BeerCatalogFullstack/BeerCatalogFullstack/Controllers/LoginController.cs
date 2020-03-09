@@ -17,14 +17,16 @@ namespace BeerCatalogFullstack.Controllers
         [HttpPost]
         public async Task<IActionResult> Register([FromBody]RegisterViewModel model)
         {
-            return Json(await manager.Register(model));
+            string userId = await manager.Register(model);
+            return Json(userId);
         }
 
 
         [HttpPost]
         public async Task<IActionResult> Login([FromBody]LoginViewModel model)
         {
-            return Json(await manager.Login(model));
+            string userId = await manager.Login(model);
+            return Json(userId);
         }
 
         [HttpGet]

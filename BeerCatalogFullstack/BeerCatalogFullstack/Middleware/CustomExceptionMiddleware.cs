@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using BeerCatalogFullstack.Exceptions;
+using DataAccess.Exceptions;
+using Microsoft.AspNetCore.Http;
 
 namespace BeerCatalogFullstack.Middleware
 {

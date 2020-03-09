@@ -2,13 +2,13 @@ import React from 'react';
 
 import { UserContext } from 'store/context/userContext';
 import beerServices from 'services/beerService';
-import favouritesServices from 'services/favouritesService';
-import FavouriteListItem from 'components/favouritesPage/FavouriteListItem/favouriteListItem';
+import favoritesServices from 'services/favoritesService';
+import FavoriteListItem from 'components/favoritesPage/FavoriteListItem/favoriteListItem';
 import PagingPanel from 'components/common/PagingPanel/pagingPanel';
 
-import './favouritesList.scss';
+import './favoritesList.scss';
 
-export default class FavouritesList extends React.PureComponent {
+export default class FavoritesList extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,7 +18,7 @@ export default class FavouritesList extends React.PureComponent {
     }
 
     async componentDidMount() {
-        const result = await favouritesServices.getItems(this.context.userId);
+        const result = await favoritesServices.getItems(this.context.userId);
         const beers = result.map(async (beerId) => {
             return beerServices.getByID(beerId);
         });
@@ -36,8 +36,8 @@ export default class FavouritesList extends React.PureComponent {
     onDelete = async (item) => {
         const { Beers } = this.state;
 
-        await favouritesServices.deleteItem(this.context.userId, item);
-        const result = await favouritesServices.getItems(this.context.userId);
+        await favoritesServices.deleteItem(this.context.userId, item);
+        const result = await favoritesServices.getItems(this.context.userId);
         const beers = result.map(async (beerId) => {
             return beerServices.getByID(beerId);
         });
@@ -54,7 +54,7 @@ export default class FavouritesList extends React.PureComponent {
     }
 
     renderBeers(currentBeers) {
-        return currentBeers.map((beer) => (<FavouriteListItem beer={beer} key={beer.id} onDelete={this.onDelete} />));
+        return currentBeers.map((beer) => (<FavoriteListItem beer={beer} key={beer.id} onDelete={this.onDelete} />));
     }
 
 
@@ -74,9 +74,9 @@ export default class FavouritesList extends React.PureComponent {
             pageNumbers.push(currentPage + 1);
         }
         return (
-            <div className="favourite-list">
-                <div className="favourite-list__title">Your favourite beers</div>
-                <div className="favourite-list__beers">
+            <div className="favorite-list">
+                <div className="favorite-list__title">Your favorite beers</div>
+                <div className="favorite-list__beers">
                     {this.renderBeers(currentBeers)}
                     {
                         this.state.Beers.length > 5
@@ -94,4 +94,4 @@ export default class FavouritesList extends React.PureComponent {
     }
 }
 
-FavouritesList.contextType = UserContext;
+FavoritesList.contextType = UserContext;

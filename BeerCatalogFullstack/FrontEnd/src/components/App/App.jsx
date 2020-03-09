@@ -17,9 +17,9 @@ export default class App extends React.PureComponent {
             }));
         };
 
-        this.setFavouriteBeers = (favouriteBeers) => {
+        this.setFavoriteBeers = (favoriteBeers) => {
             this.setState(() => ({
-                favouriteBeers
+                favoriteBeers
             }));
         };
 
@@ -27,8 +27,8 @@ export default class App extends React.PureComponent {
             showSideMenu: false,
             showAccountMenu: false,
             userId: '',
-            favouriteBeers: [],
-            setFavouriteBeers: this.setFavouriteBeers,
+            favoriteBeers: [],
+            setFavoriteBeers: this.setFavoriteBeers,
             setUserId: this.setUserId
         };
     }
@@ -58,7 +58,7 @@ export default class App extends React.PureComponent {
         return (
             <UserContext.Provider value={this.state}>
                 <Router>
-                    <div className="App">
+                    <div className="app">
                         <Header openSideMenuFunction={this.openSideMenu} toggleAccountMenuFunction={this.toggleAccountMenu} />
                         <SideMenu showMenu={this.state.showSideMenu} closeFunction={this.closeSideMenu} />
                         <AccountMenu showMenu={this.state.showAccountMenu} closeFunction={this.closeAccountMenu} />

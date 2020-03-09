@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import OpenBrewPageButton from 'components/common/OpenBrewPageButton/openBrewPageButton';
+// import OpenBrewPageButton from 'components/common/OpenBrewPageButton/openBrewPageButton';
 import Icon from 'components/common/Icon/icon';
 
 import minus from 'styles/icons/minus.svg';
@@ -32,7 +32,7 @@ export default class BrewsListItem extends React.PureComponent {
                     <div className="brews-list-item__title">{brew.name}</div>
                     <div className="brews-list-item__date">{brew.date}</div>
                     <div className="brews-list-item__location">{brew.location}</div>
-                    <OpenBrewPageButton brewId={beer.id} className="brews-list-item__open-brew-page-button" />
+                    {/* <OpenBrewPageButton brewId={beer.id} className="brews-list-item__open-brew-page-button" /> */}
                     <button type="button" className="brews-list-item__rating-button" onClick={decreaseRating}>
                         <Icon icon={minus} iconClassName="brews-list-item__rating-button-icon" />
                     </button>
@@ -40,7 +40,7 @@ export default class BrewsListItem extends React.PureComponent {
                         <Icon icon={plus} iconClassName="brews-list-item__rating-button-icon" />
                     </button>
                 </div>
-                <img alt="Item_image" className="favourite-list-item__image" src={beer.imageUrl} />
+                <img alt="Item_image" className="favorite-list-item__image" src={beer.imageUrl} />
 
             </div>
         );

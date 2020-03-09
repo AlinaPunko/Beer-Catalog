@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import { UserContext } from 'store/context/userContext';
 import OpenDetailsPageButton from 'components/common/OpenDetailsPageButton/openDetailsPageButton';
-import FavouriteButton from 'components/common/FavouriteButton/favouriteButton';
-import favouritesServices from 'services/favouritesService';
-import favouriteItemHelper from 'helpers/favouriteItemHelper';
+import OpenBrewingInfoPageButton from 'components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton';
+import FavoriteButton from 'components/common/FavoriteButton/favoriteButton';
+import favoritesServices from 'services/favoritesService';
+import favoriteItemHelper from 'helpers/favoriteItemHelper';
 
 import './beersListItem.scss';
-
 
 export default class BeersListItem extends React.PureComponent {
     static propTypes = {
@@ -23,14 +23,14 @@ export default class BeersListItem extends React.PureComponent {
 
     constructor(props, context) {
         super(props, context);
-        this.state = { isFavourite: favouriteItemHelper.isFavourite(this.props.beer, this.context.favouriteBeers) };
+        this.state = { isFavorite: favoriteItemHelper.isFavorite(this.props.beer, this.context.favoriteBeers) };
     }
 
-    toggleFavouriteState = () => {
-        this.state.isFavourite
-            ? favouritesServices.deleteItem(this.props.beer, this.context.userId)
-            : favouritesServices.add(this.props.beer, this.context.userId);
-        this.setState({ isFavourite: !this.state.isFavourite });
+    toggleFavoriteState = () => {
+        this.state.isFavorite
+            ? favoritesServices.deleteItem(this.props.beer, this.context.userId)
+            : favoritesServices.add(this.props.beer, this.context.userId);
+        this.setState({ isFavorite: !this.state.isFavorite });
     }
 
     render() {
@@ -43,7 +43,8 @@ export default class BeersListItem extends React.PureComponent {
                     <div className="beers-list-item__title">{beer.name}</div>
                     <div className="beers-list-item__tagline">{beer.tagline}</div>
                     <OpenDetailsPageButton beerId={beer.id} className="beers-list-item__open-details-page-button" />
-                    <FavouriteButton beer={beer} className="beers-list-item__favourite-button" />
+                    <FavoriteButton beer={beer} className="beers-list-item__favorite-button" />
+                    <OpenBrewingInfoPageButton brewId={beer.id} />
                 </div>
             </div>
         );

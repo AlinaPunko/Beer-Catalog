@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { UserContext } from 'store/context/userContext';
-import favouritesService from 'services/favouritesService';
+import favoritesService from 'services/favoritesService';
 import beerService from 'services/beerService';
 import BeersListItem from 'components/beersList/BeersListItem/beersListItem';
 import Icon from 'components/common/Icon/icon';
@@ -44,9 +44,8 @@ class BeersList extends React.PureComponent {
         if (this.context.userId === '') {
             return;
         }
-        debugger;
-        const favoriteBeers = await favouritesService.getItems(this.context.userId);
-        this.context.setFavouriteBeers(favoriteBeers);
+        const favoriteBeers = await favoritesService.getItems(this.context.userId);
+        this.context.setFavoriteBeers(favoriteBeers);
     }
 
     async loadBeers() {

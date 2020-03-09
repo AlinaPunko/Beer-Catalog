@@ -23,7 +23,7 @@ export default {
         getUserPreferences: (id) => `Preference/Get?userId=${id}`,
         getAutocompletionValues: (input) => `Preference/GetAutocompletionValues?input=${input}`
     },
-    brewUrls: {
+    brewingUrls: {
         addBrew: '/Brew/Add',
         deleteBrew: (id) => `/Brew/Delete?id=${id}`,
         updateBrew: '/Brew/Update',

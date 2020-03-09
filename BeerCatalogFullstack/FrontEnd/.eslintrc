@@ -38,6 +38,7 @@
       "react/jsx-one-expression-per-line": 0,
       "consistent-return": 0,
       "react/no-unescaped-entities": 0,
+      "react/void-dom-elements-no-children": 0,
       "react/no-unused-state": 0,
       "react/jsx-no-bind": [2, {
         "ignoreDOMComponents": false,

@@ -1,7 +1,8 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using BeerCatalogFullstack.Exceptions;
+using DataAccess.Exceptions;
 using DataAccess.Models;
+using DataAccess.ViewModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace DataAccess.Repositories
@@ -17,18 +18,27 @@ namespace DataAccess.Repositories
             this.signInManager = signInManager;
         }
 
-        public async Task<string> Register(User model, string password)
+        public async Task<string> Register(UserViewModel viewModel, string password)
         {
-            IdentityResult result = await userManager.CreateAsync(model, password);
+            var user = new User()
+            {
+                Email = viewModel.Email,
+                Name = viewModel.Name,
+                UserName = viewModel.Email,
+                Birthdate = viewModel.Birthdate,
+                Photo = viewModel.Photo
+            };
+
+            IdentityResult result = await userManager.CreateAsync(user, password);
             if (!result.Succeeded)
             {
                 throw new SignUpException(result.Errors.ToList());
             }
 
-            await signInManager.SignInAsync(model, false);
+            await signInManager.SignInAsync(user, false);
 
             return userManager.Users
-                .FirstOrDefault(u => u.Email == model.Email)?
+                .FirstOrDefault(u => u.Email == viewModel.Email)?
                 .Id;
         }
     }

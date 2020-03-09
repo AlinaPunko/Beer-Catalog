@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Icon from 'components/common/Icon/icon';
 
+import './imagesSlider.scss';
 import left from 'styles/icons/left.svg';
 import right from 'styles/icons/right.svg';
 
@@ -11,18 +12,21 @@ export default class ImagesSlider extends React.PureComponent {
         images: PropTypes.array.isRequired
     }
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        debugger;
         this.state = {
             currentImageIndex: 0,
             images: this.props.images
         };
     }
 
-    prevSlide = () => {
+    previousSlide = () => {
         const lastIndex = this.state.images.length - 1;
-        const resetIndex = this.state.currentImageIndex === 0;
-        const index = resetIndex ? lastIndex : this.state.currentImageIndex - 1;
+        const { currentImageIndex } = this.state;
+        const shouldResetIndex = currentImageIndex === 0;
+        const index = shouldResetIndex ? lastIndex : currentImageIndex - 1;
+
         this.setState({
             currentImageIndex: index
         });
@@ -30,26 +34,27 @@ export default class ImagesSlider extends React.PureComponent {
 
     nextSlide = () => {
         const lastIndex = this.state.images.length - 1;
-        const resetIndex = this.state.currentImageIndex === lastIndex;
-        const index = resetIndex ? 0 : this.state.currentImageIndex + 1;
+        const { currentImageIndex } = this.state;
+        const shouldResetIndex = currentImageIndex === lastIndex;
+        const index = shouldResetIndex ? 0 : currentImageIndex + 1;
+
         this.setState({
             currentImageIndex: index
         });
     }
 
     render() {
-        const index = this.state.currentImageIndex;
-        let firstFiveImages = this.state.images.slice(index, index + 5);
-        if (firstFiveImages.length < 5) {
-            firstFiveImages = firstFiveImages.concat(this.state.images.slice(0, 5 - firstFiveImages.length));
+        const { images, currentImageIndex } = this.state;
+        if (images.length === 0) {
+            return null;
         }
         return (
-            <div className="imagse-slider">
-                <button type="button" className="images-slider__button" onClick={toggleAccountMenuFunction}>
+            <div className="images-slider">
+                <button type="button" className="images-slider__button" onClick={this.previousSlide}>
                     <Icon icon={left} iconClassName="images-slider__button-icon" />
                 </button>
-                {firstFiveImages.map((image, imageIndex) => <img key={imageIndex} src={image} alt="" />)}
-                <button type="button" className="images-slider__button" onClick={toggleAccountMenuFunction}>
+                <img src={images[currentImageIndex]} alt="" className="images-slider__image" />
+                <button type="button" className="images-slider__button" onClick={this.nextSlide}>
                     <Icon icon={right} iconClassName="images-slider__button-icon" />
                 </button>
             </div>

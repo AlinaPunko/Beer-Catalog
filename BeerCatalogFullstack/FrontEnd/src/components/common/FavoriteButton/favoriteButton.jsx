@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { UserContext } from 'store/context/userContext';
-import favouritesServices from 'services/favouritesService';
-import favouriteItemHelper from 'helpers/favouriteItemHelper';
+import favoritesServices from 'services/favoritesService';
+import favoriteItemHelper from 'helpers/favoriteItemHelper';
 
-import './favouriteButton.scss';
+import './favoriteButton.scss';
 
-export default class FavouriteButton extends React.PureComponent {
+export default class FavoriteButton extends React.PureComponent {
     static propTypes = {
         beer: PropTypes.shape({
             id: PropTypes.number.isRequired,
@@ -22,18 +22,18 @@ export default class FavouriteButton extends React.PureComponent {
 
     constructor(props, context) {
         super(props, context);
-        this.state = { isFavourite: favouriteItemHelper.isFavourite(this.props.beer, this.context.favouriteBeers) };
+        this.state = { isFavorite: favoriteItemHelper.isFavorite(this.props.beer, this.context.favoriteBeers) };
     }
 
-    toggleFavouriteState = () => {
-        this.state.isFavourite
-            ? favouritesServices.deleteItem(this.context.userId, this.props.beer)
-            : favouritesServices.add(this.context.userId, this.props.beer);
-        this.setState({ isFavourite: !this.state.isFavourite });
+    toggleFavoriteState = () => {
+        this.state.isFavorite
+            ? favoritesServices.deleteItem(this.context.userId, this.props.beer)
+            : favoritesServices.add(this.context.userId, this.props.beer);
+        this.setState({ isFavorite: !this.state.isFavorite });
     }
 
     render() {
-        const buttonClass = classnames('favourite-button', this.props.className);
+        const buttonClass = classnames('favorite-button', this.props.className);
         return (
             <UserContext.Consumer>
                 {({ userId }) => (
@@ -42,9 +42,9 @@ export default class FavouriteButton extends React.PureComponent {
                             <button
                                 type="button"
                                 className={buttonClass}
-                                onClick={this.toggleFavouriteState}
+                                onClick={this.toggleFavoriteState}
                             >
-                                {this.state.isFavourite ? 'Remove favourite' : 'Favourite'}
+                                {this.state.isFavorite ? 'Remove favorite' : 'Favorite'}
                             </button>
                         )
                 )}
@@ -53,4 +53,4 @@ export default class FavouriteButton extends React.PureComponent {
     }
 }
 
-FavouriteButton.contextType = UserContext;
+FavoriteButton.contextType = UserContext;

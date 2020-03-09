@@ -1,14 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Icon from 'components/common/Icon/icon';
-import preferenceService from 'services/preferenceService';
 import { UserContext } from 'store/context/userContext';
-import serviceWrapper from 'wrappers/serviceWrapper';
+import Icon from 'components/common/Icon/icon';
 
-import minus from 'styles/icons/minus.svg';
 import './userPreferenceListItem.scss';
+import minus from 'styles/icons/minus.svg';
 
 export default class UserPreferenceListItem extends React.PureComponent {
+    static propTypes = {
+        preferencedBeerType: PropTypes.string.isRequired,
+        deletePreference: PropTypes.func.isRequired
+    }
+
     onDelete = () => {
         const item = {
             userId: this.context.userId,
@@ -18,7 +22,6 @@ export default class UserPreferenceListItem extends React.PureComponent {
     }
 
     render() {
-        debugger;
         return (
             <li className="user-preference-list-item">
                 {this.props.preferencedBeerType}

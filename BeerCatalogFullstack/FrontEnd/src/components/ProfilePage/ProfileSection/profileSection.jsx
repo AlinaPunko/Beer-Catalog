@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
 import PropTypes from 'prop-types';
 
-import UserPreferenceSection from 'components/ProfilePage/UserPreferenceSection/userPreferenceSection';
+import UserPreferenceSection from 'components/profilePage/UserPreferenceSection/userPreferenceSection';
 import profileValidationConfig from 'validationConfigs/profileValidationConfig';
 import userService from 'services/userService';
 import serviceWrapper from 'wrappers/serviceWrapper';

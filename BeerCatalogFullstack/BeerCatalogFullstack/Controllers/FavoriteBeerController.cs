@@ -1,4 +1,5 @@
-﻿using BeerCatalogFullstack.Managers;
+﻿using System.Collections.Generic;
+using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,7 +31,8 @@ namespace BeerCatalogFullstack.Controllers
         [HttpGet]
         public IActionResult Get(string userId)
         {
-            return Json(manager.GetUserFavoriteBeersIds(userId));
+            IReadOnlyList<int> userFavoriteBeersIds = manager.GetUserFavoriteBeersIds(userId);
+            return Json(userFavoriteBeersIds);
         }
     }
 }

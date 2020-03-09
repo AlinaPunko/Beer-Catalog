@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using DataAccess.Models;
+using DataAccess.ViewModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace DataAccess.Repositories
@@ -17,19 +18,18 @@ namespace DataAccess.Repositories
             this.signInManager = signInManager;
         }
 
-        public async Task<string> Login(User model, string password)
+        public async Task<string> Login(string email, string password)
         {
             try
             {
-
-                SignInResult result = await signInManager.PasswordSignInAsync(model.Email, password, true, false);
+                SignInResult result = await signInManager.PasswordSignInAsync(email, password, true, false);
 
                 if (!result.Succeeded)
                 {
                     throw new ArgumentException("Incorrect email or password");
                 }
 
-                return userManager.Users.FirstOrDefault(u => u.Email == model.Email)?.Id;
+                return userManager.Users.FirstOrDefault(u => u.Email == email)?.Id;
             }
             catch (Exception)
             {

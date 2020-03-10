@@ -20,7 +20,7 @@ export default class OpenBrewingInfoPageButton extends React.PureComponent {
         return (
             <UserContext.Consumer>
                 {({ userId }) => (
-                    userId !== ''
+                    userId
                         && (
                             <Link to={urlHelper.getUrlWithParameter(routing.brewingInfoPage.url, /:id/, brewId)}>
                                 <button type="button" className="open-brewing-info-page-button">Add brewing info</button>

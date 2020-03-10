@@ -11,25 +11,16 @@ export default class App extends React.PureComponent {
     constructor(props) {
         super(props);
 
-        this.setUserId = (userId) => {
-            this.setState(() => ({
-                userId
-            }));
-        };
-
-        this.setFavoriteBeers = (favoriteBeers) => {
-            this.setState(() => ({
-                favoriteBeers
-            }));
-        };
-
         this.state = {
             showSideMenu: false,
-            showAccountMenu: false,
-            userId: '',
+            showAccountMenu: false
+        };
+
+        this.contextFeatures = {
+            userId: null,
             favoriteBeers: [],
-            setFavoriteBeers: this.setFavoriteBeers,
-            setUserId: this.setUserId
+            setFavoriteBeers: (beers) => this.contextFeatures.favoriteBeers = beers,
+            setUserId: (id) => this.contextFeatures.userId = id
         };
     }
 
@@ -55,7 +46,7 @@ export default class App extends React.PureComponent {
 
     render() {
         return (
-            <UserContext.Provider value={this.state}>
+            <UserContext.Provider value={this.contextFeatures}>
                 <Router>
                     <div className="app">
                         <Header openSideMenu={this.openSideMenu} toggleAccountMenu={this.toggleAccountMenu} />

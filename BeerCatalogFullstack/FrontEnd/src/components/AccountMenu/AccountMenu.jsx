@@ -24,7 +24,7 @@ export default class AccountMenu extends React.PureComponent {
     static contextType = UserContext;
 
     signOut = () => {
-        this.context.setUserId('');
+        this.context.setUserId(null);
         serviceWrapper.callService(userService.signOut, null, null);
     }
 
@@ -73,7 +73,8 @@ export default class AccountMenu extends React.PureComponent {
 
         let menuLinks;
         const { userId } = this.context;
-        if (userId === '') {
+
+        if (!userId) {
             menuLinks = this.renderUnauthorisedUserMenuLinks();
         } else {
             menuLinks = this.renderAuthorisedUserMenuLinks();

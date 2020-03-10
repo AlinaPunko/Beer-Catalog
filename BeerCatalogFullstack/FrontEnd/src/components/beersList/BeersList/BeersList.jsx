@@ -44,11 +44,12 @@ class BeersList extends React.PureComponent {
     }
 
     async loadFavoriteBeers() {
-        if (this.context.userId === '') {
+        if (!this.context.userId) {
             return;
         }
 
         const favoriteBeers = await favoritesService.getItems(this.context.userId);
+        debugger;
         this.context.setFavoriteBeers(favoriteBeers);
     }
 

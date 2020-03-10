@@ -9,6 +9,7 @@ import UserPreferenceSection from 'components/profilePage/UserPreferenceSection/
 import profileValidationConfig from 'validationConfigs/profileValidationConfig';
 import userService from 'services/userService';
 import serviceWrapper from 'helpers/serviceWrapper';
+import redirectToHomePageHelper from 'helpers/redirectToHomePageHelper';
 import { UserContext } from 'store/context/userContext';
 
 import './profileSection.scss';
@@ -66,26 +67,20 @@ class ProfileSection extends React.PureComponent {
     }
 
     changeBirthdate = (e) => {
-        this.setState({ birthdate: e.target.value.slice(1, 10) });
+        this.setState({ birthdate: e.target.value.slice(0, 10) });
     }
 
-    changePhoto = () => {
-        const input = document.createElement('input');
-        input.type = 'file';
-        input.accept = 'image/x-png,image/gif,image/jpeg';
-        input.onchange = () => {
-            const filesSelected = input.files;
-
-            if (filesSelected.length > 0) {
-                const fileToLoad = filesSelected[0];
-                const fileReader = new FileReader();
-                fileReader.onload = (fileLoadedEvent) => {
-                    this.setState({ photo: fileLoadedEvent.target.result });
-                };
-                fileReader.readAsDataURL(fileToLoad);
-            }
-        };
-        input.click();
+    changePhoto = (event) => {
+        const filesSelected = event.target.files;
+        if (filesSelected.length > 0) {
+            const fileToLoad = filesSelected[0];
+            const fileReader = new FileReader();
+            fileReader.onload = (fileLoadedEvent) => {
+                const srcData = fileLoadedEvent.target.result;
+                this.setState({ photo: srcData });
+            };
+            fileReader.readAsDataURL(fileToLoad);
+        }
     }
 
     save = async (e) => {
@@ -94,23 +89,19 @@ class ProfileSection extends React.PureComponent {
             const userData = { ...this.state };
             await serviceWrapper.callService(userService.updateUser, userData, this.errorFieldRef);
             alert('The user was updated');
-            this.redirectToHomePage();
+            redirectToHomePageHelper.redirect(this.props.history);
         } else {
             this.validator.showMessages();
             this.forceUpdate();
         }
     }
 
-    redirectToHomePage = () => {
-        this.props.history.push('/');
-    }
-
-    onCloseClick = (e) => {
+    close = (e) => {
         e.preventDefault();
-        this.redirectToHomePage();
+        redirectToHomePageHelper.redirect(this.props.history);
     }
 
-    getValidationResultField = () => {
+    renderValidationResult = () => {
         return (
             <div className="profile-section__validation-result" ref={this.errorFieldRef}>
                 {
@@ -131,15 +122,13 @@ class ProfileSection extends React.PureComponent {
                     <div className="profile-section__image-block">
                         <img
                             className="profile-section__user-image"
-                            alt="User"
+                            alt="avatar"
                             src={this.state.photo}
                         />
-                        <div>
-                            <SelectPhotoField onChange={this.changePhoto} />
-                            <button className="profile-section__button" type="button" onClick={this.deletePhoto}>
-                                Delete image
-                            </button>
-                        </div>
+                        <SelectPhotoField onChange={this.changePhoto} />
+                        <button className="profile-section__button" type="button" onClick={this.deletePhoto}>
+                                Delete photo
+                        </button>
                     </div>
                     <div className="profile-section__user-info">
                         <FormRow name="name" type="text" label="Name:" onChange={this.changeName} value={this.state.name} />
@@ -152,10 +141,12 @@ class ProfileSection extends React.PureComponent {
                             value={this.state.birthdate}
                         />
                         {
-                            this.getValidationResultField()
+                            this.renderValidationResult()
                         }
-                        <input type="submit" className="profile-section__button" onClick={this.save} value="Save" />
-                        <input type="reset" className="profile-section__button" onClick={this.close} value="Close" />
+                        <div className="profile-section__buttons">
+                            <input type="submit" className="profile-section__button" onClick={this.save} value="Save" />
+                            <input type="reset" className="profile-section__button" onClick={this.close} value="Close" />
+                        </div>
                         <UserPreferenceSection />
                     </div>
                 </form>

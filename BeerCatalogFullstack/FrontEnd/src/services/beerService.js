@@ -9,7 +9,7 @@ async function getAll() {
 }
 
 async function getByID(id) {
-    const beer = await api.get(serviceUrls.beerUrls.getBeerById(id));
+    const beer = await api.get(serviceUrls.beerUrls.getBeerById, id);
     return new BeerInfo(beer[0]);
 }
 

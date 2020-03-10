@@ -12,7 +12,7 @@ export default {
         rule: 'required|min:6'
     },
     confirmedPassword: {
-        fieldName: 'ConfirmedPassword',
+        fieldName: 'Confirmed password',
         rule: (password) => { return `required|in:${password}`; }
     }
 };

@@ -29,7 +29,6 @@ namespace BeerCatalogFullstack.Controllers
             return Json(userId);
         }
 
-        [HttpGet]
         public IActionResult Logout()
         {
             manager.SignOut();

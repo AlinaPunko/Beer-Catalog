@@ -39,11 +39,6 @@ export default class FavoritesList extends React.PureComponent {
         const { Beers } = this.state;
 
         await favoritesServices.deleteItem(this.context.userId, item);
-        const result = await favoritesServices.getItems(this.context.userId);
-        const beers = result.map(async (beerId) => {
-            return beerServices.getByID(beerId);
-        });
-        Promise.all(beers).then((beersArray) => this.setState({ Beers: beersArray }));
 
         const deletedBeer = Beers.find(
             (beer) => beer.id === item.id
@@ -54,7 +49,7 @@ export default class FavoritesList extends React.PureComponent {
     }
 
     renderBeers(currentBeers) {
-        return currentBeers.map((beer) => (<FavoriteListItem beer={beer} key={beer.id} onDelete={this.onDelete} />));
+        return currentBeers.map((beer) => (<FavoriteListItem beer={beer} key={beer.id} deleteItem={this.deleteItem} />));
     }
 
 

@@ -30,7 +30,7 @@ export default class SideMenu extends React.PureComponent {
                 {({ userId }) => (
                     <div className={menuClass} onClick={this.props.closeMenu}>
                         <div className="side-menu__header">
-                                    Beer Catalog
+                            Beer Catalog
                         </div>
                         <ul className="side-menu__links">
                             <li>
@@ -38,7 +38,7 @@ export default class SideMenu extends React.PureComponent {
                                     <SideMenuLink text="Home" icon={home} />
                                 </Link>
                             </li>
-                            {userId !== ''
+                            {userId
                                 && (
                                     <li>
                                         <Link to={routing.favoritesList.url}>

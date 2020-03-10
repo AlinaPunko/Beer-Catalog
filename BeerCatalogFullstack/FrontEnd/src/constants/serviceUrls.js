@@ -1,12 +1,12 @@
 export default {
     beerUrls: {
         getAllBeers: 'https://api.punkapi.com/v2/beers?per_page=80',
-        getBeerById: (id) => `https://api.punkapi.com/v2/beers/${id}`
+        getBeerById: 'https://api.punkapi.com/v2/beers'
     },
     favoriteBeerUrls: {
-        addFavorite: '/FavoriteBeers/Add',
-        getFavoritesByUserId: (userId) => `/FavoriteBeers/Get?userId=${userId}`,
-        deleteFavorite: '/FavoriteBeers/Delete'
+        addFavorite: '/FavoriteBeer/Add',
+        getFavoritesByUserId: '/FavoriteBeer/Get',
+        deleteFavorite: '/FavoriteBeer/Delete'
     },
     loginUrls: {
         signIn: '/Login/Login',
@@ -14,21 +14,21 @@ export default {
         signOut: '/Login/Logout'
     },
     userUrls: {
-        getUser: (id) => `/User/Get?id=${id}`,
+        getUser: '/User/Get',
         updateUser: '/User/Update'
     },
     preferenceUrls: {
-        addPreference: 'Preference/Add',
-        deletePreference: 'Preference/Delete',
-        getUserPreferences: (id) => `Preference/Get?userId=${id}`,
-        getAutocompletionValues: (input) => `Preference/GetAutocompletionValues?input=${input}`
+        addPreference: '/Preference/Add',
+        deletePreference: '/Preference/Delete',
+        getUserPreferences: '/Preference/Get',
+        getAutocompletionValues: '/Preference/GetAutocompletionValues'
     },
     brewingUrls: {
         addBrew: '/Brew/Add',
-        deleteBrew: (id) => `/Brew/Delete?id=${id}`,
+        deleteBrew: '/Brew/Delete',
         updateBrew: '/Brew/Update',
         getAllBrews: '/Brew/Get',
-        getUserBrews: (id) => `/Brew/Get?userId=${id}`,
+        getUserBrews: '/Brew/Get',
         addComment: '/Brew/Comments/Add',
         rateBrew: '/Brew/Rate'
     }

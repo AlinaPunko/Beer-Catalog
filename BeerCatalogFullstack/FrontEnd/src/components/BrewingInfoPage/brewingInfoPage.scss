@@ -47,19 +47,11 @@
     margin: 0 auto;
 }
 
-.brewing-info-page__save-button,
-.brewing-info-page__reset-button {
+.brewing-info-page__button {
+    display: block;
     width: 40%;
-    margin: 20px;
+    margin: 20px auto;
     padding: 10px 0;
-    font-family: "Lucida Sans", sans-serif;
-    background-color: transparent;
-    border: 1px #106cc8 solid;
-    border-radius: 5px;
-}
-
-.brewing-info-page__add-image-button {
-    padding: 10px;
     font-family: "Lucida Sans", sans-serif;
     background-color: transparent;
     border: 1px #106cc8 solid;

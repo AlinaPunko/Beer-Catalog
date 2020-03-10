@@ -2,4 +2,8 @@ function getUrlWithParameter(url, pattern, parameter) {
     return url.replace(pattern, parameter);
 }
 
-export default { getUrlWithParameter };
+function getUrlWithUriParameter(url, parameter) {
+    return `${url}/${parameter}`;
+}
+
+export default { getUrlWithParameter, getUrlWithUriParameter };

@@ -9,6 +9,7 @@ import signUpValidationConfig from 'validationConfigs/signUpValidationConfig';
 import serviceWrapper from 'helpers/serviceWrapper';
 import { UserContext } from 'store/context/userContext';
 import signUpService from 'services/signUpService';
+import redirectToHomePageHelper from 'helpers/redirectToHomePageHelper';
 
 import './signUpPage.scss';
 
@@ -94,7 +95,7 @@ class SignUpPage extends React.PureComponent {
             const result = await serviceWrapper.callService(signUpService.signUp, userData, this.errorFieldRef);
             if (result) {
                 this.context.setUserId(result);
-                this.props.history.push('/');
+                redirectToHomePageHelper.redirect(this.props.history);
             }
         } else {
             this.validator.showMessages();
@@ -102,7 +103,7 @@ class SignUpPage extends React.PureComponent {
         }
     }
 
-    getValidationResultField = () => {
+    renderValidationResult = () => {
         return (
             <div className="sign-up-page__validation-result" ref={this.errorFieldRef}>
                 {
@@ -116,7 +117,7 @@ class SignUpPage extends React.PureComponent {
                 }
                 {
                     this.validator.message(
-                        'Confirm password',
+                        signUpValidationConfig.confirmedPassword.fieldName,
                         this.state.confirmedPassword,
                         signUpValidationConfig.confirmedPassword.rule(this.state.password)
                     )
@@ -143,7 +144,7 @@ class SignUpPage extends React.PureComponent {
                     <FormRow name="birthdate" type="date" label="Select birthdate:" onChange={this.changeBirthdate} value={this.state.birthdate} />
                     <SelectPhotoField onChange={this.changePhoto} />
                     {
-                        this.getValidationResultField()
+                        this.renderValidationResult()
                     }
                     <input type="submit" className="sign-up-page__form-button" value="Sign up" />
                 </form>

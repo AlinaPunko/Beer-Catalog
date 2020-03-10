@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BeerCatalogFullstack.Controllers
 {
-    public class FavoriteBeersController : Controller
+    public class FavoriteBeerController : Controller
     {
         private readonly FavoriteBeerManager manager;
 
-        public FavoriteBeersController(FavoriteBeerManager manager)
+        public FavoriteBeerController(FavoriteBeerManager manager)
         {
             this.manager = manager;
         }
@@ -28,10 +28,9 @@ namespace BeerCatalogFullstack.Controllers
             return Ok();
         }
 
-        [HttpGet]
-        public IActionResult Get(string userId)
+        public IActionResult Get(string id)
         {
-            IReadOnlyList<int> userFavoriteBeersIds = manager.GetUserFavoriteBeersIds(userId);
+            IReadOnlyList<int> userFavoriteBeersIds = manager.GetUserFavoriteBeersIds(id);
             return Json(userFavoriteBeersIds);
         }
     }

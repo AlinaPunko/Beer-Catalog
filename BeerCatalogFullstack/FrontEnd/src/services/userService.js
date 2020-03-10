@@ -3,7 +3,7 @@ import serviceUrls from 'constants/serviceUrls';
 
 
 function getUser(id) {
-    return api.get(serviceUrls.userUrls.getUser(id));
+    return api.get(serviceUrls.userUrls.getUser, id);
 }
 
 function updateUser(user) {

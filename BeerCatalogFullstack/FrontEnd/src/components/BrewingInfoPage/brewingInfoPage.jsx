@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { UserContext } from 'store/context/userContext';
+import redirectToHomePageHelper from 'helpers/redirectToHomePageHelper';
 import BrewingIngredients from 'components/common/BrewingIngredients/brewingIngredients';
 import BrewingMethods from 'components/common/BrewingMethods/brewingMethods';
 import beerService from 'services/beerService';
@@ -95,7 +96,7 @@ class BrewingInfoPage extends React.PureComponent {
 
     close = (e) => {
         e.preventDefault();
-        this.props.history.push('/');
+        redirectToHomePageHelper.redirect(this.props.history);
     }
 
     addPhoto = () => {
@@ -188,7 +189,7 @@ class BrewingInfoPage extends React.PureComponent {
                             onChange={this.changeImpression}
                         />
                     </div>
-                    <button className="brewing-info-page__add-image-button" type="button" onClick={this.onAddPhotoClick}>
+                    <button className="brewing-info-page__button" type="button" onClick={this.onAddPhotoClick}>
                         Add image
                     </button>
                     <ImagesSlider images={images} />
@@ -197,8 +198,8 @@ class BrewingInfoPage extends React.PureComponent {
                         <BrewingMethods method={beerInfo.method} />
                     </div>
                     <div className="brewing-info-page__buttons">
-                        <input type="submit" onClick={this.save} value="Save" className="brewing-info-page__save-button" />
-                        <input type="reset" onClick={this.close} value="Close" className="brewing-info-page__reset-button" />
+                        <input type="submit" onClick={this.save} value="Save" className="brewing-info-page__button" />
+                        <input type="reset" onClick={this.close} value="Close" className="brewing-info-page__button" />
                     </div>
                 </form>
             </section>

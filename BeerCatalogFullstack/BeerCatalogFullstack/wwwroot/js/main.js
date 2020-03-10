@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "f9cb303f9e09e8a5183f";
+/******/ 	var hotCurrentHash = "bf7ec0a4eef3b5f86361";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -994,7 +994,7 @@ exports.push([module.i, ".account-menu {\n  position: absolute;\n  top: 48px;\n 
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".brewing-info-page {\n  width: 50%;\n  margin: 0 auto; }\n\n.brewing-info-page__title {\n  padding: 10px;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.brewing-info-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.brewing-info-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.brewing-info-page__field-input {\n  width: 50%;\n  padding: 5px;\n  color: #000000;\n  background-color: #ffffff;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__impression-field {\n  height: 60px;\n  word-break: break-word; }\n\n.brewing-info-page__ingredients-method {\n  display: flex;\n  justify-content: space-between; }\n\n.brewing-info-page__buttons {\n  width: 50%;\n  margin: 0 auto; }\n\n.brewing-info-page__save-button,\n.brewing-info-page__reset-button {\n  width: 40%;\n  margin: 20px;\n  padding: 10px 0;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__add-image-button {\n  padding: 10px;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n", ""]);
+exports.push([module.i, ".brewing-info-page {\n  width: 50%;\n  margin: 0 auto; }\n\n.brewing-info-page__title {\n  padding: 10px;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.brewing-info-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.brewing-info-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.brewing-info-page__field-input {\n  width: 50%;\n  padding: 5px;\n  color: #000000;\n  background-color: #ffffff;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__impression-field {\n  height: 60px;\n  word-break: break-word; }\n\n.brewing-info-page__ingredients-method {\n  display: flex;\n  justify-content: space-between; }\n\n.brewing-info-page__buttons {\n  width: 50%;\n  margin: 0 auto; }\n\n.brewing-info-page__button {\n  display: block;\n  width: 40%;\n  margin: 20px auto;\n  padding: 10px 0;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n", ""]);
 
 
 
@@ -1384,7 +1384,7 @@ exports.push([module.i, ".favorite-list {\n  flex-wrap: wrap;\n  width: 50%;\n  
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".profile-section {\n  width: 50%;\n  margin: 10px auto; }\n\n.profile-section__form {\n  display: flex;\n  align-content: center;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n\n.profile-section__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.profile-section__image-block {\n  align-self: flex-start;\n  width: 50%;\n  padding: 10px; }\n\n.profile-section__user-image {\n  width: 70%;\n  margin: 0 auto; }\n\n.profile-section__add-image-button,\n.profile-section__delete-image-button {\n  width: 30%;\n  margin: 0 10px;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__user-info {\n  width: 50%; }\n\n.profile-section__field {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.profile-section__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.profile-section__field-input {\n  width: 50%;\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__button {\n  width: 40%;\n  margin: 20px;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
+exports.push([module.i, ".profile-section {\n  width: 50%;\n  margin: 10px auto; }\n\n.profile-section__form {\n  display: flex;\n  align-content: center;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n\n.profile-section__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.profile-section__image-block {\n  align-self: flex-start;\n  width: 50%;\n  padding: 10px; }\n\n.profile-section__user-image {\n  width: 70%;\n  margin: 0 auto; }\n\n.profile-section__user-info {\n  width: 50%; }\n\n.profile-section__field {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.profile-section__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.profile-section__field-input {\n  width: 50%;\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__buttons {\n  display: flex;\n  justify-content: space-evenly; }\n\n.profile-section__button {\n  display: block;\n  width: 40%;\n  margin: 5px auto;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
 
 
 
@@ -41856,7 +41856,7 @@ function (_React$PureComponent) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(AccountMenu)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_this), "signOut", function () {
-      _this.context.setUserId('');
+      _this.context.setUserId(null);
 
       helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_6__["default"].callService(services_userService__WEBPACK_IMPORTED_MODULE_7__["default"].signOut, null, null);
     });
@@ -41908,7 +41908,7 @@ function (_React$PureComponent) {
       var menuLinks;
       var userId = this.context.userId;
 
-      if (userId === '') {
+      if (!userId) {
         menuLinks = this.renderUnauthorisedUserMenuLinks();
       } else {
         menuLinks = this.renderAuthorisedUserMenuLinks();
@@ -42080,29 +42080,19 @@ function (_React$PureComponent) {
       });
     });
 
-    _this.setUserId = function (userId) {
-      _this.setState(function () {
-        return {
-          userId: userId
-        };
-      });
-    };
-
-    _this.setFavoriteBeers = function (favoriteBeers) {
-      _this.setState(function () {
-        return {
-          favoriteBeers: favoriteBeers
-        };
-      });
-    };
-
     _this.state = {
       showSideMenu: false,
-      showAccountMenu: false,
-      userId: '',
+      showAccountMenu: false
+    };
+    _this.contextFeatures = {
+      userId: null,
       favoriteBeers: [],
-      setFavoriteBeers: _this.setFavoriteBeers,
-      setUserId: _this.setUserId
+      setFavoriteBeers: function setFavoriteBeers(beers) {
+        return _this.contextFeatures.favoriteBeers = beers;
+      },
+      setUserId: function setUserId(id) {
+        return _this.contextFeatures.userId = id;
+      }
     };
     return _this;
   }
@@ -42111,7 +42101,7 @@ function (_React$PureComponent) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_userContext__WEBPACK_IMPORTED_MODULE_2__["UserContext"].Provider, {
-        value: this.state
+        value: this.contextFeatures
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "app"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Header_header__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -42149,14 +42139,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
-/* harmony import */ var components_common_BrewingIngredients_brewingIngredients__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/common/BrewingIngredients/brewingIngredients */ "./src/components/common/BrewingIngredients/brewingIngredients.jsx");
-/* harmony import */ var components_common_BrewingMethods_brewingMethods__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/common/BrewingMethods/brewingMethods */ "./src/components/common/BrewingMethods/brewingMethods.jsx");
-/* harmony import */ var services_beerService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! services/beerService */ "./src/services/beerService.js");
-/* harmony import */ var helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! helpers/serviceWrapper */ "./src/helpers/serviceWrapper.js");
-/* harmony import */ var services_brewingService__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! services/brewingService */ "./src/services/brewingService.js");
-/* harmony import */ var components_common_ImagesSlider_imagesSlider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! components/common/ImagesSlider/imagesSlider */ "./src/components/common/ImagesSlider/imagesSlider.jsx");
-/* harmony import */ var _brewingInfoPage_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./brewingInfoPage.scss */ "./src/components/BrewingInfoPage/brewingInfoPage.scss");
-/* harmony import */ var _brewingInfoPage_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_brewingInfoPage_scss__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! helpers/redirectToHomePageHelper */ "./src/helpers/redirectToHomePageHelper.js");
+/* harmony import */ var components_common_BrewingIngredients_brewingIngredients__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/common/BrewingIngredients/brewingIngredients */ "./src/components/common/BrewingIngredients/brewingIngredients.jsx");
+/* harmony import */ var components_common_BrewingMethods_brewingMethods__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! components/common/BrewingMethods/brewingMethods */ "./src/components/common/BrewingMethods/brewingMethods.jsx");
+/* harmony import */ var services_beerService__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! services/beerService */ "./src/services/beerService.js");
+/* harmony import */ var helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! helpers/serviceWrapper */ "./src/helpers/serviceWrapper.js");
+/* harmony import */ var services_brewingService__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! services/brewingService */ "./src/services/brewingService.js");
+/* harmony import */ var components_common_ImagesSlider_imagesSlider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! components/common/ImagesSlider/imagesSlider */ "./src/components/common/ImagesSlider/imagesSlider.jsx");
+/* harmony import */ var _brewingInfoPage_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./brewingInfoPage.scss */ "./src/components/BrewingInfoPage/brewingInfoPage.scss");
+/* harmony import */ var _brewingInfoPage_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_brewingInfoPage_scss__WEBPACK_IMPORTED_MODULE_11__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -42180,6 +42171,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -42247,7 +42239,7 @@ function (_React$PureComponent) {
                   methods: _this.state.beerInfo.method
                 };
                 _context.next = 4;
-                return helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_7__["default"].callService(services_brewingService__WEBPACK_IMPORTED_MODULE_8__["default"].add, brew, null);
+                return helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_8__["default"].callService(services_brewingService__WEBPACK_IMPORTED_MODULE_9__["default"].add, brew, null);
 
               case 4:
               case "end":
@@ -42264,8 +42256,7 @@ function (_React$PureComponent) {
 
     _defineProperty(_assertThisInitialized(_this), "close", function (e) {
       e.preventDefault();
-
-      _this.props.history.push('/');
+      helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_4__["default"].redirect(_this.props.history);
     });
 
     _defineProperty(_assertThisInitialized(_this), "addPhoto", function () {
@@ -42326,7 +42317,7 @@ function (_React$PureComponent) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return services_beerService__WEBPACK_IMPORTED_MODULE_6__["default"].getByID(id);
+                return services_beerService__WEBPACK_IMPORTED_MODULE_7__["default"].getByID(id);
 
               case 2:
                 result = _context2.sent;
@@ -42418,16 +42409,16 @@ function (_React$PureComponent) {
         className: "brewing-info-page__field-input",
         onChange: this.changeImpression
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "brewing-info-page__add-image-button",
+        className: "brewing-info-page__button",
         type: "button",
         onClick: this.onAddPhotoClick
-      }, "Add image"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_ImagesSlider_imagesSlider__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      }, "Add image"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_ImagesSlider_imagesSlider__WEBPACK_IMPORTED_MODULE_10__["default"], {
         images: images
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "brewing-info-page__ingredients-method"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_BrewingIngredients_brewingIngredients__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_BrewingIngredients_brewingIngredients__WEBPACK_IMPORTED_MODULE_5__["default"], {
         ingredients: beerInfo.ingredients
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_BrewingMethods_brewingMethods__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_BrewingMethods_brewingMethods__WEBPACK_IMPORTED_MODULE_6__["default"], {
         method: beerInfo.method
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "brewing-info-page__buttons"
@@ -42435,12 +42426,12 @@ function (_React$PureComponent) {
         type: "submit",
         onClick: this.save,
         value: "Save",
-        className: "brewing-info-page__save-button"
+        className: "brewing-info-page__button"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "reset",
         onClick: this.close,
         value: "Close",
-        className: "brewing-info-page__reset-button"
+        className: "brewing-info-page__button"
       }))));
     }
   }]);
@@ -42925,7 +42916,7 @@ function (_React$PureComponent) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_sideMenuLink__WEBPACK_IMPORTED_MODULE_5__["default"], {
           text: "Home",
           icon: styles_icons_home_svg__WEBPACK_IMPORTED_MODULE_8__["default"]
-        }))), userId !== '' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        }))), userId && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: constants_routing__WEBPACK_IMPORTED_MODULE_6__["default"].favoritesList.url
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_sideMenuLink__WEBPACK_IMPORTED_MODULE_5__["default"], {
           text: "Favorite",
@@ -43160,8 +43151,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! helpers/serviceWrapper */ "./src/helpers/serviceWrapper.js");
 /* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
 /* harmony import */ var services_signInService__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! services/signInService */ "./src/services/signInService.js");
-/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./signInPage.scss */ "./src/components/SignInPage/signInPage.scss");
-/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_signInPage_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! helpers/redirectToHomePageHelper */ "./src/helpers/redirectToHomePageHelper.js");
+/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./signInPage.scss */ "./src/components/SignInPage/signInPage.scss");
+/* harmony import */ var _signInPage_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_signInPage_scss__WEBPACK_IMPORTED_MODULE_10__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -43189,6 +43181,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -43253,7 +43246,7 @@ function (_React$PureComponent) {
                 if (result) {
                   _this.context.setUserId(result);
 
-                  _this.props.history.push('/');
+                  helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_9__["default"].redirect(_this.props.history);
                 }
 
                 _context.next = 11;
@@ -43277,7 +43270,7 @@ function (_React$PureComponent) {
       };
     }());
 
-    _defineProperty(_assertThisInitialized(_this), "getValidationResultField", function () {
+    _defineProperty(_assertThisInitialized(_this), "renderValidationResult", function () {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sign-in-page__validation-result",
         ref: _this.errorFieldRef
@@ -43290,7 +43283,6 @@ function (_React$PureComponent) {
       email: '',
       password: ''
     };
-    _this.signIn = _this.signIn.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -43320,7 +43312,7 @@ function (_React$PureComponent) {
         className: "sign-in-page__form-button",
         type: "submit",
         value: "Log in"
-      }), this.getValidationResultField()));
+      }), this.renderValidationResult()));
     }
   }]);
 
@@ -43423,8 +43415,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! helpers/serviceWrapper */ "./src/helpers/serviceWrapper.js");
 /* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
 /* harmony import */ var services_signUpService__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! services/signUpService */ "./src/services/signUpService.js");
-/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./signUpPage.scss */ "./src/components/SignUpPage/signUpPage.scss");
-/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_signUpPage_scss__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! helpers/redirectToHomePageHelper */ "./src/helpers/redirectToHomePageHelper.js");
+/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./signUpPage.scss */ "./src/components/SignUpPage/signUpPage.scss");
+/* harmony import */ var _signUpPage_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_signUpPage_scss__WEBPACK_IMPORTED_MODULE_11__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -43452,6 +43445,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -43554,7 +43548,7 @@ function (_React$PureComponent) {
                 if (result) {
                   _this.context.setUserId(result);
 
-                  _this.props.history.push('/');
+                  helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_10__["default"].redirect(_this.props.history);
                 }
 
                 _context.next = 11;
@@ -43578,11 +43572,11 @@ function (_React$PureComponent) {
       };
     }());
 
-    _defineProperty(_assertThisInitialized(_this), "getValidationResultField", function () {
+    _defineProperty(_assertThisInitialized(_this), "renderValidationResult", function () {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sign-up-page__validation-result",
         ref: _this.errorFieldRef
-      }, _this.validator.message(validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].email.fieldName, _this.state.email, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].email.rule), _this.validator.message(validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].password.fieldName, _this.state.password, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].password.rule), _this.validator.message(validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].name.fieldName, _this.state.name, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].name.rule), _this.validator.message('Confirm password', _this.state.confirmedPassword, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].confirmedPassword.rule(_this.state.password)));
+      }, _this.validator.message(validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].email.fieldName, _this.state.email, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].email.rule), _this.validator.message(validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].password.fieldName, _this.state.password, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].password.rule), _this.validator.message(validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].name.fieldName, _this.state.name, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].name.rule), _this.validator.message(validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].confirmedPassword.fieldName, _this.state.confirmedPassword, validationConfigs_signUpValidationConfig__WEBPACK_IMPORTED_MODULE_6__["default"].confirmedPassword.rule(_this.state.password)));
     });
 
     _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a();
@@ -43640,7 +43634,7 @@ function (_React$PureComponent) {
         value: this.state.birthdate
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_SelectPhotoField_selectPhotoField__WEBPACK_IMPORTED_MODULE_5__["default"], {
         onChange: this.changePhoto
-      }), this.getValidationResultField(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), this.renderValidationResult(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         className: "sign-up-page__form-button",
         value: "Sign up"
@@ -43852,7 +43846,7 @@ function (_React$PureComponent) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                if (!(this.context.userId === '')) {
+                if (this.context.userId) {
                   _context2.next = 2;
                   break;
                 }
@@ -43865,9 +43859,10 @@ function (_React$PureComponent) {
 
               case 4:
                 favoriteBeers = _context2.sent;
+                debugger;
                 this.context.setFavoriteBeers(favoriteBeers);
 
-              case 6:
+              case 7:
               case "end":
                 return _context2.stop();
             }
@@ -44593,6 +44588,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _favoriteButton_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_favoriteButton_scss__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -44631,13 +44630,45 @@ function (_React$PureComponent) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(FavoriteButton).call(this, props, context));
 
-    _defineProperty(_assertThisInitialized(_this), "toggleFavoriteState", function () {
-      _this.state.isFavorite ? services_favoritesService__WEBPACK_IMPORTED_MODULE_4__["default"].deleteItem(_this.context.userId, _this.props.beer) : services_favoritesService__WEBPACK_IMPORTED_MODULE_4__["default"].add(_this.context.userId, _this.props.beer);
+    _defineProperty(_assertThisInitialized(_this), "toggleFavoriteState",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee() {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              debugger;
 
-      _this.setState({
-        isFavorite: !_this.state.isFavorite
-      });
-    });
+              if (!_this.state.isFavorite) {
+                _context.next = 6;
+                break;
+              }
+
+              _context.next = 4;
+              return services_favoritesService__WEBPACK_IMPORTED_MODULE_4__["default"].deleteItem(_this.context.userId, _this.props.beer);
+
+            case 4:
+              _context.next = 8;
+              break;
+
+            case 6:
+              _context.next = 8;
+              return services_favoritesService__WEBPACK_IMPORTED_MODULE_4__["default"].add(_this.context.userId, _this.props.beer);
+
+            case 8:
+              _this.setState({
+                isFavorite: !_this.state.isFavorite
+              });
+
+            case 9:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    })));
 
     _this.state = {
       isFavorite: helpers_favoriteItemHelper__WEBPACK_IMPORTED_MODULE_5__["default"].isFavorite(_this.props.beer, _this.context.favoriteBeers)
@@ -44651,9 +44682,10 @@ function (_React$PureComponent) {
       var _this2 = this;
 
       var buttonClass = classnames__WEBPACK_IMPORTED_MODULE_2___default()('favorite-button', this.props.className);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_userContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"].Consumer, null, function (_ref) {
-        var userId = _ref.userId;
-        return userId !== '' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      debugger;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_userContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"].Consumer, null, function (_ref2) {
+        var userId = _ref2.userId;
+        return userId && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
           className: buttonClass,
           onClick: _this2.toggleFavoriteState
@@ -45211,7 +45243,7 @@ function (_React$PureComponent) {
       var brewId = this.props.brewId;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_userContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"].Consumer, null, function (_ref) {
         var userId = _ref.userId;
-        return userId !== '' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        return userId && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: helpers_urlHelper__WEBPACK_IMPORTED_MODULE_4__["default"].getUrlWithParameter(constants_routing__WEBPACK_IMPORTED_MODULE_5__["default"].brewingInfoPage.url, /:id/, brewId)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
@@ -46911,6 +46943,7 @@ function (_React$PureComponent) {
 
     _defineProperty(_assertThisInitialized(_this), "deleteItem", function () {
       var deleteItem = _this.props.deleteItem;
+      debugger;
       deleteItem(_this.props.beer);
     });
 
@@ -46935,7 +46968,7 @@ function (_React$PureComponent) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
         className: "favorite-list-item__remove-favorite-button",
-        onClick: this.onDelete
+        onClick: this.deleteItem
       }, "Remove favorite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         alt: "Item_image",
         className: "favorite-list-item__image",
@@ -47093,51 +47126,17 @@ function (_React$PureComponent) {
     function () {
       var _ref = _asyncToGenerator(
       /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee2(item) {
-        var Beers, result, beers, deletedBeer;
-        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      regeneratorRuntime.mark(function _callee(item) {
+        var Beers, deletedBeer;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context.prev = _context.next) {
               case 0:
                 Beers = _this.state.Beers;
-                _context2.next = 3;
+                _context.next = 3;
                 return services_favoritesService__WEBPACK_IMPORTED_MODULE_3__["default"].deleteItem(_this.context.userId, item);
 
               case 3:
-                _context2.next = 5;
-                return services_favoritesService__WEBPACK_IMPORTED_MODULE_3__["default"].getItems(_this.context.userId);
-
-              case 5:
-                result = _context2.sent;
-                beers = result.map(
-                /*#__PURE__*/
-                function () {
-                  var _ref2 = _asyncToGenerator(
-                  /*#__PURE__*/
-                  regeneratorRuntime.mark(function _callee(beerId) {
-                    return regeneratorRuntime.wrap(function _callee$(_context) {
-                      while (1) {
-                        switch (_context.prev = _context.next) {
-                          case 0:
-                            return _context.abrupt("return", services_beerService__WEBPACK_IMPORTED_MODULE_2__["default"].getByID(beerId));
-
-                          case 1:
-                          case "end":
-                            return _context.stop();
-                        }
-                      }
-                    }, _callee);
-                  }));
-
-                  return function (_x2) {
-                    return _ref2.apply(this, arguments);
-                  };
-                }());
-                Promise.all(beers).then(function (beersArray) {
-                  return _this.setState({
-                    Beers: beersArray
-                  });
-                });
                 deletedBeer = Beers.find(function (beer) {
                   return beer.id === item.id;
                 });
@@ -47147,12 +47146,12 @@ function (_React$PureComponent) {
                   Beers: Beers
                 });
 
-              case 11:
+              case 6:
               case "end":
-                return _context2.stop();
+                return _context.stop();
             }
           }
-        }, _callee2);
+        }, _callee);
       }));
 
       return function (_x) {
@@ -47172,41 +47171,41 @@ function (_React$PureComponent) {
     value: function () {
       var _componentDidMount = _asyncToGenerator(
       /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee4() {
+      regeneratorRuntime.mark(function _callee3() {
         var _this2 = this;
 
         var result, beers;
-        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
           while (1) {
-            switch (_context4.prev = _context4.next) {
+            switch (_context3.prev = _context3.next) {
               case 0:
-                _context4.next = 2;
+                _context3.next = 2;
                 return services_favoritesService__WEBPACK_IMPORTED_MODULE_3__["default"].getItems(this.context.userId);
 
               case 2:
-                result = _context4.sent;
+                result = _context3.sent;
                 beers = result.map(
                 /*#__PURE__*/
                 function () {
-                  var _ref3 = _asyncToGenerator(
+                  var _ref2 = _asyncToGenerator(
                   /*#__PURE__*/
-                  regeneratorRuntime.mark(function _callee3(beerId) {
-                    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                  regeneratorRuntime.mark(function _callee2(beerId) {
+                    return regeneratorRuntime.wrap(function _callee2$(_context2) {
                       while (1) {
-                        switch (_context3.prev = _context3.next) {
+                        switch (_context2.prev = _context2.next) {
                           case 0:
-                            return _context3.abrupt("return", services_beerService__WEBPACK_IMPORTED_MODULE_2__["default"].getByID(beerId));
+                            return _context2.abrupt("return", services_beerService__WEBPACK_IMPORTED_MODULE_2__["default"].getByID(beerId));
 
                           case 1:
                           case "end":
-                            return _context3.stop();
+                            return _context2.stop();
                         }
                       }
-                    }, _callee3);
+                    }, _callee2);
                   }));
 
-                  return function (_x3) {
-                    return _ref3.apply(this, arguments);
+                  return function (_x2) {
+                    return _ref2.apply(this, arguments);
                   };
                 }());
                 Promise.all(beers).then(function (beersArray) {
@@ -47217,10 +47216,10 @@ function (_React$PureComponent) {
 
               case 5:
               case "end":
-                return _context4.stop();
+                return _context3.stop();
             }
           }
-        }, _callee4, this);
+        }, _callee3, this);
       }));
 
       function componentDidMount() {
@@ -47238,7 +47237,7 @@ function (_React$PureComponent) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_favoritesPage_FavoriteListItem_favoriteListItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
           beer: beer,
           key: beer.id,
-          onDelete: _this3.onDelete
+          deleteItem: _this3.deleteItem
         });
       });
     }
@@ -47363,9 +47362,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! validationConfigs/profileValidationConfig */ "./src/validationConfigs/profileValidationConfig.js");
 /* harmony import */ var services_userService__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! services/userService */ "./src/services/userService.js");
 /* harmony import */ var helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! helpers/serviceWrapper */ "./src/helpers/serviceWrapper.js");
-/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
-/* harmony import */ var _profileSection_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./profileSection.scss */ "./src/components/profilePage/ProfileSection/profileSection.scss");
-/* harmony import */ var _profileSection_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_profileSection_scss__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! helpers/redirectToHomePageHelper */ "./src/helpers/redirectToHomePageHelper.js");
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var _profileSection_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./profileSection.scss */ "./src/components/profilePage/ProfileSection/profileSection.scss");
+/* harmony import */ var _profileSection_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_profileSection_scss__WEBPACK_IMPORTED_MODULE_12__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -47393,6 +47393,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -47439,33 +47440,27 @@ function (_React$PureComponent) {
 
     _defineProperty(_assertThisInitialized(_this), "changeBirthdate", function (e) {
       _this.setState({
-        birthdate: e.target.value.slice(1, 10)
+        birthdate: e.target.value.slice(0, 10)
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "changePhoto", function () {
-      var input = document.createElement('input');
-      input.type = 'file';
-      input.accept = 'image/x-png,image/gif,image/jpeg';
+    _defineProperty(_assertThisInitialized(_this), "changePhoto", function (event) {
+      var filesSelected = event.target.files;
 
-      input.onchange = function () {
-        var filesSelected = input.files;
+      if (filesSelected.length > 0) {
+        var fileToLoad = filesSelected[0];
+        var fileReader = new FileReader();
 
-        if (filesSelected.length > 0) {
-          var fileToLoad = filesSelected[0];
-          var fileReader = new FileReader();
+        fileReader.onload = function (fileLoadedEvent) {
+          var srcData = fileLoadedEvent.target.result;
 
-          fileReader.onload = function (fileLoadedEvent) {
-            _this.setState({
-              photo: fileLoadedEvent.target.result
-            });
-          };
+          _this.setState({
+            photo: srcData
+          });
+        };
 
-          fileReader.readAsDataURL(fileToLoad);
-        }
-      };
-
-      input.click();
+        fileReader.readAsDataURL(fileToLoad);
+      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "save",
@@ -47492,9 +47487,7 @@ function (_React$PureComponent) {
 
               case 5:
                 alert('The user was updated');
-
-                _this.redirectToHomePage();
-
+                helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_10__["default"].redirect(_this.props.history);
                 _context.next = 11;
                 break;
 
@@ -47516,17 +47509,12 @@ function (_React$PureComponent) {
       };
     }());
 
-    _defineProperty(_assertThisInitialized(_this), "redirectToHomePage", function () {
-      _this.props.history.push('/');
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onCloseClick", function (e) {
+    _defineProperty(_assertThisInitialized(_this), "close", function (e) {
       e.preventDefault();
-
-      _this.redirectToHomePage();
+      helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_10__["default"].redirect(_this.props.history);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getValidationResultField", function () {
+    _defineProperty(_assertThisInitialized(_this), "renderValidationResult", function () {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-section__validation-result",
         ref: _this.errorFieldRef
@@ -47595,15 +47583,15 @@ function (_React$PureComponent) {
         className: "profile-section__image-block"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "profile-section__user-image",
-        alt: "User",
+        alt: "avatar",
         src: this.state.photo
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_SelectPhotoField_selectPhotoField__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_SelectPhotoField_selectPhotoField__WEBPACK_IMPORTED_MODULE_5__["default"], {
         onChange: this.changePhoto
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "profile-section__button",
         type: "button",
         onClick: this.deletePhoto
-      }, "Delete image"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Delete photo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-section__user-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_FormRow_formRow__WEBPACK_IMPORTED_MODULE_4__["default"], {
         name: "name",
@@ -47623,7 +47611,9 @@ function (_React$PureComponent) {
         label: "Select birthdate:",
         onChange: this.changeBirthdate,
         value: this.state.birthdate
-      }), this.getValidationResultField(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), this.renderValidationResult(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-section__buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         className: "profile-section__button",
         onClick: this.save,
@@ -47633,7 +47623,7 @@ function (_React$PureComponent) {
         className: "profile-section__button",
         onClick: this.close,
         value: "Close"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_profilePage_UserPreferenceSection_userPreferenceSection__WEBPACK_IMPORTED_MODULE_6__["default"], null))));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_profilePage_UserPreferenceSection_userPreferenceSection__WEBPACK_IMPORTED_MODULE_6__["default"], null))));
     }
   }]);
 
@@ -47654,7 +47644,7 @@ _defineProperty(ProfileSection, "propTypes", {
   }).isRequired
 });
 
-_defineProperty(ProfileSection, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_10__["UserContext"]);
+_defineProperty(ProfileSection, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_11__["UserContext"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(ProfileSection));
 
@@ -49047,16 +49037,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   beerUrls: {
     getAllBeers: 'https://api.punkapi.com/v2/beers?per_page=80',
-    getBeerById: function getBeerById(id) {
-      return "https://api.punkapi.com/v2/beers/".concat(id);
-    }
+    getBeerById: 'https://api.punkapi.com/v2/beers'
   },
   favoriteBeerUrls: {
-    addFavorite: '/FavoriteBeers/Add',
-    getFavoritesByUserId: function getFavoritesByUserId(userId) {
-      return "/FavoriteBeers/Get?userId=".concat(userId);
-    },
-    deleteFavorite: '/FavoriteBeers/Delete'
+    addFavorite: '/FavoriteBeer/Add',
+    getFavoritesByUserId: '/FavoriteBeer/Get',
+    deleteFavorite: '/FavoriteBeer/Delete'
   },
   loginUrls: {
     signIn: '/Login/Login',
@@ -49064,31 +49050,21 @@ __webpack_require__.r(__webpack_exports__);
     signOut: '/Login/Logout'
   },
   userUrls: {
-    getUser: function getUser(id) {
-      return "/User/Get?id=".concat(id);
-    },
+    getUser: '/User/Get',
     updateUser: '/User/Update'
   },
   preferenceUrls: {
-    addPreference: 'Preference/Add',
-    deletePreference: 'Preference/Delete',
-    getUserPreferences: function getUserPreferences(id) {
-      return "Preference/Get?userId=".concat(id);
-    },
-    getAutocompletionValues: function getAutocompletionValues(input) {
-      return "Preference/GetAutocompletionValues?input=".concat(input);
-    }
+    addPreference: '/Preference/Add',
+    deletePreference: '/Preference/Delete',
+    getUserPreferences: '/Preference/Get',
+    getAutocompletionValues: '/Preference/GetAutocompletionValues'
   },
   brewingUrls: {
     addBrew: '/Brew/Add',
-    deleteBrew: function deleteBrew(id) {
-      return "/Brew/Delete?id=".concat(id);
-    },
+    deleteBrew: '/Brew/Delete',
     updateBrew: '/Brew/Update',
     getAllBrews: '/Brew/Get',
-    getUserBrews: function getUserBrews(id) {
-      return "/Brew/Get?userId=".concat(id);
-    },
+    getUserBrews: '/Brew/Get',
     addComment: '/Brew/Comments/Add',
     rateBrew: '/Brew/Rate'
   }
@@ -49140,6 +49116,28 @@ function isFavorite(beer, favoriteBeers) {
 
 /***/ }),
 
+/***/ "./src/helpers/redirectToHomePageHelper.js":
+/*!*************************************************!*\
+  !*** ./src/helpers/redirectToHomePageHelper.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var constants_routing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! constants/routing */ "./src/constants/routing.js");
+
+
+function redirect(history) {
+  history.push(constants_routing__WEBPACK_IMPORTED_MODULE_0__["default"].searchPage.url);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  redirect: redirect
+});
+
+/***/ }),
+
 /***/ "./src/helpers/requestHelper.js":
 /*!**************************************!*\
   !*** ./src/helpers/requestHelper.js ***!
@@ -49149,20 +49147,15 @@ function isFavorite(beer, favoriteBeers) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var helpers_urlHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/urlHelper */ "./src/helpers/urlHelper.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function sendRequestWithBody(method, url, data) {
-  return fetch(url, {
-    method: method,
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    mode: 'cors',
-    accept: 'application/json',
-    body: JSON.stringify(data)
-  }).then(
+
+
+function sendRequest(headers, url) {
+  return fetch(url, headers).then(
   /*#__PURE__*/
   function () {
     var _ref = _asyncToGenerator(
@@ -49216,105 +49209,82 @@ function sendRequestWithBody(method, url, data) {
   });
 }
 
-function get(url) {
-  return fetch(url).then(
-  /*#__PURE__*/
-  function () {
-    var _ref2 = _asyncToGenerator(
-    /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee2(response) {
-      var error, contentType;
-      return regeneratorRuntime.wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              if (!(response.status !== 200)) {
-                _context2.next = 7;
-                break;
-              }
+var getRequestWithBodyHeaders = function getRequestWithBodyHeaders(method, data) {
+  return {
+    method: method,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    mode: 'cors',
+    accept: 'application/json',
+    body: JSON.stringify(data)
+  };
+};
 
-              error = new Error(response.statusText);
-              error.code = response.status;
-              _context2.next = 5;
-              return response.json();
+function get(url, parameter) {
+  var headers = {
+    method: 'GET',
+    mode: 'cors'
+  };
+  var fullUrl;
 
-            case 5:
-              error.message = _context2.sent;
-              return _context2.abrupt("return", error);
+  if (parameter) {
+    fullUrl = helpers_urlHelper__WEBPACK_IMPORTED_MODULE_0__["default"].getUrlWithUriParameter(url, parameter);
+  } else {
+    fullUrl = url;
+  }
 
-            case 7:
-              contentType = response.headers.get('content-type');
-
-              if (!(contentType && contentType.includes('application/json'))) {
-                _context2.next = 10;
-                break;
-              }
-
-              return _context2.abrupt("return", response.json());
-
-            case 10:
-              return _context2.abrupt("return", response.text());
-
-            case 11:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2);
-    }));
-
-    return function (_x2) {
-      return _ref2.apply(this, arguments);
-    };
-  }()).catch(function (error) {
-    return new Error("Network Error! ".concat(error));
-  });
+  return sendRequest(headers, fullUrl);
 }
 
-function post(_x3, _x4) {
+function post(_x2, _x3) {
   return _post.apply(this, arguments);
 }
 
 function _post() {
   _post = _asyncToGenerator(
   /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee3(url, data) {
-    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+  regeneratorRuntime.mark(function _callee2(url, data) {
+    var headers;
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
-        switch (_context3.prev = _context3.next) {
+        switch (_context2.prev = _context2.next) {
           case 0:
-            return _context3.abrupt("return", sendRequestWithBody('POST', url, data));
+            headers = getRequestWithBodyHeaders('POST', data);
+            return _context2.abrupt("return", sendRequest(headers, url));
 
-          case 1:
+          case 2:
           case "end":
-            return _context3.stop();
+            return _context2.stop();
         }
       }
-    }, _callee3);
+    }, _callee2);
   }));
   return _post.apply(this, arguments);
 }
 
-function put(_x5, _x6) {
+function put(_x4, _x5) {
   return _put.apply(this, arguments);
 }
 
 function _put() {
   _put = _asyncToGenerator(
   /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee4(url, data) {
-    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+  regeneratorRuntime.mark(function _callee3(url, data) {
+    var headers;
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
-        switch (_context4.prev = _context4.next) {
+        switch (_context3.prev = _context3.next) {
           case 0:
-            return _context4.abrupt("return", sendRequestWithBody('PUT', url, data));
+            headers = getRequestWithBodyHeaders('PUT', data);
+            return _context3.abrupt("return", sendRequest(headers, url));
 
-          case 1:
+          case 2:
           case "end":
-            return _context4.stop();
+            return _context3.stop();
         }
       }
-    }, _callee4);
+    }, _callee3);
   }));
   return _put.apply(this, arguments);
 }
@@ -49412,8 +49382,13 @@ function getUrlWithParameter(url, pattern, parameter) {
   return url.replace(pattern, parameter);
 }
 
+function getUrlWithUriParameter(url, parameter) {
+  return "".concat(url, "/").concat(parameter);
+}
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  getUrlWithParameter: getUrlWithParameter
+  getUrlWithParameter: getUrlWithParameter,
+  getUrlWithUriParameter: getUrlWithUriParameter
 });
 
 /***/ }),
@@ -49582,7 +49557,7 @@ function _getByID() {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_3__["default"].beerUrls.getBeerById(id));
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_3__["default"].beerUrls.getBeerById, id);
 
           case 2:
             beer = _context2.sent;
@@ -49667,7 +49642,7 @@ function _getBrewsByUserId() {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.getBrewsByUserId(userId));
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.getBrewsByUserId, userId);
 
           case 2:
             result = _context2.sent;
@@ -49697,7 +49672,7 @@ function _getBrewsByUserIdAndPreferences() {
         switch (_context3.prev = _context3.next) {
           case 0:
             _context3.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.getBrewsByUserId(userId));
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.getBrewsByUserId);
 
           case 2:
             result = _context3.sent;
@@ -49821,7 +49796,7 @@ function _getItems() {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].favoriteBeerUrls.getFavoritesByUserId(userId));
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].favoriteBeerUrls.getFavoritesByUserId, userId);
 
           case 2:
             result = _context2.sent;
@@ -49974,7 +49949,7 @@ function _getUserPreferences() {
         switch (_context3.prev = _context3.next) {
           case 0:
             _context3.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].preferenceUrls.getUserPreferences(userId));
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].preferenceUrls.getUserPreferences, userId);
 
           case 2:
             result = _context3.sent;
@@ -50004,7 +49979,7 @@ function _getSuitablePreferences() {
         switch (_context4.prev = _context4.next) {
           case 0:
             _context4.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].preferenceUrls.getAutocompletionValues(input));
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].preferenceUrls.getAutocompletionValues, input);
 
           case 2:
             result = _context4.sent;
@@ -50092,7 +50067,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function getUser(id) {
-  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].userUrls.getUser(id));
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].userUrls.getUser, id);
 }
 
 function updateUser(user) {
@@ -50180,7 +50155,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 var UserContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({
-  userId: '',
+  userId: null,
   favoriteBeers: [],
   setUserId: function setUserId() {},
   setFavoriteBeers: function setFavoriteBeers() {
@@ -50811,7 +50786,7 @@ __webpack_require__.r(__webpack_exports__);
     rule: 'required|min:6'
   },
   confirmedPassword: {
-    fieldName: 'ConfirmedPassword',
+    fieldName: 'Confirmed password',
     rule: function rule(password) {
       return "required|in:".concat(password);
     }

@@ -7,12 +7,12 @@ async function add(item) {
 }
 
 async function getBrewsByUserId(userId) {
-    const result = await api.get(serviceUrls.brewingUrls.getBrewsByUserId(userId));
+    const result = await api.get(serviceUrls.brewingUrls.getBrewsByUserId, userId);
     return result;
 }
 
 async function getBrewsByUserIdAndPreferences() {
-    const result = await api.get(serviceUrls.brewingUrls.getBrewsByUserId(userId));
+    const result = await api.get(serviceUrls.brewingUrls.getBrewsByUserId);
     return result;
 }
 

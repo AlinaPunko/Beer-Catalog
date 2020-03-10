@@ -36,14 +36,11 @@ namespace BeerCatalogFullstack.Controllers
             return Ok();
         }
 
-        [HttpGet]
         public IActionResult Get()
         {
             return Json(manager.GetAll());
         }
 
-        [HttpGet]
-        [Route("Get")]
         public IActionResult GetByUserId(string userId)
         {
             IReadOnlyList<Brew> userBrews = manager.GetUserBrews(userId);

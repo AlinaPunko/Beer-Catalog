@@ -29,16 +29,6 @@
     margin: 0 auto;
 }
 
-.profile-section__add-image-button,
-.profile-section__delete-image-button {
-    width: 30%;
-    margin: 0 10px;
-    font-family: "Lucida Sans", sans-serif;
-    background-color: transparent;
-    border: 1px #106cc8 solid;
-    border-radius: 5px;
-}
-
 .profile-section__user-info {
     width: 50%;
 }
@@ -63,9 +53,15 @@
     border-radius: 5px;
 }
 
+.profile-section__buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .profile-section__button {
+    display: block;
     width: 40%;
-    margin: 20px;
+    margin: 5px auto;
     font-family: "Lucida Sans", sans-serif;
     background-color: transparent;
     border: 1px #106cc8 solid;

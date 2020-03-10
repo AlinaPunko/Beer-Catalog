@@ -19,6 +19,7 @@ export default class FavoriteListItem extends React.PureComponent {
 
     deleteItem = () => {
         const { deleteItem } = this.props;
+        debugger;
         deleteItem(this.props.beer);
     }
 
@@ -31,7 +32,7 @@ export default class FavoriteListItem extends React.PureComponent {
                     <div className="favorite-list-item__tagline">{beer.tagline}</div>
                     <div className="favorite-list-item__description">{beer.description}</div>
                     <OpenDetailsPageButton beerId={beer.id} className="favorite-list-item__open-details-page-button" />
-                    <button type="button" className="favorite-list-item__remove-favorite-button" onClick={this.onDelete}>Remove favorite</button>
+                    <button type="button" className="favorite-list-item__remove-favorite-button" onClick={this.deleteItem}>Remove favorite</button>
                 </div>
                 <img alt="Item_image" className="favorite-list-item__image" src={beer.imageUrl} />
 

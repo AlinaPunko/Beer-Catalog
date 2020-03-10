@@ -27,28 +27,29 @@ export default class FavoriteButton extends React.PureComponent {
         this.state = { isFavorite: favoriteItemHelper.isFavorite(this.props.beer, this.context.favoriteBeers) };
     }
 
-    toggleFavoriteState = () => {
+    toggleFavoriteState = async () => {
+        debugger;
         this.state.isFavorite
-            ? favoritesServices.deleteItem(this.context.userId, this.props.beer)
-            : favoritesServices.add(this.context.userId, this.props.beer);
+            ? await favoritesServices.deleteItem(this.context.userId, this.props.beer)
+            : await favoritesServices.add(this.context.userId, this.props.beer);
         this.setState({ isFavorite: !this.state.isFavorite });
     }
 
     render() {
         const buttonClass = classnames('favorite-button', this.props.className);
+        debugger;
         return (
             <UserContext.Consumer>
                 {({ userId }) => (
-                    userId !== ''
-                        && (
-                            <button
-                                type="button"
-                                className={buttonClass}
-                                onClick={this.toggleFavoriteState}
-                            >
-                                {this.state.isFavorite ? 'Remove favorite' : 'Favorite'}
-                            </button>
-                        )
+                    userId && (
+                        <button
+                            type="button"
+                            className={buttonClass}
+                            onClick={this.toggleFavoriteState}
+                        >
+                            {this.state.isFavorite ? 'Remove favorite' : 'Favorite'}
+                        </button>
+                    )
                 )}
             </UserContext.Consumer>
         );

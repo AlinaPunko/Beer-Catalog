@@ -8,6 +8,7 @@ import signInValidationConfig from 'validationConfigs/signInValidationConfig';
 import serviceWrapper from 'helpers/serviceWrapper';
 import { UserContext } from 'store/context/userContext';
 import signInService from 'services/signInService';
+import redirectToHomePageHelper from 'helpers/redirectToHomePageHelper';
 
 import './signInPage.scss';
 
@@ -36,7 +37,6 @@ class SignInPage extends React.PureComponent {
             email: '',
             password: ''
         };
-        this.signIn = this.signIn.bind(this);
     }
 
     changePassword = (event) => {
@@ -59,7 +59,7 @@ class SignInPage extends React.PureComponent {
 
             if (result) {
                 this.context.setUserId(result);
-                this.props.history.push('/');
+                redirectToHomePageHelper.redirect(this.props.history);
             }
         } else {
             this.validator.showMessages();
@@ -67,7 +67,7 @@ class SignInPage extends React.PureComponent {
         }
     }
 
-    getValidationResultField = () => {
+    renderValidationResult = () => {
         return (
             <div className="sign-in-page__validation-result" ref={this.errorFieldRef}>
                 {
@@ -89,7 +89,7 @@ class SignInPage extends React.PureComponent {
                     <FormRow name="password" type="password" label="Password:" onChange={this.changePassword} value={this.state.password} />
                     <input className="sign-in-page__form-button" type="submit" value="Log in" />
                     {
-                        this.getValidationResultField()
+                        this.renderValidationResult()
                     }
                 </form>
             </section>

@@ -1,7 +1,7 @@
 export default {
     beerUrls: {
         getAllBeers: 'https://api.punkapi.com/v2/beers?per_page=80',
-        getBeerById: 'https://api.punkapi.com/v2/beers'
+        getBeerById: 'https://api.punkapi.com/v2/beers/:id'
     },
     favoriteBeerUrls: {
         addFavorite: '/FavoriteBeer/Add',

@@ -15,7 +15,7 @@ async function add(userId, item) {
 }
 
 async function getItems(userId) {
-    const result = await api.get(serviceUrls.favoriteBeerUrls.getFavoritesByUserId, userId);
+    const result = await api.get(serviceUrls.favoriteBeerUrls.getFavoritesByUserId, { userId });
     return result;
 }
 

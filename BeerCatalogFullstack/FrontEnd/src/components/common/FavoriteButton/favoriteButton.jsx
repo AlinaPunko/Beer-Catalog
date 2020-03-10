@@ -28,7 +28,6 @@ export default class FavoriteButton extends React.PureComponent {
     }
 
     toggleFavoriteState = async () => {
-        debugger;
         this.state.isFavorite
             ? await favoritesServices.deleteItem(this.context.userId, this.props.beer)
             : await favoritesServices.add(this.context.userId, this.props.beer);
@@ -37,7 +36,6 @@ export default class FavoriteButton extends React.PureComponent {
 
     render() {
         const buttonClass = classnames('favorite-button', this.props.className);
-        debugger;
         return (
             <UserContext.Consumer>
                 {({ userId }) => (

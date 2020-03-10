@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "bf7ec0a4eef3b5f86361";
+/******/ 	var hotCurrentHash = "2f4ec9c8363104b2a583";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -43859,10 +43859,9 @@ function (_React$PureComponent) {
 
               case 4:
                 favoriteBeers = _context2.sent;
-                debugger;
                 this.context.setFavoriteBeers(favoriteBeers);
 
-              case 7:
+              case 6:
               case "end":
                 return _context2.stop();
             }
@@ -44639,30 +44638,28 @@ function (_React$PureComponent) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              debugger;
-
               if (!_this.state.isFavorite) {
-                _context.next = 6;
+                _context.next = 5;
                 break;
               }
 
-              _context.next = 4;
+              _context.next = 3;
               return services_favoritesService__WEBPACK_IMPORTED_MODULE_4__["default"].deleteItem(_this.context.userId, _this.props.beer);
 
-            case 4:
-              _context.next = 8;
+            case 3:
+              _context.next = 7;
               break;
 
-            case 6:
-              _context.next = 8;
+            case 5:
+              _context.next = 7;
               return services_favoritesService__WEBPACK_IMPORTED_MODULE_4__["default"].add(_this.context.userId, _this.props.beer);
 
-            case 8:
+            case 7:
               _this.setState({
                 isFavorite: !_this.state.isFavorite
               });
 
-            case 9:
+            case 8:
             case "end":
               return _context.stop();
           }
@@ -44682,7 +44679,6 @@ function (_React$PureComponent) {
       var _this2 = this;
 
       var buttonClass = classnames__WEBPACK_IMPORTED_MODULE_2___default()('favorite-button', this.props.className);
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_userContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"].Consumer, null, function (_ref2) {
         var userId = _ref2.userId;
         return userId && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -46943,7 +46939,6 @@ function (_React$PureComponent) {
 
     _defineProperty(_assertThisInitialized(_this), "deleteItem", function () {
       var deleteItem = _this.props.deleteItem;
-      debugger;
       deleteItem(_this.props.beer);
     });
 
@@ -49037,7 +49032,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   beerUrls: {
     getAllBeers: 'https://api.punkapi.com/v2/beers?per_page=80',
-    getBeerById: 'https://api.punkapi.com/v2/beers'
+    getBeerById: 'https://api.punkapi.com/v2/beers/:id'
   },
   favoriteBeerUrls: {
     addFavorite: '/FavoriteBeer/Add',
@@ -49221,15 +49216,15 @@ var getRequestWithBodyHeaders = function getRequestWithBodyHeaders(method, data)
   };
 };
 
-function get(url, parameter) {
+function get(url, parameters) {
   var headers = {
     method: 'GET',
     mode: 'cors'
   };
   var fullUrl;
 
-  if (parameter) {
-    fullUrl = helpers_urlHelper__WEBPACK_IMPORTED_MODULE_0__["default"].getUrlWithUriParameter(url, parameter);
+  if (parameters) {
+    fullUrl = helpers_urlHelper__WEBPACK_IMPORTED_MODULE_0__["default"].getUrlWithQueryParameters(url, parameters);
   } else {
     fullUrl = url;
   }
@@ -49382,13 +49377,17 @@ function getUrlWithParameter(url, pattern, parameter) {
   return url.replace(pattern, parameter);
 }
 
-function getUrlWithUriParameter(url, parameter) {
-  return "".concat(url, "/").concat(parameter);
+function getUrlWithQueryParameters(url, parameters) {
+  url += '?';
+  Object.keys(parameters).forEach(function (key) {
+    url += "".concat(key, "=").concat(parameters[key], "&");
+  });
+  return url;
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   getUrlWithParameter: getUrlWithParameter,
-  getUrlWithUriParameter: getUrlWithUriParameter
+  getUrlWithQueryParameters: getUrlWithQueryParameters
 });
 
 /***/ }),
@@ -49502,9 +49501,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var models_beerShortInfoModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! models/beerShortInfoModel */ "./src/models/beerShortInfoModel.js");
 /* harmony import */ var models_beerInfoModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! models/beerInfoModel */ "./src/models/beerInfoModel.js");
 /* harmony import */ var constants_serviceUrls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! constants/serviceUrls */ "./src/constants/serviceUrls.js");
+/* harmony import */ var helpers_urlHelper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! helpers/urlHelper */ "./src/helpers/urlHelper.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -49551,19 +49552,20 @@ function _getByID() {
   _getByID = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee2(id) {
-    var beer;
+    var url, beer;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            _context2.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_3__["default"].beerUrls.getBeerById, id);
+            url = helpers_urlHelper__WEBPACK_IMPORTED_MODULE_4__["default"].getUrlWithParameter(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_3__["default"].beerUrls.getBeerById, /:id/, id);
+            _context2.next = 3;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(url);
 
-          case 2:
+          case 3:
             beer = _context2.sent;
             return _context2.abrupt("return", new models_beerInfoModel__WEBPACK_IMPORTED_MODULE_2__["default"](beer[0]));
 
-          case 4:
+          case 5:
           case "end":
             return _context2.stop();
         }
@@ -49796,7 +49798,9 @@ function _getItems() {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].favoriteBeerUrls.getFavoritesByUserId, userId);
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].favoriteBeerUrls.getFavoritesByUserId, {
+              userId: userId
+            });
 
           case 2:
             result = _context2.sent;

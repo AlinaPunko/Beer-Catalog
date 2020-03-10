@@ -28,9 +28,9 @@ namespace BeerCatalogFullstack.Controllers
             return Ok();
         }
 
-        public IActionResult Get(string id)
+        public IActionResult Get(string userId)
         {
-            IReadOnlyList<int> userFavoriteBeersIds = manager.GetUserFavoriteBeersIds(id);
+            IReadOnlyList<int> userFavoriteBeersIds = manager.GetUserFavoriteBeersIds(userId);
             return Json(userFavoriteBeersIds);
         }
     }

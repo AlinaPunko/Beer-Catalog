@@ -2,8 +2,12 @@ function getUrlWithParameter(url, pattern, parameter) {
     return url.replace(pattern, parameter);
 }
 
-function getUrlWithUriParameter(url, parameter) {
-    return `${url}/${parameter}`;
+function getUrlWithQueryParameters(url, parameters) {
+    url += '?';
+    Object.keys(parameters).forEach((key) => {
+        url += `${key}=${parameters[key]}&`;
+    });
+    return url;
 }
 
-export default { getUrlWithParameter, getUrlWithUriParameter };
+export default { getUrlWithParameter, getUrlWithQueryParameters };

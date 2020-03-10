@@ -77,8 +77,8 @@ namespace BeerCatalogFullstack
 
             app.UseMvc(routes =>
             {
+                
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
-                routes.MapRoute("getByUserId", "{controller}/{action}/{userId}");
                 routes.MapSpaFallbackRoute("spa-fallback", new { controller = "Home", action = "Index" });
             });
         }

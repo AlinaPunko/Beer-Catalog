@@ -32,15 +32,15 @@ const getRequestWithBodyHeaders = (method, data) => {
     );
 };
 
-function get(url, parameter) {
+function get(url, parameters) {
     const headers = {
         method: 'GET',
         mode: 'cors'
     };
     let fullUrl;
 
-    if (parameter) {
-        fullUrl = urlHelper.getUrlWithUriParameter(url, parameter);
+    if (parameters) {
+        fullUrl = urlHelper.getUrlWithQueryParameters(url, parameters);
     } else {
         fullUrl = url;
     }

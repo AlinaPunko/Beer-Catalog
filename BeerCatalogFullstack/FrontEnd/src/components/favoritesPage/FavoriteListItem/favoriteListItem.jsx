@@ -19,7 +19,6 @@ export default class FavoriteListItem extends React.PureComponent {
 
     deleteItem = () => {
         const { deleteItem } = this.props;
-        debugger;
         deleteItem(this.props.beer);
     }
 

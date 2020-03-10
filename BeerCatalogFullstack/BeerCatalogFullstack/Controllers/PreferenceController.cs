@@ -23,9 +23,9 @@ namespace BeerCatalogFullstack.Controllers
             return Ok();
         }
 
-        public IActionResult Get(string userId)
+        public IActionResult Get(string id)
         {
-            IReadOnlyList <string> userPreferences = manager.GetUserPreferences(userId);
+            IReadOnlyList <string> userPreferences = manager.GetUserPreferences(id);
             return Json(userPreferences);
         }
 

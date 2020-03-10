@@ -1,14 +1,15 @@
-﻿using BeerCatalogFullstack.Managers;
+﻿using System.Collections.Generic;
+using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BeerCatalogFullstack.Controllers
 {
-    public class FavoriteBeersController : Controller
+    public class FavoriteBeerController : Controller
     {
         private readonly FavoriteBeerManager manager;
 
-        public FavoriteBeersController(FavoriteBeerManager manager)
+        public FavoriteBeerController(FavoriteBeerManager manager)
         {
             this.manager = manager;
         }
@@ -27,10 +28,10 @@ namespace BeerCatalogFullstack.Controllers
             return Ok();
         }
 
-        [HttpGet]
         public IActionResult Get(string userId)
         {
-            return Json(manager.GetUserFavoriteBeersIds(userId));
+            IReadOnlyList<int> userFavoriteBeersIds = manager.GetUserFavoriteBeersIds(userId);
+            return Json(userFavoriteBeersIds);
         }
     }
 }

@@ -1,5 +1,7 @@
-function get(url) {
-    return fetch(url)
+import urlHelper from 'helpers/urlHelper';
+
+function sendRequest(headers, url) {
+    return fetch(url, headers)
         .then(async (response) => {
             if (response.status !== 200) {
                 const error = new Error(response.statusText);
@@ -16,56 +18,44 @@ function get(url) {
         .catch((error) => new Error(`Network Error!${error}`));
 }
 
-function post(url, data) {
-    return fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        mode: 'cors',
-        accept: 'application/json',
-        body: JSON.stringify(data)
-    })
-        .then(async (response) => {
-            if (response.status !== 200) {
-                const error = new Error(response.statusText);
-                error.code = response.status;
-                error.message = await response.json();
-                return error;
-            }
-            const contentType = response.headers.get('content-type');
-            if (contentType && contentType.includes('application/json')) {
-                return response.json();
-            }
-            return response.text();
-        })
-        .catch((error) => new Error(`Network Error!${error}`));
+const getRequestWithBodyHeaders = (method, data) => {
+    return (
+        {
+            method,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            mode: 'cors',
+            accept: 'application/json',
+            body: JSON.stringify(data)
+        }
+    );
+};
+
+function get(url, parameters) {
+    const headers = {
+        method: 'GET',
+        mode: 'cors'
+    };
+    let fullUrl;
+
+    if (parameters) {
+        fullUrl = urlHelper.getUrlWithQueryParameters(url, parameters);
+    } else {
+        fullUrl = url;
+    }
+
+    return sendRequest(headers, fullUrl);
 }
 
-function put(url, data) {
-    return fetch(url, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        mode: 'cors',
-        accept: 'application/json',
-        body: JSON.stringify(data)
-    })
-        .then(async (response) => {
-            if (response.status !== 200) {
-                const error = new Error(response.statusText);
-                error.code = response.status;
-                error.message = await response.json();
-                return error;
-            }
-            const contentType = response.headers.get('content-type');
-            if (contentType && contentType.includes('application/json')) {
-                return response.json();
-            }
-            return response.text();
-        })
-        .catch((error) => new Error(`Network Error!${error}`));
+async function post(url, data) {
+    const headers = getRequestWithBodyHeaders('POST', data);
+    return sendRequest(headers, url);
+}
+
+async function put(url, data) {
+    const headers = getRequestWithBodyHeaders('PUT', data);
+    return sendRequest(headers, url);
 }
 
 export default { get, post, put };

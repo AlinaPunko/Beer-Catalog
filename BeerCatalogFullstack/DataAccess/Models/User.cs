@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
 
 namespace DataAccess.Models
 {
+    [Table("User")]
     public class User : IdentityUser
     {
         public string Name { get; set; }
@@ -13,6 +15,14 @@ namespace DataAccess.Models
 
         [JsonIgnore]
         public virtual List<FavoriteBeer> FavoriteBeers { get; set; }
+
+        [JsonIgnore]
+        public virtual List<Brew> Brews { get; set; }
+
+        [JsonIgnore]
+        public virtual List<Comment> Comments { get; set; }
+
+        public virtual List<UserPreference> Preferences { get; set; }
 
         public User() { }
     }

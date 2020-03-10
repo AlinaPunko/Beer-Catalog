@@ -34,7 +34,78 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Beers");
+                    b.ToTable("Beer");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Brew", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BeerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BeerType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FermentationId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Impression")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BeerId");
+
+                    b.HasIndex("FermentationId")
+                        .IsUnique();
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Brew");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BrewId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrewId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comment");
                 });
 
             modelBuilder.Entity("DataAccess.Models.FavoriteBeer", b =>
@@ -50,6 +121,140 @@ namespace DataAccess.Migrations
                     b.HasIndex("BeerId");
 
                     b.ToTable("FavoriteBeer");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Fermentation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BrewId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TemperatureUnit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TemperatureValue")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Fermentation");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Hops", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Add")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AmountUnit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("AmountValue")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Attribute")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("BeerId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("BrewId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrewId");
+
+                    b.ToTable("Hops");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Malt", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AmountUnit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("AmountValue")
+                        .HasColumnType("float");
+
+                    b.Property<int>("BeerId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("BrewId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrewId");
+
+                    b.ToTable("Malt");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.MashTemperature", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BeerId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("BrewId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TemperatureUnit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TemperatureValue")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrewId");
+
+                    b.ToTable("MashTemperature");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Photo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BrewId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("EncodedPhoto")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrewId");
+
+                    b.ToTable("Photo");
                 });
 
             modelBuilder.Entity("DataAccess.Models.User", b =>
@@ -81,7 +286,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
@@ -125,6 +329,19 @@ namespace DataAccess.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.UserPreference", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("PreferencedBeerType")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "PreferencedBeerType");
+
+                    b.ToTable("UserPreference");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -258,6 +475,38 @@ namespace DataAccess.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("DataAccess.Models.Brew", b =>
+                {
+                    b.HasOne("DataAccess.Models.Beer", "Beer")
+                        .WithMany("Brews")
+                        .HasForeignKey("BeerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataAccess.Models.Fermentation", "Fermentation")
+                        .WithOne("Brew")
+                        .HasForeignKey("DataAccess.Models.Brew", "FermentationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataAccess.Models.User", null)
+                        .WithMany("Brews")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Comment", b =>
+                {
+                    b.HasOne("DataAccess.Models.Brew", "Brew")
+                        .WithMany("Comments")
+                        .HasForeignKey("BrewId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataAccess.Models.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId");
+                });
+
             modelBuilder.Entity("DataAccess.Models.FavoriteBeer", b =>
                 {
                     b.HasOne("DataAccess.Models.Beer", "Beer")
@@ -268,6 +517,45 @@ namespace DataAccess.Migrations
 
                     b.HasOne("DataAccess.Models.User", "User")
                         .WithMany("FavoriteBeers")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Hops", b =>
+                {
+                    b.HasOne("DataAccess.Models.Brew", "Brew")
+                        .WithMany("Hops")
+                        .HasForeignKey("BrewId");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Malt", b =>
+                {
+                    b.HasOne("DataAccess.Models.Brew", "Brew")
+                        .WithMany("Malts")
+                        .HasForeignKey("BrewId");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.MashTemperature", b =>
+                {
+                    b.HasOne("DataAccess.Models.Brew", "Brew")
+                        .WithMany("MashTemperatures")
+                        .HasForeignKey("BrewId");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Photo", b =>
+                {
+                    b.HasOne("DataAccess.Models.Brew", "Brew")
+                        .WithMany("Photos")
+                        .HasForeignKey("BrewId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DataAccess.Models.UserPreference", b =>
+                {
+                    b.HasOne("DataAccess.Models.User", "User")
+                        .WithMany("Preferences")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

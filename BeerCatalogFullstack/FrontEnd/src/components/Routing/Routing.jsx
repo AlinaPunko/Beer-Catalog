@@ -24,13 +24,18 @@ export default class Routing extends React.Component {
                 />
                 <Route
                     exact
-                    path={routeURL.favouritesList.url}
-                    component={routeURL.favouritesList.component}
+                    path={routeURL.favoritesList.url}
+                    component={routeURL.favoritesList.component}
                 />
                 <Route
                     exact
                     path={routeURL.beerDetailsPage.url}
                     component={routeURL.beerDetailsPage.component}
+                />
+                <Route
+                    exact
+                    path={routeURL.brewingInfoPage.url}
+                    component={routeURL.brewingInfoPage.component}
                 />
                 <Route
                     exact

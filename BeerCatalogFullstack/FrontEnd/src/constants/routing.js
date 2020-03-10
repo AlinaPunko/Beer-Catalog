@@ -1,9 +1,11 @@
 import SearchPage from 'components/search/SearchPage/searchPage';
-import FavouritesList from 'components/favouritesPage/FavouritesList/favouritesList';
+import FavoritesList from 'components/favoritesPage/FavoritesList/favoritesList';
 import BeerDetailsPage from 'components/detailsPage/BeerDetailsPage/beerDetailsPage';
 import SignInPage from 'components/SignInPage/signInPage';
 import SignUpPage from 'components/SignUpPage/signUpPage';
-import ProfilePage from 'components/ProfilePage/profilePage';
+import ProfileSection from 'components/profilePage/ProfileSection/profileSection';
+import BrewsList from 'components/BrewsPage/BrewsList/brewsList';
+import BrewingInfoPage from 'components/BrewingInfoPage/brewingInfoPage';
 
 export default {
     signInPage: {
@@ -14,9 +16,9 @@ export default {
         url: '/join',
         component: SignUpPage
     },
-    favouritesList: {
-        url: '/favourites',
-        component: FavouritesList
+    favoritesList: {
+        url: '/favorites',
+        component: FavoritesList
     },
     searchPage: {
         url: '/',
@@ -28,6 +30,14 @@ export default {
     },
     profilePage: {
         url: '/profile',
-        component: ProfilePage
+        component: ProfileSection
+    },
+    brewingInfoPage: {
+        url: '/brewinfo/:id',
+        component: BrewingInfoPage
+    },
+    brewsList: {
+        url: '/brews',
+        component: BrewsList
     }
 };

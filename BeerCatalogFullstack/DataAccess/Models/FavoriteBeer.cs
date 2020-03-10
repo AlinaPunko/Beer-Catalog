@@ -1,5 +1,8 @@
-﻿namespace DataAccess.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace DataAccess.Models
 {
+    [Table("FavoriteBeer")]
     public class FavoriteBeer
     {
         public int BeerId { get; set; }

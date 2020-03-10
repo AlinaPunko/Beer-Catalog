@@ -9,17 +9,18 @@ namespace BeerCatalogFullstack.Managers
     public class FavoriteBeerManager
     {
         private readonly FavoriteBeerRepository favoriteBeerRepository;
+        private readonly BeerRepository beerRepository;
 
-        public FavoriteBeerManager(FavoriteBeerRepository repository)
+        public FavoriteBeerManager(FavoriteBeerRepository favoriteBeerRepository, BeerRepository beerRepository)
         {
-            favoriteBeerRepository = repository;
+            this.favoriteBeerRepository = favoriteBeerRepository;
+            this.beerRepository = beerRepository;
         }
 
         public IReadOnlyList<int> GetUserFavoriteBeersIds(string userId)
         {
             return favoriteBeerRepository
-                .GetUserFavoriteBeers(userId)
-                .Select(b => b.BeerId)
+                .GetUserFavoriteBeerIds(userId)
                 .ToList();
         }
 
@@ -27,7 +28,13 @@ namespace BeerCatalogFullstack.Managers
         {
             FavoriteBeer favoriteBeer = GetFavoriteBeerModel(model);
             Beer beer = GetBeerModel(model);
-            favoriteBeerRepository.Add(favoriteBeer, beer);
+
+            if (beerRepository.GetAll().Count(b => b.Id == model.Id) == 0)
+            {
+                beerRepository.Add(beer);
+            }
+            
+            favoriteBeerRepository.Add(favoriteBeer);
         }
 
         public void RemoveFavoriteBeer(FavoriteBeerViewModel model)

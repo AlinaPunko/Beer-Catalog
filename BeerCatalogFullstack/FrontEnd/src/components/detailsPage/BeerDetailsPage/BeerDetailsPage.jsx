@@ -29,7 +29,7 @@ export default class BeerDetailsPage extends React.Component {
 
     async getBeer(id) {
         const result = await beerService.getByID(id);
-        await this.setState({ beer: result });
+        this.setState({ beer: result });
     }
 
     render() {

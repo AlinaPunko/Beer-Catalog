@@ -1,0 +1,21 @@
+.user-preference-list-item__delete-button {
+    width: 10%;
+    background-color: transparent;
+    border: none;
+}
+
+.user-preference-list-item__delete-button-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.user-preference-list-item {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+    padding: 5px 0;
+    font-family: "Lucida Sans", sans-serif;
+}

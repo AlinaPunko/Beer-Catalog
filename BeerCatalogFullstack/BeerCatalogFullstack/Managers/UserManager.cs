@@ -1,48 +1,46 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
-using Microsoft.AspNetCore.Identity;
+using DataAccess.Repositories;
 
 namespace BeerCatalogFullstack.Managers
 {
     public class UserManager
     {
-        private readonly UserManager<User> userManager;
+        private readonly UserRepository repository;
 
-        public UserManager(UserManager<User> userManager)
+        public UserManager(UserRepository userRepository)
         {
-            this.userManager = userManager;
+            repository = userRepository;
         }
 
-        public User GetUserById(string userId)
+        public UserViewModel GetUserById(string userId)
         {
-            return userManager.Users.FirstOrDefault(u => u.Id == userId);
+            User user = repository.GetUserById(userId);
+            UserViewModel viewModel = new UserViewModel
+            {
+                Id = user.Id,
+                Email = user.Email,
+                Name = user.Name,
+                Birthdate = user.Birthdate,
+                Photo = user.Photo
+            };
+            return viewModel;
         }
 
-        public async Task UpdateUserAsync(UpdateUserViewModel model)
+        public async Task UpdateUserAsync(UpdateUserViewModel viewModel)
         {
-            User user = userManager.Users
-                .FirstOrDefault(u => u.Id == model.Id);
-
-            if (user == null)
+            var user = new User
             {
-                throw new ArgumentException("Incorrect data");
-            }
+                Id = viewModel.Id,
+                Email = viewModel.Email,
+                UserName = viewModel.Email,
+                Name = viewModel.Name,
+                Birthdate = viewModel.Birthdate,
+                Photo = viewModel.Photo
+            };
 
-            user.Birthdate = model.Birthdate;
-            user.Name = model.Name;
-            user.Photo = model.Photo;
-            user.Email = user.UserName = model.Email;
-
-            IdentityResult result = await userManager.UpdateAsync(user);
-            if (result.Succeeded)
-            {
-                return;
-            }
-
-            throw new ArgumentException("Incorrect data");
+            await repository.UpdateUserAsync(user);
         }
     }
 }

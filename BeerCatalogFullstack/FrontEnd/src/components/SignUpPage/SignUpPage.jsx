@@ -3,10 +3,13 @@ import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
 import PropTypes from 'prop-types';
 
+import FormRow from 'components/common/FormRow/formRow';
+import SelectPhotoField from 'components/common/SelectPhotoField/selectPhotoField';
 import signUpValidationConfig from 'validationConfigs/signUpValidationConfig';
-import serviceWrapper from 'wrappers/serviceWrapper';
+import serviceWrapper from 'helpers/serviceWrapper';
 import { UserContext } from 'store/context/userContext';
 import signUpService from 'services/signUpService';
+import redirectToHomePageHelper from 'helpers/redirectToHomePageHelper';
 
 import './signUpPage.scss';
 
@@ -25,52 +28,54 @@ class SignUpPage extends React.PureComponent {
         }).isRequired
     }
 
+    static contextType = UserContext;
+
     constructor(props, context) {
         super(props, context);
-        this.validator = new SimpleReactValidator();
 
+        this.validator = new SimpleReactValidator();
         this.errorFieldRef = React.createRef();
         this.state = {
             photo: '',
             name: '',
             email: '',
             password: '',
-            confirmPassword: '',
+            confirmedPassword: '',
             birthdate: ''
         };
     }
 
-    nameChange = (event) => {
+    changeName = (event) => {
         this.setState({
             name: event.target.value
         });
     }
 
-    birthdateChange = (event) => {
+    changeBirthdate = (event) => {
         this.setState({
             birthdate: event.target.value
         });
     }
 
-    passwordChange = (event) => {
+    changePassword = (event) => {
         this.setState({
             password: event.target.value
         });
     }
 
-    confirmPasswordChange = (event) => {
+    changeConfirmedPassword = (event) => {
         this.setState({
-            confirmPassword: event.target.value
+            confirmedPassword: event.target.value
         });
     }
 
-    emailChange = (event) => {
+    changeEmail = (event) => {
         this.setState({
             email: event.target.value
         });
     }
 
-    photoChange = (event) => {
+    changePhoto = (event) => {
         const filesSelected = event.target.files;
         if (filesSelected.length > 0) {
             const fileToLoad = filesSelected[0];
@@ -83,14 +88,14 @@ class SignUpPage extends React.PureComponent {
         }
     }
 
-    signUpFormSubmit = async (e) => {
+    signUp = async (e) => {
         e.preventDefault();
         if (this.validator.allValid()) {
             const userData = { ...this.state };
             const result = await serviceWrapper.callService(signUpService.signUp, userData, this.errorFieldRef);
             if (result) {
                 this.context.setUserId(result);
-                this.props.history.push('/');
+                redirectToHomePageHelper.redirect(this.props.history);
             }
         } else {
             this.validator.showMessages();
@@ -98,23 +103,23 @@ class SignUpPage extends React.PureComponent {
         }
     }
 
-    getValidationResultField = () => {
+    renderValidationResult = () => {
         return (
             <div className="sign-up-page__validation-result" ref={this.errorFieldRef}>
                 {
-                    this.validator.message('Email', this.state.email, signUpValidationConfig.email.rule)
+                    this.validator.message(signUpValidationConfig.email.fieldName, this.state.email, signUpValidationConfig.email.rule)
                 }
                 {
-                    this.validator.message('Password', this.state.password, signUpValidationConfig.password.rule)
+                    this.validator.message(signUpValidationConfig.password.fieldName, this.state.password, signUpValidationConfig.password.rule)
                 }
                 {
-                    this.validator.message('Name', this.state.name, signUpValidationConfig.name.rule)
+                    this.validator.message(signUpValidationConfig.name.fieldName, this.state.name, signUpValidationConfig.name.rule)
                 }
                 {
                     this.validator.message(
-                        'Confirm password',
-                        this.state.confirmPassword,
-                        signUpValidationConfig.confirmPassword.rule(this.state.password)
+                        signUpValidationConfig.confirmedPassword.fieldName,
+                        this.state.confirmedPassword,
+                        signUpValidationConfig.confirmedPassword.rule(this.state.password)
                     )
                 }
             </div>
@@ -125,69 +130,21 @@ class SignUpPage extends React.PureComponent {
         return (
             <section className="sign-up-page">
                 <h1 className="sign-up-page__title">Sign up</h1>
-                <form className="sign-up-page__form" onSubmit={this.signUpFormSubmit}>
-                    <div className="sign-up-page__field">
-                        <label className="sign-up-page__field-title">Name</label>
-                        <input
-                            name="name"
-                            type="text"
-                            value={this.state.name}
-                            onChange={this.nameChange}
-                            className="sign-up-page__field-input"
-                        />
-                    </div>
-                    <div className="sign-up-page__field">
-                        <label className="sign-up-page__field-title">E-mail</label>
-                        <input
-                            name="email"
-                            type="email"
-                            value={this.state.email}
-                            onChange={this.emailChange}
-                            className="sign-up-page__field-input"
-                        />
-                    </div>
-                    <div className="sign-up-page__field">
-                        <label className="sign-up-page__field-title">Password</label>
-                        <input
-                            name="password"
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.passwordChange}
-                            className="sign-up-page__field-input"
-                        />
-                    </div>
-                    <div className="sign-up-page__field">
-                        <label className="sign-up-page__field-title">Confirm password</label>
-                        <input
-                            name="passwordConfirm"
-                            type="password"
-                            value={this.state.confirmPassword}
-                            onChange={this.confirmPasswordChange}
-                            className="sign-up-page__field-input"
-                        />
-                    </div>
-                    <div className="sign-up-page__field">
-                        <label className="sign-up-page__field-title">Select birthdate</label>
-                        <input
-                            name="birthdate"
-                            type="date"
-                            value={this.state.birthdate}
-                            onChange={this.birthdateChange}
-                            className="sign-up-page__field-input"
-                        />
-                    </div>
-                    <div className="sign-up-page__field">
-                        <label className="sign-up-page__field-title">Select photo</label>
-                        <input
-                            name="photo"
-                            type="file"
-                            className="sign-up-page__field-input"
-                            onChange={this.photoChange}
-                            accept="image/x-png,image/gif,image/jpeg"
-                        />
-                    </div>
+                <form className="sign-up-page__form" onSubmit={this.signUp}>
+                    <FormRow name="name" type="text" label="Name:" onChange={this.changeName} value={this.state.name} />
+                    <FormRow name="email" type="email" label="E-mail:" onChange={this.changeEmail} value={this.state.email} />
+                    <FormRow name="password" type="password" label="Password:" onChange={this.changePassword} value={this.state.password} />
+                    <FormRow
+                        name="confirmedPassword"
+                        type="password"
+                        label="Confirm password:"
+                        onChange={this.changeConfirmedPassword}
+                        value={this.state.confirmedPassword}
+                    />
+                    <FormRow name="birthdate" type="date" label="Select birthdate:" onChange={this.changeBirthdate} value={this.state.birthdate} />
+                    <SelectPhotoField onChange={this.changePhoto} />
                     {
-                        this.getValidationResultField()
+                        this.renderValidationResult()
                     }
                     <input type="submit" className="sign-up-page__form-button" value="Sign up" />
                 </form>
@@ -196,5 +153,4 @@ class SignUpPage extends React.PureComponent {
     }
 }
 
-SignUpPage.contextType = UserContext;
 export default withRouter(SignUpPage);

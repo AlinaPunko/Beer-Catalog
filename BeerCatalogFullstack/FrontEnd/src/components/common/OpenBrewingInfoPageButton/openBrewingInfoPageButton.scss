@@ -1,0 +1,11 @@
+.open-brewing-info-page-button {
+    padding: 20px 10px 10px 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+
+    :focus {
+        border: none;
+    }
+}

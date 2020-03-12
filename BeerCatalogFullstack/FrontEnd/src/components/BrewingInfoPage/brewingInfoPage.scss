@@ -33,8 +33,11 @@
 }
 
 .brewing-info-page__impression-field {
+    width: 50%;
     height: 60px;
     word-break: break-word;
+    border: 1px #106cc8 solid;
+    border-radius: 5px;
 }
 
 .brewing-info-page__ingredients-method {

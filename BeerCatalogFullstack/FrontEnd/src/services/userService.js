@@ -2,8 +2,8 @@ import api from 'helpers/requestHelper';
 import serviceUrls from 'constants/serviceUrls';
 
 
-function getUser(id) {
-    return api.get(serviceUrls.userUrls.getUser, id);
+function getUser(userId) {
+    return api.get(serviceUrls.userUrls.getUser, { userId });
 }
 
 function updateUser(user) {

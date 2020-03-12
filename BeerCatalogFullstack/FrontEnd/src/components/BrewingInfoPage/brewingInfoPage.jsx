@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { UserContext } from 'store/context/userContext';
+import FormRow from 'components/common/FormRow/formRow';
+import SelectPhotoField from 'components/common/SelectPhotoField/selectPhotoField';
 import redirectToHomePageHelper from 'helpers/redirectToHomePageHelper';
 import BrewingIngredients from 'components/common/BrewingIngredients/brewingIngredients';
 import BrewingMethods from 'components/common/BrewingMethods/brewingMethods';
@@ -48,9 +50,9 @@ class BrewingInfoPage extends React.PureComponent {
             beerInfo: null,
             location: '',
             datetime: dateTime,
-            brewType: '',
+            beerType: '',
             impression: '',
-            images: []
+            photos: []
         };
         this.getBeer(this.props.match.params.id);
     }
@@ -72,25 +74,101 @@ class BrewingInfoPage extends React.PureComponent {
         });
     }
 
-    changeBrewType = (e) => {
+    changeBeerType = (e) => {
         this.setState({
-            brewType: e.target.value
+            beerType: e.target.value
         });
+    }
+
+    getMalts = () => {
+        const malts = [];
+        this.state.beerInfo.ingredients.malt.forEach((item) => {
+            malts.push(
+                {
+                    beerId: this.state.beerInfo.id,
+                    name: item.name,
+                    amountValue: item.amount.value,
+                    amountUnit: item.amount.unit
+                }
+            );
+        });
+
+        return malts;
+    }
+
+    getMashTemperatures = () => {
+        const mashTemperatues = [];
+        this.state.beerInfo.method.mash_temp.forEach((item) => {
+            mashTemperatues.push({
+                beerId: this.state.beerInfo.id,
+                duration: item.duration,
+                temperatureValue: item.temp.value,
+                temperatureUnit: item.temp.unit
+            });
+        });
+
+        return mashTemperatues;
+    }
+
+    getHops = () => {
+        const hops = [];
+        this.state.beerInfo.ingredients.hops.forEach((item) => {
+            hops.push({
+                beerId: this.state.beerInfo.id,
+                name: item.name,
+                amountValue: item.amount.value,
+                amountUnit: item.amount.unit,
+                add: item.amount.add,
+                attribute: item.amount.attribute
+            });
+        });
+
+        return hops;
     }
 
     save = async (e) => {
         e.preventDefault();
-        const brew = {
-            userId: this.context.userId,
-            datetime: this.state.datetime,
-            location: this.state.location,
-            images: this.state.images,
-            brewType: this.state.brewType,
-            brewName: this.state.beerInfo.name,
-            impression: this.state.impression,
-            ingredients: this.state.beerInfo.ingredients,
-            methods: this.state.beerInfo.method
+
+        const {
+            beerInfo,
+            location,
+            datetime,
+            beerType,
+            impression,
+            photos
+        } = this.state;
+
+        const fermentation = {
+            beerId: beerInfo.id,
+            temperatureValue: beerInfo.method.fermentation.temp.value,
+            temperatureUnit: beerInfo.method.fermentation.temp.unit
         };
+
+        const yeast = {
+            beerId: beerInfo.id,
+            Name: beerInfo.ingredients.yeast
+        };
+
+        const brew = {
+            id: 0,
+            userId: this.context.userId,
+            beerId: beerInfo.id,
+            tagline: beerInfo.tagline,
+            imageUrl: beerInfo.imageUrl,
+            datetime,
+            location,
+            photos,
+            beerType,
+            name: beerInfo.name,
+            impression,
+            rating: 0,
+            hops: this.getHops(),
+            malt: this.getMalts(),
+            fermentation,
+            yeast,
+            mashTemperatures: this.getMashTemperatures()
+        };
+
         await serviceWrapper.callService(brewingService.add, brew, null);
     }
 
@@ -99,27 +177,17 @@ class BrewingInfoPage extends React.PureComponent {
         redirectToHomePageHelper.redirect(this.props.history);
     }
 
-    addPhoto = () => {
-        const input = document.createElement('input');
-        input.type = 'file';
-        input.accept = 'image/x-png,image/gif,image/jpeg';
-        const previousImages = this.state.images;
-
-        input.onchange = () => {
-            const filesSelected = input.files;
-            if (filesSelected.length > 0) {
-                const fileToLoad = filesSelected[0];
-                const fileReader = new FileReader();
-                fileReader.onload = (fileLoadedEvent) => {
-                    previousImages.push(fileLoadedEvent.target.result);
-                    this.setState({
-                        images: previousImages
-                    });
-                };
-                fileReader.readAsDataURL(fileToLoad);
-            }
-        };
-        input.click();
+    addPhoto = (e) => {
+        const filesSelected = e.target.files;
+        if (filesSelected.length > 0) {
+            const fileToLoad = filesSelected[0];
+            const fileReader = new FileReader();
+            fileReader.onload = (fileLoadedEvent) => {
+                const srcData = fileLoadedEvent.target.result;
+                this.setState({ photos: this.state.photos.concat(srcData) });
+            };
+            fileReader.readAsDataURL(fileToLoad);
+        }
     }
 
     render() {
@@ -127,9 +195,9 @@ class BrewingInfoPage extends React.PureComponent {
             beerInfo,
             location,
             datetime,
-            brewType,
+            beerType,
             impression,
-            images
+            photos
         } = this.state;
 
         if (!beerInfo) {
@@ -139,18 +207,9 @@ class BrewingInfoPage extends React.PureComponent {
             <section className="brewing-info-page">
                 <h1 className="brewing-info-page__title">Brewing Info</h1>
                 <form>
+                    <FormRow name="location" type="text" label="Location:" onChange={this.changeLocation} value={location} />
                     <div className="brewing-info-page__field">
-                        <label className="brewing-info-page__field-title">Location</label>
-                        <input
-                            name="location"
-                            type="text"
-                            value={location}
-                            className="brewing-info-page__field-input"
-                            onChange={this.changeLocation}
-                        />
-                    </div>
-                    <div className="brewing-info-page__field">
-                        <label className="brewing-info-page__field-title">Date and time</label>
+                        <label className="brewing-info-page__field-title">Date and time:</label>
                         <input
                             name="datetime"
                             type="text"
@@ -160,7 +219,7 @@ class BrewingInfoPage extends React.PureComponent {
                         />
                     </div>
                     <div className="brewing-info-page__field">
-                        <label className="brewing-info-page__field-title">Brew name</label>
+                        <label className="brewing-info-page__field-title">Brew name:</label>
                         <input
                             name="location"
                             type="text"
@@ -169,30 +228,18 @@ class BrewingInfoPage extends React.PureComponent {
                             disabled
                         />
                     </div>
+                    <FormRow name="beerType" type="text" label="Beer type:" onChange={this.changeBeerType} value={beerType} />
                     <div className="brewing-info-page__field">
-                        <label className="brewing-info-page__field-title">Brew type</label>
-                        <input
-                            name="brewType"
-                            type="text"
-                            onChange={this.changeBrewType}
-                            value={brewType}
-                            className="brewing-info-page__field-input"
-                        />
-                    </div>
-                    <div className="brewing-info-page__field">
-                        <label className="brewing-info-page__field-title">Impression</label>
+                        <label className="brewing-info-page__field-title">Impression:</label>
                         <textarea
-                            name="impression"
-                            type="text"
-                            value={impression}
-                            className="brewing-info-page__field-input"
                             onChange={this.changeImpression}
+                            name="location"
+                            value={impression}
+                            className="brewing-info-page__impression-field"
                         />
                     </div>
-                    <button className="brewing-info-page__button" type="button" onClick={this.onAddPhotoClick}>
-                        Add image
-                    </button>
-                    <ImagesSlider images={images} />
+                    <SelectPhotoField onChange={this.addPhoto} />
+                    <ImagesSlider images={photos} />
                     <div className="brewing-info-page__ingredients-method">
                         <BrewingIngredients ingredients={beerInfo.ingredients} />
                         <BrewingMethods method={beerInfo.method} />

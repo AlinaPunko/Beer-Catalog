@@ -5,7 +5,7 @@ using DataAccess.Models;
 
 namespace DataAccess.Repositories
 {
-    class FermentationRepository : GenericRepository<Fermentation>
+    public class FermentationRepository : GenericRepository<Fermentation>
     {
         public FermentationRepository(ApplicationContext context) : base(context) { }
 
@@ -13,6 +13,12 @@ namespace DataAccess.Repositories
         {
             return Get()
                 .ToList();
+        }
+
+        public Fermentation GetByBeerId(int id)
+        {
+            return Get(b => b.BeerId == id)
+                .FirstOrDefault();
         }
     }
 }

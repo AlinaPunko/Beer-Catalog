@@ -8,7 +8,7 @@ namespace BeerCatalogFullstack.Controllers
 {
     public class BrewController : Controller
     {
-        private BrewManager manager;
+        private readonly BrewManager manager;
 
         public BrewController(BrewManager manager)
         {
@@ -29,7 +29,7 @@ namespace BeerCatalogFullstack.Controllers
             return Ok();
         }
 
-        [HttpPost]
+        [HttpPut]
         public IActionResult Update([FromBody]BrewViewModel model)
         {
             manager.UpdateBrew(model);
@@ -43,8 +43,14 @@ namespace BeerCatalogFullstack.Controllers
 
         public IActionResult GetByUserId(string userId)
         {
-            IReadOnlyList<Brew> userBrews = manager.GetUserBrews(userId);
+            IReadOnlyList<Brew> userBrews = manager.GetBrewsByUserId(userId);
             return Json(userBrews);
         }
+
+        //public IActionResult GetById(string id)
+        //{
+        //    BrewViewModel brew = manager.GetBrewById(id);
+        //    return Json(brew);
+        //}
     }
 }

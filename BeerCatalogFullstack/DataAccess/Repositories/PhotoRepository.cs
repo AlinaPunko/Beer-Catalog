@@ -14,5 +14,11 @@ namespace DataAccess.Repositories
             return Get()
                 .ToList();
         }
+
+        public IReadOnlyList<Photo> GetByEncodedPhotoAndBrewId(string photo, int brewId)
+        {
+            return Get(p => p.EncodedPhoto == photo && p.BrewId == brewId)
+                .ToList();
+        }
     }
 }

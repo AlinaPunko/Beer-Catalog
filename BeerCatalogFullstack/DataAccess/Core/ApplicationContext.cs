@@ -10,17 +10,19 @@ namespace DataAccess.Core
         public DbSet<Beer> Beers { get; set; }
         public DbSet<Brew> Brews { get; set; }
         public DbSet<Fermentation> Fermentations { get; set; }
+        public DbSet<Yeast> Yeasts { get; set; }
         public DbSet<Hops> Hops { get; set; }
         public DbSet<Malt> Malts { get; set; }
+        public DbSet<MashTemperature> MashTemperatures { get; set; }
         public  DbSet<Comment> Comments { get; set; }
         public DbSet<Photo> Photos { get; set; }
 
         public ApplicationContext(DbContextOptions options) : base(options)
         {
-            if (!Database.CanConnect())
-            {
-                Database.Migrate();
-            }
+            //if (!Database.CanConnect())
+            //{
+            //    Database.Migrate();
+            //}
         }
 
         private IDbContextTransaction transaction;
@@ -69,9 +71,15 @@ namespace DataAccess.Core
                 .HasForeignKey(u => u.UserId);
 
             builder.Entity<Brew>()
+                .HasOne(a => a.Yeast)
+                .WithOne(b => b.Brew)
+                .HasForeignKey<Brew>(b => b.YeastId);
+
+            builder.Entity<Brew>()
                 .HasOne(a => a.Fermentation)
                 .WithOne(b => b.Brew)
                 .HasForeignKey<Brew>(b => b.FermentationId);
+
         }
     }
 }

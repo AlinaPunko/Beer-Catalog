@@ -5,13 +5,19 @@ using DataAccess.Models;
 
 namespace DataAccess.Repositories
 {
-    class HopsRepository : GenericRepository<Hops>
+    public class HopsRepository : GenericRepository<Hops>
     {
         public HopsRepository(ApplicationContext context) : base(context) { }
 
         public IReadOnlyList<Hops> GetAll()
         {
             return Get()
+                .ToList();
+        }
+
+        public IReadOnlyList<Hops> GetByBeerId(int id)
+        {
+            return Get(b => b.BeerId == id)
                 .ToList();
         }
     }

@@ -23,9 +23,9 @@ namespace BeerCatalogFullstack.Controllers
             return Ok();
         }
 
-        public IActionResult Get(string id)
+        public IActionResult Get(string userId)
         {
-            IReadOnlyList <string> userPreferences = manager.GetUserPreferences(id);
+            IReadOnlyList <string> userPreferences = manager.GetUserPreferences(userId);
             return Json(userPreferences);
         }
 
@@ -38,8 +38,8 @@ namespace BeerCatalogFullstack.Controllers
 
         public IActionResult GetAutocompletionValues(string input)
         {
-
-            return Json(manager.GetSuitablePreferences(input));
+            IReadOnlyList<string> preferences = manager.GetSuitablePreferences(input);
+            return Json(preferences);
         }
     }
 }

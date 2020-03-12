@@ -4,14 +4,16 @@ using DataAccess.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20200311134620_AddedBeerIdToFermentation")]
+    partial class AddedBeerIdToFermentation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,9 +74,6 @@ namespace DataAccess.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("YeastId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("BeerId");
@@ -83,9 +82,6 @@ namespace DataAccess.Migrations
                         .IsUnique();
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("YeastId")
-                        .IsUnique();
 
                     b.ToTable("Brew");
                 });
@@ -354,27 +350,6 @@ namespace DataAccess.Migrations
                     b.ToTable("UserPreference");
                 });
 
-            modelBuilder.Entity("DataAccess.Models.Yeast", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("BeerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BrewId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Yeast");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -523,12 +498,6 @@ namespace DataAccess.Migrations
                     b.HasOne("DataAccess.Models.User", null)
                         .WithMany("Brews")
                         .HasForeignKey("UserId");
-
-                    b.HasOne("DataAccess.Models.Yeast", "Yeast")
-                        .WithOne("Brew")
-                        .HasForeignKey("DataAccess.Models.Brew", "YeastId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("DataAccess.Models.Comment", b =>

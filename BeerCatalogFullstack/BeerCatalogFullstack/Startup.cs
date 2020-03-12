@@ -1,4 +1,5 @@
 using BeerCatalogFullstack.Managers;
+using BeerCatalogFullstack.Middleware;
 using DataAccess.Core;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Builder;
@@ -8,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
-using BeerCatalogFullstack.Middleware;
 using DataAccess.Repositories;
 using Newtonsoft.Json;
 
@@ -46,13 +46,23 @@ namespace BeerCatalogFullstack
             services.AddTransient<LoginManager>();
             services.AddTransient<FavoriteBeerManager>();
             services.AddTransient<PreferenceManager>();
+            services.AddTransient<BrewManager>();
             services.AddTransient<UserManager>();
+
+
             services.AddTransient<RegisterRepository>();
             services.AddTransient<BeerRepository>();
+            services.AddTransient<BrewRepository>();
             services.AddTransient<FavoriteBeerRepository>();
             services.AddTransient<LoginRepository>();
             services.AddTransient<UserRepository>();
             services.AddTransient<PreferenceRepository>();
+            services.AddTransient<MaltRepository>();
+            services.AddTransient<HopsRepository>();
+            services.AddTransient<MashTemperatureRepository>();
+            services.AddTransient<YeastRepository>();
+            services.AddTransient<FermentationRepository>();
+            services.AddTransient<PhotoRepository>();
 
             services.AddScoped<UserManager<User>>();
             services.AddScoped<SignInManager<User>>();

@@ -14,6 +14,7 @@ namespace DataAccess.Models
         public string Location { get; set; }
         public string Name { get; set; }
         public int FermentationId { get; set; }
+        public int YeastId { get; set; }
         public string Impression { get; set; }
         public int Rating { get; set; }
         public string BeerType { get; set; }
@@ -22,9 +23,9 @@ namespace DataAccess.Models
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<Hops> Hops { get; set; }
         public virtual ICollection<Malt> Malts { get; set; }
-
-        public virtual  ICollection<MashTemperature> MashTemperatures { get; set; }
+        public virtual ICollection<MashTemperature> MashTemperatures { get; set; }
         public virtual Fermentation Fermentation { get; set; }
+        public virtual Yeast Yeast { get; set; }
         public virtual Beer Beer { get; set; }
     }
 }

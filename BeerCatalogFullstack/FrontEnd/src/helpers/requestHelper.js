@@ -50,6 +50,7 @@ function get(url, parameters) {
 
 async function post(url, data) {
     const headers = getRequestWithBodyHeaders('POST', data);
+    debugger;
     return sendRequest(headers, url);
 }
 

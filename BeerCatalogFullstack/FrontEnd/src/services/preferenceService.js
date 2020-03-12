@@ -12,12 +12,12 @@ async function deletePreference(item) {
 }
 
 async function getUserPreferences(userId) {
-    const result = await api.get(serviceUrls.preferenceUrls.getUserPreferences, userId);
+    const result = await api.get(serviceUrls.preferenceUrls.getUserPreferences, { userId });
     return result;
 }
 
 async function getSuitablePreferences(input) {
-    const result = await api.get(serviceUrls.preferenceUrls.getAutocompletionValues, input);
+    const result = await api.get(serviceUrls.preferenceUrls.getAutocompletionValues, { input });
     return result;
 }
 

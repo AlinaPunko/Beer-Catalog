@@ -5,7 +5,7 @@ using DataAccess.Models;
 
 namespace DataAccess.Repositories
 {
-    class CommentRepository : GenericRepository<Comment>
+    public class CommentRepository : GenericRepository<Comment>
     {
         public CommentRepository(ApplicationContext context) : base(context) { }
 

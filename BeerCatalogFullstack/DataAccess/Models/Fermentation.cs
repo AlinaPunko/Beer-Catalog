@@ -7,6 +7,7 @@ namespace DataAccess.Models
     { 
         public int Id { get; set; }
         public int BrewId { get; set; }
+        public int BeerId { get; set; }
         public int TemperatureValue { get; set; }
         public string TemperatureUnit { get; set; }
 

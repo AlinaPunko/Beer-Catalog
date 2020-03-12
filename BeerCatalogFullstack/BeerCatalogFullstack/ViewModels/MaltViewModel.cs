@@ -1,16 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace DataAccess.Models
+﻿namespace BeerCatalogFullstack.ViewModels
 {
-    [Table("Malt")]
-    public class Malt
+    public class MaltViewModel
     {
         public int? Id { get; set; }
         public int BeerId { get; set; }
         public string Name { get; set; }
         public double AmountValue { get; set; }
         public string AmountUnit { get; set; }
-
-        public virtual Brew Brew { get; set; }
     }
 }

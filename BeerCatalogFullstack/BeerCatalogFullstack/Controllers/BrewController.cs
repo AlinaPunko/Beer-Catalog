@@ -22,7 +22,7 @@ namespace BeerCatalogFullstack.Controllers
             return Ok();
         }
 
-        [HttpPost]
+        [HttpDelete]
         public IActionResult Delete([FromBody]BrewViewModel model)
         {
             manager.RemoveBrew(model);

@@ -50,7 +50,7 @@ export default class BeerDetailsPage extends React.Component {
                     />
                     <FoodPairing foodPairingList={beer.foodPairing} />
                 </section>
-                <BrewingSection brewerTips={beer.brewerTips} ingredients={beer.ingredients} method={beer.method} beerId={this.props.match.params.id} />
+                <BrewingSection brewerTips={beer.brewerTips} ingredients={beer.ingredients} method={beer.method} beerId={parseInt(this.props.match.params.id, 10)} />
             </div>
         );
     }

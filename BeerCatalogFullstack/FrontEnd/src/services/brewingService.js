@@ -32,7 +32,8 @@ async function update(item) {
 }
 
 async function deleteItem(item) {
-    const result = await api.post(serviceUrls.brewingUrls.deleteBrew, item);
+    const result = await api.deleteMethod(serviceUrls.brewingUrls.deleteBrew, item);
+    debugger;
     return result;
 }
 

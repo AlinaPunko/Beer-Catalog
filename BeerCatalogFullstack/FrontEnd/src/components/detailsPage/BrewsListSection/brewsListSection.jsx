@@ -10,7 +10,7 @@ export default class BrewsListSection extends React.PureComponent {
     static contextType = UserContext;
 
     static propTypes = {
-        beerId: PropTypes.string.isRequired
+        beerId: PropTypes.number.isRequired
     }
 
     constructor(props) {

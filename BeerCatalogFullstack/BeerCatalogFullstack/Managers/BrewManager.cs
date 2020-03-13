@@ -66,6 +66,7 @@ namespace BeerCatalogFullstack.Managers
             var brewViewModel = new BrewViewModel
             {
                 Id = brew.Id,
+                UserId = brew.UserId,
                 BeerId = brew.BeerId,
                 Rating = brew.Rating,
                 Impression = brew.Impression,
@@ -89,6 +90,7 @@ namespace BeerCatalogFullstack.Managers
         {
             var brew = new Brew
             {
+                Id = viewModel.Id,
                 BeerId = viewModel.BeerId,
                 Name = viewModel.Name,
                 BeerType = viewModel.BeerType,
@@ -101,9 +103,21 @@ namespace BeerCatalogFullstack.Managers
             brewRepository.Update(brew);
         }
 
-        public void RemoveBrew(BrewViewModel model)
+        public void RemoveBrew(BrewViewModel viewModel)
         {
-            throw new NotImplementedException();
+            var brew = new Brew
+            {
+                Id = viewModel.Id,
+                BeerId = viewModel.BeerId,
+                Name = viewModel.Name,
+                BeerType = viewModel.BeerType,
+                Location = viewModel.Location,
+                DateTime = viewModel.DateTime,
+                Impression = viewModel.Impression,
+                UserId = viewModel.UserId
+            };
+
+            brewRepository.Remove(brew);
         }
 
         public void AddBeer(BrewViewModel viewModel)

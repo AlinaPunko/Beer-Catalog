@@ -22,8 +22,8 @@ class BrewingInfoPage extends React.PureComponent {
             url: PropTypes.string.isRequired,
             isExact: PropTypes.bool.isRequired,
             params: PropTypes.shape({
-                beerId: PropTypes.string.isRequired,
-                brewId: PropTypes.string.isRequired
+                beerId: PropTypes.number.isRequired,
+                brewId: PropTypes.number.isRequired
             }).isRequired
         }).isRequired,
         history: PropTypes.shape({
@@ -69,16 +69,20 @@ class BrewingInfoPage extends React.PureComponent {
 
     async getBrew(id) {
         const result = await brewingService.getBrewById(id);
-        debugger;
-        this.setState(
-            {
-                location: result.location,
-                datetime: result.dateTime,
-                beerType: result.beerType,
-                impression: result.impression,
-                photos: result.photos ? result.photos : []
-            }
-        );
+
+        if (result) {
+            this.setState(
+                {
+                    id: result.id,
+                    location: result.location,
+                    userId: result.userId,
+                    datetime: result.dateTime,
+                    beerType: result.beerType,
+                    impression: result.impression,
+                    photos: result.photos ? result.photos : []
+                }
+            );
+        }
     }
 
     changeLocation = (e) => {
@@ -188,15 +192,45 @@ class BrewingInfoPage extends React.PureComponent {
             mashTemperatures: this.getMashTemperatures()
         };
 
-        // if (this.props.match.params.brewId) {
-        //     await serviceWrapper.callService(brewingService.update, brew, null);
-        // }
+        if (this.state.userId === this.context.userId) {
+            await serviceWrapper.callService(brewingService.update, brew, null);
+        }
 
         await serviceWrapper.callService(brewingService.add, brew, null);
     }
 
     close = (e) => {
         e.preventDefault();
+        redirectToHomePageHelper.redirect(this.props.history);
+    }
+
+    delete = async () => {
+        const {
+            id,
+            beerInfo,
+            location,
+            datetime,
+            beerType,
+            impression,
+            photos
+        } = this.state;
+
+        const brew = {
+            id,
+            userId: this.context.userId,
+            beerId: beerInfo.id,
+            tagline: beerInfo.tagline,
+            imageUrl: beerInfo.imageUrl,
+            datetime,
+            location,
+            photos,
+            beerType,
+            name: beerInfo.name,
+            impression,
+            rating: 0
+        };
+        debugger;
+        await serviceWrapper.callService(brewingService.deleteItem, brew, null);
         redirectToHomePageHelper.redirect(this.props.history);
     }
 
@@ -214,6 +248,14 @@ class BrewingInfoPage extends React.PureComponent {
         }
     }
 
+    renderDeleteButton = () => {
+        debugger;
+        if (this.state.userId === this.context.userId) {
+            return <input type="button" onClick={this.delete} value="Delete" className="brewing-info-page__delete-button" />;
+        }
+        return null;
+    }
+
     render() {
         const {
             beerInfo,
@@ -227,6 +269,7 @@ class BrewingInfoPage extends React.PureComponent {
         if (!beerInfo) {
             return null;
         }
+
         return (
             <section className="brewing-info-page">
                 <h1 className="brewing-info-page__title">Brewing Info</h1>
@@ -270,6 +313,7 @@ class BrewingInfoPage extends React.PureComponent {
                     </div>
                     <div className="brewing-info-page__buttons">
                         <input type="submit" onClick={this.save} value="Save" className="brewing-info-page__button" />
+                        {this.renderDeleteButton()}
                         <input type="reset" onClick={this.close} value="Close" className="brewing-info-page__button" />
                     </div>
                 </form>

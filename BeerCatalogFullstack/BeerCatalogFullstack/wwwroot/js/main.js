@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "e7cd834ae54a472319a3";
+/******/ 	var hotCurrentHash = "9788fcf319c7b666952d";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -995,6 +995,36 @@ exports.push([module.i, ".account-menu {\n  position: absolute;\n  top: 48px;\n 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
 exports.push([module.i, ".brewing-info-page {\n  width: 50%;\n  margin: 0 auto; }\n\n.brewing-info-page__title {\n  padding: 10px;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.brewing-info-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.brewing-info-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.brewing-info-page__field-input {\n  width: 50%;\n  padding: 5px;\n  color: #000000;\n  background-color: #ffffff;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__impression-field {\n  width: 50%;\n  height: 60px;\n  padding: 5px;\n  font-family: \"Lucida Sans\", sans-serif;\n  word-break: break-word;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__ingredients-method {\n  display: flex;\n  justify-content: space-between;\n  width: 80%; }\n\n.brewing-info-page__buttons {\n  width: 50%;\n  margin: 0 auto; }\n\n.brewing-info-page__button {\n  display: block;\n  width: 40%;\n  margin: 20px auto;\n  padding: 10px 0;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__delete-button {\n  display: block;\n  width: 40%;\n  margin: 20px auto;\n  padding: 10px 0;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #ff0000 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsList/brewsList.scss":
+/*!****************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsList/brewsList.scss ***!
+  \****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".brews-list {\n  width: 50%;\n  margin: 0 auto; }\n\n.brews-list__title {\n  padding: 10px 0;\n  font-size: 36px;\n  font-family: 'Lucida Sans', sans-serif;\n  text-align: center; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsListItem/brewsListItem.scss":
+/*!************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsListItem/brewsListItem.scss ***!
+  \************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".brews-list-item {\n  display: flex;\n  justify-content: space-between;\n  min-height: 0;\n  margin: 20px;\n  padding: 10px;\n  font-size: 20px;\n  font-family: 'Lucida Sans', sans-serif;\n  box-shadow: 0 0 10px 5px #dddddd; }\n\n.brews-list-item__open-brew-page-button {\n  padding: 10px;\n  color: #ffffff;\n  text-transform: uppercase;\n  background-color: #106cc8;\n  border: none; }\n\n.brews-list-item__row {\n  padding: 5px 0; }\n\n.brews-list-item__image {\n  width: auto;\n  height: 150px; }\n", ""]);
 
 
 
@@ -42746,8 +42776,205 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BrewsList; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var services_userService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! services/userService */ "./src/services/userService.js");
+/* harmony import */ var components_BrewsPage_BrewsListItem_brewsListItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/BrewsPage/BrewsListItem/brewsListItem */ "./src/components/BrewsPage/BrewsListItem/brewsListItem.jsx");
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var _brewsList_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./brewsList.scss */ "./src/components/BrewsPage/BrewsList/brewsList.scss");
+/* harmony import */ var _brewsList_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_brewsList_scss__WEBPACK_IMPORTED_MODULE_4__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+var BrewsList =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(BrewsList, _React$PureComponent);
+
+  function BrewsList(props) {
+    var _this;
+
+    _classCallCheck(this, BrewsList);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(BrewsList).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "componentDidMount",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee() {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return _this.getPreferedBrews();
+
+            case 2:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    })));
+
+    _defineProperty(_assertThisInitialized(_this), "getPreferedBrews",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee2() {
+      var result;
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return services_userService__WEBPACK_IMPORTED_MODULE_1__["default"].getPreferedBrews(_this.context.userId);
+
+            case 2:
+              result = _context2.sent;
+
+              _this.setState({
+                brews: result
+              });
+
+            case 4:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    })));
+
+    _this.state = {
+      brews: []
+    };
+    return _this;
+  }
+
+  _createClass(BrewsList, [{
+    key: "render",
+    value: function render() {
+      var renderedBrews = this.state.brews.map(function (brew, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_BrewsPage_BrewsListItem_brewsListItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          key: index,
+          brew: brew
+        });
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "brews-list"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "brews-list__title"
+      }, "Your prefered brews"), renderedBrews);
+    }
+  }]);
+
+  return BrewsList;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+_defineProperty(BrewsList, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"]);
+
+
+
+/***/ }),
+
+/***/ "./src/components/BrewsPage/BrewsList/brewsList.scss":
+/*!***********************************************************!*\
+  !*** ./src/components/BrewsPage/BrewsList/brewsList.scss ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsList.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsList/brewsList.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsList.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsList/brewsList.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsList.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsList/brewsList.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/BrewsPage/BrewsListItem/brewsListItem.jsx":
+/*!******************************************************************!*\
+  !*** ./src/components/BrewsPage/BrewsListItem/brewsListItem.jsx ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BrewsListItem; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var components_common_OpenBrewingInfoPageButton_openBrewingInfoPageButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton */ "./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.jsx");
+/* harmony import */ var _brewsListItem_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./brewsListItem.scss */ "./src/components/BrewsPage/BrewsListItem/brewsListItem.scss");
+/* harmony import */ var _brewsListItem_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_brewsListItem_scss__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -42766,31 +42993,122 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
-var BrewsList =
+
+
+
+var BrewsListItem =
 /*#__PURE__*/
 function (_React$PureComponent) {
-  _inherits(BrewsList, _React$PureComponent);
+  _inherits(BrewsListItem, _React$PureComponent);
 
-  function BrewsList(props) {
-    _classCallCheck(this, BrewsList);
+  function BrewsListItem() {
+    _classCallCheck(this, BrewsListItem);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(BrewsList).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(BrewsListItem).apply(this, arguments));
   }
 
-  _createClass(BrewsList, [{
+  _createClass(BrewsListItem, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "hello");
+      var brew = this.props.brew;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "brews-list-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "brews-list-item__row"
+      }, "Brew name: ", brew.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "brews-list-item__row"
+      }, "Date: ", brew.dateTime), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "brews-list-item__row"
+      }, "Location: ", brew.location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "brews-list-item__row"
+      }, "Rating: ", brew.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_OpenBrewingInfoPageButton_openBrewingInfoPageButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        brewId: brew.id,
+        text: "Open full info",
+        beerId: brew.beerId,
+        className: "brews-list-item__open-brew-page-button"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        alt: "Item_image",
+        className: "brews-list-item__image",
+        src: brew.photos[0]
+      }));
     }
   }]);
 
-  return BrewsList;
+  return BrewsListItem;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
+_defineProperty(BrewsListItem, "propTypes", {
+  brew: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    beerId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    dateTime: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    location: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    rating: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    photos: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired
+  }).isRequired
+});
 
+
+
+/***/ }),
+
+/***/ "./src/components/BrewsPage/BrewsListItem/brewsListItem.scss":
+/*!*******************************************************************!*\
+  !*** ./src/components/BrewsPage/BrewsListItem/brewsListItem.scss ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsListItem/brewsListItem.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsListItem/brewsListItem.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsListItem/brewsListItem.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -43022,6 +43340,10 @@ function (_React$Component) {
         component: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].brewingInfoPage.component
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         exact: true,
+        path: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].brewsList.url,
+        component: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].brewsList.component
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        exact: true,
         path: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].profilePage.url,
         component: constants_routing__WEBPACK_IMPORTED_MODULE_2__["default"].profilePage.component
       }));
@@ -43057,8 +43379,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var constants_routing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! constants/routing */ "./src/constants/routing.js");
 /* harmony import */ var styles_icons_favorite_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styles/icons/favorite.svg */ "./src/styles/icons/favorite.svg");
 /* harmony import */ var styles_icons_home_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! styles/icons/home.svg */ "./src/styles/icons/home.svg");
-/* harmony import */ var _sideMenu_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./sideMenu.scss */ "./src/components/SideMenu/sideMenu.scss");
-/* harmony import */ var _sideMenu_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_sideMenu_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var styles_icons_list_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! styles/icons/list.svg */ "./src/styles/icons/list.svg");
+/* harmony import */ var _sideMenu_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./sideMenu.scss */ "./src/components/SideMenu/sideMenu.scss");
+/* harmony import */ var _sideMenu_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_sideMenu_scss__WEBPACK_IMPORTED_MODULE_10__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -43078,6 +43401,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -43128,12 +43452,17 @@ function (_React$PureComponent) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_sideMenuLink__WEBPACK_IMPORTED_MODULE_5__["default"], {
           text: "Home",
           icon: styles_icons_home_svg__WEBPACK_IMPORTED_MODULE_8__["default"]
-        }))), userId && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        }))), userId && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: constants_routing__WEBPACK_IMPORTED_MODULE_6__["default"].favoritesList.url
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_sideMenuLink__WEBPACK_IMPORTED_MODULE_5__["default"], {
           text: "Favorite",
           icon: styles_icons_favorite_svg__WEBPACK_IMPORTED_MODULE_7__["default"]
-        })))));
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          to: constants_routing__WEBPACK_IMPORTED_MODULE_6__["default"].brewsList.url
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenuLink_sideMenuLink__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          text: "Brews",
+          icon: styles_icons_list_svg__WEBPACK_IMPORTED_MODULE_9__["default"]
+        }))))));
       });
     }
   }]);
@@ -49486,6 +49815,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   userUrls: {
     getUser: '/User/Get',
+    getPreferedBrews: '/User/GetPreferedBrews',
     updateUser: '/User/Update'
   },
   preferenceUrls: {
@@ -50195,23 +50525,21 @@ function _getBrewsByBeerId() {
   return _getBrewsByBeerId.apply(this, arguments);
 }
 
-function getBrewsByUserPreferences(_x5) {
-  return _getBrewsByUserPreferences.apply(this, arguments);
+function update(_x5) {
+  return _update.apply(this, arguments);
 }
 
-function _getBrewsByUserPreferences() {
-  _getBrewsByUserPreferences = _asyncToGenerator(
+function _update() {
+  _update = _asyncToGenerator(
   /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee5(userId) {
+  regeneratorRuntime.mark(function _callee5(item) {
     var result;
     return regeneratorRuntime.wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
             _context5.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.getBrewsByPreferences, {
-              userId: userId
-            });
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].put(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.updateBrew, item);
 
           case 2:
             result = _context5.sent;
@@ -50224,15 +50552,15 @@ function _getBrewsByUserPreferences() {
       }
     }, _callee5);
   }));
-  return _getBrewsByUserPreferences.apply(this, arguments);
-}
-
-function update(_x6) {
   return _update.apply(this, arguments);
 }
 
-function _update() {
-  _update = _asyncToGenerator(
+function deleteItem(_x6) {
+  return _deleteItem.apply(this, arguments);
+}
+
+function _deleteItem() {
+  _deleteItem = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee6(item) {
     var result;
@@ -50241,7 +50569,7 @@ function _update() {
         switch (_context6.prev = _context6.next) {
           case 0:
             _context6.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].put(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.updateBrew, item);
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].deleteMethod(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.deleteBrew, item);
 
           case 2:
             result = _context6.sent;
@@ -50254,36 +50582,6 @@ function _update() {
       }
     }, _callee6);
   }));
-  return _update.apply(this, arguments);
-}
-
-function deleteItem(_x7) {
-  return _deleteItem.apply(this, arguments);
-}
-
-function _deleteItem() {
-  _deleteItem = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee7(item) {
-    var result;
-    return regeneratorRuntime.wrap(function _callee7$(_context7) {
-      while (1) {
-        switch (_context7.prev = _context7.next) {
-          case 0:
-            _context7.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].deleteMethod(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.deleteBrew, item);
-
-          case 2:
-            result = _context7.sent;
-            return _context7.abrupt("return", result);
-
-          case 4:
-          case "end":
-            return _context7.stop();
-        }
-      }
-    }, _callee7);
-  }));
   return _deleteItem.apply(this, arguments);
 }
 
@@ -50292,7 +50590,6 @@ function _deleteItem() {
   deleteItem: deleteItem,
   update: update,
   getBrewsByUserId: getBrewsByUserId,
-  getBrewsByUserPreferences: getBrewsByUserPreferences,
   getBrewsByBeerId: getBrewsByBeerId,
   getBrewById: getBrewById
 });
@@ -50641,6 +50938,10 @@ function signUp(data) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
 /* harmony import */ var constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/serviceUrls */ "./src/constants/serviceUrls.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -50648,6 +50949,38 @@ function getUser(userId) {
   return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].userUrls.getUser, {
     userId: userId
   });
+}
+
+function getPreferedBrews(_x) {
+  return _getPreferedBrews.apply(this, arguments);
+}
+
+function _getPreferedBrews() {
+  _getPreferedBrews = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee(userId) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].userUrls.getPreferedBrews, {
+              userId: userId
+            });
+
+          case 2:
+            result = _context.sent;
+            return _context.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _getPreferedBrews.apply(this, arguments);
 }
 
 function updateUser(user) {
@@ -50660,6 +50993,7 @@ function signOut() {
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   getUser: getUser,
+  getPreferedBrews: getPreferedBrews,
   updateUser: updateUser,
   signOut: signOut
 });
@@ -50978,6 +51312,32 @@ var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPO
   "use": "icons-left-usage",
   "viewBox": "0 0 32 32",
   "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-left\">\n<title>arrow-left2</title>\n<path d=\"M12.586 27.414l-10-10c-0.781-0.781-0.781-2.047 0-2.828l10-10c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-6.586 6.586h19.172c1.105 0 2 0.895 2 2s-0.895 2-2 2h-19.172l6.586 6.586c0.39 0.39 0.586 0.902 0.586 1.414s-0.195 1.024-0.586 1.414c-0.781 0.781-2.047 0.781-2.828 0z\" />\n</symbol>"
+});
+var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+
+/***/ "./src/styles/icons/list.svg":
+/*!***********************************!*\
+  !*** ./src/styles/icons/list.svg ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/svg-baker-runtime/browser-symbol.js */ "./node_modules/svg-baker-runtime/browser-symbol.js");
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/svg-sprite-loader/runtime/browser-sprite.build.js */ "./node_modules/svg-sprite-loader/runtime/browser-sprite.build.js");
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "icons-list",
+  "use": "icons-list-usage",
+  "viewBox": "0 0 32 32",
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-list\">\n<title>list</title>\n<path d=\"M0 0h8v8h-8zM12 2h20v4h-20zM0 12h8v8h-8zM12 14h20v4h-20zM0 24h8v8h-8zM12 26h20v4h-20z\" />\n</symbol>"
 });
 var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
 /* harmony default export */ __webpack_exports__["default"] = (symbol);

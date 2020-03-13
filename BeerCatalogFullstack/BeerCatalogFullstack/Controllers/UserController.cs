@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
+using DataAccess.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BeerCatalogFullstack.Controllers
@@ -27,6 +29,12 @@ namespace BeerCatalogFullstack.Controllers
         {
             await manager.UpdateUserAsync(model);
             return Ok();
+        }
+
+        public IActionResult GetPreferedBrews(string userId)
+        {
+            IReadOnlyList<BrewViewModel> brews = manager.GetPreferedBrews(userId);
+            return Json(brews);
         }
     }
 }

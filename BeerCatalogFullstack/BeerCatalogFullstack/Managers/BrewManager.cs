@@ -45,10 +45,23 @@ namespace BeerCatalogFullstack.Managers
                 .ToList();
         }
 
-        public IReadOnlyList<Brew> GetBrewsByUserId(string userId)
+        public IReadOnlyList<BrewViewModel> GetBrewsByUserId(string userId)
         {
             return brewRepository
-                .Get(b => b.UserId == userId)
+                .GetUserBrews(userId)
+                .Select(b =>
+                    new BrewViewModel
+                    {
+                        Id = b.Id,
+                        UserId = b.UserId,
+                        BeerId = b.BeerId,
+                        Rating = b.Rating,
+                        Impression = b.Impression,
+                        Location = b.Location,
+                        DateTime = b.DateTime,
+                        BeerType = b.BeerType
+                    }
+                )
                 .ToList();
         }
 
@@ -79,10 +92,23 @@ namespace BeerCatalogFullstack.Managers
 
         }
 
-        public IReadOnlyList<Brew> GetBrewsByBeerId(int beerId)
+        public IReadOnlyList<BrewViewModel> GetBrewsByBeerId(int beerId)
         {
             return brewRepository
-                .Get(b => b.BeerId == beerId)
+                .GetBrewsByBeerId(beerId)
+                .Select(b =>
+                    new BrewViewModel
+                    {
+                        Id = b.Id,
+                        UserId = b.UserId,
+                        BeerId = b.BeerId,
+                        Rating = b.Rating,
+                        Impression = b.Impression,
+                        Location = b.Location,
+                        DateTime = b.DateTime,
+                        BeerType = b.BeerType
+                    }
+                )
                 .ToList();
         }
 

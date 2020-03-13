@@ -15,6 +15,7 @@ export default {
     },
     userUrls: {
         getUser: '/User/Get',
+        getPreferedBrews: '/User/GetPreferedBrews',
         updateUser: '/User/Update'
     },
     preferenceUrls: {

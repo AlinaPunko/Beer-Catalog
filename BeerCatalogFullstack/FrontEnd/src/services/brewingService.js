@@ -21,11 +21,6 @@ async function getBrewsByBeerId(beerId) {
     return result;
 }
 
-async function getBrewsByUserPreferences(userId) {
-    const result = await api.get(serviceUrls.brewingUrls.getBrewsByPreferences, { userId });
-    return result;
-}
-
 async function update(item) {
     const result = await api.put(serviceUrls.brewingUrls.updateBrew, item);
     return result;
@@ -37,5 +32,5 @@ async function deleteItem(item) {
 }
 
 export default {
-    add, deleteItem, update, getBrewsByUserId, getBrewsByUserPreferences, getBrewsByBeerId, getBrewById
+    add, deleteItem, update, getBrewsByUserId, getBrewsByBeerId, getBrewById
 };

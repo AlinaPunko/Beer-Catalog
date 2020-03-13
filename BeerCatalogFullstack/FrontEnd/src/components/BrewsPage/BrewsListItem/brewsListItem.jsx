@@ -1,48 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import OpenBrewPageButton from 'components/common/OpenBrewPageButton/openBrewPageButton';
-import Icon from 'components/common/Icon/icon';
+import OpenBrewingInfoPageButton from 'components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton';
 
-import minus from 'styles/icons/minus.svg';
-import plus from 'styles/icons/plus.svg';
+import './brewsListItem.scss';
 
 export default class BrewsListItem extends React.PureComponent {
     static propTypes = {
         brew: PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            beerId: PropTypes.number.isRequired,
             name: PropTypes.string.isRequired,
-            date: PropTypes.string.isRequired,
-            location: PropTypes.string.isRequired
+            dateTime: PropTypes.string.isRequired,
+            location: PropTypes.string.isRequired,
+            rating: PropTypes.number.isRequired,
+            photos: PropTypes.array.isRequired
         }).isRequired
-    }
-
-    decreaseRating = () => {
-
-    }
-
-    increaseRating = () => {
-
     }
 
     render() {
         const { brew } = this.props;
-        return (
-            <div className="brews-list-item">
-                <div>
-                    <div className="brews-list-item__title">{brew.name}</div>
-                    <div className="brews-list-item__date">{brew.date}</div>
-                    <div className="brews-list-item__location">{brew.location}</div>
-                    {/* <OpenBrewPageButton brewId={beer.id} className="brews-list-item__open-brew-page-button" /> */}
-                    <button type="button" className="brews-list-item__rating-button" onClick={decreaseRating}>
-                        <Icon icon={minus} iconClassName="brews-list-item__rating-button-icon" />
-                    </button>
-                    <button type="button" className="brews-list-item__rating-button" onClick={increaseRating}>
-                        <Icon icon={plus} iconClassName="brews-list-item__rating-button-icon" />
-                    </button>
-                </div>
-                <img alt="Item_image" className="favorite-list-item__image" src={beer.imageUrl} />
 
-            </div>
+        return (
+            <li className="brews-list-item">
+                <div>
+                    <p className="brews-list-item__row">Brew name: {brew.name}</p>
+                    <p className="brews-list-item__row">Date: {brew.dateTime}</p>
+                    <p className="brews-list-item__row">Location: {brew.location}</p>
+                    <p className="brews-list-item__row">Rating: {brew.rating}</p>
+                    <OpenBrewingInfoPageButton
+                        brewId={brew.id}
+                        text="Open full info"
+                        beerId={brew.beerId}
+                        className="brews-list-item__open-brew-page-button"
+                    />
+                </div>
+                <img alt="Item_image" className="brews-list-item__image" src={brew.photos[0]} />
+
+            </li>
         );
     }
 }

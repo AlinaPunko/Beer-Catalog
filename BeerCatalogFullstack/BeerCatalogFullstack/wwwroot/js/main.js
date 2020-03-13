@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "288be74abceb885cb7ae";
+/******/ 	var hotCurrentHash = "5c3364b3b978c6ad7827";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -994,7 +994,7 @@ exports.push([module.i, ".account-menu {\n  position: absolute;\n  top: 48px;\n 
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".brewing-info-page {\n  width: 50%;\n  margin: 0 auto; }\n\n.brewing-info-page__title {\n  padding: 10px;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.brewing-info-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.brewing-info-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.brewing-info-page__field-input {\n  width: 50%;\n  padding: 5px;\n  color: #000000;\n  background-color: #ffffff;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__impression-field {\n  width: 50%;\n  height: 60px;\n  word-break: break-word;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__ingredients-method {\n  display: flex;\n  justify-content: space-between; }\n\n.brewing-info-page__buttons {\n  width: 50%;\n  margin: 0 auto; }\n\n.brewing-info-page__button {\n  display: block;\n  width: 40%;\n  margin: 20px auto;\n  padding: 10px 0;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n", ""]);
+exports.push([module.i, ".brewing-info-page {\n  width: 50%;\n  margin: 0 auto; }\n\n.brewing-info-page__title {\n  padding: 10px;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.brewing-info-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.brewing-info-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.brewing-info-page__field-input {\n  width: 50%;\n  padding: 5px;\n  color: #000000;\n  background-color: #ffffff;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__impression-field {\n  width: 50%;\n  height: 60px;\n  word-break: break-word;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__ingredients-method {\n  display: flex;\n  justify-content: space-between;\n  width: 80%; }\n\n.brewing-info-page__buttons {\n  width: 50%;\n  margin: 0 auto; }\n\n.brewing-info-page__button {\n  display: block;\n  width: 40%;\n  margin: 20px auto;\n  padding: 10px 0;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n", ""]);
 
 
 
@@ -1129,7 +1129,7 @@ exports.push([module.i, ".brewing-ingredients {\n  width: 50%; }\n\n.brewing-ing
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".brewing-methods {\n  width: 40%;\n  font-size: 16px;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.brewing-methods__title,\n.brewing-methods__method-title {\n  margin: 10px 0;\n  font-size: 25px; }\n\n.brewing-methods__subtitle,\n.brewing-methods__method-subtitle {\n  margin: 5px 0;\n  font-size: 20px; }\n", ""]);
+exports.push([module.i, ".brewing-methods {\n  width: fit-content;\n  font-size: 16px;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.brewing-methods__title,\n.brewing-methods__method-title {\n  margin: 10px 0;\n  font-size: 25px; }\n\n.brewing-methods__subtitle,\n.brewing-methods__method-subtitle {\n  margin: 5px 0;\n  font-size: 20px; }\n", ""]);
 
 
 
@@ -1325,6 +1325,21 @@ exports.push([module.i, ".beer-property-item {\n  border: 1px #8a8a8a solid;\n  
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
 exports.push([module.i, ".brewing-section {\n  width: 80%; }\n\n.brewing-section__title {\n  margin: 10px auto;\n  font-size: 30px;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.brewing-section__brewing-tips {\n  font-size: 16px;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.brewing-section__ingredients-method {\n  display: flex;\n  justify-content: space-between; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewsListSection/brewsListSection.scss":
+/*!********************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewsListSection/brewsListSection.scss ***!
+  \********************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".brews-list-section {\n  margin: 20px 0; }\n\n.brews-list-section__title {\n  padding-bottom: 10px;\n  font-size: 25px;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.brews-list-section__list-item {\n  border: 1px #8a8a8a solid;\n  padding: 5px;\n  font-family: 'Lucida Sans', sans-serif; }\n  .brews-list-section__list-item:not(:first-child) {\n    border-top: none; }\n\n.brews-list-section__button {\n  margin: 0 10px;\n  padding: 10px;\n  color: #ffffff;\n  background-color: #106cc8; }\n", ""]);
 
 
 
@@ -42307,7 +42322,10 @@ function (_React$PureComponent) {
                   fermentation: fermentation,
                   yeast: yeast,
                   mashTemperatures: _this.getMashTemperatures()
-                };
+                }; // if (this.props.match.params.brewId) {
+                //     await serviceWrapper.callService(brewingService.update, brew, null);
+                // }
+
                 _context.next = 7;
                 return helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_10__["default"].callService(services_brewingService__WEBPACK_IMPORTED_MODULE_11__["default"].add, brew, null);
 
@@ -42361,7 +42379,11 @@ function (_React$PureComponent) {
       photos: []
     };
 
-    _this.getBeer(_this.props.match.params.id);
+    _this.getBeer(_this.props.match.params.beerId);
+
+    if (_this.props.match.params.brewId) {
+      _this.getBrew(_this.props.match.params.brewId);
+    }
 
     return _this;
   }
@@ -42399,6 +42421,45 @@ function (_React$PureComponent) {
       }
 
       return getBeer;
+    }()
+  }, {
+    key: "getBrew",
+    value: function () {
+      var _getBrew = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee3(id) {
+        var result;
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return services_brewingService__WEBPACK_IMPORTED_MODULE_11__["default"].getBrewById(id);
+
+              case 2:
+                result = _context3.sent;
+                debugger;
+                this.setState({
+                  location: result.location,
+                  datetime: result.dateTime,
+                  beerType: result.beerType,
+                  impression: result.impression,
+                  photos: result.photos ? result.photos : []
+                });
+
+              case 5:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
+      }));
+
+      function getBrew(_x3) {
+        return _getBrew.apply(this, arguments);
+      }
+
+      return getBrew;
     }()
   }, {
     key: "render",
@@ -42495,7 +42556,8 @@ _defineProperty(BrewingInfoPage, "propTypes", {
     url: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired,
     isExact: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool.isRequired,
     params: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
-      id: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired
+      beerId: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired,
+      brewId: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired
     }).isRequired
   }).isRequired,
   history: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
@@ -44222,7 +44284,10 @@ function (_React$PureComponent) {
         beer: beer,
         className: "beers-list-item__favorite-button"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_OpenBrewingInfoPageButton_openBrewingInfoPageButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        brewId: beer.id
+        beerId: beer.id,
+        brewId: 0,
+        className: "",
+        text: "Add brewing info"
       })));
     }
   }]);
@@ -45119,7 +45184,6 @@ function (_React$PureComponent) {
     _this.state = {
       currentImageIndex: 0
     };
-    debugger;
     return _this;
   }
 
@@ -45128,7 +45192,6 @@ function (_React$PureComponent) {
     value: function render() {
       var currentImageIndex = this.state.currentImageIndex;
       var images = this.props.images;
-      debugger;
 
       if (images.length === 0) {
         return null;
@@ -45239,11 +45302,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
-/* harmony import */ var helpers_urlHelper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! helpers/urlHelper */ "./src/helpers/urlHelper.js");
-/* harmony import */ var constants_routing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! constants/routing */ "./src/constants/routing.js");
-/* harmony import */ var _openBrewingInfoPageButton_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./openBrewingInfoPageButton.scss */ "./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.scss");
-/* harmony import */ var _openBrewingInfoPageButton_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_openBrewingInfoPageButton_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var helpers_urlHelper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! helpers/urlHelper */ "./src/helpers/urlHelper.js");
+/* harmony import */ var constants_routing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! constants/routing */ "./src/constants/routing.js");
+/* harmony import */ var _openBrewingInfoPageButton_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./openBrewingInfoPageButton.scss */ "./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.scss");
+/* harmony import */ var _openBrewingInfoPageButton_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_openBrewingInfoPageButton_scss__WEBPACK_IMPORTED_MODULE_7__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -45272,6 +45337,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var OpenBrewingInfoPageButton =
 /*#__PURE__*/
 function (_React$PureComponent) {
@@ -45286,16 +45352,25 @@ function (_React$PureComponent) {
   _createClass(OpenBrewingInfoPageButton, [{
     key: "render",
     value: function render() {
-      var brewId = this.props.brewId;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_userContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"].Consumer, null, function (_ref) {
-        var userId = _ref.userId;
-        return userId && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: helpers_urlHelper__WEBPACK_IMPORTED_MODULE_4__["default"].getUrlWithParameter(constants_routing__WEBPACK_IMPORTED_MODULE_5__["default"].brewingInfoPage.url, /:id/, brewId)
+      var _this$props = this.props,
+          beerId = _this$props.beerId,
+          brewId = _this$props.brewId,
+          className = _this$props.className,
+          text = _this$props.text;
+      var buttonClass = classnames__WEBPACK_IMPORTED_MODULE_3___default()('open-brewing-info-page-button', className);
+      var url = helpers_urlHelper__WEBPACK_IMPORTED_MODULE_5__["default"].getUrlWithParameter(constants_routing__WEBPACK_IMPORTED_MODULE_6__["default"].brewingInfoPage.url, /:beerId/, beerId);
+      url = helpers_urlHelper__WEBPACK_IMPORTED_MODULE_5__["default"].getUrlWithParameter(url, /:brewId/, brewId);
+
+      if (this.context.userId) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: url
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
-          className: "open-brewing-info-page-button"
-        }, "Add brewing info"));
-      });
+          className: buttonClass
+        }, text));
+      }
+
+      return null;
     }
   }]);
 
@@ -45303,10 +45378,13 @@ function (_React$PureComponent) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
 _defineProperty(OpenBrewingInfoPageButton, "propTypes", {
-  brewId: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired
+  brewId: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
+  beerId: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired,
+  text: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired
 });
 
-_defineProperty(OpenBrewingInfoPageButton, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"]);
+_defineProperty(OpenBrewingInfoPageButton, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_4__["UserContext"]);
 
 
 
@@ -46269,7 +46347,8 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_detailsPage_BrewingSection_brewingSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
         brewerTips: beer.brewerTips,
         ingredients: beer.ingredients,
-        method: beer.method
+        method: beer.method,
+        beerId: this.props.match.params.id
       }));
     }
   }]);
@@ -46653,8 +46732,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var components_common_BrewingIngredients_brewingIngredients__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/common/BrewingIngredients/brewingIngredients */ "./src/components/common/BrewingIngredients/brewingIngredients.jsx");
 /* harmony import */ var components_common_BrewingMethods_brewingMethods__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/common/BrewingMethods/brewingMethods */ "./src/components/common/BrewingMethods/brewingMethods.jsx");
-/* harmony import */ var _brewingSection_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./brewingSection.scss */ "./src/components/detailsPage/BrewingSection/brewingSection.scss");
-/* harmony import */ var _brewingSection_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_brewingSection_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var components_detailsPage_BrewsListSection_brewsListSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/detailsPage/BrewsListSection/brewsListSection */ "./src/components/detailsPage/BrewsListSection/brewsListSection.jsx");
+/* harmony import */ var _brewingSection_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./brewingSection.scss */ "./src/components/detailsPage/BrewingSection/brewingSection.scss");
+/* harmony import */ var _brewingSection_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_brewingSection_scss__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46674,6 +46754,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -46709,9 +46790,11 @@ function (_React$PureComponent) {
         className: "brewing-section__ingredients-method"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_BrewingIngredients_brewingIngredients__WEBPACK_IMPORTED_MODULE_2__["default"], {
         ingredients: ingredients
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_BrewingMethods_brewingMethods__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_BrewingMethods_brewingMethods__WEBPACK_IMPORTED_MODULE_3__["default"], {
         method: method
-      })));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_detailsPage_BrewsListSection_brewsListSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        beerId: this.props.beerId
+      }))));
     }
   }]);
 
@@ -46728,7 +46811,8 @@ _defineProperty(BrewingSection, "propTypes", {
   method: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
     mash_temp: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
     fermentation: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
-  }).isRequired
+  }).isRequired,
+  beerId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired
 });
 
 
@@ -46764,6 +46848,205 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingSection.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingSection/brewingSection.scss", function() {
 		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingSection.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingSection/brewingSection.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/detailsPage/BrewsListSection/brewsListSection.jsx":
+/*!**************************************************************************!*\
+  !*** ./src/components/detailsPage/BrewsListSection/brewsListSection.jsx ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BrewsListSection; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var components_common_OpenBrewingInfoPageButton_openBrewingInfoPageButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton */ "./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.jsx");
+/* harmony import */ var services_brewingService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! services/brewingService */ "./src/services/brewingService.js");
+/* harmony import */ var _brewsListSection_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./brewsListSection.scss */ "./src/components/detailsPage/BrewsListSection/brewsListSection.scss");
+/* harmony import */ var _brewsListSection_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_brewsListSection_scss__WEBPACK_IMPORTED_MODULE_5__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+var BrewsListSection =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(BrewsListSection, _React$PureComponent);
+
+  function BrewsListSection(props) {
+    var _this;
+
+    _classCallCheck(this, BrewsListSection);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(BrewsListSection).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "componentDidMount", function () {
+      _this.getBrews();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getBrews",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee() {
+      var result;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return services_brewingService__WEBPACK_IMPORTED_MODULE_4__["default"].getBrewsByBeerId(_this.props.beerId);
+
+            case 2:
+              result = _context.sent;
+
+              _this.setState({
+                brews: result
+              });
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    })));
+
+    _this.state = {
+      brews: []
+    };
+    return _this;
+  }
+
+  _createClass(BrewsListSection, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var brews = this.state.brews.map(function (brew, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: index,
+          className: "brews-list-section__list-item"
+        }, brew.dateTime.replace('T', ' '), " ", brew.location, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_OpenBrewingInfoPageButton_openBrewingInfoPageButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          brewId: brew.id,
+          beerId: _this2.props.beerId,
+          text: "Show info",
+          className: "brews-list-section__button"
+        }));
+      });
+
+      if (this.context.userId) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+          className: "brews-list-section"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+          className: "brews-list-section__title"
+        }, "Brews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "brews-list-section__list"
+        }, brews));
+      }
+
+      return null;
+    }
+  }]);
+
+  return BrewsListSection;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+_defineProperty(BrewsListSection, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_2__["UserContext"]);
+
+_defineProperty(BrewsListSection, "propTypes", {
+  beerId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+});
+
+
+
+/***/ }),
+
+/***/ "./src/components/detailsPage/BrewsListSection/brewsListSection.scss":
+/*!***************************************************************************!*\
+  !*** ./src/components/detailsPage/BrewsListSection/brewsListSection.scss ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsListSection.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewsListSection/brewsListSection.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsListSection.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewsListSection/brewsListSection.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsListSection.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewsListSection/brewsListSection.scss");
 
 		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 
@@ -49059,7 +49342,7 @@ __webpack_require__.r(__webpack_exports__);
     component: components_profilePage_ProfileSection_profileSection__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   brewingInfoPage: {
-    url: '/brewinfo/:id',
+    url: '/brewinfo/:beerId/:brewId',
     component: components_BrewingInfoPage_brewingInfoPage__WEBPACK_IMPORTED_MODULE_7__["default"]
   },
   brewsList: {
@@ -49108,9 +49391,10 @@ __webpack_require__.r(__webpack_exports__);
     addBrew: '/Brew/Add',
     deleteBrew: '/Brew/Delete',
     updateBrew: '/Brew/Update',
-    getBrewById: '/Brew/Get',
+    getBrewById: '/Brew/GetById',
+    getBrewsByBeerId: '/Brew/GetByBeerId',
+    getBrewsByUserId: '/Brew/GetByUserId',
     getAllBrews: '/Brew/Get',
-    getUserBrews: '/Brew/Get',
     addComment: '/Brew/Comments/Add',
     rateBrew: '/Brew/Rate'
   }
@@ -49297,10 +49581,9 @@ function _post() {
         switch (_context2.prev = _context2.next) {
           case 0:
             headers = getRequestWithBodyHeaders('POST', data);
-            debugger;
             return _context2.abrupt("return", sendRequest(headers, url));
 
-          case 3:
+          case 2:
           case "end":
             return _context2.stop();
         }
@@ -49336,10 +49619,37 @@ function _put() {
   return _put.apply(this, arguments);
 }
 
+function deleteMethod(_x6, _x7) {
+  return _deleteMethod.apply(this, arguments);
+}
+
+function _deleteMethod() {
+  _deleteMethod = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee4(url, data) {
+    var headers;
+    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            headers = getRequestWithBodyHeaders('DELETE', data);
+            return _context4.abrupt("return", sendRequest(headers, url));
+
+          case 2:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+  return _deleteMethod.apply(this, arguments);
+}
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   get: get,
   post: post,
-  put: put
+  put: put,
+  deleteMethod: deleteMethod
 });
 
 /***/ }),
@@ -49670,10 +49980,9 @@ function _add() {
 
           case 2:
             result = _context.sent;
-            debugger;
             return _context.abrupt("return", result);
 
-          case 5:
+          case 4:
           case "end":
             return _context.stop();
         }
@@ -49683,22 +49992,22 @@ function _add() {
   return _add.apply(this, arguments);
 }
 
-function getBrewsByUserId(_x2) {
-  return _getBrewsByUserId.apply(this, arguments);
+function getBrewById(_x2) {
+  return _getBrewById.apply(this, arguments);
 }
 
-function _getBrewsByUserId() {
-  _getBrewsByUserId = _asyncToGenerator(
+function _getBrewById() {
+  _getBrewById = _asyncToGenerator(
   /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee2(userId) {
+  regeneratorRuntime.mark(function _callee2(id) {
     var result;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.getBrewsByUserId, {
-              userId: userId
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.getBrewById, {
+              id: id
             });
 
           case 2:
@@ -49712,15 +50021,15 @@ function _getBrewsByUserId() {
       }
     }, _callee2);
   }));
+  return _getBrewById.apply(this, arguments);
+}
+
+function getBrewsByUserId(_x3) {
   return _getBrewsByUserId.apply(this, arguments);
 }
 
-function getBrewsByUserIdAndPreferences(_x3) {
-  return _getBrewsByUserIdAndPreferences.apply(this, arguments);
-}
-
-function _getBrewsByUserIdAndPreferences() {
-  _getBrewsByUserIdAndPreferences = _asyncToGenerator(
+function _getBrewsByUserId() {
+  _getBrewsByUserId = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee3(userId) {
     var result;
@@ -49744,24 +50053,26 @@ function _getBrewsByUserIdAndPreferences() {
       }
     }, _callee3);
   }));
-  return _getBrewsByUserIdAndPreferences.apply(this, arguments);
+  return _getBrewsByUserId.apply(this, arguments);
 }
 
-function deleteItem(_x4) {
-  return _deleteItem.apply(this, arguments);
+function getBrewsByBeerId(_x4) {
+  return _getBrewsByBeerId.apply(this, arguments);
 }
 
-function _deleteItem() {
-  _deleteItem = _asyncToGenerator(
+function _getBrewsByBeerId() {
+  _getBrewsByBeerId = _asyncToGenerator(
   /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee4(item) {
+  regeneratorRuntime.mark(function _callee4(beerId) {
     var result;
     return regeneratorRuntime.wrap(function _callee4$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
             _context4.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.deleteBrew, item);
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.getBrewsByBeerId, {
+              beerId: beerId
+            });
 
           case 2:
             result = _context4.sent;
@@ -49774,14 +50085,109 @@ function _deleteItem() {
       }
     }, _callee4);
   }));
+  return _getBrewsByBeerId.apply(this, arguments);
+}
+
+function getBrewsByUserPreferences(_x5) {
+  return _getBrewsByUserPreferences.apply(this, arguments);
+}
+
+function _getBrewsByUserPreferences() {
+  _getBrewsByUserPreferences = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee5(userId) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.getBrewsByPreferences, {
+              userId: userId
+            });
+
+          case 2:
+            result = _context5.sent;
+            return _context5.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  }));
+  return _getBrewsByUserPreferences.apply(this, arguments);
+}
+
+function update(_x6) {
+  return _update.apply(this, arguments);
+}
+
+function _update() {
+  _update = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee6(item) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee6$(_context6) {
+      while (1) {
+        switch (_context6.prev = _context6.next) {
+          case 0:
+            _context6.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].put(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.updateBrew, item);
+
+          case 2:
+            result = _context6.sent;
+            return _context6.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context6.stop();
+        }
+      }
+    }, _callee6);
+  }));
+  return _update.apply(this, arguments);
+}
+
+function deleteItem(_x7) {
+  return _deleteItem.apply(this, arguments);
+}
+
+function _deleteItem() {
+  _deleteItem = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee7(item) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee7$(_context7) {
+      while (1) {
+        switch (_context7.prev = _context7.next) {
+          case 0:
+            _context7.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.deleteBrew, item);
+
+          case 2:
+            result = _context7.sent;
+            return _context7.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context7.stop();
+        }
+      }
+    }, _callee7);
+  }));
   return _deleteItem.apply(this, arguments);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   add: add,
   deleteItem: deleteItem,
+  update: update,
   getBrewsByUserId: getBrewsByUserId,
-  getBrewsByUserIdAndPreferences: getBrewsByUserIdAndPreferences
+  getBrewsByUserPreferences: getBrewsByUserPreferences,
+  getBrewsByBeerId: getBrewsByBeerId,
+  getBrewById: getBrewById
 });
 
 /***/ }),

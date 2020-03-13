@@ -21,9 +21,9 @@ namespace DataAccess.Models
 
         public virtual ICollection<Photo> Photos { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
-        public virtual ICollection<Hops> Hops { get; set; }
-        public virtual ICollection<Malt> Malts { get; set; }
-        public virtual ICollection<MashTemperature> MashTemperatures { get; set; }
+        public virtual ICollection<BrewHops> BrewHops { get; set; }
+        public virtual ICollection<BrewMalt> BrewMalts { get; set; }
+        public virtual ICollection<BrewMashTemperature> BrewMashTemperatures { get; set; }
         public virtual Fermentation Fermentation { get; set; }
         public virtual Yeast Yeast { get; set; }
         public virtual Beer Beer { get; set; }

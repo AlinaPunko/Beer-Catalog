@@ -27,9 +27,10 @@ export default {
         addBrew: '/Brew/Add',
         deleteBrew: '/Brew/Delete',
         updateBrew: '/Brew/Update',
-        getBrewById: '/Brew/Get',
+        getBrewById: '/Brew/GetById',
+        getBrewsByBeerId: '/Brew/GetByBeerId',
+        getBrewsByUserId: '/Brew/GetByUserId',
         getAllBrews: '/Brew/Get',
-        getUserBrews: '/Brew/Get',
         addComment: '/Brew/Comments/Add',
         rateBrew: '/Brew/Rate'
     }

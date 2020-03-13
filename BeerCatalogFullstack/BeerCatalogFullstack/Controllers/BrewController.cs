@@ -47,10 +47,16 @@ namespace BeerCatalogFullstack.Controllers
             return Json(userBrews);
         }
 
-        //public IActionResult GetById(string id)
-        //{
-        //    BrewViewModel brew = manager.GetBrewById(id);
-        //    return Json(brew);
-        //}
+        public IActionResult GetByBeerId(int beerId)
+        {
+            IReadOnlyList<Brew> brews = manager.GetBrewsByBeerId(beerId);
+            return Json(brews);
+        }
+
+        public IActionResult GetById(int id)
+        {
+            BrewViewModel brew = manager.GetBrewById(id);
+            return Json(brew);
+        }
     }
 }

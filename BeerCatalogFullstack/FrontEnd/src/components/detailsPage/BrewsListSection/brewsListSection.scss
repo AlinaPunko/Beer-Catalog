@@ -1,0 +1,25 @@
+@import 'styles/mixins.scss';
+
+.brews-list-section {
+    margin: 20px 0;
+}
+
+.brews-list-section__title {
+    padding-bottom: 10px;
+    font-size: 25px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.brews-list-section__list-item {
+    @include list-item-border;
+
+    padding: 5px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.brews-list-section__button {
+    margin: 0 10px;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #106cc8;
+}

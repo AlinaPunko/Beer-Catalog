@@ -46,7 +46,7 @@ export default class BeersListItem extends React.PureComponent {
                     <div className="beers-list-item__tagline">{beer.tagline}</div>
                     <OpenDetailsPageButton beerId={beer.id} className="beers-list-item__open-details-page-button" />
                     <FavoriteButton beer={beer} className="beers-list-item__favorite-button" />
-                    <OpenBrewingInfoPageButton brewId={beer.id} />
+                    <OpenBrewingInfoPageButton beerId={beer.id} brewId={0} className="" text="Add brewing info" />
                 </div>
             </div>
         );

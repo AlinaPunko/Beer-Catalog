@@ -50,7 +50,6 @@ function get(url, parameters) {
 
 async function post(url, data) {
     const headers = getRequestWithBodyHeaders('POST', data);
-    debugger;
     return sendRequest(headers, url);
 }
 
@@ -59,4 +58,11 @@ async function put(url, data) {
     return sendRequest(headers, url);
 }
 
-export default { get, post, put };
+async function deleteMethod(url, data) {
+    const headers = getRequestWithBodyHeaders('DELETE', data);
+    return sendRequest(headers, url);
+}
+
+export default {
+    get, post, put, deleteMethod
+};

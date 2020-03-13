@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import BrewingIngredients from 'components/common/BrewingIngredients/brewingIngredients';
 import BrewingMethods from 'components/common/BrewingMethods/brewingMethods';
+import BrewsListSection from 'components/detailsPage/BrewsListSection/brewsListSection';
 
 import './brewingSection.scss';
 
@@ -17,7 +18,8 @@ export default class BrewingSection extends React.PureComponent {
         method: PropTypes.shape({
             mash_temp: PropTypes.array.isRequired,
             fermentation: PropTypes.object.isRequired
-        }).isRequired
+        }).isRequired,
+        beerId: PropTypes.number.isRequired
     }
 
     render() {
@@ -29,7 +31,10 @@ export default class BrewingSection extends React.PureComponent {
                 <p className="brewing-section__brewing-tips">{brewerTips}</p>
                 <div className="brewing-section__ingredients-method">
                     <BrewingIngredients ingredients={ingredients} />
-                    <BrewingMethods method={method} />
+                    <div>
+                        <BrewingMethods method={method} />
+                        <BrewsListSection beerId={this.props.beerId} />
+                    </div>
                 </div>
             </section>
         );

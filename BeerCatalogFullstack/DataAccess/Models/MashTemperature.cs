@@ -12,6 +12,6 @@ namespace DataAccess.Models
         public string TemperatureUnit { get; set; }
         public int Duration { get; set; }
 
-        public virtual Brew Brew { get; set; }
+        public virtual ICollection<BrewMashTemperature> BrewMashTemperatures { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccess.Models
 {
@@ -6,11 +7,10 @@ namespace DataAccess.Models
     public class Fermentation
     { 
         public int Id { get; set; }
-        public int BrewId { get; set; }
         public int BeerId { get; set; }
         public int TemperatureValue { get; set; }
         public string TemperatureUnit { get; set; }
 
-        public virtual Brew Brew { get; set; }
+        public virtual ICollection<Brew> Brews { get; set; }
     }
 }

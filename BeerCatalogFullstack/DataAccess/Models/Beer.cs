@@ -14,7 +14,7 @@ namespace DataAccess.Models
         public string Tagline { get; set; }
         public string ImageUrl { get; set; }
 
-        public virtual List<FavoriteBeer> FavoriteBeers { get; set; }
-        public virtual List<Brew> Brews { get; set; }
+        public virtual ICollection<FavoriteBeer> FavoriteBeers { get; set; }
+        public virtual ICollection<Brew> Brews { get; set; }
     }
 }

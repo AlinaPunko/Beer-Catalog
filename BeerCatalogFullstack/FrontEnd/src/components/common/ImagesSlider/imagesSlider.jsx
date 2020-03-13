@@ -17,7 +17,6 @@ export default class ImagesSlider extends React.PureComponent {
         this.state = {
             currentImageIndex: 0
         };
-        debugger;
     }
 
     setPreviousSlide = () => {
@@ -45,7 +44,6 @@ export default class ImagesSlider extends React.PureComponent {
     render() {
         const { currentImageIndex } = this.state;
         const { images } = this.props;
-        debugger;
         if (images.length === 0) {
             return null;
         }

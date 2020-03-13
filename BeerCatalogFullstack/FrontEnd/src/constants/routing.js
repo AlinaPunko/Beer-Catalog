@@ -33,7 +33,7 @@ export default {
         component: ProfileSection
     },
     brewingInfoPage: {
-        url: '/brewinfo/:id',
+        url: '/brewinfo/:beerId/:brewId',
         component: BrewingInfoPage
     },
     brewsList: {

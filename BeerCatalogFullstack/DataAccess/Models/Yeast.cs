@@ -7,10 +7,9 @@ namespace DataAccess.Models
     public class Yeast
     {
         public int Id { get; set; }
-        public int BrewId { get; set; }
         public int BeerId { get; set; }
         public string Name { get; set; }
 
-        public virtual Brew Brew { get; set; }
+        public virtual ICollection<Brew> Brews { get; set; }
     }
 }

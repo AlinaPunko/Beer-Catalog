@@ -22,7 +22,8 @@ class BrewingInfoPage extends React.PureComponent {
             url: PropTypes.string.isRequired,
             isExact: PropTypes.bool.isRequired,
             params: PropTypes.shape({
-                id: PropTypes.string.isRequired
+                beerId: PropTypes.string.isRequired,
+                brewId: PropTypes.string.isRequired
             }).isRequired
         }).isRequired,
         history: PropTypes.shape({
@@ -54,12 +55,30 @@ class BrewingInfoPage extends React.PureComponent {
             impression: '',
             photos: []
         };
-        this.getBeer(this.props.match.params.id);
+        this.getBeer(this.props.match.params.beerId);
+        if (this.props.match.params.brewId) {
+            this.getBrew(this.props.match.params.brewId);
+        }
     }
 
     async getBeer(id) {
         const result = await beerService.getByID(id);
         this.setState({ beerInfo: result });
+    }
+
+
+    async getBrew(id) {
+        const result = await brewingService.getBrewById(id);
+        debugger;
+        this.setState(
+            {
+                location: result.location,
+                datetime: result.dateTime,
+                beerType: result.beerType,
+                impression: result.impression,
+                photos: result.photos ? result.photos : []
+            }
+        );
     }
 
     changeLocation = (e) => {
@@ -169,6 +188,10 @@ class BrewingInfoPage extends React.PureComponent {
             mashTemperatures: this.getMashTemperatures()
         };
 
+        // if (this.props.match.params.brewId) {
+        //     await serviceWrapper.callService(brewingService.update, brew, null);
+        // }
+
         await serviceWrapper.callService(brewingService.add, brew, null);
     }
 
@@ -186,6 +209,7 @@ class BrewingInfoPage extends React.PureComponent {
                 const srcData = fileLoadedEvent.target.result;
                 this.setState({ photos: this.state.photos.concat(srcData) });
             };
+
             fileReader.readAsDataURL(fileToLoad);
         }
     }

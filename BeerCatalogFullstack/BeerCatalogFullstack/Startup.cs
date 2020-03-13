@@ -48,7 +48,11 @@ namespace BeerCatalogFullstack
             services.AddTransient<PreferenceManager>();
             services.AddTransient<BrewManager>();
             services.AddTransient<UserManager>();
-
+            services.AddTransient<YeastManager>();
+            services.AddTransient<FermentationManager>();
+            services.AddTransient<MaltManager>();
+            services.AddTransient<MashTemperatureManager>();
+            services.AddTransient<HopsManager>();
 
             services.AddTransient<RegisterRepository>();
             services.AddTransient<BeerRepository>();
@@ -63,6 +67,9 @@ namespace BeerCatalogFullstack
             services.AddTransient<YeastRepository>();
             services.AddTransient<FermentationRepository>();
             services.AddTransient<PhotoRepository>();
+            services.AddTransient<BrewHopsRepository>();
+            services.AddTransient<BrewMashTemperatureRepository>();
+            services.AddTransient<BrewMaltRepository>();
 
             services.AddScoped<UserManager<User>>();
             services.AddScoped<SignInManager<User>>();

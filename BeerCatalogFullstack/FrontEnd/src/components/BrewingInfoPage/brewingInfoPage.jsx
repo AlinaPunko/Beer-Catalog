@@ -1,10 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import SimpleReactValidator from 'simple-react-validator';
 import PropTypes from 'prop-types';
 
 import { UserContext } from 'store/context/userContext';
 import FormRow from 'components/common/FormRow/formRow';
 import SelectPhotoField from 'components/common/SelectPhotoField/selectPhotoField';
+import brewValidationConfig from 'validationConfigs/brewValidationConfig';
 import redirectToHomePageHelper from 'helpers/redirectToHomePageHelper';
 import BrewingIngredients from 'components/common/BrewingIngredients/brewingIngredients';
 import BrewingMethods from 'components/common/BrewingMethods/brewingMethods';
@@ -43,11 +45,14 @@ class BrewingInfoPage extends React.PureComponent {
 
     constructor(props) {
         super(props);
+        this.validator = new SimpleReactValidator();
+        const { params } = this.props.match;
         const today = new Date();
         const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
         const time = `${today.getHours()}:${today.getMinutes()}`;
         const dateTime = `${date} ${time}`;
         this.state = {
+            id: 0,
             beerInfo: null,
             location: '',
             datetime: dateTime,
@@ -55,9 +60,9 @@ class BrewingInfoPage extends React.PureComponent {
             impression: '',
             photos: []
         };
-        this.getBeer(this.props.match.params.beerId);
-        if (this.props.match.params.brewId) {
-            this.getBrew(this.props.match.params.brewId);
+        this.getBeer(params.beerId);
+        if (params.brewId) {
+            this.getBrew(params.brewId);
         }
     }
 
@@ -153,6 +158,7 @@ class BrewingInfoPage extends React.PureComponent {
         e.preventDefault();
 
         const {
+            id,
             beerInfo,
             location,
             datetime,
@@ -173,7 +179,7 @@ class BrewingInfoPage extends React.PureComponent {
         };
 
         const brew = {
-            id: 0,
+            id,
             userId: this.context.userId,
             beerId: beerInfo.id,
             tagline: beerInfo.tagline,
@@ -192,11 +198,19 @@ class BrewingInfoPage extends React.PureComponent {
             mashTemperatures: this.getMashTemperatures()
         };
 
-        if (this.state.userId === this.context.userId) {
-            await serviceWrapper.callService(brewingService.update, brew, null);
+        if (this.validator.allValid()) {
+            if (this.state.userId === this.context.userId) {
+                await serviceWrapper.callService(brewingService.update, brew, null);
+                alert('Brew has been updated');
+                redirectToHomePageHelper.redirect(this.props.history);
+                return;
+            }
+            alert('Brew has been added');
+            await serviceWrapper.callService(brewingService.add, brew, this.errorFieldRef);
+        } else {
+            this.validator.showMessages();
+            this.forceUpdate();
         }
-
-        await serviceWrapper.callService(brewingService.add, brew, null);
     }
 
     close = (e) => {
@@ -229,8 +243,9 @@ class BrewingInfoPage extends React.PureComponent {
             impression,
             rating: 0
         };
-        debugger;
-        await serviceWrapper.callService(brewingService.deleteItem, brew, null);
+
+        await serviceWrapper.callService(brewingService.deleteItem, brew, this.errorFieldRef);
+        alert('Brew has been deleted');
         redirectToHomePageHelper.redirect(this.props.history);
     }
 
@@ -249,11 +264,23 @@ class BrewingInfoPage extends React.PureComponent {
     }
 
     renderDeleteButton = () => {
-        debugger;
         if (this.state.userId === this.context.userId) {
             return <input type="button" onClick={this.delete} value="Delete" className="brewing-info-page__delete-button" />;
         }
         return null;
+    }
+
+    renderValidationResult = () => {
+        return (
+            <div className="brewing-info-page__validation-result" ref={this.errorFieldRef}>
+                {
+                    this.validator.message(brewValidationConfig.beerType.fieldName, this.state.beerType, brewValidationConfig.beerType.rule)
+                }
+                {
+                    this.validator.message(brewValidationConfig.impression.fieldName, this.state.impression, brewValidationConfig.impression.rule)
+                }
+            </div>
+        );
     }
 
     render() {
@@ -305,6 +332,9 @@ class BrewingInfoPage extends React.PureComponent {
                             className="brewing-info-page__impression-field"
                         />
                     </div>
+                    {
+                        this.renderValidationResult()
+                    }
                     <SelectPhotoField onChange={this.addPhoto} />
                     <ImagesSlider images={photos} />
                     <div className="brewing-info-page__ingredients-method">

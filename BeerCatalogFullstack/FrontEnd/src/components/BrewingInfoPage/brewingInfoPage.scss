@@ -35,6 +35,8 @@
 .brewing-info-page__impression-field {
     width: 50%;
     height: 60px;
+    padding: 5px;
+    font-family: "Lucida Sans", sans-serif;
     word-break: break-word;
     border: 1px #106cc8 solid;
     border-radius: 5px;
@@ -69,6 +71,11 @@
     padding: 10px 0;
     font-family: "Lucida Sans", sans-serif;
     background-color: transparent;
-    border: 1px #c81010 solid;
+    border: 1px #ff0000 solid;
     border-radius: 5px;
+}
+
+.brewing-info-page__validation-result {
+    color: #ff0000;
+    font-family: "Lucida Sans", sans-serif;
 }

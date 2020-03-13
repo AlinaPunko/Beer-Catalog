@@ -58,5 +58,11 @@ namespace BeerCatalogFullstack.Controllers
             BrewViewModel brew = manager.GetBrewById(id);
             return Json(brew);
         }
+
+        public IActionResult GetPreferedBrews(int userId)
+        {
+            List<BrewViewModel> brews = manager.;
+            return Json(brews);
+        }
     }
 }

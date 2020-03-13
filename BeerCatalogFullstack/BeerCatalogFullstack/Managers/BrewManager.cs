@@ -88,17 +88,15 @@ namespace BeerCatalogFullstack.Managers
 
         public void UpdateBrew(BrewViewModel viewModel)
         {
-            var brew = new Brew
-            {
-                Id = viewModel.Id,
-                BeerId = viewModel.BeerId,
-                Name = viewModel.Name,
-                BeerType = viewModel.BeerType,
-                Location = viewModel.Location,
-                DateTime = viewModel.DateTime,
-                Impression = viewModel.Impression,
-                UserId = viewModel.UserId
-            };
+            var brew = brewRepository.GetById(viewModel.Id);
+            brew.Id = viewModel.Id;
+            brew.BeerId = viewModel.BeerId;
+            brew.Name = viewModel.Name;
+            brew.BeerType = viewModel.BeerType;
+            brew.Location = viewModel.Location;
+            brew.DateTime = viewModel.DateTime;
+            brew.Impression = viewModel.Impression;
+            brew.UserId = viewModel.UserId;
 
             brewRepository.Update(brew);
         }

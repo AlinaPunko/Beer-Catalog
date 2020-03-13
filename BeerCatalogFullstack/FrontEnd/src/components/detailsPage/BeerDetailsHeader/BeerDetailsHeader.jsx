@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { UserContext } from 'store/context/userContext';
 import FavoriteButton from 'components/common/FavoriteButton/favoriteButton';
+import OpenBrewingInfoPageButton from 'components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton';
 import favoritesService from 'services/favoritesService';
 import favoriteItemHelper from 'helpers/favoriteItemHelper';
 
@@ -43,7 +44,10 @@ export default class BeerDetailsHeader extends React.Component {
                 <div className="beer-details-header__content">
                     <h1 className="beer-details-header__title">{beer.name}</h1>
                     <div className="beer-details-header__tagline">{beer.tagline}</div>
-                    <FavoriteButton beer={beer} className="beer-details-header__button" />
+                    <div>
+                        <FavoriteButton beer={beer} className="beer-details-header__button" />
+                        <OpenBrewingInfoPageButton brewId={0} beerId={beer.id} text="Add brew" className="beer-details-header__button" />
+                    </div>
                     <p className="beer-details-header__description">{beer.description}</p>
                 </div>
                 <img alt="Item_image" className="beer-details-header__image" src={beer.imageUrl} />

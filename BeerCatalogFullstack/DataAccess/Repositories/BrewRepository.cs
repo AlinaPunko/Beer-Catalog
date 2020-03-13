@@ -20,5 +20,14 @@ namespace DataAccess.Repositories
             return Get(b => b.UserId == userId)
                 .ToList();
         }
+
+        public IReadOnlyList<Brew> GetPreferedBrews(List<string> preferences, string userId)
+        {
+            return Get(b => b.UserId == userId)
+                .Where(b => preferences.Contains(b.BeerType))
+                .OrderBy(b => b.DateTime)
+                .ThenBy(b => b.Rating)
+                .ToList();
+        }
     }
 }

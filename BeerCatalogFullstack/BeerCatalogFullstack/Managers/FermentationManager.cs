@@ -38,10 +38,5 @@ namespace BeerCatalogFullstack.Managers
         {
             return fermentationRepository.Get(y => y.BeerId == beerId).Select(y => y.Id).FirstOrDefault();
         }
-
-        public void DeleteBrewFermentation(int brewId)
-        {
-
-        }
     }
 }

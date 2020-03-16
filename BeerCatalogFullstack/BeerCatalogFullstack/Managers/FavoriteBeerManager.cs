@@ -17,19 +17,19 @@ namespace BeerCatalogFullstack.Managers
             this.beerRepository = beerRepository;
         }
 
-        public IReadOnlyList<int> GetUserFavoriteBeersIds(string userId)
+        public IReadOnlyList<int> GetBeerIdsByUser(string userId)
         {
             return favoriteBeerRepository
-                .GetUserFavoriteBeerIds(userId)
-                .ToList();
+                .GetUserFavoriteBeerIds(userId);
         }
 
         public void AddFavoriteBeer(FavoriteBeerViewModel model)
         {
             FavoriteBeer favoriteBeer = GetFavoriteBeerModel(model);
             Beer beer = GetBeerModel(model);
+            bool isBeerExists = beerRepository.IsBeerExists(beer.Id);
 
-            if (beerRepository.GetAll().Count(b => b.Id == model.Id) == 0)
+            if (!isBeerExists)
             {
                 beerRepository.Add(beer);
             }

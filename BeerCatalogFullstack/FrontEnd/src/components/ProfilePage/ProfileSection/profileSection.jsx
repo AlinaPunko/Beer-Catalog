@@ -1,15 +1,16 @@
 import React from 'react';
+import moment from 'moment';
 import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
 import PropTypes from 'prop-types';
 
-import FormRow from 'components/common/FormRow/formRow';
-import SelectPhotoField from 'components/common/SelectPhotoField/selectPhotoField';
+import Input from 'components/common/Input/input';
+import PhotoSelector from 'components/common/PhotoSelector/photoSelector';
 import UserPreferenceSection from 'components/profilePage/UserPreferenceSection/userPreferenceSection';
 import profileValidationConfig from 'validationConfigs/profileValidationConfig';
 import userService from 'services/userService';
 import serviceWrapper from 'helpers/serviceWrapper';
-import redirectToHomePageHelper from 'helpers/redirectToHomePageHelper';
+import redirectHelper from 'helpers/redirectHelper';
 import { UserContext } from 'store/context/userContext';
 
 import './profileSection.scss';
@@ -50,7 +51,7 @@ class ProfileSection extends React.PureComponent {
             name: user.name,
             email: user.email,
             photo: user.photo,
-            birthdate: user.birthdate ? user.birthdate.slice(0, 10) : ''
+            birthdate: user.birthdate ? moment(user.birthdate).format('YYYY-MM-DD') : ''
         });
     }
 
@@ -67,20 +68,11 @@ class ProfileSection extends React.PureComponent {
     }
 
     changeBirthdate = (e) => {
-        this.setState({ birthdate: e.target.value.slice(0, 10) });
+        this.setState({ birthdate: moment(e.target.value).format('YYYY-MM-DD') });
     }
 
-    changePhoto = (event) => {
-        const filesSelected = event.target.files;
-        if (filesSelected.length > 0) {
-            const fileToLoad = filesSelected[0];
-            const fileReader = new FileReader();
-            fileReader.onload = (fileLoadedEvent) => {
-                const srcData = fileLoadedEvent.target.result;
-                this.setState({ photo: srcData });
-            };
-            fileReader.readAsDataURL(fileToLoad);
-        }
+    changePhoto = (photo) => {
+        this.setState({ photo });
     }
 
     save = async (e) => {
@@ -89,7 +81,7 @@ class ProfileSection extends React.PureComponent {
             const userData = { ...this.state };
             await serviceWrapper.callService(userService.updateUser, userData, this.errorFieldRef);
             alert('The user was updated');
-            redirectToHomePageHelper.redirect(this.props.history);
+            redirectHelper.redirectToHomePage(this.props.history);
         } else {
             this.validator.showMessages();
             this.forceUpdate();
@@ -102,14 +94,14 @@ class ProfileSection extends React.PureComponent {
     }
 
     renderValidationResult = () => {
+        const messages = [
+            this.validator.message(profileValidationConfig.email.fieldName, this.state.email, profileValidationConfig.email.rule),
+            this.validator.message(profileValidationConfig.name.fieldName, this.state.name, profileValidationConfig.name.rule)
+        ];
+
         return (
             <div className="profile-section__validation-result" ref={this.errorFieldRef}>
-                {
-                    this.validator.message(profileValidationConfig.email.fieldName, this.state.email, profileValidationConfig.email.rule)
-                }
-                {
-                    this.validator.message(profileValidationConfig.name.fieldName, this.state.name, profileValidationConfig.name.rule)
-                }
+                { messages }
             </div>
         );
     }
@@ -125,15 +117,15 @@ class ProfileSection extends React.PureComponent {
                             alt="avatar"
                             src={this.state.photo}
                         />
-                        <SelectPhotoField onChange={this.changePhoto} />
+                        <PhotoSelector onChange={this.changePhoto} />
                         <button className="profile-section__button" type="button" onClick={this.deletePhoto}>
                                 Delete photo
                         </button>
                     </div>
                     <div className="profile-section__user-info">
-                        <FormRow name="name" type="text" label="Name:" onChange={this.changeName} value={this.state.name} />
-                        <FormRow name="email" type="email" label="E-mail:" onChange={this.changeEmail} value={this.state.email} />
-                        <FormRow
+                        <Input name="name" type="text" label="Name:" onChange={this.changeName} value={this.state.name} />
+                        <Input name="email" type="email" label="E-mail:" onChange={this.changeEmail} value={this.state.email} />
+                        <Input
                             name="birthdate"
                             type="date"
                             label="Select birthdate:"
@@ -144,8 +136,8 @@ class ProfileSection extends React.PureComponent {
                             this.renderValidationResult()
                         }
                         <div className="profile-section__buttons">
-                            <input type="submit" className="profile-section__button" onClick={this.save} value="Save" />
-                            <input type="reset" className="profile-section__button" onClick={this.close} value="Close" />
+                            <button type="submit" className="profile-section__button" onClick={this.save}>Save</button>
+                            <button type="button" className="profile-section__button" onClick={this.close}>Close</button>
                         </div>
                         <UserPreferenceSection />
                     </div>

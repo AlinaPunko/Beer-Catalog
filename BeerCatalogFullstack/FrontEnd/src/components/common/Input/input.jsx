@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './formRow.scss';
+import './input.scss';
 
 export default class FormRow extends React.PureComponent {
     static propTypes = {
@@ -19,14 +19,15 @@ export default class FormRow extends React.PureComponent {
             value,
             onChange
         } = this.props;
+
         return (
-            <div className="form-row">
-                <label className="form-row__title">{label}</label>
+            <div className="input">
+                <label className="input__title">{label}</label>
                 <input
                     name={name}
                     type={type}
                     value={value}
-                    className="form-row__input"
+                    className="input__input"
                     onChange={onChange}
                 />
             </div>

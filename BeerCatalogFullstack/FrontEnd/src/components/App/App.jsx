@@ -36,10 +36,6 @@ export default class App extends React.PureComponent {
         this.setState({ showAccountMenu: !this.state.showAccountMenu });
     }
 
-    openAccountMenu = () => {
-        this.setState({ showAccountMenu: true });
-    }
-
     closeAccountMenu = () => {
         this.setState({ showAccountMenu: false });
     }

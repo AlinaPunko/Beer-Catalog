@@ -30,7 +30,7 @@ namespace BeerCatalogFullstack.Controllers
 
         public IActionResult Get(string userId)
         {
-            IReadOnlyList<int> userFavoriteBeersIds = manager.GetUserFavoriteBeersIds(userId);
+            IReadOnlyList<int> userFavoriteBeersIds = manager.GetBeerIdsByUser(userId);
             return Json(userFavoriteBeersIds);
         }
     }

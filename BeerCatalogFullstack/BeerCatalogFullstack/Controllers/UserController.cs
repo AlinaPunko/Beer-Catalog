@@ -21,7 +21,9 @@ namespace BeerCatalogFullstack.Controllers
         {
             UserViewModel user = manager.GetUserById(userId);
 
-            return user == null ? Json(new ArgumentException("Incorrect user")) : Json(user);
+            return user == null
+                ? Json(new ArgumentException("Incorrect user"))
+                : Json(user);
         }
 
         [HttpPut]

@@ -1,7 +1,7 @@
 import routing from 'constants/routing';
 
-function redirect(history) {
+function redirectToHomePage(history) {
     history.push(routing.searchPage.url);
 }
 
-export default { redirect };
+export default { redirectToHomePage };

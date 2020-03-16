@@ -7,7 +7,6 @@ namespace DataAccess.Repositories
 {
     public class FavoriteBeerRepository : GenericRepository<FavoriteBeer>
     {
-
         public FavoriteBeerRepository(ApplicationContext context) : base(context) { }
 
         public IReadOnlyList<int> GetUserFavoriteBeerIds(string userId)

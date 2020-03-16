@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccess.Models
 {
+    [Table("Beer")]
     public class Beer
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -14,5 +15,6 @@ namespace DataAccess.Models
         public string ImageUrl { get; set; }
 
         public virtual List<FavoriteBeer> FavoriteBeers { get; set; }
+        public virtual List<Brew> Brews { get; set; }
     }
 }

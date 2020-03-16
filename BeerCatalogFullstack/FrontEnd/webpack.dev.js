@@ -24,7 +24,7 @@ module.exports = merge(common, {
             title: 'Beer Catalog',
             inject: false,
             template: require('html-webpack-template'),
-            bodyHtmlSnippet: '<main class="main" id="content"></main>'
+            bodyHtmlSnippet: '<main class="main" id="app"></main>'
         })
     ]
 });

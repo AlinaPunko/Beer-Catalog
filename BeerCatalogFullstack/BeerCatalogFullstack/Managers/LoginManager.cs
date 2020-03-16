@@ -16,28 +16,23 @@ namespace BeerCatalogFullstack.Managers
             this.loginRepository = loginRepository;
         }
 
-        public async Task<string> Register(RegisterViewModel model)
+        public async Task<string> Register(RegisterViewModel viewModel)
         {
-            var user = new User()
+            User model = new User
             {
-                Email = model.Email,
-                Name = model.Name,
-                UserName = model.Email,
-                Birthdate = model.Birthdate,
-                Photo = model.Photo
+                Email = viewModel.Email,
+                UserName = viewModel.Email,
+                Name = viewModel.Name,
+                Birthdate = viewModel.Birthdate,
+                Photo = viewModel.Photo
             };
 
-            return await registerRepository.Register(user, model.Password);
+            return await registerRepository.Register(model, viewModel.Password);
         }
 
         public async Task<string> Login(LoginViewModel model)
         {
-            var user = new User()
-            {
-                Email = model.Email
-            };
-
-            return await loginRepository.Login(user, model.Password);
+            return await loginRepository.Login(model.Email, model.Password);
         }
 
         public void SignOut()

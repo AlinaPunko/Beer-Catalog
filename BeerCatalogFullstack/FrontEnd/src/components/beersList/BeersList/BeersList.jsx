@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { UserContext } from 'store/context/userContext';
-import favouritesService from 'services/favouritesService';
+import favoritesService from 'services/favoritesService';
 import beerService from 'services/beerService';
 import BeersListItem from 'components/beersList/BeersListItem/beersListItem';
 import Icon from 'components/common/Icon/icon';
@@ -18,8 +18,11 @@ class BeersList extends React.PureComponent {
         addBeers: PropTypes.func.isRequired
     };
 
+    static contextType = UserContext;
+
     constructor(props, context) {
         super(props, context);
+
         this.beerPerPage = 12;
         this.state = {
             page: 1,
@@ -41,12 +44,12 @@ class BeersList extends React.PureComponent {
     }
 
     async loadFavoriteBeers() {
-        if (this.context.userId === '') {
+        if (!this.context.userId) {
             return;
         }
-        debugger;
-        const favoriteBeers = await favouritesService.getItems(this.context.userId);
-        this.context.setFavouriteBeers(favoriteBeers);
+
+        const favoriteBeers = await favoritesService.getItems(this.context.userId);
+        this.context.setFavoriteBeers(favoriteBeers);
     }
 
     async loadBeers() {
@@ -98,5 +101,4 @@ class BeersList extends React.PureComponent {
     }
 }
 
-BeersList.contextType = UserContext;
 export default connect()(BeersList);

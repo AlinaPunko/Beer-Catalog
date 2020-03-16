@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 
-namespace BeerCatalogFullstack.Exceptions
+namespace DataAccess.Exceptions
 {
     public class SignUpException : Exception
     {

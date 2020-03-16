@@ -45,9 +45,15 @@ namespace BeerCatalogFullstack
         {
             services.AddTransient<LoginManager>();
             services.AddTransient<FavoriteBeerManager>();
+            services.AddTransient<PreferenceManager>();
+            services.AddTransient<UserManager>();
             services.AddTransient<RegisterRepository>();
+            services.AddTransient<BeerRepository>();
             services.AddTransient<FavoriteBeerRepository>();
             services.AddTransient<LoginRepository>();
+            services.AddTransient<UserRepository>();
+            services.AddTransient<PreferenceRepository>();
+
             services.AddScoped<UserManager<User>>();
             services.AddScoped<SignInManager<User>>();
         }
@@ -71,6 +77,7 @@ namespace BeerCatalogFullstack
 
             app.UseMvc(routes =>
             {
+                
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 routes.MapSpaFallbackRoute("spa-fallback", new { controller = "Home", action = "Index" });
             });

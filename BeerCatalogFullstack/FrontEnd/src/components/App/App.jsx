@@ -11,28 +11,18 @@ export default class App extends React.PureComponent {
     constructor(props) {
         super(props);
 
-        this.setUserId = (userId) => {
-            this.setState(() => ({
-                userId
-            }));
-        };
-
-        this.setFavouriteBeers = (favouriteBeers) => {
-            this.setState(() => ({
-                favouriteBeers
-            }));
-        };
-
         this.state = {
             showSideMenu: false,
-            showAccountMenu: false,
-            userId: '',
-            favouriteBeers: [],
-            setFavouriteBeers: this.setFavouriteBeers,
-            setUserId: this.setUserId
+            showAccountMenu: false
+        };
+
+        this.contextFeatures = {
+            userId: null,
+            favoriteBeers: [],
+            setFavoriteBeers: (beers) => this.contextFeatures.favoriteBeers = beers,
+            setUserId: (id) => this.contextFeatures.userId = id
         };
     }
-
 
     openSideMenu = () => {
         this.setState({ showSideMenu: true });
@@ -56,12 +46,12 @@ export default class App extends React.PureComponent {
 
     render() {
         return (
-            <UserContext.Provider value={this.state}>
+            <UserContext.Provider value={this.contextFeatures}>
                 <Router>
-                    <div className="App">
-                        <Header openSideMenuFunction={this.openSideMenu} toggleAccountMenuFunction={this.toggleAccountMenu} />
-                        <SideMenu showMenu={this.state.showSideMenu} closeFunction={this.closeSideMenu} />
-                        <AccountMenu showMenu={this.state.showAccountMenu} closeFunction={this.closeAccountMenu} />
+                    <div className="app">
+                        <Header openSideMenu={this.openSideMenu} toggleAccountMenu={this.toggleAccountMenu} />
+                        <SideMenu showMenu={this.state.showSideMenu} closeMenu={this.closeSideMenu} />
+                        <AccountMenu showMenu={this.state.showAccountMenu} closeMenu={this.closeAccountMenu} />
                         <Routing />
                     </div>
                 </Router>

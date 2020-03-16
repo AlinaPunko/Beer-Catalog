@@ -18,7 +18,7 @@ export default class SearchBox extends React.Component {
         this.inputRef = React.createRef();
     }
 
-    onInputKeyDown = (e) => {
+    onKeyDown = (e) => {
         if (e.keyCode === keyboardKeyCode.enter) {
             e.preventDefault();
             this.props.openFiltersPanel();
@@ -26,7 +26,7 @@ export default class SearchBox extends React.Component {
         }
     }
 
-    onSearchButtonClick = () => {
+    search = () => {
         this.props.openFiltersPanel();
         this.props.onChange(this.inputRef.current.value);
     }
@@ -39,12 +39,12 @@ export default class SearchBox extends React.Component {
                     ref={this.inputRef}
                     placeholder="Search beers..."
                     className="search-box__field"
-                    onKeyDown={this.onInputKeyDown}
+                    onKeyDown={this.onKeyDown}
                 />
                 <button
                     type="button"
                     className="search-box__button"
-                    onClick={this.onSearchButtonClick}
+                    onClick={this.search}
 
                 >
                     <Icon icon={searchIcon} iconClassName="search-box__icon" />

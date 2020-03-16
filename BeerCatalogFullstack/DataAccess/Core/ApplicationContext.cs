@@ -5,9 +5,15 @@ using Microsoft.EntityFrameworkCore.Storage;
 
 namespace DataAccess.Core
 {
-    public sealed class ApplicationContext : IdentityDbContext<User>, IDataContext
+    public sealed class ApplicationContext : IdentityDbContext<User>
     {
         public DbSet<Beer> Beers { get; set; }
+        public DbSet<Brew> Brews { get; set; }
+        public DbSet<Fermentation> Fermentations { get; set; }
+        public DbSet<Hops> Hops { get; set; }
+        public DbSet<Malt> Malts { get; set; }
+        public  DbSet<Comment> Comments { get; set; }
+        public DbSet<Photo> Photos { get; set; }
 
         public ApplicationContext(DbContextOptions options) : base(options)
         {
@@ -49,6 +55,9 @@ namespace DataAccess.Core
             builder.Entity<FavoriteBeer>()
                 .HasKey(t => new {t.UserId, t.BeerId});
 
+            builder.Entity<UserPreference>()
+                .HasKey(p => new {p.UserId, p.PreferencedBeerType});
+
             builder.Entity<FavoriteBeer>()
                 .HasOne(b => b.Beer)
                 .WithMany(f => f.FavoriteBeers)
@@ -58,6 +67,11 @@ namespace DataAccess.Core
                 .HasOne(u => u.User)
                 .WithMany(f => f.FavoriteBeers)
                 .HasForeignKey(u => u.UserId);
+
+            builder.Entity<Brew>()
+                .HasOne(a => a.Fermentation)
+                .WithOne(b => b.Brew)
+                .HasForeignKey<Brew>(b => b.FermentationId);
         }
     }
 }

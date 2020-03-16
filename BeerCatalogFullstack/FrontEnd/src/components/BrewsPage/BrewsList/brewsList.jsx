@@ -17,10 +17,6 @@ export default class BrewsList extends React.PureComponent {
     }
 
     componentDidMount = async () => {
-        await this.getPreferedBrews();
-    }
-
-    getPreferedBrews = async () => {
         const result = await UserService.getPreferedBrews(this.context.userId);
         this.setState({ brews: result });
     }

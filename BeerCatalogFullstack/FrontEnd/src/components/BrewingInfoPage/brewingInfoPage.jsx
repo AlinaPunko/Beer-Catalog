@@ -43,16 +43,19 @@ class BrewingInfoPage extends React.PureComponent {
 
     static contextType = UserContext;
 
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
         this.validator = new SimpleReactValidator();
         const { params } = this.props.match;
         const today = new Date();
         const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
         const time = `${today.getHours()}:${today.getMinutes()}`;
         const dateTime = `${date} ${time}`;
+
+        debugger;
         this.state = {
             id: 0,
+            userId: this.context.userId,
             beerInfo: null,
             location: '',
             datetime: dateTime,
@@ -60,6 +63,7 @@ class BrewingInfoPage extends React.PureComponent {
             impression: '',
             photos: []
         };
+
         this.getBeer(params.beerId);
         if (params.brewId) {
             this.getBrew(params.brewId);
@@ -199,7 +203,7 @@ class BrewingInfoPage extends React.PureComponent {
         };
 
         if (this.validator.allValid()) {
-            if (this.state.userId === this.context.userId) {
+            if (this.state.id) {
                 await serviceWrapper.callService(brewingService.update, brew, null);
                 alert('Brew has been updated');
                 redirectToHomePageHelper.redirect(this.props.history);
@@ -207,6 +211,7 @@ class BrewingInfoPage extends React.PureComponent {
             }
             alert('Brew has been added');
             await serviceWrapper.callService(brewingService.add, brew, this.errorFieldRef);
+            redirectToHomePageHelper.redirect(this.props.history);
         } else {
             this.validator.showMessages();
             this.forceUpdate();
@@ -263,9 +268,15 @@ class BrewingInfoPage extends React.PureComponent {
         }
     }
 
-    renderDeleteButton = () => {
+    renderButtons = () => {
         if (this.state.userId === this.context.userId) {
-            return <input type="button" onClick={this.delete} value="Delete" className="brewing-info-page__delete-button" />;
+            return (
+                <div className="brewing-info-page__buttons">
+                    <input type="submit" onClick={this.save} value="Save" className="brewing-info-page__button" />
+                    <input type="button" onClick={this.delete} value="Delete" className="brewing-info-page__delete-button" />
+                    <input type="reset" onClick={this.close} value="Delete" className="brewing-info-page__button" />
+                </div>
+            );
         }
         return null;
     }
@@ -339,13 +350,11 @@ class BrewingInfoPage extends React.PureComponent {
                     <ImagesSlider images={photos} />
                     <div className="brewing-info-page__ingredients-method">
                         <BrewingIngredients ingredients={beerInfo.ingredients} />
-                        <BrewingMethods method={beerInfo.method} />
+                        <div>
+                            <BrewingMethods method={beerInfo.method} />
+                        </div>
                     </div>
-                    <div className="brewing-info-page__buttons">
-                        <input type="submit" onClick={this.save} value="Save" className="brewing-info-page__button" />
-                        {this.renderDeleteButton()}
-                        <input type="reset" onClick={this.close} value="Close" className="brewing-info-page__button" />
-                    </div>
+                    {this.renderButtons()}
                 </form>
             </section>
         );

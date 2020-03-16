@@ -22,10 +22,9 @@ namespace DataAccess.Repositories
                 .ToList();
         }
 
-        public IReadOnlyList<Brew> GetPreferedBrews(IReadOnlyList<string> preferences, string userId)
+        public IReadOnlyList<Brew> GetPreferedBrews(IReadOnlyList<string> preferences)
         {
-            return Get(b => b.UserId == userId)
-                .Where(b => preferences.Contains(b.BeerType))
+            return Get(b => preferences.Contains(b.BeerType))
                 .OrderBy(b => b.DateTime)
                 .ThenBy(b => b.Rating)
                 .ToList();

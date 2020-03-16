@@ -53,7 +53,7 @@ namespace BeerCatalogFullstack.Managers
         public IReadOnlyList<BrewViewModel> GetPreferedBrews(string userId)
         {
             IReadOnlyList<string> preferences = preferenceRepository.GetPreferencesByUserId(userId);
-            IReadOnlyList<Brew> brews = brewRepository.GetPreferedBrews(preferences, userId);
+            IReadOnlyList<Brew> brews = brewRepository.GetPreferedBrews(preferences);
             IReadOnlyList<BrewViewModel> viewModels = brews.Select(b => new BrewViewModel
             {
                 Id = b.Id,

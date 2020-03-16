@@ -65,6 +65,11 @@ namespace BeerCatalogFullstack.Managers
                 .ToList();
         }
 
+        internal void RateBrew(RatingViewModel model)
+        {
+            brewRepository.
+        }
+
         public BrewViewModel GetBrewById(int id)
         {
             Brew brew = brewRepository

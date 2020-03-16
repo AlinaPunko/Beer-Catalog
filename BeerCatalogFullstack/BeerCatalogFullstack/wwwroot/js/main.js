@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "9788fcf319c7b666952d";
+/******/ 	var hotCurrentHash = "be0732d34e55ac078d01";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -42244,12 +42244,12 @@ var BrewingInfoPage =
 function (_React$PureComponent) {
   _inherits(BrewingInfoPage, _React$PureComponent);
 
-  function BrewingInfoPage(props) {
+  function BrewingInfoPage(props, context) {
     var _this;
 
     _classCallCheck(this, BrewingInfoPage);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(BrewingInfoPage).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(BrewingInfoPage).call(this, props, context));
 
     _defineProperty(_assertThisInitialized(_this), "changeLocation", function (e) {
       _this.setState({
@@ -42360,11 +42360,11 @@ function (_React$PureComponent) {
                 };
 
                 if (!_this.validator.allValid()) {
-                  _context.next = 17;
+                  _context.next = 18;
                   break;
                 }
 
-                if (!(_this.state.userId === _this.context.userId)) {
+                if (!_this.state.id) {
                   _context.next = 12;
                   break;
                 }
@@ -42383,15 +42383,16 @@ function (_React$PureComponent) {
                 return helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_12__["default"].callService(services_brewingService__WEBPACK_IMPORTED_MODULE_13__["default"].add, brew, _this.errorFieldRef);
 
               case 15:
-                _context.next = 19;
+                helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_8__["default"].redirect(_this.props.history);
+                _context.next = 20;
                 break;
 
-              case 17:
+              case 18:
                 _this.validator.showMessages();
 
                 _this.forceUpdate();
 
-              case 19:
+              case 20:
               case "end":
                 return _context.stop();
             }
@@ -42469,14 +42470,26 @@ function (_React$PureComponent) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "renderDeleteButton", function () {
+    _defineProperty(_assertThisInitialized(_this), "renderButtons", function () {
       if (_this.state.userId === _this.context.userId) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "brewing-info-page__buttons"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "submit",
+          onClick: _this.save,
+          value: "Save",
+          className: "brewing-info-page__button"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "button",
           onClick: _this.delete,
           value: "Delete",
           className: "brewing-info-page__delete-button"
-        });
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "reset",
+          onClick: _this.close,
+          value: "Delete",
+          className: "brewing-info-page__button"
+        }));
       }
 
       return null;
@@ -42495,8 +42508,10 @@ function (_React$PureComponent) {
     var date = "".concat(today.getFullYear(), "-").concat(today.getMonth() + 1, "-").concat(today.getDate());
     var time = "".concat(today.getHours(), ":").concat(today.getMinutes());
     var dateTime = "".concat(date, " ").concat(time);
+    debugger;
     _this.state = {
       id: 0,
+      userId: _this.context.userId,
       beerInfo: null,
       location: '',
       datetime: dateTime,
@@ -42659,21 +42674,9 @@ function (_React$PureComponent) {
         className: "brewing-info-page__ingredients-method"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_BrewingIngredients_brewingIngredients__WEBPACK_IMPORTED_MODULE_9__["default"], {
         ingredients: beerInfo.ingredients
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_BrewingMethods_brewingMethods__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_BrewingMethods_brewingMethods__WEBPACK_IMPORTED_MODULE_10__["default"], {
         method: beerInfo.method
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "brewing-info-page__buttons"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        onClick: this.save,
-        value: "Save",
-        className: "brewing-info-page__button"
-      }), this.renderDeleteButton(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "reset",
-        onClick: this.close,
-        value: "Close",
-        className: "brewing-info-page__button"
-      }))));
+      }))), this.renderButtons()));
     }
   }]);
 
@@ -42828,36 +42831,16 @@ function (_React$PureComponent) {
     _asyncToGenerator(
     /*#__PURE__*/
     regeneratorRuntime.mark(function _callee() {
+      var result;
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return _this.getPreferedBrews();
-
-            case 2:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    })));
-
-    _defineProperty(_assertThisInitialized(_this), "getPreferedBrews",
-    /*#__PURE__*/
-    _asyncToGenerator(
-    /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee2() {
-      var result;
-      return regeneratorRuntime.wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              _context2.next = 2;
               return services_userService__WEBPACK_IMPORTED_MODULE_1__["default"].getPreferedBrews(_this.context.userId);
 
             case 2:
-              result = _context2.sent;
+              result = _context.sent;
 
               _this.setState({
                 brews: result
@@ -42865,10 +42848,10 @@ function (_React$PureComponent) {
 
             case 4:
             case "end":
-              return _context2.stop();
+              return _context.stop();
           }
         }
-      }, _callee2);
+      }, _callee);
     })));
 
     _this.state = {

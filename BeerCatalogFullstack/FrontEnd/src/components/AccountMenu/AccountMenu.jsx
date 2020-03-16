@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 import { UserContext } from 'store/context/userContext';
 import SideMenuLink from 'components/SideMenuLink/sideMenuLink';
@@ -32,7 +32,6 @@ export default class AccountMenu extends React.PureComponent {
         return (
             <>
                 <li>
-
                     <Link to={routing.profilePage.url}>
                         <SideMenuLink text="My Profile" icon={account} />
                     </Link>
@@ -64,12 +63,10 @@ export default class AccountMenu extends React.PureComponent {
     }
 
     render() {
-        let menuClass;
-        if (this.props.showMenu) {
-            menuClass = classnames('account-menu', 'account-menu--opened');
-        } else {
-            menuClass = classnames('account-menu', 'account-menu--closed');
-        }
+        const menuClass = classNames('account-menu', {
+            'account-menu--opened': this.props.showMenu,
+            'account-menu--closed': !this.props.showMenu
+        });
 
         let menuLinks;
         const { userId } = this.context;

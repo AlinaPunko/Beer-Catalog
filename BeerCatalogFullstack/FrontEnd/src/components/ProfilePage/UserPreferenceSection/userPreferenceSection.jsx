@@ -80,7 +80,13 @@ export default class UserPreferenceSection extends React.PureComponent {
     renderSuggestedBeerTypes = () => {
         return this.state.suitableBeerTypes.map((item, index) => {
             return (
-                <li key={index} className="user-preference-section__autocompletion-results-item" onClick={this.selectSuggectedPreference}> {item} </li>
+                <li
+                    key={index}
+                    className="user-preference-section__autocompletion-results-item"
+                    onClick={this.selectSuggectedPreference}
+                >
+                    {item}
+                </li>
             );
         });
     }

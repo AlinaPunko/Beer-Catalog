@@ -3,12 +3,12 @@ import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
 import PropTypes from 'prop-types';
 
-import FormRow from 'components/common/FormRow/formRow';
+import Input from 'components/common/Input/input';
 import signInValidationConfig from 'validationConfigs/signInValidationConfig';
 import serviceWrapper from 'helpers/serviceWrapper';
 import { UserContext } from 'store/context/userContext';
 import signInService from 'services/signInService';
-import redirectToHomePageHelper from 'helpers/redirectToHomePageHelper';
+import redirectHelper from 'helpers/redirectHelper';
 
 import './signInPage.scss';
 
@@ -59,7 +59,7 @@ class SignInPage extends React.PureComponent {
 
             if (result) {
                 this.context.setUserId(result);
-                redirectToHomePageHelper.redirect(this.props.history);
+                redirectHelper.redirectToHomePage(this.props.history);
             }
         } else {
             this.validator.showMessages();
@@ -68,14 +68,14 @@ class SignInPage extends React.PureComponent {
     }
 
     renderValidationResult = () => {
+        const messages = [
+            this.validator.message(signInValidationConfig.email.fieldName, this.state.email, signInValidationConfig.email.rule),
+            this.validator.message(signInValidationConfig.password.fieldName, this.state.password, signInValidationConfig.password.rule)
+        ];
+
         return (
             <div className="sign-in-page__validation-result" ref={this.errorFieldRef}>
-                {
-                    this.validator.message(signInValidationConfig.email.fieldName, this.state.email, signInValidationConfig.email.rule)
-                }
-                {
-                    this.validator.message(signInValidationConfig.password.fieldName, this.state.password, signInValidationConfig.password.rule)
-                }
+                { messages }
             </div>
         );
     }
@@ -85,9 +85,9 @@ class SignInPage extends React.PureComponent {
             <section className="sign-in-page">
                 <h1 className="sign-in-page__title">Log In</h1>
                 <form className="sign-in-page__form" onSubmit={this.signIn}>
-                    <FormRow name="email" type="email" label="E-mail:" onChange={this.changeEmail} value={this.state.email} />
-                    <FormRow name="password" type="password" label="Password:" onChange={this.changePassword} value={this.state.password} />
-                    <input className="sign-in-page__form-button" type="submit" value="Log in" />
+                    <Input name="email" type="email" label="E-mail:" onChange={this.changeEmail} value={this.state.email} />
+                    <Input name="password" type="password" label="Password:" onChange={this.changePassword} value={this.state.password} />
+                    <button className="sign-in-page__form-button" type="submit">Sign In</button>
                     {
                         this.renderValidationResult()
                     }

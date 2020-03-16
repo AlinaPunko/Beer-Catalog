@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 import { UserContext } from 'store/context/userContext';
 import SideMenuLink from 'components/SideMenuLink/sideMenuLink';
@@ -18,12 +18,10 @@ export default class SideMenu extends React.PureComponent {
     };
 
     render() {
-        let menuClass;
-        if (this.props.showMenu) {
-            menuClass = classnames('side-menu', 'side-menu--opened');
-        } else {
-            menuClass = classnames('side-menu', 'side-menu--closed');
-        }
+        const menuClass = classNames('side-menu', {
+            'side-menu--opened': this.props.showMenu,
+            'side-menu--closed': !this.props.showMenu
+        });
 
         return (
             <UserContext.Consumer>

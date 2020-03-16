@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { UserContext } from 'store/context/userContext';
-import redirectToHomePageHelper from 'helpers/redirectToHomePageHelper';
+import redirectHelper from 'helpers/redirectHelper';
 import BrewingIngredients from 'components/common/BrewingIngredients/brewingIngredients';
 import BrewingMethods from 'components/common/BrewingMethods/brewingMethods';
 import beerService from 'services/beerService';
@@ -96,7 +96,7 @@ class BrewingInfoPage extends React.PureComponent {
 
     close = (e) => {
         e.preventDefault();
-        redirectToHomePageHelper.redirect(this.props.history);
+        redirectHelper.redirectToHomePage(this.props.history);
     }
 
     addPhoto = () => {

@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "5408bdef411378e2d30e";
+/******/ 	var hotCurrentHash = "4cd1af8ef1557550ddf8";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -979,7 +979,52 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".account-menu--opened {\n  width: 200px;\n  height: fit-content;\n  background-color: #ffffff;\n  border-bottom: 1px #808080 solid;\n  border-left: 1px #808080 solid;\n  visibility: visible;\n  transition-duration: 1s;\n  transition-property: width, visibility; }\n\n.account-menu--closed {\n  width: 0;\n  visibility: hidden;\n  transition-duration: 1s;\n  transition-property: width, visibility; }\n  .account-menu--closed .account-menu__links {\n    padding-left: 0; }\n\n.account-menu {\n  position: absolute;\n  top: 48px;\n  right: 0; }\n\n.account-menu__links {\n  padding-left: 10px;\n  transition-duration: 1s;\n  transition-property: padding; }\n", ""]);
+exports.push([module.i, ".account-menu {\n  position: absolute;\n  top: 48px;\n  right: 0; }\n\n.account-menu--opened {\n  width: 200px;\n  height: fit-content;\n  background-color: #ffffff;\n  border-bottom: 1px #808080 solid;\n  border-left: 1px #808080 solid;\n  visibility: visible;\n  transition: width, visibility, 1s; }\n\n.account-menu--closed {\n  width: 0;\n  visibility: hidden;\n  transition: width, visibility, 1s; }\n  .account-menu--closed .account-menu__links {\n    padding-left: 0; }\n\n.account-menu__links {\n  padding-left: 10px;\n  transition-duration: 1s;\n  transition-property: padding; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewingInfoPage/brewingInfoPage.scss":
+/*!******************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewingInfoPage/brewingInfoPage.scss ***!
+  \******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".brewing-info-page {\n  width: 50%;\n  margin: 0 auto; }\n\n.brewing-info-page__title {\n  padding: 10px;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.brewing-info-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.brewing-info-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.brewing-info-page__field-input {\n  width: 50%;\n  padding: 5px;\n  color: #000000;\n  background-color: #ffffff;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__impression-field {\n  width: 50%;\n  height: 60px;\n  padding: 5px;\n  font-family: \"Lucida Sans\", sans-serif;\n  word-break: break-word;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__ingredients-method {\n  display: flex;\n  justify-content: space-between;\n  width: 80%; }\n\n.brewing-info-page__buttons {\n  width: 50%;\n  margin: 0 auto; }\n\n.brewing-info-page__button {\n  display: block;\n  width: 40%;\n  margin: 20px auto;\n  padding: 10px 0;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__delete-button {\n  display: block;\n  width: 40%;\n  margin: 20px auto;\n  padding: 10px 0;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #ff0000 solid;\n  border-radius: 5px; }\n\n.brewing-info-page__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsList/brewsList.scss":
+/*!****************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsList/brewsList.scss ***!
+  \****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".brews-list {\n  width: 50%;\n  margin: 0 auto; }\n\n.brews-list__title {\n  padding: 10px 0;\n  font-size: 36px;\n  font-family: 'Lucida Sans', sans-serif;\n  text-align: center; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsListItem/brewsListItem.scss":
+/*!************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsListItem/brewsListItem.scss ***!
+  \************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".brews-list-item {\n  display: flex;\n  justify-content: space-between;\n  min-height: 0;\n  margin: 20px;\n  padding: 10px;\n  font-size: 20px;\n  font-family: 'Lucida Sans', sans-serif;\n  box-shadow: 0 0 10px 5px #dddddd; }\n\n.brews-list-item__open-brew-page-button {\n  padding: 10px;\n  color: #ffffff;\n  text-transform: uppercase;\n  background-color: #106cc8;\n  border: none; }\n\n.brews-list-item__row {\n  padding: 5px 0; }\n\n.brews-list-item__image {\n  width: auto;\n  height: 150px; }\n", ""]);
 
 
 
@@ -1000,21 +1045,6 @@ exports.push([module.i, ".header {\n  display: flex;\n  background-color: #106cc
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/ProfilePage/profilePage.scss":
-/*!**********************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/ProfilePage/profilePage.scss ***!
-  \**********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".profile-page {\n  width: 50%;\n  margin: 10px auto; }\n\n.profile-page__form {\n  display: flex;\n  align-content: center;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n\n.profile-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.profile-page__image-block {\n  width: 50%;\n  padding: 10px; }\n\n.profile-page__user-image {\n  width: 70%;\n  margin: 0 auto; }\n\n.profile-page__add-image-button,\n.profile-page__delete-image-button {\n  width: 30%;\n  margin: 0 10px;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-page__user-info {\n  width: 50%; }\n\n.profile-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.profile-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.profile-page__field-input {\n  width: 50%;\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-page__save-button,\n.profile-page__close-button {\n  width: 40%;\n  margin: 20px;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-page__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
-
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SideMenu/sideMenu.scss":
 /*!****************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SideMenu/sideMenu.scss ***!
@@ -1024,7 +1054,7 @@ exports.push([module.i, ".profile-page {\n  width: 50%;\n  margin: 10px auto; }\
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".side-menu--opened {\n  width: 200px;\n  height: 100%;\n  background-color: #ffffff;\n  border-right: 1px #808080 solid;\n  visibility: visible;\n  transition-duration: 1s;\n  transition-property: width, visibility; }\n\n.side-menu--closed {\n  width: 0;\n  visibility: hidden;\n  transition-duration: 1s;\n  transition-property: width, visibility; }\n  .side-menu--closed .side-menu__header {\n    padding-left: 0; }\n  .side-menu--closed .side-menu__links {\n    padding-left: 0; }\n\n.side-menu {\n  position: absolute;\n  top: 0;\n  left: 0; }\n\n.side-menu__header {\n  height: 100px;\n  padding: 20px 0 0 10px;\n  overflow: hidden;\n  color: #ffffff;\n  font-family: 'Lucida Sans', sans-serif;\n  white-space: nowrap;\n  background-color: #106cc8;\n  transition-duration: 1s;\n  transition-property: padding; }\n\n.side-menu__links {\n  padding-left: 10px;\n  transition-duration: 1s;\n  transition-property: padding; }\n", ""]);
+exports.push([module.i, ".side-menu {\n  position: absolute;\n  top: 0;\n  left: 0; }\n\n.side-menu--opened {\n  width: 200px;\n  height: 100%;\n  background-color: #ffffff;\n  border-right: 1px #808080 solid;\n  visibility: visible;\n  transition: width, visibility, 1s; }\n\n.side-menu--closed {\n  width: 0;\n  visibility: hidden;\n  transition: width, visibility, 1s; }\n  .side-menu--closed .side-menu__header {\n    padding-left: 0; }\n  .side-menu--closed .side-menu__links {\n    padding-left: 0; }\n\n.side-menu__header {\n  height: 100px;\n  padding: 20px 0 0 10px;\n  overflow: hidden;\n  color: #ffffff;\n  font-family: 'Lucida Sans', sans-serif;\n  white-space: nowrap;\n  background-color: #106cc8;\n  transition-duration: 1s;\n  transition-property: padding; }\n\n.side-menu__links {\n  padding-left: 10px;\n  transition-duration: 1s;\n  transition-property: padding; }\n", ""]);
 
 
 
@@ -1054,7 +1084,7 @@ exports.push([module.i, ".side-menu-link {\n  display: flex;\n  align-content: c
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".sign-in-page {\n  width: 15%;\n  margin: 0 auto;\n  padding: 20px;\n  border: 1px #8a8a8a solid;\n  border-radius: 10px; }\n\n.sign-in-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.sign-in-page__field {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.sign-in-page__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.sign-in-page__field-input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.sign-in-page__form-button {\n  width: 100%;\n  margin: 10px auto;\n  padding: 5px 0;\n  color: #ffffff;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #106cc8;\n  border-color: #106cc8;\n  border-radius: 5px; }\n\n.sign-in-page__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
+exports.push([module.i, ".sign-in-page {\n  width: 15%;\n  margin: 0 auto;\n  padding: 20px;\n  border: 1px #8a8a8a solid;\n  border-radius: 10px; }\n\n.sign-in-page__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.sign-in-page__form-button {\n  width: 100%;\n  margin: 10px auto;\n  padding: 5px 0;\n  color: #ffffff;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #106cc8;\n  border-color: #106cc8;\n  border-radius: 5px; }\n\n.sign-in-page__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
 
 
 
@@ -1099,22 +1129,82 @@ exports.push([module.i, ".beers-list {\n  display: flex;\n  flex-wrap: wrap;\n  
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".beers-list-item {\n  display: flex;\n  flex-direction: column;\n  width: 32%;\n  min-height: 0;\n  margin: 5px auto;\n  padding: 5px;\n  color: #ffffff;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.beers-list-item__image {\n  width: auto;\n  height: 140px;\n  margin: 0 auto; }\n\n.beers-list-item__title {\n  padding: 10px 0;\n  font-size: 26px; }\n\n.beers-list-item__tagline {\n  display: block;\n  font-size: 16px; }\n\n.beers-list-item__information {\n  position: relative;\n  height: 50%;\n  padding: 10px;\n  background-color: #808080; }\n\n.beers-list-item__open-details-page-button,\n.beers-list-item__favourite-button {\n  color: #ffffff; }\n", ""]);
+exports.push([module.i, ".beers-list-item {\n  display: flex;\n  flex-direction: column;\n  width: 32%;\n  min-height: 0;\n  margin: 5px auto;\n  padding: 5px;\n  color: #ffffff;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.beers-list-item__image {\n  width: auto;\n  height: 140px;\n  margin: 0 auto; }\n\n.beers-list-item__title {\n  padding: 10px 0;\n  font-size: 26px; }\n\n.beers-list-item__tagline {\n  display: block;\n  font-size: 16px; }\n\n.beers-list-item__information {\n  position: relative;\n  height: 50%;\n  padding: 10px;\n  background-color: #808080; }\n\n.beers-list-item__open-details-page-button,\n.beers-list-item__favorite-button {\n  color: #ffffff; }\n", ""]);
 
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/FavouriteButton/favouriteButton.scss":
-/*!*************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/FavouriteButton/favouriteButton.scss ***!
-  \*************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/BrewingIngredients/brewingIngredients.scss":
+/*!*******************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/BrewingIngredients/brewingIngredients.scss ***!
+  \*******************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".favourite-button {\n  padding: 20px 10px 10px 0;\n  text-transform: uppercase;\n  background-color: transparent;\n  border: none; }\n  .favourite-button :focus {\n    border: none; }\n", ""]);
+exports.push([module.i, ".brewing-ingredients {\n  width: 50%; }\n\n.brewing-ingredients__title {\n  margin: 10px 0;\n  font-size: 25px;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.brewing-ingredients__subtitle {\n  margin: 5px 0;\n  font-size: 20px; }\n\n.brewing-ingredients__ingredient {\n  border: 1px #8a8a8a solid;\n  padding: 10px;\n  font-size: 16px;\n  font-family: 'Lucida Sans', sans-serif; }\n  .brewing-ingredients__ingredient:not(:first-child) {\n    border-top: none; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/BrewingMethods/brewingMethods.scss":
+/*!***********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/BrewingMethods/brewingMethods.scss ***!
+  \***********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".brewing-methods {\n  width: 40%;\n  font-size: 16px;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.brewing-methods__title,\n.brewing-methods__method-title {\n  margin: 10px 0;\n  font-size: 25px; }\n\n.brewing-methods__subtitle,\n.brewing-methods__method-subtitle {\n  margin: 5px 0;\n  font-size: 20px; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/FormRow/formRow.scss":
+/*!*********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/FormRow/formRow.scss ***!
+  \*********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".form-row {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.form-row__title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.form-row__input {\n  width: 50%;\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/ImagesSlider/imagesSlider.scss":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/ImagesSlider/imagesSlider.scss ***!
+  \*******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".images-slider {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%;\n  height: 100%;\n  overflow: hidden; }\n\n.images-slider__button {\n  background-color: transparent;\n  border: none; }\n\n.images-slider__button-icon {\n  width: 15px;\n  height: 15px; }\n\n.images-slider__image {\n  width: 80%;\n  height: auto; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.scss":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.scss ***!
+  \*********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".open-brewing-info-page-button {\n  padding: 20px 10px 10px 0;\n  color: #ffffff;\n  text-transform: uppercase;\n  background-color: transparent;\n  border: none; }\n  .open-brewing-info-page-button :focus {\n    border: none; }\n", ""]);
 
 
 
@@ -1150,6 +1240,21 @@ exports.push([module.i, ".paging-panel {\n  display: flex;\n  width: fit-content
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/SelectPhotoField/selectPhotoField.scss":
+/*!***************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/SelectPhotoField/selectPhotoField.scss ***!
+  \***************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".select-photo-field {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.select-photo-field__title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.select-photo-field__input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n", ""]);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/Tooltip/tooltip.scss":
 /*!*********************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/Tooltip/tooltip.scss ***!
@@ -1174,7 +1279,7 @@ exports.push([module.i, ".tooltip {\n  display: flex; }\n\n.tooltip__icon {\n  w
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".beer-details-header {\n  display: flex;\n  justify-content: space-between;\n  min-height: 0;\n  margin: 0 auto;\n  padding: 10px;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.beer-details-header__title {\n  font-size: 26px; }\n\n.beer-details-header__tagline {\n  padding: 10px 0;\n  color: #808080;\n  font-size: 12px;\n  font-style: italic; }\n\n.beer-details-header__description {\n  padding: 20px 0;\n  font-size: 14px; }\n\n.beer-details-header__button {\n  padding: 10px;\n  color: #ffffff;\n  text-transform: uppercase;\n  background-color: #106cc8;\n  border: none; }\n\n.beer-details-header__image {\n  width: auto;\n  height: 250px;\n  padding: 0 10px; }\n", ""]);
+exports.push([module.i, ".beer-details-header {\n  display: flex;\n  justify-content: space-between;\n  min-height: 0;\n  margin: 0 auto;\n  padding: 10px;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.beer-details-header__title {\n  font-size: 26px; }\n\n.beer-details-header__tagline {\n  padding: 10px 0;\n  color: #808080;\n  font-size: 12px;\n  font-style: italic; }\n\n.beer-details-header__description {\n  padding: 20px 0;\n  font-size: 14px; }\n\n.beer-details-header__button {\n  margin-left: 10px;\n  padding: 10px;\n  color: #ffffff;\n  text-transform: uppercase;\n  background-color: #106cc8;\n  border: none; }\n\n.beer-details-header__image {\n  width: auto;\n  height: 250px;\n  padding: 0 10px; }\n", ""]);
 
 
 
@@ -1225,36 +1330,6 @@ exports.push([module.i, ".beer-property-item {\n  border: 1px #8a8a8a solid;\n  
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingIngredients/brewingIngredients.scss":
-/*!************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingIngredients/brewingIngredients.scss ***!
-  \************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".brewing-ingredients {\n  width: 50%; }\n\n.brewing-ingredients__title {\n  margin: 10px 0;\n  font-size: 25px;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.brewing-ingredients__subtitle {\n  margin: 5px 0;\n  font-size: 20px; }\n\n.brewing-ingredients__ingredient {\n  border: 1px #8a8a8a solid;\n  padding: 10px;\n  font-size: 16px;\n  font-family: 'Lucida Sans', sans-serif; }\n  .brewing-ingredients__ingredient:not(:first-child) {\n    border-top: none; }\n", ""]);
-
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingMethods/brewingMethods.scss":
-/*!****************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingMethods/brewingMethods.scss ***!
-  \****************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".brewing-methods {\n  width: 40%;\n  font-size: 16px;\n  font-family: 'Lucida Sans', sans-serif; }\n\n.brewing-methods__title,\n.brewing-methods__method-title {\n  margin: 10px 0;\n  font-size: 25px; }\n\n.brewing-methods__subtitle,\n.brewing-methods__method-subtitle {\n  margin: 5px 0;\n  font-size: 20px; }\n", ""]);
-
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingSection/brewingSection.scss":
 /*!****************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingSection/brewingSection.scss ***!
@@ -1285,31 +1360,76 @@ exports.push([module.i, ".food-pairing-block__list {\n  display: flex;\n  flex-d
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favouritesPage/FavouriteListItem/favouriteListItem.scss":
-/*!*************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favouritesPage/FavouriteListItem/favouriteListItem.scss ***!
-  \*************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favoritesPage/FavoriteListItem/favoriteListItem.scss":
+/*!**********************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favoritesPage/FavoriteListItem/favoriteListItem.scss ***!
+  \**********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".favourite-list-item {\n  display: flex;\n  justify-content: space-between;\n  min-height: 0;\n  margin: 20px;\n  padding: 10px;\n  font-family: 'Lucida Sans', sans-serif;\n  box-shadow: 0 0 10px 5px #dddddd; }\n\n.favourite-list-item__title {\n  font-size: 26px; }\n\n.favourite-list-item__tagline {\n  padding: 10px 0;\n  color: #808080;\n  font-size: 12px; }\n\n.favourite-list-item__description {\n  width: 90%;\n  padding: 20px 0;\n  font-size: 14px; }\n\n.favourite-list-item__remove-favourite-button,\n.favourite-list-item__open-details-page-button {\n  padding: 0 10px 0 0;\n  text-transform: uppercase;\n  background-color: transparent;\n  border: none; }\n\n.favourite-list-item__image {\n  width: auto;\n  height: 150px; }\n", ""]);
+exports.push([module.i, ".favorite-list-item {\n  display: flex;\n  justify-content: space-between;\n  min-height: 0;\n  margin: 20px;\n  padding: 10px;\n  font-family: 'Lucida Sans', sans-serif;\n  box-shadow: 0 0 10px 5px #dddddd; }\n\n.favorite-list-item__title {\n  font-size: 26px; }\n\n.favorite-list-item__tagline {\n  padding: 10px 0;\n  color: #808080;\n  font-size: 12px; }\n\n.favorite-list-item__description {\n  width: 90%;\n  padding: 20px 0;\n  font-size: 14px; }\n\n.favorite-list-item__remove-favorite-button,\n.favorite-list-item__open-details-page-button {\n  padding: 0 10px 0 0;\n  text-transform: uppercase;\n  background-color: transparent;\n  border: none; }\n\n.favorite-list-item__image {\n  width: auto;\n  height: 150px; }\n", ""]);
 
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favouritesPage/FavouritesList/favouritesList.scss":
-/*!*******************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favouritesPage/FavouritesList/favouritesList.scss ***!
-  \*******************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favoritesPage/FavoritesList/favoritesList.scss":
+/*!****************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favoritesPage/FavoritesList/favoritesList.scss ***!
+  \****************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".favourite-list {\n  flex-wrap: wrap;\n  width: 50%;\n  margin: 0 auto; }\n\n.favourite-list__title {\n  margin: 20px auto;\n  font-size: 30px;\n  font-family: 'Lucida Sans', sans-serif;\n  text-align: center; }\n\n.paging-panel {\n  display: flex;\n  width: fit-content;\n  margin: 10px auto 20px 20px;\n  color: #106cc8;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.paging-panel__item {\n  padding: 10px;\n  background-color: transparent;\n  border: 1px #106cc8 solid; }\n", ""]);
+exports.push([module.i, ".favorite-list {\n  flex-wrap: wrap;\n  width: 50%;\n  margin: 0 auto; }\n\n.favorite-list__title {\n  margin: 20px auto;\n  font-size: 30px;\n  font-family: 'Lucida Sans', sans-serif;\n  text-align: center; }\n\n.paging-panel {\n  display: flex;\n  width: fit-content;\n  margin: 10px auto 20px 20px;\n  color: #106cc8;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.paging-panel__item {\n  padding: 10px;\n  background-color: transparent;\n  border: 1px #106cc8 solid; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/ProfileSection/profileSection.scss":
+/*!****************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/ProfileSection/profileSection.scss ***!
+  \****************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".profile-section {\n  width: 50%;\n  margin: 10px auto; }\n\n.profile-section__form {\n  display: flex;\n  align-content: center;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n\n.profile-section__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.profile-section__image-block {\n  align-self: flex-start;\n  width: 50%;\n  padding: 10px; }\n\n.profile-section__user-image {\n  width: 70%;\n  margin: 0 auto; }\n\n.profile-section__user-info {\n  width: 50%; }\n\n.profile-section__field {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.profile-section__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.profile-section__field-input {\n  width: 50%;\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__buttons {\n  display: flex;\n  justify-content: space-evenly; }\n\n.profile-section__button {\n  display: block;\n  width: 40%;\n  margin: 5px auto;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/UserPreferenceListItem/userPreferenceListItem.scss":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/UserPreferenceListItem/userPreferenceListItem.scss ***!
+  \********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".user-preference-list-item__delete-button {\n  width: 10%;\n  background-color: transparent;\n  border: none; }\n\n.user-preference-list-item__delete-button-icon {\n  width: 15px;\n  height: 15px; }\n\n.user-preference-list-item {\n  display: flex;\n  align-content: center;\n  align-items: center;\n  justify-content: space-between;\n  width: 50%;\n  margin: 0 auto;\n  padding: 5px 0;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/UserPreferenceSection/userPreferenceSection.scss":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/UserPreferenceSection/userPreferenceSection.scss ***!
+  \******************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".user-preference-section__header {\n  padding: 10px 0;\n  font-size: 25px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.user-preference-section__field {\n  position: relative;\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 0; }\n\n.user-preference-section__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.user-preference-section__field-input {\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.user-preference-section__add-button {\n  width: 7%;\n  background-color: transparent;\n  border: none; }\n\n.user-preference-section__add-button-icon {\n  width: 15px;\n  height: 15px; }\n\n.user-preference-section__autocompletion-results {\n  position: absolute;\n  width: 100%; }\n\n.user-preference-section__autocompletion-results-item {\n  padding: 5px;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: #ffffff;\n  border: 1px #106cc8 solid; }\n", ""]);
 
 
 
@@ -41869,9 +41989,9 @@ if(true) {
 
 /***/ }),
 
-/***/ "./src/components/App/App.jsx":
+/***/ "./src/components/App/app.jsx":
 /*!************************************!*\
-  !*** ./src/components/App/App.jsx ***!
+  !*** ./src/components/App/app.jsx ***!
   \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -41957,29 +42077,19 @@ function (_React$PureComponent) {
       });
     });
 
-    _this.setUserId = function (userId) {
-      _this.setState(function () {
-        return {
-          userId: userId
-        };
-      });
-    };
-
-    _this.setFavouriteBeers = function (favouriteBeers) {
-      _this.setState(function () {
-        return {
-          favouriteBeers: favouriteBeers
-        };
-      });
-    };
-
     _this.state = {
       showSideMenu: false,
-      showAccountMenu: false,
-      userId: '',
-      favouriteBeers: [],
-      setFavouriteBeers: _this.setFavouriteBeers,
-      setUserId: _this.setUserId
+      showAccountMenu: false
+    };
+    _this.contextFeatures = {
+      userId: null,
+      favoriteBeers: [],
+      setFavoriteBeers: function setFavoriteBeers(beers) {
+        return _this.contextFeatures.favoriteBeers = beers;
+      },
+      setUserId: function setUserId(id) {
+        return _this.contextFeatures.userId = id;
+      }
     };
     return _this;
   }
@@ -41988,18 +42098,18 @@ function (_React$PureComponent) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_userContext__WEBPACK_IMPORTED_MODULE_2__["UserContext"].Provider, {
-        value: this.state
+        value: this.contextFeatures
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "App"
+        className: "app"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Header_header__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        openSideMenuFunction: this.openSideMenu,
-        toggleAccountMenuFunction: this.toggleAccountMenu
+        openSideMenu: this.openSideMenu,
+        toggleAccountMenu: this.toggleAccountMenu
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SideMenu_sideMenu__WEBPACK_IMPORTED_MODULE_4__["default"], {
         showMenu: this.state.showSideMenu,
-        closeFunction: this.closeSideMenu
+        closeMenu: this.closeSideMenu
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_AccountMenu_accountMenu__WEBPACK_IMPORTED_MODULE_5__["default"], {
         showMenu: this.state.showAccountMenu,
-        closeFunction: this.closeAccountMenu
+        closeMenu: this.closeAccountMenu
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Routing_routing__WEBPACK_IMPORTED_MODULE_6__["default"], null))));
     }
   }]);
@@ -42008,6 +42118,932 @@ function (_React$PureComponent) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
 
+
+/***/ }),
+
+/***/ "./src/components/BrewingInfoPage/brewingInfoPage.jsx":
+/*!************************************************************!*\
+  !*** ./src/components/BrewingInfoPage/brewingInfoPage.jsx ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-react-validator */ "./node_modules/simple-react-validator/dist/simple-react-validator.min.js");
+/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_react_validator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var components_common_FormRow_formRow__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/common/FormRow/formRow */ "./src/components/common/FormRow/formRow.jsx");
+/* harmony import */ var components_common_SelectPhotoField_selectPhotoField__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! components/common/SelectPhotoField/selectPhotoField */ "./src/components/common/SelectPhotoField/selectPhotoField.jsx");
+/* harmony import */ var validationConfigs_brewValidationConfig__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! validationConfigs/brewValidationConfig */ "./src/validationConfigs/brewValidationConfig.js");
+/* harmony import */ var helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! helpers/redirectToHomePageHelper */ "./src/helpers/redirectToHomePageHelper.js");
+/* harmony import */ var components_common_BrewingIngredients_brewingIngredients__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! components/common/BrewingIngredients/brewingIngredients */ "./src/components/common/BrewingIngredients/brewingIngredients.jsx");
+/* harmony import */ var components_common_BrewingMethods_brewingMethods__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! components/common/BrewingMethods/brewingMethods */ "./src/components/common/BrewingMethods/brewingMethods.jsx");
+/* harmony import */ var services_beerService__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! services/beerService */ "./src/services/beerService.js");
+/* harmony import */ var helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! helpers/serviceWrapper */ "./src/helpers/serviceWrapper.js");
+/* harmony import */ var services_brewingService__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! services/brewingService */ "./src/services/brewingService.js");
+/* harmony import */ var components_common_ImagesSlider_imagesSlider__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! components/common/ImagesSlider/imagesSlider */ "./src/components/common/ImagesSlider/imagesSlider.jsx");
+/* harmony import */ var _brewingInfoPage_scss__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./brewingInfoPage.scss */ "./src/components/BrewingInfoPage/brewingInfoPage.scss");
+/* harmony import */ var _brewingInfoPage_scss__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_brewingInfoPage_scss__WEBPACK_IMPORTED_MODULE_15__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var BrewingInfoPage =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(BrewingInfoPage, _React$PureComponent);
+
+  function BrewingInfoPage(props, context) {
+    var _this;
+
+    _classCallCheck(this, BrewingInfoPage);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(BrewingInfoPage).call(this, props, context));
+
+    _defineProperty(_assertThisInitialized(_this), "changeLocation", function (e) {
+      _this.setState({
+        location: e.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "changeImpression", function (e) {
+      _this.setState({
+        impression: e.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "changeBeerType", function (e) {
+      _this.setState({
+        beerType: e.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getMalts", function () {
+      var malts = [];
+
+      _this.state.beerInfo.ingredients.malt.forEach(function (item) {
+        malts.push({
+          beerId: _this.state.beerInfo.id,
+          name: item.name,
+          amountValue: item.amount.value,
+          amountUnit: item.amount.unit
+        });
+      });
+
+      return malts;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getMashTemperatures", function () {
+      var mashTemperatues = [];
+
+      _this.state.beerInfo.method.mash_temp.forEach(function (item) {
+        mashTemperatues.push({
+          beerId: _this.state.beerInfo.id,
+          duration: item.duration,
+          temperatureValue: item.temp.value,
+          temperatureUnit: item.temp.unit
+        });
+      });
+
+      return mashTemperatues;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getHops", function () {
+      var hops = [];
+
+      _this.state.beerInfo.ingredients.hops.forEach(function (item) {
+        hops.push({
+          beerId: _this.state.beerInfo.id,
+          name: item.name,
+          amountValue: item.amount.value,
+          amountUnit: item.amount.unit,
+          add: item.amount.add,
+          attribute: item.amount.attribute
+        });
+      });
+
+      return hops;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "save",
+    /*#__PURE__*/
+    function () {
+      var _ref = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee(e) {
+        var _this$state, id, beerInfo, location, datetime, beerType, impression, photos, fermentation, yeast, brew;
+
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                e.preventDefault();
+                _this$state = _this.state, id = _this$state.id, beerInfo = _this$state.beerInfo, location = _this$state.location, datetime = _this$state.datetime, beerType = _this$state.beerType, impression = _this$state.impression, photos = _this$state.photos;
+                fermentation = {
+                  beerId: beerInfo.id,
+                  temperatureValue: beerInfo.method.fermentation.temp.value,
+                  temperatureUnit: beerInfo.method.fermentation.temp.unit
+                };
+                yeast = {
+                  beerId: beerInfo.id,
+                  Name: beerInfo.ingredients.yeast
+                };
+                brew = {
+                  id: id,
+                  userId: _this.context.userId,
+                  beerId: beerInfo.id,
+                  tagline: beerInfo.tagline,
+                  imageUrl: beerInfo.imageUrl,
+                  datetime: datetime,
+                  location: location,
+                  photos: photos,
+                  beerType: beerType,
+                  name: beerInfo.name,
+                  impression: impression,
+                  rating: 0,
+                  hops: _this.getHops(),
+                  malt: _this.getMalts(),
+                  fermentation: fermentation,
+                  yeast: yeast,
+                  mashTemperatures: _this.getMashTemperatures()
+                };
+
+                if (!_this.validator.allValid()) {
+                  _context.next = 18;
+                  break;
+                }
+
+                if (!_this.state.id) {
+                  _context.next = 12;
+                  break;
+                }
+
+                _context.next = 9;
+                return helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_12__["default"].callService(services_brewingService__WEBPACK_IMPORTED_MODULE_13__["default"].update, brew, null);
+
+              case 9:
+                alert('Brew has been updated');
+                helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_8__["default"].redirect(_this.props.history);
+                return _context.abrupt("return");
+
+              case 12:
+                alert('Brew has been added');
+                _context.next = 15;
+                return helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_12__["default"].callService(services_brewingService__WEBPACK_IMPORTED_MODULE_13__["default"].add, brew, _this.errorFieldRef);
+
+              case 15:
+                helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_8__["default"].redirect(_this.props.history);
+                _context.next = 20;
+                break;
+
+              case 18:
+                _this.validator.showMessages();
+
+                _this.forceUpdate();
+
+              case 20:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
+
+    _defineProperty(_assertThisInitialized(_this), "close", function (e) {
+      e.preventDefault();
+      helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_8__["default"].redirect(_this.props.history);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "delete",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee2() {
+      var _this$state2, id, beerInfo, location, datetime, beerType, impression, photos, brew;
+
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _this$state2 = _this.state, id = _this$state2.id, beerInfo = _this$state2.beerInfo, location = _this$state2.location, datetime = _this$state2.datetime, beerType = _this$state2.beerType, impression = _this$state2.impression, photos = _this$state2.photos;
+              brew = {
+                id: id,
+                userId: _this.context.userId,
+                beerId: beerInfo.id,
+                tagline: beerInfo.tagline,
+                imageUrl: beerInfo.imageUrl,
+                datetime: datetime,
+                location: location,
+                photos: photos,
+                beerType: beerType,
+                name: beerInfo.name,
+                impression: impression,
+                rating: 0
+              };
+              _context2.next = 4;
+              return helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_12__["default"].callService(services_brewingService__WEBPACK_IMPORTED_MODULE_13__["default"].deleteItem, brew, _this.errorFieldRef);
+
+            case 4:
+              alert('Brew has been deleted');
+              helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_8__["default"].redirect(_this.props.history);
+
+            case 6:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    })));
+
+    _defineProperty(_assertThisInitialized(_this), "addPhoto", function (e) {
+      var filesSelected = e.target.files;
+
+      if (filesSelected.length > 0) {
+        var fileToLoad = filesSelected[0];
+        var fileReader = new FileReader();
+
+        fileReader.onload = function (fileLoadedEvent) {
+          var srcData = fileLoadedEvent.target.result;
+
+          _this.setState({
+            photos: _this.state.photos.concat(srcData)
+          });
+        };
+
+        fileReader.readAsDataURL(fileToLoad);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderButtons", function () {
+      if (_this.state.userId === _this.context.userId) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "brewing-info-page__buttons"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "submit",
+          onClick: _this.save,
+          value: "Save",
+          className: "brewing-info-page__button"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "button",
+          onClick: _this.delete,
+          value: "Delete",
+          className: "brewing-info-page__delete-button"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "reset",
+          onClick: _this.close,
+          value: "Delete",
+          className: "brewing-info-page__button"
+        }));
+      }
+
+      return null;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderValidationResult", function () {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "brewing-info-page__validation-result",
+        ref: _this.errorFieldRef
+      }, _this.validator.message(validationConfigs_brewValidationConfig__WEBPACK_IMPORTED_MODULE_7__["default"].beerType.fieldName, _this.state.beerType, validationConfigs_brewValidationConfig__WEBPACK_IMPORTED_MODULE_7__["default"].beerType.rule), _this.validator.message(validationConfigs_brewValidationConfig__WEBPACK_IMPORTED_MODULE_7__["default"].impression.fieldName, _this.state.impression, validationConfigs_brewValidationConfig__WEBPACK_IMPORTED_MODULE_7__["default"].impression.rule));
+    });
+
+    _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a();
+    var params = _this.props.match.params;
+    var today = new Date();
+    var date = "".concat(today.getFullYear(), "-").concat(today.getMonth() + 1, "-").concat(today.getDate());
+    var time = "".concat(today.getHours(), ":").concat(today.getMinutes());
+    var dateTime = "".concat(date, " ").concat(time);
+    debugger;
+    _this.state = {
+      id: 0,
+      userId: _this.context.userId,
+      beerInfo: null,
+      location: '',
+      datetime: dateTime,
+      beerType: '',
+      impression: '',
+      photos: []
+    };
+
+    _this.getBeer(params.beerId);
+
+    if (params.brewId) {
+      _this.getBrew(params.brewId);
+    }
+
+    return _this;
+  }
+
+  _createClass(BrewingInfoPage, [{
+    key: "getBeer",
+    value: function () {
+      var _getBeer = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee3(id) {
+        var result;
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return services_beerService__WEBPACK_IMPORTED_MODULE_11__["default"].getByID(id);
+
+              case 2:
+                result = _context3.sent;
+                this.setState({
+                  beerInfo: result
+                });
+
+              case 4:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
+      }));
+
+      function getBeer(_x2) {
+        return _getBeer.apply(this, arguments);
+      }
+
+      return getBeer;
+    }()
+  }, {
+    key: "getBrew",
+    value: function () {
+      var _getBrew = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee4(id) {
+        var result;
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return services_brewingService__WEBPACK_IMPORTED_MODULE_13__["default"].getBrewById(id);
+
+              case 2:
+                result = _context4.sent;
+
+                if (result) {
+                  this.setState({
+                    id: result.id,
+                    location: result.location,
+                    userId: result.userId,
+                    datetime: result.dateTime,
+                    beerType: result.beerType,
+                    impression: result.impression,
+                    photos: result.photos ? result.photos : []
+                  });
+                }
+
+              case 4:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, this);
+      }));
+
+      function getBrew(_x3) {
+        return _getBrew.apply(this, arguments);
+      }
+
+      return getBrew;
+    }()
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state3 = this.state,
+          beerInfo = _this$state3.beerInfo,
+          location = _this$state3.location,
+          datetime = _this$state3.datetime,
+          beerType = _this$state3.beerType,
+          impression = _this$state3.impression,
+          photos = _this$state3.photos;
+
+      if (!beerInfo) {
+        return null;
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "brewing-info-page"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "brewing-info-page__title"
+      }, "Brewing Info"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_FormRow_formRow__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        name: "location",
+        type: "text",
+        label: "Location:",
+        onChange: this.changeLocation,
+        value: location
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "brewing-info-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "brewing-info-page__field-title"
+      }, "Date and time:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "datetime",
+        type: "text",
+        value: datetime,
+        className: "brewing-info-page__field-input",
+        disabled: true
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "brewing-info-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "brewing-info-page__field-title"
+      }, "Brew name:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "location",
+        type: "text",
+        value: beerInfo.name,
+        className: "brewing-info-page__field-input",
+        disabled: true
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_FormRow_formRow__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        name: "beerType",
+        type: "text",
+        label: "Beer type:",
+        onChange: this.changeBeerType,
+        value: beerType
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "brewing-info-page__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "brewing-info-page__field-title"
+      }, "Impression:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        onChange: this.changeImpression,
+        name: "location",
+        value: impression,
+        className: "brewing-info-page__impression-field"
+      })), this.renderValidationResult(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_SelectPhotoField_selectPhotoField__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        onChange: this.addPhoto
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_ImagesSlider_imagesSlider__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        images: photos
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "brewing-info-page__ingredients-method"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_BrewingIngredients_brewingIngredients__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        ingredients: beerInfo.ingredients
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_BrewingMethods_brewingMethods__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        method: beerInfo.method
+      }))), this.renderButtons()));
+    }
+  }]);
+
+  return BrewingInfoPage;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+_defineProperty(BrewingInfoPage, "propTypes", {
+  match: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
+    path: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+    url: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+    isExact: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool.isRequired,
+    params: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
+      beerId: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.number.isRequired,
+      brewId: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.number.isRequired
+    }).isRequired
+  }).isRequired,
+  history: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
+    length: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.number.isRequired,
+    action: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+    location: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
+      pathname: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+      search: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+      hash: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+      key: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired
+    }),
+    push: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired
+  }).isRequired
+});
+
+_defineProperty(BrewingInfoPage, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_4__["UserContext"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(BrewingInfoPage));
+
+/***/ }),
+
+/***/ "./src/components/BrewingInfoPage/brewingInfoPage.scss":
+/*!*************************************************************!*\
+  !*** ./src/components/BrewingInfoPage/brewingInfoPage.scss ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./brewingInfoPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewingInfoPage/brewingInfoPage.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./brewingInfoPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewingInfoPage/brewingInfoPage.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./brewingInfoPage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewingInfoPage/brewingInfoPage.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/BrewsPage/BrewsList/brewsList.jsx":
+/*!**********************************************************!*\
+  !*** ./src/components/BrewsPage/BrewsList/brewsList.jsx ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BrewsList; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var services_userService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! services/userService */ "./src/services/userService.js");
+/* harmony import */ var components_BrewsPage_BrewsListItem_brewsListItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/BrewsPage/BrewsListItem/brewsListItem */ "./src/components/BrewsPage/BrewsListItem/brewsListItem.jsx");
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var _brewsList_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./brewsList.scss */ "./src/components/BrewsPage/BrewsList/brewsList.scss");
+/* harmony import */ var _brewsList_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_brewsList_scss__WEBPACK_IMPORTED_MODULE_4__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+var BrewsList =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(BrewsList, _React$PureComponent);
+
+  function BrewsList(props) {
+    var _this;
+
+    _classCallCheck(this, BrewsList);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(BrewsList).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "componentDidMount",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee() {
+      var result;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return services_userService__WEBPACK_IMPORTED_MODULE_1__["default"].getPreferedBrews(_this.context.userId);
+
+            case 2:
+              result = _context.sent;
+
+              _this.setState({
+                brews: result
+              });
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    })));
+
+    _this.state = {
+      brews: []
+    };
+    return _this;
+  }
+
+  _createClass(BrewsList, [{
+    key: "render",
+    value: function render() {
+      var renderedBrews = this.state.brews.map(function (brew, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_BrewsPage_BrewsListItem_brewsListItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          key: index,
+          brew: brew
+        });
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "brews-list"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "brews-list__title"
+      }, "Your prefered brews"), renderedBrews);
+    }
+  }]);
+
+  return BrewsList;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+_defineProperty(BrewsList, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"]);
+
+
+
+/***/ }),
+
+/***/ "./src/components/BrewsPage/BrewsList/brewsList.scss":
+/*!***********************************************************!*\
+  !*** ./src/components/BrewsPage/BrewsList/brewsList.scss ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsList.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsList/brewsList.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsList.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsList/brewsList.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsList.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsList/brewsList.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/BrewsPage/BrewsListItem/brewsListItem.jsx":
+/*!******************************************************************!*\
+  !*** ./src/components/BrewsPage/BrewsListItem/brewsListItem.jsx ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BrewsListItem; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var components_common_OpenBrewingInfoPageButton_openBrewingInfoPageButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton */ "./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.jsx");
+/* harmony import */ var _brewsListItem_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./brewsListItem.scss */ "./src/components/BrewsPage/BrewsListItem/brewsListItem.scss");
+/* harmony import */ var _brewsListItem_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_brewsListItem_scss__WEBPACK_IMPORTED_MODULE_3__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+var BrewsListItem =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(BrewsListItem, _React$PureComponent);
+
+  function BrewsListItem() {
+    _classCallCheck(this, BrewsListItem);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(BrewsListItem).apply(this, arguments));
+  }
+
+  _createClass(BrewsListItem, [{
+    key: "render",
+    value: function render() {
+      var brew = this.props.brew;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "brews-list-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "brews-list-item__row"
+      }, "Brew name: ", brew.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "brews-list-item__row"
+      }, "Date: ", brew.dateTime), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "brews-list-item__row"
+      }, "Location: ", brew.location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "brews-list-item__row"
+      }, "Rating: ", brew.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_OpenBrewingInfoPageButton_openBrewingInfoPageButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        brewId: brew.id,
+        text: "Open full info",
+        beerId: brew.beerId,
+        className: "brews-list-item__open-brew-page-button"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        alt: "Item_image",
+        className: "brews-list-item__image",
+        src: brew.photos[0]
+      }));
+    }
+  }]);
+
+  return BrewsListItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+_defineProperty(BrewsListItem, "propTypes", {
+  brew: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    beerId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    dateTime: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    location: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    rating: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    photos: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired
+  }).isRequired
+});
+
+
+
+/***/ }),
+
+/***/ "./src/components/BrewsPage/BrewsListItem/brewsListItem.scss":
+/*!*******************************************************************!*\
+  !*** ./src/components/BrewsPage/BrewsListItem/brewsListItem.scss ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsListItem/brewsListItem.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsListItem/brewsListItem.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewsListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/BrewsPage/BrewsListItem/brewsListItem.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -42137,383 +43173,6 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./header.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Header/header.scss", function() {
 		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./header.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Header/header.scss");
-
-		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ "./src/components/ProfilePage/profilePage.jsx":
-/*!****************************************************!*\
-  !*** ./src/components/ProfilePage/profilePage.jsx ***!
-  \****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-react-validator */ "./node_modules/simple-react-validator/dist/simple-react-validator.min.js");
-/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_react_validator__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! validationConfigs/profileValidationConfig */ "./src/validationConfigs/profileValidationConfig.js");
-/* harmony import */ var services_userService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! services/userService */ "./src/services/userService.js");
-/* harmony import */ var wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! wrappers/serviceWrapper */ "./src/wrappers/serviceWrapper.js");
-/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
-/* harmony import */ var _profilePage_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./profilePage.scss */ "./src/components/ProfilePage/profilePage.scss");
-/* harmony import */ var _profilePage_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_profilePage_scss__WEBPACK_IMPORTED_MODULE_8__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-
-
-
-
-
-
-var ProfilePage =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inherits(ProfilePage, _React$PureComponent);
-
-  function ProfilePage(props) {
-    var _this;
-
-    _classCallCheck(this, ProfilePage);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(ProfilePage).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_this), "deletePhotoClick", function () {
-      _this.setState({
-        photo: ''
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onNameFieldChange", function (e) {
-      _this.setState({
-        name: e.target.value
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onEmailFieldChange", function (e) {
-      _this.setState({
-        email: e.target.value
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onBirthdateFieldChange", function (e) {
-      _this.setState({
-        birthdate: e.target.value.slice(1, 10)
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onAddPhotoClick", function () {
-      var input = document.createElement('input');
-      input.type = 'file';
-      input.accept = 'image/x-png,image/gif,image/jpeg';
-
-      input.onchange = function () {
-        var filesSelected = input.files;
-
-        if (filesSelected.length > 0) {
-          var fileToLoad = filesSelected[0];
-          var fileReader = new FileReader();
-
-          fileReader.onload = function (fileLoadedEvent) {
-            _this.setState({
-              photo: fileLoadedEvent.target.result
-            });
-          };
-
-          fileReader.readAsDataURL(fileToLoad);
-        }
-      };
-
-      input.click();
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onSaveClick",
-    /*#__PURE__*/
-    function () {
-      var _ref = _asyncToGenerator(
-      /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee(e) {
-        var userData;
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                e.preventDefault();
-
-                if (!_this.validator.allValid()) {
-                  _context.next = 9;
-                  break;
-                }
-
-                userData = _objectSpread({}, _this.state);
-                _context.next = 5;
-                return wrappers_serviceWrapper__WEBPACK_IMPORTED_MODULE_6__["default"].callService(services_userService__WEBPACK_IMPORTED_MODULE_5__["default"].updateUser, userData, _this.errorFieldRef);
-
-              case 5:
-                alert('The user was updated');
-
-                _this.props.history.push('/');
-
-                _context.next = 11;
-                break;
-
-              case 9:
-                _this.validator.showMessages();
-
-                _this.forceUpdate();
-
-              case 11:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }));
-
-      return function (_x) {
-        return _ref.apply(this, arguments);
-      };
-    }());
-
-    _defineProperty(_assertThisInitialized(_this), "onCloseClick", function (e) {
-      e.preventDefault();
-
-      _this.props.history.push('/');
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "getValidationResultField", function () {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-page__validation-result",
-        ref: _this.errorFieldRef
-      }, _this.validator.message('Email', _this.state.email, validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].email.rule), _this.validator.message('Name', _this.state.name, validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_4__["default"].name.rule));
-    });
-
-    _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a();
-    _this.errorFieldRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
-    _this.state = {
-      photo: '',
-      name: '',
-      email: '',
-      birthdate: ''
-    };
-    return _this;
-  }
-
-  _createClass(ProfilePage, [{
-    key: "componentDidMount",
-    value: function () {
-      var _componentDidMount = _asyncToGenerator(
-      /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee2() {
-        var user;
-        return regeneratorRuntime.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return services_userService__WEBPACK_IMPORTED_MODULE_5__["default"].getUser(this.context.userId);
-
-              case 2:
-                user = _context2.sent;
-                this.setState({
-                  id: user.id,
-                  name: user.name,
-                  email: user.email,
-                  photo: user.photo,
-                  birthdate: user.birthdate ? user.birthdate.slice(0, 10) : ''
-                });
-
-              case 4:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, this);
-      }));
-
-      function componentDidMount() {
-        return _componentDidMount.apply(this, arguments);
-      }
-
-      return componentDidMount;
-    }()
-  }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "profile-page"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "profile-page__title"
-      }, "Your profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "profile-page__form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-page__image-block"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "profile-page__user-image",
-        alt: "",
-        src: this.state.photo
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "profile-page__add-image-button",
-        type: "button",
-        onClick: this.onAddPhotoClick
-      }, "Add image"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "profile-page__delete-image-button",
-        type: "button",
-        onClick: this.deletePhotoClick
-      }, "Delete image"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-page__user-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "profile-page__field-title"
-      }, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "name",
-        type: "text",
-        value: this.state.name,
-        className: "profile-page__field-input",
-        onChange: this.onNameFieldChange
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "profile-page__field-title"
-      }, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "email",
-        type: "email",
-        value: this.state.email,
-        className: "profile-page__field-input",
-        onChange: this.onEmailFieldChange
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-page__field"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "profile-page__field-title"
-      }, "Birthdate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "birthdate",
-        type: "date",
-        value: this.state.birthdate,
-        className: "profile-page__field-input",
-        onChange: this.onBirthdateFieldChange
-      })), this.getValidationResultField(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        className: "profile-page__save-button",
-        onClick: this.onSaveClick,
-        value: "Save"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "reset",
-        className: "profile-page__close-button",
-        onClick: this.onCloseClick,
-        value: "Close"
-      }))));
-    }
-  }]);
-
-  return ProfilePage;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
-
-_defineProperty(ProfilePage, "propTypes", {
-  history: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
-    length: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.number.isRequired,
-    action: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
-    location: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
-      pathname: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
-      search: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
-      hash: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
-      key: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired
-    }),
-    push: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired
-  }).isRequired
-});
-
-ProfilePage.contextType = store_context_userContext__WEBPACK_IMPORTED_MODULE_7__["UserContext"];
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(ProfilePage));
-
-/***/ }),
-
-/***/ "./src/components/ProfilePage/profilePage.scss":
-/*!*****************************************************!*\
-  !*** ./src/components/ProfilePage/profilePage.scss ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./profilePage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/ProfilePage/profilePage.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(true) {
-	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./profilePage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/ProfilePage/profilePage.scss", function() {
-		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./profilePage.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/ProfilePage/profilePage.scss");
 
 		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 
@@ -44066,27 +44725,22 @@ if(true) {
 
 /***/ }),
 
-/***/ "./src/components/common/FavouriteButton/favouriteButton.jsx":
-/*!*******************************************************************!*\
-  !*** ./src/components/common/FavouriteButton/favouriteButton.jsx ***!
-  \*******************************************************************/
+/***/ "./src/components/common/BrewingIngredients/brewingIngredients.jsx":
+/*!*************************************************************************!*\
+  !*** ./src/components/common/BrewingIngredients/brewingIngredients.jsx ***!
+  \*************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FavouriteButton; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BrewingIngredients; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
-/* harmony import */ var services_favouritesService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! services/favouritesService */ "./src/services/favouritesService.js");
-/* harmony import */ var helpers_favouriteItemHelper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! helpers/favouriteItemHelper */ "./src/helpers/favouriteItemHelper.js");
-/* harmony import */ var _favouriteButton_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./favouriteButton.scss */ "./src/components/common/FavouriteButton/favouriteButton.scss");
-/* harmony import */ var _favouriteButton_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_favouriteButton_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _brewingIngredients_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./brewingIngredients.scss */ "./src/components/common/BrewingIngredients/brewingIngredients.scss");
+/* harmony import */ var _brewingIngredients_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_brewingIngredients_scss__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -44097,9 +44751,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -44111,81 +44765,82 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-
-
-
-var FavouriteButton =
+var BrewingIngredients =
 /*#__PURE__*/
 function (_React$PureComponent) {
-  _inherits(FavouriteButton, _React$PureComponent);
+  _inherits(BrewingIngredients, _React$PureComponent);
 
-  function FavouriteButton(props, context) {
-    var _this;
+  function BrewingIngredients() {
+    _classCallCheck(this, BrewingIngredients);
 
-    _classCallCheck(this, FavouriteButton);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(FavouriteButton).call(this, props, context));
-
-    _defineProperty(_assertThisInitialized(_this), "toggleFavouriteState", function () {
-      _this.state.isFavourite ? services_favouritesService__WEBPACK_IMPORTED_MODULE_4__["default"].deleteItem(_this.context.userId, _this.props.beer) : services_favouritesService__WEBPACK_IMPORTED_MODULE_4__["default"].add(_this.context.userId, _this.props.beer);
-
-      _this.setState({
-        isFavourite: !_this.state.isFavourite
-      });
-    });
-
-    _this.state = {
-      isFavourite: helpers_favouriteItemHelper__WEBPACK_IMPORTED_MODULE_5__["default"].isFavourite(_this.props.beer, _this.context.favouriteBeers)
-    };
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(BrewingIngredients).apply(this, arguments));
   }
 
-  _createClass(FavouriteButton, [{
+  _createClass(BrewingIngredients, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      var buttonClass = classnames__WEBPACK_IMPORTED_MODULE_2___default()('favourite-button', this.props.className);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(store_context_userContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"].Consumer, null, function (_ref) {
-        var userId = _ref.userId;
-        return userId !== '' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          type: "button",
-          className: buttonClass,
-          onClick: _this2.toggleFavouriteState
-        }, _this2.state.isFavourite ? 'Remove favourite' : 'Favourite');
+      var ingredients = this.props.ingredients;
+      var hopsValues = ingredients.hops.map(function (item, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: index
+        }, "\"", item.name, "\" - ", item.amount.value, " grams, add when ", item.add);
       });
+      var maltValues = ingredients.malt.map(function (item, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: index
+        }, "\"", item.name, "\" - ", item.amount.value, " kg");
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "brewing-ingredients"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "brewing-ingredients__title"
+      }, "Ingredients"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "brewing-ingredients__characteristics"
+      }, ingredients.water && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "brewing-ingredients__ingredient"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "brewing-ingredients__subtitle"
+      }, "Water"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, ingredients.water, " liters")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "brewing-ingredients__ingredient brewing-ingredients__value"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "brewing-ingredients__subtitle"
+      }, "Malt"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, maltValues)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "brewing-ingredients__ingredient"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "brewing-ingredients__subtitle"
+      }, "Hops"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, hopsValues)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "brewing-ingredients__ingredient"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "brewing-ingredients__subtitle"
+      }, "Yeast"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, ingredients.yeast))));
     }
   }]);
 
-  return FavouriteButton;
+  return BrewingIngredients;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
-_defineProperty(FavouriteButton, "propTypes", {
-  beer: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
-    id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
-    imageUrl: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-    tagline: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-    name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-    description: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
-  }).isRequired,
-  className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+_defineProperty(BrewingIngredients, "propTypes", {
+  ingredients: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    malt: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
+    hops: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
+    water: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+    yeast: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+  }).isRequired
 });
 
 
-FavouriteButton.contextType = store_context_userContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"];
 
 /***/ }),
 
-/***/ "./src/components/common/FavouriteButton/favouriteButton.scss":
-/*!********************************************************************!*\
-  !*** ./src/components/common/FavouriteButton/favouriteButton.scss ***!
-  \********************************************************************/
+/***/ "./src/components/common/BrewingIngredients/brewingIngredients.scss":
+/*!**************************************************************************!*\
+  !*** ./src/components/common/BrewingIngredients/brewingIngredients.scss ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favouriteButton.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/FavouriteButton/favouriteButton.scss");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingIngredients.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/BrewingIngredients/brewingIngredients.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -44204,8 +44859,313 @@ var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/a
 if(content.locals) module.exports = content.locals;
 
 if(true) {
-	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favouriteButton.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/FavouriteButton/favouriteButton.scss", function() {
-		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favouriteButton.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/FavouriteButton/favouriteButton.scss");
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingIngredients.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/BrewingIngredients/brewingIngredients.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingIngredients.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/BrewingIngredients/brewingIngredients.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/common/BrewingMethods/brewingMethods.jsx":
+/*!*****************************************************************!*\
+  !*** ./src/components/common/BrewingMethods/brewingMethods.jsx ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BrewingMethods; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _brewingMethods_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./brewingMethods.scss */ "./src/components/common/BrewingMethods/brewingMethods.scss");
+/* harmony import */ var _brewingMethods_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_brewingMethods_scss__WEBPACK_IMPORTED_MODULE_2__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+var BrewingMethods =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(BrewingMethods, _React$PureComponent);
+
+  function BrewingMethods() {
+    _classCallCheck(this, BrewingMethods);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(BrewingMethods).apply(this, arguments));
+  }
+
+  _createClass(BrewingMethods, [{
+    key: "render",
+    value: function render() {
+      var method = this.props.method;
+      var mashValues = method.mash_temp.map(function (item, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          key: index
+        }, item.duration, " minutes at ", item.temp.value, "\xB0 ", item.temp.unit === 'celsius' ? 'C' : 'F');
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "brewing-methods"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "brewing-methods__title"
+      }, "Method"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "brewing-methods__subtitle"
+      }, "Mash"), mashValues, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "brewing-methods__subtitle"
+      }, "Fermentation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Perform at ", method.fermentation.temp.value, "\xB0 ", method.fermentation.temp.unit === 'celsius' ? 'C' : 'F'), method.twist && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "brewing-methods__method-subtitle"
+      }, "Twist"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "brewing-methods__method-values"
+      }, method.twist))));
+    }
+  }]);
+
+  return BrewingMethods;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+_defineProperty(BrewingMethods, "propTypes", {
+  method: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    mash_temp: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
+    fermentation: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+      temp: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+        value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+        unit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+      }).isRequired
+    }).isRequired,
+    twist: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+  }).isRequired
+});
+
+
+
+/***/ }),
+
+/***/ "./src/components/common/BrewingMethods/brewingMethods.scss":
+/*!******************************************************************!*\
+  !*** ./src/components/common/BrewingMethods/brewingMethods.scss ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingMethods.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/BrewingMethods/brewingMethods.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingMethods.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/BrewingMethods/brewingMethods.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingMethods.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/BrewingMethods/brewingMethods.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/common/FavouriteButton/favouriteButton.jsx":
+/*!*******************************************************************!*\
+  !*** ./src/components/common/FavouriteButton/favouriteButton.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'D:\\Beer Catalog\\BeerCatalogFullstack\\FrontEnd\\src\\components\\common\\FavouriteButton\\favouriteButton.jsx'");
+
+/***/ }),
+
+/***/ "./src/components/common/FormRow/formRow.jsx":
+/*!***************************************************!*\
+  !*** ./src/components/common/FormRow/formRow.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FormRow; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _formRow_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./formRow.scss */ "./src/components/common/FormRow/formRow.scss");
+/* harmony import */ var _formRow_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_formRow_scss__WEBPACK_IMPORTED_MODULE_2__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+var FormRow =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(FormRow, _React$PureComponent);
+
+  function FormRow() {
+    _classCallCheck(this, FormRow);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(FormRow).apply(this, arguments));
+  }
+
+  _createClass(FormRow, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          label = _this$props.label,
+          name = _this$props.name,
+          type = _this$props.type,
+          value = _this$props.value,
+          onChange = _this$props.onChange;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "form-row__title"
+      }, label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: name,
+        type: type,
+        value: value,
+        className: "form-row__input",
+        onChange: onChange
+      }));
+    }
+  }]);
+
+  return FormRow;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+_defineProperty(FormRow, "propTypes", {
+  label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  onChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+});
+
+
+
+/***/ }),
+
+/***/ "./src/components/common/FormRow/formRow.scss":
+/*!****************************************************!*\
+  !*** ./src/components/common/FormRow/formRow.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./formRow.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/FormRow/formRow.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./formRow.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/FormRow/formRow.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./formRow.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/FormRow/formRow.scss");
 
 		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 
@@ -44307,6 +45267,350 @@ _defineProperty(Icon, "propTypes", {
 });
 
 
+
+/***/ }),
+
+/***/ "./src/components/common/ImagesSlider/imagesSlider.jsx":
+/*!*************************************************************!*\
+  !*** ./src/components/common/ImagesSlider/imagesSlider.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ImagesSlider; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var components_common_Icon_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/common/Icon/icon */ "./src/components/common/Icon/icon.jsx");
+/* harmony import */ var _imagesSlider_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./imagesSlider.scss */ "./src/components/common/ImagesSlider/imagesSlider.scss");
+/* harmony import */ var _imagesSlider_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_imagesSlider_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var styles_icons_left_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styles/icons/left.svg */ "./src/styles/icons/left.svg");
+/* harmony import */ var styles_icons_right_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styles/icons/right.svg */ "./src/styles/icons/right.svg");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+var ImagesSlider =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(ImagesSlider, _React$PureComponent);
+
+  function ImagesSlider(props) {
+    var _this;
+
+    _classCallCheck(this, ImagesSlider);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ImagesSlider).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "setPreviousSlide", function () {
+      var lastIndex = _this.props.images.length - 1;
+      var currentImageIndex = _this.state.currentImageIndex;
+      var shouldResetIndex = currentImageIndex === 0;
+      var index = shouldResetIndex ? lastIndex : currentImageIndex - 1;
+
+      _this.setState({
+        currentImageIndex: index
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setNextSlide", function () {
+      var lastIndex = _this.props.images.length - 1;
+      var currentImageIndex = _this.state.currentImageIndex;
+      var shouldResetIndex = currentImageIndex === lastIndex;
+      var index = shouldResetIndex ? 0 : currentImageIndex + 1;
+
+      _this.setState({
+        currentImageIndex: index
+      });
+    });
+
+    _this.state = {
+      currentImageIndex: 0
+    };
+    return _this;
+  }
+
+  _createClass(ImagesSlider, [{
+    key: "render",
+    value: function render() {
+      var currentImageIndex = this.state.currentImageIndex;
+      var images = this.props.images;
+
+      if (images.length === 0) {
+        return null;
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "images-slider"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "images-slider__button",
+        onClick: this.setPreviousSlide
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_Icon_icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        icon: styles_icons_left_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+        iconClassName: "images-slider__button-icon"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: images[currentImageIndex],
+        alt: "Image_item",
+        className: "images-slider__image"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "images-slider__button",
+        onClick: this.setNextSlide
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_Icon_icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        icon: styles_icons_right_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
+        iconClassName: "images-slider__button-icon"
+      })));
+    }
+  }]);
+
+  return ImagesSlider;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+_defineProperty(ImagesSlider, "propTypes", {
+  images: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired
+});
+
+
+
+/***/ }),
+
+/***/ "./src/components/common/ImagesSlider/imagesSlider.scss":
+/*!**************************************************************!*\
+  !*** ./src/components/common/ImagesSlider/imagesSlider.scss ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./imagesSlider.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/ImagesSlider/imagesSlider.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./imagesSlider.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/ImagesSlider/imagesSlider.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./imagesSlider.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/ImagesSlider/imagesSlider.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.jsx":
+/*!***************************************************************************************!*\
+  !*** ./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.jsx ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return OpenBrewingInfoPageButton; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var helpers_urlHelper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! helpers/urlHelper */ "./src/helpers/urlHelper.js");
+/* harmony import */ var constants_routing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! constants/routing */ "./src/constants/routing.js");
+/* harmony import */ var _openBrewingInfoPageButton_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./openBrewingInfoPageButton.scss */ "./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.scss");
+/* harmony import */ var _openBrewingInfoPageButton_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_openBrewingInfoPageButton_scss__WEBPACK_IMPORTED_MODULE_7__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+var OpenBrewingInfoPageButton =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(OpenBrewingInfoPageButton, _React$PureComponent);
+
+  function OpenBrewingInfoPageButton() {
+    _classCallCheck(this, OpenBrewingInfoPageButton);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(OpenBrewingInfoPageButton).apply(this, arguments));
+  }
+
+  _createClass(OpenBrewingInfoPageButton, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          beerId = _this$props.beerId,
+          brewId = _this$props.brewId,
+          className = _this$props.className,
+          text = _this$props.text;
+      var buttonClass = classnames__WEBPACK_IMPORTED_MODULE_3___default()('open-brewing-info-page-button', className);
+      var url = helpers_urlHelper__WEBPACK_IMPORTED_MODULE_5__["default"].getUrlWithParameter(constants_routing__WEBPACK_IMPORTED_MODULE_6__["default"].brewingInfoPage.url, /:beerId/, beerId);
+      url = helpers_urlHelper__WEBPACK_IMPORTED_MODULE_5__["default"].getUrlWithParameter(url, /:brewId/, brewId);
+
+      if (this.context.userId) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: url
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          type: "button",
+          className: buttonClass
+        }, text));
+      }
+
+      return null;
+    }
+  }]);
+
+  return OpenBrewingInfoPageButton;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+_defineProperty(OpenBrewingInfoPageButton, "propTypes", {
+  brewId: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
+  beerId: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number.isRequired,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired,
+  text: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string.isRequired
+});
+
+_defineProperty(OpenBrewingInfoPageButton, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_4__["UserContext"]);
+
+
+
+/***/ }),
+
+/***/ "./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.scss":
+/*!****************************************************************************************!*\
+  !*** ./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.scss ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./openBrewingInfoPageButton.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./openBrewingInfoPageButton.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./openBrewingInfoPageButton.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -44595,6 +45899,140 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./pagingPanel.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/PagingPanel/pagingPanel.scss", function() {
 		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./pagingPanel.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/PagingPanel/pagingPanel.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/common/SelectPhotoField/selectPhotoField.jsx":
+/*!*********************************************************************!*\
+  !*** ./src/components/common/SelectPhotoField/selectPhotoField.jsx ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SelectPhotoField; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _selectPhotoField_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./selectPhotoField.scss */ "./src/components/common/SelectPhotoField/selectPhotoField.scss");
+/* harmony import */ var _selectPhotoField_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_selectPhotoField_scss__WEBPACK_IMPORTED_MODULE_2__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+var SelectPhotoField =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(SelectPhotoField, _React$PureComponent);
+
+  function SelectPhotoField() {
+    _classCallCheck(this, SelectPhotoField);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SelectPhotoField).apply(this, arguments));
+  }
+
+  _createClass(SelectPhotoField, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "select-photo-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "select-photo-field__title"
+      }, "Select photo: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "photo",
+        type: "file",
+        className: "select-photo-field__input",
+        onChange: this.props.onChange,
+        accept: "image/x-png,image/gif,image/jpeg"
+      }));
+    }
+  }]);
+
+  return SelectPhotoField;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+_defineProperty(SelectPhotoField, "propTypes", {
+  onChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+});
+
+
+
+/***/ }),
+
+/***/ "./src/components/common/SelectPhotoField/selectPhotoField.scss":
+/*!**********************************************************************!*\
+  !*** ./src/components/common/SelectPhotoField/selectPhotoField.scss ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./selectPhotoField.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/SelectPhotoField/selectPhotoField.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./selectPhotoField.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/SelectPhotoField/selectPhotoField.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./selectPhotoField.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/common/SelectPhotoField/selectPhotoField.scss");
 
 		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 
@@ -45451,160 +46889,9 @@ if(true) {
   !*** ./src/components/detailsPage/BrewingIngredients/brewingIngredients.jsx ***!
   \******************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BrewingIngredients; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _brewingIngredients_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./brewingIngredients.scss */ "./src/components/detailsPage/BrewingIngredients/brewingIngredients.scss");
-/* harmony import */ var _brewingIngredients_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_brewingIngredients_scss__WEBPACK_IMPORTED_MODULE_2__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-var BrewingIngredients =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inherits(BrewingIngredients, _React$PureComponent);
-
-  function BrewingIngredients() {
-    _classCallCheck(this, BrewingIngredients);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(BrewingIngredients).apply(this, arguments));
-  }
-
-  _createClass(BrewingIngredients, [{
-    key: "render",
-    value: function render() {
-      var ingredients = this.props.ingredients;
-      var hopsValues = ingredients.hops.map(function (item, index) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: index
-        }, "\"", item.name, "\" - ", item.amount.value, " grams, add when ", item.add);
-      });
-      var maltValues = ingredients.malt.map(function (item, index) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: index
-        }, "\"", item.name, "\" - ", item.amount.value, " kg");
-      });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "brewing-ingredients"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "brewing-ingredients__title"
-      }, "Ingredients"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "brewing-ingredients__characteristics"
-      }, ingredients.water && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "brewing-ingredients__ingredient"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "brewing-ingredients__subtitle"
-      }, "Water"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, ingredients.water, " liters")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "brewing-ingredients__ingredient brewing-ingredients__value"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "brewing-ingredients__subtitle"
-      }, "Malt"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, maltValues)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "brewing-ingredients__ingredient"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "brewing-ingredients__subtitle"
-      }, "Hops"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, hopsValues)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "brewing-ingredients__ingredient"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "brewing-ingredients__subtitle"
-      }, "Yeast"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, ingredients.yeast))));
-    }
-  }]);
-
-  return BrewingIngredients;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
-
-_defineProperty(BrewingIngredients, "propTypes", {
-  ingredients: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
-    malt: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
-    hops: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
-    water: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
-    yeast: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
-  }).isRequired
-});
-
-
-
-/***/ }),
-
-/***/ "./src/components/detailsPage/BrewingIngredients/brewingIngredients.scss":
-/*!*******************************************************************************!*\
-  !*** ./src/components/detailsPage/BrewingIngredients/brewingIngredients.scss ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingIngredients.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingIngredients/brewingIngredients.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(true) {
-	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingIngredients.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingIngredients/brewingIngredients.scss", function() {
-		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingIngredients.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingIngredients/brewingIngredients.scss");
-
-		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'D:\\Beer Catalog\\BeerCatalogFullstack\\FrontEnd\\src\\components\\detailsPage\\BrewingIngredients\\brewingIngredients.jsx'");
 
 /***/ }),
 
@@ -45613,149 +46900,9 @@ if(true) {
   !*** ./src/components/detailsPage/BrewingMethods/brewingMethods.jsx ***!
   \**********************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BrewingMethods; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _brewingMethods_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./brewingMethods.scss */ "./src/components/detailsPage/BrewingMethods/brewingMethods.scss");
-/* harmony import */ var _brewingMethods_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_brewingMethods_scss__WEBPACK_IMPORTED_MODULE_2__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-var BrewingMethods =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inherits(BrewingMethods, _React$PureComponent);
-
-  function BrewingMethods() {
-    _classCallCheck(this, BrewingMethods);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(BrewingMethods).apply(this, arguments));
-  }
-
-  _createClass(BrewingMethods, [{
-    key: "render",
-    value: function render() {
-      var method = this.props.method;
-      var mashValues = method.mash_temp.map(function (item, index) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          key: index
-        }, item.duration, " minutes at ", item.temp.value, "\xB0 ", item.temp.unit === 'celsius' ? 'C' : 'F');
-      });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "brewing-methods"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "brewing-methods__title"
-      }, "Method"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "brewing-methods__subtitle"
-      }, "Mash"), mashValues, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "brewing-methods__subtitle"
-      }, "Fermentation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Perform at ", method.fermentation.temp.value, "\xB0 ", method.fermentation.temp.unit === 'celsius' ? 'C' : 'F'), method.twist && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "brewing-methods__method-subtitle"
-      }, "Twist"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "brewing-methods__method-values"
-      }, method.twist))));
-    }
-  }]);
-
-  return BrewingMethods;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
-
-_defineProperty(BrewingMethods, "propTypes", {
-  method: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
-    mash_temp: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
-    fermentation: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
-      temp: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
-        value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
-        unit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
-      }).isRequired
-    }).isRequired,
-    twist: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
-  }).isRequired
-});
-
-
-
-/***/ }),
-
-/***/ "./src/components/detailsPage/BrewingMethods/brewingMethods.scss":
-/*!***********************************************************************!*\
-  !*** ./src/components/detailsPage/BrewingMethods/brewingMethods.scss ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingMethods.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingMethods/brewingMethods.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(true) {
-	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingMethods.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingMethods/brewingMethods.scss", function() {
-		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./brewingMethods.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/detailsPage/BrewingMethods/brewingMethods.scss");
-
-		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'D:\\Beer Catalog\\BeerCatalogFullstack\\FrontEnd\\src\\components\\detailsPage\\BrewingMethods\\brewingMethods.jsx'");
 
 /***/ }),
 
@@ -46049,23 +47196,23 @@ if(true) {
 
 /***/ }),
 
-/***/ "./src/components/favouritesPage/FavouriteListItem/favouriteListItem.jsx":
-/*!*******************************************************************************!*\
-  !*** ./src/components/favouritesPage/FavouriteListItem/favouriteListItem.jsx ***!
-  \*******************************************************************************/
+/***/ "./src/components/favoritesPage/FavoriteListItem/favoriteListItem.jsx":
+/*!****************************************************************************!*\
+  !*** ./src/components/favoritesPage/FavoriteListItem/favoriteListItem.jsx ***!
+  \****************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FavouriteListItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FavoriteListItem; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var components_common_OpenDetailsPageButton_openDetailsPageButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/common/OpenDetailsPageButton/openDetailsPageButton */ "./src/components/common/OpenDetailsPageButton/openDetailsPageButton.jsx");
-/* harmony import */ var _favouriteListItem_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./favouriteListItem.scss */ "./src/components/favouritesPage/FavouriteListItem/favouriteListItem.scss");
-/* harmony import */ var _favouriteListItem_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_favouriteListItem_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _favoriteListItem_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./favoriteListItem.scss */ "./src/components/favoritesPage/FavoriteListItem/favoriteListItem.scss");
+/* harmony import */ var _favoriteListItem_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_favoriteListItem_scss__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46091,63 +47238,63 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var FavouriteListItem =
+var FavoriteListItem =
 /*#__PURE__*/
 function (_React$PureComponent) {
-  _inherits(FavouriteListItem, _React$PureComponent);
+  _inherits(FavoriteListItem, _React$PureComponent);
 
-  function FavouriteListItem() {
+  function FavoriteListItem() {
     var _getPrototypeOf2;
 
     var _this;
 
-    _classCallCheck(this, FavouriteListItem);
+    _classCallCheck(this, FavoriteListItem);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(FavouriteListItem)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(FavoriteListItem)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "onDelete", function () {
-      var onDelete = _this.props.onDelete;
-      onDelete(_this.props.beer);
+    _defineProperty(_assertThisInitialized(_this), "deleteItem", function () {
+      var deleteItem = _this.props.deleteItem;
+      deleteItem(_this.props.beer);
     });
 
     return _this;
   }
 
-  _createClass(FavouriteListItem, [{
+  _createClass(FavoriteListItem, [{
     key: "render",
     value: function render() {
       var beer = this.props.beer;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "favourite-list-item"
+        className: "favorite-list-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "favourite-list-item__title"
+        className: "favorite-list-item__title"
       }, beer.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "favourite-list-item__tagline"
+        className: "favorite-list-item__tagline"
       }, beer.tagline), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "favourite-list-item__description"
+        className: "favorite-list-item__description"
       }, beer.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_OpenDetailsPageButton_openDetailsPageButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
         beerId: beer.id,
-        className: "favourite-list-item__open-details-page-button"
+        className: "favorite-list-item__open-details-page-button"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
-        className: "favourite-list-item__remove-favourite-button",
-        onClick: this.onDelete
-      }, "Remove favourite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "favorite-list-item__remove-favorite-button",
+        onClick: this.deleteItem
+      }, "Remove favorite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         alt: "Item_image",
-        className: "favourite-list-item__image",
+        className: "favorite-list-item__image",
         src: beer.imageUrl
       }));
     }
   }]);
 
-  return FavouriteListItem;
+  return FavoriteListItem;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
-_defineProperty(FavouriteListItem, "propTypes", {
+_defineProperty(FavoriteListItem, "propTypes", {
   beer: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
     id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
     imageUrl: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
@@ -46155,22 +47302,22 @@ _defineProperty(FavouriteListItem, "propTypes", {
     name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
     description: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
   }).isRequired,
-  onDelete: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+  deleteItem: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
 });
 
 
 
 /***/ }),
 
-/***/ "./src/components/favouritesPage/FavouriteListItem/favouriteListItem.scss":
-/*!********************************************************************************!*\
-  !*** ./src/components/favouritesPage/FavouriteListItem/favouriteListItem.scss ***!
-  \********************************************************************************/
+/***/ "./src/components/favoritesPage/FavoriteListItem/favoriteListItem.scss":
+/*!*****************************************************************************!*\
+  !*** ./src/components/favoritesPage/FavoriteListItem/favoriteListItem.scss ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favouriteListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favouritesPage/FavouriteListItem/favouriteListItem.scss");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favoriteListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favoritesPage/FavoriteListItem/favoriteListItem.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -46189,8 +47336,8 @@ var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/a
 if(content.locals) module.exports = content.locals;
 
 if(true) {
-	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favouriteListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favouritesPage/FavouriteListItem/favouriteListItem.scss", function() {
-		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favouriteListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favouritesPage/FavouriteListItem/favouriteListItem.scss");
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favoriteListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favoritesPage/FavoriteListItem/favoriteListItem.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favoriteListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favoritesPage/FavoriteListItem/favoriteListItem.scss");
 
 		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 
@@ -46217,25 +47364,25 @@ if(true) {
 
 /***/ }),
 
-/***/ "./src/components/favouritesPage/FavouritesList/favouritesList.jsx":
-/*!*************************************************************************!*\
-  !*** ./src/components/favouritesPage/FavouritesList/favouritesList.jsx ***!
-  \*************************************************************************/
+/***/ "./src/components/favoritesPage/FavoritesList/favoritesList.jsx":
+/*!**********************************************************************!*\
+  !*** ./src/components/favoritesPage/FavoritesList/favoritesList.jsx ***!
+  \**********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FavouritesList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FavoritesList; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
 /* harmony import */ var services_beerService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! services/beerService */ "./src/services/beerService.js");
-/* harmony import */ var services_favouritesService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! services/favouritesService */ "./src/services/favouritesService.js");
-/* harmony import */ var components_favouritesPage_FavouriteListItem_favouriteListItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/favouritesPage/FavouriteListItem/favouriteListItem */ "./src/components/favouritesPage/FavouriteListItem/favouriteListItem.jsx");
+/* harmony import */ var services_favoritesService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! services/favoritesService */ "./src/services/favoritesService.js");
+/* harmony import */ var components_favoritesPage_FavoriteListItem_favoriteListItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/favoritesPage/FavoriteListItem/favoriteListItem */ "./src/components/favoritesPage/FavoriteListItem/favoriteListItem.jsx");
 /* harmony import */ var components_common_PagingPanel_pagingPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/common/PagingPanel/pagingPanel */ "./src/components/common/PagingPanel/pagingPanel.jsx");
-/* harmony import */ var _favouritesList_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./favouritesList.scss */ "./src/components/favouritesPage/FavouritesList/favouritesList.scss");
-/* harmony import */ var _favouritesList_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_favouritesList_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _favoritesList_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./favoritesList.scss */ "./src/components/favoritesPage/FavoritesList/favoritesList.scss");
+/* harmony import */ var _favoritesList_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_favoritesList_scss__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -46268,19 +47415,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var FavouritesList =
+var FavoritesList =
 /*#__PURE__*/
 function (_React$PureComponent) {
-  _inherits(FavouritesList, _React$PureComponent);
+  _inherits(FavoritesList, _React$PureComponent);
 
-  function FavouritesList(props) {
+  function FavoritesList(props) {
     var _this;
 
-    _classCallCheck(this, FavouritesList);
+    _classCallCheck(this, FavoritesList);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(FavouritesList).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(FavoritesList).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_this), "onPageNumberClick", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "selectPage", function (event) {
       if (_this.state.currentPage !== Number(event.target.id)) {
         _this.setState({
           currentPage: Number(event.target.id)
@@ -46288,56 +47435,22 @@ function (_React$PureComponent) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onDelete",
+    _defineProperty(_assertThisInitialized(_this), "deleteItem",
     /*#__PURE__*/
     function () {
       var _ref = _asyncToGenerator(
       /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee2(item) {
-        var Beers, result, beers, deletedBeer;
-        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      regeneratorRuntime.mark(function _callee(item) {
+        var Beers, deletedBeer;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context.prev = _context.next) {
               case 0:
                 Beers = _this.state.Beers;
-                _context2.next = 3;
-                return services_favouritesService__WEBPACK_IMPORTED_MODULE_3__["default"].deleteItem(_this.context.userId, item);
+                _context.next = 3;
+                return services_favoritesService__WEBPACK_IMPORTED_MODULE_3__["default"].deleteItem(_this.context.userId, item);
 
               case 3:
-                _context2.next = 5;
-                return services_favouritesService__WEBPACK_IMPORTED_MODULE_3__["default"].getItems(_this.context.userId);
-
-              case 5:
-                result = _context2.sent;
-                beers = result.map(
-                /*#__PURE__*/
-                function () {
-                  var _ref2 = _asyncToGenerator(
-                  /*#__PURE__*/
-                  regeneratorRuntime.mark(function _callee(beerId) {
-                    return regeneratorRuntime.wrap(function _callee$(_context) {
-                      while (1) {
-                        switch (_context.prev = _context.next) {
-                          case 0:
-                            return _context.abrupt("return", services_beerService__WEBPACK_IMPORTED_MODULE_2__["default"].getByID(beerId));
-
-                          case 1:
-                          case "end":
-                            return _context.stop();
-                        }
-                      }
-                    }, _callee);
-                  }));
-
-                  return function (_x2) {
-                    return _ref2.apply(this, arguments);
-                  };
-                }());
-                Promise.all(beers).then(function (beersArray) {
-                  return _this.setState({
-                    Beers: beersArray
-                  });
-                });
                 deletedBeer = Beers.find(function (beer) {
                   return beer.id === item.id;
                 });
@@ -46347,12 +47460,12 @@ function (_React$PureComponent) {
                   Beers: Beers
                 });
 
-              case 11:
+              case 6:
               case "end":
-                return _context2.stop();
+                return _context.stop();
             }
           }
-        }, _callee2);
+        }, _callee);
       }));
 
       return function (_x) {
@@ -46367,46 +47480,46 @@ function (_React$PureComponent) {
     return _this;
   }
 
-  _createClass(FavouritesList, [{
+  _createClass(FavoritesList, [{
     key: "componentDidMount",
     value: function () {
       var _componentDidMount = _asyncToGenerator(
       /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee4() {
+      regeneratorRuntime.mark(function _callee3() {
         var _this2 = this;
 
         var result, beers;
-        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
           while (1) {
-            switch (_context4.prev = _context4.next) {
+            switch (_context3.prev = _context3.next) {
               case 0:
-                _context4.next = 2;
-                return services_favouritesService__WEBPACK_IMPORTED_MODULE_3__["default"].getItems(this.context.userId);
+                _context3.next = 2;
+                return services_favoritesService__WEBPACK_IMPORTED_MODULE_3__["default"].getItems(this.context.userId);
 
               case 2:
-                result = _context4.sent;
+                result = _context3.sent;
                 beers = result.map(
                 /*#__PURE__*/
                 function () {
-                  var _ref3 = _asyncToGenerator(
+                  var _ref2 = _asyncToGenerator(
                   /*#__PURE__*/
-                  regeneratorRuntime.mark(function _callee3(beerId) {
-                    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                  regeneratorRuntime.mark(function _callee2(beerId) {
+                    return regeneratorRuntime.wrap(function _callee2$(_context2) {
                       while (1) {
-                        switch (_context3.prev = _context3.next) {
+                        switch (_context2.prev = _context2.next) {
                           case 0:
-                            return _context3.abrupt("return", services_beerService__WEBPACK_IMPORTED_MODULE_2__["default"].getByID(beerId));
+                            return _context2.abrupt("return", services_beerService__WEBPACK_IMPORTED_MODULE_2__["default"].getByID(beerId));
 
                           case 1:
                           case "end":
-                            return _context3.stop();
+                            return _context2.stop();
                         }
                       }
-                    }, _callee3);
+                    }, _callee2);
                   }));
 
-                  return function (_x3) {
-                    return _ref3.apply(this, arguments);
+                  return function (_x2) {
+                    return _ref2.apply(this, arguments);
                   };
                 }());
                 Promise.all(beers).then(function (beersArray) {
@@ -46417,10 +47530,10 @@ function (_React$PureComponent) {
 
               case 5:
               case "end":
-                return _context4.stop();
+                return _context3.stop();
             }
           }
-        }, _callee4, this);
+        }, _callee3, this);
       }));
 
       function componentDidMount() {
@@ -46435,10 +47548,10 @@ function (_React$PureComponent) {
       var _this3 = this;
 
       return currentBeers.map(function (beer) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_favouritesPage_FavouriteListItem_favouriteListItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_favoritesPage_FavoriteListItem_favoriteListItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
           beer: beer,
           key: beer.id,
-          onDelete: _this3.onDelete
+          deleteItem: _this3.deleteItem
         });
       });
     }
@@ -46464,36 +47577,37 @@ function (_React$PureComponent) {
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "favourite-list"
+        className: "favorite-list"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "favourite-list__title"
-      }, "Your favourite beers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "favourite-list__beers"
+        className: "favorite-list__title"
+      }, "Your favorite beers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "favorite-list__beers"
       }, this.renderBeers(currentBeers), this.state.Beers.length > 5 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_PagingPanel_pagingPanel__WEBPACK_IMPORTED_MODULE_5__["default"], {
         pageNumbers: pageNumbers,
-        onPageNumberClick: this.onPageNumberClick,
+        selectPage: this.selectPage,
         collectionLength: this.state.Beers.length
       })));
     }
   }]);
 
-  return FavouritesList;
+  return FavoritesList;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
+_defineProperty(FavoritesList, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_1__["UserContext"]);
 
-FavouritesList.contextType = store_context_userContext__WEBPACK_IMPORTED_MODULE_1__["UserContext"];
+
 
 /***/ }),
 
-/***/ "./src/components/favouritesPage/FavouritesList/favouritesList.scss":
-/*!**************************************************************************!*\
-  !*** ./src/components/favouritesPage/FavouritesList/favouritesList.scss ***!
-  \**************************************************************************/
+/***/ "./src/components/favoritesPage/FavoritesList/favoritesList.scss":
+/*!***********************************************************************!*\
+  !*** ./src/components/favoritesPage/FavoritesList/favoritesList.scss ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favouritesList.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favouritesPage/FavouritesList/favouritesList.scss");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favoritesList.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favoritesPage/FavoritesList/favoritesList.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -46512,8 +47626,905 @@ var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/a
 if(content.locals) module.exports = content.locals;
 
 if(true) {
-	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favouritesList.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favouritesPage/FavouritesList/favouritesList.scss", function() {
-		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favouritesList.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favouritesPage/FavouritesList/favouritesList.scss");
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favoritesList.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favoritesPage/FavoritesList/favoritesList.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./favoritesList.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/favoritesPage/FavoritesList/favoritesList.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/profilePage/ProfileSection/profileSection.jsx":
+/*!**********************************************************************!*\
+  !*** ./src/components/profilePage/ProfileSection/profileSection.jsx ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-react-validator */ "./node_modules/simple-react-validator/dist/simple-react-validator.min.js");
+/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_react_validator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var components_common_FormRow_formRow__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/common/FormRow/formRow */ "./src/components/common/FormRow/formRow.jsx");
+/* harmony import */ var components_common_SelectPhotoField_selectPhotoField__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/common/SelectPhotoField/selectPhotoField */ "./src/components/common/SelectPhotoField/selectPhotoField.jsx");
+/* harmony import */ var components_profilePage_UserPreferenceSection_userPreferenceSection__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! components/profilePage/UserPreferenceSection/userPreferenceSection */ "./src/components/profilePage/UserPreferenceSection/userPreferenceSection.jsx");
+/* harmony import */ var validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! validationConfigs/profileValidationConfig */ "./src/validationConfigs/profileValidationConfig.js");
+/* harmony import */ var services_userService__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! services/userService */ "./src/services/userService.js");
+/* harmony import */ var helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! helpers/serviceWrapper */ "./src/helpers/serviceWrapper.js");
+/* harmony import */ var helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! helpers/redirectToHomePageHelper */ "./src/helpers/redirectToHomePageHelper.js");
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var _profileSection_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./profileSection.scss */ "./src/components/profilePage/ProfileSection/profileSection.scss");
+/* harmony import */ var _profileSection_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_profileSection_scss__WEBPACK_IMPORTED_MODULE_12__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var ProfileSection =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(ProfileSection, _React$PureComponent);
+
+  function ProfileSection(props) {
+    var _this;
+
+    _classCallCheck(this, ProfileSection);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ProfileSection).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "deletePhoto", function () {
+      _this.setState({
+        photo: ''
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "changeName", function (e) {
+      _this.setState({
+        name: e.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "changeEmail", function (e) {
+      _this.setState({
+        email: e.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "changeBirthdate", function (e) {
+      _this.setState({
+        birthdate: e.target.value.slice(0, 10)
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "changePhoto", function (event) {
+      var filesSelected = event.target.files;
+
+      if (filesSelected.length > 0) {
+        var fileToLoad = filesSelected[0];
+        var fileReader = new FileReader();
+
+        fileReader.onload = function (fileLoadedEvent) {
+          var srcData = fileLoadedEvent.target.result;
+
+          _this.setState({
+            photo: srcData
+          });
+        };
+
+        fileReader.readAsDataURL(fileToLoad);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "save",
+    /*#__PURE__*/
+    function () {
+      var _ref = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee(e) {
+        var userData;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                e.preventDefault();
+
+                if (!_this.validator.allValid()) {
+                  _context.next = 9;
+                  break;
+                }
+
+                userData = _objectSpread({}, _this.state);
+                _context.next = 5;
+                return helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_9__["default"].callService(services_userService__WEBPACK_IMPORTED_MODULE_8__["default"].updateUser, userData, _this.errorFieldRef);
+
+              case 5:
+                alert('The user was updated');
+                helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_10__["default"].redirect(_this.props.history);
+                _context.next = 11;
+                break;
+
+              case 9:
+                _this.validator.showMessages();
+
+                _this.forceUpdate();
+
+              case 11:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
+
+    _defineProperty(_assertThisInitialized(_this), "close", function (e) {
+      e.preventDefault();
+      helpers_redirectToHomePageHelper__WEBPACK_IMPORTED_MODULE_10__["default"].redirect(_this.props.history);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderValidationResult", function () {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-section__validation-result",
+        ref: _this.errorFieldRef
+      }, _this.validator.message(validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_7__["default"].email.fieldName, _this.state.email, validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_7__["default"].email.rule), _this.validator.message(validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_7__["default"].name.fieldName, _this.state.name, validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_7__["default"].name.rule));
+    });
+
+    _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a();
+    _this.errorFieldRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    _this.state = {
+      photo: '',
+      name: '',
+      email: '',
+      birthdate: ''
+    };
+    return _this;
+  }
+
+  _createClass(ProfileSection, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee2() {
+        var user;
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return services_userService__WEBPACK_IMPORTED_MODULE_8__["default"].getUser(this.context.userId);
+
+              case 2:
+                user = _context2.sent;
+                this.setState({
+                  id: user.id,
+                  name: user.name,
+                  email: user.email,
+                  photo: user.photo,
+                  birthdate: user.birthdate ? user.birthdate.slice(0, 10) : ''
+                });
+
+              case 4:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "profile-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "profile-section__title"
+      }, "Your profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "profile-section__form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-section__image-block"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "profile-section__user-image",
+        alt: "avatar",
+        src: this.state.photo
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_SelectPhotoField_selectPhotoField__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        onChange: this.changePhoto
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "profile-section__button",
+        type: "button",
+        onClick: this.deletePhoto
+      }, "Delete photo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-section__user-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_FormRow_formRow__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        name: "name",
+        type: "text",
+        label: "Name:",
+        onChange: this.changeName,
+        value: this.state.name
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_FormRow_formRow__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        name: "email",
+        type: "email",
+        label: "E-mail:",
+        onChange: this.changeEmail,
+        value: this.state.email
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_FormRow_formRow__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        name: "birthdate",
+        type: "date",
+        label: "Select birthdate:",
+        onChange: this.changeBirthdate,
+        value: this.state.birthdate
+      }), this.renderValidationResult(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-section__buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
+        className: "profile-section__button",
+        onClick: this.save,
+        value: "Save"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "reset",
+        className: "profile-section__button",
+        onClick: this.close,
+        value: "Close"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_profilePage_UserPreferenceSection_userPreferenceSection__WEBPACK_IMPORTED_MODULE_6__["default"], null))));
+    }
+  }]);
+
+  return ProfileSection;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+_defineProperty(ProfileSection, "propTypes", {
+  history: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
+    length: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.number.isRequired,
+    action: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+    location: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
+      pathname: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+      search: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+      hash: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+      key: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired
+    }),
+    push: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired
+  }).isRequired
+});
+
+_defineProperty(ProfileSection, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_11__["UserContext"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(ProfileSection));
+
+/***/ }),
+
+/***/ "./src/components/profilePage/ProfileSection/profileSection.scss":
+/*!***********************************************************************!*\
+  !*** ./src/components/profilePage/ProfileSection/profileSection.scss ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./profileSection.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/ProfileSection/profileSection.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./profileSection.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/ProfileSection/profileSection.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./profileSection.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/ProfileSection/profileSection.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/profilePage/UserPreferenceListItem/userPreferenceListItem.jsx":
+/*!**************************************************************************************!*\
+  !*** ./src/components/profilePage/UserPreferenceListItem/userPreferenceListItem.jsx ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UserPreferenceListItem; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var components_common_Icon_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/common/Icon/icon */ "./src/components/common/Icon/icon.jsx");
+/* harmony import */ var _userPreferenceListItem_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./userPreferenceListItem.scss */ "./src/components/profilePage/UserPreferenceListItem/userPreferenceListItem.scss");
+/* harmony import */ var _userPreferenceListItem_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_userPreferenceListItem_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var styles_icons_minus_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styles/icons/minus.svg */ "./src/styles/icons/minus.svg");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+var UserPreferenceListItem =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(UserPreferenceListItem, _React$PureComponent);
+
+  function UserPreferenceListItem() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, UserPreferenceListItem);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(UserPreferenceListItem)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "deletePreference", function () {
+      var item = {
+        userId: _this.context.userId,
+        preferencedBeerType: _this.props.preferencedBeerType
+      };
+
+      _this.props.deletePreference(item);
+    });
+
+    return _this;
+  }
+
+  _createClass(UserPreferenceListItem, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "user-preference-list-item"
+      }, this.props.preferencedBeerType, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "user-preference-list-item__delete-button",
+        onClick: this.deletePreference
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_Icon_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        icon: styles_icons_minus_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
+        iconClassName: "user-preference-list-item__delete-button-icon"
+      })));
+    }
+  }]);
+
+  return UserPreferenceListItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+_defineProperty(UserPreferenceListItem, "propTypes", {
+  preferencedBeerType: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  deletePreference: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+});
+
+_defineProperty(UserPreferenceListItem, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_2__["UserContext"]);
+
+
+
+/***/ }),
+
+/***/ "./src/components/profilePage/UserPreferenceListItem/userPreferenceListItem.scss":
+/*!***************************************************************************************!*\
+  !*** ./src/components/profilePage/UserPreferenceListItem/userPreferenceListItem.scss ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./userPreferenceListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/UserPreferenceListItem/userPreferenceListItem.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./userPreferenceListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/UserPreferenceListItem/userPreferenceListItem.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./userPreferenceListItem.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/UserPreferenceListItem/userPreferenceListItem.scss");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/profilePage/UserPreferenceSection/userPreferenceSection.jsx":
+/*!************************************************************************************!*\
+  !*** ./src/components/profilePage/UserPreferenceSection/userPreferenceSection.jsx ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UserPreferenceSection; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var components_common_Icon_icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/common/Icon/icon */ "./src/components/common/Icon/icon.jsx");
+/* harmony import */ var services_preferenceService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! services/preferenceService */ "./src/services/preferenceService.js");
+/* harmony import */ var store_context_userContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! store/context/userContext */ "./src/store/context/userContext.js");
+/* harmony import */ var components_profilePage_UserPreferenceListItem_userPreferenceListItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/profilePage/UserPreferenceListItem/userPreferenceListItem */ "./src/components/profilePage/UserPreferenceListItem/userPreferenceListItem.jsx");
+/* harmony import */ var helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! helpers/serviceWrapper */ "./src/helpers/serviceWrapper.js");
+/* harmony import */ var styles_icons_plus_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styles/icons/plus.svg */ "./src/styles/icons/plus.svg");
+/* harmony import */ var _userPreferenceSection_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./userPreferenceSection.scss */ "./src/components/profilePage/UserPreferenceSection/userPreferenceSection.scss");
+/* harmony import */ var _userPreferenceSection_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_userPreferenceSection_scss__WEBPACK_IMPORTED_MODULE_7__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+var UserPreferenceSection =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(UserPreferenceSection, _React$PureComponent);
+
+  function UserPreferenceSection(props) {
+    var _this;
+
+    _classCallCheck(this, UserPreferenceSection);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(UserPreferenceSection).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "changePreference",
+    /*#__PURE__*/
+    function () {
+      var _ref = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee(e) {
+        var value, result;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                value = e.target.value;
+
+                _this.setState({
+                  currentPreference: e.target.value
+                });
+
+                if (!value) {
+                  _context.next = 9;
+                  break;
+                }
+
+                _context.next = 5;
+                return helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_5__["default"].callService(services_preferenceService__WEBPACK_IMPORTED_MODULE_2__["default"].getSuitablePreferences, e.target.value, null);
+
+              case 5:
+                result = _context.sent;
+
+                _this.setState({
+                  suitableBeerTypes: result
+                });
+
+                _context.next = 10;
+                break;
+
+              case 9:
+                _this.setState({
+                  suitableBeerTypes: []
+                });
+
+              case 10:
+                _this.renderSuggestedBeerTypes();
+
+              case 11:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
+
+    _defineProperty(_assertThisInitialized(_this), "addPreference",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee2() {
+      var preference;
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              preference = {
+                UserId: _this.context.userId,
+                PreferencedBeerType: _this.state.currentPreference
+              };
+              _context2.next = 3;
+              return helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_5__["default"].callService(services_preferenceService__WEBPACK_IMPORTED_MODULE_2__["default"].add, preference, null);
+
+            case 3:
+              _this.loadUserPreferences();
+
+              _this.setState({
+                currentPreference: '',
+                suitableBeerTypes: []
+              });
+
+            case 5:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    })));
+
+    _defineProperty(_assertThisInitialized(_this), "loadUserPreferences",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee3() {
+      var userId, result;
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              userId = _this.context.userId;
+              _context3.next = 3;
+              return helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_5__["default"].callService(services_preferenceService__WEBPACK_IMPORTED_MODULE_2__["default"].getUserPreferences, userId, null);
+
+            case 3:
+              result = _context3.sent;
+
+              _this.setState({
+                userPreferences: result
+              });
+
+              _this.renderPreferences();
+
+            case 6:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    })));
+
+    _defineProperty(_assertThisInitialized(_this), "renderPreferences", function () {
+      var preferences = _this.state.userPreferences.map(function (item, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_profilePage_UserPreferenceListItem_userPreferenceListItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          key: index,
+          preferencedBeerType: item,
+          deletePreference: _this.deletePreference
+        });
+      });
+
+      return preferences;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "selectSuggectedPreference", function (e) {
+      _this.setState({
+        currentPreference: e.target.innerHTML
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderSuggestedBeerTypes", function () {
+      return _this.state.suitableBeerTypes.map(function (item, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: index,
+          className: "user-preference-section__autocompletion-results-item",
+          onClick: _this.selectSuggectedPreference
+        }, item);
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "deletePreference",
+    /*#__PURE__*/
+    function () {
+      var _ref4 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee4(preference) {
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return helpers_serviceWrapper__WEBPACK_IMPORTED_MODULE_5__["default"].callService(services_preferenceService__WEBPACK_IMPORTED_MODULE_2__["default"].deletePreference, preference, null);
+
+              case 2:
+                _this.loadUserPreferences();
+
+              case 3:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }));
+
+      return function (_x2) {
+        return _ref4.apply(this, arguments);
+      };
+    }());
+
+    _this.AutocompletionResult = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    _this.state = {
+      currentPreference: '',
+      userPreferences: [],
+      suitableBeerTypes: []
+    };
+    return _this;
+  }
+
+  _createClass(UserPreferenceSection, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee5() {
+        return regeneratorRuntime.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                this.loadUserPreferences();
+
+              case 1:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5, this);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "user-preference-section__header"
+      }, "Your preferences"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-preference-section__field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "user-preference-section__field-title"
+      }, "Input preference"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "preference",
+        value: this.state.currentPreference,
+        onChange: this.changePreference,
+        className: "user-preference-section__field-input"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "user-preference-section__autocompletion-results"
+      }, this.renderSuggestedBeerTypes())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "user-preference-section__add-button",
+        onClick: this.addPreference
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_Icon_icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        icon: styles_icons_plus_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
+        iconClassName: "header__button-add-button-icon"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "user-preference-section__list"
+      }, this.renderPreferences()));
+    }
+  }]);
+
+  return UserPreferenceSection;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+_defineProperty(UserPreferenceSection, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_3__["UserContext"]);
+
+
+
+/***/ }),
+
+/***/ "./src/components/profilePage/UserPreferenceSection/userPreferenceSection.scss":
+/*!*************************************************************************************!*\
+  !*** ./src/components/profilePage/UserPreferenceSection/userPreferenceSection.scss ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./userPreferenceSection.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/UserPreferenceSection/userPreferenceSection.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./userPreferenceSection.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/UserPreferenceSection/userPreferenceSection.scss", function() {
+		var newContent = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./userPreferenceSection.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/profilePage/UserPreferenceSection/userPreferenceSection.scss");
 
 		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 
@@ -46871,7 +48882,7 @@ function (_React$PureComponent) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchFilter).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_this), "onInputHandler", function (e) {
+    _defineProperty(_assertThisInitialized(_this), "changeSliderValue", function (e) {
       var currentValue = e.currentTarget.value;
 
       _this.setState({
@@ -46908,7 +48919,7 @@ function (_React$PureComponent) {
         className: "search-filter__value"
       }, currentValue), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "search-filter__range-slider",
-        onChange: this.onInputHandler,
+        onChange: this.changeSliderValue,
         type: "range",
         defaultValue: maxValue,
         min: minValue,
@@ -47276,11 +49287,15 @@ var keyboardKeyCode = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var components_search_SearchPage_searchPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! components/search/SearchPage/searchPage */ "./src/components/search/SearchPage/searchPage.jsx");
-/* harmony import */ var components_favouritesPage_FavouritesList_favouritesList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/favouritesPage/FavouritesList/favouritesList */ "./src/components/favouritesPage/FavouritesList/favouritesList.jsx");
+/* harmony import */ var components_favoritesPage_FavoritesList_favoritesList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/favoritesPage/FavoritesList/favoritesList */ "./src/components/favoritesPage/FavoritesList/favoritesList.jsx");
 /* harmony import */ var components_detailsPage_BeerDetailsPage_beerDetailsPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/detailsPage/BeerDetailsPage/beerDetailsPage */ "./src/components/detailsPage/BeerDetailsPage/beerDetailsPage.jsx");
 /* harmony import */ var components_SignInPage_signInPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/SignInPage/signInPage */ "./src/components/SignInPage/signInPage.jsx");
 /* harmony import */ var components_SignUpPage_signUpPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/SignUpPage/signUpPage */ "./src/components/SignUpPage/signUpPage.jsx");
-/* harmony import */ var components_ProfilePage_profilePage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/ProfilePage/profilePage */ "./src/components/ProfilePage/profilePage.jsx");
+/* harmony import */ var components_profilePage_ProfileSection_profileSection__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/profilePage/ProfileSection/profileSection */ "./src/components/profilePage/ProfileSection/profileSection.jsx");
+/* harmony import */ var components_BrewsPage_BrewsList_brewsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! components/BrewsPage/BrewsList/brewsList */ "./src/components/BrewsPage/BrewsList/brewsList.jsx");
+/* harmony import */ var components_BrewingInfoPage_brewingInfoPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! components/BrewingInfoPage/brewingInfoPage */ "./src/components/BrewingInfoPage/brewingInfoPage.jsx");
+
+
 
 
 
@@ -47296,9 +49311,9 @@ __webpack_require__.r(__webpack_exports__);
     url: '/join',
     component: components_SignUpPage_signUpPage__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
-  favouritesList: {
-    url: '/favourites',
-    component: components_favouritesPage_FavouritesList_favouritesList__WEBPACK_IMPORTED_MODULE_1__["default"]
+  favoritesList: {
+    url: '/favorites',
+    component: components_favoritesPage_FavoritesList_favoritesList__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   searchPage: {
     url: '/',
@@ -47310,7 +49325,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   profilePage: {
     url: '/profile',
-    component: components_ProfilePage_profilePage__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: components_profilePage_ProfileSection_profileSection__WEBPACK_IMPORTED_MODULE_5__["default"]
+  },
+  brewingInfoPage: {
+    url: '/brewinfo/:beerId/:brewId',
+    component: components_BrewingInfoPage_brewingInfoPage__WEBPACK_IMPORTED_MODULE_7__["default"]
+  },
+  brewsList: {
+    url: '/brews',
+    component: components_BrewsPage_BrewsList_brewsList__WEBPACK_IMPORTED_MODULE_6__["default"]
   }
 });
 
@@ -47328,16 +49351,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   beerUrls: {
     getAllBeers: 'https://api.punkapi.com/v2/beers?per_page=80',
-    getBeerById: function getBeerById(id) {
-      return "https://api.punkapi.com/v2/beers/".concat(id);
-    }
+    getBeerById: 'https://api.punkapi.com/v2/beers/:id'
   },
   favoriteBeerUrls: {
-    addFavorite: '/FavoriteBeers/Add',
-    getFavoritesByUserId: function getFavoritesByUserId(userId) {
-      return "/FavoriteBeers/Get?userId=".concat(userId);
-    },
-    deleteFavorite: '/FavoriteBeers/Delete'
+    addFavorite: '/FavoriteBeer/Add',
+    getFavoritesByUserId: '/FavoriteBeer/Get',
+    deleteFavorite: '/FavoriteBeer/Delete'
   },
   loginUrls: {
     signIn: '/Login/Login',
@@ -47345,10 +49364,26 @@ __webpack_require__.r(__webpack_exports__);
     signOut: '/Login/Logout'
   },
   userUrls: {
-    getUser: function getUser(id) {
-      return "/User/Get?id=".concat(id);
-    },
+    getUser: '/User/Get',
+    getPreferedBrews: '/User/GetPreferedBrews',
     updateUser: '/User/Update'
+  },
+  preferenceUrls: {
+    addPreference: '/Preference/Add',
+    deletePreference: '/Preference/Delete',
+    getUserPreferences: '/Preference/Get',
+    getAutocompletionValues: '/Preference/GetAutocompletionValues'
+  },
+  brewingUrls: {
+    addBrew: '/Brew/Add',
+    deleteBrew: '/Brew/Delete',
+    updateBrew: '/Brew/Update',
+    getBrewById: '/Brew/GetById',
+    getBrewsByBeerId: '/Brew/GetByBeerId',
+    getBrewsByUserId: '/Brew/GetByUserId',
+    getAllBrews: '/Brew/Get',
+    addComment: '/Brew/Comments/Add',
+    rateBrew: '/Brew/Rate'
   }
 });
 
@@ -47380,22 +49415,30 @@ var sliderValue = {
   !*** ./src/helpers/favouriteItemHelper.js ***!
   \********************************************/
 /*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'D:\\Beer Catalog\\BeerCatalogFullstack\\FrontEnd\\src\\helpers\\favouriteItemHelper.js'");
+
+/***/ }),
+
+/***/ "./src/helpers/redirectToHomePageHelper.js":
+/*!*************************************************!*\
+  !*** ./src/helpers/redirectToHomePageHelper.js ***!
+  \*************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function isFavourite(beer, favouriteBeers) {
-  if (favouriteBeers.length === 0) {
-    return false;
-  }
+/* harmony import */ var constants_routing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! constants/routing */ "./src/constants/routing.js");
 
-  return !!favouriteBeers.find(function (element) {
-    return element === beer.id;
-  });
+
+function redirect(history) {
+  history.push(constants_routing__WEBPACK_IMPORTED_MODULE_0__["default"].searchPage.url);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  isFavourite: isFavourite
+  redirect: redirect
 });
 
 /***/ }),
@@ -47409,12 +49452,15 @@ function isFavourite(beer, favouriteBeers) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var helpers_urlHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/urlHelper */ "./src/helpers/urlHelper.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function get(url) {
-  return fetch(url).then(
+
+
+function sendRequest(headers, url) {
+  return fetch(url, headers).then(
   /*#__PURE__*/
   function () {
     var _ref = _asyncToGenerator(
@@ -47468,136 +49514,189 @@ function get(url) {
   });
 }
 
-function post(url, data) {
-  return fetch(url, {
-    method: 'POST',
+var getRequestWithBodyHeaders = function getRequestWithBodyHeaders(method, data) {
+  return {
+    method: method,
     headers: {
       'Content-Type': 'application/json'
     },
     mode: 'cors',
     accept: 'application/json',
     body: JSON.stringify(data)
-  }).then(
-  /*#__PURE__*/
-  function () {
-    var _ref2 = _asyncToGenerator(
-    /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee2(response) {
-      var error, contentType;
-      return regeneratorRuntime.wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              if (!(response.status !== 200)) {
-                _context2.next = 7;
-                break;
-              }
+  };
+};
 
-              error = new Error(response.statusText);
-              error.code = response.status;
-              _context2.next = 5;
-              return response.json();
+function get(url, parameters) {
+  var headers = {
+    method: 'GET',
+    mode: 'cors'
+  };
+  var fullUrl;
 
-            case 5:
-              error.message = _context2.sent;
-              return _context2.abrupt("return", error);
+  if (parameters) {
+    fullUrl = helpers_urlHelper__WEBPACK_IMPORTED_MODULE_0__["default"].getUrlWithQueryParameters(url, parameters);
+  } else {
+    fullUrl = url;
+  }
 
-            case 7:
-              contentType = response.headers.get('content-type');
-
-              if (!(contentType && contentType.includes('application/json'))) {
-                _context2.next = 10;
-                break;
-              }
-
-              return _context2.abrupt("return", response.json());
-
-            case 10:
-              return _context2.abrupt("return", response.text());
-
-            case 11:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2);
-    }));
-
-    return function (_x2) {
-      return _ref2.apply(this, arguments);
-    };
-  }()).catch(function (error) {
-    return new Error("Network Error!".concat(error));
-  });
+  return sendRequest(headers, fullUrl);
 }
 
-function put(url, data) {
-  return fetch(url, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    mode: 'cors',
-    accept: 'application/json',
-    body: JSON.stringify(data)
-  }).then(
+function post(_x2, _x3) {
+  return _post.apply(this, arguments);
+}
+
+function _post() {
+  _post = _asyncToGenerator(
   /*#__PURE__*/
-  function () {
-    var _ref3 = _asyncToGenerator(
-    /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee3(response) {
-      var error, contentType;
-      return regeneratorRuntime.wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              if (!(response.status !== 200)) {
-                _context3.next = 7;
-                break;
-              }
+  regeneratorRuntime.mark(function _callee2(url, data) {
+    var headers;
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            headers = getRequestWithBodyHeaders('POST', data);
+            return _context2.abrupt("return", sendRequest(headers, url));
 
-              error = new Error(response.statusText);
-              error.code = response.status;
-              _context3.next = 5;
-              return response.json();
-
-            case 5:
-              error.message = _context3.sent;
-              return _context3.abrupt("return", error);
-
-            case 7:
-              contentType = response.headers.get('content-type');
-
-              if (!(contentType && contentType.includes('application/json'))) {
-                _context3.next = 10;
-                break;
-              }
-
-              return _context3.abrupt("return", response.json());
-
-            case 10:
-              return _context3.abrupt("return", response.text());
-
-            case 11:
-            case "end":
-              return _context3.stop();
-          }
+          case 2:
+          case "end":
+            return _context2.stop();
         }
-      }, _callee3);
-    }));
+      }
+    }, _callee2);
+  }));
+  return _post.apply(this, arguments);
+}
 
-    return function (_x3) {
-      return _ref3.apply(this, arguments);
-    };
-  }()).catch(function (error) {
-    return new Error("Network Error!".concat(error));
-  });
+function put(_x4, _x5) {
+  return _put.apply(this, arguments);
+}
+
+function _put() {
+  _put = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee3(url, data) {
+    var headers;
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            headers = getRequestWithBodyHeaders('PUT', data);
+            return _context3.abrupt("return", sendRequest(headers, url));
+
+          case 2:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  return _put.apply(this, arguments);
+}
+
+function deleteMethod(_x6, _x7) {
+  return _deleteMethod.apply(this, arguments);
+}
+
+function _deleteMethod() {
+  _deleteMethod = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee4(url, data) {
+    var headers;
+    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            headers = getRequestWithBodyHeaders('DELETE', data);
+            return _context4.abrupt("return", sendRequest(headers, url));
+
+          case 2:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+  return _deleteMethod.apply(this, arguments);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   get: get,
   post: post,
-  put: put
+  put: put,
+  deleteMethod: deleteMethod
+});
+
+/***/ }),
+
+/***/ "./src/helpers/serviceWrapper.js":
+/*!***************************************!*\
+  !*** ./src/helpers/serviceWrapper.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function callService(_x, _x2, _x3) {
+  return _callService.apply(this, arguments);
+}
+
+function _callService() {
+  _callService = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee(service, data, errorRef) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return service(data);
+
+          case 2:
+            result = _context.sent;
+
+            if (!(result instanceof Error)) {
+              _context.next = 10;
+              break;
+            }
+
+            errorRef.current.innerHTML = '';
+
+            if (!Array.isArray(result.message)) {
+              _context.next = 8;
+              break;
+            }
+
+            result.message.forEach(function (message) {
+              errorRef.current.innerHTML += "".concat(message, "</br>");
+            });
+            return _context.abrupt("return");
+
+          case 8:
+            errorRef.current.innerHTML = result.message.message;
+            return _context.abrupt("return");
+
+          case 10:
+            return _context.abrupt("return", result);
+
+          case 11:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _callService.apply(this, arguments);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  callService: callService
 });
 
 /***/ }),
@@ -47615,8 +49714,17 @@ function getUrlWithParameter(url, pattern, parameter) {
   return url.replace(pattern, parameter);
 }
 
+function getUrlWithQueryParameters(url, parameters) {
+  url += '?';
+  Object.keys(parameters).forEach(function (key) {
+    url += "".concat(key, "=").concat(parameters[key], "&");
+  });
+  return url;
+}
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  getUrlWithParameter: getUrlWithParameter
+  getUrlWithParameter: getUrlWithParameter,
+  getUrlWithQueryParameters: getUrlWithQueryParameters
 });
 
 /***/ }),
@@ -47636,7 +49744,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var components_App_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/App/App */ "./src/components/App/App.jsx");
+/* harmony import */ var components_App_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/App/app */ "./src/components/App/app.jsx");
 /* harmony import */ var styles_index_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styles/index.scss */ "./src/styles/index.scss");
 /* harmony import */ var styles_index_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(styles_index_scss__WEBPACK_IMPORTED_MODULE_4__);
 
@@ -47644,7 +49752,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(components_App_App__WEBPACK_IMPORTED_MODULE_3__["default"], null), document.getElementById('content'));
+react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(components_App_app__WEBPACK_IMPORTED_MODULE_3__["default"], null), document.getElementById('app'));
 
 /***/ }),
 
@@ -47730,9 +49838,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var models_beerShortInfoModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! models/beerShortInfoModel */ "./src/models/beerShortInfoModel.js");
 /* harmony import */ var models_beerInfoModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! models/beerInfoModel */ "./src/models/beerInfoModel.js");
 /* harmony import */ var constants_serviceUrls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! constants/serviceUrls */ "./src/constants/serviceUrls.js");
+/* harmony import */ var helpers_urlHelper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! helpers/urlHelper */ "./src/helpers/urlHelper.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -47779,19 +49889,20 @@ function _getByID() {
   _getByID = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee2(id) {
-    var beer;
+    var url, beer;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            _context2.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_3__["default"].beerUrls.getBeerById(id));
+            url = helpers_urlHelper__WEBPACK_IMPORTED_MODULE_4__["default"].getUrlWithParameter(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_3__["default"].beerUrls.getBeerById, /:id/, id);
+            _context2.next = 3;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(url);
 
-          case 2:
+          case 3:
             beer = _context2.sent;
             return _context2.abrupt("return", new models_beerInfoModel__WEBPACK_IMPORTED_MODULE_2__["default"](beer[0]));
 
-          case 4:
+          case 5:
           case "end":
             return _context2.stop();
         }
@@ -47808,10 +49919,225 @@ function _getByID() {
 
 /***/ }),
 
-/***/ "./src/services/favouritesService.js":
-/*!*******************************************!*\
-  !*** ./src/services/favouritesService.js ***!
-  \*******************************************/
+/***/ "./src/services/brewingService.js":
+/*!****************************************!*\
+  !*** ./src/services/brewingService.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
+/* harmony import */ var constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/serviceUrls */ "./src/constants/serviceUrls.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+function add(_x) {
+  return _add.apply(this, arguments);
+}
+
+function _add() {
+  _add = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee(item) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.addBrew, item);
+
+          case 2:
+            result = _context.sent;
+            return _context.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _add.apply(this, arguments);
+}
+
+function getBrewById(_x2) {
+  return _getBrewById.apply(this, arguments);
+}
+
+function _getBrewById() {
+  _getBrewById = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee2(id) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.getBrewById, {
+              id: id
+            });
+
+          case 2:
+            result = _context2.sent;
+            return _context2.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  return _getBrewById.apply(this, arguments);
+}
+
+function getBrewsByUserId(_x3) {
+  return _getBrewsByUserId.apply(this, arguments);
+}
+
+function _getBrewsByUserId() {
+  _getBrewsByUserId = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee3(userId) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.getBrewsByUserId, {
+              userId: userId
+            });
+
+          case 2:
+            result = _context3.sent;
+            return _context3.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  return _getBrewsByUserId.apply(this, arguments);
+}
+
+function getBrewsByBeerId(_x4) {
+  return _getBrewsByBeerId.apply(this, arguments);
+}
+
+function _getBrewsByBeerId() {
+  _getBrewsByBeerId = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee4(beerId) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.getBrewsByBeerId, {
+              beerId: beerId
+            });
+
+          case 2:
+            result = _context4.sent;
+            return _context4.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+  return _getBrewsByBeerId.apply(this, arguments);
+}
+
+function update(_x5) {
+  return _update.apply(this, arguments);
+}
+
+function _update() {
+  _update = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee5(item) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].put(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.updateBrew, item);
+
+          case 2:
+            result = _context5.sent;
+            return _context5.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  }));
+  return _update.apply(this, arguments);
+}
+
+function deleteItem(_x6) {
+  return _deleteItem.apply(this, arguments);
+}
+
+function _deleteItem() {
+  _deleteItem = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee6(item) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee6$(_context6) {
+      while (1) {
+        switch (_context6.prev = _context6.next) {
+          case 0:
+            _context6.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].deleteMethod(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].brewingUrls.deleteBrew, item);
+
+          case 2:
+            result = _context6.sent;
+            return _context6.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context6.stop();
+        }
+      }
+    }, _callee6);
+  }));
+  return _deleteItem.apply(this, arguments);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  add: add,
+  deleteItem: deleteItem,
+  update: update,
+  getBrewsByUserId: getBrewsByUserId,
+  getBrewsByBeerId: getBrewsByBeerId,
+  getBrewById: getBrewById
+});
+
+/***/ }),
+
+/***/ "./src/services/favoritesService.js":
+/*!******************************************!*\
+  !*** ./src/services/favoritesService.js ***!
+  \******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -47877,7 +50203,9 @@ function _getItems() {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].favoriteBeerUrls.getFavoritesByUserId(userId));
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].favoriteBeerUrls.getFavoritesByUserId, {
+              userId: userId
+            });
 
           case 2:
             result = _context2.sent;
@@ -47934,6 +50262,168 @@ function _deleteItem() {
   add: add,
   deleteItem: deleteItem,
   getItems: getItems
+});
+
+/***/ }),
+
+/***/ "./src/services/favouritesService.js":
+/*!*******************************************!*\
+  !*** ./src/services/favouritesService.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'D:\\Beer Catalog\\BeerCatalogFullstack\\FrontEnd\\src\\services\\favouritesService.js'");
+
+/***/ }),
+
+/***/ "./src/services/preferenceService.js":
+/*!*******************************************!*\
+  !*** ./src/services/preferenceService.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
+/* harmony import */ var constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/serviceUrls */ "./src/constants/serviceUrls.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+function add(_x) {
+  return _add.apply(this, arguments);
+}
+
+function _add() {
+  _add = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee(item) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].preferenceUrls.addPreference, item);
+
+          case 2:
+            result = _context.sent;
+            return _context.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _add.apply(this, arguments);
+}
+
+function deletePreference(_x2) {
+  return _deletePreference.apply(this, arguments);
+}
+
+function _deletePreference() {
+  _deletePreference = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee2(item) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].post(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].preferenceUrls.deletePreference, item);
+
+          case 2:
+            result = _context2.sent;
+            return _context2.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  return _deletePreference.apply(this, arguments);
+}
+
+function getUserPreferences(_x3) {
+  return _getUserPreferences.apply(this, arguments);
+}
+
+function _getUserPreferences() {
+  _getUserPreferences = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee3(userId) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].preferenceUrls.getUserPreferences, {
+              userId: userId
+            });
+
+          case 2:
+            result = _context3.sent;
+            return _context3.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  return _getUserPreferences.apply(this, arguments);
+}
+
+function getSuitablePreferences(_x4) {
+  return _getSuitablePreferences.apply(this, arguments);
+}
+
+function _getSuitablePreferences() {
+  _getSuitablePreferences = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee4(input) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].preferenceUrls.getAutocompletionValues, {
+              input: input
+            });
+
+          case 2:
+            result = _context4.sent;
+            return _context4.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+  return _getSuitablePreferences.apply(this, arguments);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  add: add,
+  deletePreference: deletePreference,
+  getUserPreferences: getUserPreferences,
+  getSuitablePreferences: getSuitablePreferences
 });
 
 /***/ }),
@@ -47997,11 +50487,49 @@ function signUp(data) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! helpers/requestHelper */ "./src/helpers/requestHelper.js");
 /* harmony import */ var constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! constants/serviceUrls */ "./src/constants/serviceUrls.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
 
-function getUser(id) {
-  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].userUrls.getUser(id));
+
+function getUser(userId) {
+  return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].userUrls.getUser, {
+    userId: userId
+  });
+}
+
+function getPreferedBrews(_x) {
+  return _getPreferedBrews.apply(this, arguments);
+}
+
+function _getPreferedBrews() {
+  _getPreferedBrews = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee(userId) {
+    var result;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return helpers_requestHelper__WEBPACK_IMPORTED_MODULE_0__["default"].get(constants_serviceUrls__WEBPACK_IMPORTED_MODULE_1__["default"].userUrls.getPreferedBrews, {
+              userId: userId
+            });
+
+          case 2:
+            result = _context.sent;
+            return _context.abrupt("return", result);
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _getPreferedBrews.apply(this, arguments);
 }
 
 function updateUser(user) {
@@ -48014,6 +50542,7 @@ function signOut() {
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   getUser: getUser,
+  getPreferedBrews: getPreferedBrews,
   updateUser: updateUser,
   signOut: signOut
 });
@@ -48239,24 +50768,9 @@ var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WE
   !*** ./src/styles/icons/favourite.svg ***!
   \****************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/svg-baker-runtime/browser-symbol.js */ "./node_modules/svg-baker-runtime/browser-symbol.js");
-/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/svg-sprite-loader/runtime/browser-sprite.build.js */ "./node_modules/svg-sprite-loader/runtime/browser-sprite.build.js");
-/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__);
-
-
-var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default.a({
-  "id": "icons-favourite",
-  "use": "icons-favourite-usage",
-  "viewBox": "0 0 24 24",
-  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" id=\"icons-favourite\"><path d=\"M0 0h24v24H0z\" fill=\"none\" /><path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" /><path d=\"M0 0h24v24H0z\" fill=\"none\" /></symbol>"
-});
-var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
-/* harmony default export */ __webpack_exports__["default"] = (symbol);
+throw new Error("Module build failed (from ./node_modules/svg-sprite-loader/lib/loader.js):\nError: ENOENT: no such file or directory, open 'D:\\Beer Catalog\\BeerCatalogFullstack\\FrontEnd\\src\\styles\\icons\\favourite.svg'");
 
 /***/ }),
 
@@ -48312,6 +50826,32 @@ var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WE
 
 /***/ }),
 
+/***/ "./src/styles/icons/left.svg":
+/*!***********************************!*\
+  !*** ./src/styles/icons/left.svg ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/svg-baker-runtime/browser-symbol.js */ "./node_modules/svg-baker-runtime/browser-symbol.js");
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/svg-sprite-loader/runtime/browser-sprite.build.js */ "./node_modules/svg-sprite-loader/runtime/browser-sprite.build.js");
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "icons-left",
+  "use": "icons-left-usage",
+  "viewBox": "0 0 32 32",
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-left\">\r\n<title>arrow-left2</title>\r\n<path d=\"M12.586 27.414l-10-10c-0.781-0.781-0.781-2.047 0-2.828l10-10c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-6.586 6.586h19.172c1.105 0 2 0.895 2 2s-0.895 2-2 2h-19.172l6.586 6.586c0.39 0.39 0.586 0.902 0.586 1.414s-0.195 1.024-0.586 1.414c-0.781 0.781-2.047 0.781-2.828 0z\" />\r\n</symbol>"
+});
+var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+
 /***/ "./src/styles/icons/menu.svg":
 /*!***********************************!*\
   !*** ./src/styles/icons/menu.svg ***!
@@ -48332,6 +50872,32 @@ var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPO
   "use": "icons-menu-usage",
   "viewBox": "0 0 24 24",
   "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" id=\"icons-menu\"><path d=\"M0 0h24v24H0z\" fill=\"none\" /><path d=\"M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z\" /></symbol>"
+});
+var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+
+/***/ "./src/styles/icons/minus.svg":
+/*!************************************!*\
+  !*** ./src/styles/icons/minus.svg ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/svg-baker-runtime/browser-symbol.js */ "./node_modules/svg-baker-runtime/browser-symbol.js");
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/svg-sprite-loader/runtime/browser-sprite.build.js */ "./node_modules/svg-sprite-loader/runtime/browser-sprite.build.js");
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "icons-minus",
+  "use": "icons-minus-usage",
+  "viewBox": "0 0 32 32",
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-minus\">\r\n<title>minus</title>\r\n<path d=\"M0 13v6c0 0.552 0.448 1 1 1h30c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1h-30c-0.552 0-1 0.448-1 1z\" />\r\n</symbol>"
 });
 var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
@@ -48364,6 +50930,32 @@ var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WE
 
 /***/ }),
 
+/***/ "./src/styles/icons/plus.svg":
+/*!***********************************!*\
+  !*** ./src/styles/icons/plus.svg ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/svg-baker-runtime/browser-symbol.js */ "./node_modules/svg-baker-runtime/browser-symbol.js");
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/svg-sprite-loader/runtime/browser-sprite.build.js */ "./node_modules/svg-sprite-loader/runtime/browser-sprite.build.js");
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "icons-plus",
+  "use": "icons-plus-usage",
+  "viewBox": "0 0 32 32",
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-plus\">\r\n<title>plus</title>\r\n<path d=\"M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z\" />\r\n</symbol>"
+});
+var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+
 /***/ "./src/styles/icons/preloader.svg":
 /*!****************************************!*\
   !*** ./src/styles/icons/preloader.svg ***!
@@ -48384,6 +50976,32 @@ var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPO
   "use": "icons-preloader-usage",
   "viewBox": "0 0 128 128",
   "content": "<symbol xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 128 128\" id=\"icons-preloader\"><rect x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" fill=\"#FFFFFF\" /><g><circle cx=\"16\" cy=\"64\" r=\"16\" fill=\"#000000\" fill-opacity=\"1\" /><circle cx=\"16\" cy=\"64\" r=\"16\" fill=\"#555555\" fill-opacity=\"0.67\" transform=\"rotate(45,64,64)\" /><circle cx=\"16\" cy=\"64\" r=\"16\" fill=\"#949494\" fill-opacity=\"0.42\" transform=\"rotate(90,64,64)\" /><circle cx=\"16\" cy=\"64\" r=\"16\" fill=\"#cccccc\" fill-opacity=\"0.2\" transform=\"rotate(135,64,64)\" /><circle cx=\"16\" cy=\"64\" r=\"16\" fill=\"#e1e1e1\" fill-opacity=\"0.12\" transform=\"rotate(180,64,64)\" /><circle cx=\"16\" cy=\"64\" r=\"16\" fill=\"#e1e1e1\" fill-opacity=\"0.12\" transform=\"rotate(225,64,64)\" /><circle cx=\"16\" cy=\"64\" r=\"16\" fill=\"#e1e1e1\" fill-opacity=\"0.12\" transform=\"rotate(270,64,64)\" /><circle cx=\"16\" cy=\"64\" r=\"16\" fill=\"#e1e1e1\" fill-opacity=\"0.12\" transform=\"rotate(315,64,64)\" /><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 64 64;315 64 64;270 64 64;225 64 64;180 64 64;135 64 64;90 64 64;45 64 64\" calcMode=\"discrete\" dur=\"1280ms\" repeatCount=\"indefinite\" /></g></symbol>"
+});
+var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+
+/***/ "./src/styles/icons/right.svg":
+/*!************************************!*\
+  !*** ./src/styles/icons/right.svg ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/svg-baker-runtime/browser-symbol.js */ "./node_modules/svg-baker-runtime/browser-symbol.js");
+/* harmony import */ var _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/svg-sprite-loader/runtime/browser-sprite.build.js */ "./node_modules/svg-sprite-loader/runtime/browser-sprite.build.js");
+/* harmony import */ var _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPORTED_MODULE_0___default.a({
+  "id": "icons-right",
+  "use": "icons-right-usage",
+  "viewBox": "0 0 32 32",
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-right\">\r\n<title>arrow-right2</title>\r\n<path d=\"M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z\" />\r\n</symbol>"
 });
 var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
@@ -48549,6 +51167,28 @@ if(true) {
 
 /***/ }),
 
+/***/ "./src/validationConfigs/brewValidationConfig.js":
+/*!*******************************************************!*\
+  !*** ./src/validationConfigs/brewValidationConfig.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  beerType: {
+    fieldName: 'Beer type',
+    rule: 'required'
+  },
+  impression: {
+    fieldName: 'Impression',
+    rule: 'required'
+  }
+});
+
+/***/ }),
+
 /***/ "./src/validationConfigs/profileValidationConfig.js":
 /*!**********************************************************!*\
   !*** ./src/validationConfigs/profileValidationConfig.js ***!
@@ -48560,9 +51200,11 @@ if(true) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   email: {
+    fieldName: 'Email',
     rule: 'required|email'
   },
   name: {
+    fieldName: 'Name',
     rule: 'required'
   }
 });
@@ -48580,9 +51222,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   email: {
+    fieldName: 'Email',
     rule: 'required|email'
   },
   password: {
+    fieldName: 'Password',
     rule: 'required|min:6'
   }
 });
@@ -48600,15 +51244,19 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   email: {
+    fieldName: 'Email',
     rule: 'required|email'
   },
   name: {
+    fieldName: 'Name',
     rule: 'required'
   },
   password: {
+    fieldName: 'Password',
     rule: 'required|min:6'
   },
-  confirmPassword: {
+  confirmedPassword: {
+    fieldName: 'Confirmed password',
     rule: function rule(password) {
       return "required|in:".concat(password);
     }
@@ -48622,70 +51270,9 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./src/wrappers/serviceWrapper.js ***!
   \****************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function callService(_x, _x2, _x3) {
-  return _callService.apply(this, arguments);
-}
-
-function _callService() {
-  _callService = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee(service, data, errorRef) {
-    var result;
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return service(data);
-
-          case 2:
-            result = _context.sent;
-
-            if (!(result instanceof Error)) {
-              _context.next = 10;
-              break;
-            }
-
-            errorRef.current.innerHTML = '';
-
-            if (!Array.isArray(result.message)) {
-              _context.next = 8;
-              break;
-            }
-
-            result.message.forEach(function (element) {
-              errorRef.current.innerHTML += "".concat(element, "</br>");
-            });
-            return _context.abrupt("return");
-
-          case 8:
-            errorRef.current.innerHTML = result.message.message;
-            return _context.abrupt("return");
-
-          case 10:
-            return _context.abrupt("return", result);
-
-          case 11:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _callService.apply(this, arguments);
-}
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  callService: callService
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'D:\\Beer Catalog\\BeerCatalogFullstack\\FrontEnd\\src\\wrappers\\serviceWrapper.js'");
 
 /***/ }),
 

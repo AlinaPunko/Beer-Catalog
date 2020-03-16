@@ -60,6 +60,7 @@ namespace BeerCatalogFullstack
             services.AddTransient<FavoriteBeerRepository>();
             services.AddTransient<LoginRepository>();
             services.AddTransient<UserRepository>();
+            services.AddTransient<RateRepository>();
             services.AddTransient<PreferenceRepository>();
             services.AddTransient<MaltRepository>();
             services.AddTransient<HopsRepository>();

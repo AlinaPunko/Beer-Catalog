@@ -5,7 +5,7 @@ import SignInPage from 'components/SignInPage/signInPage';
 import SignUpPage from 'components/SignUpPage/signUpPage';
 import ProfileSection from 'components/profilePage/ProfileSection/profileSection';
 import BrewsList from 'components/BrewsPage/BrewsList/brewsList';
-import BrewingInfoPage from 'components/BrewingInfoPage/brewingInfoPage';
+import BrewingInfoPage from 'components/brewingInfoPage/BrewingInfoSection/brewingInfoSection';
 
 export default {
     signInPage: {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './input.scss';
 
-export default class FormRow extends React.PureComponent {
+export default class Input extends React.PureComponent {
     static propTypes = {
         label: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
@@ -22,12 +22,12 @@ export default class FormRow extends React.PureComponent {
 
         return (
             <div className="input">
-                <label className="input__title">{label}</label>
+                <label className="input__label">{label}</label>
                 <input
                     name={name}
                     type={type}
                     value={value}
-                    className="input__input"
+                    className="input__value"
                     onChange={onChange}
                 />
             </div>

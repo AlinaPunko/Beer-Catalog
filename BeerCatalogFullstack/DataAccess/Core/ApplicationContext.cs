@@ -16,13 +16,14 @@ namespace DataAccess.Core
         public DbSet<MashTemperature> MashTemperatures { get; set; }
         public  DbSet<Comment> Comments { get; set; }
         public DbSet<Photo> Photos { get; set; }
+        public DbSet<Rate> Rates { get; set; }
 
         public ApplicationContext(DbContextOptions options) : base(options)
         {
-            //if (!Database.CanConnect())
-            //{
-            //    Database.Migrate();
-            //}
+            if (!Database.CanConnect())
+            {
+                Database.Migrate();
+            }
         }
 
         private IDbContextTransaction transaction;

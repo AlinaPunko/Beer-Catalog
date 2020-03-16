@@ -31,6 +31,11 @@ async function deleteItem(item) {
     return result;
 }
 
+async function rate(item) {
+    const result = await api.post(serviceUrls.brewingUrls.rateBrew, item);
+    return result;
+}
+
 export default {
-    add, deleteItem, update, getBrewsByUserId, getBrewsByBeerId, getBrewById
+    add, deleteItem, update, getBrewsByUserId, getBrewsByBeerId, getBrewById, rate
 };

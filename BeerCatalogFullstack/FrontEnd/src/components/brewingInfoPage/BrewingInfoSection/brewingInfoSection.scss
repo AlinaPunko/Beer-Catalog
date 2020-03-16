@@ -1,16 +1,16 @@
-.brewing-info-page {
+.brewing-info-section {
     width: 50%;
     margin: 0 auto;
 }
 
-.brewing-info-page__title {
+.brewing-info-section__title {
     padding: 10px;
     font-size: 30px;
     font-family: "Lucida Sans", sans-serif;
     text-align: center;
 }
 
-.brewing-info-page__field {
+.brewing-info-section__field {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -18,12 +18,12 @@
     padding: 5px 0;
 }
 
-.brewing-info-page__field-title {
+.brewing-info-section__field-title {
     padding: 0 5px;
     font-family: "Lucida Sans", sans-serif;
 }
 
-.brewing-info-page__field-input {
+.brewing-info-section__field-input {
     width: 50%;
     padding: 5px;
     color: #000000;
@@ -32,7 +32,7 @@
     border-radius: 5px;
 }
 
-.brewing-info-page__impression-field {
+.brewing-info-section__impression-field {
     width: 50%;
     height: 60px;
     padding: 5px;
@@ -42,18 +42,18 @@
     border-radius: 5px;
 }
 
-.brewing-info-page__ingredients-method {
+.brewing-info-section__ingredients-method {
     display: flex;
     justify-content: space-between;
     width: 80%;
 }
 
-.brewing-info-page__buttons {
+.brewing-info-section__buttons {
     width: 50%;
     margin: 0 auto;
 }
 
-.brewing-info-page__button {
+.brewing-info-section__button {
     display: block;
     width: 40%;
     margin: 20px auto;
@@ -64,7 +64,7 @@
     border-radius: 5px;
 }
 
-.brewing-info-page__delete-button {
+.brewing-info-section__delete-button {
     display: block;
     width: 40%;
     margin: 20px auto;
@@ -75,7 +75,7 @@
     border-radius: 5px;
 }
 
-.brewing-info-page__validation-result {
+.brewing-info-section__validation-result {
     color: #ff0000;
     font-family: "Lucida Sans", sans-serif;
 }

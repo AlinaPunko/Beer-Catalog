@@ -17,6 +17,7 @@ namespace BeerCatalogFullstack.Managers
         private readonly YeastManager yeastManager;
         private readonly BeerRepository beerRepository;
         private readonly PhotoRepository photoRepository;
+        private readonly RateRepository rateRepository;
 
         public BrewManager(
             BrewRepository brewRepository,
@@ -26,7 +27,8 @@ namespace BeerCatalogFullstack.Managers
             MashTemperatureManager mashTemperatureManager,
             YeastManager yeastRepository,
             BeerRepository beerRepository,
-            PhotoRepository photoRepository)
+            PhotoRepository photoRepository,
+            RateRepository rateRepository)
         {
             this.brewRepository = brewRepository;
             this.maltManager = maltManager;
@@ -36,6 +38,7 @@ namespace BeerCatalogFullstack.Managers
             this.yeastManager = yeastRepository;
             this.beerRepository = beerRepository;
             this.photoRepository = photoRepository;
+            this.rateRepository = rateRepository;
         }
 
         public IReadOnlyList<Brew> GetAll()
@@ -65,9 +68,20 @@ namespace BeerCatalogFullstack.Managers
                 .ToList();
         }
 
-        internal void RateBrew(RatingViewModel model)
+        public void RateBrew(RateViewModel viewmodel)
         {
-            brewRepository.
+            var rate = new Rate
+            {
+                BrewId = viewmodel.BrewId,
+                UserId = viewmodel.UserId,
+                Value = viewmodel.Value
+            };
+
+            rateRepository.Add(rate);
+
+            Brew brew = brewRepository.GetById(viewmodel.BrewId);
+            brew.Rating += viewmodel.Value;
+            brewRepository.Update(brew);
         }
 
         public BrewViewModel GetBrewById(int id)
@@ -124,6 +138,7 @@ namespace BeerCatalogFullstack.Managers
             brew.BeerId = viewModel.BeerId;
             brew.Name = viewModel.Name;
             brew.BeerType = viewModel.BeerType;
+            brew.Rating = viewModel.Rating;
             brew.Location = viewModel.Location;
             brew.DateTime = viewModel.DateTime;
             brew.Impression = viewModel.Impression;

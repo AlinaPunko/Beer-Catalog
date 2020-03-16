@@ -4,20 +4,21 @@ import SimpleReactValidator from 'simple-react-validator';
 import PropTypes from 'prop-types';
 
 import { UserContext } from 'store/context/userContext';
-import FormRow from 'components/common/FormRow/formRow';
-import SelectPhotoField from 'components/common/SelectPhotoField/selectPhotoField';
+import Input from 'components/common/Input/input';
+import SelectPhotoField from 'components/common/PhotoSelector/photoSelector';
 import brewValidationConfig from 'validationConfigs/brewValidationConfig';
-import redirectToHomePageHelper from 'helpers/redirectToHomePageHelper';
+import redirectHelper from 'helpers/redirectHelper';
 import BrewingIngredients from 'components/common/BrewingIngredients/brewingIngredients';
 import BrewingMethods from 'components/common/BrewingMethods/brewingMethods';
 import beerService from 'services/beerService';
 import serviceWrapper from 'helpers/serviceWrapper';
 import brewingService from 'services/brewingService';
 import ImagesSlider from 'components/common/ImagesSlider/imagesSlider';
+import RatingPanel from 'components/brewingInfoPage/RatingPanel/ratingPanel';
 
-import './brewingInfoPage.scss';
+import './brewingInfoSection.scss';
 
-class BrewingInfoPage extends React.PureComponent {
+class BrewingInfoSection extends React.PureComponent {
     static propTypes={
         match: PropTypes.shape({
             path: PropTypes.string.isRequired,
@@ -52,12 +53,12 @@ class BrewingInfoPage extends React.PureComponent {
         const time = `${today.getHours()}:${today.getMinutes()}`;
         const dateTime = `${date} ${time}`;
 
-        debugger;
         this.state = {
             id: 0,
             userId: this.context.userId,
             beerInfo: null,
             location: '',
+            rating: 0,
             datetime: dateTime,
             beerType: '',
             impression: '',
@@ -87,6 +88,7 @@ class BrewingInfoPage extends React.PureComponent {
                     userId: result.userId,
                     datetime: result.dateTime,
                     beerType: result.beerType,
+                    rating: result.rating,
                     impression: result.impression,
                     photos: result.photos ? result.photos : []
                 }
@@ -206,12 +208,12 @@ class BrewingInfoPage extends React.PureComponent {
             if (this.state.id) {
                 await serviceWrapper.callService(brewingService.update, brew, null);
                 alert('Brew has been updated');
-                redirectToHomePageHelper.redirect(this.props.history);
+                redirectHelper.redirectToHomePage(this.props.history);
                 return;
             }
             alert('Brew has been added');
             await serviceWrapper.callService(brewingService.add, brew, this.errorFieldRef);
-            redirectToHomePageHelper.redirect(this.props.history);
+            redirectHelper.redirectToHomePage(this.props.history);
         } else {
             this.validator.showMessages();
             this.forceUpdate();
@@ -246,7 +248,7 @@ class BrewingInfoPage extends React.PureComponent {
             beerType,
             name: beerInfo.name,
             impression,
-            rating: 0
+            rating
         };
 
         await serviceWrapper.callService(brewingService.deleteItem, brew, this.errorFieldRef);
@@ -254,27 +256,17 @@ class BrewingInfoPage extends React.PureComponent {
         redirectToHomePageHelper.redirect(this.props.history);
     }
 
-    addPhoto = (e) => {
-        const filesSelected = e.target.files;
-        if (filesSelected.length > 0) {
-            const fileToLoad = filesSelected[0];
-            const fileReader = new FileReader();
-            fileReader.onload = (fileLoadedEvent) => {
-                const srcData = fileLoadedEvent.target.result;
-                this.setState({ photos: this.state.photos.concat(srcData) });
-            };
-
-            fileReader.readAsDataURL(fileToLoad);
-        }
+    addPhoto = () => {
+        this.setState({ photos: this.state.photos.concat(srcData) });
     }
 
     renderButtons = () => {
         if (this.state.userId === this.context.userId) {
             return (
-                <div className="brewing-info-page__buttons">
-                    <input type="submit" onClick={this.save} value="Save" className="brewing-info-page__button" />
-                    <input type="button" onClick={this.delete} value="Delete" className="brewing-info-page__delete-button" />
-                    <input type="reset" onClick={this.close} value="Delete" className="brewing-info-page__button" />
+                <div className="brewing-info-section__buttons">
+                    <input type="submit" onClick={this.save} value="Save" className="brewing-info-section__button" />
+                    <input type="button" onClick={this.delete} value="Delete" className="brewing-info-section__delete-button" />
+                    <input type="reset" onClick={this.close} value="Delete" className="brewing-info-section__button" />
                 </div>
             );
         }
@@ -283,7 +275,7 @@ class BrewingInfoPage extends React.PureComponent {
 
     renderValidationResult = () => {
         return (
-            <div className="brewing-info-page__validation-result" ref={this.errorFieldRef}>
+            <div className="brewing-info-section__validation-result" ref={this.errorFieldRef}>
                 {
                     this.validator.message(brewValidationConfig.beerType.fieldName, this.state.beerType, brewValidationConfig.beerType.rule)
                 }
@@ -296,6 +288,8 @@ class BrewingInfoPage extends React.PureComponent {
 
     render() {
         const {
+            id,
+            rating,
             beerInfo,
             location,
             datetime,
@@ -309,38 +303,38 @@ class BrewingInfoPage extends React.PureComponent {
         }
 
         return (
-            <section className="brewing-info-page">
-                <h1 className="brewing-info-page__title">Brewing Info</h1>
+            <section className="brewing-info-section">
+                <h1 className="brewing-info-section__title">Brewing Info</h1>
                 <form>
-                    <FormRow name="location" type="text" label="Location:" onChange={this.changeLocation} value={location} />
-                    <div className="brewing-info-page__field">
-                        <label className="brewing-info-page__field-title">Date and time:</label>
+                    <Input name="location" type="text" label="Location:" onChange={this.changeLocation} value={location} />
+                    <div className="brewing-info-section__field">
+                        <label className="brewing-info-section__field-title">Date and time:</label>
                         <input
                             name="datetime"
                             type="text"
                             value={datetime}
-                            className="brewing-info-page__field-input"
+                            className="brewing-info-section__field-input"
                             disabled
                         />
                     </div>
-                    <div className="brewing-info-page__field">
-                        <label className="brewing-info-page__field-title">Brew name:</label>
+                    <div className="brewing-info-section__field">
+                        <label className="brewing-info-section__field-title">Brew name:</label>
                         <input
                             name="location"
                             type="text"
                             value={beerInfo.name}
-                            className="brewing-info-page__field-input"
+                            className="brewing-info-section__field-input"
                             disabled
                         />
                     </div>
-                    <FormRow name="beerType" type="text" label="Beer type:" onChange={this.changeBeerType} value={beerType} />
-                    <div className="brewing-info-page__field">
-                        <label className="brewing-info-page__field-title">Impression:</label>
+                    <Input name="beerType" type="text" label="Beer type:" onChange={this.changeBeerType} value={beerType} />
+                    <div className="brewing-info-section__field">
+                        <label className="brewing-info-section__field-title">Impression:</label>
                         <textarea
                             onChange={this.changeImpression}
                             name="location"
                             value={impression}
-                            className="brewing-info-page__impression-field"
+                            className="brewing-info-section__impression-field"
                         />
                     </div>
                     {
@@ -348,10 +342,11 @@ class BrewingInfoPage extends React.PureComponent {
                     }
                     <SelectPhotoField onChange={this.addPhoto} />
                     <ImagesSlider images={photos} />
-                    <div className="brewing-info-page__ingredients-method">
+                    <div className="brewing-info-section__ingredients-method">
                         <BrewingIngredients ingredients={beerInfo.ingredients} />
                         <div>
                             <BrewingMethods method={beerInfo.method} />
+                            <RatingPanel rating={rating} brewId={id} />
                         </div>
                     </div>
                     {this.renderButtons()}
@@ -361,4 +356,4 @@ class BrewingInfoPage extends React.PureComponent {
     }
 }
 
-export default withRouter(BrewingInfoPage);
+export default withRouter(BrewingInfoSection);

@@ -58,5 +58,12 @@ namespace BeerCatalogFullstack.Controllers
             BrewViewModel brew = manager.GetBrewById(id);
             return Json(brew);
         }
+
+        [HttpPost]
+        public IActionResult Rate([FromBody] RateViewModel model)
+        {
+            manager.RateBrew(model);
+            return Ok();
+        }
     }
 }

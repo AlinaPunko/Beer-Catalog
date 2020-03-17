@@ -33,6 +33,8 @@ export default {
         getBrewsByUserId: '/Brew/GetByUserId',
         getAllBrews: '/Brew/Get',
         addComment: '/Brew/Comments/Add',
-        rateBrew: '/Brew/Rate'
+        rateBrew: '/Brew/Rate',
+        getUserRates: '/Brew/GetUserRates',
+        getRating: '/Brew/GetRating'
     }
 };

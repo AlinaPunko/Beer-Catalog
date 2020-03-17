@@ -35,5 +35,10 @@ namespace DataAccess.Repositories
             return Get(b => b.BeerId == beerId)
                 .ToList();
         }
+
+        public int GetBrewRating(int brewId)
+        {
+            return Get(b => b.Id == brewId).Select(b => b.Rating).FirstOrDefault();
+        }
     }
 }

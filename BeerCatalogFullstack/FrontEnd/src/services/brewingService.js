@@ -36,6 +36,24 @@ async function rate(item) {
     return result;
 }
 
+async function getUserRates(brewInfo) {
+    const result = await api.get(serviceUrls.brewingUrls.getUserRates, brewInfo);
+    return result;
+}
+
+async function getRating(brewId) {
+    const result = await api.get(serviceUrls.brewingUrls.getRating, { brewId });
+    return result;
+}
+
 export default {
-    add, deleteItem, update, getBrewsByUserId, getBrewsByBeerId, getBrewById, rate
+    add,
+    deleteItem,
+    update,
+    getBrewsByUserId,
+    getBrewsByBeerId,
+    getBrewById,
+    rate,
+    getUserRates,
+    getRating
 };

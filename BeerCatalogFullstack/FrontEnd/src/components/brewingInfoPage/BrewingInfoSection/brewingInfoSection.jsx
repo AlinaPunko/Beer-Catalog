@@ -1,9 +1,11 @@
 import React from 'react';
+import moment from 'moment';
 import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
 import PropTypes from 'prop-types';
 
 import { UserContext } from 'store/context/userContext';
+import Icon from 'components/common/Icon/icon';
 import Input from 'components/common/Input/input';
 import SelectPhotoField from 'components/common/PhotoSelector/photoSelector';
 import brewValidationConfig from 'validationConfigs/brewValidationConfig';
@@ -16,6 +18,7 @@ import brewingService from 'services/brewingService';
 import ImagesSlider from 'components/common/ImagesSlider/imagesSlider';
 import RatingPanel from 'components/brewingInfoPage/RatingPanel/ratingPanel';
 
+import preloader from 'styles/icons/preloader.svg';
 import './brewingInfoSection.scss';
 
 class BrewingInfoSection extends React.PureComponent {
@@ -47,13 +50,13 @@ class BrewingInfoSection extends React.PureComponent {
     constructor(props, context) {
         super(props, context);
         this.validator = new SimpleReactValidator();
-        const { params } = this.props.match;
         const today = new Date();
         const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
         const time = `${today.getHours()}:${today.getMinutes()}`;
         const dateTime = `${date} ${time}`;
 
         this.state = {
+            isLoading: true,
             id: 0,
             userId: this.context.userId,
             beerInfo: null,
@@ -64,16 +67,25 @@ class BrewingInfoSection extends React.PureComponent {
             impression: '',
             photos: []
         };
+    }
+
+    componentDidMount = async () => {
+        const { params } = this.props.match;
 
         this.getBeer(params.beerId);
         if (params.brewId) {
             this.getBrew(params.brewId);
         }
+
+        this.setState({ isLoading: false });
     }
 
     async getBeer(id) {
         const result = await beerService.getByID(id);
-        this.setState({ beerInfo: result });
+
+        if (result) {
+            this.setState({ beerInfo: result });
+        }
     }
 
 
@@ -83,10 +95,11 @@ class BrewingInfoSection extends React.PureComponent {
         if (result) {
             this.setState(
                 {
+                    isLoading: false,
                     id: result.id,
                     location: result.location,
                     userId: result.userId,
-                    datetime: result.dateTime,
+                    datetime: moment(result.dateTime).format('YYYY-MM-DD hh:mm'),
                     beerType: result.beerType,
                     rating: result.rating,
                     impression: result.impression,
@@ -256,7 +269,7 @@ class BrewingInfoSection extends React.PureComponent {
         redirectToHomePageHelper.redirect(this.props.history);
     }
 
-    addPhoto = () => {
+    addPhoto = (srcData) => {
         this.setState({ photos: this.state.photos.concat(srcData) });
     }
 
@@ -266,7 +279,7 @@ class BrewingInfoSection extends React.PureComponent {
                 <div className="brewing-info-section__buttons">
                     <input type="submit" onClick={this.save} value="Save" className="brewing-info-section__button" />
                     <input type="button" onClick={this.delete} value="Delete" className="brewing-info-section__delete-button" />
-                    <input type="reset" onClick={this.close} value="Delete" className="brewing-info-section__button" />
+                    <input type="reset" onClick={this.close} value="Close" className="brewing-info-section__button" />
                 </div>
             );
         }
@@ -302,55 +315,67 @@ class BrewingInfoSection extends React.PureComponent {
             return null;
         }
 
+        debugger;
         return (
             <section className="brewing-info-section">
                 <h1 className="brewing-info-section__title">Brewing Info</h1>
-                <form>
-                    <Input name="location" type="text" label="Location:" onChange={this.changeLocation} value={location} />
-                    <div className="brewing-info-section__field">
-                        <label className="brewing-info-section__field-title">Date and time:</label>
-                        <input
-                            name="datetime"
-                            type="text"
-                            value={datetime}
-                            className="brewing-info-section__field-input"
-                            disabled
-                        />
+                {this.state.isLoading && (
+                    <div className="brewing-info-section__preloader">
+                        <Icon iconClassName="brewing-info-section__preloader-icon" icon={preloader} />
                     </div>
-                    <div className="brewing-info-section__field">
-                        <label className="brewing-info-section__field-title">Brew name:</label>
-                        <input
-                            name="location"
-                            type="text"
-                            value={beerInfo.name}
-                            className="brewing-info-section__field-input"
-                            disabled
-                        />
-                    </div>
-                    <Input name="beerType" type="text" label="Beer type:" onChange={this.changeBeerType} value={beerType} />
-                    <div className="brewing-info-section__field">
-                        <label className="brewing-info-section__field-title">Impression:</label>
-                        <textarea
-                            onChange={this.changeImpression}
-                            name="location"
-                            value={impression}
-                            className="brewing-info-section__impression-field"
-                        />
-                    </div>
-                    {
-                        this.renderValidationResult()
-                    }
-                    <SelectPhotoField onChange={this.addPhoto} />
-                    <ImagesSlider images={photos} />
-                    <div className="brewing-info-section__ingredients-method">
-                        <BrewingIngredients ingredients={beerInfo.ingredients} />
-                        <div>
-                            <BrewingMethods method={beerInfo.method} />
-                            <RatingPanel rating={rating} brewId={id} />
+                )}
+                {!this.state.isLoading && (
+                    <form>
+                        <Input name="location" type="text" label="Location:" onChange={this.changeLocation} value={location} />
+                        <div className="brewing-info-section__field">
+                            <label className="brewing-info-section__field-title">Date and time:</label>
+                            <input
+                                name="datetime"
+                                type="text"
+                                value={datetime}
+                                className="brewing-info-section__field-input"
+                                disabled
+                            />
                         </div>
-                    </div>
-                    {this.renderButtons()}
-                </form>
+                        <div className="brewing-info-section__field">
+                            <label className="brewing-info-section__field-title">Brew name:</label>
+                            <input
+                                name="location"
+                                type="text"
+                                value={beerInfo.name}
+                                className="brewing-info-section__field-input"
+                                disabled
+                            />
+                        </div>
+                        <Input name="beerType" type="text" label="Beer type:" onChange={this.changeBeerType} value={beerType} />
+                        <div className="brewing-info-section__field">
+                            <label className="brewing-info-section__field-title">Impression:</label>
+                            <textarea
+                                onChange={this.changeImpression}
+                                name="location"
+                                value={impression}
+                                className="brewing-info-section__impression-field"
+                            />
+                        </div>
+                        {
+                            this.renderValidationResult()
+                        }
+                        <SelectPhotoField onChange={this.addPhoto} />
+                        <ImagesSlider images={photos} />
+                        <div className="brewing-info-section__ingredients-method">
+                            <BrewingIngredients ingredients={beerInfo.ingredients} />
+                            <div>
+                                <BrewingMethods method={beerInfo.method} />
+                                {
+                                    this.state.id && (
+                                        <RatingPanel rating={rating} brewId={this.state.id} />
+                                    )
+                                }
+                            </div>
+                        </div>
+                        {this.renderButtons()}
+                    </form>
+                )}
             </section>
         );
     }

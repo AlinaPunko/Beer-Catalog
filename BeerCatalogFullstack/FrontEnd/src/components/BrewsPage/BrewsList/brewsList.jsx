@@ -1,9 +1,12 @@
 import React from 'react';
 
-import UserService from 'services/userService';
+import userService from 'services/userService';
+import serviceWrapper from 'helpers/serviceWrapper';
 import BrewsListItem from 'components/BrewsPage/BrewsListItem/brewsListItem';
 import { UserContext } from 'store/context/userContext';
+import Icon from 'components/common/Icon/icon';
 
+import preloader from 'styles/icons/preloader.svg';
 import './brewsList.scss';
 
 export default class BrewsList extends React.PureComponent {
@@ -12,13 +15,20 @@ export default class BrewsList extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
+            isLoading: true,
             brews: []
         };
     }
 
     componentDidMount = async () => {
-        const result = await UserService.getPreferedBrews(this.context.userId);
-        this.setState({ brews: result });
+        const result = await serviceWrapper(userService.getPreferedBrews, { userId: this.context.userId }, null);
+
+        if (result) {
+            this.setState({
+                brews: result,
+                isLoading: false
+            });
+        }
     }
 
     render() {
@@ -27,6 +37,11 @@ export default class BrewsList extends React.PureComponent {
             <section className="brews-list">
                 <h1 className="brews-list__title">Your prefered brews</h1>
                 {renderedBrews}
+                {this.state.isLoading && (
+                    <div className="brews-list__preloader">
+                        <Icon iconClassName="brews-list__preloader-icon" icon={preloader} />
+                    </div>
+                )}
             </section>
         );
     }

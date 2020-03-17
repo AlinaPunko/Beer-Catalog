@@ -68,6 +68,18 @@ namespace BeerCatalogFullstack.Managers
                 .ToList();
         }
 
+        public  int GetBrewRating(int brewId)
+        {
+            int rating = brewRepository.GetBrewRating(brewId);
+            return rating;
+        }
+
+        public int GetUserRatesSum(string userId, int brewId)
+        {
+            int rating = rateRepository.GetSumUserBrewRates(userId, brewId);
+            return rating;
+        }
+
         public void RateBrew(RateViewModel viewmodel)
         {
             var rate = new Rate
@@ -104,7 +116,8 @@ namespace BeerCatalogFullstack.Managers
                 Impression = brew.Impression,
                 Location = brew.Location,
                 DateTime = brew.DateTime,
-                BeerType = brew.BeerType
+                BeerType = brew.BeerType,
+                Photos = brew.Photos.Select(p => p.EncodedPhoto).ToArray()
             };
 
             return brewViewModel;

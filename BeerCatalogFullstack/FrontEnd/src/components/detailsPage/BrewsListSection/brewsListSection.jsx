@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 import { UserContext } from 'store/context/userContext';
+import serviceWrapper from 'helpers/serviceWrapper';
+import Icon from 'components/common/Icon/icon';
 import OpenBrewingInfoPageButton from 'components/common/OpenBrewingInfoPageButton/openBrewingInfoPageButton';
 import brewingService from 'services/brewingService';
+
+import deleteIcon from 'styles/icons/deleteIcon.svg';
 import './brewsListSection.scss';
 
 export default class BrewsListSection extends React.PureComponent {
@@ -23,16 +28,36 @@ export default class BrewsListSection extends React.PureComponent {
     }
 
     getBrews = async () => {
-        const result = await brewingService.getBrewsByBeerId(this.props.beerId);
-        this.setState({ brews: result });
+        const result = await serviceWrapper.callService(brewingService.getBrewsByBeerId, this.props.beerId, null);
+
+        if (result) {
+            this.setState({ brews: result });
+        }
+    }
+
+    async deleteBrew(brew) {
+        await serviceWrapper.callService(brewingService.deleteItem, brew, null);
+        this.getBrews();
     }
 
     render() {
+        const { beerId } = this.props;
+
         const brews = this.state.brews.map((brew, index) => {
             return (
                 <li key={index} className="brews-list-section__list-item">
-                    {brew.dateTime.replace('T', ' ')} {brew.location}
-                    <OpenBrewingInfoPageButton brewId={brew.id} beerId={this.props.beerId} text="Show info" className="brews-list-section__button" />
+                    {moment(brew.dateTime).format('YYYY-MM-DD hh:mm')} {brew.location}
+                    {this.context.userId === brew.userId && (
+                        <button type="button" className="brews-list-section__button" onClick={this.deleteBrew.bind(this, brew)}>
+                            <Icon icon={deleteIcon} iconClassName="brews-list-section__button-icon" />
+                        </button>
+                    )}
+                    <OpenBrewingInfoPageButton
+                        brewId={brew.id}
+                        beerId={beerId}
+                        text="Show info"
+                        className="brews-list-section__button"
+                    />
                 </li>
             );
         });
@@ -44,6 +69,7 @@ export default class BrewsListSection extends React.PureComponent {
                     <ul className="brews-list-section__list">
                         {brews}
                     </ul>
+                    <OpenBrewingInfoPageButton brewId={0} beerId={beerId} text="Add brew" className="brews-list-section__button" />
                 </section>
             );
         }

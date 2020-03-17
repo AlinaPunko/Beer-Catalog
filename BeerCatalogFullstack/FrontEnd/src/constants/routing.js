@@ -25,7 +25,7 @@ export default {
         component: SearchPage
     },
     beerDetailsPage: {
-        url: '/details/:id',
+        url: '/beers/:id',
         component: BeerDetailsPage
     },
     profilePage: {
@@ -33,7 +33,7 @@ export default {
         component: ProfileSection
     },
     brewingInfoPage: {
-        url: '/brewinfo/:beerId/:brewId',
+        url: '/beers/:beerId/brews/:brewId',
         component: BrewingInfoPage
     },
     brewsList: {

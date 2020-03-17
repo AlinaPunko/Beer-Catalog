@@ -65,5 +65,17 @@ namespace BeerCatalogFullstack.Controllers
             manager.RateBrew(model);
             return Ok();
         }
+
+        public IActionResult GetUserRates(string userId, int brewId)
+        {
+            int rating = manager.GetUserRatesSum(userId, brewId);
+            return Json(rating);
+        }
+
+        public IActionResult GetRating(int brewId)
+        {
+            int rating = manager.GetBrewRating(brewId);
+            return Json(rating);
+        }
     }
 }

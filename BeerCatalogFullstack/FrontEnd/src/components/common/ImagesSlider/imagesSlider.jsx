@@ -47,6 +47,7 @@ export default class ImagesSlider extends React.PureComponent {
         if (images.length === 0) {
             return null;
         }
+        debugger;
         return (
             <div className="images-slider">
                 <button type="button" className="images-slider__button" onClick={this.setPreviousSlide}>

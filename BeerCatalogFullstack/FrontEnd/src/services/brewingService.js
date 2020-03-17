@@ -46,6 +46,11 @@ async function getRating(brewId) {
     return result;
 }
 
+async function addComment(comment) {
+    const result = await api.post(serviceUrls.brewingUrls.addComment, comment);
+    return result;
+}
+
 export default {
     add,
     deleteItem,
@@ -55,5 +60,6 @@ export default {
     getBrewById,
     rate,
     getUserRates,
-    getRating
+    getRating,
+    addComment
 };

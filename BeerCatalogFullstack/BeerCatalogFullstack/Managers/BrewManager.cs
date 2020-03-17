@@ -18,6 +18,7 @@ namespace BeerCatalogFullstack.Managers
         private readonly BeerRepository beerRepository;
         private readonly PhotoRepository photoRepository;
         private readonly RateRepository rateRepository;
+        private readonly CommentRepository commentRepository;
 
         public BrewManager(
             BrewRepository brewRepository,
@@ -25,20 +26,23 @@ namespace BeerCatalogFullstack.Managers
             HopsManager hopsManager,
             FermentationManager fermentationManager,
             MashTemperatureManager mashTemperatureManager,
-            YeastManager yeastRepository,
+            YeastManager yeastManager,
             BeerRepository beerRepository,
             PhotoRepository photoRepository,
-            RateRepository rateRepository)
+            RateRepository rateRepository,
+            CommentRepository commentRepository
+            )
         {
             this.brewRepository = brewRepository;
             this.maltManager = maltManager;
             this.hopsManager = hopsManager;
             this.fermentationManager = fermentationManager;
             this.mashTemperatureManager = mashTemperatureManager;
-            this.yeastManager = yeastRepository;
+            this.yeastManager = yeastManager;
             this.beerRepository = beerRepository;
             this.photoRepository = photoRepository;
             this.rateRepository = rateRepository;
+            this.commentRepository = commentRepository;
         }
 
         public IReadOnlyList<Brew> GetAll()
@@ -66,6 +70,18 @@ namespace BeerCatalogFullstack.Managers
                     }
                 )
                 .ToList();
+        }
+
+        public void AddComment(CommentViewModel viewModel)
+        {
+            var comment = new Comment
+            {
+                BrewId = viewModel.BrewId,
+                UserId = viewModel.UserId,
+                Text = viewModel.Text
+            };
+
+            commentRepository.Add(comment);
         }
 
         public  int GetBrewRating(int brewId)

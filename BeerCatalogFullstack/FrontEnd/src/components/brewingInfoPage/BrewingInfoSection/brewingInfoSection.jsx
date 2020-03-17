@@ -17,6 +17,7 @@ import serviceWrapper from 'helpers/serviceWrapper';
 import brewingService from 'services/brewingService';
 import ImagesSlider from 'components/common/ImagesSlider/imagesSlider';
 import RatingPanel from 'components/brewingInfoPage/RatingPanel/ratingPanel';
+import CommentsSection from 'components/brewingInfoPage/CommentsSection/commentsSection';
 
 import preloader from 'styles/icons/preloader.svg';
 import './brewingInfoSection.scss';
@@ -81,7 +82,7 @@ class BrewingInfoSection extends React.PureComponent {
     }
 
     async getBeer(id) {
-        const result = await beerService.getByID(id);
+        const result = await serviceWrapper.callService(beerService.getByID, id, null);
 
         if (result) {
             this.setState({ beerInfo: result });
@@ -90,7 +91,7 @@ class BrewingInfoSection extends React.PureComponent {
 
 
     async getBrew(id) {
-        const result = await brewingService.getBrewById(id);
+        const result = await serviceWrapper.callService(brewingService.getBrewById, id, null);
 
         if (result) {
             this.setState(
@@ -286,22 +287,24 @@ class BrewingInfoSection extends React.PureComponent {
         return null;
     }
 
+    renderCommentsSection = () => {
+
+    }
+
     renderValidationResult = () => {
+        const messages = [
+            this.validator.message(brewValidationConfig.beerType.fieldName, this.state.beerType, brewValidationConfig.beerType.rule),
+            this.validator.message(brewValidationConfig.impression.fieldName, this.state.impression, brewValidationConfig.impression.rule)
+        ];
         return (
             <div className="brewing-info-section__validation-result" ref={this.errorFieldRef}>
-                {
-                    this.validator.message(brewValidationConfig.beerType.fieldName, this.state.beerType, brewValidationConfig.beerType.rule)
-                }
-                {
-                    this.validator.message(brewValidationConfig.impression.fieldName, this.state.impression, brewValidationConfig.impression.rule)
-                }
+                { messages }
             </div>
         );
     }
 
     render() {
         const {
-            id,
             rating,
             beerInfo,
             location,
@@ -315,7 +318,6 @@ class BrewingInfoSection extends React.PureComponent {
             return null;
         }
 
-        debugger;
         return (
             <section className="brewing-info-section">
                 <h1 className="brewing-info-section__title">Brewing Info</h1>
@@ -374,6 +376,7 @@ class BrewingInfoSection extends React.PureComponent {
                             </div>
                         </div>
                         {this.renderButtons()}
+                        <CommentsSection brewId={this.state.id} />
                     </form>
                 )}
             </section>

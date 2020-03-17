@@ -32,7 +32,7 @@ export default {
         getBrewsByBeerId: '/Brew/GetByBeerId',
         getBrewsByUserId: '/Brew/GetByUserId',
         getAllBrews: '/Brew/Get',
-        addComment: '/Brew/Comments/Add',
+        addComment: '/Brew/AddComment',
         rateBrew: '/Brew/Rate',
         getUserRates: '/Brew/GetUserRates',
         getRating: '/Brew/GetRating'

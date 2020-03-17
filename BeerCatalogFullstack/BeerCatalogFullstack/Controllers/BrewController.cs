@@ -66,6 +66,13 @@ namespace BeerCatalogFullstack.Controllers
             return Ok();
         }
 
+        [HttpPost]
+        public IActionResult AddComment([FromBody] CommentViewModel model)
+        {
+            manager.AddComment(model);
+            return Ok();
+        }
+
         public IActionResult GetUserRates(string userId, int brewId)
         {
             int rating = manager.GetUserRatesSum(userId, brewId);

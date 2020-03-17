@@ -21,14 +21,13 @@ export default class BrewsList extends React.PureComponent {
     }
 
     componentDidMount = async () => {
-        const result = await serviceWrapper(userService.getPreferedBrews, { userId: this.context.userId }, null);
+        const result = await serviceWrapper.callService(userService.getPreferedBrews, this.context.userId, null);
 
         if (result) {
-            this.setState({
-                brews: result,
-                isLoading: false
-            });
+            this.setState({ brews: result });
         }
+
+        this.setState({ isLoading: false });
     }
 
     render() {

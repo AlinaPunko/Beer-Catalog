@@ -69,6 +69,7 @@ namespace BeerCatalogFullstack
             services.AddTransient<FermentationRepository>();
             services.AddTransient<PhotoRepository>();
             services.AddTransient<BrewHopsRepository>();
+            services.AddTransient<CommentRepository>();
             services.AddTransient<BrewMashTemperatureRepository>();
             services.AddTransient<BrewMaltRepository>();
 

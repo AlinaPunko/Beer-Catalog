@@ -23,7 +23,7 @@ import preloader from 'styles/icons/preloader.svg';
 import './brewingInfoSection.scss';
 
 class BrewingInfoSection extends React.PureComponent {
-    static propTypes={
+    static propTypes = {
         match: PropTypes.shape({
             path: PropTypes.string.isRequired,
             url: PropTypes.string.isRequired,
@@ -298,7 +298,7 @@ class BrewingInfoSection extends React.PureComponent {
         ];
         return (
             <div className="brewing-info-section__validation-result" ref={this.errorFieldRef}>
-                { messages }
+                {messages}
             </div>
         );
     }
@@ -376,7 +376,11 @@ class BrewingInfoSection extends React.PureComponent {
                             </div>
                         </div>
                         {this.renderButtons()}
-                        <CommentsSection brewId={this.state.id} />
+                        {
+                            this.state.id && (
+                                <CommentsSection brewId={this.state.id} />
+                            )
+                        }
                     </form>
                 )}
             </section>

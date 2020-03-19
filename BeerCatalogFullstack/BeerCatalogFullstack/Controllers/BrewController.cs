@@ -1,4 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Net.WebSockets;
+using System.Threading;
+using System.Threading.Tasks;
+using BeerCatalogFullstack.Hubs;
 using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
@@ -66,11 +70,11 @@ namespace BeerCatalogFullstack.Controllers
             return Ok();
         }
 
-        [HttpPost]
-        public IActionResult AddComment([FromBody] CommentViewModel model)
+
+        public IActionResult GetComments(int brewId)
         {
-            manager.AddComment(model);
-            return Ok();
+            IReadOnlyList<CommentViewModel> comments = manager.GetComments(brewId);
+            return Json(comments);
         }
 
         public IActionResult GetUserRates(string userId, int brewId)

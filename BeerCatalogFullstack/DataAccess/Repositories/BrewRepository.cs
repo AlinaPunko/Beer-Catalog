@@ -30,7 +30,7 @@ namespace DataAccess.Repositories
                 .ToList();
         }
 
-        public IEnumerable<Brew> GetBrewsByBeerId(int beerId)
+        public IReadOnlyList<Brew> GetBrewsByBeerId(int beerId)
         {
             return Get(b => b.BeerId == beerId)
                 .ToList();
@@ -38,7 +38,9 @@ namespace DataAccess.Repositories
 
         public int GetBrewRating(int brewId)
         {
-            return Get(b => b.Id == brewId).Select(b => b.Rating).FirstOrDefault();
+            return Get(b => b.Id == brewId)
+                .Select(b => b.Rating)
+                .FirstOrDefault();
         }
     }
 }

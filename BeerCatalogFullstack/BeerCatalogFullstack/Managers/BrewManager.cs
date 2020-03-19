@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using BeerCatalogFullstack.Hubs;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using DataAccess.Repositories;
@@ -54,8 +55,8 @@ namespace BeerCatalogFullstack.Managers
 
         public IReadOnlyList<BrewViewModel> GetBrewsByUserId(string userId)
         {
-            return brewRepository
-                .GetUserBrews(userId)
+            IReadOnlyList<Brew> brews = brewRepository.GetUserBrews(userId);
+            return brews
                 .Select(b =>
                     new BrewViewModel
                     {
@@ -72,16 +73,20 @@ namespace BeerCatalogFullstack.Managers
                 .ToList();
         }
 
-        public void AddComment(CommentViewModel viewModel)
+        internal IReadOnlyList<CommentViewModel> GetComments(int brewId)
         {
-            var comment = new Comment
-            {
-                BrewId = viewModel.BrewId,
-                UserId = viewModel.UserId,
-                Text = viewModel.Text
-            };
-
-            commentRepository.Add(comment);
+            IReadOnlyList<Comment> comments = commentRepository.GetBrewComments(brewId);
+            return comments.Select(c =>
+                new CommentViewModel
+                {
+                    Id = c.Id,
+                    Text = c.Text,
+                    BrewId = c.BrewId,
+                    UserId = c.UserId,
+                    UserName = c.User.Name,
+                    UserPhoto = c.User.Photo
+                }
+            ).ToList();
         }
 
         public  int GetBrewRating(int brewId)

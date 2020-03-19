@@ -11,6 +11,12 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using DataAccess.Repositories;
 using Newtonsoft.Json;
+using System;
+using System.Net.WebSockets;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using System.Threading;
+using BeerCatalogFullstack.Hubs;
 
 namespace BeerCatalogFullstack
 {
@@ -32,7 +38,14 @@ namespace BeerCatalogFullstack
                 .AddEntityFrameworkStores<ApplicationContext>();
 
             AddDependencies(services);
-
+            services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
+            {
+                builder
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .WithOrigins("http://localhost:44376");
+            }));
+            services.AddSignalR();
             services.AddMvc(option => option.EnableEndpointRouting = false)
                 .AddNewtonsoftJson(options =>
                 {
@@ -69,6 +82,7 @@ namespace BeerCatalogFullstack
             services.AddTransient<FermentationRepository>();
             services.AddTransient<PhotoRepository>();
             services.AddTransient<BrewHopsRepository>();
+            services.AddTransient<CommentsHub>();
             services.AddTransient<CommentRepository>();
             services.AddTransient<BrewMashTemperatureRepository>();
             services.AddTransient<BrewMaltRepository>();
@@ -94,12 +108,18 @@ namespace BeerCatalogFullstack
             app.UseAuthorization();
             app.UseAuthentication();
 
+            app.UseCors("CorsPolicy");
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<CommentsHub>("/commentsHub");
+            });
+
             app.UseMvc(routes =>
             {
-                
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 routes.MapSpaFallbackRoute("spa-fallback", new { controller = "Home", action = "Index" });
             });
-        }
+        }     
     }
+    
 }

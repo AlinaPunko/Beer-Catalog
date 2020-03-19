@@ -35,6 +35,7 @@ export default {
         addComment: '/Brew/AddComment',
         rateBrew: '/Brew/Rate',
         getUserRates: '/Brew/GetUserRates',
-        getRating: '/Brew/GetRating'
+        getRating: '/Brew/GetRating',
+        getComments: '/Brew/GetComments'
     }
 };

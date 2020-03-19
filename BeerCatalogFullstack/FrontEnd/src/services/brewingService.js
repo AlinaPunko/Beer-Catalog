@@ -51,6 +51,11 @@ async function addComment(comment) {
     return result;
 }
 
+async function getComments(brewId) {
+    const result = await api.get(serviceUrls.brewingUrls.getComments, { brewId });
+    return result;
+}
+
 export default {
     add,
     deleteItem,
@@ -61,5 +66,6 @@ export default {
     rate,
     getUserRates,
     getRating,
-    addComment
+    addComment,
+    getComments
 };

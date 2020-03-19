@@ -3,6 +3,6 @@ import React from 'react';
 export const UserContext = React.createContext({
     userId: null,
     favoriteBeers: [],
-    setUserId: () => {},
+    setUserId: () => { },
     setFavoriteBeers: () => []
 });

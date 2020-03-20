@@ -14,7 +14,6 @@ namespace BeerCatalogFullstack.Hubs
             this.userRepository = userRepository;
         }
 
-
         public void AddComment(int brewId, string userId, string text)
         {
             var comment = new Comment
@@ -26,8 +25,8 @@ namespace BeerCatalogFullstack.Hubs
 
             repository.Add(comment);
             Comment newComment = repository.GetCommentByUserBrewText(comment.BrewId, comment.UserId, comment.Text);
-            User user = userRepository.GetUserById(userId);
-            Clients.All.SendAsync("addComment",newComment.Id, brewId, user.Name, user.Photo, text);
+
+            Clients.All.SendAsync("addComment",newComment.Id, brewId, newComment.User.Name, newComment.User.Photo, text);
         }
     }
 }

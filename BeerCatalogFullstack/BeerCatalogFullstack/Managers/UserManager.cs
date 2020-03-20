@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BeerCatalogFullstack.ViewModels;
@@ -54,6 +53,7 @@ namespace BeerCatalogFullstack.Managers
         {
             IReadOnlyList<string> preferences = preferenceRepository.GetPreferencesByUserId(userId);
             IReadOnlyList<Brew> brews = brewRepository.GetPreferedBrews(preferences);
+
             IReadOnlyList<BrewViewModel> viewModels = brews.Select(b => new BrewViewModel
             {
                 Id = b.Id,
@@ -67,6 +67,7 @@ namespace BeerCatalogFullstack.Managers
                 BeerType = b.BeerType,
                 Photos = b.Photos.Select(p => p.EncodedPhoto).ToArray() 
             }).ToList();
+
             return viewModels;
         }
     }

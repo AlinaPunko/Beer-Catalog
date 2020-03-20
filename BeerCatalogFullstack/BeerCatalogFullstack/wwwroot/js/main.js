@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "eaaac1f4031d10081daf";
+/******/ 	var hotCurrentHash = "78f762fa6b208fb61fa4";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -6016,7 +6016,7 @@ exports.push([module.i, ".brewing-info-section {\n  width: 50%;\n  margin: 0 aut
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".comments-list-item {\n  display: flex;\n  justify-content: space-between;\n  min-height: 0;\n  margin: 10px;\n  padding: 5px;\n  font-family: 'Lucida Sans', sans-serif;\n  box-shadow: 0 0 5px 2px #dddddd; }\n\n.comments-list-item__user-name {\n  font-size: 26px; }\n\n.comments-list-item__text {\n  align-content: center;\n  width: 90%;\n  padding: 20px 0;\n  font-size: 14px; }\n\n.comments-list-item__image {\n  width: auto;\n  height: 150px; }\n", ""]);
+exports.push([module.i, ".comments-list-item {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  min-height: 0;\n  margin: 10px;\n  padding: 5px;\n  font-family: 'Lucida Sans', sans-serif;\n  box-shadow: 0 0 5px 2px #dddddd; }\n\n.comments-list-item__user-name {\n  padding: 5px 0;\n  font-size: 26px; }\n\n.comments-list-item__text {\n  align-content: center;\n  width: 90%;\n  padding: 10px;\n  font-size: 14px; }\n\n.comments-list-item__image {\n  width: auto;\n  height: 150px; }\n", ""]);
 
 
 
@@ -6106,7 +6106,7 @@ exports.push([module.i, ".favorite-button {\n  padding: 20px 10px 10px 0;\n  tex
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".images-slider {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  width: 50%;\n  height: auto;\n  margin: 0 auto;\n  overflow: hidden; }\n\n.images-slider__button {\n  background-color: transparent;\n  border: none; }\n\n.images-slider__button-icon {\n  width: 15px;\n  height: 15px; }\n\n.images-slider__image {\n  width: 100%;\n  height: 100%; }\n", ""]);
+exports.push([module.i, ".images-slider {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  width: 50%;\n  height: auto;\n  margin: 0 auto; }\n\n.images-slider__button {\n  background-color: transparent;\n  border: none; }\n\n.images-slider__button-icon {\n  width: 15px;\n  height: 15px; }\n\n.images-slider__image {\n  width: 100%;\n  height: 100%; }\n", ""]);
 
 
 
@@ -6346,7 +6346,7 @@ exports.push([module.i, ".favorite-list {\n  flex-wrap: wrap;\n  width: 50%;\n  
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".profile-section {\n  width: 50%;\n  margin: 10px auto; }\n\n.profile-section__form {\n  display: flex;\n  align-content: center;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n\n.profile-section__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.profile-section__image-block {\n  align-self: flex-start;\n  width: 50%;\n  padding: 10px; }\n\n.profile-section__user-image {\n  width: 70%;\n  margin: 0 auto; }\n\n.profile-section__user-info {\n  width: 50%; }\n\n.profile-section__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.profile-section__field-input {\n  width: 50%;\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__buttons {\n  display: flex;\n  justify-content: space-evenly; }\n\n.profile-section__button {\n  display: block;\n  width: 40%;\n  margin: 5px auto;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
+exports.push([module.i, ".profile-section {\n  width: 50%;\n  margin: 10px auto; }\n\n.profile-section__form {\n  display: flex;\n  align-content: center;\n  justify-content: space-around;\n  width: 100%; }\n\n.profile-section__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.profile-section__image-block {\n  align-self: flex-start;\n  width: 50%;\n  padding: 10px; }\n\n.profile-section__user-image {\n  width: 70%;\n  margin: 0 auto; }\n\n.profile-section__user-info {\n  width: 50%; }\n\n.profile-section__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.profile-section__field-input {\n  width: 50%;\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__buttons {\n  display: flex;\n  justify-content: space-evenly; }\n\n.profile-section__button {\n  display: block;\n  width: 40%;\n  margin: 5px auto;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
 
 
 
@@ -66971,6 +66971,12 @@ function (_React$PureComponent) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "addPhoto", function (srcData) {
+      _this.setState({
+        photos: _this.state.photos.concat(srcData)
+      });
+    });
+
     _defineProperty(_assertThisInitialized(_this), "getMalts", function () {
       var malts = [];
 
@@ -67153,12 +67159,6 @@ function (_React$PureComponent) {
       }, _callee3);
     })));
 
-    _defineProperty(_assertThisInitialized(_this), "addPhoto", function (srcData) {
-      _this.setState({
-        photos: _this.state.photos.concat(srcData)
-      });
-    });
-
     _defineProperty(_assertThisInitialized(_this), "renderButtons", function () {
       if (_this.state.userId === _this.context.userId) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -67183,8 +67183,6 @@ function (_React$PureComponent) {
 
       return null;
     });
-
-    _defineProperty(_assertThisInitialized(_this), "renderCommentsSection", function () {});
 
     _defineProperty(_assertThisInitialized(_this), "renderValidationResult", function () {
       var messages = [_this.validator.message(validationConfigs_brewValidationConfig__WEBPACK_IMPORTED_MODULE_9__["default"].beerType.fieldName, _this.state.beerType, validationConfigs_brewValidationConfig__WEBPACK_IMPORTED_MODULE_9__["default"].beerType.rule), _this.validator.message(validationConfigs_brewValidationConfig__WEBPACK_IMPORTED_MODULE_9__["default"].impression.fieldName, _this.state.impression, validationConfigs_brewValidationConfig__WEBPACK_IMPORTED_MODULE_9__["default"].impression.rule)];
@@ -67522,16 +67520,18 @@ function (_React$PureComponent) {
   _createClass(CommentsListItem, [{
     key: "render",
     value: function render() {
-      var comment = this.props.comment;
-      debugger;
+      var _this$props = this.props,
+          comment = _this$props.comment,
+          key = _this$props.key;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        key: key,
         className: "comments-list-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments-list-item__user-name"
       }, comment.userName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         alt: "User_image",
         className: "comments-list-item__image",
-        src: comment.userImage
+        src: comment.userPhoto
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments-list-item__text"
       }, comment.text));
@@ -67544,10 +67544,11 @@ function (_React$PureComponent) {
 _defineProperty(CommentsListItem, "propTypes", {
   comment: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
     id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
-    userImage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    userPhoto: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
     userName: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
     text: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
-  }).isRequired
+  }).isRequired,
+  key: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired
 });
 
 
@@ -67697,21 +67698,15 @@ function (_React$PureComponent) {
             getNewComments: true,
             newComment: comment
           });
-
-          debugger;
         }
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "loadNewComment", function () {
-      debugger;
-
       _this.setState({
         currentComments: _this.state.currentComments.concat(_this.state.newComment),
         newComment: null
       });
-
-      debugger;
 
       _this.renderComments();
     });
@@ -67783,13 +67778,13 @@ function (_React$PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "renderComments", function () {
       return _this.state.currentComments.map(function (comment, index) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_brewingInfoPage_CommentsListItem_commentsListItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
-          index: index,
+          key: index,
           comment: comment
         });
       });
     });
 
-    var connection = new _aspnet_signalr__WEBPACK_IMPORTED_MODULE_2__["HubConnectionBuilder"]().withUrl('https://localhost:44376/commentsHub').configureLogging(_aspnet_signalr__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Information).build();
+    var connection = new _aspnet_signalr__WEBPACK_IMPORTED_MODULE_2__["HubConnectionBuilder"]().withUrl('/commentsHub').configureLogging(_aspnet_signalr__WEBPACK_IMPORTED_MODULE_2__["LogLevel"].Information).build();
     _this.state = {
       message: '',
       currentComments: [],
@@ -67803,7 +67798,6 @@ function (_React$PureComponent) {
   _createClass(CommentsSection, [{
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "comments-section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
@@ -67831,7 +67825,7 @@ function (_React$PureComponent) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
 _defineProperty(CommentsSection, "propTypes", {
-  brewId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired
+  brewId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
 });
 
 _defineProperty(CommentsSection, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_5__["UserContext"]);

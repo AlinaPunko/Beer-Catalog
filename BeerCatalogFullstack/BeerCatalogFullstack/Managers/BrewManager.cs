@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using BeerCatalogFullstack.Hubs;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using DataAccess.Repositories;
@@ -10,7 +8,6 @@ namespace BeerCatalogFullstack.Managers
 {
     public class BrewManager
     {
-        private readonly BrewRepository brewRepository;
         private readonly HopsManager hopsManager;
         private readonly MaltManager maltManager;
         private readonly FermentationManager fermentationManager;
@@ -19,6 +16,7 @@ namespace BeerCatalogFullstack.Managers
         private readonly BeerRepository beerRepository;
         private readonly PhotoRepository photoRepository;
         private readonly RateRepository rateRepository;
+        private readonly BrewRepository brewRepository;
         private readonly CommentRepository commentRepository;
 
         public BrewManager(
@@ -73,7 +71,7 @@ namespace BeerCatalogFullstack.Managers
                 .ToList();
         }
 
-        internal IReadOnlyList<CommentViewModel> GetComments(int brewId)
+        public IReadOnlyList<CommentViewModel> GetComments(int brewId)
         {
             IReadOnlyList<Comment> comments = commentRepository.GetBrewComments(brewId);
             return comments.Select(c =>
@@ -119,9 +117,7 @@ namespace BeerCatalogFullstack.Managers
 
         public BrewViewModel GetBrewById(int id)
         {
-            Brew brew = brewRepository
-                .Get(b => b.Id == id)
-                .FirstOrDefault();
+            Brew brew = brewRepository.GetById(id);
 
             if (brew == null)
             {
@@ -142,7 +138,6 @@ namespace BeerCatalogFullstack.Managers
             };
 
             return brewViewModel;
-
         }
 
         public IReadOnlyList<BrewViewModel> GetBrewsByBeerId(int beerId)
@@ -230,6 +225,7 @@ namespace BeerCatalogFullstack.Managers
                     continue;
                 }   
 
+
                 Photo photoModel = new Photo
                 {
                     EncodedPhoto = photo,
@@ -242,7 +238,7 @@ namespace BeerCatalogFullstack.Managers
 
         public void AddBrew(BrewViewModel viewModel)
         {
-            
+
             fermentationManager.AddBrewFermentation(viewModel);
             int fermentationId = fermentationManager.GetFermentationIdByBeerId(viewModel.BeerId);
 
@@ -264,18 +260,12 @@ namespace BeerCatalogFullstack.Managers
                 UserId = viewModel.UserId
             };
             brewRepository.Add(brew);
-
-            int brewId = brewRepository.Get(b =>
-                    b.DateTime == viewModel.DateTime &&
-                    b.Location == viewModel.Location &&
-                    b.UserId == viewModel.UserId &&
-                    b.BeerId == viewModel.BeerId)
-                .Select(b => b.Id)
-                .FirstOrDefault();
+            int brewId = brewRepository.GetBrewByLocationDateUserBeer(viewModel.UserId, viewModel.BeerId, viewModel.DateTime, viewModel.Location);
 
             mashTemperatureManager.AddMashTemperature(viewModel, brewId);
             maltManager.AddBrewMalt(viewModel, brewId);
             hopsManager.AddBrewHops(viewModel, brewId);
+
             AddBrewPhotos(viewModel, brewId);
         }
     }

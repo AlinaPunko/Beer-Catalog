@@ -11,11 +11,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using DataAccess.Repositories;
 using Newtonsoft.Json;
-using System;
-using System.Net.WebSockets;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using System.Threading;
 using BeerCatalogFullstack.Hubs;
 
 namespace BeerCatalogFullstack
@@ -38,6 +33,7 @@ namespace BeerCatalogFullstack
                 .AddEntityFrameworkStores<ApplicationContext>();
 
             AddDependencies(services);
+
             services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
             {
                 builder

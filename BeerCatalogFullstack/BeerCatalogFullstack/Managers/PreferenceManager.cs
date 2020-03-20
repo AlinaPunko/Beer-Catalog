@@ -58,7 +58,9 @@ namespace BeerCatalogFullstack.Managers
 
         public IReadOnlyList<string> GetSuitablePreferences(string input)
         {
-            return BeerTypes.Where(s => s.Contains(input, StringComparison.OrdinalIgnoreCase)).ToList();
+            return BeerTypes
+                .Where(s => s.Contains(input, StringComparison.OrdinalIgnoreCase))
+                .ToList();
         }
     }
 }

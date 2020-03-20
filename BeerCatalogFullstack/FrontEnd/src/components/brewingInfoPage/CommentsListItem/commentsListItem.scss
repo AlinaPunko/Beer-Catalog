@@ -1,5 +1,6 @@
 .comments-list-item {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     min-height: 0;
     margin: 10px;
@@ -9,13 +10,14 @@
 }
 
 .comments-list-item__user-name {
+    padding: 5px 0;
     font-size: 26px;
 }
 
 .comments-list-item__text {
     align-content: center;
     width: 90%;
-    padding: 20px 0;
+    padding: 10px;
     font-size: 14px;
 }
 

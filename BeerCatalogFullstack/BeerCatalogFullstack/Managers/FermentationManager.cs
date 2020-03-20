@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BeerCatalogFullstack.ViewModels;
+﻿using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using DataAccess.Repositories;
 
@@ -36,7 +32,7 @@ namespace BeerCatalogFullstack.Managers
 
         public int GetFermentationIdByBeerId(int beerId)
         {
-            return fermentationRepository.Get(y => y.BeerId == beerId).Select(y => y.Id).FirstOrDefault();
+            return fermentationRepository.GetByBeerId(beerId).Id;
         }
     }
 }

@@ -2,7 +2,6 @@
 using System.Linq;
 using DataAccess.Core;
 using DataAccess.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Repositories
 {
@@ -24,10 +23,8 @@ namespace DataAccess.Repositories
 
         public Comment GetCommentByUserBrewText(int brewId, string userId, string text)
         {
-            var r = Get(c => c.Text == text && c.UserId == userId && c.BrewId == brewId)
-                .Include(c => c.User)
-                .FirstOrDefault();
-            return r;
+            return Get(c => c.Text == text && c.BrewId == brewId && c.UserId == userId)
+                .First();
         }
     }
 }

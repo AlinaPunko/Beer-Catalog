@@ -40,7 +40,18 @@ namespace DataAccess.Repositories
         {
             return Get(b => b.Id == brewId)
                 .Select(b => b.Rating)
-                .FirstOrDefault();
+                .First();
+        }
+
+        public int GetBrewByLocationDateUserBeer(string userId, int beerId, DateTime dateTime, string location)
+        {
+            return Get(b =>
+                b.DateTime == dateTime &&
+                b.Location == location &&
+                b.UserId == userId &&
+                b.BeerId == beerId)
+            .Select(b => b.Id)
+            .FirstOrDefault();
         }
     }
 }

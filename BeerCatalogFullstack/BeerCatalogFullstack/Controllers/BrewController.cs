@@ -1,8 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Net.WebSockets;
-using System.Threading;
-using System.Threading.Tasks;
-using BeerCatalogFullstack.Hubs;
 using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
@@ -42,7 +38,8 @@ namespace BeerCatalogFullstack.Controllers
 
         public IActionResult Get()
         {
-            return Json(manager.GetAll());
+            IReadOnlyList<Brew> brews = manager.GetAll();
+            return Json(brews);
         }
 
         public IActionResult GetByUserId(string userId)

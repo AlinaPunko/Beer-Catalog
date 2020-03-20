@@ -128,6 +128,10 @@ class BrewingInfoSection extends React.PureComponent {
         });
     }
 
+    addPhoto = (srcData) => {
+        this.setState({ photos: this.state.photos.concat(srcData) });
+    }
+
     getMalts = () => {
         const malts = [];
         this.state.beerInfo.ingredients.malt.forEach((item) => {
@@ -270,10 +274,6 @@ class BrewingInfoSection extends React.PureComponent {
         redirectToHomePageHelper.redirect(this.props.history);
     }
 
-    addPhoto = (srcData) => {
-        this.setState({ photos: this.state.photos.concat(srcData) });
-    }
-
     renderButtons = () => {
         if (this.state.userId === this.context.userId) {
             return (
@@ -285,10 +285,6 @@ class BrewingInfoSection extends React.PureComponent {
             );
         }
         return null;
-    }
-
-    renderCommentsSection = () => {
-
     }
 
     renderValidationResult = () => {

@@ -11,17 +11,19 @@ import './commentsSection.scss';
 
 export default class CommentsSection extends React.PureComponent {
     static propTypes = {
-        brewId: PropTypes.number.isRequired
+        brewId: PropTypes.string.isRequired
     }
 
     static contextType = UserContext;
 
     constructor(props) {
         super(props);
+
         const connection = new signalR.HubConnectionBuilder()
-            .withUrl('https://localhost:44376/commentsHub')
+            .withUrl('/commentsHub')
             .configureLogging(signalR.LogLevel.Information)
             .build();
+
         this.state = {
             message: '',
             currentComments: [],
@@ -38,6 +40,7 @@ export default class CommentsSection extends React.PureComponent {
             .start()
             .then(() => console.log('Connection started!'))
             .catch(() => console.log('Error while establishing connection :('));
+
         this.state.connection.on('addComment', (id, brewId, name, photo, text) => {
             if (brewId === this.props.brewId) {
                 const comment = {
@@ -51,20 +54,17 @@ export default class CommentsSection extends React.PureComponent {
                     getNewComments: true,
                     newComment: comment
                 });
-                debugger;
             }
         });
     }
 
     loadNewComment = () => {
-        debugger;
         this.setState(
             {
                 currentComments: this.state.currentComments.concat(this.state.newComment),
                 newComment: null
             }
         );
-        debugger;
         this.renderComments();
     }
 
@@ -86,17 +86,17 @@ export default class CommentsSection extends React.PureComponent {
 
     loadComments = async () => {
         const result = await serviceWrapper.callService(brewingService.getComments, this.props.brewId, null);
+
         if (result) {
             this.setState({ currentComments: result });
         }
     }
 
     renderComments = () => {
-        return this.state.currentComments.map((comment, index) => { return <CommentListItem index={index} comment={comment} />; });
+        return this.state.currentComments.map((comment, index) => { return <CommentListItem key={index} comment={comment} />; });
     }
 
     render() {
-        debugger;
         return (
             <section className="comments-section">
                 <h2 className="comments-section__title">Comments</h2>

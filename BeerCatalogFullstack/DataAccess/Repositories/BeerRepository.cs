@@ -9,15 +9,10 @@ namespace DataAccess.Repositories
     {
         public BeerRepository(ApplicationContext context) : base(context) { }
 
-        public IReadOnlyList<Beer> GetAll()
+        public bool DoesBeerExist(int id)
         {
             return Get()
-                .ToList();
-        }
-
-        public bool IsBeerExists(int id)
-        {
-            return Get().Any(b => b.Id == id);
+                .Any(b => b.Id == id);
         }
     }
 }

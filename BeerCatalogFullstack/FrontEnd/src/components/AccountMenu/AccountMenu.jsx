@@ -67,15 +67,8 @@ export default class AccountMenu extends React.PureComponent {
             'account-menu--opened': this.props.showMenu,
             'account-menu--closed': !this.props.showMenu
         });
-
-        let menuLinks;
         const { userId } = this.context;
-
-        if (!userId) {
-            menuLinks = this.renderUnauthorisedUserMenuLinks();
-        } else {
-            menuLinks = this.renderAuthorisedUserMenuLinks();
-        }
+        const menuLinks = userId ? this.renderAuthorisedUserMenuLinks() : this.renderUnauthorisedUserMenuLinks();
 
         return (
             <div className={menuClass} onClick={this.props.closeMenu}>

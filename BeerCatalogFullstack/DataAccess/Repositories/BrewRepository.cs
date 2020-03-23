@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using DataAccess.Core;
 using DataAccess.Models;
@@ -14,44 +13,6 @@ namespace DataAccess.Repositories
         {
             return Get()
                 .ToList();
-        }
-
-        public IReadOnlyList<Brew> GetUserBrews(string userId)
-        {
-            return Get(b => b.UserId == userId)
-                .ToList();
-        }
-
-        public IReadOnlyList<Brew> GetPreferedBrews(IReadOnlyList<string> preferences)
-        {
-            return Get(b => preferences.Contains(b.BeerType))
-                .OrderBy(b => b.DateTime)
-                .ThenBy(b => b.Rating)
-                .ToList();
-        }
-
-        public IReadOnlyList<Brew> GetBrewsByBeerId(int beerId)
-        {
-            return Get(b => b.BeerId == beerId)
-                .ToList();
-        }
-
-        public int GetBrewRating(int brewId)
-        {
-            return Get(b => b.Id == brewId)
-                .Select(b => b.Rating)
-                .First();
-        }
-
-        public int GetBrewByLocationDateUserBeer(string userId, int beerId, DateTime dateTime, string location)
-        {
-            return Get(b =>
-                b.DateTime == dateTime &&
-                b.Location == location &&
-                b.UserId == userId &&
-                b.BeerId == beerId)
-            .Select(b => b.Id)
-            .FirstOrDefault();
         }
     }
 }

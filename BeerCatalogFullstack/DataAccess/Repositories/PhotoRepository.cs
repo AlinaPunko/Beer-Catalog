@@ -8,11 +8,5 @@ namespace DataAccess.Repositories
     public class PhotoRepository : GenericRepository<Photo>
     {
         public PhotoRepository(ApplicationContext context) : base(context) { }
-
-        public IReadOnlyList<Photo> GetAll()
-        {
-            return Get()
-                .ToList();
-        }
     }
 }

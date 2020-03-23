@@ -10,12 +10,6 @@ namespace DataAccess.Repositories
     {
         public PreferenceRepository(ApplicationContext context) : base(context) { }
 
-        public IReadOnlyList<string> GetPreferencesByInput(string input)
-        {
-            return Get(p => p.PreferencedBeerType.Contains(input, StringComparison.OrdinalIgnoreCase))
-                .Select(p => p.PreferencedBeerType)
-                .ToList();
-        }
         public IReadOnlyList<string> GetPreferencesByUserId(string userId)
         {
             return Get(p => p.UserId==userId)

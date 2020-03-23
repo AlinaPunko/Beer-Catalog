@@ -25,15 +25,15 @@ namespace BeerCatalogFullstack.Managers
 
         public void AddFavoriteBeer(FavoriteBeerViewModel model)
         {
-            FavoriteBeer favoriteBeer = GetFavoriteBeerModel(model);
             Beer beer = GetBeerModel(model);
-            bool isBeerExists = beerRepository.IsBeerExists(beer.Id);
+            bool doesBeerExist = beerRepository.DoesBeerExist(beer.Id);
 
-            if (!isBeerExists)
+            if (!doesBeerExist)
             {
                 beerRepository.Add(beer);
             }
-            
+
+            FavoriteBeer favoriteBeer = GetFavoriteBeerModel(model);
             favoriteBeerRepository.Add(favoriteBeer);
         }
 

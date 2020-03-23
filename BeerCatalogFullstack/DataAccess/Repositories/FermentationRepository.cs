@@ -8,11 +8,5 @@ namespace DataAccess.Repositories
     class FermentationRepository : GenericRepository<Fermentation>
     {
         public FermentationRepository(ApplicationContext context) : base(context) { }
-
-        public IReadOnlyList<Fermentation> GetAll()
-        {
-            return Get()
-                .ToList();
-        }
     }
 }

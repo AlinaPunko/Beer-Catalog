@@ -8,11 +8,5 @@ namespace DataAccess.Repositories
     class HopsRepository : GenericRepository<Hops>
     {
         public HopsRepository(ApplicationContext context) : base(context) { }
-
-        public IReadOnlyList<Hops> GetAll()
-        {
-            return Get()
-                .ToList();
-        }
     }
 }

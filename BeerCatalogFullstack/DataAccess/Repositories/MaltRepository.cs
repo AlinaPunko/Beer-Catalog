@@ -8,11 +8,5 @@ namespace DataAccess.Repositories
     class MaltRepository : GenericRepository<Malt>
     {
         public MaltRepository(ApplicationContext context) : base(context) { }
-
-        public IReadOnlyList<Malt> GetAll()
-        {
-            return Get()
-                .ToList();
-        }
     }
 }

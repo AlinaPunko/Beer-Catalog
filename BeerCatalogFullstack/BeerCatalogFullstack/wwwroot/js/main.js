@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "41d55052d69843b07cda";
+/******/ 	var hotCurrentHash = "1f21017597b1599aa437";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1384,7 +1384,7 @@ exports.push([module.i, ".favorite-list {\n  flex-wrap: wrap;\n  width: 50%;\n  
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".profile-section {\n  width: 50%;\n  margin: 10px auto; }\n\n.profile-section__form {\n  display: flex;\n  align-content: center;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n\n.profile-section__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.profile-section__image-block {\n  align-self: flex-start;\n  width: 50%;\n  padding: 10px; }\n\n.profile-section__user-image {\n  width: 70%;\n  margin: 0 auto; }\n\n.profile-section__user-info {\n  width: 50%; }\n\n.profile-section__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.profile-section__field-input {\n  width: 50%;\n  padding: 5px;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__buttons {\n  display: flex;\n  justify-content: space-evenly; }\n\n.profile-section__button {\n  display: block;\n  width: 40%;\n  margin: 5px auto;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
+exports.push([module.i, ".profile-section {\n  width: 50%;\n  margin: 10px auto; }\n\n.profile-section__form {\n  display: flex;\n  align-content: center;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n\n.profile-section__title {\n  padding: 10px 0;\n  font-size: 30px;\n  font-family: \"Lucida Sans\", sans-serif;\n  text-align: center; }\n\n.profile-section__image-block {\n  align-self: flex-start;\n  width: 50%;\n  padding: 10px; }\n\n.profile-section__user-image {\n  width: 70%;\n  margin: 0 auto; }\n\n.profile-section__user-info {\n  width: 50%; }\n\n.profile-section__field-title {\n  padding: 0 5px;\n  font-family: \"Lucida Sans\", sans-serif; }\n\n.profile-section__buttons {\n  display: flex;\n  justify-content: space-evenly; }\n\n.profile-section__button {\n  display: block;\n  width: 40%;\n  margin: 5px auto;\n  font-family: \"Lucida Sans\", sans-serif;\n  background-color: transparent;\n  border: 1px #106cc8 solid;\n  border-radius: 5px; }\n\n.profile-section__validation-result {\n  color: #ff0000;\n  font-family: \"Lucida Sans\", sans-serif; }\n", ""]);
 
 
 
@@ -59539,15 +59539,8 @@ function (_React$PureComponent) {
         'account-menu--opened': this.props.showMenu,
         'account-menu--closed': !this.props.showMenu
       });
-      var menuLinks;
       var userId = this.context.userId;
-
-      if (!userId) {
-        menuLinks = this.renderUnauthorisedUserMenuLinks();
-      } else {
-        menuLinks = this.renderAuthorisedUserMenuLinks();
-      }
-
+      var menuLinks = userId ? this.renderAuthorisedUserMenuLinks() : this.renderUnauthorisedUserMenuLinks();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: menuClass,
         onClick: this.props.closeMenu
@@ -62651,7 +62644,7 @@ if(true) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FormRow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Input; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
@@ -62682,18 +62675,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var FormRow =
+var Input =
 /*#__PURE__*/
 function (_React$PureComponent) {
-  _inherits(FormRow, _React$PureComponent);
+  _inherits(Input, _React$PureComponent);
 
-  function FormRow() {
-    _classCallCheck(this, FormRow);
+  function Input() {
+    _classCallCheck(this, Input);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(FormRow).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Input).apply(this, arguments));
   }
 
-  _createClass(FormRow, [{
+  _createClass(Input, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -62716,10 +62709,10 @@ function (_React$PureComponent) {
     }
   }]);
 
-  return FormRow;
+  return Input;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
-_defineProperty(FormRow, "propTypes", {
+_defineProperty(Input, "propTypes", {
   label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
   name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
   type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
@@ -64984,14 +64977,13 @@ if(true) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! simple-react-validator */ "./node_modules/simple-react-validator/dist/simple-react-validator.min.js");
-/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(simple_react_validator__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var components_common_Input_input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/common/Input/input */ "./src/components/common/Input/input.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-react-validator */ "./node_modules/simple-react-validator/dist/simple-react-validator.min.js");
+/* harmony import */ var simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(simple_react_validator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var components_common_Input_input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/common/Input/input */ "./src/components/common/Input/input.jsx");
+/* harmony import */ var helpers_dateHelper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! helpers/dateHelper */ "./src/helpers/dateHelper.js");
 /* harmony import */ var components_common_PhotoSelector_photoSelector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! components/common/PhotoSelector/photoSelector */ "./src/components/common/PhotoSelector/photoSelector.jsx");
 /* harmony import */ var components_profilePage_UserPreferenceSection_userPreferenceSection__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! components/profilePage/UserPreferenceSection/userPreferenceSection */ "./src/components/profilePage/UserPreferenceSection/userPreferenceSection.jsx");
 /* harmony import */ var validationConfigs_profileValidationConfig__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! validationConfigs/profileValidationConfig */ "./src/validationConfigs/profileValidationConfig.js");
@@ -65076,7 +65068,7 @@ function (_React$PureComponent) {
 
     _defineProperty(_assertThisInitialized(_this), "changeBirthdate", function (e) {
       _this.setState({
-        birthdate: moment__WEBPACK_IMPORTED_MODULE_1___default()(e.target.value).format('YYYY-MM-DD')
+        birthdate: helpers_dateHelper__WEBPACK_IMPORTED_MODULE_5__["default"].getdate(e.target.value)
       });
     });
 
@@ -65145,7 +65137,7 @@ function (_React$PureComponent) {
       }, messages);
     });
 
-    _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_3___default.a();
+    _this.validator = new simple_react_validator__WEBPACK_IMPORTED_MODULE_2___default.a();
     _this.errorFieldRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     _this.state = {
       photo: '',
@@ -65177,7 +65169,7 @@ function (_React$PureComponent) {
                   name: user.name,
                   email: user.email,
                   photo: user.photo,
-                  birthdate: user.birthdate ? moment__WEBPACK_IMPORTED_MODULE_1___default()(user.birthdate).format('YYYY-MM-DD') : ''
+                  birthdate: user.birthdate ? helpers_dateHelper__WEBPACK_IMPORTED_MODULE_5__["default"].getdate(user.birthdate) : ''
                 });
 
               case 4:
@@ -65217,19 +65209,19 @@ function (_React$PureComponent) {
         onClick: this.deletePhoto
       }, "Delete photo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-section__user-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_Input_input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_Input_input__WEBPACK_IMPORTED_MODULE_4__["default"], {
         name: "name",
         type: "text",
         label: "Name:",
         onChange: this.changeName,
         value: this.state.name
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_Input_input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_Input_input__WEBPACK_IMPORTED_MODULE_4__["default"], {
         name: "email",
         type: "email",
         label: "E-mail:",
         onChange: this.changeEmail,
         value: this.state.email
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_Input_input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_common_Input_input__WEBPACK_IMPORTED_MODULE_4__["default"], {
         name: "birthdate",
         type: "date",
         label: "Select birthdate:",
@@ -65253,22 +65245,22 @@ function (_React$PureComponent) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
 
 _defineProperty(ProfileSection, "propTypes", {
-  history: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.shape({
-    length: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.number.isRequired,
-    action: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string.isRequired,
-    location: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.shape({
-      pathname: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string.isRequired,
-      search: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string.isRequired,
-      hash: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string.isRequired,
-      key: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string.isRequired
+  history: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
+    length: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.number.isRequired,
+    action: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+    location: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
+      pathname: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+      search: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+      hash: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+      key: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired
     }),
-    push: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func.isRequired
+    push: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired
   }).isRequired
 });
 
 _defineProperty(ProfileSection, "contextType", store_context_userContext__WEBPACK_IMPORTED_MODULE_12__["UserContext"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(ProfileSection));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(ProfileSection));
 
 /***/ }),
 
@@ -66715,6 +66707,34 @@ var sliderValue = {
 
 /***/ }),
 
+/***/ "./src/helpers/dateHelper.js":
+/*!***********************************!*\
+  !*** ./src/helpers/dateHelper.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function getDate(value) {
+  return moment__WEBPACK_IMPORTED_MODULE_0___default()(value).format('YYYY-MM-DD');
+}
+
+function getDateTime(value) {
+  return moment__WEBPACK_IMPORTED_MODULE_0___default()(value).format('YYYY-MM-DD HH-MM');
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  getDate: getDate,
+  getDateTime: getDateTime
+});
+
+/***/ }),
+
 /***/ "./src/helpers/favoriteItemHelper.js":
 /*!*******************************************!*\
   !*** ./src/helpers/favoriteItemHelper.js ***!
@@ -67926,7 +67946,7 @@ var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPO
   "id": "icons-account",
   "use": "icons-account-usage",
   "viewBox": "0 0 24 32",
-  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 32\" id=\"icons-account\">\n<title>user</title>\n<path d=\"M12 16c-6.625 0-12 5.375-12 12 0 2.211 1.789 4 4 4h16c2.211 0 4-1.789 4-4 0-6.625-5.375-12-12-12zM6 6c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6z\" />\n</symbol>"
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 32\" id=\"icons-account\">\r\n<title>user</title>\r\n<path d=\"M12 16c-6.625 0-12 5.375-12 12 0 2.211 1.789 4 4 4h16c2.211 0 4-1.789 4-4 0-6.625-5.375-12-12-12zM6 6c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6z\" />\r\n</symbol>"
 });
 var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
@@ -68004,7 +68024,7 @@ var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPO
   "id": "icons-info",
   "use": "icons-info-usage",
   "viewBox": "0 0 32 32",
-  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-info\">\n<title>info</title>\n<path d=\"M14 9.5c0-0.825 0.675-1.5 1.5-1.5h1c0.825 0 1.5 0.675 1.5 1.5v1c0 0.825-0.675 1.5-1.5 1.5h-1c-0.825 0-1.5-0.675-1.5-1.5v-1z\" />\n<path d=\"M20 24h-8v-2h2v-6h-2v-2h6v8h2z\" />\n<path d=\"M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13z\" />\n</symbol>"
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-info\">\r\n<title>info</title>\r\n<path d=\"M14 9.5c0-0.825 0.675-1.5 1.5-1.5h1c0.825 0 1.5 0.675 1.5 1.5v1c0 0.825-0.675 1.5-1.5 1.5h-1c-0.825 0-1.5-0.675-1.5-1.5v-1z\" />\r\n<path d=\"M20 24h-8v-2h2v-6h-2v-2h6v8h2z\" />\r\n<path d=\"M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13z\" />\r\n</symbol>"
 });
 var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
@@ -68212,7 +68232,7 @@ var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPO
   "id": "icons-search",
   "use": "icons-search-usage",
   "viewBox": "0 0 20 20",
-  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" id=\"icons-search\">\n<title>search</title>\n<path d=\"M12.9 14.32c-1.34 1.049-3.050 1.682-4.908 1.682-4.418 0-8-3.582-8-8s3.582-8 8-8c4.418 0 8 3.582 8 8 0 1.858-0.633 3.567-1.695 4.925l0.013-0.018 5.35 5.33-1.42 1.42-5.33-5.34zM8 14c3.314 0 6-2.686 6-6s-2.686-6-6-6v0c-3.314 0-6 2.686-6 6s2.686 6 6 6v0z\" />\n</symbol>"
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" id=\"icons-search\">\r\n<title>search</title>\r\n<path d=\"M12.9 14.32c-1.34 1.049-3.050 1.682-4.908 1.682-4.418 0-8-3.582-8-8s3.582-8 8-8c4.418 0 8 3.582 8 8 0 1.858-0.633 3.567-1.695 4.925l0.013-0.018 5.35 5.33-1.42 1.42-5.33-5.34zM8 14c3.314 0 6-2.686 6-6s-2.686-6-6-6v0c-3.314 0-6 2.686-6 6s2.686 6 6 6v0z\" />\r\n</symbol>"
 });
 var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
@@ -68238,7 +68258,7 @@ var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPO
   "id": "icons-signin",
   "use": "icons-signin-usage",
   "viewBox": "0 0 32 32",
-  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-signin\">\n<title>enter</title>\n<path d=\"M12 16h-10v-4h10v-4l6 6-6 6zM32 0v26l-12 6v-6h-12v-8h2v6h10v-18l8-4h-18v8h-2v-10z\" />\n</symbol>"
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-signin\">\r\n<title>enter</title>\r\n<path d=\"M12 16h-10v-4h10v-4l6 6-6 6zM32 0v26l-12 6v-6h-12v-8h2v6h10v-18l8-4h-18v8h-2v-10z\" />\r\n</symbol>"
 });
 var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
@@ -68264,7 +68284,7 @@ var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPO
   "id": "icons-signout",
   "use": "icons-signout-usage",
   "viewBox": "0 0 32 32",
-  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-signout\">\n<title>exit</title>\n<path d=\"M24 20v-4h-10v-4h10v-4l6 6zM22 18v8h-10v6l-12-6v-26h22v10h-2v-8h-16l8 4v18h8v-6z\" />\n</symbol>"
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-signout\">\r\n<title>exit</title>\r\n<path d=\"M24 20v-4h-10v-4h10v-4l6 6zM22 18v8h-10v6l-12-6v-26h22v10h-2v-8h-16l8 4v18h8v-6z\" />\r\n</symbol>"
 });
 var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
@@ -68290,7 +68310,7 @@ var symbol = new _node_modules_svg_baker_runtime_browser_symbol_js__WEBPACK_IMPO
   "id": "icons-signup",
   "use": "icons-signup-usage",
   "viewBox": "0 0 32 32",
-  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-signup\">\n<title>clipboard</title>\n<path d=\"M29 4h-9c0-2.209-1.791-4-4-4s-4 1.791-4 4h-9c-0.552 0-1 0.448-1 1v26c0 0.552 0.448 1 1 1h26c0.552 0 1-0.448 1-1v-26c0-0.552-0.448-1-1-1zM16 2c1.105 0 2 0.895 2 2s-0.895 2-2 2c-1.105 0-2-0.895-2-2s0.895-2 2-2zM28 30h-24v-24h4v3c0 0.552 0.448 1 1 1h14c0.552 0 1-0.448 1-1v-3h4v24z\" />\n<path d=\"M14 26.828l-6.414-7.414 1.828-1.828 4.586 3.586 8.586-7.586 1.829 1.828z\" />\n</symbol>"
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" id=\"icons-signup\">\r\n<title>clipboard</title>\r\n<path d=\"M29 4h-9c0-2.209-1.791-4-4-4s-4 1.791-4 4h-9c-0.552 0-1 0.448-1 1v26c0 0.552 0.448 1 1 1h26c0.552 0 1-0.448 1-1v-26c0-0.552-0.448-1-1-1zM16 2c1.105 0 2 0.895 2 2s-0.895 2-2 2c-1.105 0-2-0.895-2-2s0.895-2 2-2zM28 30h-24v-24h4v3c0 0.552 0.448 1 1 1h14c0.552 0 1-0.448 1-1v-3h4v24z\" />\r\n<path d=\"M14 26.828l-6.414-7.414 1.828-1.828 4.586 3.586 8.586-7.586 1.829 1.828z\" />\r\n</symbol>"
 });
 var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WEBPACK_IMPORTED_MODULE_1___default.a.add(symbol);
 /* harmony default export */ __webpack_exports__["default"] = (symbol);

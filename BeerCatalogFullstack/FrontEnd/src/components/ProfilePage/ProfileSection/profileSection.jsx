@@ -1,10 +1,10 @@
 import React from 'react';
-import moment from 'moment';
 import { withRouter } from 'react-router-dom';
 import SimpleReactValidator from 'simple-react-validator';
 import PropTypes from 'prop-types';
 
 import Input from 'components/common/Input/input';
+import dateHelper from 'helpers/dateHelper';
 import PhotoSelector from 'components/common/PhotoSelector/photoSelector';
 import UserPreferenceSection from 'components/profilePage/UserPreferenceSection/userPreferenceSection';
 import profileValidationConfig from 'validationConfigs/profileValidationConfig';
@@ -51,7 +51,7 @@ class ProfileSection extends React.PureComponent {
             name: user.name,
             email: user.email,
             photo: user.photo,
-            birthdate: user.birthdate ? moment(user.birthdate).format('YYYY-MM-DD') : ''
+            birthdate: user.birthdate ? dateHelper.getdate(user.birthdate) : ''
         });
     }
 
@@ -68,7 +68,7 @@ class ProfileSection extends React.PureComponent {
     }
 
     changeBirthdate = (e) => {
-        this.setState({ birthdate: moment(e.target.value).format('YYYY-MM-DD') });
+        this.setState({ birthdate: dateHelper.getdate(e.target.value) });
     }
 
     changePhoto = (photo) => {
@@ -101,7 +101,7 @@ class ProfileSection extends React.PureComponent {
 
         return (
             <div className="profile-section__validation-result" ref={this.errorFieldRef}>
-                { messages }
+                {messages}
             </div>
         );
     }
@@ -119,7 +119,7 @@ class ProfileSection extends React.PureComponent {
                         />
                         <PhotoSelector onChange={this.changePhoto} />
                         <button className="profile-section__button" type="button" onClick={this.deletePhoto}>
-                                Delete photo
+                            Delete photo
                         </button>
                     </div>
                     <div className="profile-section__user-info">

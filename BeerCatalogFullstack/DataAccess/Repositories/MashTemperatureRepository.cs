@@ -8,11 +8,5 @@ namespace DataAccess.Repositories
     class MashTemperatureRepository : GenericRepository<MashTemperature>
     {
         public MashTemperatureRepository(ApplicationContext context) : base(context) { }
-
-        public IReadOnlyList<MashTemperature> GetAll()
-        {
-            return Get()
-                .ToList();
-        }
     }
 }

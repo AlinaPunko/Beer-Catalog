@@ -14,11 +14,5 @@ namespace DataAccess.Repositories
             return Get()
                 .ToList();
         }
-
-        public IReadOnlyList<Brew> GetUserBrews(string userId)
-        {
-            return Get(b => b.UserId == userId)
-                .ToList();
-        }
     }
 }

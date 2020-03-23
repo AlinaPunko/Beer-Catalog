@@ -8,11 +8,5 @@ namespace DataAccess.Repositories
     class CommentRepository : GenericRepository<Comment>
     {
         public CommentRepository(ApplicationContext context) : base(context) { }
-
-        public IReadOnlyList<Comment> GetAll()
-        {
-            return Get()
-                .ToList();
-        }
     }
 }

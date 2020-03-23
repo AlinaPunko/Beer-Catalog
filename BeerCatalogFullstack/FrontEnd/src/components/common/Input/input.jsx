@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './input.scss';
 
-export default class FormRow extends React.PureComponent {
+export default class Input extends React.PureComponent {
     static propTypes = {
         label: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,

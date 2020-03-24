@@ -59,7 +59,7 @@ namespace DataAccess.Migrations
                 table: "Fermentation");
 
             migrationBuilder.CreateTable(
-                name: "BrewHops",
+                name: "BrewToHops",
                 columns: table => new
                 {
                     BrewId = table.Column<int>(nullable: false),
@@ -67,15 +67,15 @@ namespace DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BrewHops", x => new { x.BrewId, x.HopsId });
+                    table.PrimaryKey("PK_BrewToHops", x => new { x.BrewId, x.HopsId });
                     table.ForeignKey(
-                        name: "FK_BrewHops_Brew_BrewId",
+                        name: "FK_BrewToHops_Brew_BrewId",
                         column: x => x.BrewId,
                         principalTable: "Brew",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BrewHops_Hops_HopsId",
+                        name: "FK_BrewToHops_Hops_HopsId",
                         column: x => x.HopsId,
                         principalTable: "Hops",
                         principalColumn: "Id",
@@ -83,7 +83,7 @@ namespace DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BrewMalt",
+                name: "BrewToMalt",
                 columns: table => new
                 {
                     BrewId = table.Column<int>(nullable: false),
@@ -91,15 +91,15 @@ namespace DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BrewMalt", x => new { x.BrewId, x.MaltId });
+                    table.PrimaryKey("PK_BrewToMalt", x => new { x.BrewId, x.MaltId });
                     table.ForeignKey(
-                        name: "FK_BrewMalt_Brew_BrewId",
+                        name: "FK_BrewToMalt_Brew_BrewId",
                         column: x => x.BrewId,
                         principalTable: "Brew",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BrewMalt_Malt_MaltId",
+                        name: "FK_BrewToMalt_Malt_MaltId",
                         column: x => x.MaltId,
                         principalTable: "Malt",
                         principalColumn: "Id",
@@ -107,7 +107,7 @@ namespace DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BrewMashTemperature",
+                name: "BrewToMashTemperature",
                 columns: table => new
                 {
                     BrewId = table.Column<int>(nullable: false),
@@ -115,15 +115,15 @@ namespace DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BrewMashTemperature", x => new { x.BrewId, x.MashTemperatureId });
+                    table.PrimaryKey("PK_BrewToMashTemperature", x => new { x.BrewId, x.MashTemperatureId });
                     table.ForeignKey(
-                        name: "FK_BrewMashTemperature_Brew_BrewId",
+                        name: "FK_BrewToMashTemperature_Brew_BrewId",
                         column: x => x.BrewId,
                         principalTable: "Brew",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BrewMashTemperature_MashTemperature_MashTemperatureId",
+                        name: "FK_BrewToMashTemperature_MashTemperature_MashTemperatureId",
                         column: x => x.MashTemperatureId,
                         principalTable: "MashTemperature",
                         principalColumn: "Id",
@@ -141,31 +141,31 @@ namespace DataAccess.Migrations
                 column: "YeastId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BrewHops_HopsId",
-                table: "BrewHops",
+                name: "IX_BrewToHops_HopsId",
+                table: "BrewToHops",
                 column: "HopsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BrewMalt_MaltId",
-                table: "BrewMalt",
+                name: "IX_BrewToMalt_MaltId",
+                table: "BrewToMalt",
                 column: "MaltId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BrewMashTemperature_MashTemperatureId",
-                table: "BrewMashTemperature",
+                name: "IX_BrewToMashTemperature_MashTemperatureId",
+                table: "BrewToMashTemperature",
                 column: "MashTemperatureId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "BrewHops");
+                name: "BrewToHops");
 
             migrationBuilder.DropTable(
-                name: "BrewMalt");
+                name: "BrewToMalt");
 
             migrationBuilder.DropTable(
-                name: "BrewMashTemperature");
+                name: "BrewToMashTemperature");
 
             migrationBuilder.DropIndex(
                 name: "IX_Brew_FermentationId",

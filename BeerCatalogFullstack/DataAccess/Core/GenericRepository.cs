@@ -15,7 +15,7 @@ namespace DataAccess.Core
             DbSet = context.Set<TEntity>();
         }
 
-        public IQueryable<TEntity> Get(Func<TEntity, bool> predicate = null)
+        protected IQueryable<TEntity> Get(Func<TEntity, bool> predicate = null)
         {
             return predicate == null ? DbSet.AsQueryable() : DbSet.Where(predicate).AsQueryable();
         }

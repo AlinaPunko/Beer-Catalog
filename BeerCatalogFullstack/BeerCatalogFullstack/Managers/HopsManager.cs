@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using DataAccess.Repositories;
@@ -8,44 +9,43 @@ namespace BeerCatalogFullstack.Managers
     public class HopsManager
     {
         private readonly HopsRepository hopsRepository;
-        private readonly BrewHopsRepository brewHopsRepository;
+        private readonly BrewToHopsRepository brewToHopsRepository;
 
-        public HopsManager(HopsRepository hopsRepository, BrewHopsRepository brewHopsRepository)
+        public HopsManager(HopsRepository hopsRepository, BrewToHopsRepository brewToHopsRepository)
         {
             this.hopsRepository = hopsRepository;
-            this.brewHopsRepository = brewHopsRepository;
+            this.brewToHopsRepository = brewToHopsRepository;
         }
 
         public void AddBrewHops(BrewViewModel viewModel, int brewId)
         {
-            if (hopsRepository.GetByBeerId(viewModel.BeerId).Count != 0)
+            IReadOnlyList<Hops> hops = hopsRepository.GetByBeerId(viewModel.BeerId);
+            if (hops.Any())
             {
                 return;
             }
 
-            foreach (Hops hopsModel in viewModel.Hops.Select(hops => new Hops
-                    {
-                        Add = hops.Add,
-                        AmountUnit = hops.AmountUnit,
-                        AmountValue = hops.AmountValue,
-                        BeerId = hops.BeerId,
-                        Name = hops.Name,
-                        Attribute = hops.Attribute
-                    }
-                )
-            )
+            foreach (HopsViewModel hopsViewModel in viewModel.Hops)
             {
+                var hopsModel = new Hops
+                {
+                    Add = hopsViewModel.Add,
+                    AmountUnit = hopsViewModel.AmountUnit,
+                    AmountValue = hopsViewModel.AmountValue,
+                    BeerId = hopsViewModel.BeerId,
+                    Name = hopsViewModel.Name,
+                    Attribute = hopsViewModel.Attribute
+                };
+                
                 hopsRepository.Add(hopsModel);
 
-                BrewHops brewHops = new BrewHops
+                var brewHops = new BrewToHops
                 {
                     BrewId = brewId,
-                    HopsId = hopsRepository
-                        .Get(m => m == hopsModel)
-                        .FirstOrDefault()
-                        .Id
+                    HopsId = hopsModel.Id
                 };
-                brewHopsRepository.Add(brewHops);
+                
+                brewToHopsRepository.Add(brewHops);
             }
         }
 

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccess.Models
 {
-    [Table("Beer")]
+    [Table(nameof(Beer))]
     public class Beer
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]

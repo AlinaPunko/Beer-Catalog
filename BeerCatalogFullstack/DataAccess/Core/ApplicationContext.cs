@@ -1,5 +1,4 @@
-﻿ 
-using DataAccess.Models;
+﻿using DataAccess.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -15,7 +14,7 @@ namespace DataAccess.Core
         public DbSet<Hops> Hops { get; set; }
         public DbSet<Malt> Malts { get; set; }
         public DbSet<MashTemperature> MashTemperatures { get; set; }
-        public  DbSet<Comment> Comments { get; set; }
+        public DbSet<Comment> Comments { get; set; }
         public DbSet<Photo> Photos { get; set; }
         public DbSet<Rate> Rates { get; set; }
 
@@ -80,43 +79,43 @@ namespace DataAccess.Core
                 .HasMany(a => a.Brews)
                 .WithOne(b => b.Fermentation);
 
-            builder.Entity<BrewMalt>()
+            builder.Entity<BrewToMalt>()
                 .HasKey(b => new { b.BrewId, b.MaltId });
 
-            builder.Entity<BrewMalt>()
+            builder.Entity<BrewToMalt>()
                 .HasOne(b => b.Malt)
-                .WithMany(b => b.BrewMalts)
+                .WithMany(b => b.BrewToMalts)
                 .HasForeignKey(b => b.MaltId);
 
-            builder.Entity<BrewMalt>()
+            builder.Entity<BrewToMalt>()
                 .HasOne(b => b.Brew)
-                .WithMany(b => b.BrewMalts)
+                .WithMany(b => b.BrewToMalts)
                 .HasForeignKey(u => u.BrewId);
 
-            builder.Entity<BrewHops>()
+            builder.Entity<BrewToHops>()
                 .HasKey(b => new { b.BrewId, b.HopsId });
 
-            builder.Entity<BrewHops>()
+            builder.Entity<BrewToHops>()
                 .HasOne(b => b.Hops)
-                .WithMany(b => b.BrewHops)
+                .WithMany(b => b.BrewToHops)
                 .HasForeignKey(b => b.HopsId);
 
-            builder.Entity<BrewHops>()
+            builder.Entity<BrewToHops>()
                 .HasOne(b => b.Brew)
-                .WithMany(b => b.BrewHops)
+                .WithMany(b => b.BrewToHops)
                 .HasForeignKey(u => u.BrewId);
 
-            builder.Entity<BrewMashTemperature>()
+            builder.Entity<BrewToMashTemperature>()
                 .HasKey(b => new { b.BrewId, b.MashTemperatureId });
 
-            builder.Entity<BrewMashTemperature>()
+            builder.Entity<BrewToMashTemperature>()
                 .HasOne(b => b.MashTemperature)
-                .WithMany(b => b.BrewMashTemperatures)
+                .WithMany(b => b.BrewToMashTemperatures)
                 .HasForeignKey(b => b.MashTemperatureId);
 
-            builder.Entity<BrewMashTemperature>()
+            builder.Entity<BrewToMashTemperature>()
                 .HasOne(b => b.Brew)
-                .WithMany(b => b.BrewMashTemperatures)
+                .WithMany(b => b.BrewToMashTemperatures)
                 .HasForeignKey(u => u.BrewId);
         }
     }

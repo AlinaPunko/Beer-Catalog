@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccess.Models
 {
-    [Table("Malt")]
+    [Table(nameof(Malt))]
     public class Malt
     {
         public int Id { get; set; }
@@ -12,6 +12,6 @@ namespace DataAccess.Models
         public double AmountValue { get; set; }
         public string AmountUnit { get; set; }
 
-        public virtual ICollection<BrewMalt> BrewMalts { get; set; }
+        public virtual ICollection<BrewToMalt> BrewToMalts { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccess.Models
 {
-    [Table("MashTemperature")]
+    [Table(nameof(MashTemperature))]
     public class MashTemperature
     {
         public int Id { get; set; }
@@ -12,6 +12,6 @@ namespace DataAccess.Models
         public string TemperatureUnit { get; set; }
         public int Duration { get; set; }
 
-        public virtual ICollection<BrewMashTemperature> BrewMashTemperatures { get; set; }
+        public virtual ICollection<BrewToMashTemperature> BrewToMashTemperatures { get; set; }
     }
 }

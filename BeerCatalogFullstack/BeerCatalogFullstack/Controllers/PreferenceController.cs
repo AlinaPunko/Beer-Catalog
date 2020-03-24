@@ -3,8 +3,6 @@ using BeerCatalogFullstack.Managers;
 using BeerCatalogFullstack.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace BeerCatalogFullstack.Controllers
 {
     public class PreferenceController : Controller
@@ -25,7 +23,7 @@ namespace BeerCatalogFullstack.Controllers
 
         public IActionResult Get(string userId)
         {
-            IReadOnlyList <string> userPreferences = manager.GetUserPreferences(userId);
+            IReadOnlyList<string> userPreferences = manager.GetUserPreferences(userId);
             return Json(userPreferences);
         }
 
@@ -36,9 +34,9 @@ namespace BeerCatalogFullstack.Controllers
             return Ok();
         }
 
-        public IActionResult GetAutocompletionValues(string input)
+        public IActionResult FindByQuery(string input)
         {
-            IReadOnlyList<string> preferences = manager.GetSuitablePreferences(input);
+            IReadOnlyList<string> preferences = manager.FindByQuery(input);
             return Json(preferences);
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace DataAccess.Models
 {
-    public class BrewMashTemperature
+    public class BrewToMashTemperature
     {
         public int BrewId { get; set; }
         public int MashTemperatureId { get; set; }

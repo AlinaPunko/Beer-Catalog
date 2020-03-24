@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using DataAccess.Repositories;
@@ -8,42 +9,41 @@ namespace BeerCatalogFullstack.Managers
     public class MashTemperatureManager
     {
         private readonly MashTemperatureRepository mashTemperatureRepository;
-        private readonly BrewMashTemperatureRepository brewMashTemperatureRepository;
+        private readonly BrewToMashTemperatureRepository brewToMashTemperatureRepository;
 
-        public MashTemperatureManager(MashTemperatureRepository mashTemperatureRepository, BrewMashTemperatureRepository brewMashTemperatureRepository)
+        public MashTemperatureManager(MashTemperatureRepository mashTemperatureRepository,
+            BrewToMashTemperatureRepository brewToMashTemperatureRepository)
         {
             this.mashTemperatureRepository = mashTemperatureRepository;
-            this.brewMashTemperatureRepository = brewMashTemperatureRepository;
+            this.brewToMashTemperatureRepository = brewToMashTemperatureRepository;
         }
 
         public void AddMashTemperature(BrewViewModel viewModel, int brewId)
         {
-            if (mashTemperatureRepository.GetByBeerId(viewModel.BeerId).Count != 0)
+            IReadOnlyList<MashTemperature> mashTemperatures = mashTemperatureRepository.GetByBeerId(viewModel.BeerId);
+            if (mashTemperatures.Any())
             {
                 return;
             }
 
-            foreach (MashTemperature mashTemperatureModel in viewModel.MashTemperatures.Select(mash => new MashTemperature
-                    {
-                        TemperatureValue = mash.TemperatureValue,
-                        TemperatureUnit = mash.TemperatureUnit,
-                        Duration = mash.Duration,
-                        BeerId = mash.BeerId,
-                    }
-                )
-            )
+            foreach (MashTemperatureViewModel mashTemperatureViewModel in viewModel.MashTemperatures)
             {
+                var mashTemperatureModel = new MashTemperature
+                {
+                    TemperatureValue = mashTemperatureViewModel.TemperatureValue,
+                    TemperatureUnit = mashTemperatureViewModel.TemperatureUnit,
+                    Duration = mashTemperatureViewModel.Duration,
+                    BeerId = mashTemperatureViewModel.BeerId,
+                };
+                
                 mashTemperatureRepository.Add(mashTemperatureModel);
 
-                BrewMashTemperature brewMashTemperature = new BrewMashTemperature
+                BrewToMashTemperature brewMashTemperature = new BrewToMashTemperature
                 {
                     BrewId = brewId,
-                    MashTemperatureId = mashTemperatureRepository
-                        .Get(m => m == mashTemperatureModel)
-                        .FirstOrDefault()
-                        .Id
+                    MashTemperatureId = mashTemperatureModel.Id
                 };
-                brewMashTemperatureRepository.Add(brewMashTemperature);
+                brewToMashTemperatureRepository.Add(brewMashTemperature);
             }
         }
     }

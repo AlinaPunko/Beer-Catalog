@@ -1,12 +1,18 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using DataAccess.Core;
+﻿using DataAccess.Core;
 using DataAccess.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DataAccess.Repositories
 {
-    class MashTemperatureRepository : GenericRepository<MashTemperature>
+    public class MashTemperatureRepository : GenericRepository<MashTemperature>
     {
         public MashTemperatureRepository(ApplicationContext context) : base(context) { }
+
+        public IReadOnlyList<MashTemperature> GetByBeerId(int beerId)
+        {
+            return Get(m => m.BeerId == beerId)
+                .ToList();
+        }
     }
 }

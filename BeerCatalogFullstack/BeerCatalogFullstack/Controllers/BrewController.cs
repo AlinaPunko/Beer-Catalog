@@ -67,7 +67,6 @@ namespace BeerCatalogFullstack.Controllers
             return Ok();
         }
 
-
         public IActionResult GetComments(int brewId)
         {
             IReadOnlyList<CommentViewModel> comments = manager.GetComments(brewId);

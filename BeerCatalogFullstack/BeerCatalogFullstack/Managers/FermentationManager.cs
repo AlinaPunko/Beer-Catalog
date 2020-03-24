@@ -15,24 +15,20 @@ namespace BeerCatalogFullstack.Managers
 
         public void AddBrewFermentation(BrewViewModel viewModel)
         {
-            if (fermentationRepository.GetByBeerId(viewModel.BeerId) != null)
+            Fermentation fermentation = fermentationRepository.GetByBeerId(viewModel.BeerId);
+            if (fermentation != null)
             {
                 return;
             }
 
-            var fermentationModel = new Fermentation
+            fermentation = new Fermentation
             {
                 BeerId = viewModel.Fermentation.BeerId,
                 TemperatureUnit = viewModel.Fermentation.TemperatureUnit,
-                TemperatureValue = viewModel.Fermentation.TemperatureValue
+                TemperatureValue = viewModel.Fermentation.TemperatureValue,
             };
 
-            fermentationRepository.Add(fermentationModel);
-        }
-
-        public int GetFermentationIdByBeerId(int beerId)
-        {
-            return fermentationRepository.GetByBeerId(beerId).Id;
+            fermentationRepository.Add(fermentation);
         }
     }
 }

@@ -15,23 +15,19 @@ namespace BeerCatalogFullstack.Managers
 
         public void AddBrewYeast(BrewViewModel viewModel)
         {
-            if (yeastRepository.GetByBeerId(viewModel.BeerId) != null)
+            Yeast yeast = yeastRepository.GetByBeerId(viewModel.BeerId);
+            if (yeast != null)
             {
                 return;
             }
 
-            var yeastModel = new Yeast
+            yeast = new Yeast
             {
                 BeerId = viewModel.Fermentation.BeerId,
-                Name = viewModel.Yeast.Name
+                Name = viewModel.Yeast.Name,
             };
 
-            yeastRepository.Add(yeastModel);
-        }
-
-        public int GetYeastIdByBeerId(int beerId)
-        {
-            return yeastRepository.GetByBeerId(beerId).Id;
+            yeastRepository.Add(yeast);
         }
     }
 }

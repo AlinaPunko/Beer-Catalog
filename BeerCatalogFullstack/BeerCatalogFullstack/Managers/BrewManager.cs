@@ -18,6 +18,8 @@ namespace BeerCatalogFullstack.Managers
         private readonly RateRepository rateRepository;
         private readonly BrewRepository brewRepository;
         private readonly CommentRepository commentRepository;
+        private readonly FermentationRepository fermentationRepository;
+        private readonly YeastRepository yeastRepository;
 
         public BrewManager(
             BrewRepository brewRepository,
@@ -29,7 +31,9 @@ namespace BeerCatalogFullstack.Managers
             BeerRepository beerRepository,
             PhotoRepository photoRepository,
             RateRepository rateRepository,
-            CommentRepository commentRepository
+            CommentRepository commentRepository,
+            FermentationRepository fermentationRepository,
+            YeastRepository yeastRepository
             )
         {
             this.brewRepository = brewRepository;
@@ -42,6 +46,8 @@ namespace BeerCatalogFullstack.Managers
             this.photoRepository = photoRepository;
             this.rateRepository = rateRepository;
             this.commentRepository = commentRepository;
+            this.fermentationRepository = fermentationRepository;
+            this.yeastRepository = yeastRepository;
         }
 
         public IReadOnlyList<Brew> GetAll()
@@ -73,7 +79,7 @@ namespace BeerCatalogFullstack.Managers
 
         public IReadOnlyList<CommentViewModel> GetComments(int brewId)
         {
-            IReadOnlyList<Comment> comments = commentRepository.GetBrewComments(brewId);
+            IReadOnlyList<Comment> comments = commentRepository.GetByBrew(brewId);
             return comments.Select(c =>
                 new CommentViewModel
                 {
@@ -193,40 +199,41 @@ namespace BeerCatalogFullstack.Managers
             brewRepository.Remove(brew);
         }
 
-        public void AddBeer(BrewViewModel viewModel)
+        private void AddBeer(BrewViewModel viewModel)
         {
-            if (beerRepository.GetById(viewModel.BeerId) != null)
+            Beer beer = beerRepository.GetById(viewModel.BeerId);
+            if (beer != null)
             {
                 return;
             }
 
-            var beerModel = new Beer
+            beer = new Beer
             {
                 Id = viewModel.BeerId,
                 Name = viewModel.Name,
                 Tagline = viewModel.Tagline,
-                ImageUrl = viewModel.ImageUrl,
+                ImageUrl = viewModel.ImageUrl
             };
 
-            beerRepository.Add(beerModel);
+            beerRepository.Add(beer);
         }
 
-        public void AddBrewPhotos(BrewViewModel viewModel, int brewId)
+        private void AddBrewPhotos(BrewViewModel viewModel, int brewId)
         {
-            if (viewModel.Photos.Length == 0)
+            if (!viewModel.Photos.Any())
             {
                 return;
             }
 
             foreach (string photo in viewModel.Photos)
-            { 
-                if (photoRepository.GetByEncodedPhotoAndBrewId(photo, brewId).Count != 0) 
-                { 
+            {
+                Photo photoModel = photoRepository.GetByEncodedPhotoAndBrewId(photo, brewId);
+                if (photoModel != null)
+                {
                     continue;
-                }   
+                }
 
-
-                Photo photoModel = new Photo
+                photoModel = new Photo
                 {
                     EncodedPhoto = photo,
                     BrewId = brewId
@@ -236,14 +243,27 @@ namespace BeerCatalogFullstack.Managers
             }
         }
 
+        private int GetYeastIdByBeerId(int beerId)
+        {
+            return yeastRepository
+                .GetByBeerId(beerId)
+                .Id;
+        }
+
+        private int GetFermentationIdByBeerId(int beerId)
+        {
+            return fermentationRepository
+                .GetByBeerId(beerId)
+                .Id;
+        }
+
         public void AddBrew(BrewViewModel viewModel)
         {
-
             fermentationManager.AddBrewFermentation(viewModel);
-            int fermentationId = fermentationManager.GetFermentationIdByBeerId(viewModel.BeerId);
+            int fermentationId = GetFermentationIdByBeerId(viewModel.BeerId);
 
             yeastManager.AddBrewYeast(viewModel);
-            int yeastId = yeastManager.GetYeastIdByBeerId(viewModel.BeerId);
+            int yeastId = GetYeastIdByBeerId(viewModel.BeerId);
 
             AddBeer(viewModel);
 
@@ -260,13 +280,12 @@ namespace BeerCatalogFullstack.Managers
                 UserId = viewModel.UserId
             };
             brewRepository.Add(brew);
-            int brewId = brewRepository.GetBrewByLocationDateUserBeer(viewModel.UserId, viewModel.BeerId, viewModel.DateTime, viewModel.Location);
 
-            mashTemperatureManager.AddMashTemperature(viewModel, brewId);
-            maltManager.AddBrewMalt(viewModel, brewId);
-            hopsManager.AddBrewHops(viewModel, brewId);
+            mashTemperatureManager.AddMashTemperature(viewModel, brew.Id);
+            maltManager.AddBrewMalt(viewModel, brew.Id);
+            hopsManager.AddBrewHops(viewModel, brew.Id);
 
-            AddBrewPhotos(viewModel, brewId);
+            AddBrewPhotos(viewModel, brew.Id);
         }
     }
 }

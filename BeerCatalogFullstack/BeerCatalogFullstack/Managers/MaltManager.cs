@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using BeerCatalogFullstack.ViewModels;
 using DataAccess.Models;
 using DataAccess.Repositories;
@@ -8,48 +9,42 @@ namespace BeerCatalogFullstack.Managers
     public class MaltManager
     {
         private readonly MaltRepository maltRepository;
-        private readonly BrewMaltRepository brewMaltRepository;
+        private readonly BrewToMaltRepository brewToMaltRepository;
 
-        public MaltManager(MaltRepository maltRepository, BrewMaltRepository brewMaltRepository)
+        public MaltManager(MaltRepository maltRepository, BrewToMaltRepository brewToMaltRepository)
         {
             this.maltRepository = maltRepository;
-            this.brewMaltRepository = brewMaltRepository;
+            this.brewToMaltRepository = brewToMaltRepository;
         }
 
         public void AddBrewMalt(BrewViewModel viewModel, int brewId)
         {
-            if (maltRepository.GetByBeerId(viewModel.BeerId).Count != 0)
+            IReadOnlyList<Malt> malts = maltRepository.GetByBeerId(viewModel.BeerId);
+            if (malts.Any())
             {
                 return;
             }
 
-            foreach (Malt maltModel in viewModel.Malt.Select(malt => new Malt
-                    {
-                        AmountUnit = malt.AmountUnit,
-                        AmountValue = malt.AmountValue,
-                        BeerId = malt.BeerId,
-                        Name = malt.Name
-                    }
-                )
-            )
+            foreach (MaltViewModel maltViewModel in viewModel.Malt)
             {
+                Malt maltModel = new Malt
+                {
+                    AmountUnit = maltViewModel.AmountUnit,
+                    AmountValue = maltViewModel.AmountValue,
+                    BeerId = maltViewModel.BeerId,
+                    Name = maltViewModel.Name
+                };
+                
                 maltRepository.Add(maltModel);
 
-                BrewMalt brewMalt = new BrewMalt
+                BrewToMalt brewToMalt = new BrewToMalt
                 {
                     BrewId = brewId,
-                    MaltId = maltRepository
-                        .Get(m => m == maltModel)
-                        .FirstOrDefault()
-                        .Id
+                    MaltId = maltModel.Id
                 };
-                brewMaltRepository.Add(brewMalt);
+
+                brewToMaltRepository.Add(brewToMalt);
             }
-        }
-
-        public void DeleteBrewMalt(int brewId)
-        {
-
         }
     }
 }

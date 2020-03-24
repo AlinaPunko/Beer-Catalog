@@ -6,23 +6,19 @@ using Newtonsoft.Json;
 
 namespace DataAccess.Models
 {
-    [Table("User")]
+    [Table(nameof(User))]
     public class User : IdentityUser
     {
         public string Name { get; set; }
         public DateTime? Birthdate { get; set; }
         public string Photo { get; set; }
 
-        [JsonIgnore]
         public virtual ICollection<FavoriteBeer> FavoriteBeers { get; set; }
 
-        [JsonIgnore]
         public virtual ICollection<Brew> Brews { get; set; }
 
-        [JsonIgnore]
         public virtual ICollection<Rate> Rates { get; set; }
 
-        [JsonIgnore]
         public virtual ICollection<Comment> Comments { get; set; }
 
         public virtual ICollection<UserPreference> Preferences { get; set; }

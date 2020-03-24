@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccess.Models
 {
-    [Table("Yeast")]
+    [Table(nameof(Yeast))]
     public class Yeast
     {
         public int Id { get; set; }

@@ -23,7 +23,8 @@ namespace BeerCatalogFullstack.Managers
         public UserViewModel GetUserById(string userId)
         {
             User user = userRepository.GetUserById(userId);
-            UserViewModel viewModel = new UserViewModel
+
+            return new UserViewModel
             {
                 Id = user.Id,
                 Email = user.Email,
@@ -31,7 +32,6 @@ namespace BeerCatalogFullstack.Managers
                 Birthdate = user.Birthdate,
                 Photo = user.Photo
             };
-            return viewModel;
         }
 
         public async Task UpdateUserAsync(UpdateUserViewModel viewModel)

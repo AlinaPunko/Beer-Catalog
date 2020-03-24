@@ -90,7 +90,7 @@ namespace DataAccess.Migrations
                     b.ToTable("Brew");
                 });
 
-            modelBuilder.Entity("DataAccess.Models.BrewHops", b =>
+            modelBuilder.Entity("DataAccess.Models.BrewToHops", b =>
                 {
                     b.Property<int>("BrewId")
                         .HasColumnType("int");
@@ -102,10 +102,10 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("HopsId");
 
-                    b.ToTable("BrewHops");
+                    b.ToTable("BrewToHops");
                 });
 
-            modelBuilder.Entity("DataAccess.Models.BrewMalt", b =>
+            modelBuilder.Entity("DataAccess.Models.BrewToMalt", b =>
                 {
                     b.Property<int>("BrewId")
                         .HasColumnType("int");
@@ -117,10 +117,10 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("MaltId");
 
-                    b.ToTable("BrewMalt");
+                    b.ToTable("BreTowMalt");
                 });
 
-            modelBuilder.Entity("DataAccess.Models.BrewMashTemperature", b =>
+            modelBuilder.Entity("DataAccess.Models.BrewToMashTemperature", b =>
                 {
                     b.Property<int>("BrewId")
                         .HasColumnType("int");
@@ -132,7 +132,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("MashTemperatureId");
 
-                    b.ToTable("BrewMashTemperature");
+                    b.ToTable("BrewToMashTemperature");
                 });
 
             modelBuilder.Entity("DataAccess.Models.Comment", b =>
@@ -585,16 +585,16 @@ namespace DataAccess.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DataAccess.Models.BrewHops", b =>
+            modelBuilder.Entity("DataAccess.Models.BrewToHops", b =>
                 {
                     b.HasOne("DataAccess.Models.Brew", "Brew")
-                        .WithMany("BrewHops")
+                        .WithMany("BrewToHops")
                         .HasForeignKey("BrewId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DataAccess.Models.Hops", "Hops")
-                        .WithMany("BrewHops")
+                        .WithMany("BrewToHops")
                         .HasForeignKey("HopsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -603,28 +603,28 @@ namespace DataAccess.Migrations
             modelBuilder.Entity("DataAccess.Models.BrewMalt", b =>
                 {
                     b.HasOne("DataAccess.Models.Brew", "Brew")
-                        .WithMany("BrewMalts")
+                        .WithMany("BrewToMalts")
                         .HasForeignKey("BrewId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DataAccess.Models.Malt", "Malt")
-                        .WithMany("BrewMalts")
+                        .WithMany("BrewToMalts")
                         .HasForeignKey("MaltId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DataAccess.Models.BrewMashTemperature", b =>
+            modelBuilder.Entity("DataAccess.Models.BrewToMashTemperature", b =>
                 {
                     b.HasOne("DataAccess.Models.Brew", "Brew")
-                        .WithMany("BrewMashTemperatures")
+                        .WithMany("BreTowMashTemperatures")
                         .HasForeignKey("BrewId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DataAccess.Models.MashTemperature", "MashTemperature")
-                        .WithMany("BrewMashTemperatures")
+                        .WithMany("BrewToMashTemperatures")
                         .HasForeignKey("MashTemperatureId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

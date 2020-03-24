@@ -2,7 +2,7 @@
 
 namespace DataAccess.Models
 {
-    [Table("Comment")]
+    [Table(nameof(Comment))]
     public class Comment
     {
         public int Id { get; set; }

@@ -2,7 +2,7 @@
 
 namespace DataAccess.Models
 {
-    [Table("UserPreference")]
+    [Table(nameof(UserPreference))]
     public class UserPreference
     {
         public string UserId { get; set; }

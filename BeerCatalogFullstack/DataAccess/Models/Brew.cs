@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccess.Models
 {
-    [Table("Brew")]
+    [Table(nameof(Brew))]
     public class Brew
     {
         public int Id { get; set; }
@@ -21,10 +21,10 @@ namespace DataAccess.Models
 
         public virtual ICollection<Photo> Photos { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
-        public virtual ICollection<BrewHops> BrewHops { get; set; }
-        public virtual ICollection<BrewMalt> BrewMalts { get; set; }
+        public virtual ICollection<BrewToHops> BrewToHops { get; set; }
+        public virtual ICollection<BrewToMalt> BrewToMalts { get; set; }
         public virtual ICollection<Rate> Rates { get; set; }
-        public virtual ICollection<BrewMashTemperature> BrewMashTemperatures { get; set; }
+        public virtual ICollection<BrewToMashTemperature> BrewToMashTemperatures { get; set; }
         public virtual Fermentation Fermentation { get; set; }
         public virtual Yeast Yeast { get; set; }
         public virtual Beer Beer { get; set; }

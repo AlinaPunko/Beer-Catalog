@@ -22,12 +22,12 @@ export default class Input extends React.PureComponent {
 
         return (
             <div className="input">
-                <label className="input__title">{label}</label>
+                <label className="input__label">{label}</label>
                 <input
                     name={name}
                     type={type}
                     value={value}
-                    className="input__input"
+                    className="input__value"
                     onChange={onChange}
                 />
             </div>

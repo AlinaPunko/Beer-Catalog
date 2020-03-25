@@ -1,0 +1,90 @@
+.brewing-info-section {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.brewing-info-section__title {
+    padding: 10px;
+    font-size: 30px;
+    font-family: "Lucida Sans", sans-serif;
+    text-align: center;
+}
+
+.brewing-info-section__field {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.brewing-info-section__field-title {
+    padding: 0 5px;
+    font-family: "Lucida Sans", sans-serif;
+}
+
+.brewing-info-section__field-input {
+    width: 50%;
+    padding: 5px;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px #106cc8 solid;
+    border-radius: 5px;
+}
+
+.brewing-info-section__impression-field {
+    width: 50%;
+    height: 60px;
+    padding: 5px;
+    font-family: "Lucida Sans", sans-serif;
+    word-break: break-word;
+    border: 1px #106cc8 solid;
+    border-radius: 5px;
+}
+
+.brewing-info-section__ingredients-method {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.brewing-info-section__buttons {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.brewing-info-section__button {
+    display: block;
+    width: 40%;
+    margin: 20px auto;
+    padding: 10px 0;
+    font-family: "Lucida Sans", sans-serif;
+    background-color: transparent;
+    border: 1px #106cc8 solid;
+    border-radius: 5px;
+}
+
+.brewing-info-section__delete-button {
+    display: block;
+    width: 40%;
+    margin: 20px auto;
+    padding: 10px 0;
+    font-family: "Lucida Sans", sans-serif;
+    background-color: transparent;
+    border: 1px #ff0000 solid;
+    border-radius: 5px;
+}
+
+.brewing-info-section__validation-result {
+    color: #ff0000;
+    font-family: "Lucida Sans", sans-serif;
+}
+
+.brewing-info-section__preloader-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.brewing-info-section__preloader {
+    height: 50px;
+}

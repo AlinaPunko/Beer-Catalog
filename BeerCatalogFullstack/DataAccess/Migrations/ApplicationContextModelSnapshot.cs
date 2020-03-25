@@ -71,16 +71,65 @@ namespace DataAccess.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("YeastId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("BeerId");
 
-                    b.HasIndex("FermentationId")
-                        .IsUnique();
+                    b.HasIndex("FermentationId");
 
                     b.HasIndex("UserId");
 
+                    b.HasIndex("YeastId");
+
                     b.ToTable("Brew");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.BrewToHops", b =>
+                {
+                    b.Property<int>("BrewId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HopsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("BrewId", "HopsId");
+
+                    b.HasIndex("HopsId");
+
+                    b.ToTable("BrewToHops");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.BrewToMalt", b =>
+                {
+                    b.Property<int>("BrewId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaltId")
+                        .HasColumnType("int");
+
+                    b.HasKey("BrewId", "MaltId");
+
+                    b.HasIndex("MaltId");
+
+                    b.ToTable("BrewToMalt");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.BrewToMashTemperature", b =>
+                {
+                    b.Property<int>("BrewId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MashTemperatureId")
+                        .HasColumnType("int");
+
+                    b.HasKey("BrewId", "MashTemperatureId");
+
+                    b.HasIndex("MashTemperatureId");
+
+                    b.ToTable("BrewToMashTemperature");
                 });
 
             modelBuilder.Entity("DataAccess.Models.Comment", b =>
@@ -130,7 +179,7 @@ namespace DataAccess.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BrewId")
+                    b.Property<int>("BeerId")
                         .HasColumnType("int");
 
                     b.Property<string>("TemperatureUnit")
@@ -166,15 +215,10 @@ namespace DataAccess.Migrations
                     b.Property<int>("BeerId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("BrewId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BrewId");
 
                     b.ToTable("Hops");
                 });
@@ -195,15 +239,10 @@ namespace DataAccess.Migrations
                     b.Property<int>("BeerId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("BrewId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BrewId");
 
                     b.ToTable("Malt");
                 });
@@ -218,9 +257,6 @@ namespace DataAccess.Migrations
                     b.Property<int>("BeerId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("BrewId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
@@ -231,8 +267,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BrewId");
 
                     b.ToTable("MashTemperature");
                 });
@@ -255,6 +289,36 @@ namespace DataAccess.Migrations
                     b.HasIndex("BrewId");
 
                     b.ToTable("Photo");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Rate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("BeerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BrewId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BeerId");
+
+                    b.HasIndex("BrewId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Rates");
                 });
 
             modelBuilder.Entity("DataAccess.Models.User", b =>
@@ -342,6 +406,24 @@ namespace DataAccess.Migrations
                     b.HasKey("UserId", "PreferencedBeerType");
 
                     b.ToTable("UserPreference");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Yeast", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BeerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Yeast");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -484,14 +566,65 @@ namespace DataAccess.Migrations
                         .IsRequired();
 
                     b.HasOne("DataAccess.Models.Fermentation", "Fermentation")
-                        .WithOne("Brew")
-                        .HasForeignKey("DataAccess.Models.Brew", "FermentationId")
+                        .WithMany("Brews")
+                        .HasForeignKey("FermentationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DataAccess.Models.User", null)
                         .WithMany("Brews")
                         .HasForeignKey("UserId");
+
+                    b.HasOne("DataAccess.Models.Yeast", "Yeast")
+                        .WithMany("Brews")
+                        .HasForeignKey("YeastId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DataAccess.Models.BrewToHops", b =>
+                {
+                    b.HasOne("DataAccess.Models.Brew", "Brew")
+                        .WithMany("BrewToHops")
+                        .HasForeignKey("BrewId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataAccess.Models.Hops", "Hops")
+                        .WithMany("BrewToHops")
+                        .HasForeignKey("HopsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DataAccess.Models.BrewToMalt", b =>
+                {
+                    b.HasOne("DataAccess.Models.Brew", "Brew")
+                        .WithMany("BrewToMalts")
+                        .HasForeignKey("BrewId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataAccess.Models.Malt", "Malt")
+                        .WithMany("BrewToMalts")
+                        .HasForeignKey("MaltId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DataAccess.Models.BrewToMashTemperature", b =>
+                {
+                    b.HasOne("DataAccess.Models.Brew", "Brew")
+                        .WithMany("BrewToMashTemperatures")
+                        .HasForeignKey("BrewId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataAccess.Models.MashTemperature", "MashTemperature")
+                        .WithMany("BrewToMashTemperatures")
+                        .HasForeignKey("MashTemperatureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("DataAccess.Models.Comment", b =>
@@ -522,27 +655,6 @@ namespace DataAccess.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DataAccess.Models.Hops", b =>
-                {
-                    b.HasOne("DataAccess.Models.Brew", "Brew")
-                        .WithMany("Hops")
-                        .HasForeignKey("BrewId");
-                });
-
-            modelBuilder.Entity("DataAccess.Models.Malt", b =>
-                {
-                    b.HasOne("DataAccess.Models.Brew", "Brew")
-                        .WithMany("Malts")
-                        .HasForeignKey("BrewId");
-                });
-
-            modelBuilder.Entity("DataAccess.Models.MashTemperature", b =>
-                {
-                    b.HasOne("DataAccess.Models.Brew", "Brew")
-                        .WithMany("MashTemperatures")
-                        .HasForeignKey("BrewId");
-                });
-
             modelBuilder.Entity("DataAccess.Models.Photo", b =>
                 {
                     b.HasOne("DataAccess.Models.Brew", "Brew")
@@ -550,6 +662,23 @@ namespace DataAccess.Migrations
                         .HasForeignKey("BrewId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Rate", b =>
+                {
+                    b.HasOne("DataAccess.Models.Beer", "Beer")
+                        .WithMany()
+                        .HasForeignKey("BeerId");
+
+                    b.HasOne("DataAccess.Models.Brew", null)
+                        .WithMany("Rates")
+                        .HasForeignKey("BrewId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataAccess.Models.User", "User")
+                        .WithMany("Rates")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("DataAccess.Models.UserPreference", b =>

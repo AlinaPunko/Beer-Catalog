@@ -15,6 +15,7 @@ export default {
     },
     userUrls: {
         getUser: '/User/Get',
+        getPreferedBrews: '/User/GetPreferedBrews',
         updateUser: '/User/Update'
     },
     preferenceUrls: {
@@ -27,9 +28,14 @@ export default {
         addBrew: '/Brew/Add',
         deleteBrew: '/Brew/Delete',
         updateBrew: '/Brew/Update',
+        getBrewById: '/Brew/GetById',
+        getBrewsByBeerId: '/Brew/GetByBeerId',
+        getBrewsByUserId: '/Brew/GetByUserId',
         getAllBrews: '/Brew/Get',
-        getUserBrews: '/Brew/Get',
-        addComment: '/Brew/Comments/Add',
-        rateBrew: '/Brew/Rate'
+        addComment: '/Brew/AddComment',
+        rateBrew: '/Brew/Rate',
+        getUserRates: '/Brew/GetUserRates',
+        getRating: '/Brew/GetRating',
+        getComments: '/Brew/GetComments'
     }
 };

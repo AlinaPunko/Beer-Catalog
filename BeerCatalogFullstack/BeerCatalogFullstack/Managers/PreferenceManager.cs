@@ -31,7 +31,7 @@ namespace BeerCatalogFullstack.Managers
 
         public void Add(PreferenceViewModel model)
         {
-            var userPreference = new UserPreference()
+            var userPreference = new UserPreference
             {
                 UserId = model.UserId,
                 PreferencedBeerType = model.PreferencedBeerType
@@ -42,7 +42,7 @@ namespace BeerCatalogFullstack.Managers
 
         public void Delete(PreferenceViewModel model)
         {
-            var userPreference = new UserPreference()
+            var userPreference = new UserPreference
             {
                 UserId = model.UserId,
                 PreferencedBeerType = model.PreferencedBeerType
@@ -56,9 +56,12 @@ namespace BeerCatalogFullstack.Managers
             return repository.GetPreferencesByUserId(userId);
         }
 
-        public IReadOnlyList<string> GetSuitablePreferences(string input)
+        public IReadOnlyList<string> FindByQuery(string input)
         {
-            return BeerTypes.Where(s => s.Contains(input, StringComparison.OrdinalIgnoreCase)).ToList();
+            return BeerTypes
+                .Where(s => s.Contains(input, StringComparison.OrdinalIgnoreCase))
+                .Take(5)
+                .ToList();
         }
     }
 }

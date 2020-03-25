@@ -1,0 +1,27 @@
+.brews-list-item {
+    display: flex;
+    justify-content: space-between;
+    min-height: 0;
+    margin: 20px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Lucida Sans', sans-serif;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+
+.brews-list-item__open-brew-page-button {
+    padding: 10px;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #106cc8;
+    border: none;
+}
+
+.brews-list-item__row {
+    padding: 5px 0;
+}
+
+.brews-list-item__image {
+    width: auto;
+    height: 150px;
+}

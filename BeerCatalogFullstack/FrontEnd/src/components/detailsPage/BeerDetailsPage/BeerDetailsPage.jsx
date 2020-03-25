@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import BeerProperties from 'components/detailsPage/BeerProperties/beerProperties';
 import FoodPairing from 'components/detailsPage/FoodPairing/foodPairing';
 import BeerDetailsHeader from 'components/detailsPage/BeerDetailsHeader/beerDetailsHeader';
+import BrewsListSection from 'components/detailsPage/BrewsListSection/brewsListSection';
 import BrewingSection from 'components/detailsPage/BrewingSection/brewingSection';
 import beerService from 'services/beerService';
 
@@ -34,6 +35,7 @@ export default class BeerDetailsPage extends React.Component {
 
     render() {
         const { beer } = this.state;
+        const { id } = this.props.match.params;
 
         if (!beer) {
             return null;
@@ -50,7 +52,13 @@ export default class BeerDetailsPage extends React.Component {
                     />
                     <FoodPairing foodPairingList={beer.foodPairing} />
                 </section>
-                <BrewingSection brewerTips={beer.brewerTips} ingredients={beer.ingredients} method={beer.method} />
+                <BrewingSection
+                    brewerTips={beer.brewerTips}
+                    ingredients={beer.ingredients}
+                    method={beer.method}
+                    beerId={parseInt(id, 10)}
+                />
+                <BrewsListSection beerId={parseInt(id, 10)} />
             </div>
         );
     }

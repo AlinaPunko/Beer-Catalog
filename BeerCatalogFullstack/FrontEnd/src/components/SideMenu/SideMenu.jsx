@@ -9,6 +9,7 @@ import routing from 'constants/routing';
 
 import favorite from 'styles/icons/favorite.svg';
 import home from 'styles/icons/home.svg';
+import list from 'styles/icons/list.svg';
 import './sideMenu.scss';
 
 export default class SideMenu extends React.PureComponent {
@@ -38,11 +39,18 @@ export default class SideMenu extends React.PureComponent {
                             </li>
                             {userId
                                 && (
-                                    <li>
-                                        <Link to={routing.favoritesList.url}>
-                                            <SideMenuLink text="Favorite" icon={favorite} />
-                                        </Link>
-                                    </li>
+                                    <>
+                                        <li>
+                                            <Link to={routing.favoritesList.url}>
+                                                <SideMenuLink text="Favorite" icon={favorite} />
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to={routing.brewsList.url}>
+                                                <SideMenuLink text="Brews" icon={list} />
+                                            </Link>
+                                        </li>
+                                    </>
                                 )}
                         </ul>
                     </div>

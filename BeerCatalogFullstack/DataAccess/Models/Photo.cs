@@ -2,7 +2,7 @@
 
 namespace DataAccess.Models
 {
-    [Table("Photo")]
+    [Table(nameof(Photo))]
     public class Photo
     {
         public int Id { get; set; }

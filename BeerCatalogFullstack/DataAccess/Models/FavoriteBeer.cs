@@ -2,7 +2,7 @@
 
 namespace DataAccess.Models
 {
-    [Table("FavoriteBeer")]
+    [Table(nameof(FavoriteBeer))]
     public class FavoriteBeer
     {
         public int BeerId { get; set; }

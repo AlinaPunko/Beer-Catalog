@@ -1,12 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using DataAccess.Core;
+﻿using DataAccess.Core;
 using DataAccess.Models;
+using System.Linq;
 
 namespace DataAccess.Repositories
 {
-    class FermentationRepository : GenericRepository<Fermentation>
+    public class FermentationRepository : GenericRepository<Fermentation>
     {
         public FermentationRepository(ApplicationContext context) : base(context) { }
+
+        public Fermentation GetByBeerId(int beerId)
+        {
+            return Get(f => f.BeerId == beerId)
+                .FirstOrDefault();
+        }
     }
 }

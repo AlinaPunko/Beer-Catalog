@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200311151838_AddedYeastEntity.cs" />
+    <Compile Remove="Migrations\20200311151838_AddedYeastEntity.Designer.cs" />
+    <Compile Remove="Migrations\20200311152933_AddedYeastEntity.cs" />
+    <Compile Remove="Migrations\20200311152933_AddedYeastEntity.Designer.cs" />
+    <Compile Remove="Migrations\20200311153948_AddedYeastEntity.cs" />
+    <Compile Remove="Migrations\20200311153948_AddedYeastEntity.Designer.cs" />
+    <Compile Remove="Migrations\20200312103807_AddedYeastEntity.cs" />
+    <Compile Remove="Migrations\20200312103807_AddedYeastEntity.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />

@@ -58,4 +58,11 @@ async function put(url, data) {
     return sendRequest(headers, url);
 }
 
-export default { get, post, put };
+async function deleteMethod(url, data) {
+    const headers = getRequestWithBodyHeaders('DELETE', data);
+    return sendRequest(headers, url);
+}
+
+export default {
+    get, post, put, deleteMethod
+};

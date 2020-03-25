@@ -1,0 +1,36 @@
+@import 'styles/mixins.scss';
+
+.brews-list-section {
+    width: 50%;
+    margin: 20px 0;
+}
+
+.brews-list-section__title {
+    padding-bottom: 10px;
+    font-size: 30px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.brews-list-section__list-item {
+    @include list-item-border;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.brews-list-section__button {
+    display: block;
+    margin: 5px auto;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #106cc8;
+}
+
+.brews-list-section__button-icon {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+}

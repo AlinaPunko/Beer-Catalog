@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccess.Models
 {
-    [Table("Hops")]
+    [Table(nameof(Hops))]
     public class Hops
     {
         public int Id { get; set; }
@@ -13,6 +14,6 @@ namespace DataAccess.Models
         public string Add { get; set; }
         public string Attribute { get; set; }
 
-        public virtual Brew Brew { get; set; }
+        public virtual ICollection<BrewToHops> BrewToHops { get; set; }
     }
 }

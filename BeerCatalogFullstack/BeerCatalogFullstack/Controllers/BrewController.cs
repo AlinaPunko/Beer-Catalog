@@ -8,7 +8,7 @@ namespace BeerCatalogFullstack.Controllers
 {
     public class BrewController : Controller
     {
-        private BrewManager manager;
+        private readonly BrewManager manager;
 
         public BrewController(BrewManager manager)
         {
@@ -22,14 +22,14 @@ namespace BeerCatalogFullstack.Controllers
             return Ok();
         }
 
-        [HttpPost]
+        [HttpDelete]
         public IActionResult Delete([FromBody]BrewViewModel model)
         {
             manager.RemoveBrew(model);
             return Ok();
         }
 
-        [HttpPost]
+        [HttpPut]
         public IActionResult Update([FromBody]BrewViewModel model)
         {
             manager.UpdateBrew(model);
@@ -38,13 +38,51 @@ namespace BeerCatalogFullstack.Controllers
 
         public IActionResult Get()
         {
-            return Json(manager.GetAll());
+            IReadOnlyList<Brew> brews = manager.GetAll();
+            return Json(brews);
         }
 
         public IActionResult GetByUserId(string userId)
         {
-            IReadOnlyList<Brew> userBrews = manager.GetUserBrews(userId);
+            IReadOnlyList<BrewViewModel> userBrews = manager.GetBrewsByUserId(userId);
             return Json(userBrews);
+        }
+
+        public IActionResult GetByBeerId(int beerId)
+        {
+            IReadOnlyList<BrewViewModel> brews = manager.GetBrewsByBeerId(beerId);
+            return Json(brews);
+        }
+
+        public IActionResult GetById(int id)
+        {
+            BrewViewModel brew = manager.GetBrewById(id);
+            return Json(brew);
+        }
+
+        [HttpPost]
+        public IActionResult Rate([FromBody] RateViewModel model)
+        {
+            manager.RateBrew(model);
+            return Ok();
+        }
+
+        public IActionResult GetComments(int brewId)
+        {
+            IReadOnlyList<CommentViewModel> comments = manager.GetComments(brewId);
+            return Json(comments);
+        }
+
+        public IActionResult GetUserRates(string userId, int brewId)
+        {
+            int rating = manager.GetUserRatesSum(userId, brewId);
+            return Json(rating);
+        }
+
+        public IActionResult GetRating(int brewId)
+        {
+            int rating = manager.GetBrewRating(brewId);
+            return Json(rating);
         }
     }
 }

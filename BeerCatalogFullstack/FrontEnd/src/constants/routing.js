@@ -5,7 +5,7 @@ import SignInPage from 'components/SignInPage/signInPage';
 import SignUpPage from 'components/SignUpPage/signUpPage';
 import ProfileSection from 'components/profilePage/ProfileSection/profileSection';
 import BrewsList from 'components/BrewsPage/BrewsList/brewsList';
-import BrewingInfoPage from 'components/BrewingInfoPage/brewingInfoPage';
+import BrewingInfoPage from 'components/brewingInfoPage/BrewingInfoSection/brewingInfoSection';
 
 export default {
     signInPage: {
@@ -25,7 +25,7 @@ export default {
         component: SearchPage
     },
     beerDetailsPage: {
-        url: '/details/:id',
+        url: '/beers/:id',
         component: BeerDetailsPage
     },
     profilePage: {
@@ -33,7 +33,7 @@ export default {
         component: ProfileSection
     },
     brewingInfoPage: {
-        url: '/brewinfo/:id',
+        url: '/beers/:beerId/brews/:brewId',
         component: BrewingInfoPage
     },
     brewsList: {
